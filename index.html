@@ -54,10 +54,30 @@
     <!-- Animated tech background -->
     <canvas id="heroCanvas" class="hero__canvas"></canvas>
     <div class="container hero__content">
-      <p class="hero__label" data-i18n="hero.label">Innovation & Development</p>
-      <h1 class="hero__title">MLUE <span class="text-blue">TECHNOLOGY</span></h1>
+     <p class="hero__label" data-i18n="hero.label">Smart Business Solutions</p>
+
+      <h1 class="hero__title" data-i18n="hero.title">
+        Smart Systems for <span class="text-blue">Modern Businesses</span>
+      </h1>
+
       <p class="hero__tagline" data-i18n="hero.tagline">
-        We engineer modern, secure, and scalable technology solutions that drive business growth and operational excellence.
+        We help businesses manage sales, inventory, and operations with secure, scalable technology solutions designed for growth.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary cta" data-i18n="cta.requestSolution">Request a Solution</a>
+        <a href="#services" class="btn btn--outline" data-i18n="cta.viewServices">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="section-label" data-i18n="about.label">Who We Are?</p>
+      <h2 class="section-title" data-i18n="about.title">About MLUE Technology</h2>
+      <p class="section-subtitle" data-i18n="about.subtitle">
+        A technology company focused on engineering high-quality software that solves real business problems.
       </p>
 
       <div class="hero__mv">
@@ -76,22 +96,6 @@
           <p class="mv-card__text" data-i18n="hero.visionText">To become the most trusted technology partner for businesses across East Africa and beyond, delivering world-class digital solutions.</p>
         </div>
       </div>
-
-      <div class="hero__actions">
-        <a href="#services" class="btn btn--primary" data-i18n="hero.ctaPrimary">Explore Services</a>
-        <a href="#contact" class="btn btn--outline" data-i18n="hero.ctaSecondary">Contact Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== ABOUT ===================== -->
-  <section class="about" id="about">
-    <div class="container">
-      <p class="section-label" data-i18n="about.label">Who We Are?</p>
-      <h2 class="section-title" data-i18n="about.title">About MLUE Technology</h2>
-      <p class="section-subtitle" data-i18n="about.subtitle">
-        A technology company focused on engineering high-quality software that solves real business problems.
-      </p>
 
       <div class="about__grid">
         <div class="about-card">
@@ -168,12 +172,10 @@
           <div class="service-card__icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3 class="service-card__title" data-i18n="services.bizSysTitle">Business Systems</h3>
-          <ul class="service-card__list">
-            <li data-i18n="services.bizSys1">POS Systems</li>
-            <li data-i18n="services.bizSys2">Inventory & Sales Management</li>
-            <li data-i18n="services.bizSys3">User Roles & Permissions</li>
-          </ul>
+          <h3 class="service-card__title" data-i18n="services.businessTitle">Business Systems</h3>
+          <p class="service-card__desc" data-i18n="services.business.desc">
+            Manage sales, track inventory, and monitor business performance in real-time with reliable POS and business systems.
+          </p>
         </div>
 
         <!-- APIs & Backend -->
@@ -182,11 +184,9 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <h3 class="service-card__title" data-i18n="services.apiTitle">APIs & Backend Development</h3>
-          <ul class="service-card__list">
-            <li data-i18n="services.api1">Secure APIs</li>
-            <li data-i18n="services.api2">Authentication & Authorization</li>
-            <li data-i18n="services.api3">Performance Optimization</li>
-          </ul>
+          <p class="service-card__desc" data-i18n="services.api.desc">
+            Build scalable and secure APIs and backend systems to power your digital transformation.
+          </p>
         </div>
 
         <!-- Custom Software -->
@@ -195,11 +195,9 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <h3 class="service-card__title" data-i18n="services.customTitle">Custom Software Development</h3>
-          <ul class="service-card__list">
-            <li data-i18n="services.custom1">Tailored Business Solutions</li>
-            <li data-i18n="services.custom2">System Integration</li>
-            <li data-i18n="services.custom3">Workflow Automation</li>
-          </ul>
+          <p class="service-card__desc" data-i18n="services.custom.desc">
+            Create custom software solutions that align with your unique business requirements and objectives.
+          </p>
         </div>
 
         <!-- Graphics & Branding -->
@@ -208,15 +206,29 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
           </div>
           <h3 class="service-card__title" data-i18n="services.gfxTitle">Graphics Design & Branding</h3>
-          <ul class="service-card__list">
-            <li data-i18n="services.gfx1">Logo & Brand Identity</li>
-            <li data-i18n="services.gfx2">UI/UX Design</li>
-            <li data-i18n="services.gfx3">Marketing Materials</li>
-          </ul>
+          <p class="service-card__desc" data-i18n="services.gfx.desc">
+            Create compelling visual identities and user experiences that resonate with your audience.
+          </p>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="results">
+  <div class="container">
+    <h2 class="section-title" data-i18n="results.title">What You Get</h2>
+    <div class="results__grid">
+      <div data-i18n="results.benefit1">✔ Better control of your business operations</div>
+      <div data-i18n="results.benefit2">✔ Reduced manual work and errors</div>
+      <div data-i18n="results.benefit3">✔ Real-time insights and reporting</div>
+      <div data-i18n="results.benefit4">✔ Scalable systems that grow with your business</div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <a href="#contact" class="btn btn--primary" data-i18n="cta.requestSolution">Request a Solution</a>
+    </div>
+  </div>
+</section>
 
   <!-- ===================== WHY CHOOSE US ===================== -->
   <section class="why-us" id="why-us">
@@ -256,7 +268,7 @@
   <section class="contact" id="contact">
     <div class="container">
       <p class="section-label" data-i18n="contact.label">Get In Touch</p>
-      <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
+      <h2 class="section-title" data-i18n="contact.title">Let's Build your Digital Future</h2>
       <p class="section-subtitle" data-i18n="contact.subtitle">
         Have a project in mind? We'd love to hear about it. Reach out with your ideas and let's start building something great.
       </p>
@@ -309,7 +321,7 @@
             <label for="message" data-i18n="contact.msgLabel">Message</label>
             <textarea id="message" name="message" rows="5" required data-i18n-placeholder="contact.msgPlaceholder" placeholder="Tell us about your project..."></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--full" data-i18n="contact.send">Send Message</button>
+          <button type="submit" class="btn btn--primary btn--full" data-i18n="contact.send">Request Solution</button>
         </form>
       </div>
 

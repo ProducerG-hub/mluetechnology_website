@@ -296,11 +296,11 @@
   const standalone = {
     en: {
       greeting: [
-        "Hello! Welcome to MLUE Technology. I can answer questions about our services and technology solutions. Try asking 'What is a POS system?' or 'What services do you offer?'",
-        "Hi there! I'm the MLUE Technology assistant. Ask me anything about POS systems, APIs, custom software, branding, or our company."
+        "Hello! Welcome to MLUE Technology. How can I assist you today?'",
+        "Hi there! Welcome to MLUE Technology. How can I help you today?"
       ],
       thanks: [
-        "You're welcome! Feel free to ask more about any of our services — POS, APIs, custom software, design, and more.",
+        "You're welcome! Feel free to ask more about MLUE Technology.",
         "Happy to help! If you have more questions about MLUE Technology, I'm here."
       ],
       goodbye: [
@@ -318,12 +318,12 @@
       list: [
         "MLUE Technology offers these services:\n\n1. Business Systems — POS, inventory & sales management, user roles\n2. APIs & Backend — secure APIs, authentication, performance optimization\n3. Custom Software — tailored solutions, system integration, workflow automation\n4. Graphics Design & Branding — logos, UI/UX, marketing materials\n\nAsk about any of these for more details!",
       ],
-      outOfScope: "Thank you for reaching out! Unfortunately, I'm not able to assist with that particular request. For further help, please don't hesitate to contact us directly:\n\nEmail: mluetechnologytz@gmail.com\nWhatsApp: +255 752 804 154\nWebsite: www.mluetechnology.me\n\nOur team will be happy to assist you!"
+      outOfScope: "Thank you for reaching out! Unfortunately, I'm not able to assist with that particular request. For further help, please don't hesitate to contact our team:\n\nEmail: mluetechnologytz@gmail.com\nWhatsApp: +255 752 804 154\nWebsite: www.mluetechnology.me\n\nOur team will be happy to assist you!"
     },
     sw: {
       greeting: [
-        "Habari! Karibu MLUE Technology. Naweza kujibu maswali kuhusu huduma na suluhisho zetu za teknolojia. Jaribu kuuliza 'POS ni nini?' au 'Mnatoa huduma gani?'",
-        "Mambo! Mimi ni msaidizi wa MLUE Technology. Niulize chochote kuhusu mifumo ya POS, API, programu maalum, au branding."
+        "Habari! Karibu MLUE Technology. Nikusaidie nini Leo?",
+        "Mambo! Karibu MLUE Technology. Nikusaidie nini Leo?"
       ],
       thanks: [
         "Karibu! Uliza zaidi kuhusu huduma zetu — POS, API, programu maalum, usanifu, na zaidi.",

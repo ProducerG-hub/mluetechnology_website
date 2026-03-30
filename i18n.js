@@ -9,8 +9,9 @@ const translations = {
     "nav.cta": "Get Started",
 
     // Hero
-    "hero.label": "Innovation & Development",
-    "hero.tagline": "We engineer modern, secure, and scalable technology solutions that drive business growth and operational excellence.",
+    "hero.label": "Smart Business Solutions",
+    "hero.title": "Smart Systems for <span class=\"text-blue\">Modern Businesses</span>",
+    "hero.tagline": "We help businesses manage sales, inventory, and operations with secure, scalable technology solutions designed for growth.",
     "hero.missionTitle": "Our Mission",
     "hero.missionText": "To empower businesses with reliable, innovative, and secure technology solutions that simplify operations and accelerate growth.",
     "hero.visionTitle": "Our Vision",
@@ -33,22 +34,15 @@ const translations = {
     "services.label": "What We Do",
     "services.title": "Our Services",
     "services.subtitle": "Comprehensive technology solutions tailored to the needs of modern businesses.",
-    "services.bizSysTitle": "Business Systems",
-    "services.bizSys1": "POS Systems",
-    "services.bizSys2": "Inventory & Sales Management",
-    "services.bizSys3": "User Roles & Permissions",
+    // Service card descriptions (match .service-card__desc in index.html)
+    "services.businessTitle": "Business Systems",
     "services.apiTitle": "APIs & Backend Development",
-    "services.api1": "Secure APIs",
-    "services.api2": "Authentication & Authorization",
-    "services.api3": "Performance Optimization",
     "services.customTitle": "Custom Software Development",
-    "services.custom1": "Tailored Business Solutions",
-    "services.custom2": "System Integration",
-    "services.custom3": "Workflow Automation",
     "services.gfxTitle": "Graphics Design & Branding",
-    "services.gfx1": "Logo & Brand Identity",
-    "services.gfx2": "UI/UX Design",
-    "services.gfx3": "Marketing Materials",
+    "services.business.desc": "Manage sales, track inventory, and monitor business performance in real-time with reliable POS and business systems.",
+    "services.api.desc": "Build scalable and secure APIs and backend systems to power your digital transformation.",
+    "services.custom.desc": "Create custom software solutions that align with your unique business requirements and objectives.",
+    "services.gfx.desc": "Create compelling visual identities and user experiences that resonate with your audience.",
 
     // Why Choose Us
     "why.label": "Why Us",
@@ -65,8 +59,8 @@ const translations = {
 
     // Contact
     "contact.label": "Get In Touch",
-    "contact.title": "Let's Work Together",
-    "contact.subtitle": "Have a project in mind? We'd love to hear about it. Reach out and let's start building something great.",
+    "contact.title": "Let's Build your Digital Future",
+    "contact.subtitle": "Have a project in mind? We'd love to hear about it. Reach out with your idea and let's start building something great.",
     "contact.emailLabel": "Email",
     "contact.phoneLabel": "Phone / WhatsApp",
     "contact.webLabel": "Website",
@@ -76,7 +70,7 @@ const translations = {
     "contact.emailPlaceholder": "Enter your email",
     "contact.msgLabel": "Message",
     "contact.msgPlaceholder": "Tell us about your project...",
-    "contact.send": "Send Message",
+    "contact.send": "Request Solution",
 
     // Footer
     "footer.tagline": "Engineering modern solutions for modern businesses.",
@@ -94,6 +88,22 @@ const translations = {
     "engineers.label": "Meet Our Engineers",
     "engineers.title": "Our Engineering Team",
     "engineers.subtitle": "Get to know the talented professionals behind our innovative solutions."
+      ,
+      // New content from index.html
+      "cta.requestSolution": "Request a Solution",
+      "cta.viewServices": "View Services",
+      "results.title": "What You Get",
+      "results.benefit1": "✔ Better control of your business operations",
+      "results.benefit2": "✔ Reduced manual work and errors",
+      "results.benefit3": "✔ Real-time insights and reporting",
+      "results.benefit4": "✔ Scalable systems that grow with your business",
+      // Team roles
+      "team.backend": "Backend Engineer",
+      "team.designer": "Designer",
+      "team.software": "Software Engineer",
+      "team.dba": "Database Adminstrator(DBA)",
+      "team.frontend": "Frontend Developer",
+      "team.ai": "AI Engineer"
   },
 
   sw: {
@@ -106,8 +116,18 @@ const translations = {
     "nav.cta": "Anza Sasa",
 
     // Hero
-    "hero.label": "Ubunifu & Maendeleo",
-    "hero.tagline": "Tunajenga suluhisho za teknolojia za kisasa, salama, na zinazoweza kukua ambazo zinasukuma ukuaji wa biashara na ubora wa uendeshaji.",
+      "hero.label": "Suluhisho Mahiri za Biashara",
+      "hero.title": "Mifumo Mahiri kwa <span class=\"text-blue\">Biashara za Kisasa</span>",
+      "hero.tagline": "Tunasaidia biashara kusimamia mauzo, hesabu, na shughuli kwa teknolojia salama na inayokua iliyoundwa kukuza biashara.",
+      // Hero CTA buttons (if needed)
+      "hero.cta.requestSolution": "Omba Suluhisho",
+      "hero.cta.viewServices": "Tazama Huduma",
+      // What You Get section
+      "results.title": "Unachopata",
+      "results.benefit1": "✔ Udhibiti bora wa shughuli za biashara yako",
+      "results.benefit2": "✔ Kupunguza kazi za mikono na makosa",
+      "results.benefit3": "✔ Maarifa na ripoti za wakati halisi",
+      "results.benefit4": "✔ Mifumo inayokua na biashara yako",
     "hero.missionTitle": "Dhamira Yetu",
     "hero.missionText": "Kuwezesha biashara kwa suluhisho za teknolojia za kuaminika, bunifu, na salama zinazosahilisha shughuli na kuharakisha ukuaji.",
     "hero.visionTitle": "Maono Yetu",
@@ -130,22 +150,15 @@ const translations = {
     "services.label": "Tunachofanya",
     "services.title": "Huduma Zetu",
     "services.subtitle": "Suluhisho kamili za teknolojia zilizoundwa kwa mahitaji ya biashara za kisasa.",
-    "services.bizSysTitle": "Mifumo ya Biashara",
-    "services.bizSys1": "Mifumo ya POS",
-    "services.bizSys2": "Usimamizi wa Hesabu & Mauzo",
-    "services.bizSys3": "Majukumu & Ruhusa za Watumiaji",
-    "services.apiTitle": "API & Ujenzi wa Backend",
-    "services.api1": "API Salama",
-    "services.api2": "Uthibitishaji & Uidhinishaji",
-    "services.api3": "Uboreshaji wa Utendaji",
-    "services.customTitle": "Utengenezaji wa Programu Maalum",
-    "services.custom1": "Suluhisho Maalum za Biashara",
-    "services.custom2": "Muunganisho wa Mifumo",
-    "services.custom3": "Otomatiki ya Mtiririko wa Kazi",
-    "services.gfxTitle": "Usanifu wa Picha & Chapa",
-    "services.gfx1": "Nembo & Utambulisho wa Chapa",
-    "services.gfx2": "Usanifu wa UI/UX",
-    "services.gfx3": "Vifaa vya Masoko",
+    // Service card descriptions (match .service-card__desc in index.html)
+    "services.businessTitle": "Mifumo ya Biashara",
+    "services.apiTitle": "APIs & Uhandisi wa Backend",
+    "services.customTitle": "Uundaji wa Programu Maalum",
+    "services.gfxTitle": "Ubunifu wa Picha & Uundaji Chapa",
+    "services.business.desc": "Simamia mauzo, fuatilia hesabu, na angalia utendaji wa biashara yako papo hapo kwa mifumo ya POS na biashara inayotegemewa.",
+    "services.api.desc": "Jenga API na mifumo ya backend salama na inayokua ili kuendesha mabadiliko ya kidijitali.",
+    "services.custom.desc": "Tengeneza programu maalum zinazolingana na mahitaji na malengo ya biashara yako.",
+    "services.gfx.desc": "Tengeneza utambulisho wa kuvutia wa chapa na uzoefu bora wa mtumiaji unaogusa hadhira yako.",
 
     // Why Choose Us
     "why.label": "Kwa Nini Sisi",
@@ -173,7 +186,7 @@ const translations = {
     "contact.emailPlaceholder": "Weka barua pepe yako",
     "contact.msgLabel": "Ujumbe",
     "contact.msgPlaceholder": "Tuambie kuhusu mradi wako...",
-    "contact.send": "Tuma Ujumbe",
+    "contact.send": "Omba Suluhisho",
 
     // Footer
     "footer.tagline": "Kujenga suluhisho za kisasa kwa biashara za kisasa.",
@@ -191,6 +204,15 @@ const translations = {
     "engineers.label": "Kutana na Wahandisi Wetu",
     "engineers.title": "Timu Yetu ya Uhandisi",
     "engineers.subtitle": "Wafahamu wataalamu wabunifu walio nyuma ya suluhisho zetu za kiteknolojia."
+      ,
+      // New content from index.html
+      "cta.requestSolution": "Omba Suluhisho",
+      "cta.viewServices": "Tazama Huduma",
+      "results.title": "Unachopata",
+      "results.benefit1": "✔ Udhibiti bora wa shughuli za biashara yako",
+      "results.benefit2": "✔ Kupunguza kazi za mikono na makosa",
+      "results.benefit3": "✔ Maarifa na ripoti za wakati halisi",
+      "results.benefit4": "✔ Mifumo inayokua na biashara yako",
   }
 };
 
@@ -200,11 +222,16 @@ function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
 
-  // Update text content
+  // Update text content or HTML
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      // Use innerHTML for keys that contain HTML (like hero.title)
+      if (key === "hero.title") {
+        el.innerHTML = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
     }
   });
 
