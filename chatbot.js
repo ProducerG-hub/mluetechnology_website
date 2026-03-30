@@ -153,7 +153,6 @@
   };
 
   // ---- Deep Knowledge Responses ----
-  // Each topic has responses per intent type for contextually accurate answers
   const responses = {
     en: {
       pos: {
@@ -416,12 +415,13 @@
 Services: POS Systems, Inventory Management, Secure APIs, Authentication, Custom Software, System Integration, Workflow Automation, Graphics Design, Branding, UI/UX Design.
 Contact: Email mluetechnologytz@gmail.com, WhatsApp +255 752 804 154, Website www.mluetechnology.me
 Mission: Empower businesses with reliable, innovative, secure tech solutions.
-Vision: Most trusted technology partner in East Africa and beyond.
+Vision: Most trusted technology partner in East Africa and beyond
+Team: Eng.Gwamaka Mwakabuta, Eng.Stephen Chibwaye and Eng.David Mwakajonga.
 
 Rules:
 - Answer accurately and clearly about MLUE Technology, its services, and related tech concepts.
 - Keep responses under 400 characters.
-- If the question is off-topic, politely decline and suggest asking about MLUE services.
+- If the question is off-topic, politely decline and suggest to contact a Mlue support team by email at mluetechnologytz@gmail.com or via WhatsApp at +255 752 804 154.
 - If asked in Swahili, respond in Swahili.
 - Be professional and concise.`;
 

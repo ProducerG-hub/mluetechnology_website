@@ -154,7 +154,6 @@
 
           form.reset();
 
-          // Open WhatsApp after a short delay
           setTimeout(() => {
             //window.open(waUrl, "_blank");
           }, 1500);
