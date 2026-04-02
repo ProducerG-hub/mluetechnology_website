@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects  | MLUE TECHNOLOGY</title>
+  <meta name="description" content="Our featured projects at MLUE TECHNOLOGY." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/jpeg" href="/assets/favicon/favicon.jpeg" />
+</head>
+<body>
+    <header class="header" id="header">
+    <div class="container header__inner">
+      
+        <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+      </a>
+
+      <div class="header__actions">
+        <a href="/" class="btn btn--primary btn--sm header__home-btn" data-i18n="nav.cta">Home</a>
+      </div>
+     
+    </div>
+  </header>
+
+
+  <main>
+    <section class="projects-showcase" aria-labelledby="projects-showcase-title">
+      <div class="container">
+        <p class="section-label">Our Work</p>
+        <h1 class="section-title" id="projects-showcase-title">Featured Projects</h1>
+        <p class="section-subtitle">A quick look at recent solutions we have delivered for our clients.</p>
+
+        <div class="projects-showcase__grid">
+          <article class="project-card">
+            <div class="project-card__image" role="img" aria-label="Project image placeholder">
+                <img src="/assets/projects/me.webp" alt="Herbal Clinic Landing Page" class="project-card__img" />
+            </div>
+            <div class="project-card__content">
+              <h2 class="project-card__title">Herbal Clinic Landing Page</h2>
+              <p class="project-card__description">A modern, responsive landing page for a herbal clinic, designed to showcase services and attract new patients for the best services.</p>
+              <a class="project-card__link" href="https://naturalherbal.netlify.app/">View Project</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+          <p class="footer__tagline" data-i18n="footer.tagline">Engineering modern solutions for modern businesses.</p>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading" data-i18n="footer.quickLinks">Quick Links</h4>
+          <a href="#home" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About Us</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <a href="/projects" data-i18n="nav.projects">Projects</a>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading" data-i18n="footer.legal">Legal</h4>
+          <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/ToS" data-i18n="footer.terms">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footerYear"></span> MLUE Technology. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      </div>
+    </div>
+]  </footer>
+
+  
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+    </script>
+
+
+    
+</body>
+</html>
