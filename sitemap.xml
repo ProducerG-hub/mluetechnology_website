@@ -4,4 +4,16 @@
     <loc>https://mluetechnology.me/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://mluetechnology.me/privacy</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mluetechnology.me/terms</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mluetechnology.me/projects</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>
