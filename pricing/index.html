@@ -134,6 +134,34 @@
 			margin-top: 14px;
 		}
 
+		.header__hamburger {
+			display: none;
+			flex-direction: column;
+			gap: 5px;
+			padding: 4px;
+		}
+
+		.header__hamburger span {
+			display: block;
+			width: 22px;
+			height: 2px;
+			background: var(--gray-700);
+			border-radius: 2px;
+			transition: var(--transition);
+		}
+
+		.header__hamburger.open span:nth-child(1) {
+			transform: translateY(7px) rotate(45deg);
+		}
+
+		.header__hamburger.open span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.header__hamburger.open span:nth-child(3) {
+			transform: translateY(-7px) rotate(-45deg);
+		}
+
 		.pricing-contact {
 			margin-top: 48px;
 			padding-left: 20px;
@@ -159,11 +187,16 @@
 				padding-right: 0;
 			}
 
+			.header__hamburger {
+				display: flex;
+			}
+
 			.header__nav {
-				display: flex !important;
+				display: none !important;
 				flex-direction: column;
 				position: absolute;
 				top: 68px;
+				left: 0;
 				right: 0;
 				background: var(--white);
 				border-top: 1px solid var(--gray-200);
@@ -171,6 +204,10 @@
 				gap: 0;
 				padding: 12px 0;
 				z-index: 999;
+			}
+
+			.header__nav.open {
+				display: flex !important;
 			}
 
 			.header__nav a {
@@ -185,7 +222,7 @@
 			}
 
 			.header__actions {
-				display: flex !important;
+				display: flex;
 			}
 
 			.card-toggle {
@@ -211,7 +248,7 @@
 				<span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
 			</a>
 
-			<nav class="header__nav">
+			<nav class="header__nav" id="nav">
 				<a href="../index.html" class="nav-link">Home</a>
 				<a href="../projects" class="nav-link">Projects</a>
 				<a href="../index.html#contact" class="nav-link">Contact</a>
@@ -220,6 +257,10 @@
 			<div class="header__actions">
 				<a href="../index.html#contact" class="btn btn--primary btn--sm">Get Started</a>
 			</div>
+
+			<button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
+				<span></span><span></span><span></span>
+			</button>
 		</div>
 	</header>
 
@@ -664,6 +705,27 @@
 
 	<script>
 		document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+		// Hamburger menu toggle
+		const hamburger = document.getElementById("hamburger");
+		const nav = document.getElementById("nav");
+
+		if (hamburger) {
+			hamburger.addEventListener("click", () => {
+				hamburger.classList.toggle("open");
+				nav.classList.toggle("open");
+			});
+		}
+
+		// Close mobile nav on link click
+		if (nav) {
+			nav.querySelectorAll(".nav-link").forEach(link => {
+				link.addEventListener("click", () => {
+					hamburger.classList.remove("open");
+					nav.classList.remove("open");
+				});
+			});
+		}
 
 		const toast = document.getElementById("toast");
 		const toastIcon = document.getElementById("toastIcon");
