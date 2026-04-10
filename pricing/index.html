@@ -38,6 +38,11 @@
 			background: linear-gradient(160deg, var(--white) 0%, var(--blue-50) 100%);
 		}
 
+		.pricing-main .container {
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+
 		.pricing-section {
 			margin-top: 34px;
 		}
@@ -144,9 +149,43 @@
 				text-align: center;
 			}
 
+			.pricing-main .container {
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+
 			.pricing-contact {
 				padding-left: 0;
 				padding-right: 0;
+			}
+
+			.header__nav {
+				display: flex !important;
+				flex-direction: column;
+				position: absolute;
+				top: 68px;
+				right: 0;
+				background: var(--white);
+				border-top: 1px solid var(--gray-200);
+				width: 100%;
+				gap: 0;
+				padding: 12px 0;
+				z-index: 999;
+			}
+
+			.header__nav a {
+				display: block;
+				padding: 10px 16px;
+				border-bottom: 1px solid var(--gray-100);
+				font-size: 0.9rem;
+			}
+
+			.header__nav a:last-child {
+				border-bottom: none;
+			}
+
+			.header__actions {
+				display: flex !important;
 			}
 
 			.card-toggle {
