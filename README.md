@@ -1,45 +1,47 @@
 # MLUE TECHNOLOGY Website
 
-Professional company website for MLUE TECHNOLOGY, showcasing services, featured projects, and contact channels. The site is designed as a fast, static, SEO-friendly web presence with bilingual support (English and Swahili), a smart chatbot assistant, and conversion-focused sections.
+MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site designed to showcase services, pricing, projects, and direct contact channels. It combines a polished marketing experience with bilingual support, a smart chatbot, and a mobile-friendly pricing layout.
 
-## Live Website
+## Live Site
 
 - Production: https://mluetechnology.me
 
-## Project Highlights
+## What This Project Includes
 
-- Modern one-page marketing site for business technology services
-- Bilingual UI (English/Swahili) with persistent language preference
-- Interactive sections:
-  - Hero with animated canvas background
-  - About, services, value proposition, and contact funnel
-  - Team showcase
-- Contact form integration via FormSubmit
-- WhatsApp-first contact option
-- Built-in chatbot with:
+- A modern homepage for business technology services
+- Bilingual interface with English and Swahili support
+- Animated hero and polished marketing sections
+- Team showcase and company information
+- A dedicated pricing page with detailed package breakdowns
+- Mobile hamburger navigation for small screens
+- Collapsible pricing cards for easier scanning on mobile
+- Contact form handling through FormSubmit
+- WhatsApp-friendly contact access
+- An integrated chatbot with:
   - Intent detection
   - Topic matching
-  - Deep predefined knowledge base (EN/SW)
-  - Optional Hugging Face AI fallback
-- Dedicated pages for:
+  - Prebuilt knowledge responses in English and Swahili
+  - Optional Hugging Face fallback
+- Supporting pages for:
   - Projects
   - Privacy Policy
   - Terms of Service
-- Basic SEO setup with sitemap and robots directives
 
 ## Tech Stack
 
 - HTML5
 - CSS3
-- Vanilla JavaScript (no framework)
-- FormSubmit (contact form handling)
-- Optional Hugging Face Inference API (chatbot AI fallback)
+- Vanilla JavaScript
+- FormSubmit for contact handling
+- Optional Hugging Face Inference API for chatbot fallback
 
-## Folder Structure
+## Project Structure
 
 ```text
 .
 |-- index.html
+|-- pricing/
+|   `-- index.html
 |-- styles.css
 |-- main.js
 |-- i18n.js
@@ -57,17 +59,30 @@ Professional company website for MLUE TECHNOLOGY, showcasing services, featured 
     `-- index.html
 ```
 
-## Getting Started (Local Development)
+## Pricing Page Summary
 
-Because this is a static website, you can run it with any local server.
+The pricing page now presents the full MLUE TECHNOLOGY price kit in a structured format:
 
-### Option 1: VS Code Live Server
+- Landing Pages
+- Static Websites
+- Dynamic Websites
+- Domain Name
+- Web Hosting and Deployment
+- Maintenance and Support
+
+Each package includes pricing, what is included, what is excluded, and example project types. On mobile, the package details collapse behind a `View more` button, and the page header uses a hamburger menu for easier navigation.
+
+## Run Locally
+
+Because this is a static site, you can run it with any local server.
+
+### VS Code Live Server
 
 1. Open the project in VS Code.
 2. Install the Live Server extension.
 3. Right-click `index.html` and choose **Open with Live Server**.
 
-### Option 2: Python HTTP Server
+### Python HTTP Server
 
 ```bash
 python -m http.server 5500
@@ -77,60 +92,44 @@ Then open:
 
 - http://localhost:5500
 
-## Configuration
+## Configuration Notes
 
-### 1) Contact Form
+### Contact Form
 
-The contact form posts to FormSubmit:
+The main site and pricing page both submit through FormSubmit and currently send to `mluetechnologytz@gmail.com`.
 
-- Defined in `index.html` form action
-- Current receiver: `mluetechnologytz@gmail.com`
-
-To change destination email, update:
+To change the destination email, update the form action:
 
 ```html
 <form action="https://formsubmit.co/YOUR_EMAIL@example.com" ...>
 ```
 
-### 2) Chatbot AI Fallback (Optional)
+### Chatbot
 
-In `chatbot.js`:
+The chatbot is configured in `chatbot.js`.
 
-- `HF_API_URL` points to the configured Hugging Face model endpoint.
+- `HF_API_URL` points to the Hugging Face endpoint.
 - `HF_TOKEN` is currently empty.
 
-Set your token before enabling AI fallback:
+If you enable AI fallback, keep the token out of frontend code in production and proxy requests through your backend.
 
-```js
-const HF_TOKEN = "your_hugging_face_token";
-```
+### Language Switching
 
-Security recommendation:
+Language data lives in `i18n.js`.
 
-- Do not expose API tokens in frontend production code.
-- Route AI requests through your backend proxy when moving to production-grade architecture.
-
-### 3) Localization
-
-- Translations are maintained in `i18n.js`
-- Language choice is stored in browser local storage (`mlue-lang`)
-
-To add a new language:
-
-1. Add a new top-level key in `translations`.
-2. Add all required translation keys.
-3. Add UI controls to switch language.
+- Language preference is stored in `localStorage` under `mlue-lang`
+- Add a new language by extending the `translations` object and updating the UI controls
 
 ## SEO and Indexing
 
-- `robots.txt` allows crawling and points to sitemap.
-- `sitemap.xml` currently includes the root URL.
+- `robots.txt` allows crawling and references the sitemap
+- `sitemap.xml` currently includes the homepage
 
-If you add more pages (e.g., projects, privacy, terms), update `sitemap.xml` accordingly to include those URLs for better indexing.
+If you add or expand pages, update the sitemap so search engines can discover them properly.
 
 ## Deployment
 
-This project can be deployed to any static hosting platform:
+This site can be deployed to any static hosting provider:
 
 - Netlify
 - Vercel
@@ -138,21 +137,21 @@ This project can be deployed to any static hosting platform:
 - Cloudflare Pages
 - Traditional shared hosting
 
-Recommended checks before deployment:
+Before deploying, verify:
 
-1. Verify all internal links and paths.
-2. Verify contact form destination email.
-3. Confirm favicon and Open Graph assets.
-4. Confirm production domain in metadata.
-5. Validate responsive layout on mobile and desktop.
+1. Internal links and paths
+2. Contact form destination email
+3. Favicon and Open Graph assets
+4. Production domain in metadata
+5. Mobile and desktop responsiveness
 
-## Maintenance Checklist
+## Maintenance
 
-- Keep Terms and Privacy content up to date
-- Review chatbot knowledge entries periodically
-- Rotate and secure API keys (if used)
-- Keep team and project showcase current
-- Update sitemap when new pages are added
+- Keep privacy and terms content current
+- Review chatbot knowledge and responses periodically
+- Keep pricing packages aligned with current offerings
+- Update project showcase items as work changes
+- Refresh the sitemap when new pages are added
 
 ## Contact
 
