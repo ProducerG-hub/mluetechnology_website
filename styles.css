@@ -914,6 +914,14 @@ input, textarea { font-family: inherit; }
   border: 1px solid var(--gray-200);
   border-bottom-left-radius: 4px;
 }
+.chat-msg--bot .chat-bubble a {
+  color: var(--blue-700);
+  text-decoration: underline;
+  font-weight: 600;
+}
+.chat-msg--bot .chat-bubble a:hover {
+  color: var(--blue-800);
+}
 
 /* Typing indicator */
 .chat-bubble--typing {
