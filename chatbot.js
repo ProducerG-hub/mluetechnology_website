@@ -1,28 +1,96 @@
 (function (global) {
     "use strict";
 
-    // Creating a simple chatbot using keyword matching (no external AI API).
-    function detectLanguage(text) {
-        const swahiliWords = [
-            "habari", "jambo", "mambo", "asante", "karibu", "sawa",
-            "huduma", "wasiliana", "mawasiliano", "bei", "msaada", "kwaheri"
-        ];
-        const englishWords = [
-            "hello", "hi", "thank", "welcome", "okay", "service",
-            "contact", "price", "support", "goodbye"
-        ];
+    const SWAHILI_HINT_WORDS = [
+        "habari", "jambo", "mambo", "asante", "karibu", "sawa", "huduma",
+        "wasiliana", "mawasiliano", "bei", "msaada", "kwaheri", "kiswahili",
+        "swahili", "tafadhali", "naomba", "nina", "nataka", "unataka", "vipi",
+        "kuna", "nisaidie", "nisaidieni", "je", "hii", "hapo", "sana", "kuhusu",
+        "kujua", "kujifunza", "zaidi", "nani", "nini", "nyie", "wewe"
+    ];
+    const ENGLISH_HINT_WORDS = [
+        "hello", "hi", "thank", "welcome", "okay", "service", "contact",
+        "price", "support", "goodbye", "english", "please",
+        "help", "can", "could", "would", "what", "how", "when", "where",
+        "why", "is", "are", "the", "you", "your", "i", "need", "want", "know", "learn",
+        "more", "details", "about", "info", "information"
+    ];
 
-        const messageWords = (text || "").toLowerCase().split(/\s+/);
-        return messageWords.some(word => swahiliWords.includes(word))
-            ? "swahili"
-            : messageWords.some(word => englishWords.includes(word))
-                ? "english"
-                : "english";
+    const SWAHILI_HINT_PHRASES = [
+        "nyie ni nani", "kuhusu nyie", "kuhusu wewe", "mlue ni nini",
+        "niambie kuhusu", "nifafanulie"
+    ];
+    const ENGLISH_HINT_PHRASES = [
+        "who are you", "about you", "details about you", "tell me about you",
+        "what is mlue", "what is mlue technology", "tell me about mlue"
+    ];
+
+    function getLanguageScores(text) {
+        const normalized = (text || "").toLowerCase();
+        const words = normalized.match(/[a-zA-Z\u00C0-\u024F]+/g) || [];
+
+        let swahiliScore = 0;
+        let englishScore = 0;
+
+        words.forEach(word => {
+            if (SWAHILI_HINT_WORDS.includes(word)) swahiliScore += 1;
+            if (ENGLISH_HINT_WORDS.includes(word)) englishScore += 1;
+        });
+
+        SWAHILI_HINT_PHRASES.forEach(phrase => {
+            if (normalized.includes(phrase)) swahiliScore += 2;
+        });
+        ENGLISH_HINT_PHRASES.forEach(phrase => {
+            if (normalized.includes(phrase)) englishScore += 2;
+        });
+
+        if (/\b(ni|wa|ya|za|la|cha|kwa|katika|hiyo|hili|huyu)\b/.test(normalized)) {
+            swahiliScore += 1;
+        }
+        if (/\b(the|and|for|with|from|about|this|that)\b/.test(normalized)) {
+            englishScore += 1;
+        }
+
+        return { swahiliScore, englishScore, wordsCount: words.length };
     }
 
-    function generateResponse(message) {
-        const language = detectLanguage(message);
+    function inferPreferredLanguage(text) {
+        const { swahiliScore, englishScore, wordsCount } = getLanguageScores(text);
+        if (wordsCount === 0) return null;
+
+        // For short prompts, one strong cue should be enough to pick a language.
+        if (wordsCount <= 4) {
+            if (swahiliScore > englishScore && swahiliScore >= 1) return "swahili";
+            if (englishScore > swahiliScore && englishScore >= 1) return "english";
+        }
+
+        const diff = Math.abs(swahiliScore - englishScore);
+        const maxScore = Math.max(swahiliScore, englishScore);
+
+        if (maxScore < 2 || diff < 1) {
+            return null;
+        }
+        return swahiliScore > englishScore ? "swahili" : "english";
+    }
+
+    // Creating a simple chatbot using keyword matching (no external AI API).
+    function detectLanguage(text) {
+        const inferred = inferPreferredLanguage(text);
+        return inferred || "english";
+    }
+
+    function generateResponse(message, preferredLanguage) {
+        const language = preferredLanguage || detectLanguage(message);
         const text = (message || "").toLowerCase();
+        const words = text.match(/[a-zA-Z\u00C0-\u024F]+/g) || [];
+
+        function hasWord(candidates) {
+            return candidates.some(candidate => words.includes(candidate));
+        }
+
+        function hasPhrase(candidates) {
+            return candidates.some(candidate => text.includes(candidate));
+        }
 
         const knowledgeBase = {
             default: {
@@ -54,31 +122,61 @@
                 english: "Thank you for contacting Mlue Technology. If you have any more questions, feel free to ask! We look forward to assisting you again in the future."
             },
             gracefulClosing: {
-                swahili: "Nafurahi kukusaidia. Ikiwa una maswali zaidi, usisite kuuliza! Tunatarajia kukusaidia tena siku zijazo.",
-                english: "I'm glad I could help! If you have any more questions, feel free to ask! We look forward to assisting you again in the future."
+                swahili: "Nafurahi kukusaidia. Ikiwa una maswali zaidi, usisite kuuliza! Tunatarajia kukusaidia tena siku zijazo. Unaweza ukaona kazi zetu kwenye tovuti yetu https://mluetechnology.me/projects",
+                english: "I'm glad I could help! If you have any more questions, feel free to ask! We look forward to assisting you again in the future. You can check out our work on our website https://mluetechnology.me/projects"
+            },
+            switchingLanguage: {
+                swahili: "Lugha imebadilishwa kwa Kiswahili. Sasa tunaweza kuendelea mazungumzo yetu kwa Kiswahili. Je, kuna jambo lolote unalotaka kujua au kusaidiwa nalo?",
+                english: "Language switched to English. We can now continue our conversation in English. Is there anything specific you would like to know or need assistance with?"
+            },
+            about: {
+                swahili: "Mlue Technology ni kampuni ya teknolojia inayotoa suluhisho bora za kiteknolojia kwa wateja wetu. Tunajivunia timu yetu yenye ujuzi na uzoefu katika kutengeneza tovuti, graphic design, backend API, na huduma nyingine za kiteknolojia. Lengo letu ni kusaidia biashara zako kukua na kufanikisha malengo yako ya kiteknolojia.",
+                english: "Mlue Technology is a technology company dedicated to provide excellent technological solutions for our clients. We take pride in our skilled and experienced team in website development, graphic design, backend API, and other technology services. Our goal is to help your business grow and achieve your technology goals."
             }
         };
 
-        if (text.includes("service") || text.includes("huduma")) {
+        if (hasWord(["service", "services", "huduma"])) {
             return knowledgeBase.services[language];
         }
-        if (text.includes("contact") || text.includes("wasiliana") || text.includes("mawasiliano")) {
+        if (hasWord(["contact", "wasiliana", "mawasiliano","contacts"])) {
             return knowledgeBase.contact[language];
         }
-        if (text.includes("price") || text.includes("bei")) {
+        if (hasWord(["price", "pricing", "bei"])) {
             return knowledgeBase.price[language];
         }
-        if (text.includes("support") || text.includes("msaada")) {
+        if (hasWord(["support", "msaada"])) {
             return knowledgeBase.support[language];
         }
-        if (text.includes("sawa") || text.includes("okay") || text.includes("ok")) {
+        if (
+            hasPhrase([
+                "who are you",
+                "about you",
+                "details about you",
+                "tell me about you",
+                "what is mlue",
+                "what is mlue technology",
+                "tell me about mlue",
+                "nyie ni nani",
+                "kuhusu nyie",
+                "kuhusu wewe",
+                "mlue ni nini"
+            ]) ||
+            hasWord(["kuhusu"]) ||
+            (hasWord(["mlue", "mlue technology"]) && hasWord(["about", "details", "info", "information", "nini", "what"]))
+        ) {
+            return knowledgeBase.about[language];
+        }
+        if (hasWord(["sawa", "okay", "ok"])) {
             return knowledgeBase.gracefulClosing[language];
         }
-        if (text.includes("goodbye") || text.includes("kwaheri") || text.includes("thank you") || text.includes("asante")) {
+        if (hasWord(["goodbye", "kwaheri", "asante"]) || hasPhrase(["thank you"])) {
             return knowledgeBase.goodbye[language];
         }
-        if (text.includes("hello") || text.includes("habari") || text.includes("hi") || text.includes("jambo") || text.includes("mambo")) {
+        if (hasWord(["hello", "habari", "hi", "jambo", "mambo"])) {
             return knowledgeBase.default[language];
+        }
+        if (hasWord(["english", "kiingereza", "swahili", "kiswahili"])) {
+            return knowledgeBase.switchingLanguage[language];
         }
         return knowledgeBase.unknown[language];
     }
@@ -96,8 +194,45 @@
         }
 
         let hasWelcomed = false;
+        let chatLanguage = document.documentElement.lang === "sw" ? "swahili" : "english";
         let pendingReplyTimer = null;
         let typingNode = null;
+
+        function getLanguageSwitch(text) {
+            const normalized = (text || "").toLowerCase();
+            const words = normalized.match(/[a-zA-Z\u00C0-\u024F]+/g) || [];
+
+            const asksSwitch = [
+                "use", "switch", "change", "speak", "talk", "reply",
+                "tumia", "badili", "ongea", "zungumza"
+            ].some(word => words.includes(word));
+
+            const wantsSwahili = words.includes("swahili") || words.includes("kiswahili");
+            const wantsEnglish = words.includes("english") || words.includes("kiingereza");
+
+            if (wantsSwahili && (asksSwitch || words.length <= 3)) {
+                return "swahili";
+            }
+            if (wantsEnglish && (asksSwitch || words.length <= 3)) {
+                return "english";
+            }
+            return null;
+        }
+
+        function applyImplicitLanguagePreference(text) {
+            const inferred = inferPreferredLanguage(text);
+            if (!inferred || inferred === chatLanguage) {
+                return;
+            }
+
+            chatLanguage = inferred;
+            appendMessage(
+                inferred === "swahili"
+                    ? "..."
+                    : "...",
+                "bot"
+            );
+        }
 
         function escapeHtml(value) {
             return String(value)
@@ -152,8 +287,12 @@
             chatWindow.setAttribute("aria-hidden", "false");
 
             if (!hasWelcomed) {
-                const isSwahili = document.documentElement.lang === "sw";
-                appendMessage(isSwahili ? "Habari! Karibu MLUE Technology. Naweza kukusaidiaje leo?" : "Hello! Welcome to MLUE Technology. How can I help you today?", "bot");
+                appendMessage(
+                    chatLanguage === "swahili"
+                        ? "Habari! Karibu MLUE Technology. Mimi ni msaidizi wako, Naweza kukusaidiaje leo?"
+                        : "Hello! Welcome to MLUE Technology. I am your assistant, how can I help you today?",
+                    "bot"
+                );
                 hasWelcomed = true;
             }
 
@@ -176,6 +315,7 @@
             chatInput.disabled = false;
             chatSend.disabled = false;
             hasWelcomed = false;
+            chatLanguage = document.documentElement.lang === "sw" ? "swahili" : "english";
 
             chatWindow.classList.remove("chatbot--open");
             chatToggle.classList.remove("chatbot-toggle--active");
@@ -201,7 +341,20 @@
                 }
                 typingNode = null;
                 pendingReplyTimer = null;
-                appendMessage(generateResponse(userText), "bot");
+
+                const requestedLanguage = getLanguageSwitch(userText);
+                if (requestedLanguage) {
+                    chatLanguage = requestedLanguage;
+                    appendMessage(
+                        requestedLanguage === "swahili"
+                            ? "Lugha imebadilishwa kuwa Kiswahili. Endelea kuuliza chochote, nitakujibu kwa Kiswahili."
+                            : "Language switched to English. Continue with any question, and I will reply in English.",
+                        "bot"
+                    );
+                } else {
+                    applyImplicitLanguagePreference(userText);
+                    appendMessage(generateResponse(userText, chatLanguage), "bot");
+                }
                 chatSend.disabled = false;
                 chatInput.disabled = false;
                 chatInput.focus();
