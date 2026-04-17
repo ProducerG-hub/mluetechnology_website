@@ -159,7 +159,14 @@
                 "nyie ni nani",
                 "kuhusu nyie",
                 "kuhusu wewe",
-                "mlue ni nini"
+                "mlue ni nini",
+                "niambie kuhusu mlue",
+                "mlue ni nani",
+                "nifafanulie mlue",
+                "nifafanulie kuhusu mlue",
+                "who is mlue",
+                "tell me about your company",
+                "what do you do"
             ]) ||
             hasWord(["kuhusu"]) ||
             (hasWord(["mlue", "mlue technology"]) && hasWord(["about", "details", "info", "information", "nini", "what"]))
