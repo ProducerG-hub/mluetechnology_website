@@ -12,6 +12,7 @@
   // ---- Header scroll effect ----
   const header = document.getElementById("header");
   function onScroll() {
+    if (!header) return;
     if (window.scrollY > 20) {
       header.classList.add("scrolled");
     } else {
@@ -25,18 +26,20 @@
   const hamburger = document.getElementById("hamburger");
   const nav = document.getElementById("nav");
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    nav.classList.toggle("open");
-  });
-
-  // Close mobile nav on link click
-  nav.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      nav.classList.remove("open");
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("open");
+      nav.classList.toggle("open");
     });
-  });
+
+    // Close mobile nav on link click
+    nav.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("open");
+        nav.classList.remove("open");
+      });
+    });
+  }
 
   // ---- Active nav link on scroll ----
   const sections = document.querySelectorAll("section[id]");
@@ -88,6 +91,7 @@
   let toastTimer;
 
   function showToast(type, title, message) {
+    if (!toast || !toastIcon || !toastTitle || !toastMsg) return;
     clearTimeout(toastTimer);
     toast.className = "toast toast--" + type + " toast--visible";
     toastIcon.innerHTML = type === "success"
@@ -122,7 +126,8 @@
 
       // Disable button while sending
       btn.disabled = true;
-      btn.textContent = currentLang === "sw" ? "Inatuma..." : "Sending...";
+      const lang = typeof window.currentLang !== "undefined" ? window.currentLang : "en";
+      btn.textContent = lang === "sw" ? "Inatuma..." : "Sending...";
 
       // Send email via Formsubmit.co AJAX
       const formData = new FormData(form);
@@ -146,8 +151,8 @@
           // Show success toast
           showToast(
             "success",
-            currentLang === "sw" ? "Imetumwa!" : "Message Sent!",
-            currentLang === "sw"
+            lang === "sw" ? "Imetumwa!" : "Message Sent!",
+            lang === "sw"
               ? "Ujumbe wako umetumwa kwa barua pepe. Asante kwa kuwasiliana nasi!."
               : "Your message was sent via email. Thank you for reaching out to us!."
           );
@@ -164,8 +169,8 @@
       .catch(() => {
         showToast(
           "error",
-          currentLang === "sw" ? "Imeshindikana" : "Failed to Send",
-          currentLang === "sw"
+          lang === "sw" ? "Imeshindikana" : "Failed to Send",
+          lang === "sw"
             ? "Barua pepe haijatumwa. Tafadhali jaribu tena au wasiliana nasi moja kwa moja."
             : "Email could not be sent. Please try again or contact us directly."
         );

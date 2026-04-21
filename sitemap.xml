@@ -2,19 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mluetechnology.me/</loc>
+    <lastmod>2026-04-21</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mluetechnology.me/privacy</loc>
+    <loc>https://mluetechnology.me/privacy/</loc>
+    <lastmod>2026-04-21</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mluetechnology.me/terms</loc>
+    <loc>https://mluetechnology.me/terms/</loc>
+    <lastmod>2026-04-21</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mluetechnology.me/projects</loc>
+    <loc>https://mluetechnology.me/projects/</loc>
+    <lastmod>2026-04-21</lastmod>
     <priority>0.6</priority>
   </url>
-
+  <url>
+    <loc>https://mluetechnology.me/pricing/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
