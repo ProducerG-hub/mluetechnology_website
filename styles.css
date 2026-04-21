@@ -1075,14 +1075,53 @@ input, textarea { font-family: inherit; }
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--gray-900);
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
-.project-card__description {
-  color: var(--gray-500);
-  font-size: 0.92rem;
+.project-card__details {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.project-card__detail {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.project-card__detail.reveal {
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.project-card__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--blue-700);
+  margin-bottom: 4px;
+}
+
+.project-card__text {
+  color: var(--gray-600);
+  font-size: 0.89rem;
   line-height: 1.6;
-  margin-bottom: 14px;
+}
+
+.project-card__detail--quote {
+  border-left: 4px solid var(--blue-400);
+  background: linear-gradient(180deg, var(--white) 0%, var(--blue-50) 100%);
+}
+
+.project-card__quote {
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  font-style: italic;
 }
 
 .project-card__link {

@@ -34,7 +34,7 @@
       <div class="container">
         <p class="section-label">Our Work</p>
         <h1 class="section-title" id="projects-showcase-title">Featured Projects</h1>
-        <p class="section-subtitle">A quick look at recent solutions we have delivered for our clients.</p>
+        <p class="section-subtitle">Detailed case studies showing the challenge, our approach, and direct client feedback.</p>
 
         <div class="projects-showcase__grid">
           <article class="project-card">
@@ -43,7 +43,20 @@
             </div>
             <div class="project-card__content">
               <h2 class="project-card__title">Herbal Clinic Landing Page</h2>
-              <p class="project-card__description">A modern, responsive landing page for a herbal clinic, designed to showcase services and attract new patients for the best services.</p>
+              <div class="project-card__details">
+                <div class="project-card__detail">
+                  <h3 class="project-card__label">Problem</h3>
+                  <p class="project-card__text">The clinic had no clear digital presence, making it difficult for new patients to discover services and book consultations with confidence.</p>
+                </div>
+                <div class="project-card__detail">
+                  <h3 class="project-card__label">Solution</h3>
+                  <p class="project-card__text">We delivered a modern, mobile-first landing page with clear service sections, trust-building visuals, and focused call-to-action areas that guide visitors to contact the clinic quickly.</p>
+                </div>
+                <div class="project-card__detail project-card__detail--quote">
+                  <h3 class="project-card__label">What Client Said</h3>
+                  <p class="project-card__quote">"The new website gave our clinic a professional image immediately, and we started receiving more serious inquiries within the first few weeks."</p>
+                </div>
+              </div>
               <a class="project-card__link" href="https://naturalherbal.netlify.app/">View Project</a>
             </div>
           </article>
@@ -54,7 +67,20 @@
             </div>
             <div class="project-card__content">
               <h2 class="project-card__title">DAAV NGO Website</h2>
-              <p class="project-card__description">A modern, responsive website for a development NGO, designed to showcase their work and attract support.</p>
+              <div class="project-card__details">
+                <div class="project-card__detail">
+                  <h3 class="project-card__label">Problem</h3>
+                  <p class="project-card__text">The organization needed a clearer way to present its impact and programs to partners, donors, and the public.</p>
+                </div>
+                <div class="project-card__detail">
+                  <h3 class="project-card__label">Solution</h3>
+                  <p class="project-card__text">We created a responsive, content-first website that highlights initiatives, tells impact stories, and provides straightforward paths for collaboration and support.</p>
+                </div>
+                <div class="project-card__detail project-card__detail--quote">
+                  <h3 class="project-card__label">What Client Said</h3>
+                  <p class="project-card__quote">"Our mission is now easy to understand online. Partners can quickly see what we do and how to work with us."</p>
+                </div>
+              </div>
               <a class="project-card__link" href="https://daav-ngo.netlify.app/">View Project</a>
             </div>
           </article>
@@ -100,6 +126,27 @@
     <script>
         // Set current year in footer
         document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+        // Reveal Problem/Solution/Client sections with a subtle stagger on scroll.
+        (function () {
+          const detailBlocks = document.querySelectorAll('.project-card__detail');
+          if (!detailBlocks.length || !('IntersectionObserver' in window)) return;
+
+          detailBlocks.forEach((block, index) => {
+            block.classList.add('reveal');
+            block.style.setProperty('--reveal-delay', (index % 3) * 90 + 'ms');
+          });
+
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            });
+          }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
+
+          detailBlocks.forEach((block) => observer.observe(block));
+        })();
     </script>
 
 
