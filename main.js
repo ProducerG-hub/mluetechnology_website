@@ -148,8 +148,8 @@
             "success",
             currentLang === "sw" ? "Imetumwa!" : "Message Sent!",
             currentLang === "sw"
-              ? "Ujumbe wako umetumwa kwa barua pepe. Pia unatumwa WhatsApp..."
-              : "Your message was sent to our email. Also sending via WhatsApp..."
+              ? "Ujumbe wako umetumwa kwa barua pepe. Asante kwa kuwasiliana nasi!."
+              : "Your message was sent via email. Thank you for reaching out to us!."
           );
 
           form.reset();
