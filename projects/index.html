@@ -3,21 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects  | MLUE TECHNOLOGY</title>
-  <meta name="description" content="Our featured projects at MLUE TECHNOLOGY." />
+  <title>Projects | MLUE TECHNOLOGY</title>
+  <meta name="keywords" content="MLUE TECHNOLOGY, projects, custom software development, digital solutions, case studies, client feedback" />
+  <meta name="description" content="Our featured projects at MLUE TECHNOLOGY for custom software development and digital solutions." />
+  <link rel="canonical" href="https://mluetechnology.me/projects/" />
+  <meta property="og:title" content="Projects | MLUE TECHNOLOGY" />
+  <meta property="og:description" content="Featured software and website projects delivered by MLUE Technology." />
   <meta property="og:image" content="https://mluetechnology.me/assets/review.jpeg">
   <meta property="og:url" content="https://mluetechnology.me/projects/">
   <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects | MLUE TECHNOLOGY" />
+  <meta name="twitter:description" content="Explore featured project case studies by MLUE Technology." />
+  <meta name="twitter:image" content="https://mluetechnology.me/assets/review.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="icon" type="image/jpeg" href="/assets/favicon/favicon.jpeg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mluetechnology.me/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://mluetechnology.me/projects/"
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
     <header class="header" id="header">
     <div class="container header__inner">
-      
+      <a href="/" class="logo-link" aria-label="MLUE Technology Home">
         <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
       </a>
 
@@ -57,7 +85,7 @@
                   <p class="project-card__quote">"The new website gave our clinic a professional image immediately, and we started receiving more serious inquiries within the first few weeks."</p>
                 </div>
               </div>
-              <a class="project-card__link" href="https://naturalherbal.netlify.app/">View Project</a>
+              <a class="project-card__link" href="https://naturalherbal.netlify.app/" rel="nofollow">View Project</a>
             </div>
           </article>
 
@@ -81,7 +109,7 @@
                   <p class="project-card__quote">"Our mission is now easy to understand online. Partners can quickly see what we do and how to work with us."</p>
                 </div>
               </div>
-              <a class="project-card__link" href="https://daav-ngo.netlify.app/">View Project</a>
+              <a class="project-card__link" href="https://daav-ngo.netlify.app/" rel="nofollow">View Project</a>
             </div>
           </article>
 
@@ -102,27 +130,27 @@
         </div>
         <div class="footer__links">
           <h4 class="footer__heading" data-i18n="footer.quickLinks">Quick Links</h4>
-          <a href="#home" data-i18n="nav.home">Home</a>
-          <a href="#about" data-i18n="nav.about">About Us</a>
-          <a href="#services" data-i18n="nav.services">Services</a>
-          <a href="#contact" data-i18n="nav.contact">Contact</a>
-          <a href="/projects" data-i18n="nav.projects">Projects</a>
+          <a href="/" data-i18n="nav.home">Home</a>
+          <a href="/#about" data-i18n="nav.about">About Us</a>
+          <a href="/#services" data-i18n="nav.services">Services</a>
+          <a href="/#contact" data-i18n="nav.contact">Contact</a>
+          <a href="/projects/" data-i18n="nav.projects">Projects</a>
         </div>
         <div class="footer__links">
           <h4 class="footer__heading" data-i18n="footer.legal">Legal</h4>
-          <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
-          <a href="/terms" data-i18n="footer.terms">Terms of Service</a>
+          <a href="/privacy/" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/terms/" data-i18n="footer.terms">Terms of Service</a>
         </div>
       </div>
       <div class="footer__bottom">
         <p>&copy; <span id="footerYear"></span> MLUE Technology. <span data-i18n="footer.rights">All rights reserved.</span></p>
       </div>
     </div>
-]  </footer>
+  </footer>
 
   
-  <script src="i18n.js"></script>
-  <script src="main.js"></script>
+  <script src="../i18n.js"></script>
+  <script src="../main.js"></script>
     <script>
         // Set current year in footer
         document.getElementById('footerYear').textContent = new Date().getFullYear();
