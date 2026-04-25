@@ -79,6 +79,279 @@
         return inferred || "english";
     }
 
+    const INTENTS = [
+        {
+            name: "greeting",
+            patterns: [
+                { value: "hello", weight: 3 },
+                { value: "hi", weight: 3 },
+                { value: "habari", weight: 3 },
+                { value: "jambo", weight: 3 },
+                { value: "mambo", weight: 3 },
+                { value: "salamu", weight: 2 },
+                { value: "hujambo", weight: 3 },
+                { value: "vipi", weight: 2 },
+                { value: "how are you", weight: 3 },
+                { value: "hey", weight: 2 },
+                { value: "hey mlue", weight: 3 },
+                { value: "mlue", weight: 3 },
+                { value: "hi mlue", weight: 3 },
+                { value: "hello mlue", weight: 3 },
+                { value: "mlue technology", weight: 3 }
+            ]
+        },
+        {
+            name: "services",
+            patterns: [
+                { value: "service", weight: 2 },
+                { value: "services", weight: 2 },
+                { value: "huduma", weight: 3 },
+                { value: "unatoa huduma gani", weight: 4 },
+                { value: "mnajihusisha na nini", weight: 4 },
+                { value: "what services do you offer", weight: 4 },
+                { value: "tell me about your services", weight: 4 },
+                { value: "what can you do", weight: 3 },
+                { value: "what do you offer", weight: 3 },
+                { value: "what do you provide", weight: 3 },
+                { value: "nifafanulie huduma zenu", weight: 4 },
+                { value: "nifafanulie huduma mlue", weight: 4 },
+                { value: "nifafanulie huduma mlue technology", weight: 5 }
+            ]
+        },
+        {
+            name: "contact",
+            patterns: [
+                { value: "contact", weight: 2 },
+                { value: "wasiliana", weight: 3 },
+                { value: "mawasiliano", weight: 3 },
+                { value: "contacts", weight: 2 },
+                { value: "how can i contact you", weight: 4 },
+                { value: "how can i reach you", weight: 4 },
+                { value: "nifafanulie jinsi ya kuwasiliana nanyi", weight: 5 },
+                { value: "nifafanulie jinsi ya kuwasiliana na mlue", weight: 5 },
+                { value: "nifafanulie jinsi ya kuwasiliana na mlue technology", weight: 5 },
+                { value: "ninaweza kuwapataje", weight: 4 },
+                { value: "ninaweza kuwasiliana nanyi", weight: 4 },
+                { value: "ninaweza kuwasiliana na mlue", weight: 4 },
+                { value: "ninaweza kuwasiliana na mlue technology", weight: 5 }
+            ]
+        },
+        {
+            name: "price",
+            patterns: [
+                { value: "pricing", weight: 2 },
+                { value: "cost", weight: 2 },
+                { value: "price", weight: 2 },
+                { value: "budget", weight: 2 },
+                { value: "bei zenu", weight: 3 },
+                { value: "bei zenu zipoje", weight: 4 },
+                { value: "how much does it cost", weight: 4 },
+                { value: "what is the price", weight: 4 },
+                { value: "nifafanulie bei zenu", weight: 4 },
+                { value: "nifafanulie bei mlue", weight: 4 },
+                { value: "nifafanulie bei mlue technology", weight: 5 },
+                { value: "how much do your services cost", weight: 4 },
+                { value: "what is the cost of your services", weight: 4 },
+                { value: "what is the price of your services", weight: 4 },
+                { value: "how much do you charge", weight: 4 },
+                { value: "what do you charge", weight: 4 },
+                { value: "what is your pricing", weight: 4 },
+                { value: "ni bei gani huduma zenu", weight: 5 },
+                { value: "ni bei gani huduma mlue", weight: 5 },
+                { value: "ni bei gani huduma mlue technology", weight: 5 },
+                { value: "nahitaji kujua bei za huduma zenu", weight: 5 },
+                { value: "nahitaji kujua bei za huduma mlue", weight: 5 },
+                { value: "nahitaji kujua bei za huduma mlue technology", weight: 5 },
+                { value: "gharimu kiasi gani", weight: 4 }
+            ]
+        },
+        {
+            name: "support",
+            patterns: [
+                { value: "support", weight: 2 },
+                { value: "msaada", weight: 3 },
+                { value: "help", weight: 2 },
+                { value: "assistance", weight: 2 },
+                { value: "can you help me", weight: 4 },
+                { value: "i need help", weight: 4 },
+                { value: "nifafanulie msaada wenu", weight: 5 },
+                { value: "nifafanulie msaada mlue", weight: 5 },
+                { value: "nifafanulie msaada mlue technology", weight: 5 },
+                { value: "can you assist me", weight: 4 },
+                { value: "i need assistance", weight: 4 },
+                { value: "how can you help me", weight: 4 },
+                { value: "how can you assist me", weight: 4 },
+                { value: "ninaweza kupata msaada gani kutoka kwenu", weight: 5 },
+                { value: "ninaweza kupata msaada gani kutoka mlue", weight: 5 },
+                { value: "ninaweza kupata msaada gani kutoka mlue technology", weight: 5 }
+            ]
+        },
+        {
+            name: "goodbye",
+            patterns: [
+                { value: "goodbye", weight: 3 },
+                { value: "bye", weight: 3 },
+                { value: "kwaheri", weight: 3 },
+                { value: "tutaonana baadaye", weight: 4 },
+                { value: "see you later", weight: 4 },
+                { value: "goodbye mlue", weight: 4 },
+                { value: "bye mlue", weight: 4 },
+                { value: "kwaheri mlue", weight: 4 }
+            ]
+        },
+        {
+            name: "about",
+            patterns: [
+                { value: "who are you", weight: 5 },
+                { value: "about you", weight: 4 },
+                { value: "details about you", weight: 4 },
+                { value: "tell me about you", weight: 5 },
+                { value: "what is mlue", weight: 5 },
+                { value: "what is mlue technology", weight: 5 },
+                { value: "tell me about mlue", weight: 5 },
+                { value: "nifafanulie mlue technology", weight: 5 },
+                { value: "nifafanulie mlue", weight: 5 },
+                { value: "nifafanulie kuhusu mlue technology", weight: 5 },
+                { value: "nifafanulie kuhusu mlue", weight: 5 },
+                { value: "nifafanulie kuhusu wewe", weight: 5 },
+                { value: "nifafanulie kuhusu nyie", weight: 5 },
+                { value: "kuhusu mlue", weight: 5 },
+                { value: "kuhusu mlue technology", weight: 5 },
+                { value: "mlue ni nini", weight: 5 },
+                { value: "nyie ni nani", weight: 5 },
+                { value: "kuhusu nyie", weight: 5 },
+                { value: "kuhusu wewe", weight: 5 }
+            ]
+        },
+        {
+            name: "switchingLanguage",
+            patterns: [
+                { value: "use swahili", weight: 6 },
+                { value: "switch to swahili", weight: 6 },
+                { value: "change to swahili", weight: 6 },
+                { value: "speak swahili", weight: 6 },
+                { value: "talk in swahili", weight: 6 },
+                { value: "reply in swahili", weight: 6 },
+                { value: "tumia swahili", weight: 6 },
+                { value: "badili kuwa swahili", weight: 6 },
+                { value: "ongea swahili", weight: 6 },
+                { value: "zungumza swahili", weight: 6 },
+                { value: "use english", weight: 6 },
+                { value: "switch to english", weight: 6 },
+                { value: "change to english", weight: 6 },
+                { value: "speak english", weight: 6 },
+                { value: "talk in english", weight: 6 },
+                { value: "reply in english", weight: 6 },
+                { value: "tumia english", weight: 6 },
+                { value: "badili kuwa english", weight: 6 },
+                { value: "ongea english", weight: 6 },
+                { value: "zungumza english", weight: 6 },
+                { value: "language", weight: 2 },
+                { value: "lugha", weight: 2 },
+                { value: "swahili", weight: 2 },
+                { value: "kiswahili", weight: 2 },
+                { value: "english", weight: 2 },
+                { value: "kiingereza", weight: 2 }
+            ]
+        },
+        {
+            name: "gracefulClosing",
+            patterns: [
+                { value: "thank you", weight: 4 },
+                { value: "thanks", weight: 3 },
+                { value: "asante", weight: 4 },
+                { value: "nashukuru", weight: 4 },
+                { value: "nashukuru sana", weight: 5 },
+                { value: "nashukuru kwa msaada wako", weight: 5 },
+                { value: "thank you mlue", weight: 5 },
+                { value: "thanks mlue", weight: 5 },
+                { value: "asante mlue", weight: 5 },
+                { value: "nashukuru mlue", weight: 5 }
+            ]
+        }
+    ];
+
+    const INTENT_RESPONSE_PRIORITY = [
+        "switchingLanguage",
+        "about",
+        "services",
+        "contact",
+        "price",
+        "support",
+        "greeting",
+        "goodbye",
+        "gracefulClosing"
+    ];
+
+    function detectIntent(text) {
+        const normalized = (text || "").toLowerCase();
+        const words = normalized.match(/[a-zA-Z\u00C0-\u024F]+/g) || [];
+
+        function scoreIntent(intent) {
+            let score = 0;
+
+            intent.patterns.forEach(pattern => {
+                const value = String(pattern.value || "").toLowerCase().trim();
+                const weight = Number(pattern.weight || 0);
+                if (!value || !weight) return;
+
+                if (value.includes(" ")) {
+                    if (normalized.includes(value)) {
+                        score += weight;
+                    }
+                    return;
+                }
+
+                if (words.includes(value)) {
+                    score += weight;
+                    return;
+                }
+
+                // Partial stem support for sentence variants like "helping", "services", etc.
+                if (value.length >= 4 && words.some(word => word.startsWith(value) || value.startsWith(word))) {
+                    score += Math.max(1, Math.floor(weight / 2));
+                }
+            });
+
+            if (intent.name === "about") {
+                if (normalized.includes("mlue") && (normalized.includes("who") || normalized.includes("about") || normalized.includes("kuhusu") || normalized.includes("nani") || normalized.includes("nini"))) {
+                    score += 3;
+                }
+            }
+
+            if (intent.name === "switchingLanguage") {
+                if (normalized.includes("swahili") || normalized.includes("kiswahili") || normalized.includes("english") || normalized.includes("kiingereza")) {
+                    score += 2;
+                }
+            }
+
+            return score;
+        }
+
+        let bestIntent = null;
+        let bestScore = 0;
+
+        for (const intent of INTENTS) {
+            const score = scoreIntent(intent);
+            if (score > bestScore) {
+                bestIntent = intent.name;
+                bestScore = score;
+            } else if (score === bestScore && score > 0) {
+                const currentPriority = INTENT_RESPONSE_PRIORITY.indexOf(bestIntent);
+                const newPriority = INTENT_RESPONSE_PRIORITY.indexOf(intent.name);
+                if (newPriority !== -1 && (currentPriority === -1 || newPriority < currentPriority)) {
+                    bestIntent = intent.name;
+                }
+            }
+        }
+
+        if (bestScore < 2) {
+            return null;
+        }
+
+        return bestIntent;
+    }
+
     function generateResponse(message, preferredLanguage) {
         const language = preferredLanguage || detectLanguage(message);
         const text = (message || "").toLowerCase();
@@ -93,13 +366,13 @@
         }
 
         const knowledgeBase = {
-            default: {
+            greeting: {
                 swahili: "Habari! Karibu MLUE Technology, tunaweza kukusaidia kwenye masuala ya kiteknolojia. Mimi ni msaidizi wako wa haraka, nikusaidie na nini leo? Unaweza kuchagua lugha ya mawasiliano, tukiwa na uwezo wa kuzungumza kwa Kiswahili na Kiingereza.",
                 english: "Hello! Welcome to MLUE Technology, we can assist you with technology-related matters. I am your quick assistant, how can I help you today? You can choose your preferred language for communication, as we are capable of conversing in both Swahili and English."
             },
             services: {
-                swahili: "Mlue Technology tunatoa huduma za kutengeneza tovuti (website), graphic design, backend API na suluhisho mbalimbali za kiteknolojia kwa maendeleo ya biashara yako.",
-                english: "Mlue Technology offers services such as website development, graphic design, backend API, and various technology solutions for the growth of your business."
+                swahili: "Mlue Technology tunatoa huduma za kutengeneza tovuti (website), graphic design, backend API na suluhisho mbalimbali za kiteknolojia kwa maendeleo ya biashara yako. Ungependa tukuhudumiaje? karibu Mlue Technology kwa huduma bora za kiteknolojia.",
+                english: "Mlue Technology offers services such as website development, graphic design, backend API, and various technology solutions for the growth of your business. How can we assist you? Welcome to Mlue Technology for excellent technology services."
             },
             contact: {
                 swahili: "Unaweza kuwasiliana na timu ya msaada ya Mlue kupitia barua pepe: mluetechnologytz@gmail.com, au kupitia simu: +255 752 804 154 na kupitia tovuti yetu https://mluetechnology.me.",
@@ -114,8 +387,8 @@
                 english: "Our support team is ready to assist you with any questions or issues you may have. Please contact us via email: mluetechnologytz@gmail.com"
             },
             unknown: {
-                swahili: "Samahani, siwezi kukusaidia kwa sasa. Tafadhali wasiliana na timu ya msaada ya Mlue kwa maelezo zaidi: kwa barua pepe: mluetechnologytz@gmail.com au kwa simu: +255 752 804 154.",
-                english: "Sorry, I cannot assist you at the moment. Please contact the Mlue support team for more information: via email: mluetechnologytz@gmail.com or by phone: +255 752 804 154."
+                swahili: "Samahani, nipo hapa kukusaidia kuhusu Mlue Technology Pekee. Tafadhali wasiliana na timu ya msaada ya Mlue kwa maelezo zaidi: kwa barua pepe: mluetechnologytz@gmail.com au kwa simu: +255 752 804 154.",
+                english: "Sorry, I am here to assist you with Mlue Technology specifically. Please contact the Mlue support team for more information: via email: mluetechnologytz@gmail.com or by phone: +255 752 804 154."
             },
             goodbye: {
                 swahili: "Asante kwa kuwasiliana na Mlue Technology. Ikiwa una maswali zaidi, usisite kuuliza! Tunatarajia kukusaidia tena siku zijazo.",
@@ -135,57 +408,15 @@
             }
         };
 
-        if (hasWord(["service", "services", "huduma"])) {
-            return knowledgeBase.services[language];
+        const intent = detectIntent(message);
+        if (knowledgeBase[intent]) {
+            return language === "swahili"
+                ? knowledgeBase[intent].swahili
+                : knowledgeBase[intent].english;
         }
-        if (hasWord(["contact", "wasiliana", "mawasiliano","contacts"])) {
-            return knowledgeBase.contact[language];
-        }
-        if (hasWord(["price", "pricing", "bei"])) {
-            return knowledgeBase.price[language];
-        }
-        if (hasWord(["support", "msaada"])) {
-            return knowledgeBase.support[language];
-        }
-        if (
-            hasPhrase([
-                "who are you",
-                "about you",
-                "details about you",
-                "tell me about you",
-                "what is mlue",
-                "what is mlue technology",
-                "tell me about mlue",
-                "nyie ni nani",
-                "kuhusu nyie",
-                "kuhusu wewe",
-                "mlue ni nini",
-                "niambie kuhusu mlue",
-                "mlue ni nani",
-                "nifafanulie mlue",
-                "nifafanulie kuhusu mlue",
-                "who is mlue",
-                "tell me about your company",
-                "what do you do"
-            ]) ||
-            hasWord(["kuhusu"]) ||
-            (hasWord(["mlue", "mlue technology"]) && hasWord(["about", "details", "info", "information", "nini", "what"]))
-        ) {
-            return knowledgeBase.about[language];
-        }
-        if (hasWord(["sawa", "okay", "ok"])) {
-            return knowledgeBase.gracefulClosing[language];
-        }
-        if (hasWord(["goodbye", "kwaheri", "asante"]) || hasPhrase(["thank you"])) {
-            return knowledgeBase.goodbye[language];
-        }
-        if (hasWord(["hello", "habari", "hi", "jambo", "mambo"])) {
-            return knowledgeBase.default[language];
-        }
-        if (hasWord(["english", "kiingereza", "swahili", "kiswahili"])) {
-            return knowledgeBase.switchingLanguage[language];
-        }
-        return knowledgeBase.unknown[language];
+        return language === "swahili"
+        ? "Naweza kusaidia kuhusu huduma za MLUE Technology kama POS systems, software, na branding. Ungependa kujua nini?"
+        : "I can help with MLUE Technology services like POS systems, software, and branding. What would you like to know?";
     }
 
     function initChatbotUI() {
@@ -235,8 +466,8 @@
             chatLanguage = inferred;
             appendMessage(
                 inferred === "swahili"
-                    ? "..."
-                    : "...",
+                    ? "Nimegundua unapendelea Kiswahili. Nitaendelea kukujibu kwa Kiswahili."
+                    : "I detected you prefer English. I will continue replying in English.",
                 "bot"
             );
         }
@@ -292,16 +523,6 @@
             chatToggle.classList.add("chatbot-toggle--active");
             chatToggle.setAttribute("aria-expanded", "true");
             chatWindow.setAttribute("aria-hidden", "false");
-
-            if (!hasWelcomed) {
-                appendMessage(
-                    chatLanguage === "swahili"
-                        ? "Habari! Karibu MLUE Technology. Mimi ni msaidizi wako, Naweza kukusaidiaje leo?"
-                        : "Hello! Welcome to MLUE Technology. I am your assistant, how can I help you today?",
-                    "bot"
-                );
-                hasWelcomed = true;
-            }
 
             chatInput.focus();
         }
