@@ -251,6 +251,9 @@ function setLanguage(lang) {
   });
 
   localStorage.setItem("mlue-lang", lang);
+
+  // Notify chatbot and other components of language change
+  document.dispatchEvent(new CustomEvent("mlue-language-changed", { detail: { lang } }));
 }
 
 // Initialize language switcher
