@@ -419,22 +419,153 @@
         : "I can help with MLUE Technology services like POS systems, software, and branding. What would you like to know?";
     }
 
+    const CHATBOT_STORAGE_KEY = "mlue-chatbot-state-v1";
+
+    function getDefaultChatbotState() {
+        return {
+            messages: [],
+            showHeader: true,
+            isOpen: false,
+            language: document.documentElement.lang === "sw" ? "swahili" : "english"
+        };
+    }
+
+    function loadChatbotState() {
+        try {
+            const saved = localStorage.getItem(CHATBOT_STORAGE_KEY);
+            if (!saved) {
+                return getDefaultChatbotState();
+            }
+
+            const parsed = JSON.parse(saved);
+            const defaults = getDefaultChatbotState();
+            return {
+                messages: Array.isArray(parsed.messages)
+                    ? parsed.messages
+                        .filter(item => item && (item.role === "user" || item.role === "bot") && typeof item.text === "string")
+                        .slice(-40)
+                    : defaults.messages,
+                showHeader: typeof parsed.showHeader === "boolean" ? parsed.showHeader : defaults.showHeader,
+                isOpen: typeof parsed.isOpen === "boolean" ? parsed.isOpen : defaults.isOpen,
+                language: parsed.language === "swahili" || parsed.language === "english"
+                    ? parsed.language
+                    : defaults.language
+            };
+        } catch (_error) {
+            return getDefaultChatbotState();
+        }
+    }
+
+    function createChatbotMarkup() {
+        const mount = document.createElement("div");
+        mount.innerHTML = [
+            '<button class="chatbot-toggle" id="chatToggle" aria-label="Open chat" aria-expanded="false">',
+            '  <span class="chatbot-toggle__label">ask mlue</span>',
+            '  <svg class="chatbot-toggle__icon chatbot-toggle__icon--chat" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+            '  <svg class="chatbot-toggle__icon chatbot-toggle__icon--close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+            '</button>',
+            '<div class="chatbot" id="chatWindow" aria-hidden="true">',
+            '  <div class="chatbot__header">',
+            '    <div class="chatbot__header-info">',
+            '      <div class="chatbot__avatar">',
+            '        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">',
+            '          <rect width="32" height="32" rx="8" fill="#1565C0"/>',
+            '          <path d="M8 22V10l5 6 5-6v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>',
+            '          <path d="M22 10v12h6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>',
+            '        </svg>',
+            '      </div>',
+            '      <div>',
+            '        <p class="chatbot__name">MLUE Assistant</p>',
+            '        <p class="chatbot__status" data-i18n="chat.online">Online</p>',
+            '      </div>',
+            '    </div>',
+            '    <button class="chatbot__close" id="chatClose" aria-label="Close chat">',
+            '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+            '    </button>',
+            '  </div>',
+            '  <div class="chatbot__messages" id="chatMessages"></div>',
+            '  <div class="chatbot__input">',
+            '    <input type="text" id="chatInput" data-i18n-placeholder="chat.placeholder" placeholder="Ask about MLUE Technology..." autocomplete="off" />',
+            '    <button id="chatSend" aria-label="Send">',
+            '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',
+            '    </button>',
+            '  </div>',
+            '</div>'
+        ].join("\n");
+
+        while (mount.firstChild) {
+            document.body.appendChild(mount.firstChild);
+        }
+    }
+
     function initChatbotUI() {
-        const chatToggle = document.getElementById("chatToggle");
-        const chatWindow = document.getElementById("chatWindow");
-        const chatClose = document.getElementById("chatClose");
-        const chatMessages = document.getElementById("chatMessages");
-        const chatInput = document.getElementById("chatInput");
-        const chatSend = document.getElementById("chatSend");
+        let chatToggle = document.getElementById("chatToggle");
+        let chatWindow = document.getElementById("chatWindow");
+        let chatClose = document.getElementById("chatClose");
+        let chatMessages = document.getElementById("chatMessages");
+        let chatInput = document.getElementById("chatInput");
+        let chatSend = document.getElementById("chatSend");
+
+        if (!chatToggle || !chatWindow || !chatClose || !chatMessages || !chatInput || !chatSend) {
+            createChatbotMarkup();
+            chatToggle = document.getElementById("chatToggle");
+            chatWindow = document.getElementById("chatWindow");
+            chatClose = document.getElementById("chatClose");
+            chatMessages = document.getElementById("chatMessages");
+            chatInput = document.getElementById("chatInput");
+            chatSend = document.getElementById("chatSend");
+        }
 
         if (!chatToggle || !chatWindow || !chatClose || !chatMessages || !chatInput || !chatSend) {
             return;
         }
 
-        let hasWelcomed = false;
-        let chatLanguage = document.documentElement.lang === "sw" ? "swahili" : "english";
+        if (!chatToggle.querySelector(".chatbot-toggle__label")) {
+            const label = document.createElement("span");
+            label.className = "chatbot-toggle__label";
+            label.textContent = "ask mlue";
+            chatToggle.insertBefore(label, chatToggle.firstChild);
+        }
+
+        const state = loadChatbotState();
+        let chatLanguage = state.language;
         let pendingReplyTimer = null;
         let typingNode = null;
+        let onboardingNode = null;
+
+        function saveChatState() {
+            state.language = chatLanguage;
+            state.isOpen = chatWindow.classList.contains("chatbot--open");
+            localStorage.setItem(CHATBOT_STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function getOnboardingText() {
+            return document.documentElement.lang === "sw"
+                ? "NIKUSAIDIEJE LEO?"
+                : "HOW CAN I HELP YOU TODAY";
+        }
+
+        function ensureOnboardingNode() {
+            if (onboardingNode && onboardingNode.isConnected) {
+                return;
+            }
+            onboardingNode = document.createElement("div");
+            onboardingNode.className = "chatbot__onboarding";
+            onboardingNode.textContent = getOnboardingText();
+        }
+
+        function updateOnboarding() {
+            const shouldShow = state.showHeader && state.messages.length === 0;
+            if (shouldShow) {
+                ensureOnboardingNode();
+                onboardingNode.textContent = getOnboardingText();
+                if (!onboardingNode.isConnected) {
+                    chatMessages.prepend(onboardingNode);
+                }
+            } else if (onboardingNode && onboardingNode.isConnected) {
+                onboardingNode.remove();
+            }
+        }
 
         function getLanguageSwitch(text) {
             const normalized = (text || "").toLowerCase();
@@ -487,7 +618,8 @@
             return linkedUrls.replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1">$1</a>');
         }
 
-        function appendMessage(text, role) {
+        function appendMessage(text, role, persist) {
+            const shouldPersist = persist !== false;
             const wrap = document.createElement("div");
             wrap.className = "chat-msg chat-msg--" + role;
 
@@ -502,6 +634,14 @@
             wrap.appendChild(bubble);
             chatMessages.appendChild(wrap);
             chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            if (shouldPersist) {
+                state.messages.push({ role, text: String(text) });
+                if (state.messages.length > 40) {
+                    state.messages = state.messages.slice(-40);
+                }
+                saveChatState();
+            }
         }
 
         function appendTyping() {
@@ -523,6 +663,7 @@
             chatToggle.classList.add("chatbot-toggle--active");
             chatToggle.setAttribute("aria-expanded", "true");
             chatWindow.setAttribute("aria-hidden", "false");
+            saveChatState();
 
             chatInput.focus();
         }
@@ -538,23 +679,27 @@
             }
             typingNode = null;
 
-            chatMessages.innerHTML = "";
             chatInput.value = "";
             chatInput.disabled = false;
             chatSend.disabled = false;
-            hasWelcomed = false;
-            chatLanguage = document.documentElement.lang === "sw" ? "swahili" : "english";
 
             chatWindow.classList.remove("chatbot--open");
             chatToggle.classList.remove("chatbot-toggle--active");
             chatToggle.setAttribute("aria-expanded", "false");
             chatWindow.setAttribute("aria-hidden", "true");
+            saveChatState();
         }
 
         function sendMessage() {
             const userText = chatInput.value.trim();
             if (!userText) {
                 return;
+            }
+
+            if (state.showHeader) {
+                state.showHeader = false;
+                updateOnboarding();
+                saveChatState();
             }
 
             appendMessage(userText, "user");
@@ -579,9 +724,11 @@
                             : "Language switched to English. Continue with any question, and I will reply in English.",
                         "bot"
                     );
+                    saveChatState();
                 } else {
                     applyImplicitLanguagePreference(userText);
                     appendMessage(generateResponse(userText, chatLanguage), "bot");
+                    saveChatState();
                 }
                 chatSend.disabled = false;
                 chatInput.disabled = false;
@@ -599,12 +746,34 @@
 
         chatClose.addEventListener("click", closeChat);
         chatSend.addEventListener("click", sendMessage);
+        chatInput.addEventListener("input", () => {
+            if (state.showHeader && chatInput.value.length > 0) {
+                state.showHeader = false;
+                updateOnboarding();
+                saveChatState();
+            }
+        });
         chatInput.addEventListener("keydown", event => {
             if (event.key === "Enter") {
                 event.preventDefault();
                 sendMessage();
             }
         });
+
+        // Render persisted conversation for continuity across pages.
+        chatMessages.innerHTML = "";
+        state.messages.forEach(item => {
+            appendMessage(item.text, item.role, false);
+        });
+        updateOnboarding();
+
+        if (state.isOpen) {
+            openChat();
+        } else {
+            closeChat();
+        }
+
+        document.addEventListener("languagechange", updateOnboarding);
     }
 
     if (typeof document !== "undefined") {

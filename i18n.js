@@ -83,6 +83,7 @@ const translations = {
     // Chatbot
     "chat.online": "Online",
     "chat.placeholder": "Ask about MLUE Technology...",
+    "chat.onboarding": "HOW CAN I HELP YOU TODAY",
 
    // Meet Our Engineers Section
     "engineers.label": "Meet Our Engineers",
@@ -199,6 +200,7 @@ const translations = {
     // Chatbot
     "chat.online": "Mtandaoni",
     "chat.placeholder": "Uliza kuhusu MLUE Technology...",
+    "chat.onboarding": "NIKUSAIDIEJE LEO?",
 
    // Meet Our Engineers Section
     "engineers.label": "Kutana na Wahandisi Wetu",
