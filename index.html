@@ -115,7 +115,7 @@
       </p>
 
       <div class="hero__actions">
-        <a href="#contact" class="btn btn--primary cta" data-i18n="cta.requestSolution">Request a Solution</a>
+        <button type="button" class="btn btn--primary cta" data-open-appointment-modal data-i18n="appointment.cta">Book Appointment</button>
         <a href="#services" class="btn btn--outline" data-i18n="cta.viewServices">View Services</a>
       </div>
     </div>
@@ -416,6 +416,66 @@
       </div>
     </div>
    </footer>
+
+  <!-- ===================== APPOINTMENT MODAL ===================== -->
+  <div class="appointment-modal" id="appointmentModal" aria-hidden="true">
+    <div class="appointment-modal__backdrop" data-modal-close></div>
+    <div class="appointment-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="appointmentModalTitle">
+      <button type="button" class="appointment-modal__close" data-modal-close aria-label="Close appointment form">&times;</button>
+
+      <div class="appointment-modal__header">
+        <p class="section-label" data-i18n="appointment.label">Book a Meeting</p>
+        <h2 class="appointment-modal__title" id="appointmentModalTitle" data-i18n="appointment.title">Book an Appointment</h2>
+        <p class="appointment-modal__subtitle" data-i18n="appointment.subtitle">
+          Tell us what you'd like to discuss and choose a future time that works for you.
+        </p>
+      </div>
+
+      <form class="appointment-modal__form" id="appointmentForm" action="https://formsubmit.co/mluetechnologytz@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_subject" value="New appointment request from MLUE Technology website" />
+
+        <div class="appointment-modal__grid">
+          <div class="form-group">
+            <label for="appointmentName" data-i18n="appointment.nameLabel">Full Name</label>
+            <input type="text" id="appointmentName" name="name" required data-modal-autofocus data-i18n-placeholder="appointment.namePlaceholder" placeholder="Enter your full name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="appointmentEmail" data-i18n="appointment.emailLabel">Email Address</label>
+            <input type="email" id="appointmentEmail" name="email" required data-i18n-placeholder="appointment.emailPlaceholder" placeholder="Enter your email" autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="appointment-modal__grid">
+          <div class="form-group">
+            <label for="appointmentDateTime" data-i18n="appointment.datetimeLabel">Preferred date &amp; time</label>
+            <input type="datetime-local" id="appointmentDateTime" name="preferred_datetime" required data-datetime-min />
+            <p class="appointment-modal__hint" data-i18n="appointment.timeHint">Select a future date and time.</p>
+          </div>
+          <div class="form-group">
+            <label for="appointmentPhone" data-i18n="appointment.phoneLabel">Phone number (optional)</label>
+            <input type="tel" id="appointmentPhone" name="phone" data-i18n-placeholder="appointment.phonePlaceholder" placeholder="Enter your phone number" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="appointmentPurpose" data-i18n="appointment.reasonLabel">Purpose / reason for appointment</label>
+          <textarea id="appointmentPurpose" name="purpose" rows="4" required data-i18n-placeholder="appointment.reasonPlaceholder" placeholder="What would you like to discuss?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="appointmentNotes" data-i18n="appointment.notesLabel">Additional notes (optional)</label>
+          <textarea id="appointmentNotes" name="notes" rows="3" data-i18n-placeholder="appointment.notesPlaceholder" placeholder="Share any extra details we should know"></textarea>
+        </div>
+
+        <div class="appointment-modal__actions">
+          <button type="button" class="btn btn--outline" data-modal-close data-i18n="appointment.cancel">Cancel</button>
+          <button type="submit" class="btn btn--primary" data-i18n="appointment.submit">Request Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- ===================== CHATBOT ===================== -->
   <button class="chatbot-toggle" id="chatToggle" aria-label="Open chat">
