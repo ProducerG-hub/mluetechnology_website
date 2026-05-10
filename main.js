@@ -109,6 +109,177 @@
     });
   }
 
+  function getCurrentLang() {
+    return typeof window.currentLang !== "undefined" ? window.currentLang : "en";
+  }
+
+  function formatLocalDateTime(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    return year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+  }
+
+  function syncFutureDatetimeInputs(root) {
+    if (!root) return;
+    const minValue = formatLocalDateTime(new Date());
+    root.querySelectorAll("[data-datetime-min]").forEach(input => {
+      input.min = minValue;
+    });
+  }
+
+  function isFutureDateTimeValid(input) {
+    if (!input || !input.value) return false;
+    const selectedTime = new Date(input.value);
+    if (Number.isNaN(selectedTime.getTime())) return false;
+    return selectedTime.getTime() >= Date.now();
+  }
+
+  function submitLeadForm(form, options) {
+    const submitButton = form.querySelector("button[type=submit]");
+    if (!submitButton) return;
+
+    const originalText = submitButton.textContent;
+    const lang = getCurrentLang();
+    const loadingText = options.loadingText ? options.loadingText[lang] || options.loadingText.en : (lang === "sw" ? "Inatuma..." : "Sending...");
+    const successTitle = options.successTitle ? options.successTitle[lang] || options.successTitle.en : (lang === "sw" ? "Imetumwa!" : "Request Sent!");
+    const successMessage = options.successMessage ? options.successMessage[lang] || options.successMessage.en : (lang === "sw" ? "Ombi lako limetumwa kwa timu yetu." : "Your request was sent to our team.");
+    const errorTitle = options.errorTitle ? options.errorTitle[lang] || options.errorTitle.en : (lang === "sw" ? "Imeshindikana" : "Failed to Send");
+    const errorMessage = options.errorMessage ? options.errorMessage[lang] || options.errorMessage.en : (lang === "sw" ? "Tafadhali jaribu tena baadae." : "Please try again in a moment.");
+
+    submitButton.disabled = true;
+    submitButton.textContent = loadingText;
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    })
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Server error");
+      }
+
+      showToast("success", successTitle, successMessage);
+      form.reset();
+
+      if (typeof options.onSuccess === "function") {
+        options.onSuccess();
+      }
+    })
+    .catch(() => {
+      showToast("error", errorTitle, errorMessage);
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    });
+  }
+
+  function openModal(modal, trigger) {
+    if (!modal) return;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    syncFutureDatetimeInputs(modal);
+
+    const autofocusTarget =
+      modal.querySelector("[data-modal-autofocus]") ||
+      modal.querySelector("input:not([type=hidden]), textarea") ||
+      modal.querySelector("button[data-modal-close]");
+    if (autofocusTarget) {
+      window.requestAnimationFrame(() => autofocusTarget.focus({ preventScroll: true }));
+    }
+
+    modal._returnFocusTo = trigger || document.activeElement;
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+    if (modal._returnFocusTo && typeof modal._returnFocusTo.focus === "function") {
+      modal._returnFocusTo.focus({ preventScroll: true });
+    }
+    modal._returnFocusTo = null;
+  }
+
+  function wireAppointmentModal() {
+    const modal = document.getElementById("appointmentModal");
+    const form = document.getElementById("appointmentForm");
+
+    if (!modal) return;
+
+    document.querySelectorAll("[data-open-appointment-modal]").forEach(trigger => {
+      trigger.addEventListener("click", () => openModal(modal, trigger));
+    });
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal || event.target.hasAttribute("data-modal-close")) {
+        closeModal(modal);
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal(modal);
+      }
+    });
+
+    if (form) {
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const dateTimeInput = form.querySelector("#appointmentDateTime");
+        if (!isFutureDateTimeValid(dateTimeInput)) {
+          showToast(
+            "error",
+            getCurrentLang() === "sw" ? "Chagua muda ujao" : "Choose a future time",
+            getCurrentLang() === "sw"
+              ? "Tafadhali weka tarehe na saa ambayo haijapita."
+              : "Please select a date and time that has not already passed."
+          );
+          if (dateTimeInput) {
+            dateTimeInput.focus({ preventScroll: true });
+          }
+          return;
+        }
+
+        submitLeadForm(form, {
+          loadingText: {
+            en: "Booking...",
+            sw: "Inatuma..."
+          },
+          successTitle: {
+            en: "Appointment Requested!",
+            sw: "Ombi Limetumwa!"
+          },
+          successMessage: {
+            en: "Your appointment request has been sent to our team.",
+            sw: "Ombi lako la miadi limetumwa kwa timu yetu."
+          },
+          errorTitle: {
+            en: "Failed to Send",
+            sw: "Imeshindikana"
+          },
+          errorMessage: {
+            en: "We could not send your appointment request. Please try again.",
+            sw: "Hatukuweza kutuma ombi lako la miadi. Tafadhali jaribu tena."
+          },
+          onSuccess: () => closeModal(modal)
+        });
+      });
+    }
+  }
+
+  wireAppointmentModal();
+
   // ---- Contact form — Email (Formsubmit.co) + WhatsApp ----
   const WHATSAPP_NUMBER = "255752804154";
 
@@ -116,68 +287,33 @@
   if (form) {
     form.addEventListener("submit", e => {
       e.preventDefault();
-      const btn = form.querySelector("button[type=submit]");
-      const origText = btn.textContent;
       const name = form.querySelector("#name").value.trim();
       const email = form.querySelector("#email").value.trim();
       const message = form.querySelector("#message").value.trim();
 
       if (!name || !email || !message) return;
 
-      // Disable button while sending
-      btn.disabled = true;
-      const lang = typeof window.currentLang !== "undefined" ? window.currentLang : "en";
-      btn.textContent = lang === "sw" ? "Inatuma..." : "Sending...";
-
-      // Send email via Formsubmit.co AJAX
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-      })
-      .then(res => {
-        if (res.ok) {
-          // Build WhatsApp message
-          const waMsg = encodeURIComponent(
-            "*New Inquiry — MLUE Technology*\n\n" +
-            "Name: " + name + "\n" +
-            "Email: " + email + "\n\n" +
-            "Message:\n" + message
-          );
-          //const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + waMsg;
-
-          // Show success toast
-          showToast(
-            "success",
-            lang === "sw" ? "Imetumwa!" : "Message Sent!",
-            lang === "sw"
-              ? "Ujumbe wako umetumwa kwa barua pepe. Asante kwa kuwasiliana nasi!."
-              : "Your message was sent via email. Thank you for reaching out to us!."
-          );
-
-          form.reset();
-
-          setTimeout(() => {
-            //window.open(waUrl, "_blank");
-          }, 1500);
-        } else {
-          throw new Error("Server error");
+      submitLeadForm(form, {
+        loadingText: {
+          en: "Sending...",
+          sw: "Inatuma..."
+        },
+        successTitle: {
+          en: "Message Sent!",
+          sw: "Imetumwa!"
+        },
+        successMessage: {
+          en: "Your message was sent via email. Thank you for reaching out to us!.",
+          sw: "Ujumbe wako umetumwa kwa barua pepe. Asante kwa kuwasiliana nasi!."
+        },
+        errorTitle: {
+          en: "Failed to Send",
+          sw: "Imeshindikana"
+        },
+        errorMessage: {
+          en: "Email could not be sent. Please try again or contact us directly.",
+          sw: "Barua pepe haijatumwa. Tafadhali jaribu tena au wasiliana nasi moja kwa moja."
         }
-      })
-      .catch(() => {
-        showToast(
-          "error",
-          lang === "sw" ? "Imeshindikana" : "Failed to Send",
-          lang === "sw"
-            ? "Barua pepe haijatumwa. Tafadhali jaribu tena au wasiliana nasi moja kwa moja."
-            : "Email could not be sent. Please try again or contact us directly."
-        );
-      })
-      .finally(() => {
-        btn.disabled = false;
-        btn.textContent = origText;
       });
     });
   }
