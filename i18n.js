@@ -260,6 +260,23 @@ function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
 
+  // Use requestIdleCallback to defer DOM updates until after paint
+  if (window.requestIdleCallback) {
+    requestIdleCallback(() => {
+      updateTranslations(lang);
+    });
+  } else {
+    // Fallback for browsers without requestIdleCallback
+    setTimeout(() => {
+      updateTranslations(lang);
+    }, 100);
+  }
+
+  localStorage.setItem("mlue-lang", lang);
+  document.dispatchEvent(new CustomEvent("mlue-language-changed", { detail: { lang } }));
+}
+
+function updateTranslations(lang) {
   // Update text content or HTML
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
@@ -285,11 +302,6 @@ function setLanguage(lang) {
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
-
-  localStorage.setItem("mlue-lang", lang);
-
-  // Notify chatbot and other components of language change
-  document.dispatchEvent(new CustomEvent("mlue-language-changed", { detail: { lang } }));
 }
 
 // Initialize language switcher
