@@ -674,6 +674,30 @@ input, textarea { font-family: inherit; }
   color: var(--gray-500);
 }
 
+/* Social icons in footer */
+.footer__social {
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--gray-400);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: var(--transition);
+}
+.footer__social-link:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.04);
+  transform: translateY(-2px);
+}
+
 /* css for privacy policy */
 
 .privacy-policy {
