@@ -43,8 +43,8 @@
 /* ---------- Font Display Optimization ---------- */
 @font-face {
   font-family: "bootstrap-icons";
-  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/dist/fonts/bootstrap-icons.woff2?v=1.10.5") format("woff2"),
-       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/dist/fonts/bootstrap-icons.woff?v=1.10.5") format("woff");
+  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a") format("woff2"),
+       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/fonts/bootstrap-icons.woff?e34853135f9e39acf64315236852cd5a") format("woff");
   font-display: swap;
   font-weight: 400;
   font-style: normal;
