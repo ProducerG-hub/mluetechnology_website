@@ -322,9 +322,15 @@
   const canvas = document.getElementById("heroCanvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
     let w, h, nodes;
-    const NODE_COUNT = 60;
-    const MAX_DIST = 140;
+    let heroConfig = getHeroCanvasConfig();
+
+    function getHeroCanvasConfig() {
+      return mobileQuery.matches
+        ? { nodeCount: 22, maxDist: 96, velocity: 0.35, radiusMin: 0.9, radiusMax: 1.7 }
+        : { nodeCount: 60, maxDist: 140, velocity: 0.5, radiusMin: 1, radiusMax: 3 };
+    }
 
     function resize() {
       w = canvas.width = canvas.offsetWidth;
@@ -332,19 +338,21 @@
     }
 
     function createNodes() {
+      heroConfig = getHeroCanvasConfig();
       nodes = [];
-      for (let i = 0; i < NODE_COUNT; i++) {
+      for (let i = 0; i < heroConfig.nodeCount; i++) {
         nodes.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          r: Math.random() * 2 + 1
+          vx: (Math.random() - 0.5) * heroConfig.velocity,
+          vy: (Math.random() - 0.5) * heroConfig.velocity,
+          r: Math.random() * (heroConfig.radiusMax - heroConfig.radiusMin) + heroConfig.radiusMin
         });
       }
     }
 
     function draw() {
+      const { maxDist } = heroConfig;
       ctx.clearRect(0, 0, w, h);
 
       // Draw connections
@@ -353,8 +361,8 @@
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < MAX_DIST) {
-            const alpha = 1 - dist / MAX_DIST;
+          if (dist < maxDist) {
+            const alpha = 1 - dist / maxDist;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -390,6 +398,16 @@
     window.addEventListener("resize", () => {
       resize();
       createNodes();
-    });
+    }, { passive: true });
+
+    const refreshForBreakpoint = () => {
+      createNodes();
+    };
+
+    if (typeof mobileQuery.addEventListener === "function") {
+      mobileQuery.addEventListener("change", refreshForBreakpoint);
+    } else if (typeof mobileQuery.addListener === "function") {
+      mobileQuery.addListener(refreshForBreakpoint);
+    }
   }
 })();
