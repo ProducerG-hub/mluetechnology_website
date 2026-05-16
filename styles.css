@@ -83,7 +83,7 @@ section:not(:first-of-type) {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--blue-600);
+  color: var(--blue-800);
   margin-bottom: 8px;
 }
 .section-title {
@@ -223,22 +223,23 @@ section:not(:first-of-type) {
   background: var(--gray-100);
   padding: 4px 8px;
   border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-200);
 }
 .lang-btn {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--gray-400);
+  color: var(--gray-700);
   padding: 2px 6px;
   border-radius: 4px;
   transition: var(--transition);
 }
 .lang-btn.active {
-  color: var(--blue-700);
+  color: var(--blue-900);
   background: var(--white);
   box-shadow: var(--shadow-sm);
 }
 .lang-divider {
-  color: var(--gray-300);
+  color: var(--gray-500);
   font-size: 0.75rem;
 }
 
@@ -298,8 +299,9 @@ section:not(:first-of-type) {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: var(--blue-600);
+  color: var(--blue-900);
   background: var(--blue-50);
+  border: 1px solid var(--blue-100);
   padding: 6px 16px;
   border-radius: 100px;
   margin-bottom: 20px;
@@ -521,12 +523,12 @@ section:not(:first-of-type) {
 .why-card__number {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--blue-100);
+  color: var(--blue-700);
   margin-bottom: 12px;
   line-height: 1;
 }
 .why-card:hover .why-card__number {
-  color: var(--blue-400);
+  color: var(--blue-900);
 }
 .why-card__title {
   font-size: 1.05rem;
@@ -576,7 +578,7 @@ section:not(:first-of-type) {
 }
 .contact-item__label {
   font-size: 0.8125rem;
-  color: var(--gray-400);
+  color: var(--gray-600);
   font-weight: 500;
   margin-bottom: 2px;
 }
@@ -635,7 +637,7 @@ section:not(:first-of-type) {
    =================================================== */
 .footer {
   background: var(--blue-900);
-  color: var(--gray-400);
+  color: var(--gray-300);
   padding: 60px 0 0;
 }
 .footer__top {
@@ -648,7 +650,7 @@ section:not(:first-of-type) {
 .footer__tagline {
   font-size: 0.9rem;
   margin-top: 10px;
-  color: var(--gray-400);
+  color: var(--gray-300);
   max-width: 320px;
   line-height: 1.6;
 }
@@ -657,7 +659,7 @@ section:not(:first-of-type) {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--gray-300);
+  color: var(--white);
   margin-bottom: 16px;
 }
 .footer__links {
@@ -667,7 +669,7 @@ section:not(:first-of-type) {
 }
 .footer__links a {
   font-size: 0.875rem;
-  color: var(--gray-400);
+  color: var(--gray-300);
   transition: var(--transition);
 }
 .footer__links a:hover {
@@ -677,7 +679,7 @@ section:not(:first-of-type) {
   padding: 20px 0;
   text-align: center;
   font-size: 0.8125rem;
-  color: var(--gray-500);
+  color: var(--gray-300);
 }
 
 /* Social icons in footer */
@@ -693,7 +695,7 @@ section:not(:first-of-type) {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: var(--gray-400);
+  color: var(--gray-300);
   background: transparent;
   border: 1px solid rgba(255,255,255,0.06);
   transition: var(--transition);
