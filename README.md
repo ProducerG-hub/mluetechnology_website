@@ -6,6 +6,10 @@ MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site desig
 
 - Production: https://mluetechnology.me
 
+## Changelog
+
+- 2026-05-16: Reviewed repository files and updated documentation to reflect current structure (corrected `ToS/` → `terms/`) and added summary notes.
+
 ## What This Project Includes
 
 - A modern homepage for business technology services
@@ -55,8 +59,8 @@ MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site desig
 |   `-- index.html
 |-- projects/
 |   `-- index.html
-`-- ToS/
-    `-- index.html
+`-- terms/
+  `-- index.html
 ```
 
 ## Pricing Page Summary
