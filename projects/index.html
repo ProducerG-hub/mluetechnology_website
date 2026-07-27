@@ -58,76 +58,85 @@
       <div class="header__actions">
         <a href="/" class="btn btn--primary btn--sm header__home-btn" data-i18n="nav.cta">Home</a>
       </div>
-     
     </div>
   </header>
 
-
-  <main>
-    <section class="projects-showcase" aria-labelledby="projects-showcase-title">
+<main>
+    <section class="portfolio-hub" aria-labelledby="portfolio-hub-title">
       <div class="container">
-        <p class="section-label">Our Work</p>
-        <h1 class="section-title" id="projects-showcase-title">Featured Projects</h1>
-        <p class="section-subtitle">Detailed case studies showing the challenge, our approach, and direct client feedback.</p>
+        
+        <!-- Hero Section -->
+        <div class="portfolio-hub__header">
+          <p class="section-label">Our Expertise</p>
+          <h1 class="portfolio-hub__title" id="portfolio-hub-title">Technology Solutions That Drive Business Growth</h1>
+          <p class="portfolio-hub__subtitle">
+            We develop custom software and geospatial solutions to help organizations improve efficiency, automate operations, and make smarter, data-driven decisions.
+          </p>
+        </div>
 
-        <div class="projects-showcase__grid">
-          <article class="project-card">
-            <div class="project-card__image" role="img" aria-label="Project image placeholder">
-                <img src="/assets/projects/me.webp" alt="Herbal Clinic Landing Page" class="project-card__img" loading="lazy" width="300" height="200"/>
+        <!-- Categories Grid -->
+        <div class="category-grid">
+          
+          <!-- Category 1: Business Software Solutions -->
+          <a href="/projects/software-solutions/" class="category-card" aria-label="Explore Business Software Solutions">
+            <div class="category-card__icon-wrapper">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
             </div>
-            <div class="project-card__content">
-              <h2 class="project-card__title">Herbal Clinic Landing Page</h2>
-              <div class="project-card__details">
-                <div class="project-card__detail">
-                  <h3 class="project-card__label">Problem</h3>
-                  <p class="project-card__text">The clinic had no clear digital presence, making it difficult for new patients to discover services and book consultations with confidence.</p>
-                </div>
-                <div class="project-card__detail">
-                  <h3 class="project-card__label">Solution</h3>
-                  <p class="project-card__text">We delivered a modern, mobile-first landing page with clear service sections, trust-building visuals, and focused call-to-action areas that guide visitors to contact the clinic quickly.</p>
-                </div>
-                <div class="project-card__detail project-card__detail--quote">
-                  <h3 class="project-card__label">What Client Said</h3>
-                  <p class="project-card__quote">"The new website gave our clinic a professional image immediately, and we started receiving more serious inquiries within the first few weeks."</p>
-                </div>
-              </div>
-              <a class="project-card__link" href="https://naturalherbal.netlify.app/" rel="nofollow">View Project</a>
+            <h2 class="category-card__title">Business Software Solutions</h2>
+            <p class="category-card__desc">
+              Custom software systems designed to automate business operations, improve organizational productivity, and support better decision-making at every level.
+            </p>
+            
+            <div class="category-card__features-section">
+              <h3 class="category-card__features-title">Featured Solutions</h3>
+              <ul class="category-card__features">
+                <li class="category-card__feature-pill">Inventory Management System</li>
+              </ul>
             </div>
-          </article>
 
-          <article class="project-card">
-            <div class="project-card__image" role="img" aria-label="Project image placeholder">
-                <img src="/assets/projects/daav-ngo.webp" alt="DAAV NGO Website" class="project-card__img" loading="lazy" width="300" height="200"/>
+            <div class="category-card__cta">
+              Explore Solutions 
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
             </div>
-            <div class="project-card__content">
-              <h2 class="project-card__title">DAAV NGO Website</h2>
-              <div class="project-card__details">
-                <div class="project-card__detail">
-                  <h3 class="project-card__label">Problem</h3>
-                  <p class="project-card__text">The organization needed a clearer way to present its impact and programs to partners, donors, and the public.</p>
-                </div>
-                <div class="project-card__detail">
-                  <h3 class="project-card__label">Solution</h3>
-                  <p class="project-card__text">We created a responsive, content-first website that highlights initiatives, tells impact stories, and provides straightforward paths for collaboration and support.</p>
-                </div>
-                <div class="project-card__detail project-card__detail--quote">
-                  <h3 class="project-card__label">What Client Said</h3>
-                  <p class="project-card__quote">"Our mission is now easy to understand online. Partners can quickly see what we do and how to work with us."</p>
-                </div>
-              </div>
-              <a class="project-card__link" href="https://daav-ngo.netlify.app/" rel="nofollow">View Project</a>
-            </div>
-          </article>
+          </a>
 
+          <!-- Category 2: Location Intelligence -->
+          <a href="/projects/location-intelligence/" class="category-card" aria-label="Explore Location Intelligence">
+            <div class="category-card__icon-wrapper">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h2 class="category-card__title">Location Intelligence</h2>
+            <p class="category-card__desc">
+              Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize field operations, and make strategic location-based decisions.
+            </p>
+            
+            <div class="category-card__features-section">
+              <h3 class="category-card__features-title">Featured Solutions</h3>
+              <ul class="category-card__features">
+                <li class="category-card__feature-pill">Telecom Base Station Site Selection</li>
+              </ul>
+            </div>
+
+            <div class="category-card__cta">
+              Explore Solutions 
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </div>
+          </a>
 
         </div>
       </div>
     </section>
   </main>
 
-
-
-<footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
@@ -181,37 +190,33 @@
     </div>
   </footer>
 
-  
   <script src="../i18n.js" defer></script>
   <script src="../main.js" defer></script>
   <script src="../chatbot.js" defer></script>
-    <script>
-        // Set current year in footer
-        document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-        // Reveal Problem/Solution/Client sections with a subtle stagger on scroll.
-        (function () {
-          const detailBlocks = document.querySelectorAll('.project-card__detail');
-          if (!detailBlocks.length || !('IntersectionObserver' in window)) return;
-
-          detailBlocks.forEach((block, index) => {
-            block.classList.add('reveal');
-            block.style.setProperty('--reveal-delay', (index % 3) * 90 + 'ms');
-          });
-
-          const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) return;
-              entry.target.classList.add('visible');
-              obs.unobserve(entry.target);
-            });
-          }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
-
-          detailBlocks.forEach((block) => observer.observe(block));
-        })();
-    </script>
-
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
 
     
+    (function () {
+      const detailBlocks = document.querySelectorAll('.project-card__detail');
+      
+      if (!detailBlocks.length || !('IntersectionObserver' in window)) return;
+
+      detailBlocks.forEach((block, index) => {
+        block.classList.add('reveal');
+        block.style.setProperty('--reveal-delay', (index % 3) * 90 + 'ms');
+      });
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
+
+      detailBlocks.forEach((block) => observer.observe(block));
+    })();
+  </script>
 </body>
 </html>

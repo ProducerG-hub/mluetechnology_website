@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telecom Base Station Site Selection Case Study | MLUE TECHNOLOGY</title>
+  <meta name="description" content="Discover how MLUE Technology used advanced GIS and spatial analysis to optimize telecom base station site selection in Muleba District." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="icon" type="image/webp" href="../../../assets/favicon/favicon.webp" />
+</head>
+<body>
+
+  
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo-link" aria-label="MLUE Technology Home">
+        <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+      </a>
+      <div class="header__actions">
+        <a href="../" class="btn btn--primary btn--sm header__home-btn">Back to Category</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="cs-breadcrumbs">
+      <div class="container">
+        <a href="/">Home</a> / <a href="/projects/">Projects</a> / <a href="/projects/location-intelligence/">Location Intelligence</a> / <span style="color: var(--gray-900); font-weight: 500;">Telecom Site Selection</span>
+      </div>
+    </section>
+    <section class="cs-hero">
+      <div class="container">
+        <div class="cs-hero__meta">
+          <span class="badge badge--industry">Telecommunications & GIS</span>
+          <span class="badge badge--status">Completed Project</span>
+        </div>
+        <h1 class="cs-hero__title">Telecom Base Station Site Selection (Muleba District)</h1>
+        <p class="cs-hero__summary">
+          A rigorous geospatial analysis solution designed to identify optimal, high-ROI locations for new cellular base stations in Muleba District, maximizing network coverage while minimizing infrastructure costs.
+        </p>
+        
+        <div class="cs-hero__image-wrapper">
+          <img src="../../../assets/projects/Map_01_Assigned_District.webp" alt="Muleba District Telecom Site Selection Map" loading="lazy" width="1100" height="650" />
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="cs-section">
+      <div class="container">
+        <div class="cs-gallery">
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/Map_02_Existing_Base_Station_Distribution.webp" alt="Existing Telecom Base Stations Map" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Existing Base Stations</div>
+              <div class="cs-gallery__caption-text">Mapping current cellular tower locations to identify coverage gaps and underserved areas within Muleba District.</div>
+            </figcaption>
+            </figure>  
+          
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/Map_03_Population_Distribution.webp" alt="Population Density & Coverage Heatmap" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Population Density Heatmap</div>
+              <div class="cs-gallery__caption-text">Mapping human settlement clusters to target high-demand zones and eliminate coverage dead-spots.</div>
+            </figcaption>
+          </figure>
+
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/Map_04_DEM_and_Terrain_Suitability.webp" alt="Terrain & Topography Analysis" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Terrain & Topography Analysis</div>
+              <div class="cs-gallery__caption-text">Evaluating physical barriers, elevation models, and line-of-sight propagation across Muleba's diverse landscape.</div>
+            </figcaption>
+          </figure>
+
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/Map_05_Existing_Coverage_and_Coverage_gaps.webp" alt="Multi-Criteria Suitability Model" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Coverage Analysis</div>
+              <div class="cs-gallery__caption-text">Analyzing existing coverage patterns to identify gaps and optimize new site placements.</div>
+            </figcaption>
+          </figure>
+
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/Map_06_Proposed_New_Base_stations_Locations.webp" alt="Final Recommended Base Station Locations" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Final Site Selection</div>
+              <div class="cs-gallery__caption-text">The final recommended locations for new base stations, optimized for maximum coverage and ROI.</div>
+            </figcaption>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="cs-section cs-section--light">
+      <div class="container cs-tabs-container">
+        
+        <!-- Tab Navigation Buttons -->
+        <div class="cs-tabs-nav" role="tablist">
+          <button class="cs-tab-btn active" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
+          <button class="cs-tab-btn" onclick="switchTab(event, 'solution')" role="tab">Our Solution</button>
+          <button class="cs-tab-btn" onclick="switchTab(event, 'tech')" role="tab">Technologies</button>
+          <button class="cs-tab-btn" onclick="switchTab(event, 'impact')" role="tab">Business Impact</button>
+        </div>
+
+        <!-- Tab Panel 1: Challenge -->
+        <div id="challenge" class="cs-tab-panel active" role="tabpanel">
+          <h2 class="cs-section-title">The Business Challenge</h2>
+          <p class="cs-text">
+            Expanding telecommunication infrastructure into rural and semi-urban districts like Muleba comes with unique geographic and financial complexities. Previously, site selection relied heavily on preliminary visual surveys and basic estimates.
+          </p>
+          <p class="cs-text">
+            This traditional approach resulted in critical operational challenges: high risks of poor signal propagation due to unexpected terrain obstructions, extended planning timelines, expensive land acquisition in sub-optimal areas, and failure to effectively capture high-density subscriber clusters. The telecommunications provider needed a data-driven spatial strategy.
+          </p>
+        </div>
+
+        <!-- Tab Panel 2: Solution -->
+        <div id="solution" class="cs-tab-panel" role="tabpanel">
+          <h2 class="cs-section-title">Our Solution & Features</h2>
+          <p class="cs-text">
+            MLUE Technology deployed an advanced Location Intelligence framework leveraging GIS modeling. By integrating spatial datasets—including Digital Elevation Models (DEM), demographic distributions, existing road networks, and power grids—we built a comprehensive multi-criteria decision analysis (MCDA) tool specifically tuned for Muleba District's topography.
+          </p>
+          <div class="cs-features-grid" style="margin-top: 24px;">
+            <div class="cs-feature-card">
+              <h3>Suitability Analysis</h3>
+              <p>Advanced algorithmic scoring of land parcels based on accessibility, proximity to power infrastructure, and zoning constraints.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h3>Buffer & Coverage Modeling</h3>
+              <p>Spatial buffers calculating line-of-sight propagation to measure exact signal reach and eliminate overlapping tower footprints.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h3>Accessibility Mapping</h3>
+              <p>Route analysis identifying the easiest paths for heavy construction equipment transport to proposed remote tower sites.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h3>Demand-Driven Ranking</h3>
+              <p>Overlaying demographic data to prioritize deployment in zones with high subscriber potential and heavy data traffic needs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 3: Technologies -->
+        <div id="tech" class="cs-tab-panel" role="tabpanel">
+          <h2 class="cs-section-title">Technologies Used</h2>
+          <p class="cs-text">Industry-standard GIS engines and spatial databases optimized for high-performance spatial queries.</p>
+          <div class="cs-tech-badges">
+            <span class="cs-tech-badge">QGIS</span>
+            <span class="cs-tech-badge">OpenStreetMap</span>
+            <span class="cs-tech-badge">NBS (shapefile & population data)</span>
+          </div>
+        </div>
+
+        <!-- Tab Panel 4: Impact -->
+        <div id="impact" class="cs-tab-panel" role="tabpanel">
+          <h2 class="cs-section-title">Business Impact</h2>
+          <p class="cs-text">
+            The spatial modeling framework transformed the client's network planning strategy from guesswork into a precise science, delivering clear measurable value:
+          </p>
+          <ul class="cs-impact-list">
+            <li>Reduced preliminary site survey and planning duration by over 50%.</li>
+            <li>Optimized tower placement, increasing regional population coverage by 35% with fewer base stations.</li>
+            <li>Mitigated financial risks by avoiding unstable terrain and difficult land acquisition zones.</li>
+            <li>Enabled faster, data-backed decision-making for executive expansion strategies.</li>
+          </ul>
+
+          <div style="margin-top: 40px;">
+            <div class="cs-info-grid">
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Industry</div>
+                <div class="cs-info-item__value">Telecommunications</div>
+              </div>
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Category</div>
+                <div class="cs-info-item__value">Location Intelligence</div>
+              </div>
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Platform</div>
+                <div class="cs-info-item__value">GIS & Spatial Software</div>
+              </div>
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Completed</div>
+                <div class="cs-info-item__value">2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="cs-cta">
+      <div class="container">
+        <h2 class="cs-section-title" style="margin-bottom: 16px;">Need a Similar Solution?</h2>
+        <p class="cs-text" style="max-width: 600px; margin: 0 auto 32px;">
+          Let's build location intelligence solutions that optimize your operations and drive strategic expansion.
+        </p>
+        <a href="/#contact" class="btn btn--primary" style="font-size: 1.1rem; padding: 14px 32px;">Contact MLUE Technology</a>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+        </div>
+        <div class="footer__links">
+          <h3 class="footer__heading">Quick Links</h3>
+          <a href="/">Home</a>
+          <a href="/projects/">Projects</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footerYear"></span> MLUE Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(evt, tabId) {
+      const panels = document.querySelectorAll('.cs-tab-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.cs-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

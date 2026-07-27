@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location Intelligence & GIS | MLUE TECHNOLOGY</title>
+  <meta name="description" content="Geospatial analysis and GIS solutions by MLUE Technology. We help organizations optimize field operations and make strategic location-based decisions." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="icon" type="image/webp" href="../../assets/favicon/favicon.webp" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo-link" aria-label="MLUE Technology Home">
+        <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+      </a>
+      <div class="header__actions">
+        <a href="/projects/" class="btn btn--primary btn--sm header__home-btn">Back to Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Category Hero -->
+    <section class="category-hero">
+      <div class="container">
+        <div class="category-hero__breadcrumbs">
+          <a href="/">Home</a> / <a href="/projects/">Projects</a> / <span style="color: var(--gray-900); font-weight: 500;">Location Intelligence</span>
+        </div>
+        <h1 class="category-hero__title">Location Intelligence</h1>
+        <p class="category-hero__desc">
+          Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize operations, and make strategic, location-based decisions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project List -->
+    <section class="project-list-section">
+      <div class="container">
+        <div class="project-list">
+          
+          
+          <article class="premium-project-card">
+            <div class="premium-project-card__img-wrapper">
+              
+              <img src="../../assets/projects/Map_01_Assigned_District.webp" alt="Telecom Base Station Spatial Analysis Map" class="premium-project-card__img" loading="lazy" width="600" height="400" />
+            </div>
+            <div class="premium-project-card__content">
+              <div class="premium-project-card__meta">
+                <span class="badge badge--industry">Telecommunications</span>
+                <span class="badge badge--status">Completed</span>
+              </div>
+              <h2 class="premium-project-card__title">Telecom Base Station Site Selection</h2>
+              <p class="premium-project-card__summary">
+                A comprehensive spatial analysis solution designed to identify optimal locations for new cell towers. By analyzing population density, terrain, and existing network gaps, we helped reduce planning time and maximize network coverage.
+              </p>
+              
+              <a href="/projects/location-intelligence/telecom-site-selection/" class="btn-premium">View Case Study</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+          <p class="footer__tagline">Engineering modern solutions for modern businesses.</p>
+        </div>
+        <div class="footer__links">
+          <h3 class="footer__heading">Quick Links</h3>
+          <a href="/">Home</a>
+          <a href="/#services">Services</a>
+          <a href="/projects/">Projects</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footerYear"></span> MLUE Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
