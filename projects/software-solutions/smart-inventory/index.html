@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Inventory System Case Study | MLUE TECHNOLOGY</title>
+  <meta name="description" content="How MLUE Technology built a smart inventory management system to eliminate manual workflows and improve operational efficiency." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="icon" type="image/webp" href="../../../assets/favicon/favicon.webp" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo-link" aria-label="MLUE Technology Home">
+        <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+      </a>
+      <div class="header__actions">
+        <a href="../" class="btn btn--primary btn--sm header__home-btn">Back to Category</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="cs-hero">
+      <div class="container">
+        <div class="cs-hero__meta">
+          <span class="badge badge--industry">Retail & Logistics</span>
+          <span class="badge badge--status">Completed Project</span>
+        </div>
+        <h1 class="cs-hero__title">Smart Inventory Management System</h1>
+        <p class="cs-hero__summary">
+          A centralized platform built to replace manual stock tracking. It automates inventory updates across multiple branches, prevents stockouts, and provides real-time business reporting.
+        </p>
+        
+        <div class="cs-hero__image-wrapper">
+          
+          <img src="../../../assets/projects/dash.webp" alt="Smart Inventory System Dashboard" loading="lazy" width="1100" height="650" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Project Gallery Slider -->
+    <section class="cs-section">
+      <div class="container">
+        <div class="cs-gallery">
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/auth.webp" alt="Authentication" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Authentication</div>
+              <div class="cs-gallery__caption-text">Secure login and user management for the inventory system.</div>
+            </figcaption>
+          </figure>
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/sales.webp" alt="Sales Module" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Sales Module</div>
+              <div class="cs-gallery__caption-text">Records sales transactions while automatically updating inventory across all connected branches.</div>
+            </figcaption>
+          </figure>
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/products.webp" alt="Products Module" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Products Module</div>
+              <div class="cs-gallery__caption-text">Manage product details, categorize items, and set dynamic pricing structures.</div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Project Overview & Business Challenge -->
+    <section class="cs-section cs-section--light">
+      <div class="container cs-tabs-container">
+        
+        <!-- Tab Navigation Buttons -->
+        <div class="cs-tabs-nav" role="tablist">
+          <button class="cs-tab-btn active" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
+          <button class="cs-tab-btn" onclick="switchTab(event, 'solution')" role="tab">Our Solution</button>
+          <button class="cs-tab-btn" onclick="switchTab(event, 'tech')" role="tab">Technologies</button>
+          <button class="cs-tab-btn" onclick="switchTab(event, 'impact')" role="tab">Business Impact</button>
+        </div>
+
+        <!-- Tab Panel 1: Challenge -->
+        <div id="challenge" class="cs-tab-panel active" role="tabpanel">
+          <h2 class="cs-section-title">The Business Challenge</h2>
+          <p class="cs-text">
+            Before implementing this solution, the client relied heavily on manual tracking systems and scattered documentation, which created massive operational bottlenecks.
+          </p>
+          <p class="cs-text">
+            They faced severe delays, high risk of human error, and a complete lack of real-time visibility needed to make swift management decisions.
+          </p>
+        </div>
+
+        <!-- Tab Panel 2: Solution -->
+        <div id="solution" class="cs-tab-panel" role="tabpanel">
+          <h2 class="cs-section-title">Our Solution & Features</h2>
+          <p class="cs-text">
+            MLUE Technology engineered a robust, tailored platform designed to completely automate their workflows with high security and seamless user adoption.
+          </p>
+          <div class="cs-features-grid" style="margin-top: 24px;">
+            <div class="cs-feature-card">
+              <h3>Automated Workflows</h3>
+              <p>Eliminated repetitive manual tasks through smart system triggers and automated tracking.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h3>Real-Time Visibility</h3>
+              <p>Centralized dashboards providing instant oversight across all operational branches.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 3: Technologies -->
+        <div id="tech" class="cs-tab-panel" role="tabpanel">
+          <h2 class="cs-section-title">Technologies Used</h2>
+          <p class="cs-text">Built using enterprise-grade, scalable, and secure technology stacks.</p>
+          <div class="cs-tech-badges">
+            <span class="cs-tech-badge">React</span>
+            <span class="cs-tech-badge">Spring Boot</span>
+            <span class="cs-tech-badge">PostgreSQL</span>
+            <span class="cs-tech-badge">Docker</span>
+          </div>
+        </div>
+
+        <!-- Tab Panel 4: Impact -->
+        <div id="impact" class="cs-tab-panel" role="tabpanel">
+          <h2 class="cs-section-title">Business Impact</h2>
+          <p class="cs-text">
+            The deployment transformed their operational capability and delivered direct economic value:
+          </p>
+          <ul class="cs-impact-list">
+            <li>Reduced administrative workload and processing time by over 50%.</li>
+            <li>Eliminated critical data errors and boosted reporting accuracy to 99.9%.</li>
+            <li>Accelerated management decision-making cycles through real-time analytics.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <!-- 7. Call To Action -->
+    <section class="cs-cta">
+      <div class="container">
+        <h2 class="cs-section-title" style="margin-bottom: 16px;">Need a Similar Solution?</h2>
+        <p class="cs-text" style="max-width: 600px; margin: 0 auto 32px;">
+          Let's build technology that solves your operational bottlenecks and helps your business grow.
+        </p>
+        <a href="/#contact" class="btn btn--primary" style="font-size: 1.1rem; padding: 14px 32px;">Contact MLUE Technology</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+        </div>
+        <div class="footer__links">
+          <h3 class="footer__heading">Quick Links</h3>
+          <a href="/">Home</a>
+          <a href="/projects/">Projects</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footerYear"></span> MLUE Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      function switchTab(evt, tabId) {
+        const panels = document.querySelectorAll('.cs-tab-panel');
+        panels.forEach(panel => panel.classList.remove('active'));
+
+        const buttons = document.querySelectorAll('.cs-tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        evt.currentTarget.classList.add('active');
+      }
+
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
