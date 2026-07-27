@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Inventory System Case Study | MLUE TECHNOLOGY</title>
-  <meta name="description" content="How MLUE Technology built a smart inventory management system to eliminate manual workflows and improve operational efficiency." />
+  <title>Smart Inventory Management System Case Study | MLUE TECHNOLOGY</title>
+  <meta name="description" content="Discover how MLUE Technology built a smart inventory management system to help businesses streamline stock control and gain real-time insights." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  
   
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="icon" type="image/webp" href="../../../assets/favicon/favicon.webp" />
@@ -33,16 +32,15 @@
     <section class="cs-hero">
       <div class="container">
         <div class="cs-hero__meta">
-          <span class="badge badge--industry">Retail & Logistics</span>
-          <span class="badge badge--status">Completed Project</span>
+          <span class="badge badge--industry">Retail & Wholesale</span>
+          <span class="badge badge--status">In Progress</span>
         </div>
         <h1 class="cs-hero__title">Smart Inventory Management System</h1>
         <p class="cs-hero__summary">
-          A centralized platform built to replace manual stock tracking. It automates inventory updates across multiple branches, prevents stockouts, and provides real-time business reporting.
+          A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, manage suppliers, and gain real-time insights for smarter business decisions.
         </p>
         
         <div class="cs-hero__image-wrapper">
-          
           <img src="../../../assets/projects/dash.webp" alt="Smart Inventory System Dashboard" loading="lazy" width="1100" height="650" />
         </div>
       </div>
@@ -53,10 +51,17 @@
       <div class="container">
         <div class="cs-gallery">
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/auth.webp" alt="Authentication" class="cs-gallery__img" loading="lazy" />
+            <img src="../../../assets/projects/auth.webp" alt="Dashboard Overview" class="cs-gallery__img" loading="lazy" />
             <figcaption>
               <div class="cs-gallery__caption-title">Authentication</div>
               <div class="cs-gallery__caption-text">Secure login and user management for the inventory system.</div>
+            </figcaption>
+          </figure>
+          <figure class="cs-gallery__item">
+            <img src="../../../assets/projects/dash.webp" alt="Dashboard Overview" class="cs-gallery__img" loading="lazy" />
+            <figcaption>
+              <div class="cs-gallery__caption-title">Dashboard Overview</div>
+              <div class="cs-gallery__caption-text">Real-time overview of inventory levels, sales trends, and overall business performance.</div>
             </figcaption>
           </figure>
           <figure class="cs-gallery__item">
@@ -77,82 +82,144 @@
       </div>
     </section>
 
-    <!-- 3. Project Overview & Business Challenge -->
+    <!-- 3. Interactive Tabs Section -->
     <section class="cs-section cs-section--light">
       <div class="container cs-tabs-container">
         
         <!-- Tab Navigation Buttons -->
         <div class="cs-tabs-nav" role="tablist">
-          <button class="cs-tab-btn active" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
+          <button class="cs-tab-btn active" onclick="switchTab(event, 'overview')" role="tab">Overview</button>
+          <button class="cs-tab-btn" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
           <button class="cs-tab-btn" onclick="switchTab(event, 'solution')" role="tab">Our Solution</button>
           <button class="cs-tab-btn" onclick="switchTab(event, 'tech')" role="tab">Technologies</button>
           <button class="cs-tab-btn" onclick="switchTab(event, 'impact')" role="tab">Business Impact</button>
         </div>
 
-        <!-- Tab Panel 1: Challenge -->
-        <div id="challenge" class="cs-tab-panel active" role="tabpanel">
+        <!-- Tab Panel 1: Overview -->
+        <div id="overview" class="cs-tab-panel active" role="tabpanel">
+          <h2 class="cs-section-title">Project Overview</h2>
+          <p class="cs-text">
+            Many growing businesses struggle to keep accurate inventory records while maintaining efficient daily operations. Manual stock tracking often results in errors, lost products, delayed reporting, and poor decision-making.
+          </p>
+          <p class="cs-text">
+            The Smart Inventory Management System was developed by MLUE Technology to provide businesses with a centralized platform for managing inventory, suppliers, products, sales, and reporting in real time. The system enables business owners to improve operational efficiency while making informed decisions through accurate and accessible business data.
+          </p>
+        </div>
+
+        <!-- Tab Panel 2: Challenge -->
+        <div id="challenge" class="cs-tab-panel" role="tabpanel">
           <h2 class="cs-section-title">The Business Challenge</h2>
           <p class="cs-text">
-            Before implementing this solution, the client relied heavily on manual tracking systems and scattered documentation, which created massive operational bottlenecks.
+            Many small and medium-sized businesses still rely on notebooks, spreadsheets, or disconnected systems to manage inventory. As businesses grow, these methods become increasingly difficult to maintain and often lead to:
           </p>
-          <p class="cs-text">
-            They faced severe delays, high risk of human error, and a complete lack of real-time visibility needed to make swift management decisions.
+          <ul class="cs-impact-list">
+            <li>Inaccurate stock records</li>
+            <li>Inventory losses and stock discrepancies</li>
+            <li>Time-consuming manual reporting</li>
+            <li>Limited visibility into business performance</li>
+            <li>Poor inventory planning and purchasing decisions</li>
+          </ul>
+          <p class="cs-text" style="margin-top: 24px;">
+            Without reliable inventory data, business owners struggle to make confident operational and financial decisions.
           </p>
         </div>
 
-        <!-- Tab Panel 2: Solution -->
+        <!-- Tab Panel 3: Solution -->
         <div id="solution" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Our Solution & Features</h2>
+          <h2 class="cs-section-title">Our Solution & Key Features</h2>
           <p class="cs-text">
-            MLUE Technology engineered a robust, tailored platform designed to completely automate their workflows with high security and seamless user adoption.
+            MLUE Technology designed and developed a centralized inventory management platform that automates inventory operations from product registration to stock movement tracking and reporting.
           </p>
-          <div class="cs-features-grid" style="margin-top: 24px;">
+          <p class="cs-text">
+            The system provides real-time visibility into inventory levels, supplier information, sales activities, and business performance through an intuitive web-based interface. By automating routine processes, businesses can reduce manual work, improve accuracy, and make faster, data-driven decisions.
+          </p>
+
+          <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 32px 0 16px;">Key System Features</h3>
+          <div class="cs-features-grid">
             <div class="cs-feature-card">
-              <h3>Automated Workflows</h3>
-              <p>Eliminated repetitive manual tasks through smart system triggers and automated tracking.</p>
+              <h3>Product & Category</h3>
+              <p>Comprehensive management of items, specifications, and hierarchical categorizations.</p>
             </div>
             <div class="cs-feature-card">
-              <h3>Real-Time Visibility</h3>
-              <p>Centralized dashboards providing instant oversight across all operational branches.</p>
+              <h3>Supplier & Customer</h3>
+              <p>Maintain detailed profiles and interactions for smooth procurement and sales workflows.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h3>Tracking & Movement</h3>
+              <p>Real-time stock monitoring and detailed logs of all inventory movements across operations.</p>
+            </div>
+            <div class="cs-feature-card">
+              <h3>Security & Roles</h3>
+              <p>Secure authentication with role-based access control and responsive administration dashboards.</p>
             </div>
           </div>
         </div>
 
-        <!-- Tab Panel 3: Technologies -->
+        <!-- Tab Panel 4: Technologies -->
         <div id="tech" class="cs-tab-panel" role="tabpanel">
           <h2 class="cs-section-title">Technologies Used</h2>
-          <p class="cs-text">Built using enterprise-grade, scalable, and secure technology stacks.</p>
+          <p class="cs-text">Built using an enterprise-grade, modern technology stack ensuring scalability, security, and performance.</p>
           <div class="cs-tech-badges">
-            <span class="cs-tech-badge">React</span>
             <span class="cs-tech-badge">Spring Boot</span>
+            <span class="cs-tech-badge">React</span>
             <span class="cs-tech-badge">PostgreSQL</span>
-            <span class="cs-tech-badge">Docker</span>
+            <span class="cs-tech-badge">JWT Authentication</span>
+            <span class="cs-tech-badge">MapStruct</span>
+            <span class="cs-tech-badge">REST API</span>
+            <span class="cs-tech-badge">Maven</span>
+            <span class="cs-tech-badge">CSS3</span>
+            <span class="cs-tech-badge">JavaScript</span>
+          </div>
+
+          <div style="margin-top: 48px;">
+            <div class="cs-info-grid">
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Industry</div>
+                <div class="cs-info-item__value">Retail & Wholesale</div>
+              </div>
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Category</div>
+                <div class="cs-info-item__value">Business Software</div>
+              </div>
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Platform</div>
+                <div class="cs-info-item__value">Web Application</div>
+              </div>
+              <div class="cs-info-item">
+                <div class="cs-info-item__label">Status</div>
+                <div class="cs-info-item__value">In Progress</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Tab Panel 4: Impact -->
+        <!-- Tab Panel 5: Impact -->
         <div id="impact" class="cs-tab-panel" role="tabpanel">
           <h2 class="cs-section-title">Business Impact</h2>
           <p class="cs-text">
-            The deployment transformed their operational capability and delivered direct economic value:
+            The solution helps businesses achieve operational excellence and sustainable growth:
           </p>
           <ul class="cs-impact-list">
-            <li>Reduced administrative workload and processing time by over 50%.</li>
-            <li>Eliminated critical data errors and boosted reporting accuracy to 99.9%.</li>
-            <li>Accelerated management decision-making cycles through real-time analytics.</li>
+            <li>Improve inventory accuracy across all operations</li>
+            <li>Reduce manual record keeping and human error</li>
+            <li>Monitor stock levels in real time</li>
+            <li>Generate business reports instantly</li>
+            <li>Improve purchasing decisions based on hard data</li>
+            <li>Increase overall operational efficiency</li>
+            <li>Centralize business information into a single source of truth</li>
+            <li>Support future business growth and branch expansions</li>
           </ul>
         </div>
 
       </div>
     </section>
 
-    
-    <!-- 7. Call To Action -->
+    <!-- 4. Call To Action -->
     <section class="cs-cta">
       <div class="container">
-        <h2 class="cs-section-title" style="margin-bottom: 16px;">Need a Similar Solution?</h2>
-        <p class="cs-text" style="max-width: 600px; margin: 0 auto 32px;">
-          Let's build technology that solves your operational bottlenecks and helps your business grow.
+        <h2 class="cs-section-title" style="margin-bottom: 16px;">Build Smarter Business Software</h2>
+        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
+          Whether you're managing retail stores, warehouses, pharmacies, supermarkets, or wholesale businesses, MLUE Technology can design custom software solutions that improve efficiency, automate operations, and support sustainable business growth. Let's build technology that works for your business.
         </p>
         <a href="/#contact" class="btn btn--primary" style="font-size: 1.1rem; padding: 14px 32px;">Contact MLUE Technology</a>
       </div>
@@ -178,17 +245,18 @@
     </div>
   </footer>
 
+  
   <script>
-      function switchTab(evt, tabId) {
-        const panels = document.querySelectorAll('.cs-tab-panel');
-        panels.forEach(panel => panel.classList.remove('active'));
+    function switchTab(evt, tabId) {
+      const panels = document.querySelectorAll('.cs-tab-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
 
-        const buttons = document.querySelectorAll('.cs-tab-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
+      const buttons = document.querySelectorAll('.cs-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
 
-        document.getElementById(tabId).classList.add('active');
-        evt.currentTarget.classList.add('active');
-      }
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
 
     document.getElementById('footerYear').textContent = new Date().getFullYear();
   </script>

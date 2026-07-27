@@ -56,12 +56,11 @@ const translations = {
     "services.businessTitle": "Business Systems",
     "services.apiTitle": "APIs & Backend Development",
     "services.customTitle": "Custom Software Development",
-    "services.gfxTitle": "Graphics Design & Branding",
     "services.business.desc": "Manage sales, track inventory, and monitor business performance in real-time with reliable POS and business systems.",
     "services.api.desc": "Build scalable and secure APIs and backend systems to power your digital transformation.",
     "services.custom.desc": "Create custom software solutions that align with your unique business requirements and objectives.",
-    "services.gfx.desc": "Create compelling visual identities and user experiences that resonate with your audience.",
-
+    "services.gisTitle": "Location Intelligence GIS",
+    "services.gis.desc": "Leverage geographic data and mapping technologies to make informed business decisions.",
     // Why Choose Us
     "why.label": "Why Us",
     "why.title": "Why Choose MLUE Technology",
@@ -113,7 +112,7 @@ const translations = {
       "cta.viewServices": "View Services",
       "results.title": "What You Get",
       "results.benefit1": "✔ Better control of your business operations",
-      "results.benefit2": "✔ Reduced manual work and errors",
+      "results.benefit2": "✔ Geographic Business Decisions Support",
       "results.benefit3": "✔ Real-time insights and reporting",
       "results.benefit4": "✔ Scalable systems that grow with your business",
       // Team roles
@@ -162,7 +161,7 @@ const translations = {
       // What You Get section
       "results.title": "Unachopata",
       "results.benefit1": "✔ Udhibiti bora wa shughuli za biashara yako",
-      "results.benefit2": "✔ Kupunguza kazi za mikono na makosa",
+      "results.benefit2": "✔ Uamuzi wa Biashara unaotegemea Maeneo",
       "results.benefit3": "✔ Maarifa na ripoti za wakati halisi",
       "results.benefit4": "✔ Mifumo inayokua na biashara yako",
     "hero.missionTitle": "Dhamira Yetu",
@@ -191,12 +190,12 @@ const translations = {
     "services.businessTitle": "Mifumo ya Biashara",
     "services.apiTitle": "APIs & Uhandisi wa Backend",
     "services.customTitle": "Uundaji wa Programu Maalum",
-    "services.gfxTitle": "Ubunifu wa Picha & Uundaji Chapa",
     "services.business.desc": "Simamia mauzo, fuatilia hesabu, na angalia utendaji wa biashara yako papo hapo kwa mifumo ya POS na biashara inayotegemewa.",
     "services.api.desc": "Jenga API na mifumo ya backend salama na inayokua ili kuendesha mabadiliko ya kidijitali.",
     "services.custom.desc": "Tengeneza programu maalum zinazolingana na mahitaji na malengo ya biashara yako.",
-    "services.gfx.desc": "Tengeneza utambulisho wa kuvutia wa chapa na uzoefu bora wa mtumiaji unaogusa hadhira yako.",
-
+    // GIS Service in Swahili
+    "services.gisTitle": "Ujuzi wa Maeneo",
+    "services.gis.desc": "Tumia data ya kijiografia na teknolojia za ramani kufanya maamuzi ya biashara yenye ufahamu.",
     // Why Choose Us
     "why.label": "Kwa Nini Sisi",
     "why.title": "Kwa Nini Uchague MLUE Technology",
@@ -248,7 +247,7 @@ const translations = {
       "cta.viewServices": "Tazama Huduma",
       "results.title": "Unachopata",
       "results.benefit1": "✔ Udhibiti bora wa shughuli za biashara yako",
-      "results.benefit2": "✔ Kupunguza kazi za mikono na makosa",
+      "results.benefit2": "✔ Uamuzi wa Biashara unaotegemea Maeneo",
       "results.benefit3": "✔ Maarifa na ripoti za wakati halisi",
       "results.benefit4": "✔ Mifumo inayokua na biashara yako",
   }
