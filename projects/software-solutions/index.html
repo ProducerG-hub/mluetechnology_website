@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Business Software Solutions | MLUE TECHNOLOGY</title>
-  <meta name="description" content="Explore custom business software solutions developed by MLUE Technology to automate operations and improve productivity." />
+  <meta name="description" content="Explore our portfolio of business software solutions, including e-commerce platforms, ERP systems, and enterprise applications by MLUE Technology." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  
   
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="icon" type="image/webp" href="../../assets/favicon/favicon.webp" />
@@ -23,54 +22,74 @@
         <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
       </a>
       <div class="header__actions">
-        <a href="/projects/" class="btn btn--primary btn--sm header__home-btn">Back to Projects</a>
+        <a href="../" class="btn btn--primary btn--sm header__home-btn">All Projects</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Category Hero -->
+    <!-- Category Header -->
     <section class="category-hero">
       <div class="container">
-        <div class="category-hero__breadcrumbs">
-          <a href="/">Home</a> / <a href="/projects/">Projects</a> / <span style="color: var(--gray-900); font-weight: 500;">Software Solutions</span>
-        </div>
-        <h1 class="category-hero__title">Business Software Solutions</h1>
-        <p class="category-hero__desc">
-          Custom software systems designed to solve operational challenges, eliminate manual workflows, and provide actionable business insights.
+        <h1 class="category-hero__title" style="margin-bottom: 16px;">Business Software Solutions</h1>
+        <p class="category-hero__desc" style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+          Empowering organizations with robust, scalable, and secure software applications designed to streamline operations, enhance customer experiences, and drive business growth.
         </p>
       </div>
     </section>
 
-    <!-- Project List -->
+    <!-- Projects Grid Section -->
     <section class="project-list-section">
       <div class="container">
-        <div class="project-list">
-          
-          <!-- Project Card 1 -->
-          <article class="premium-project-card">
-            <div class="premium-project-card__img-wrapper">
-              
-              <img src="../../assets/projects/dash.webp" alt="Inventory Management System Dashboard" class="premium-project-card__img" loading="lazy" width="600" height="400" />
-            </div>
-            <div class="premium-project-card__content">
-              <div class="premium-project-card__meta">
-                <span class="badge badge--industry">Retail & Logistics</span>
-                <span class="badge badge--status">In Progress</span>
+        <div class="projects-grid">
+          <article class="project-card">
+            <a href="carryhub-shopping/" class="project-card__image-link">
+              <img src="../../assets/projects/carryhub-hero.webp" alt="CarryHub E-commerce Platform" loading="lazy" width="1200" height="675" />
+            </a>
+            <div class="project-card__content">
+              <div class="project-card__meta">
+                <span class="badge badge--industry">E-Commerce</span>
               </div>
-              <h2 class="premium-project-card__title">Smart Inventory Management System</h2>
-              <p class="premium-project-card__summary">
-                A centralized platform built to replace manual stock tracking. It automates inventory updates across multiple branches, prevents stockouts, and provides real-time sales reporting.
+              <h3 class="project-card__title">
+                <a href="carryhub-shopping/">CarryHub Digital Platform</a>
+              </h3>
+              <p class="project-card__desc">
+                A modern e-commerce platform developed to help retailers establish a professional online presence, showcase products, and simulate secure digital payments.
               </p>
-              
-              <a href="/projects/software-solutions/smart-inventory/" class="btn-premium">View Case Study</a>
+              <div class="project-card__tech">
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>EJS</span>
+              </div>
+              <a href="carryhub-shopping/" class="btn-premium">View Case Study</a>
             </div>
           </article>
 
+          <article class="project-card">
+            <a href="smart-inventory/" class="project-card__image-link">
+              <img src="../../assets/projects/dash.webp" alt="Smart Inventory System Dashboard" loading="lazy" width="1200" height="675" />
+            </a>
+            <div class="project-card__content">
+              <div class="project-card__meta">
+                <span class="badge badge--industry">Retail &amp; Wholesale</span>
+              </div>
+              <h3 class="project-card__title">
+                <a href="smart-inventory/">Smart Inventory System</a>
+              </h3>
+              <p class="project-card__desc">
+                A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, and gain real-time insights.
+              </p>
+              <div class="project-card__tech">
+                <span>Spring Boot</span>
+                <span>React</span>
+                <span>PostgreSQL</span>
+              </div>
+              <a href="smart-inventory/" class="btn-premium">View Case Study</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
-  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -78,12 +97,10 @@
       <div class="footer__top">
         <div class="footer__brand">
           <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
-          <p class="footer__tagline">Engineering modern solutions for modern businesses.</p>
         </div>
         <div class="footer__links">
           <h3 class="footer__heading">Quick Links</h3>
           <a href="/">Home</a>
-          <a href="/#services">Services</a>
           <a href="/projects/">Projects</a>
         </div>
       </div>
@@ -95,6 +112,21 @@
 
   <script>
     document.getElementById('footerYear').textContent = new Date().getFullYear();
+    
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+        card.style.boxShadow = '0 12px 24px rgba(0,0,0,0.1)';
+        const img = card.querySelector('img');
+        if(img) img.style.transform = 'scale(1.05)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'none';
+        const img = card.querySelector('img');
+        if(img) img.style.transform = 'scale(1)';
+      });
+    });
   </script>
 </body>
 </html>
