@@ -90,12 +90,37 @@
       </nav>
 
       <div class="header__actions">
-        <div class="lang-switcher" id="langSwitcher">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <span class="lang-divider">|</span>
-          <button class="lang-btn" data-lang="sw">SW</button>
-        </div>
-        <a href="#contact" class="btn btn--primary btn--sm" data-i18n="nav.cta">Get Started</a>
+
+    <a href="#contact"
+       class="btn btn--primary btn--sm"
+       data-i18n="nav.cta">
+        Get Started
+    </a>
+
+    <div class="lang-switcher" id="langSwitcher">
+
+        <!-- UK Flag for English -->
+        <button class="lang-btn active"
+                data-lang="en"
+                aria-label="English">
+            <img src="https://flagcdn.com/gb.svg"
+                 alt="UK Flag"
+                 class="flag-icon">
+        </button>
+
+        <span class="lang-divider">|</span>
+
+        <!-- Tanzania Flag for Swahili -->
+        <button class="lang-btn"
+                data-lang="sw"
+                aria-label="Swahili">
+            <img src="https://flagcdn.com/tz.svg"
+                 alt="Tanzania Flag"
+                 class="flag-icon">
+        </button>
+
+      </div>
+
       </div>
 
       <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
@@ -107,80 +132,226 @@
   <main>
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="home">
-    <!-- Animated tech background -->
-    <canvas id="heroCanvas" class="hero__canvas"></canvas>
-    <div class="container hero__content">
-     <p class="hero__label" data-i18n="hero.label">Smart Business Solutions</p>
+  <!-- Interactive Aurora Background -->
+  <div class="aurora-bg">
+    <div class="orb-wrapper"><div class="aurora-orb orb-1"></div></div>
+    <div class="orb-wrapper"><div class="aurora-orb orb-2"></div></div>
+    <div class="orb-wrapper"><div class="aurora-orb orb-3"></div></div>
+    <div class="orb-wrapper"><div class="aurora-orb orb-4"></div></div>
+  </div>
 
-      <h1 class="hero__title" data-i18n="hero.title">
-        Smart Systems for <span class="text-blue">Modern Businesses</span>
-      </h1>
+  <!-- Hero Content (Wrapped in Glass Panel) -->
+  <div class="container hero__content glass-panel">
+    <p class="hero__label" data-i18n="hero.label">Smart Business Solutions</p>
 
-      <p class="hero__tagline" data-i18n="hero.tagline">
-        We help businesses manage sales, inventory, and operations with secure, scalable technology solutions designed for growth.
-      </p>
+    <h1 class="hero__title" data-i18n="hero.title">
+      Smart Systems for <span class="text-blue-light">Modern Businesses</span>
+    </h1>
 
-      <div class="hero__actions">
-        <button type="button" class="btn btn--primary cta" data-open-appointment-modal data-i18n="appointment.cta">Book Appointment</button>
-        <a href="#services" class="btn btn--outline" data-i18n="cta.viewServices">View Services</a>
-      </div>
+    <p class="hero__tagline" data-i18n="hero.tagline">
+      We help businesses manage sales, inventory, and operations with secure, scalable technology solutions designed for growth.
+    </p>
+
+    <div class="hero__actions">
+      <button type="button" class="btn btn--primary cta" data-open-appointment-modal data-i18n="appointment.cta">Book Appointment</button>
+      <a href="#services" class="btn btn--outline btn--outline-light" data-i18n="cta.viewServices">View Services</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ===================== ABOUT ===================== -->
-  <section class="about" id="about">
+<section class="about" id="about">
     <div class="container">
-      <p class="section-label" data-i18n="about.label">Who We Are?</p>
-      <h2 class="section-title" data-i18n="about.title">About MLUE Technology</h2>
-      <p class="section-subtitle" data-i18n="about.subtitle">
-        A technology company focused on engineering high-quality software that solves real business problems.
-      </p>
 
-      <div class="hero__mv">
-        <div class="mv-card">
-          <div class="mv-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-          </div>
-          <h3 class="mv-card__title" data-i18n="hero.missionTitle">Our Mission</h3>
-          <p class="mv-card__text" data-i18n="hero.missionText">To empower businesses with reliable, innovative, and secure technology solutions that simplify operations and accelerate growth.</p>
-        </div>
-        <div class="mv-card">
-          <div class="mv-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3 class="mv-card__title" data-i18n="hero.visionTitle">Our Vision</h3>
-          <p class="mv-card__text" data-i18n="hero.visionText">To become the most trusted technology partner for businesses across East Africa and beyond, delivering world-class digital solutions.</p>
-        </div>
-      </div>
+        <!-- About Header -->
+        <div class="about__header">
+            <p class="about__eyebrow">
+                WHO WE ARE?
+            </p>
 
-      <div class="about__grid">
-        <div class="about-card">
-          <div class="about-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3 class="about-card__title" data-i18n="about.engTitle">Engineering Quality</h3>
-          <p class="about-card__text" data-i18n="about.engText">We build software with clean architecture, tested code, and modern engineering practices that stand the test of time.</p>
+            <h2 class="about__headline">
+                Engineering digital systems
+                <span>that solve real problems.</span>
+            </h2>
         </div>
-        <div class="about-card">
-          <div class="about-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3 class="about-card__title" data-i18n="about.bizTitle">Business-Oriented</h3>
-          <p class="about-card__text" data-i18n="about.bizText">Every solution is designed around actual business needs — we don't just write code, we solve problems that matter.</p>
+
+
+        <!-- Main About Layout -->
+        <div class="about__main">
+
+            <!-- Left: Company Identity -->
+            <div class="about__identity">
+
+                <p class="about__description">
+                    A technology company focused on engineering
+                    high-quality software that solves real business
+                    problems.
+                </p>
+
+
+                <!-- Mission -->
+                <div class="about__statement">
+                    <div class="about__statement-label">
+                        MISSION
+                    </div>
+
+                    <p>
+                        To empower businesses with reliable,
+                        innovative, and secure technology solutions
+                        that simplify operations and accelerate growth.
+                    </p>
+                </div>
+
+
+                <!-- Vision -->
+                <div class="about__statement">
+                    <div class="about__statement-label">
+                        VISION
+                    </div>
+
+                    <p>
+                        To become the most trusted technology partner
+                        for businesses across East Africa and beyond,
+                        delivering world-class digital solutions.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Right: Engineering Approach -->
+            <div class="about__approach">
+
+                <div class="about__approach-header">
+                    <span class="about__approach-number">01</span>
+
+                    <div>
+                        <p class="about__approach-label">
+                            ENGINEERING APPROACH
+                        </p>
+
+                        <h3>
+                            Built with engineering
+                            principles.
+                        </h3>
+                    </div>
+                </div>
+
+
+                <div class="about__approach-list">
+
+                    <div class="approach-item">
+                        <span class="approach-item__number">01</span>
+
+                        <div class="approach-item__content">
+                            <h4>Architecture</h4>
+                            <p>
+                                Structured systems designed for
+                                maintainability and growth.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="approach-item">
+                        <span class="approach-item__number">02</span>
+
+                        <div class="approach-item__content">
+                            <h4>Security</h4>
+                            <p>
+                                Security considered throughout
+                                the system lifecycle.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="approach-item">
+                        <span class="approach-item__number">03</span>
+
+                        <div class="approach-item__content">
+                            <h4>Scalability</h4>
+                            <p>
+                                Systems engineered to grow with
+                                changing business needs.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="approach-item">
+                        <span class="approach-item__number">04</span>
+
+                        <div class="approach-item__content">
+                            <h4>Reliability</h4>
+                            <p>
+                                Dependable systems built for
+                                consistent operation.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="about-card">
-          <div class="about-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="about-card__title" data-i18n="about.secTitle">Reliability & Security</h3>
-          <p class="about-card__text" data-i18n="about.secText">Security is built into every layer of our systems. We design for reliability so your business runs without interruption.</p>
+
+
+        <!-- Engineering Principles -->
+        <div class="about__principles">
+
+            <div class="about__principles-header">
+                <p>ENGINEERING PRINCIPLES</p>
+            </div>
+
+
+            <div class="principles-grid">
+
+                <div class="principle">
+                    <span class="principle__number">01</span>
+
+                    <div>
+                        <h3>Engineering Quality</h3>
+                        <p>
+                            Clean architecture, tested code,
+                            and modern engineering practices.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="principle">
+                    <span class="principle__number">02</span>
+
+                    <div>
+                        <h3>Business-Oriented</h3>
+                        <p>
+                            Technology designed around real
+                            business needs and problems.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="principle">
+                    <span class="principle__number">03</span>
+
+                    <div>
+                        <h3>Reliability & Security</h3>
+                        <p>
+                            Security and reliability built into
+                            every layer of our systems.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
     </div>
-
-  
-  </section>
-
+</section>
   <!-- ===================== SERVICES ===================== -->
   <section class="services" id="services">
     <div class="container">

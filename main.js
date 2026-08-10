@@ -318,96 +318,126 @@
     });
   }
 
-  // ---- Hero Canvas — Network / node animation ----
-  const canvas = document.getElementById("heroCanvas");
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
-    let w, h, nodes;
-    let heroConfig = getHeroCanvasConfig();
+  // ---- Hero Interactive Aurora Mesh ----
+  const heroSection = document.getElementById("home");
+  const orbWrappers = document.querySelectorAll(".orb-wrapper");
 
-    function getHeroCanvasConfig() {
-      return mobileQuery.matches
-        ? { nodeCount: 22, maxDist: 96, velocity: 0.35, radiusMin: 0.9, radiusMax: 1.7 }
-        : { nodeCount: 60, maxDist: 140, velocity: 0.5, radiusMin: 1, radiusMax: 3 };
-    }
+  if (heroSection && orbWrappers.length > 0) {
+    heroSection.addEventListener("mousemove", (e) => {
+      // Calculate mouse position relative to center of the hero section
+      const rect = heroSection.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
 
-    function resize() {
-      w = canvas.width = canvas.offsetWidth;
-      h = canvas.height = canvas.offsetHeight;
-    }
-
-    function createNodes() {
-      heroConfig = getHeroCanvasConfig();
-      nodes = [];
-      for (let i = 0; i < heroConfig.nodeCount; i++) {
-        nodes.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          vx: (Math.random() - 0.5) * heroConfig.velocity,
-          vy: (Math.random() - 0.5) * heroConfig.velocity,
-          r: Math.random() * (heroConfig.radiusMax - heroConfig.radiusMin) + heroConfig.radiusMin
-        });
-      }
-    }
-
-    function draw() {
-      const { maxDist } = heroConfig;
-      ctx.clearRect(0, 0, w, h);
-
-      // Draw connections
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < maxDist) {
-            const alpha = 1 - dist / maxDist;
-            ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `rgba(21,101,192,${alpha * 0.25})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw nodes
-      nodes.forEach(n => {
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(21,101,192,0.35)";
-        ctx.fill();
+      orbWrappers.forEach((wrapper, index) => {
+        // Different depth multipliers for 3D parallax effect
+        const depth = (index + 1) * 0.04; 
+        
+        // Update CSS variables for translation
+        wrapper.style.setProperty("--mouse-x", `${x * depth}px`);
+        wrapper.style.setProperty("--mouse-y", `${y * depth}px`);
       });
+    });
 
-      // Move nodes
-      nodes.forEach(n => {
-        n.x += n.vx;
-        n.y += n.vy;
-        if (n.x < 0 || n.x > w) n.vx *= -1;
-        if (n.y < 0 || n.y > h) n.vy *= -1;
+    // Reset smoothly when mouse leaves
+    heroSection.addEventListener("mouseleave", () => {
+      orbWrappers.forEach(wrapper => {
+        wrapper.style.setProperty("--mouse-x", "0px");
+        wrapper.style.setProperty("--mouse-y", "0px");
       });
-
-      requestAnimationFrame(draw);
-    }
-
-    resize();
-    createNodes();
-    draw();
-    window.addEventListener("resize", () => {
-      resize();
-      createNodes();
-    }, { passive: true });
-
-    const refreshForBreakpoint = () => {
-      createNodes();
-    };
-
-    if (typeof mobileQuery.addEventListener === "function") {
-      mobileQuery.addEventListener("change", refreshForBreakpoint);
-    } else if (typeof mobileQuery.addListener === "function") {
-      mobileQuery.addListener(refreshForBreakpoint);
-    }
+    });
   }
 })();
+
+// ---- Language Switcher Visual Toggle ----
+  const langBtns = document.querySelectorAll(".lang-btn");
+  
+  if (langBtns.length > 0) {
+    langBtns.forEach(btn => {
+      btn.addEventListener("click", function() {
+        // Remove active class from all buttons
+        langBtns.forEach(b => b.classList.remove("active"));
+        
+        // Add active class to the clicked button
+        this.classList.add("active");
+        
+        // Update the global language variable if you are using one
+        window.currentLang = this.getAttribute("data-lang");
+        
+        // (Optional) Call your translation function here
+        // translatePage(window.currentLang);
+      });
+    });
+  }
+
+ // ===================================================
+  // Typewriter Effect for Hero Title (Fixed for i18n & Colors)
+  // ===================================================
+  function initTypewriter() {
+    const titleElement = document.querySelector('.hero__title');
+    if (!titleElement) return;
+
+    // 1. Chukua maneno yote kutoka kwenye heading (baada ya i18n.js kutafsiri)
+    const fullText = titleElement.textContent.trim();
+    
+    let text1 = "";
+    let text2 = "";
+
+    // 2. Tunagawa sentensi ili maneno mawili ya mwisho yapate rangi (Cyan)
+    const words = fullText.split(" ");
+    if (words.length > 2) {
+      // Chukua maneno mawili ya mwisho (mf. "Modern Businesses" au "Biashara za Kisasa")
+      text2 = words.slice(-2).join(" "); 
+      // Chukua maneno yaliyobaki ya mwanzo
+      text1 = words.slice(0, -2).join(" ") + " "; 
+    } else {
+      text1 = fullText; // Kama sentensi ni fupi sana
+    }
+
+    // 3. Futa yaliyomo kwenye heading ili ianze tupu kwa ajili ya Typewriter
+    titleElement.innerHTML = '';
+
+    // 4. Tengeneza span kwa ajili ya maneno ya mwisho (Cyan Color)
+    const coloredSpan = document.createElement('span');
+    coloredSpan.className = 'text-blue-light'; // Hii inaweka ile rangi ya #00E5FF
+
+    // 5. Tengeneza Cursor inayometa
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    cursor.textContent = '|';
+
+    // Weka cursor ndani ya heading
+    titleElement.appendChild(cursor);
+
+    let i = 0;
+    let j = 0;
+    const speed = 65; // Kasi ya kuandika (millisecond 65 kwa herufi)
+
+    // Andika sehemu ya kwanza (Rangi Nyeupe)
+    function typeFirstPart() {
+      if (i < text1.length) {
+        cursor.insertAdjacentText('beforebegin', text1.charAt(i));
+        i++;
+        setTimeout(typeFirstPart, speed);
+      } else {
+        // Ikimiza sehemu ya kwanza, weka span ya rangi kisha anza kuandika sehemu ya pili
+        titleElement.insertBefore(coloredSpan, cursor);
+        setTimeout(typeSecondPart, speed);
+      }
+    }
+
+    // Andika sehemu ya pili (Rangi ya Cyan)
+    function typeSecondPart() {
+      if (j < text2.length) {
+        coloredSpan.textContent += text2.charAt(j);
+        j++;
+        setTimeout(typeSecondPart, speed);
+      }
+    }
+
+    // Anza kuandika
+    typeFirstPart();
+  }
+
+  // Tunasubiri sekunde 0.8 ili kuruhusu i18n.js imalize kutafsiri kwanza
+  setTimeout(initTypewriter, 800);

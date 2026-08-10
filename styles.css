@@ -118,14 +118,18 @@ section:not(:first-of-type) {
   gap: 8px;
 }
 .btn--primary {
-  background: var(--blue-700);
-  color: var(--white);
-  box-shadow: 0 2px 8px rgba(21,101,192,.3);
+    background: #00E5FF;
+    color: #0B0F14;
+    border: 1px solid #00E5FF;
+    box-shadow: 0 4px 14px rgba(0, 229, 255, 0.25);
+    transition: all 0.3s ease;
 }
+
 .btn--primary:hover {
-  background: var(--blue-800);
-  box-shadow: 0 4px 16px rgba(21,101,192,.35);
-  transform: translateY(-1px);
+    background: #00C7E6;
+    border-color: #00C7E6;
+    box-shadow: 0 6px 18px rgba(0, 199, 230, 0.35);
+    transform: translateY(-1px);
 }
 .btn--outline {
   border: 2px solid var(--blue-700);
@@ -167,162 +171,407 @@ section:not(:first-of-type) {
   display: flex;
   align-items: center;
   gap: 10px;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important; /* Hakikisha background ni ya wazi */
+  padding: 0 !important;
 }
 .logo-text {
-  font-weight: 800;
-  font-size: 1.15rem;
-  color: var(--gray-900);
-  letter-spacing: -.5px;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
 }
-.logo-accent { color: var(--blue-700); }
+
+.logo-accent {
+    color: #00E5FF;
+}
 .logo-text--light { color: var(--white); }
 .logo-text--light .logo-accent { color: var(--blue-400); }
 
-/* Nav */
-.header__nav {
-  display: flex;
-  gap: 32px;
-}
-.nav-link {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--gray-600);
-  transition: var(--transition);
-  position: relative;
-}
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
+/* ===================================================
+   HEADER - FLOATING GLASSMORPHISM
+   =================================================== */
+.header {
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--blue-700);
-  transition: var(--transition);
-}
-.nav-link:hover,
-.nav-link.active {
-  color: var(--blue-700);
-}
-.nav-link:hover::after,
-.nav-link.active::after {
   width: 100%;
+  z-index: 1000;
+  padding-top: 24px; 
+  background: transparent !important; /* Hii inaondoa rangi yoyote ya nyuma iliyojificha */
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important; /* Inazuia blur nje ya kidonge */
+  transition: padding-top 0.4s ease;
+  pointer-events: none; 
 }
 
-/* Header actions */
+/* Hii ndio kadi yenyewe ya uwazi (Glass pill) */
+.header__inner {
+  background: rgba(10, 10, 18, 0.88); /* Rangi moja safi iliyokolea */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px; /* Umbo la round */
+  padding: 12px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  pointer-events: auto; 
+  transition: all 0.4s ease;
+}
+
+/* --- Logo Styling --- */
+.logo-link {
+  text-decoration: none;
+  border: none !important;
+  outline: none !important;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #ffffff; /* Maandishi meupe safi */
+  letter-spacing: -0.5px;
+}
+
+.logo-accent {
+  color: #00E5FF; /* Rangi ya Cyan kung'arisha */
+}
+
+/* --- Navigation Links --- */
+.header__nav {
+  display: flex;
+  gap: 40px; /* Nafasi nzuri na pana kati ya links */
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #ffffff; /* Nyeupe inayosomeka vizuri */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.7); /* Inafifia kidogo ukipitisha mouse */
+}
+
+.nav-link.active {
+  color: #00E5FF; /* Cyan kwa link iliyopo (active) */
+  font-weight: 600;
+}
+
+/* --- Actions (Lang Switcher & Button) --- */
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
-/* Language switcher */
+/* Swichi ya Lugha ya Bendera */
+/* Swichi ya Lugha ya Bendera */
 .lang-switcher {
   display: flex;
   align-items: center;
-  gap: 4px;
-  background: var(--gray-100);
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--gray-200);
-}
-.lang-btn {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--gray-700);
-  padding: 2px 6px;
-  border-radius: 4px;
-  transition: var(--transition);
-}
-.lang-btn.active {
-  color: var(--blue-900);
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
-}
-.lang-divider {
-  color: var(--gray-500);
-  font-size: 0.75rem;
+  gap: 12px;
+  background: transparent !important; /* Tumeondoa background ya box */
+  border: none !important; /* Tumeondoa mstari wa box */
+  padding: 0;
 }
 
-/* Hamburger */
-.header__hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 4px;
+.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 50%;
+  opacity: 0.4; /* Bendera iliyozimwa (inactive) */
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
-.header__hamburger span {
-  display: block;
+
+.lang-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.lang-btn.active {
+  opacity: 1; /* Bendera inayotumika */
+  border-color: #00E5FF; /* Mduara wa Cyan */
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+.flag-icon {
   width: 22px;
-  height: 2px;
-  background: var(--gray-700);
-  border-radius: 2px;
-  transition: var(--transition);
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.header__hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+
+/* Kitufe cha Get Started ndani ya Header */
+.header__actions .btn {
+  border-radius: 50px;
+  margin-left: 0;
 }
-.header__hamburger.open span:nth-child(2) {
-  opacity: 0;
+
+/* --- Wakati wa Kushuka Chini (Scrolled) --- */
+.header.scrolled {
+  padding-top: 10px; /* Inapanda juu kidogo ikisogezwa */
 }
-.header__hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+
+.header.scrolled .header__inner {
+  background: rgba(5, 5, 10, 0.95); /* Inakuwa nyeusi zaidi kuepuka kuingiliana na maandishi ya chini */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 991px) {
+  .header__inner {
+    padding: 12px 20px;
+  }
+
+  .header__actions .btn {
+    margin-left: 0; /* Kwenye vioo vidogo, nafasi inapungua kiotomatiki ili isibane Logo */
+  }
+  
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(3, 3, 8, 0.98); /* Giza zito kwa menu ya simu */
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .header__nav.open {
+    transform: translateY(0);
+  }
+  
+  .nav-link {
+    font-size: 1.5rem; /* Maandishi makubwa kwenye simu */
+    padding: 0;
+  }
+  
+  .header__hamburger span {
+    background-color: #ffffff; /* Mistari ya menyu iwe nyeupe */
+  }
 }
 
 /* ===================================================
-   HERO
+   Hero Section - Interactive Aurora Mesh
    =================================================== */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(160deg, var(--white) 0%, var(--blue-50) 100%);
+  justify-content: center;
+  background-color: #05050a; /* Deep tech dark background */
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 120px 20px 80px; /* Added side padding for mobile */
 }
-.hero__canvas {
+
+/* --- Aurora Background Layers --- */
+.aurora-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  opacity: 0.4;
+  overflow: hidden;
+  filter: blur(100px); /* Melts the orbs into a mesh */
+  z-index: 0;
+  pointer-events: none; /* Let clicks pass through to buttons */
 }
-.hero__content {
+
+.orb-wrapper {
+  position: absolute;
+  transition: transform 0.4s ease-out; /* Smooth parallax */
+  transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
+}
+
+.aurora-orb {
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: drift 12s infinite alternate ease-in-out;
+}
+
+/* Orb Placements & Brand Colors */
+.orb-1 { width: 50vw; height: 50vw; background: #0047FF; top: -20%; left: -10%; }
+.orb-2 { width: 45vw; height: 45vw; background: #00E5FF; bottom: -10%; right: -10%; animation-delay: -3s; }
+.orb-3 { width: 35vw; height: 35vw; background: #8A2BE2; top: 40%; left: 30%; animation-delay: -6s; }
+.orb-4 { width: 40vw; height: 40vw; background: #1565C0; top: -10%; right: 20%; animation-delay: -9s; }
+
+@keyframes drift {
+  0% { transform: scale(1) translate(0px, 0px); }
+  50% { transform: scale(1.1) translate(30px, -30px); }
+  100% { transform: scale(0.9) translate(-20px, 40px); }
+}
+
+/* --- Glassmorphism Content Panel --- */
+.hero__content.glass-panel {
   position: relative;
   z-index: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 3.5rem 2rem;
+  border-radius: var(--radius-lg, 24px);
   text-align: center;
-  max-width: 860px;
+  max-width: 800px;
   margin: 0 auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
+
+/* ===================================================
+   Hero Section - Dark High-Contrast Card
+   =================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #030308; /* Deep black space background */
+  overflow: hidden;
+  padding: 120px 20px 80px;
+}
+
+/* --- Aurora Outer Glow Background --- */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(110px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb-wrapper {
+  position: absolute;
+  transition: transform 0.4s ease-out;
+  transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
+}
+
+.aurora-orb {
+  border-radius: 50%;
+  opacity: 0.45; /* Soft background ambient glow */
+  animation: drift 14s infinite alternate ease-in-out;
+}
+
+/* Rangi zinasukumwa kidogo kando na chini ili zisiwe moja kwa moja nyuma ya heading */
+.orb-1 { width: 50vw; height: 50vw; background: #0047FF; top: 20%; left: -15%; }
+.orb-2 { width: 45vw; height: 45vw; background: #00E5FF; bottom: -15%; right: -10%; animation-delay: -3s; }
+.orb-3 { width: 40vw; height: 40vw; background: #1565C0; top: 55%; left: 20%; animation-delay: -6s; }
+.orb-4 { width: 35vw; height: 35vw; background: #6A1B9A; top: -15%; right: 5%; animation-delay: -9s; }
+
+@keyframes drift {
+  0% { transform: scale(1) translate(0px, 0px); }
+  50% { transform: scale(1.08) translate(25px, -25px); }
+  100% { transform: scale(0.92) translate(-20px, 30px); }
+}
+
+/* --- Solid Dark Card (100% Readability) --- */
+.hero__content.glass-panel {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 10, 18, 0.88); /* Rich dark black background for extreme contrast */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 3.5rem 2.5rem;
+  border-radius: var(--radius-lg, 24px);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  /* Outer glow - inaleta Blue muonekano mzuri pembezoni mwa kadi */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 
+              0 0 30px rgba(0, 71, 255, 0.15); 
+}
+
+/* --- Crisp White & Cyan Typography --- */
 .hero__label {
   display: inline-block;
   font-size: 0.8125rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: var(--blue-900);
-  background: var(--blue-50);
-  border: 1px solid var(--blue-100);
+  color: #00E5FF;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.25);
   padding: 6px 16px;
   border-radius: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
+
 .hero__title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
-  color: var(--gray-900);
+  color: #ffffff; /* Sharp white title */
   letter-spacing: -1px;
   line-height: 1.05;
   margin-bottom: 16px;
+  line-height: 1.15;
 }
+
+.text-blue-light {
+  color: #00E5FF; /* Cyan Highlight for 'Modern Businesses' */
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.3); /* Subtle glow on text */
+}
+
 .hero__tagline {
   font-size: clamp(1rem, 2vw, 1.15rem);
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.8);
   max-width: 640px;
   margin: 0 auto 40px;
   line-height: 1.7;
+}
+
+/* ===================================================
+   Typewriter Cursor Effect
+   =================================================== */
+.typing-cursor {
+  display: inline-block;
+  font-weight: 200;
+  color: #00E5FF;
+  margin-left: 4px;
+  animation: blinkCursor 0.8s infinite;
+  vertical-align: baseline;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.btn--outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn--outline-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
 }
 
 /* Mission / Vision cards */
@@ -377,16 +626,20 @@ section:not(:first-of-type) {
 }
 
 /* ===================================================
-   ABOUT
+   ABOUT — ENGINEERING PROFILE
    =================================================== */
+
 .about {
-  padding: 100px 0;
-  background: var(--white);
+    padding: 120px 0;
+    background: #FFFFFF;
 }
-.about__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+
+
+/* ---------- Header ---------- */
+
+.about__header {
+    max-width: 900px;
+    margin-bottom: 70px;
 }
 .about-card {
   background: var(--gray-50);
@@ -396,33 +649,266 @@ section:not(:first-of-type) {
   box-shadow: var(--shadow-sm);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
 }
-.about-card:hover {
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--blue-100);
-  transform: translateY(-4px);
-}
-.about-card__icon {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--blue-50);
-  color: var(--blue-700);
-  border-radius: var(--radius-md);
-  margin-bottom: 18px;
-}
-.about-card__title {
-  font-size: 1.05rem;
+
+.about__eyebrow {
+  margin: 0 0 18px;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--gray-900);
-  margin-bottom: 8px;
+  letter-spacing: 3px;
+  color: #00E5FF;
 }
-.about-card__text {
-  font-size: 0.9rem;
-  color: var(--gray-500);
-  line-height: 1.65;
+
+.about__headline {
+    margin: 0;
+    max-width: 850px;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    font-weight: 800;
+    color: #0B0F14;
+}
+
+.about__headline span {
+    display: block;
+    color: #1565C0;
+}
+
+
+/* ---------- Main Layout ---------- */
+
+.about__main {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: stretch;
+}
+
+
+/* ---------- Left Identity ---------- */
+
+.about__identity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about__description {
+    max-width: 650px;
+    margin: 0 0 50px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #5F6B7A;
+}
+
+
+/* ---------- Mission / Vision ---------- */
+
+.about__statement {
+    position: relative;
+    padding: 0 0 28px 24px;
+    margin-bottom: 28px;
+    border-left: 2px solid #1565C0;
+}
+
+.about__statement:last-child {
+    margin-bottom: 0;
+}
+
+.about__statement-label {
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #1565C0;
+}
+
+.about__statement p {
+    max-width: 600px;
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: #5F6B7A;
+}
+
+
+/* ---------- Engineering Approach ---------- */
+
+.about__approach {
+    position: relative;
+    padding: 42px;
+    background: #05070D;
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+
+/* subtle technical glow */
+
+.about__approach::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: -140px;
+    right: -100px;
+    background: #1565C0;
+    opacity: 0.18;
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+
+/* ---------- Approach Header ---------- */
+
+.about__approach-header {
+    position: relative;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 42px;
+}
+
+.about__approach-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #00E5FF;
+    letter-spacing: 1px;
+}
+
+.about__approach-label {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.about__approach h3 {
+    margin: 0;
+    max-width: 320px;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    color: #FFFFFF;
+}
+
+
+/* ---------- Approach Items ---------- */
+
+.about__approach-list {
+    position: relative;
+}
+
+.approach-item {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+    position: relative;
+    padding: 0 0 28px 0;
+}
+
+.approach-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.approach-item__number {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    border-radius: 50%;
+    background: #05070D;
+    color: #00E5FF;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.approach-item__content h4 {
+    margin: 2px 0 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.approach-item__content p {
+    margin: 0;
+    font-size: 0.86rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* ---------- Engineering Principles ---------- */
+
+.about__principles {
+    margin-top: 90px;
+    padding-top: 32px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.about__principles-header {
+    margin-bottom: 32px;
+}
+
+.about__principles-header p {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #1565C0;
+}
+
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+
+.principle {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 18px;
+    padding: 10px 30px 10px 0;
+}
+
+.principle + .principle {
+    padding-left: 30px;
+    border-left: 1px solid #E5E7EB;
+}
+
+
+.principle__number {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #00E5FF;
+}
+
+
+.principle h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 750;
+    color: #0B0F14;
+}
+
+
+.principle p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #6B7280;
 }
 
 /* ===================================================
@@ -1974,7 +2460,6 @@ section:not(:first-of-type) {
    RESPONSIVE
    =================================================== */
 @media (max-width: 1024px) {
-  .about__grid { grid-template-columns: 1fr 1fr; }
   .projects-showcase__grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -2010,7 +2495,102 @@ section:not(:first-of-type) {
   .hero__mv { grid-template-columns: 1fr; }
 
   /* About */
-  .about__grid { grid-template-columns: 1fr; }
+  /* ===================================================
+   ABOUT — RESPONSIVE
+   =================================================== */
+
+@media (max-width: 1024px) {
+
+    .about__main {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about__approach {
+        max-width: 760px;
+    }
+
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .principle,
+    .principle + .principle {
+        padding: 0;
+        border-left: none;
+    }
+
+    .principle + .principle {
+        padding-top: 28px;
+        border-top: 1px solid #E5E7EB;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 90px 0;
+    }
+
+    .about__header {
+        margin-bottom: 50px;
+    }
+
+    .about__headline {
+        font-size: clamp(2.3rem, 10vw, 3.4rem);
+        letter-spacing: -1.5px;
+    }
+
+    .about__description {
+        margin-bottom: 40px;
+        font-size: 1rem;
+    }
+
+    .about__approach {
+        padding: 30px 24px;
+        border-radius: 20px;
+    }
+
+    .about__principles {
+        margin-top: 65px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .about__headline {
+        font-size: 2.25rem;
+    }
+
+    .about__statement {
+        padding-left: 18px;
+    }
+
+    .about__approach {
+        padding: 26px 20px;
+    }
+
+    .about__approach h3 {
+        font-size: 1.45rem;
+    }
+
+    .approach-item {
+        grid-template-columns: 36px 1fr;
+        gap: 14px;
+    }
+
+    .approach-item__number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .approach-item:not(:last-child)::after {
+        left: 17px;
+    }
+}
 
   /* Projects */
   .projects-showcase { padding: 100px 0 70px; }
