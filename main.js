@@ -63,24 +63,62 @@
   }
   window.addEventListener("scroll", highlightNav, { passive: true });
 
-  // ---- Scroll reveal ----
-  const revealTargets = document.querySelectorAll(
-    ".about-card, .service-card, .why-card, .mv-card, .contact__info, .contact__form"
-  );
-  revealTargets.forEach(el => el.classList.add("reveal"));
+  
+// ---- Scroll reveal ----
+const revealTargets = document.querySelectorAll(
+  `
+  .about-card,
+  .why-card,
+  .mv-card,
+  .contact__info,
+  .contact__form,
+  .solution,
+  .capability
+  `
+);
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (prefersReducedMotion) {
+
+  // Accessibility: show everything immediately
+  revealTargets.forEach(el => {
+    el.classList.add("visible");
+  });
+
+} else {
+
+  // Add reveal class and create a small stagger
+  revealTargets.forEach((el, index) => {
+    el.classList.add("reveal");
+
+    const delay = Math.min(index * 70, 350);
+    el.style.transitionDelay = `${delay}ms`;
+  });
 
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("visible");
+
+        // We only need to animate an element once
+        observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.15 }
+    {
+      threshold: 0.15
+    }
   );
-  revealTargets.forEach(el => observer.observe(el));
+
+  revealTargets.forEach(el => {
+    observer.observe(el);
+  });
+}
 
   // ---- Toast notification ----
   const toast = document.getElementById("toast");
@@ -318,6 +356,267 @@
     });
   }
 
+    // ===================================================
+  // Engineering Team — Bento Profile
+  // ===================================================
+
+  const teamMembers = {
+    david: {
+      name: "David F Mwakajonga",
+      role: "Frontend Engineering & UI/UX",
+      description:
+        "Focused on crafting polished digital experiences and engineering intelligent systems that turn complex business problems into usable solutions.",
+      skills: [
+        "UI / UX",
+        "Frontend Engineering",
+        "Decision Support",
+        "Expert Systems"
+      ]
+    },
+
+    gwamaka: {
+      name: "Gwamaka A Mwakabuta",
+      role: "Backend Engineering & System Logic",
+      description:
+        "Focused on backend architecture, business logic, and reliable system foundations that connect applications, services, and real-world business processes.",
+      skills: [
+        "Backend Architecture",
+        "Business Logic",
+        "APIs",
+        "GIS"
+      ]
+    },
+
+    stephane: {
+      name: "Stephane H Chibwaye",
+      role: "Data & Database Engineering",
+      description:
+        "Focused on database architecture, data management, and API-driven systems that make information reliable, accessible, and useful across applications.",
+      skills: [
+        "Database Systems",
+        "Data Management",
+        "APIs",
+        "Data Integration"
+      ]
+    }
+  };
+
+
+  const teamButtons = document.querySelectorAll(".team-member");
+
+  const teamProfile = document.getElementById("team-profile");
+
+  const teamProfileName =
+    document.getElementById("team-profile-name");
+
+  const teamProfileRole =
+    document.getElementById("team-profile-role");
+
+  const teamProfileDescription =
+    document.getElementById("team-profile-description");
+
+  const teamProfileSkills =
+    document.getElementById("team-profile-skills");
+
+
+  // Stop here if the Team Bento section is not on the page
+  if (
+    teamButtons.length > 0 &&
+    teamProfile &&
+    teamProfileName &&
+    teamProfileRole &&
+    teamProfileDescription &&
+    teamProfileSkills
+  ) {
+
+    function updateTeamProfile(memberId) {
+
+      const member = teamMembers[memberId];
+
+      if (!member) return;
+
+
+      // -----------------------------------------------
+      // Update active Bento member
+      // -----------------------------------------------
+
+      teamButtons.forEach(button => {
+
+        const isActive =
+          button.dataset.member === memberId;
+
+        button.classList.toggle(
+          "team-member--active",
+          isActive
+        );
+
+        button.setAttribute(
+          "aria-pressed",
+          String(isActive)
+        );
+
+      });
+
+
+      // -----------------------------------------------
+      // Update profile information
+      // -----------------------------------------------
+
+      teamProfileName.textContent =
+        member.name;
+
+      teamProfileRole.textContent =
+        member.role;
+
+      teamProfileDescription.textContent =
+        member.description;
+
+
+      // -----------------------------------------------
+      // Update specialization tags
+      // -----------------------------------------------
+
+      teamProfileSkills.innerHTML = "";
+
+      member.skills.forEach(skill => {
+
+        const skillElement =
+          document.createElement("span");
+
+        skillElement.textContent = skill;
+
+        teamProfileSkills.appendChild(
+          skillElement
+        );
+
+      });
+
+
+      // -----------------------------------------------
+      // Small profile transition
+      // -----------------------------------------------
+
+      teamProfile.classList.remove(
+        "team-profile--updated"
+      );
+
+      window.requestAnimationFrame(() => {
+
+        teamProfile.classList.add(
+          "team-profile--updated"
+        );
+
+      });
+
+    }
+
+
+    // =================================================
+    // Mouse / Click Interaction
+    // =================================================
+
+    teamButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const memberId =
+          button.dataset.member;
+
+        updateTeamProfile(memberId);
+
+      });
+
+    });
+
+
+    // =================================================
+    // Keyboard Navigation
+    // =================================================
+
+    teamButtons.forEach((button, index) => {
+
+      button.addEventListener("keydown", event => {
+
+        let nextIndex = null;
+
+
+        if (event.key === "ArrowRight") {
+
+          nextIndex =
+            (index + 1) % teamButtons.length;
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+          nextIndex =
+            (index - 1 + teamButtons.length) %
+            teamButtons.length;
+
+        }
+
+
+        if (event.key === "Home") {
+
+          nextIndex = 0;
+
+        }
+
+
+        if (event.key === "End") {
+
+          nextIndex =
+            teamButtons.length - 1;
+
+        }
+
+
+        if (nextIndex !== null) {
+
+          event.preventDefault();
+
+          const nextButton =
+            teamButtons[nextIndex];
+
+          nextButton.focus();
+
+          updateTeamProfile(
+            nextButton.dataset.member
+          );
+
+        }
+
+      });
+
+    });
+
+
+    // =================================================
+    // Initialize Active Member
+    // =================================================
+
+    const initialMember =
+      document.querySelector(
+        ".team-member--active"
+      );
+
+    if (initialMember) {
+
+      updateTeamProfile(
+        initialMember.dataset.member
+      );
+
+    } else {
+
+      updateTeamProfile(
+        teamButtons[0].dataset.member
+      );
+
+    }
+
+  }
+
   // ---- Hero Interactive Aurora Mesh ----
   const heroSection = document.getElementById("home");
   const orbWrappers = document.querySelectorAll(".orb-wrapper");
@@ -338,6 +637,7 @@
         wrapper.style.setProperty("--mouse-y", `${y * depth}px`);
       });
     });
+    
 
     // Reset smoothly when mouse leaves
     heroSection.addEventListener("mouseleave", () => {
