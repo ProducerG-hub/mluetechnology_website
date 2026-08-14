@@ -371,9 +371,11 @@
                 english: "Hello! Welcome to MLUE Technology, we can assist you with technology-related matters. I am your quick assistant, how can I help you today? You can choose your preferred language for communication, as we are capable of conversing in both Swahili and English."
             },
             services: {
-                swahili: "Mlue Technology tunatoa huduma za kutengeneza tovuti (website), graphic design, backend API na suluhisho mbalimbali za kiteknolojia kwa maendeleo ya biashara yako. Ungependa tukuhudumiaje? karibu Mlue Technology kwa huduma bora za kiteknolojia.",
-                english: "Mlue Technology offers services such as website development, graphic design, backend API, and various technology solutions for the growth of your business. How can we assist you? Welcome to Mlue Technology for excellent technology services."
-            },
+    swahili: "MLUE Technology hutoa suluhisho za kiteknolojia zinazolenga kuboresha namna biashara zinavyofanya kazi, kufanya maamuzi, na kukua. Huduma zetu zinajumuisha Custom Software, Business Systems, API / Backend, E-Commerce, GIS / Location Intelligence, na AI / Intelligent Systems. Ungependa kujua zaidi kuhusu suluhisho gani?",
+
+    english: "MLUE Technology provides technology solutions designed to improve how businesses operate, make decisions, and grow. Our solutions include Custom Software, Business Systems, API / Backend, E-Commerce, GIS / Location Intelligence, and AI / Intelligent Systems. Which solution would you like to explore?"
+    },
+
             contact: {
                 swahili: "Unaweza kuwasiliana na timu ya msaada ya Mlue kupitia barua pepe: mluetechnologytz@gmail.com, au kupitia simu: +255 752 804 154 na kupitia tovuti yetu https://mluetechnology.me.",
                 english: "You can contact the Mlue support team via email: mluetechnologytz@gmail.com, or by phone: +255 752 804 154, or through our website https://mluetechnology.me."
@@ -419,7 +421,7 @@
         : "I can help with MLUE Technology services like POS systems, software, and branding. What would you like to know?";
     }
 
-    const CHATBOT_STORAGE_KEY = "mlue-chatbot-state-v1";
+    
 
     function getDefaultChatbotState() {
         return {
@@ -454,6 +456,8 @@
         } catch (_error) {
             return getDefaultChatbotState();
         }
+
+        return getDefaultChatbotState();
     }
 
     function createChatbotMarkup() {
@@ -534,10 +538,9 @@
         let onboardingNode = null;
 
         function saveChatState() {
-            state.language = chatLanguage;
-            state.isOpen = chatWindow.classList.contains("chatbot--open");
-            localStorage.setItem(CHATBOT_STORAGE_KEY, JSON.stringify(state));
-        }
+    state.language = chatLanguage;
+    state.isOpen = chatWindow.classList.contains("chatbot--open");
+}
 
         function getOnboardingText() {
             return document.documentElement.lang === "sw"
@@ -545,27 +548,37 @@
                 : "HOW CAN I HELP YOU TODAY";
         }
 
-        function ensureOnboardingNode() {
-            if (onboardingNode && onboardingNode.isConnected) {
-                return;
-            }
-            onboardingNode = document.createElement("div");
-            onboardingNode.className = "chatbot__onboarding";
-            onboardingNode.textContent = getOnboardingText();
-        }
+        function getWelcomeMessage() {
+    return document.documentElement.lang === "sw"
+        ? "Habari! Mimi ni MLUE AI. Naweza kukusaidia kuelewa suluhisho zetu za kiteknolojia, huduma tunazotoa, au kukuelekeza mahali pazuri pa kuanzia kwa mradi wako.\n\nUngependa kujua nini kuhusu MLUE Technology?"
+        : "Hello! I'm MLUE AI. I can help you explore our technology solutions, understand our services, or guide you toward the right starting point for your project.\n\nWhat would you like to know about MLUE Technology?";
+}
 
-        function updateOnboarding() {
-            const shouldShow = state.showHeader && state.messages.length === 0;
-            if (shouldShow) {
-                ensureOnboardingNode();
-                onboardingNode.textContent = getOnboardingText();
-                if (!onboardingNode.isConnected) {
-                    chatMessages.prepend(onboardingNode);
-                }
-            } else if (onboardingNode && onboardingNode.isConnected) {
-                onboardingNode.remove();
-            }
+function ensureOnboardingNode() {
+    if (onboardingNode && onboardingNode.isConnected) {
+        return;
+    }
+
+    onboardingNode = document.createElement("div");
+    onboardingNode.className = "chatbot__onboarding";
+    onboardingNode.textContent = getOnboardingText();
+}
+
+function updateOnboarding() {
+    const shouldShow = state.showHeader && state.messages.length === 0;
+
+    if (shouldShow) {
+        ensureOnboardingNode();
+
+        onboardingNode.textContent = getOnboardingText();
+
+        if (!onboardingNode.isConnected) {
+            chatMessages.prepend(onboardingNode);
         }
+    } else if (onboardingNode && onboardingNode.isConnected) {
+        onboardingNode.remove();
+    }
+}
 
         function getLanguageSwitch(text) {
             const normalized = (text || "").toLowerCase();
@@ -659,36 +672,59 @@
         }
 
         function openChat() {
-            chatWindow.classList.add("chatbot--open");
-            chatToggle.classList.add("chatbot-toggle--active");
-            chatToggle.setAttribute("aria-expanded", "true");
-            chatWindow.setAttribute("aria-hidden", "false");
-            saveChatState();
+    chatWindow.classList.add("chatbot--open");
+    chatToggle.classList.add("chatbot-toggle--active");
+    chatToggle.setAttribute("aria-expanded", "true");
+    chatWindow.setAttribute("aria-hidden", "false");
 
-            chatInput.focus();
+    if (state.messages.length === 0) {
+        if (onboardingNode && onboardingNode.isConnected) {
+            onboardingNode.remove();
         }
+
+        appendMessage(getWelcomeMessage(), "bot");
+
+        state.showHeader = false;
+        saveChatState();
+    } else {
+        saveChatState();
+    }
+
+    chatInput.focus();
+}
 
         function closeChat() {
-            if (pendingReplyTimer) {
-                clearTimeout(pendingReplyTimer);
-                pendingReplyTimer = null;
-            }
+    if (pendingReplyTimer) {
+        clearTimeout(pendingReplyTimer);
+        pendingReplyTimer = null;
+    }
 
-            if (typingNode && typingNode.isConnected) {
-                typingNode.remove();
-            }
-            typingNode = null;
+    if (typingNode && typingNode.isConnected) {
+        typingNode.remove();
+    }
 
-            chatInput.value = "";
-            chatInput.disabled = false;
-            chatSend.disabled = false;
+    typingNode = null;
 
-            chatWindow.classList.remove("chatbot--open");
-            chatToggle.classList.remove("chatbot-toggle--active");
-            chatToggle.setAttribute("aria-expanded", "false");
-            chatWindow.setAttribute("aria-hidden", "true");
-            saveChatState();
-        }
+    // Clear the current conversation from memory.
+    state.messages = [];
+    state.showHeader = true;
+
+    chatMessages.innerHTML = "";
+
+    onboardingNode = null;
+
+    chatInput.value = "";
+    chatInput.disabled = false;
+    chatSend.disabled = false;
+
+    chatWindow.classList.remove("chatbot--open");
+    chatToggle.classList.remove("chatbot-toggle--active");
+
+    chatToggle.setAttribute("aria-expanded", "false");
+    chatWindow.setAttribute("aria-hidden", "true");
+
+    saveChatState();
+}
 
         function sendMessage() {
             const userText = chatInput.value.trim();

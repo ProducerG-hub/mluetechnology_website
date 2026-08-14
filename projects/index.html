@@ -49,17 +49,61 @@
     <p>Explore our featured software and website projects delivered by MLUE Technology in Tanzania and beyond.</p>
   </section>
 
+  <!-- ===================== HEADER ===================== -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="/" class="logo-link" aria-label="MLUE Technology Home">
         <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
       </a>
 
+      <nav class="header__nav" id="nav">
+        <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">About Us</a>
+        <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+        <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
       <div class="header__actions">
-        <a href="/" class="btn btn--primary btn--sm header__home-btn" data-i18n="nav.cta">Home</a>
+
+    <a href="#contact"
+       class="btn btn--primary btn--sm"
+       data-i18n="nav.cta">
+        Get Started
+    </a>
+
+    <div class="lang-switcher" id="langSwitcher">
+
+        <!-- UK Flag for English -->
+        <button class="lang-btn active"
+                data-lang="en"
+                aria-label="English">
+            <img src="https://flagcdn.com/gb.svg"
+                 alt="UK Flag"
+                 class="flag-icon">
+        </button>
+
+        <span class="lang-divider">|</span>
+
+        <!-- Tanzania Flag for Swahili -->
+        <button class="lang-btn"
+                data-lang="sw"
+                aria-label="Swahili">
+            <img src="https://flagcdn.com/tz.svg"
+                 alt="Tanzania Flag"
+                 class="flag-icon">
+        </button>
+
       </div>
+
+      </div>
+
+      <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
 
 <main>
     <section class="portfolio-hub" aria-labelledby="portfolio-hub-title">
@@ -137,58 +181,330 @@
   </main>
 
   <footer class="footer">
+
     <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
-          <p class="footer__tagline" data-i18n="footer.tagline">Engineering modern solutions for modern businesses.</p>
+
+        <!-- ===================== FOOTER MAIN ===================== -->
+        <div class="footer__main">
+
+
+            <!-- ===================== BRAND ===================== -->
+            <div class="footer__brand">
+
+                <a
+                    href="/"
+                    class="footer__brand-link"
+                    aria-label="MLUE Technology Home"
+                >
+                    <span class="logo-text logo-text--light">
+                        MLUE
+                        <span class="logo-accent">TECHNOLOGY</span>
+                    </span>
+                </a>
+
+                <p
+                    class="footer__tagline"
+                    data-i18n="footer.tagline"
+                >
+                    Engineering modern solutions for modern businesses.
+                </p>
+
+
+                <!-- Social Accounts -->
+                <div
+                    class="footer__social"
+                    aria-label="MLUE Technology social links"
+                >
+
+                    <!-- Facebook -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.facebook.com/share/17RCWJhZbv/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Facebook"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="12"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                f
+                            </text>
+                        </svg>
+                    </a>
+
+
+                    <!-- Instagram -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Instagram"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3.25"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="16.5"
+                                cy="7.5"
+                                r="1"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </a>
+
+
+                    <!-- LinkedIn -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.linkedin.com/in/mlue-technology-063751429?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on LinkedIn"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="10"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                in
+                            </text>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================== EXPLORE ===================== -->
+            <div class="footer__column">
+
+                <h3
+                    class="footer__heading"
+                    data-i18n="footer.quickLinks"
+                >
+                    Explore
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="#home" data-i18n="nav.home">
+                        Home
+                    </a>
+
+                    <a href="#about" data-i18n="nav.about">
+                        About Us
+                    </a>
+
+                    <a href="#services" data-i18n="nav.services">
+                        Services
+                    </a>
+
+                    <a href="/projects/" data-i18n="nav.projects">
+                        Projects
+                    </a>
+
+                    <a href="/pricing/" data-i18n="nav.pricing">
+                        Pricing
+                    </a>
+
+                    <a href="#contact" data-i18n="nav.contact">
+                        Contact
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== SERVICES ===================== -->
+            <div class="footer__column">
+
+                <h3 class="footer__heading">
+                    Services
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="/projects/software-solutions/">
+                        Business Software
+                    </a>
+
+                    <a href="/projects/software-solutions/">
+                        Custom Software
+                    </a>
+
+                    <a href="/projects/software-solutions/">
+                        APIs &amp; Backend
+                    </a>
+
+                    <a href="/projects/software-solutions/">
+                        E-Commerce
+                    </a>
+
+                    <a href="/projects/location-intelligence/">
+                        Location Intelligence
+                    </a>
+
+                    <a href="#services">
+                        AI / Intelligent Systems
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== LET'S TALK ===================== -->
+            <div class="footer__column footer__contact">
+
+                <h3 class="footer__heading">
+                    Let's Talk
+                </h3>
+
+
+                <div class="footer__location">
+
+                    <span class="footer__contact-label">
+                        Based in
+                    </span>
+
+                    <strong>
+                        Dar es Salaam, Tanzania
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="https://wa.me/255752804154"
+                    class="footer__contact-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                    <span aria-hidden="true">→</span>
+                </a>
+
+
+                <a
+                    href="mailto:mluetechnologytz@gmail.com"
+                    class="footer__contact-link"
+                >
+                    Email
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
         </div>
-        <div class="footer__links">
-          <h3 class="footer__heading" data-i18n="footer.quickLinks">Quick Links</h3>
-          <a href="/" data-i18n="nav.home">Home</a>
-          <a href="/#about" data-i18n="nav.about">About Us</a>
-          <a href="/#services" data-i18n="nav.services">Services</a>
-          <a href="/#contact" data-i18n="nav.contact">Contact</a>
-          <a href="/projects/" data-i18n="nav.projects">Projects</a>
+
+
+        <!-- ===================== FOOTER BOTTOM ===================== -->
+        <div class="footer__bottom">
+
+            <p>
+                &copy;
+                <span id="footerYear"></span>
+                MLUE Technology.
+                <span data-i18n="footer.rights">
+                    All rights reserved.
+                </span>
+            </p>
+
+
+            <nav class="footer__legal">
+
+                <a
+                    href="/privacy/"
+                    data-i18n="footer.privacy"
+                >
+                    Privacy Policy
+                </a>
+
+                <span aria-hidden="true">·</span>
+
+                <a
+                    href="/terms/"
+                    data-i18n="footer.terms"
+                >
+                    Terms of Service
+                </a>
+
+            </nav>
+
         </div>
-        <div class="footer__links">
-          <h3 class="footer__heading" data-i18n="footer.legal">Legal</h3>
-          <a href="/privacy/" data-i18n="footer.privacy">Privacy Policy</a>
-          <a href="/terms/" data-i18n="footer.terms">Terms of Service</a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; <span id="footerYear"></span> MLUE Technology. <span data-i18n="footer.rights">All rights reserved.</span></p>
-        <div class="footer__social" aria-label="MLUE Technology social links">
-          <a class="footer__social-link" href="https://www.facebook.com/share/17RCWJhZbv/" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Facebook">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="currentColor">f</text>
-            </svg>
-          </a>
-          <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Twitter">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="currentColor">X</text>
-            </svg>
-          </a>
-          <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on LinkedIn">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="800" fill="currentColor">in</text>
-            </svg>
-          </a>
-          <a class="footer__social-link" href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Instagram">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <circle cx="12" cy="12" r="3.25" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <circle cx="16.5" cy="7.5" r="1" fill="currentColor" />
-            </svg>
-          </a>
-        </div>
-      </div>
+
     </div>
-  </footer>
+
+</footer>
+
 
   <script src="../i18n.js" defer></script>
   <script src="../main.js" defer></script>

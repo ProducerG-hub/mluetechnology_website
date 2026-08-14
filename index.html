@@ -1466,7 +1466,7 @@
                     <!-- LinkedIn -->
                     <a
                         class="footer__social-link"
-                        href="#"
+                        href="https://www.linkedin.com/in/mlue-technology-063751429?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="MLUE Technology on LinkedIn"
@@ -1684,66 +1684,212 @@
         </p>
       </div>
 
-      <form class="appointment-modal__form" id="appointmentForm" action="https://formsubmit.co/mluetechnologytz@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_subject" value="New appointment request from MLUE Technology website" />
+      <form
+    class="appointment-modal__form"
+    id="appointmentForm"
+    action="https://formsubmit.co/mluetechnologytz@gmail.com"
+    method="POST"
+>
 
-        <div class="appointment-modal__grid">
-          <div class="form-group">
-            <label for="appointmentName" data-i18n="appointment.nameLabel">Full Name</label>
-            <input type="text" id="appointmentName" name="name" required data-modal-autofocus data-i18n-placeholder="appointment.namePlaceholder" placeholder="Enter your full name" autocomplete="name" />
-          </div>
-          <div class="form-group">
-            <label for="appointmentEmail" data-i18n="appointment.emailLabel">Email Address</label>
-            <input type="email" id="appointmentEmail" name="email" required data-i18n-placeholder="appointment.emailPlaceholder" placeholder="Enter your email" autocomplete="email" />
-          </div>
-        </div>
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table" />
+    <input
+        type="hidden"
+        name="_subject"
+        value="New appointment request from MLUE Technology website"
+    />
 
-        <div class="appointment-modal__grid">
-          <div class="form-group">
-            <label for="appointmentDateTime" data-i18n="appointment.datetimeLabel">Preferred date &amp; time</label>
-            <input type="datetime-local" id="appointmentDateTime" name="preferred_datetime" required data-datetime-min />
-            <p class="appointment-modal__hint" data-i18n="appointment.timeHint">Select a future date and time.</p>
-          </div>
-          <div class="form-group">
-            <label for="appointmentPhone" data-i18n="appointment.phoneLabel">Phone number (optional)</label>
-            <input type="tel" id="appointmentPhone" name="phone" data-i18n-placeholder="appointment.phonePlaceholder" placeholder="Enter your phone number" autocomplete="tel" />
-          </div>
-        </div>
+      <div class="appointment-modal__grid">
 
-        <div class="form-group">
-          <label for="appointmentPurpose" data-i18n="appointment.reasonLabel">Purpose / reason for appointment</label>
-          <textarea id="appointmentPurpose" name="purpose" rows="4" required data-i18n-placeholder="appointment.reasonPlaceholder" placeholder="What would you like to discuss?"></textarea>
-        </div>
+    <!-- Full Name -->
+    <div class="form-group">
 
-        <div class="form-group">
-          <label for="appointmentNotes" data-i18n="appointment.notesLabel">Additional notes (optional)</label>
-          <textarea id="appointmentNotes" name="notes" rows="3" data-i18n-placeholder="appointment.notesPlaceholder" placeholder="Share any extra details we should know"></textarea>
-        </div>
+        <label
+            for="appointmentName"
+            data-i18n="appointment.nameLabel"
+        >
+            Full Name
+        </label>
 
-        <div class="appointment-modal__actions">
-          <button type="button" class="btn btn--outline" data-modal-close data-i18n="appointment.cancel">Cancel</button>
-          <button type="submit" class="btn btn--primary" data-i18n="appointment.submit">Request Appointment</button>
-        </div>
-      </form>
+        <input
+            type="text"
+            id="appointmentName"
+            name="name"
+            required
+            data-modal-autofocus
+            data-i18n-placeholder="appointment.namePlaceholder"
+            placeholder="Enter your full name"
+            autocomplete="name"
+        />
+
     </div>
-  </div>
+
+
+    <!-- Email -->
+    <div class="form-group">
+
+        <label
+            for="appointmentEmail"
+            data-i18n="appointment.emailLabel"
+        >
+            Email Address
+        </label>
+
+        <input
+            type="email"
+            id="appointmentEmail"
+            name="email"
+            required
+            data-i18n-placeholder="appointment.emailPlaceholder"
+            placeholder="Enter your email"
+            autocomplete="email"
+        />
+
+    </div>
+
+</div>
+
+
+<div class="appointment-modal__grid">
+
+    <!-- Date & Time -->
+    <div class="form-group">
+
+        <label
+            for="appointmentDateTime"
+            data-i18n="appointment.datetimeLabel"
+        >
+            Preferred date &amp; time
+        </label>
+
+        <input
+            type="datetime-local"
+            id="appointmentDateTime"
+            name="preferred_datetime"
+            required
+            data-datetime-min
+        />
+
+
+    </div>
+
+
+    <!-- Phone -->
+    <div class="form-group">
+
+        <label
+            for="appointmentPhone"
+            data-i18n="appointment.phoneLabel"
+        >
+            Phone number (optional)
+        </label>
+
+        <input
+            type="tel"
+            id="appointmentPhone"
+            name="phone"
+            data-i18n-placeholder="appointment.phonePlaceholder"
+            placeholder="Enter your phone number"
+            autocomplete="tel"
+        />
+
+    </div>
+
+</div>
+
+
+<!-- Discussion -->
+<div class="form-group">
+
+    <label
+        for="appointmentPurpose"
+        data-i18n="appointment.reasonLabel"
+    >
+        What would you like to discuss?
+    </label>
+
+    <textarea
+        id="appointmentPurpose"
+        name="purpose"
+        rows="4"
+        required
+        data-i18n-placeholder="appointment.reasonPlaceholder"
+        placeholder="Tell us briefly what you'd like to discuss or build."
+    ></textarea>
+
+</div>
+
+
+<!-- Actions -->
+<div class="appointment-modal__actions">
+
+    <button
+        type="button"
+        class="btn btn--outline"
+        data-modal-close
+        data-i18n="appointment.cancel"
+    >
+        Cancel
+    </button>
+
+    <button
+        type="submit"
+        class="btn btn--primary"
+        data-i18n="appointment.submit"
+    >
+        Request Appointment
+    </button>
+
+</div>
+
+</form>
+
+</div> <!-- appointment-modal__dialog -->
+
+</div> <!-- appointment-modal -->
+
 
   <!-- ===================== CHATBOT ===================== -->
   <button class="chatbot-toggle" id="chatToggle" aria-label="Open chat">
-    <svg class="chatbot-toggle__icon chatbot-toggle__icon--chat" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    <svg class="chatbot-toggle__icon chatbot-toggle__icon--close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
+    <span class="chatbot-toggle__label">
+        <span class="chatbot-toggle__spark" aria-hidden="true">✦</span>
+        Ask MLUE
+    </span>
+
+    <svg class="chatbot-toggle__icon chatbot-toggle__icon--chat"
+         width="28"
+         height="28"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+
+    <svg class="chatbot-toggle__icon chatbot-toggle__icon--close"
+         width="28"
+         height="28"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2.5"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+</button>
 
   <div class="chatbot" id="chatWindow">
     <div class="chatbot__header">
       <div class="chatbot__header-info">
         <div class="chatbot__avatar">
           <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
-            <rect width="32" height="32" rx="8" fill="#1565C0"/>
-            <path d="M8 22V10l5 6 5-6v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22 10v12h6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect width="32" height="32" rx="8" fill="#000000"/>
+            <path d="M8 22V10l5 6 5-6v12" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 10v12h6" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div>

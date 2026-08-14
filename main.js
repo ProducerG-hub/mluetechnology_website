@@ -128,6 +128,10 @@ if (prefersReducedMotion) {
   const toastClose = document.getElementById("toastClose");
   let toastTimer;
 
+  if (toast && toast.parentElement !== document.body) {
+    document.body.appendChild(toast);
+  }
+
   function showToast(type, title, message) {
     if (!toast || !toastIcon || !toastTitle || !toastMsg) return;
     clearTimeout(toastTimer);
@@ -175,6 +179,40 @@ if (prefersReducedMotion) {
     return selectedTime.getTime() >= Date.now();
   }
 
+  function revealAppointmentContinuation(modal, dateTimeInput) {
+    if (!modal || !isFutureDateTimeValid(dateTimeInput)) return;
+
+    const dialog = modal.querySelector(".appointment-modal__dialog");
+    const purpose = modal.querySelector("#appointmentPurpose");
+    const actions = modal.querySelector(".appointment-modal__actions");
+
+    if (!dialog || !purpose) return;
+
+    const shouldAssistScroll =
+      window.matchMedia("(max-width: 768px)").matches ||
+      dialog.scrollHeight > dialog.clientHeight + 2;
+
+    if (!shouldAssistScroll) return;
+
+    window.setTimeout(() => {
+      const target = purpose.closest(".form-group") || purpose;
+
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "center"
+      });
+
+      if (actions && window.matchMedia("(max-width: 480px)").matches) {
+        window.setTimeout(() => {
+          actions.scrollIntoView({
+            behavior: "auto",
+            block: "nearest"
+          });
+        }, prefersReducedMotion ? 0 : 220);
+      }
+    }, 120);
+  }
+
   function submitLeadForm(form, options) {
     const submitButton = form.querySelector("button[type=submit]");
     if (!submitButton) return;
@@ -202,12 +240,13 @@ if (prefersReducedMotion) {
         throw new Error("Server error");
       }
 
-      showToast("success", successTitle, successMessage);
       form.reset();
 
-      if (typeof options.onSuccess === "function") {
-        options.onSuccess();
-      }
+if (typeof options.onSuccess === "function") {
+    options.onSuccess();
+}
+
+showToast("success", successTitle, successMessage);
     })
     .catch(() => {
       showToast("error", errorTitle, errorMessage);
@@ -254,84 +293,186 @@ if (prefersReducedMotion) {
 
     if (!modal) return;
 
-    document.querySelectorAll("[data-open-appointment-modal]").forEach(trigger => {
-      trigger.addEventListener("click", () => openModal(modal, trigger));
-    });
+
+    // ---------------------------------------------------
+    // Open appointment modal
+    // ---------------------------------------------------
+
+    document
+        .querySelectorAll("[data-open-appointment-modal]")
+        .forEach(trigger => {
+
+            trigger.addEventListener("click", () => {
+                openModal(modal, trigger);
+            });
+
+        });
+
+
+    // ---------------------------------------------------
+    // Close by clicking backdrop
+    // ---------------------------------------------------
 
     modal.addEventListener("click", event => {
-      if (event.target === modal || event.target.hasAttribute("data-modal-close")) {
-        closeModal(modal);
-      }
-    });
 
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && modal.classList.contains("is-open")) {
-        closeModal(modal);
-      }
-    });
-
-    if (form) {
-      form.addEventListener("submit", event => {
-        event.preventDefault();
-
-        const dateTimeInput = form.querySelector("#appointmentDateTime");
-        if (!isFutureDateTimeValid(dateTimeInput)) {
-          showToast(
-            "error",
-            getCurrentLang() === "sw" ? "Chagua muda ujao" : "Choose a future time",
-            getCurrentLang() === "sw"
-              ? "Tafadhali weka tarehe na saa ambayo haijapita."
-              : "Please select a date and time that has not already passed."
-          );
-          if (dateTimeInput) {
-            dateTimeInput.focus({ preventScroll: true });
-          }
-          return;
+        if (event.target === modal) {
+            closeModal(modal);
         }
 
-        submitLeadForm(form, {
-          loadingText: {
-            en: "Booking...",
-            sw: "Inatuma..."
-          },
-          successTitle: {
-            en: "Appointment Requested!",
-            sw: "Ombi Limetumwa!"
-          },
-          successMessage: {
-            en: "Your appointment request has been sent to our team.",
-            sw: "Ombi lako la miadi limetumwa kwa timu yetu."
-          },
-          errorTitle: {
-            en: "Failed to Send",
-            sw: "Imeshindikana"
-          },
-          errorMessage: {
-            en: "We could not send your appointment request. Please try again.",
-            sw: "Hatukuweza kutuma ombi lako la miadi. Tafadhali jaribu tena."
-          },
-          onSuccess: () => closeModal(modal)
-        });
-      });
-    }
-  }
+    });
 
-  wireAppointmentModal();
+
+    // ---------------------------------------------------
+    // Close buttons — X and Cancel
+    // ---------------------------------------------------
+
+    modal
+        .querySelectorAll("[data-modal-close]")
+        .forEach(closeButton => {
+
+            closeButton.addEventListener("click", () => {
+                closeModal(modal);
+            });
+
+        });
+
+
+    // ---------------------------------------------------
+    // Close with Escape
+    // ---------------------------------------------------
+
+    document.addEventListener("keydown", event => {
+
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("is-open")
+        ) {
+            closeModal(modal);
+        }
+
+    });
+
+
+    // ---------------------------------------------------
+    // Appointment form submission
+    // ---------------------------------------------------
+
+    if (form) {
+
+        const dateTimeInput =
+            form.querySelector("#appointmentDateTime");
+
+        if (dateTimeInput) {
+
+            dateTimeInput.addEventListener("change", () => {
+                revealAppointmentContinuation(modal, dateTimeInput);
+            });
+
+        }
+
+        form.addEventListener("submit", event => {
+
+            event.preventDefault();
+
+
+            // 1. Check required fields
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+
+            // 2. Check appointment date/time
+            if (!isFutureDateTimeValid(dateTimeInput)) {
+
+                showToast(
+                    "error",
+
+                    getCurrentLang() === "sw"
+                        ? "Chagua muda ujao"
+                        : "Choose a future time",
+
+                    getCurrentLang() === "sw"
+                        ? "Tafadhali weka tarehe na saa ambayo haijapita."
+                        : "Please select a date and time that has not already passed."
+                );
+
+
+                if (dateTimeInput) {
+
+                    dateTimeInput.focus({
+                        preventScroll: true
+                    });
+
+                }
+
+                return;
+            }
+
+
+            // 3. Submit appointment
+            submitLeadForm(form, {
+
+                loadingText: {
+                    en: "Booking...",
+                    sw: "Inatuma..."
+                },
+
+
+                successTitle: {
+    en: "Appointment Request Sent",
+    sw: "Ombi la Miadi Limetumwa"
+},
+
+successMessage: {
+    en: "Thank you. Your appointment request has been sent successfully. Our team will review it and get back to you shortly.",
+    sw: "Asante. Ombi lako la miadi limetumwa kikamilifu. Timu yetu italipitia na tutawasiliana nawe hivi karibuni."
+},
+
+
+                errorTitle: {
+                    en: "Failed to Send",
+                    sw: "Imeshindikana"
+                },
+
+
+                errorMessage: {
+                    en: "We could not send your appointment request. Please try again.",
+                    sw: "Hatukuweza kutuma ombi lako la miadi. Tafadhali jaribu tena."
+                },
+
+
+                onSuccess: () => {
+                    closeModal(modal);
+                }
+
+            });
+
+        });
+
+    }
+
+} // <-- IMPORTANT: closes wireAppointmentModal()
+
+
+wireAppointmentModal();
 
   // ---- Contact form — Email (Formsubmit.co) + WhatsApp ----
   const WHATSAPP_NUMBER = "255752804154";
 
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const name = form.querySelector("#name").value.trim();
-      const email = form.querySelector("#email").value.trim();
-      const message = form.querySelector("#message").value.trim();
+  const contactForm = document.getElementById("contactForm");
 
-      if (!name || !email || !message) return;
+if (contactForm) {
+    contactForm.addEventListener("submit", e => {
+        e.preventDefault();
 
-      submitLeadForm(form, {
+        const name = contactForm.querySelector("#name").value.trim();
+        const email = contactForm.querySelector("#email").value.trim();
+        const message = contactForm.querySelector("#message").value.trim();
+
+        if (!name || !email || !message) return;
+
+        submitLeadForm(contactForm, {
         loadingText: {
           en: "Sending...",
           sw: "Inatuma..."
