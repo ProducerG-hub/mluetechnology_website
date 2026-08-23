@@ -124,8 +124,13 @@
       </div>
 
       <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <span class="header__hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+    <span class="header__hamburger-label">Menu</span>
+</button>
     </div>
   </header>
 
@@ -154,7 +159,7 @@
 
     <div class="hero__actions">
       <button type="button" class="btn btn--primary cta" data-open-appointment-modal data-i18n="appointment.cta">Book Appointment</button>
-      <a href="#services" class="btn btn--outline btn--outline-light" data-i18n="cta.viewServices">View Services</a>
+      <a href="#services" class="btn btn--outline btn--outline-light" data-i18n="hero.ctaSecondary">View Services</a>
     </div>
   </div>
 </section>
@@ -165,14 +170,20 @@
 
         <!-- About Header -->
         <div class="about__header">
-            <p class="about__eyebrow">
+
+            <p class="about__eyebrow" data-i18n="about.eyebrow">
                 WHO WE ARE?
             </p>
 
             <h2 class="about__headline">
-                Engineering digital systems
-                <span>that solve real problems.</span>
+              <span data-i18n="about.headline">
+        Engineering digital systems
+              </span>
+              <span data-i18n="about.headlineAccent">
+        that solve real problems.
+              </span>
             </h2>
+
         </div>
 
 
@@ -182,7 +193,7 @@
             <!-- Left: Company Identity -->
             <div class="about__identity">
 
-                <p class="about__description">
+                <p class="about__description" data-i18n="about.description">
                     A technology company focused on engineering
                     high-quality software that solves real business
                     problems.
@@ -191,29 +202,35 @@
 
                 <!-- Mission -->
                 <div class="about__statement">
-                    <div class="about__statement-label">
+
+                    <div class="about__statement-label"
+                         data-i18n="about.missionLabel">
                         MISSION
                     </div>
 
-                    <p>
+                    <p data-i18n="about.mission">
                         To empower businesses with reliable,
                         innovative, and secure technology solutions
                         that simplify operations and accelerate growth.
                     </p>
+
                 </div>
 
 
                 <!-- Vision -->
                 <div class="about__statement">
-                    <div class="about__statement-label">
+
+                    <div class="about__statement-label"
+                         data-i18n="about.visionLabel">
                         VISION
                     </div>
 
-                    <p>
+                    <p data-i18n="about.vision">
                         To become the most trusted technology partner
                         for businesses across East Africa and beyond,
                         delivering world-class digital solutions.
                     </p>
+
                 </div>
 
             </div>
@@ -223,72 +240,108 @@
             <div class="about__approach">
 
                 <div class="about__approach-header">
+
                     <span class="about__approach-number">01</span>
 
                     <div>
-                        <p class="about__approach-label">
+
+                        <p class="about__approach-label"
+                           data-i18n="about.approachLabel">
                             ENGINEERING APPROACH
                         </p>
 
-                        <h3>
-                            Built with engineering
-                            principles.
+                        <h3 data-i18n="about.approachTitle">
+                            Built with engineering principles.
                         </h3>
+
                     </div>
+
                 </div>
 
 
                 <div class="about__approach-list">
 
+                    <!-- Architecture -->
                     <div class="approach-item">
+
                         <span class="approach-item__number">01</span>
 
                         <div class="approach-item__content">
-                            <h4>Architecture</h4>
-                            <p>
+
+                            <h4 data-i18n="about.architectureTitle">
+                                Architecture
+                            </h4>
+
+                            <p data-i18n="about.architectureText">
                                 Structured systems designed for
                                 maintainability and growth.
                             </p>
+
                         </div>
+
                     </div>
 
 
+                    <!-- Security -->
                     <div class="approach-item">
+
                         <span class="approach-item__number">02</span>
 
                         <div class="approach-item__content">
-                            <h4>Security</h4>
-                            <p>
+
+                            <h4 data-i18n="about.securityTitle">
+                                Security
+                            </h4>
+
+                            <p data-i18n="about.securityText">
                                 Security considered throughout
                                 the system lifecycle.
                             </p>
+
                         </div>
+
                     </div>
 
 
+                    <!-- Scalability -->
                     <div class="approach-item">
+
                         <span class="approach-item__number">03</span>
 
                         <div class="approach-item__content">
-                            <h4>Scalability</h4>
-                            <p>
+
+                            <h4 data-i18n="about.scalabilityTitle">
+                                Scalability
+                            </h4>
+
+                            <p data-i18n="about.scalabilityText">
                                 Systems engineered to grow with
                                 changing business needs.
                             </p>
+
                         </div>
+
                     </div>
 
 
+                    <!-- Reliability -->
                     <div class="approach-item">
+
                         <span class="approach-item__number">04</span>
 
                         <div class="approach-item__content">
-                            <h4>Reliability</h4>
-                            <p>
+
+                            <h4 data-i18n="about.reliabilityTitle">
+                                Reliability
+                            </h4>
+
+                            <p data-i18n="about.reliabilityText">
                                 Dependable systems built for
                                 consistent operation.
                             </p>
+
                         </div>
+
                     </div>
 
                 </div>
@@ -302,48 +355,76 @@
         <div class="about__principles">
 
             <div class="about__principles-header">
-                <p>ENGINEERING PRINCIPLES</p>
+
+                <p data-i18n="about.principlesLabel">
+                    ENGINEERING PRINCIPLES
+                </p>
+
             </div>
 
 
             <div class="principles-grid">
 
+                <!-- Principle 1 -->
                 <div class="principle">
+
                     <span class="principle__number">01</span>
 
                     <div>
-                        <h3>Engineering Quality</h3>
-                        <p>
+
+                        <h3 data-i18n="about.principle1Title">
+                            Engineering Quality
+                        </h3>
+
+                        <p data-i18n="about.principle1Text">
                             Clean architecture, tested code,
                             and modern engineering practices.
                         </p>
+
                     </div>
+
                 </div>
 
 
+                <!-- Principle 2 -->
                 <div class="principle">
+
                     <span class="principle__number">02</span>
 
                     <div>
-                        <h3>Business-Oriented</h3>
-                        <p>
+
+                        <h3 data-i18n="about.principle2Title">
+                            Business-Oriented
+                        </h3>
+
+                        <p data-i18n="about.principle2Text">
                             Technology designed around real
                             business needs and problems.
                         </p>
+
                     </div>
+
                 </div>
 
 
+                <!-- Principle 3 -->
                 <div class="principle">
+
                     <span class="principle__number">03</span>
 
                     <div>
-                        <h3>Reliability & Security</h3>
-                        <p>
+
+                        <h3 data-i18n="about.principle3Title">
+                            Reliability & Security
+                        </h3>
+
+                        <p data-i18n="about.principle3Text">
                             Security and reliability built into
                             every layer of our systems.
                         </p>
+
                     </div>
+
                 </div>
 
             </div>
@@ -352,27 +433,34 @@
 
     </div>
 </section>
-  <!-- ===================== SERVICES ===================== -->
+
+  
 <!-- ===================== SERVICES ===================== -->
 <section class="services" id="services">
     <div class="container">
 
         <!-- Section Header -->
-        <div class="services__header">
-            <p class="services__eyebrow">
-                WHAT WE DO
-            </p>
+<div class="services__header">
 
-            <h2 class="services__headline">
-                Technology solutions
-                <span>engineered around real problems.</span>
-            </h2>
+    <p class="services__eyebrow" data-i18n="services.eyebrow">
+        WHAT WE DO
+    </p>
 
-            <p class="services__intro">
-                We design, build, and deploy digital solutions
-                around actual business needs.
-            </p>
-        </div>
+    <h2 class="services__headline">
+        <span data-i18n="services.title">
+            Technology solutions
+        </span>
+        <span data-i18n="services.titleAccent">
+            engineered around real problems.
+        </span>
+    </h2>
+
+    <p class="services__intro" data-i18n="services.description">
+        We design, build, and deploy digital solutions
+        around actual business needs.
+    </p>
+
+</div>
 
 
         <!-- Solution Pillars -->
@@ -390,9 +478,9 @@
                         01
                     </span>
 
-                    <span class="solution__type">
-                        CORE SOLUTION
-                    </span>
+                    <span class="solution__type" data-i18n="services.software.type">
+                 CORE SOLUTION
+                </span>
 
                 </div>
 
@@ -402,15 +490,19 @@
                     <div class="solution__main">
 
                         <h3 class="solution__title">
-                            Business Software
-                            <span>Solutions</span>
-                        </h3>
+    <span data-i18n="services.software.title">
+        Business Software
+    </span>
+    <span data-i18n="services.software.titleAccent">
+        Solutions
+    </span>
+    </h3>
 
-                        <p class="solution__description">
-                            We engineer software systems that help
-                            businesses manage operations, automate
-                            workflows, improve productivity, and
-                            make better decisions.
+                        <p class="solution__description" data-i18n="services.software.description">
+               We engineer software systems that help
+               businesses manage operations, automate
+               workflows, improve productivity, and
+               make better decisions.
                         </p>
 
                     </div>
@@ -431,12 +523,23 @@
                 <!-- Capabilities -->
                 <div class="solution__capabilities">
 
-                    <span>Custom Software</span>
-                    <span>Business Systems</span>
-                    <span>APIs & Backend</span>
-                    <span>E-Commerce</span>
+    <span data-i18n="services.software.capability1">
+        Custom Software
+    </span>
 
-                </div>
+    <span data-i18n="services.software.capability2">
+        Business Systems
+    </span>
+
+    <span data-i18n="services.software.capability3">
+        APIs & Backend
+    </span>
+
+    <span data-i18n="services.software.capability4">
+        E-Commerce
+    </span>
+
+</div>
 
             </article>
 
@@ -452,9 +555,9 @@
                         02
                     </span>
 
-                    <span class="solution__type">
-                        SPECIALIZED SOLUTION
-                    </span>
+                    <span class="solution__type" data-i18n="services.location.type">
+                  SPECIALIZED SOLUTION
+                     </span>
 
                 </div>
 
@@ -464,15 +567,22 @@
                     <div class="solution__main">
 
                         <h3 class="solution__title">
-                            Location
-                            <span>Intelligence</span>
-                        </h3>
 
-                        <p class="solution__description">
-                            We use GIS, spatial data, and mapping
-                            technologies to transform location
-                            information into actionable decisions.
-                        </p>
+    <span data-i18n="services.location.title">
+        Location
+    </span>
+
+    <span data-i18n="services.location.titleAccent">
+        Intelligence
+    </span>
+
+                      </h3>
+
+                        <p class="solution__description" data-i18n="services.location.description">
+                We use GIS, spatial data, and mapping
+                technologies to transform location
+                information into actionable decisions.
+                       </p>
 
                     </div>
 
@@ -492,12 +602,23 @@
                 <!-- Capabilities -->
                 <div class="solution__capabilities">
 
-                    <span>GIS Analysis</span>
-                    <span>Spatial Data</span>
-                    <span>Site Selection</span>
-                    <span>Mapping</span>
+    <span data-i18n="services.location.capability1">
+        GIS Analysis
+    </span>
 
-                </div>
+    <span data-i18n="services.location.capability2">
+        Spatial Data
+    </span>
+
+    <span data-i18n="services.location.capability3">
+        Site Selection
+    </span>
+
+    <span data-i18n="services.location.capability4">
+        Mapping
+    </span>
+
+        </div>
 
             </article>
 
@@ -505,75 +626,72 @@
 
 
         <!-- Engineering Capabilities -->
-        <div class="services__capabilities">
+        <div class="services__capabilities-header">
 
-            <div class="services__capabilities-header">
+    <p data-i18n="services.capabilitiesLabel">
+        ENGINEERING CAPABILITIES
+    </p>
 
-                <p>
-                    ENGINEERING CAPABILITIES
-                </p>
+    <span data-i18n="services.deliveryLabel">
+        HOW WE DELIVER
+    </span>
 
-                <span>
-                    HOW WE DELIVER
-                </span>
-
-            </div>
+        </div> 
 
 
             <div class="capabilities-grid">
 
                 <div class="capability">
 
-                    <span class="capability__number">
-                        01
-                    </span>
+    <span class="capability__number">
+        01
+    </span>
 
-                    <h3>
-                        UI / UX
-                    </h3>
+    <h3 data-i18n="services.uiux.title">
+        UI / UX
+    </h3>
 
-                    <p>
-                        Interfaces designed around clarity,
-                        usability, and real user workflows.
-                    </p>
+    <p data-i18n="services.uiux.description">
+        Interfaces designed around clarity,
+        usability, and real user workflows.
+    </p>
 
-                </div>
+            </div>
+
+                <div class="capability">
+
+    <span class="capability__number">
+        02
+    </span>
+
+    <h3 data-i18n="services.cloud.title">
+        Cloud & Deployment
+    </h3>
+
+    <p data-i18n="services.cloud.description">
+        Reliable deployment infrastructure
+        designed for performance and growth.
+    </p>
+
+            </div>
 
 
                 <div class="capability">
 
-                    <span class="capability__number">
-                        02
-                    </span>
+    <span class="capability__number">
+        03
+    </span>
 
-                    <h3>
-                        Cloud & Deployment
-                    </h3>
+    <h3 data-i18n="services.maintenance.title">
+        Maintenance & Support
+    </h3>
 
-                    <p>
-                        Reliable deployment infrastructure
-                        designed for performance and growth.
-                    </p>
+    <p data-i18n="services.maintenance.description">
+        Continuous improvement, maintenance,
+        and technical support after deployment.
+    </p>
 
-                </div>
-
-
-                <div class="capability">
-
-                    <span class="capability__number">
-                        03
-                    </span>
-
-                    <h3>
-                        Maintenance & Support
-                    </h3>
-
-                    <p>
-                        Continuous improvement, maintenance,
-                        and technical support after deployment.
-                    </p>
-
-                </div>
+         </div>
 
             </div>
 
@@ -590,20 +708,25 @@
         <!-- Section Header -->
         <div class="value-section__header">
 
-            <p class="value-section__eyebrow">
-                WHAT YOU GET
-            </p>
+            <p class="value-section__eyebrow" data-i18n="value.eyebrow">
+    WHAT YOU GET
+</p>
 
-            <h2 class="value-section__title">
-                Practical systems.
-                <span>Clearer decisions. Long-term value.</span>
-            </h2>
+<h2 class="value-section__title">
+    <span data-i18n="value.title">
+        Practical systems.
+    </span>
 
-            <p class="value-section__intro">
-                We don't just deliver software. We build technology
-                that improves how businesses operate, make decisions,
-                and grow.
-            </p>
+    <span data-i18n="value.titleAccent">
+        Clearer decisions. Long-term value.
+    </span>
+</h2>
+
+<p class="value-section__intro" data-i18n="value.description">
+    We don't just deliver software. We build technology
+    that improves how businesses operate, make decisions,
+    and grow.
+</p>
 
         </div>
 
@@ -621,15 +744,15 @@
 
                 <div class="value-outcome__content">
 
-                    <h3>
-                        Business Control
-                    </h3>
+                    <h3 data-i18n="value.business.title">
+    Business Control
+</h3>
 
-                    <p>
-                        Better control of your business operations
-                        through systems designed around real
-                        workflows.
-                    </p>
+<p data-i18n="value.business.description">
+    Better control of your business operations
+    through systems designed around real
+    workflows.
+</p>
 
                 </div>
 
@@ -645,15 +768,15 @@
 
                 <div class="value-outcome__content">
 
-                    <h3>
-                        Actionable Intelligence
-                    </h3>
+                    <h3 data-i18n="value.intelligence.title">
+    Actionable Intelligence
+</h3>
 
-                    <p>
-                        Data, GIS, and real-time insights that
-                        support clearer and more informed
-                        decisions.
-                    </p>
+<p data-i18n="value.intelligence.description">
+    Data, GIS, and real-time insights that
+    support clearer and more informed
+    decisions.
+</p>
 
                 </div>
 
@@ -669,15 +792,15 @@
 
                 <div class="value-outcome__content">
 
-                    <h3>
-                        Built for Growth
-                    </h3>
+                    <h3 data-i18n="value.growth.title">
+    Built for Growth
+</h3>
 
-                    <p>
-                        Secure and maintainable systems designed
-                        to evolve with your business and its
-                        changing needs.
-                    </p>
+<p data-i18n="value.growth.description">
+    Secure and maintainable systems designed
+    to evolve with your business and its
+    changing needs.
+</p>
 
                 </div>
 
@@ -689,29 +812,34 @@
         <!-- ===================== TRUST PRINCIPLES ===================== -->
         <div class="value-section__principles">
 
-            <span>Business-first</span>
+    <span data-i18n="value.principle1">
+        Business-first
+    </span>
 
-            <span>Security-conscious</span>
+    <span data-i18n="value.principle2">
+        Security-conscious
+    </span>
 
-            <span>Built to last</span>
+    <span data-i18n="value.principle3">
+        Built to last
+    </span>
 
-        </div>
-
+</div>
 
         <!-- ===================== CTA ===================== -->
         <div class="value-section__cta">
 
             <a
-                href="#contact"
-                class="value-section__cta-link"
-            >
-                Request a Solution
+    href="#contact"
+    class="value-section__cta-link"
+    data-i18n="value.cta"
+>
+    Request a Solution
 
-                <span aria-hidden="true">
-                    →
-                </span>
-
-            </a>
+    <span aria-hidden="true">
+        →
+    </span>
+             </a> 
 
         </div>
 
@@ -727,22 +855,27 @@
         <!-- Section Introduction -->
         <div class="team-header">
 
-            <p class="team-eyebrow">
-                THE ENGINEERING TEAM
-            </p>
+    <p class="team-eyebrow" data-i18n="team.eyebrow">
+        THE ENGINEERING TEAM
+    </p>
 
-            <h2 class="team-title">
-                Three engineers.
-                <span>Complementary strengths. One team.</span>
-            </h2>
+    <h2 class="team-title">
+        <span data-i18n="team.title">
+            Three engineers.
+        </span>
 
-            <p class="team-intro">
-                We combine specialized engineering strengths to design,
-                build, and deliver complete digital systems for
-                real-world problems.
-            </p>
+        <span data-i18n="team.titleAccent">
+            Complementary strengths. One team.
+        </span>
+    </h2>
 
-        </div>
+    <p class="team-intro" data-i18n="team.description">
+        We combine specialized engineering strengths to design,
+        build, and deliver complete digital systems for
+        real-world problems.
+    </p>
+
+</div>
 
 
         <!-- ===================== BENTO TEAM ===================== -->
@@ -786,7 +919,7 @@
                             David F Mwakajonga
                         </h3>
 
-                        <p>
+                        <p data-i18n="team.softwareEngineer">
                             Software Engineer
                         </p>
 
@@ -834,7 +967,7 @@
                             Gwamaka A Mwakabuta
                         </h3>
 
-                        <p>
+                        <p data-i18n="team.softwareEngineer">
                             Software Engineer
                         </p>
 
@@ -882,7 +1015,7 @@
                             Stephane H Chibwaye
                         </h3>
 
-                        <p>
+                        <p data-i18n="team.softwareEngineer">
                             Software Engineer
                         </p>
 
@@ -904,16 +1037,16 @@
 
             <div class="team-profile__identity">
 
-                <span class="team-profile__label">
-                    SPECIALIZATION
-                </span>
+                <span class="team-profile__label" data-i18n="team.specialization">
+    SPECIALIZATION
+</span>
 
                 <h3 id="team-profile-name">
                     David F Mwakajonga
                 </h3>
 
-                <p id="team-profile-role">
-                    Frontend Engineering & UI/UX
+                <p id="team-profile-role" data-i18n="team.davidRole">
+              Frontend Engineering & UI/UX
                 </p>
 
             </div>
@@ -921,24 +1054,22 @@
 
             <div class="team-profile__details">
 
-                <p id="team-profile-description">
-                    Focused on crafting polished digital experiences
-                    and engineering intelligent systems that turn
-                    complex business problems into usable solutions.
+                <p id="team-profile-description" data-i18n="team.davidDescription">
+    Focused on crafting polished digital experiences
+    and engineering intelligent systems that turn
+    complex business problems into usable solutions.
                 </p>
 
 
                 <div
-                    class="team-profile__skills"
-                    id="team-profile-skills"
-                >
-
-                    <span>UI / UX</span>
-                    <span>Frontend Engineering</span>
-                    <span>Decision Support</span>
-                    <span>Expert Systems</span>
-
-                </div>
+    class="team-profile__skills"
+    id="team-profile-skills"
+>
+    <span data-i18n="team.skill1">UI / UX</span>
+    <span data-i18n="team.skill2">Frontend Engineering</span>
+    <span data-i18n="team.skill3">Decision Support</span>
+    <span data-i18n="team.skill4">Expert Systems</span>
+</div>
 
             </div>
 
@@ -950,28 +1081,48 @@
 
             <div class="team-capabilities__header">
 
-                <span>
-                    ONE TEAM
-                </span>
+    <span data-i18n="team.oneTeam">
+        ONE TEAM
+    </span>
 
-                <p>
-                    MULTIPLE ENGINEERING DISCIPLINES
-                </p>
+    <p data-i18n="team.disciplines">
+        MULTIPLE ENGINEERING DISCIPLINES
+    </p>
 
-            </div>
+</div>
 
 
             <div class="team-capabilities__list">
 
-                <span>Software Engineering</span>
-                <span>GIS</span>
-                <span>APIs</span>
-                <span>Database Systems</span>
-                <span>Cloud</span>
-                <span>Intelligent Systems</span>
-                <span>UI / UX</span>
+    <span data-i18n="team.capability1">
+        Software Engineering
+    </span>
 
-            </div>
+    <span data-i18n="team.capability2">
+        GIS
+    </span>
+
+    <span data-i18n="team.capability3">
+        APIs
+    </span>
+
+    <span data-i18n="team.capability4">
+        Database Systems
+    </span>
+
+    <span data-i18n="team.capability5">
+        Cloud
+    </span>
+
+    <span data-i18n="team.capability6">
+        Intelligent Systems
+    </span>
+
+    <span data-i18n="team.capability7">
+        UI / UX
+    </span>
+
+</div>
 
         </div>
 
@@ -989,19 +1140,24 @@
         <!-- Contact Header -->
         <div class="contact__header">
 
-            <p class="contact__eyebrow" data-i18n="contact.label">
-                CONTACT
-            </p>
+            <p class="contact__eyebrow" data-i18n="contact.eyebrow">
+    CONTACT
+</p>
 
-            <h2 class="contact__title" data-i18n="contact.title">
-                Have a problem worth solving?
-                <span>Let's engineer the right solution.</span>
-            </h2>
+<h2 class="contact__title">
+    <span data-i18n="contact.title">
+        Have a problem worth solving?
+    </span>
 
-            <p class="contact__intro" data-i18n="contact.subtitle">
-                Tell us what you're trying to build, solve, or improve.
-                Let's start the conversation.
-            </p>
+    <span data-i18n="contact.titleAccent">
+        Let's engineer the right solution.
+    </span>
+</h2>
+
+<p class="contact__intro" data-i18n="contact.subtitle">
+    Tell us what you're trying to build, solve, or improve.
+    Let's start the conversation.
+</p>
 
         </div>
 
@@ -1013,18 +1169,21 @@
             <!-- ===================== TALK DIRECTLY ===================== -->
             <div class="contact__talk">
 
-                <p class="contact-panel__eyebrow">
-                    PREFER TO TALK?
-                </p>
+                <p class="contact-panel__eyebrow"
+   data-i18n="contact.talkLabel">
+    PREFER TO TALK?
+</p>
 
-                <h3 class="contact-panel__title">
-                    Let's discuss your idea.
-                </h3>
+<h3 class="contact-panel__title"
+    data-i18n="contact.talkTitle">
+    Let's discuss your idea.
+</h3>
 
-                <p class="contact-panel__text">
-                    Have a question, an idea, or a project that needs
-                    discussion? Reach out to us directly.
-                </p>
+<p class="contact-panel__text"
+   data-i18n="contact.talkText">
+    Have a question, an idea, or a project that needs
+    discussion? Reach out to us directly.
+</p>
 
 
                 <!-- WhatsApp -->
@@ -1055,8 +1214,7 @@
 
                     <span class="contact-direct__content">
 
-                        <small>WhatsApp</small>
-
+                        <small data-i18n="contact.whatsapp">WhatsApp</small>
                         <strong>
                             +255 752 804 154
                         </strong>
@@ -1096,7 +1254,7 @@
 
                     <span class="contact-direct__content">
 
-                        <small>Email</small>
+                        <small data-i18n="contact.emailLabel">Email</small>
 
                         <strong>
                             mluetechnologytz@gmail.com
@@ -1114,9 +1272,10 @@
                 <!-- Location -->
                 <div class="contact-location">
 
-                    <span class="contact-location__label">
-                        BASED IN
-                    </span>
+                    <span class="contact-location__label"
+      data-i18n="contact.locationLabel">
+    BASED IN
+                  </span>
 
                     <strong>
                         Dar es Salaam, Tanzania
@@ -1132,13 +1291,15 @@
 
                 <div class="contact-project__header">
 
-                    <p class="contact-panel__eyebrow">
-                        START A PROJECT
-                    </p>
+                    <p class="contact-panel__eyebrow"
+   data-i18n="contact.projectLabel">
+    START A PROJECT
+</p>
 
-                    <h3 class="contact-panel__title">
-                        Tell us what you're building.
-                    </h3>
+<h3 class="contact-panel__title"
+    data-i18n="contact.projectTitle">
+    Tell us what you're building.
+</h3>
 
                 </div>
 
@@ -1216,9 +1377,10 @@
                     <!-- What do you need? -->
 <div class="form-group">
 
-    <label for="solution">
-        What do you need?
-    </label>
+    <label for="solution"
+       data-i18n="contact.solutionLabel">
+    What do you need?
+</label>
 
     <select
         id="solution"
@@ -1226,37 +1388,46 @@
         required
     >
 
-        <option value="" disabled selected>
-            Select a solution
-        </option>
+        <option value="" disabled selected
+        data-i18n="contact.solutionPlaceholder">
+    Select a solution
+</option>
 
-        <option value="Custom Software">
-            Custom Software
-        </option>
+<option value="Custom Software"
+        data-i18n="contact.solutionCustomSoftware">
+    Custom Software
+</option>
 
-        <option value="Business System">
-            Business System
-        </option>
+<option value="Business System"
+        data-i18n="contact.solutionBusinessSystem">
+    Business System
+</option>
 
-        <option value="API / Backend">
-            API / Backend
-        </option>
+<option value="API / Backend"
+        data-i18n="contact.solutionApi">
+    API / Backend
+</option>
 
-        <option value="E-Commerce">
-            E-Commerce
-        </option>
+<option value="E-Commerce"
+        data-i18n="contact.solutionEcommerce">
+    E-Commerce
+</option>
 
-        <option value="GIS / Location Intelligence">
-            GIS / Location Intelligence
-        </option>
+<option value="GIS / Location Intelligence"
+        data-i18n="contact.solutionGis">
+    GIS / Location Intelligence
+</option>
 
-        <option value="AI / Intelligent Systems">
-            AI / Intelligent Systems
-        </option>
+<option value="AI / Intelligent Systems"
+        data-i18n="contact.solutionAi">
+    AI / Intelligent Systems
+</option>
 
-        <option value="Other">
-            Other
-        </option>
+<option value="Other"
+        data-i18n="contact.solutionOther">
+    Other
+</option>
+
 
     </select>
 
@@ -1287,17 +1458,13 @@
 
                     <!-- Submit -->
                     <button
-                        type="submit"
-                        class="contact__submit"
-                        data-i18n="contact.send"
-                    >
-                        Send Project Brief
+    type="submit"
+    class="contact__submit"
+    data-i18n="contact.send"
+>
+    Send Project Brief
+</button>
 
-                        <span aria-hidden="true">
-                            →
-                        </span>
-
-                    </button>
 
                 </form>
 
@@ -1551,37 +1718,58 @@
             <!-- ===================== SERVICES ===================== -->
             <div class="footer__column">
 
-                <h3 class="footer__heading">
-                    Services
-                </h3>
+                <h3
+    class="footer__heading"
+    data-i18n="footer.services"
+>
+    Services
+               </h3>
 
                 <nav class="footer__links">
 
-                    <a href="/projects/software-solutions/">
-                        Business Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.businessSoftware"
+    >
+        Business Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        Custom Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.customSoftware"
+    >
+        Custom Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        APIs &amp; Backend
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.apiBackend"
+    >
+        APIs &amp; Backend
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        E-Commerce
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.ecommerce"
+    >
+        E-Commerce
+    </a>
 
-                    <a href="/projects/location-intelligence/">
-                        Location Intelligence
-                    </a>
+    <a
+        href="/projects/location-intelligence/"
+        data-i18n="footer.locationIntelligence"
+    >
+        Location Intelligence
+    </a>
 
-                    <a href="#services">
-                        AI / Intelligent Systems
-                    </a>
+    <a
+        href="#services"
+        data-i18n="footer.aiSystems"
+    >
+        AI / Intelligent Systems
+    </a>
 
-                </nav>
+</nav>
 
             </div>
 
@@ -1589,16 +1777,22 @@
             <!-- ===================== LET'S TALK ===================== -->
             <div class="footer__column footer__contact">
 
-                <h3 class="footer__heading">
-                    Let's Talk
-                </h3>
+                <h3
+    class="footer__heading"
+    data-i18n="footer.letsTalk"
+>
+    Let's Talk
+                 </h3>
 
 
                 <div class="footer__location">
 
-                    <span class="footer__contact-label">
-                        Based in
-                    </span>
+                    <span
+    class="footer__contact-label"
+    data-i18n="footer.basedIn"
+>
+    Based in
+</span>
 
                     <strong>
                         Dar es Salaam, Tanzania
@@ -1608,23 +1802,29 @@
 
 
                 <a
-                    href="https://wa.me/255752804154"
-                    class="footer__contact-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="https://wa.me/255752804154"
+    class="footer__contact-link"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span data-i18n="footer.whatsapp">
+        WhatsApp
+    </span>
+
+    <span aria-hidden="true">→</span>
+</a>
 
 
                 <a
-                    href="mailto:mluetechnologytz@gmail.com"
-                    class="footer__contact-link"
-                >
-                    Email
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="mailto:mluetechnologytz@gmail.com"
+    class="footer__contact-link"
+>
+    <span data-i18n="footer.email">
+        Email
+    </span>
+
+    <span aria-hidden="true">→</span>
+</a>
 
             </div>
 
@@ -1852,9 +2052,16 @@
   <!-- ===================== CHATBOT ===================== -->
   <button class="chatbot-toggle" id="chatToggle" aria-label="Open chat">
     <span class="chatbot-toggle__label">
-        <span class="chatbot-toggle__spark" aria-hidden="true">✦</span>
+
+    <span class="chatbot-toggle__spark" aria-hidden="true">
+        ✦
+    </span>
+
+    <span data-i18n="chat.ask">
         Ask MLUE
     </span>
+
+</span>
 
     <svg class="chatbot-toggle__icon chatbot-toggle__icon--chat"
          width="28"

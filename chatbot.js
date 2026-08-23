@@ -462,40 +462,59 @@
 
     function createChatbotMarkup() {
         const mount = document.createElement("div");
-        mount.innerHTML = [
-            '<button class="chatbot-toggle" id="chatToggle" aria-label="Open chat" aria-expanded="false">',
-            '  <span class="chatbot-toggle__label">ask mlue</span>',
-            '  <svg class="chatbot-toggle__icon chatbot-toggle__icon--chat" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
-            '  <svg class="chatbot-toggle__icon chatbot-toggle__icon--close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
-            '</button>',
-            '<div class="chatbot" id="chatWindow" aria-hidden="true">',
-            '  <div class="chatbot__header">',
-            '    <div class="chatbot__header-info">',
-            '      <div class="chatbot__avatar">',
-            '        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">',
-            '          <rect width="32" height="32" rx="8" fill="#1565C0"/>',
-            '          <path d="M8 22V10l5 6 5-6v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>',
-            '          <path d="M22 10v12h6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>',
-            '        </svg>',
-            '      </div>',
-            '      <div>',
-            '        <p class="chatbot__name">MLUE Assistant</p>',
-            '        <p class="chatbot__status" data-i18n="chat.online">Online</p>',
-            '      </div>',
-            '    </div>',
-            '    <button class="chatbot__close" id="chatClose" aria-label="Close chat">',
-            '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
-            '    </button>',
-            '  </div>',
-            '  <div class="chatbot__messages" id="chatMessages" data-i18n="chat.onboarding"></div>',
-            '  <div class="chatbot__input">',
-            '    <input type="text" id="chatInput" data-i18n-placeholder="chat.placeholder" placeholder="Ask about MLUE Technology..." autocomplete="off" />',
-            '    <button id="chatSend" aria-label="Send">',
-            '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',
-            '    </button>',
-            '  </div>',
-            '</div>'
-        ].join("\n");
+
+mount.innerHTML = [
+  '<button class="chatbot-toggle" id="chatToggle" aria-label="Open chat" aria-expanded="false">',
+  '  <span class="chatbot-toggle__label">',
+  '    <span class="chatbot-toggle__spark" aria-hidden="true">✦</span>',
+  '    <span data-i18n="chat.ask">Ask MLUE</span>',
+  '  </span>',
+  '  <svg class="chatbot-toggle__icon chatbot-toggle__icon--chat" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+  '    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  '  </svg>',
+  '  <svg class="chatbot-toggle__icon chatbot-toggle__icon--close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">',
+  '    <line x1="18" y1="6" x2="6" y2="18"/>',
+  '    <line x1="6" y1="6" x2="18" y2="18"/>',
+  '  </svg>',
+  '</button>',
+
+  '<div class="chatbot" id="chatWindow" aria-hidden="true">',
+  '  <div class="chatbot__header">',
+  '    <div class="chatbot__header-info">',
+  '      <div class="chatbot__avatar">',
+  '        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">',
+  '          <rect width="32" height="32" rx="8" fill="#1565C0"/>',
+  '          <path d="M8 22V10l5 6 5-6v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>',
+  '          <path d="M22 10v12h6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>',
+  '        </svg>',
+  '      </div>',
+  '      <div>',
+  '        <p class="chatbot__name">MLUE Assistant</p>',
+  '        <p class="chatbot__status" data-i18n="chat.online">Online</p>',
+  '      </div>',
+  '    </div>',
+
+  '    <button class="chatbot__close" id="chatClose" aria-label="Close chat">',
+  '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">',
+  '        <line x1="18" y1="6" x2="6" y2="18"/>',
+  '        <line x1="6" y1="6" x2="18" y2="18"/>',
+  '      </svg>',
+  '    </button>',
+  '  </div>',
+
+  '  <div class="chatbot__messages" id="chatMessages" data-i18n="chat.onboarding"></div>',
+
+  '  <div class="chatbot__input">',
+  '    <input type="text" id="chatInput" data-i18n-placeholder="chat.placeholder" placeholder="Ask about MLUE Technology..." autocomplete="off" />',
+  '    <button id="chatSend" aria-label="Send">',
+  '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">',
+  '        <line x1="22" y1="2" x2="11" y2="13"/>',
+  '        <polygon points="22 2 15 22 11 13 2 9 22 2"/>',
+  '      </svg>',
+  '    </button>',
+  '  </div>',
+  '</div>'
+].join("\n");
 
         while (mount.firstChild) {
             document.body.appendChild(mount.firstChild);
@@ -524,12 +543,6 @@
             return;
         }
 
-        if (!chatToggle.querySelector(".chatbot-toggle__label")) {
-            const label = document.createElement("span");
-            label.className = "chatbot-toggle__label";
-            label.textContent = "ask mlue";
-            chatToggle.insertBefore(label, chatToggle.firstChild);
-        }
 
         const state = loadChatbotState();
         let chatLanguage = state.language;
@@ -579,6 +592,12 @@ function updateOnboarding() {
         onboardingNode.remove();
     }
 }
+
+document.addEventListener("mlue-language-changed", () => {
+    updateOnboarding();
+});
+
+
 
         function getLanguageSwitch(text) {
             const normalized = (text || "").toLowerCase();

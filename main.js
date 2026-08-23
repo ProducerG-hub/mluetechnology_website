@@ -502,8 +502,10 @@ if (contactForm) {
   // ===================================================
 
   const teamMembers = {
-    david: {
-      name: "David F Mwakajonga",
+  david: {
+    name: "David F Mwakajonga",
+
+    en: {
       role: "Frontend Engineering & UI/UX",
       description:
         "Focused on crafting polished digital experiences and engineering intelligent systems that turn complex business problems into usable solutions.",
@@ -515,8 +517,23 @@ if (contactForm) {
       ]
     },
 
-    gwamaka: {
-      name: "Gwamaka A Mwakabuta",
+    sw: {
+      role: "Uhandisi wa Frontend na UI/UX",
+      description:
+        "Analenga kutengeneza uzoefu bora wa kidijitali na mifumo yenye akili inayobadilisha changamoto ngumu za biashara kuwa suluhisho zinazoweza kutumika.",
+      skills: [
+        "UI / UX",
+        "Uhandisi wa Frontend",
+        "Msaada wa Kufanya Maamuzi",
+        "Mifumo ya Kitaalam"
+      ]
+    }
+  },
+
+  gwamaka: {
+    name: "Gwamaka A Mwakabuta",
+
+    en: {
       role: "Backend Engineering & System Logic",
       description:
         "Focused on backend architecture, business logic, and reliable system foundations that connect applications, services, and real-world business processes.",
@@ -528,8 +545,23 @@ if (contactForm) {
       ]
     },
 
-    stephane: {
-      name: "Stephane H Chibwaye",
+    sw: {
+      role: "Uhandisi wa Backend na Mantiki ya Mfumo",
+      description:
+        "Analenga usanifu wa backend, mantiki ya biashara, na misingi imara ya mifumo inayounganisha programu, huduma, na michakato halisi ya biashara.",
+      skills: [
+        "Usanifu wa Backend",
+        "Mantiki ya Biashara",
+        "API",
+        "GIS"
+      ]
+    }
+  },
+
+  stephane: {
+    name: "Stephane H Chibwaye",
+
+    en: {
       role: "Data & Database Engineering",
       description:
         "Focused on database architecture, data management, and API-driven systems that make information reliable, accessible, and useful across applications.",
@@ -539,8 +571,37 @@ if (contactForm) {
         "APIs",
         "Data Integration"
       ]
+    },
+
+    sw: {
+      role: "Uhandisi wa Data na Hifadhidata",
+      description:
+        "Analenga usanifu wa hifadhidata, usimamizi wa data, na mifumo inayoendeshwa na API inayofanya taarifa ziwe za kuaminika, zinazopatikana, na zenye manufaa katika programu mbalimbali.",
+      skills: [
+        "Mifumo ya Hifadhidata",
+        "Usimamizi wa Data",
+        "API",
+        "Ujumuishaji wa Data"
+      ]
     }
-  };
+  }
+};
+
+document.addEventListener(
+  "mlue-language-changed",
+  () => {
+
+    const activeMember =
+      document.querySelector(".team-member--active");
+
+    if (!activeMember) return;
+
+    updateTeamProfile(
+      activeMember.dataset.member
+    );
+
+  }
+);
 
 
   const teamButtons = document.querySelectorAll(".team-member");
@@ -572,84 +633,87 @@ if (contactForm) {
 
     function updateTeamProfile(memberId) {
 
-      const member = teamMembers[memberId];
+  const member = teamMembers[memberId];
 
-      if (!member) return;
+  if (!member) return;
 
+  // Current language comes from the <html lang="..."> attribute
+  const lang = document.documentElement.lang === "sw" ? "sw" : "en";
 
-      // -----------------------------------------------
-      // Update active Bento member
-      // -----------------------------------------------
+  const profile = member[lang];
 
-      teamButtons.forEach(button => {
-
-        const isActive =
-          button.dataset.member === memberId;
-
-        button.classList.toggle(
-          "team-member--active",
-          isActive
-        );
-
-        button.setAttribute(
-          "aria-pressed",
-          String(isActive)
-        );
-
-      });
+  if (!profile) return;
 
 
-      // -----------------------------------------------
-      // Update profile information
-      // -----------------------------------------------
+  // -----------------------------------------------
+  // Update active Bento member
+  // -----------------------------------------------
 
-      teamProfileName.textContent =
-        member.name;
+  teamButtons.forEach(button => {
 
-      teamProfileRole.textContent =
-        member.role;
+    const isActive =
+      button.dataset.member === memberId;
 
-      teamProfileDescription.textContent =
-        member.description;
+    button.classList.toggle(
+      "team-member--active",
+      isActive
+    );
 
+    button.setAttribute(
+      "aria-pressed",
+      String(isActive)
+    );
 
-      // -----------------------------------------------
-      // Update specialization tags
-      // -----------------------------------------------
-
-      teamProfileSkills.innerHTML = "";
-
-      member.skills.forEach(skill => {
-
-        const skillElement =
-          document.createElement("span");
-
-        skillElement.textContent = skill;
-
-        teamProfileSkills.appendChild(
-          skillElement
-        );
-
-      });
+  });
 
 
-      // -----------------------------------------------
-      // Small profile transition
-      // -----------------------------------------------
+  // -----------------------------------------------
+  // Update profile information
+  // -----------------------------------------------
 
-      teamProfile.classList.remove(
-        "team-profile--updated"
-      );
+  teamProfileName.textContent = member.name;
 
-      window.requestAnimationFrame(() => {
+  teamProfileRole.textContent = profile.role;
 
-        teamProfile.classList.add(
-          "team-profile--updated"
-        );
+  teamProfileDescription.textContent =
+    profile.description;
 
-      });
 
-    }
+  // -----------------------------------------------
+  // Update specialization tags
+  // -----------------------------------------------
+
+  teamProfileSkills.innerHTML = "";
+
+  profile.skills.forEach(skill => {
+
+    const skillElement =
+      document.createElement("span");
+
+    skillElement.textContent = skill;
+
+    teamProfileSkills.appendChild(skillElement);
+
+  });
+
+
+  // -----------------------------------------------
+  // Small profile transition
+  // -----------------------------------------------
+
+  teamProfile.classList.remove(
+    "team-profile--updated"
+  );
+
+  window.requestAnimationFrame(() => {
+
+    teamProfile.classList.add(
+      "team-profile--updated"
+    );
+
+  });
+
+}
 
 
     // =================================================

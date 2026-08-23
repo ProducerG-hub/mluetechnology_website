@@ -335,36 +335,44 @@ section:not(:first-of-type) {
 
 .header__hamburger {
     display: none;
-    width: 42px;
-    height: 42px;
-    padding: 8px;
-
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 4px;
+}
+
+.header__hamburger-icon {
+    display: flex;
     flex-direction: column;
-    gap: 5px;
-
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-
-    cursor: pointer;
-    position: relative;
-    z-index: 1002;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
-.header__hamburger span {
+.header__hamburger-icon span {
     display: block;
-    width: 20px;
+    width: 24px;
     height: 2px;
-
-    background: #ffffff;
     border-radius: 999px;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+    background: currentColor;
+    margin: 0;
 }
+
+.header__hamburger-label {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 991px) {
@@ -406,7 +414,7 @@ section:not(:first-of-type) {
     padding: 0;
   }
   
-  .header__hamburger span {
+  .header__hamburger-icon span {
     background-color: #ffffff; /* Mistari ya menyu iwe nyeupe */
   }
 }
