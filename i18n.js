@@ -107,6 +107,220 @@ const translations = {
 "pricing.viewLess":
     "View less",
 
+"pricing.landing.basic.title": "Basic Landing Page",
+"pricing.landing.basic.price": "PRICE: Tshs. 100,000 - Tshs. 250,000",
+
+"pricing.landing.basic.included1": "Simple layout (template-based)",
+"pricing.landing.basic.included2": "Few sections (Hero + Features + Contact)",
+"pricing.landing.basic.included3": "Basic responsiveness (mobile + desktop)",
+"pricing.landing.basic.included4": "1 Call-To-Action",
+"pricing.landing.basic.included5": "1 client revision",
+"pricing.landing.basic.included6": "Simple form (email)",
+
+"pricing.landing.basic.notIncluded1": "Custom UI design",
+"pricing.landing.basic.notIncluded2": "Animations",
+"pricing.landing.basic.notIncluded3": "SEO optimization",
+"pricing.landing.basic.notIncluded4": "Copywriting",
+
+"pricing.landing.basic.example1": "Simple Business Intro Page",
+"pricing.landing.basic.example2": "Personal Portfolio Landing",
+"pricing.landing.basic.example3": "Small Shop Promotion Page",
+"pricing.landing.basic.example4": "Basic Product Showcase Page",
+"pricing.landing.basic.example5": "Starter Service Landing Page",
+
+
+"pricing.landing.standard.title": "Standard Landing Page",
+"pricing.landing.standard.price": "PRICE: Tshs. 250,000 - Tshs. 500,000",
+
+"pricing.landing.standard.included1": "Custom UI design",
+"pricing.landing.standard.included2": "Standard sections (Hero, Features, Testimonials, CTA)",
+"pricing.landing.standard.included3": "Responsiveness (all devices)",
+"pricing.landing.standard.included4": "Form + basic integration (email / WhatsApp)",
+"pricing.landing.standard.included5": "3 client revisions",
+"pricing.landing.standard.included6": "Basic animations (scroll effects)",
+"pricing.landing.standard.included7": "1-month free maintenance and support",
+
+"pricing.landing.standard.notIncluded1": "Advanced animations",
+"pricing.landing.standard.notIncluded2": "Full SEO strategy",
+"pricing.landing.standard.notIncluded3": "Copywriting",
+
+"pricing.landing.standard.example1": "Modern Business Conversion Page",
+"pricing.landing.standard.example2": "Real Estate Lead Capture Landing Page",
+"pricing.landing.standard.example3": "Restaurant Online Order Landing Page",
+
+
+"pricing.landing.premium.title": "Premium Landing Page",
+"pricing.landing.premium.price": "PRICE: Tshs. 500,000 - Tshs. 1,500,000+",
+
+"pricing.landing.premium.included1": "Full custom UI/UX",
+"pricing.landing.premium.included2": "High-converting layout (conversion-focused)",
+"pricing.landing.premium.included3": "SEO optimized",
+"pricing.landing.premium.included4": "Advanced animations",
+"pricing.landing.premium.included5": "Optimized speed (performance)",
+"pricing.landing.premium.included6": "Form integrations",
+"pricing.landing.premium.included7": "Copywriting",
+"pricing.landing.premium.included8": "Free domain (1 year)",
+"pricing.landing.premium.included9": "Unlimited revisions (within scope)",
+"pricing.landing.premium.included10": "1-month free maintenance and support",
+
+"pricing.landing.premium.example1": "High-Converting SaaS Sales Page",
+"pricing.landing.premium.example2": "Luxury Brand Marketing Landing Page",
+"pricing.landing.premium.example3": "Advanced Fitness Coaching Funnel Page",
+"pricing.landing.premium.example4": "Tech Product Launch Conversion Page",
+"pricing.landing.premium.example5": "Corporate Campaign",
+
+// Static Websites
+
+"pricing.static.basic.title": "Basic Static Website",
+"pricing.static.basic.price": "PRICE: Tshs. 300,000 - Tshs. 650,000",
+
+"pricing.static.basic.included1": "Pages 3-5 (Home, About, Contact, etc.)",
+"pricing.static.basic.included2": "Simple design (template-based)",
+"pricing.static.basic.included3": "Basic responsiveness",
+"pricing.static.basic.included4": "Simple navigation",
+"pricing.static.basic.included5": "Contact info (no advanced form)",
+"pricing.static.basic.included6": "1-2 client revisions",
+"pricing.static.basic.included7": "Extra page: Tshs. 50,000",
+
+"pricing.static.basic.notIncluded1": "Custom UI",
+"pricing.static.basic.notIncluded2": "Animations",
+"pricing.static.basic.notIncluded3": "SEO",
+
+"pricing.static.basic.example1": "Small Business Info Website",
+"pricing.static.basic.example2": "Personal Portfolio Website",
+"pricing.static.basic.example3": "Local Shop Online Presence Site",
+"pricing.static.basic.example4": "Simple Company Profile Website",
+"pricing.static.basic.example5": "Starter Brand Showcase Website",
+
+
+"pricing.static.standard.title": "Standard Static Website",
+"pricing.static.standard.price": "PRICE: Tshs. 650,000 - Tshs. 1,800,000",
+
+"pricing.static.standard.included1": "Pages 5-10",
+"pricing.static.standard.included2": "Custom UI design (branding included)",
+"pricing.static.standard.included3": "Fully responsive (all devices)",
+"pricing.static.standard.included4": "Contact form (email/WhatsApp integration)",
+"pricing.static.standard.included5": "Basic animations (hover, scroll)",
+"pricing.static.standard.included6": "Basic SEO (titles, meta tags)",
+"pricing.static.standard.included7": "Free domain name (1 year)",
+"pricing.static.standard.included8": "2-3 revisions",
+"pricing.static.standard.included9": "Extra page: Tshs. 100,000",
+"pricing.static.standard.included10": "1-month free maintenance and support",
+
+"pricing.static.standard.notIncluded1": "Advanced animations",
+"pricing.static.standard.notIncluded2": "Complex integrations",
+
+"pricing.static.standard.example1": "Corporate Business Website",
+"pricing.static.standard.example2": "School / Institution Information Website",
+"pricing.static.standard.example3": "Real Estate Company Website",
+"pricing.static.standard.example4": "Professional Services Website",
+"pricing.static.standard.example5": "Startup Company Profile",
+
+
+"pricing.static.premium.title": "Premium Static Website",
+"pricing.static.premium.price": "PRICE: Tshs. 1,800,000 - Tshs. 3,000,000+",
+
+"pricing.static.premium.included1": "Pages 10+ (or custom structure)",
+"pricing.static.premium.included2": "Fully custom UI/UX (no templates)",
+"pricing.static.premium.included3": "High-quality animations (smooth and interactive)",
+"pricing.static.premium.included4": "Advanced responsiveness (pixel-perfect)",
+"pricing.static.premium.included5": "SEO optimized (structure + performance)",
+"pricing.static.premium.included6": "Speed optimization",
+"pricing.static.premium.included7": "Advanced contact features (forms + integrations)",
+"pricing.static.premium.included8": "4+ revisions (within scope)",
+"pricing.static.premium.included9": "Free domain name (1 year)",
+"pricing.static.premium.included10": "Extra page: Tshs. 150,000+ depending on complexity",
+"pricing.static.premium.included11": "1-month free maintenance and support",
+
+"pricing.static.premium.example1": "Premium Corporate Brand Website",
+"pricing.static.premium.example2": "Creative Agency Portfolio Website",
+"pricing.static.premium.example3": "Luxury Business Presentation Website",
+"pricing.static.premium.example4": "Tech Company Brand Identity Website",
+
+// Dynamic Websites / Systems
+
+"pricing.dynamic.basic.title": "Basic System",
+"pricing.dynamic.basic.price": "PRICE: Tshs. 1,000,000 - Tshs. 3,000,000",
+
+"pricing.dynamic.basic.included1": "Login system",
+"pricing.dynamic.basic.included2": "Basic dashboard (one role)",
+"pricing.dynamic.basic.included3": "CRUD (one main resource)",
+"pricing.dynamic.basic.included4": "Simple database structure (can be paid monthly depending on usage)",
+"pricing.dynamic.basic.included5": "Basic UI (template)",
+"pricing.dynamic.basic.included6": "2-3 pages",
+"pricing.dynamic.basic.included7": "2-3 client revisions",
+"pricing.dynamic.basic.included8": "Free domain name (1 year)",
+
+"pricing.dynamic.basic.notIncluded1": "Multiple roles",
+"pricing.dynamic.basic.notIncluded2": "Advanced UI",
+"pricing.dynamic.basic.notIncluded3": "Complex integrations",
+
+"pricing.dynamic.basic.example1": "Simple User Login System",
+"pricing.dynamic.basic.example2": "Basic Inventory Management System",
+"pricing.dynamic.basic.example3": "Small Business Admin Dashboard",
+"pricing.dynamic.basic.example4": "Simple Booking Management System",
+"pricing.dynamic.basic.example5": "Basic Student Record System",
+
+
+"pricing.dynamic.standard.title": "Standard System",
+"pricing.dynamic.standard.price": "PRICE: Tshs. 3,000,000 - Tshs. 8,000,000",
+
+"pricing.dynamic.standard.included1": "Roles (Admin/User)",
+"pricing.dynamic.standard.included2": "Full dashboard + database",
+"pricing.dynamic.standard.included3": "Multiple CRUD modules",
+"pricing.dynamic.standard.included4": "Clean UI (custom)",
+"pricing.dynamic.standard.included5": "API integrations (basic)",
+"pricing.dynamic.standard.included6": "Email notifications",
+"pricing.dynamic.standard.included7": "3-5 revisions",
+"pricing.dynamic.standard.included8": "Free domain name (1 year)",
+"pricing.dynamic.standard.included9": "1-month free maintenance and support",
+
+"pricing.dynamic.standard.notIncluded1": "Complex systems (full POS, full SaaS)",
+"pricing.dynamic.standard.notIncluded2": "Heavy automation",
+
+"pricing.dynamic.standard.example1": "School Management System",
+"pricing.dynamic.standard.example2": "Small Business POS System",
+"pricing.dynamic.standard.example3": "Customer Management System (CRM Lite)",
+"pricing.dynamic.standard.example4": "Online Booking and Appointment System",
+"pricing.dynamic.standard.example5": "Inventory and Sales Tracking System",
+
+
+"pricing.dynamic.premium.title": "Premium System",
+"pricing.dynamic.premium.price": "PRICE: Tshs. 8,000,000 - Tshs. 25,000,000+",
+
+"pricing.dynamic.premium.included1": "Advanced authentication",
+"pricing.dynamic.premium.included2": "Full system architecture",
+"pricing.dynamic.premium.included3": "Complex dashboards",
+"pricing.dynamic.premium.included4": "Multiple modules (sales, reports, users)",
+"pricing.dynamic.premium.included5": "API integrations (payments, external systems)",
+"pricing.dynamic.premium.included6": "Performance optimization",
+"pricing.dynamic.premium.included7": "Security best practices",
+"pricing.dynamic.premium.included8": "1-month free maintenance and support",
+"pricing.dynamic.premium.included9": "Unlimited revisions (within scope)",
+"pricing.dynamic.premium.included10": "Free domain name (1 year)",
+
+"pricing.dynamic.premium.example1": "Full POS and Business Management System",
+"pricing.dynamic.premium.example2": "Enterprise School Management System",
+"pricing.dynamic.premium.example3": "SaaS Multi-User Platform System",
+"pricing.dynamic.premium.example4": "Advanced E-commerce Management System",
+"pricing.dynamic.premium.example5": "Real-Time Analytics Business Dashboard",
+
+"pricing.domain.title": "Domain Name",
+
+"pricing.domain.description":
+    "A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).",
+
+"pricing.hosting.title": "Web Hosting and Deployment",
+
+"pricing.hosting.description":
+    "Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.", 
+    
+"pricing.maintenance.title": "Maintenance and Support",
+
+"pricing.maintenance.description":
+    "Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.",    
+
+
     // About
 "about.eyebrow": "WHO WE ARE?",
 
@@ -484,7 +698,221 @@ const translations = {
 
 "pricing.viewLess":
     "Funga maelezo",
-        
+
+"pricing.landing.basic.title": "Landing Page ya Msingi",
+"pricing.landing.basic.price": "BEI: Tshs. 100,000 - Tshs. 250,000",
+
+"pricing.landing.basic.included1": "Muundo rahisi unaotumia template",
+"pricing.landing.basic.included2": "Sehemu chache (Hero + Features + Contact)",
+"pricing.landing.basic.included3": "Uwezo wa kutumia kwenye simu na desktop",
+"pricing.landing.basic.included4": "Call-To-Action 1",
+"pricing.landing.basic.included5": "Marekebisho 1 ya mteja",
+"pricing.landing.basic.included6": "Fomu rahisi ya barua pepe",
+
+"pricing.landing.basic.notIncluded1": "UI design maalum",
+"pricing.landing.basic.notIncluded2": "Animations",
+"pricing.landing.basic.notIncluded3": "SEO optimization",
+"pricing.landing.basic.notIncluded4": "Copywriting",
+
+"pricing.landing.basic.example1": "Ukurasa Rahisi wa Utambulisho wa Biashara",
+"pricing.landing.basic.example2": "Landing Page ya Portfolio Binafsi",
+"pricing.landing.basic.example3": "Ukurasa wa Kutangaza Duka Dogo",
+"pricing.landing.basic.example4": "Ukurasa wa Kuonyesha Bidhaa",
+"pricing.landing.basic.example5": "Landing Page ya Huduma ya Mwanzo",
+
+
+"pricing.landing.standard.title": "Landing Page ya Kawaida",
+"pricing.landing.standard.price": "BEI: Tshs. 250,000 - Tshs. 500,000",
+
+"pricing.landing.standard.included1": "UI design maalum",
+"pricing.landing.standard.included2": "Sehemu za kawaida (Hero, Features, Testimonials, CTA)",
+"pricing.landing.standard.included3": "Responsive kwenye vifaa vyote",
+"pricing.landing.standard.included4": "Fomu + integration ya msingi (email / WhatsApp)",
+"pricing.landing.standard.included5": "Marekebisho 3 ya mteja",
+"pricing.landing.standard.included6": "Animations za msingi (scroll effects)",
+"pricing.landing.standard.included7": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.landing.standard.notIncluded1": "Animations za hali ya juu",
+"pricing.landing.standard.notIncluded2": "Mkakati kamili wa SEO",
+"pricing.landing.standard.notIncluded3": "Copywriting",
+
+"pricing.landing.standard.example1": "Landing Page ya Kisasa ya Kuongeza Conversion za Biashara",
+"pricing.landing.standard.example2": "Landing Page ya Kukusanya Leads za Real Estate",
+"pricing.landing.standard.example3": "Landing Page ya Kuagiza Chakula Mtandaoni",
+
+
+"pricing.landing.premium.title": "Landing Page ya Kitaalamu",
+"pricing.landing.premium.price": "BEI: Tshs. 500,000 - Tshs. 1,500,000+",
+
+"pricing.landing.premium.included1": "UI/UX maalum kamili",
+"pricing.landing.premium.included2": "Muundo unaolenga kuongeza conversion",
+"pricing.landing.premium.included3": "SEO optimized",
+"pricing.landing.premium.included4": "Animations za hali ya juu",
+"pricing.landing.premium.included5": "Speed optimization",
+"pricing.landing.premium.included6": "Form integrations",
+"pricing.landing.premium.included7": "Copywriting",
+"pricing.landing.premium.included8": "Domain ya bure kwa mwaka 1",
+"pricing.landing.premium.included9": "Marekebisho yasiyo na kikomo ndani ya scope",
+"pricing.landing.premium.included10": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.landing.premium.example1": "SaaS Sales Page yenye Conversion ya Juu",
+"pricing.landing.premium.example2": "Landing Page ya Masoko ya Brand ya Kifahari",
+"pricing.landing.premium.example3": "Fitness Coaching Funnel ya Advanced",
+"pricing.landing.premium.example4": "Tech Product Launch Conversion Page",
+"pricing.landing.premium.example5": "Corporate Campaign",
+
+// Tovuti Tuli
+
+"pricing.static.basic.title": "Tovuti Tuli ya Msingi",
+"pricing.static.basic.price": "BEI: Tshs. 300,000 - Tshs. 650,000",
+
+"pricing.static.basic.included1": "Kurasa 3-5 (Home, About, Contact, n.k.)",
+"pricing.static.basic.included2": "Muundo rahisi unaotumia template",
+"pricing.static.basic.included3": "Responsive ya msingi",
+"pricing.static.basic.included4": "Navigation rahisi",
+"pricing.static.basic.included5": "Taarifa za mawasiliano (bila advanced form)",
+"pricing.static.basic.included6": "Marekebisho 1-2 ya mteja",
+"pricing.static.basic.included7": "Ukurasa wa ziada: Tshs. 50,000",
+
+"pricing.static.basic.notIncluded1": "UI design maalum",
+"pricing.static.basic.notIncluded2": "Animations",
+"pricing.static.basic.notIncluded3": "SEO",
+
+"pricing.static.basic.example1": "Tovuti ya Taarifa ya Biashara Ndogo",
+"pricing.static.basic.example2": "Portfolio ya Binafsi",
+"pricing.static.basic.example3": "Tovuti ya Duka Dogo",
+"pricing.static.basic.example4": "Tovuti Rahisi ya Wasifu wa Kampuni",
+"pricing.static.basic.example5": "Tovuti ya Mwanzo ya Kuonyesha Brand",
+
+
+"pricing.static.standard.title": "Tovuti Tuli ya Kawaida",
+"pricing.static.standard.price": "BEI: Tshs. 650,000 - Tshs. 1,800,000",
+
+"pricing.static.standard.included1": "Kurasa 5-10",
+"pricing.static.standard.included2": "UI design maalum (branding imejumuishwa)",
+"pricing.static.standard.included3": "Responsive kamili kwenye vifaa vyote",
+"pricing.static.standard.included4": "Contact form (email/WhatsApp integration)",
+"pricing.static.standard.included5": "Animations za msingi (hover, scroll)",
+"pricing.static.standard.included6": "SEO ya msingi (titles, meta tags)",
+"pricing.static.standard.included7": "Domain ya bure kwa mwaka 1",
+"pricing.static.standard.included8": "Marekebisho 2-3",
+"pricing.static.standard.included9": "Ukurasa wa ziada: Tshs. 100,000",
+"pricing.static.standard.included10": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.static.standard.notIncluded1": "Animations za hali ya juu",
+"pricing.static.standard.notIncluded2": "Complex integrations",
+
+"pricing.static.standard.example1": "Tovuti ya Kampuni",
+"pricing.static.standard.example2": "Tovuti ya Taarifa ya Shule / Taasisi",
+"pricing.static.standard.example3": "Tovuti ya Kampuni ya Real Estate",
+"pricing.static.standard.example4": "Tovuti ya Huduma za Kitaalamu",
+"pricing.static.standard.example5": "Tovuti ya Wasifu wa Startup",
+
+
+"pricing.static.premium.title": "Tovuti Tuli ya Kitaalamu",
+"pricing.static.premium.price": "BEI: Tshs. 1,800,000 - Tshs. 3,000,000+",
+
+"pricing.static.premium.included1": "Kurasa 10+ (au muundo maalum)",
+"pricing.static.premium.included2": "UI/UX maalum kamili (bila templates)",
+"pricing.static.premium.included3": "Animations za ubora wa juu (laini na interactive)",
+"pricing.static.premium.included4": "Responsive ya hali ya juu (pixel-perfect)",
+"pricing.static.premium.included5": "SEO optimization (structure + performance)",
+"pricing.static.premium.included6": "Speed optimization",
+"pricing.static.premium.included7": "Advanced contact features (forms + integrations)",
+"pricing.static.premium.included8": "Marekebisho 4+ ndani ya scope",
+"pricing.static.premium.included9": "Domain ya bure kwa mwaka 1",
+"pricing.static.premium.included10": "Ukurasa wa ziada: Tshs. 150,000+ kulingana na complexity",
+"pricing.static.premium.included11": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.static.premium.example1": "Tovuti ya Kitaalamu ya Corporate Brand",
+"pricing.static.premium.example2": "Portfolio ya Creative Agency",
+"pricing.static.premium.example3": "Tovuti ya Kitaalamu ya Luxury Business",
+"pricing.static.premium.example4": "Tovuti ya Brand Identity ya Kampuni ya Teknolojia",
+
+// Mifumo Inayobadilika
+
+"pricing.dynamic.basic.title": "Mfumo wa Msingi",
+"pricing.dynamic.basic.price": "BEI: Tshs. 1,000,000 - Tshs. 3,000,000",
+
+"pricing.dynamic.basic.included1": "Mfumo wa kuingia kwenye akaunti",
+"pricing.dynamic.basic.included2": "Dashboard ya msingi (role moja)",
+"pricing.dynamic.basic.included3": "CRUD (resource kuu moja)",
+"pricing.dynamic.basic.included4": "Muundo rahisi wa database (unaweza kulipiwa kila mwezi kulingana na matumizi)",
+"pricing.dynamic.basic.included5": "UI ya msingi (template)",
+"pricing.dynamic.basic.included6": "Kurasa 2-3",
+"pricing.dynamic.basic.included7": "Marekebisho 2-3 ya mteja",
+"pricing.dynamic.basic.included8": "Domain ya bure kwa mwaka 1",
+
+"pricing.dynamic.basic.notIncluded1": "Roles nyingi",
+"pricing.dynamic.basic.notIncluded2": "UI ya hali ya juu",
+"pricing.dynamic.basic.notIncluded3": "Complex integrations",
+
+"pricing.dynamic.basic.example1": "Mfumo Rahisi wa Login ya Mtumiaji",
+"pricing.dynamic.basic.example2": "Mfumo wa Msingi wa Usimamizi wa Inventory",
+"pricing.dynamic.basic.example3": "Dashboard ya Msingi ya Usimamizi wa Biashara Ndogo",
+"pricing.dynamic.basic.example4": "Mfumo Rahisi wa Usimamizi wa Booking",
+"pricing.dynamic.basic.example5": "Mfumo wa Msingi wa Rekodi za Wanafunzi",
+
+
+"pricing.dynamic.standard.title": "Mfumo wa Kawaida",
+"pricing.dynamic.standard.price": "BEI: Tshs. 3,000,000 - Tshs. 8,000,000",
+
+"pricing.dynamic.standard.included1": "Roles (Admin/User)",
+"pricing.dynamic.standard.included2": "Dashboard kamili + database",
+"pricing.dynamic.standard.included3": "Modules nyingi za CRUD",
+"pricing.dynamic.standard.included4": "UI safi na maalum",
+"pricing.dynamic.standard.included5": "API integrations za msingi",
+"pricing.dynamic.standard.included6": "Taarifa za email",
+"pricing.dynamic.standard.included7": "Marekebisho 3-5",
+"pricing.dynamic.standard.included8": "Domain ya bure kwa mwaka 1",
+"pricing.dynamic.standard.included9": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.dynamic.standard.notIncluded1": "Mifumo mikubwa (full POS, full SaaS)",
+"pricing.dynamic.standard.notIncluded2": "Automation nzito",
+
+"pricing.dynamic.standard.example1": "Mfumo wa Usimamizi wa Shule",
+"pricing.dynamic.standard.example2": "Mfumo wa POS wa Biashara Ndogo",
+"pricing.dynamic.standard.example3": "Mfumo wa Usimamizi wa Wateja (CRM Lite)",
+"pricing.dynamic.standard.example4": "Mfumo wa Booking na Appointment Mtandaoni",
+"pricing.dynamic.standard.example5": "Mfumo wa Kufuatilia Inventory na Mauzo",
+
+
+"pricing.dynamic.premium.title": "Mfumo wa Kitaalamu",
+"pricing.dynamic.premium.price": "BEI: Tshs. 8,000,000 - Tshs. 25,000,000+",
+
+"pricing.dynamic.premium.included1": "Authentication ya hali ya juu",
+"pricing.dynamic.premium.included2": "System architecture kamili",
+"pricing.dynamic.premium.included3": "Dashboards changamano",
+"pricing.dynamic.premium.included4": "Modules nyingi (mauzo, ripoti, watumiaji)",
+"pricing.dynamic.premium.included5": "API integrations (malipo, mifumo ya nje)",
+"pricing.dynamic.premium.included6": "Performance optimization",
+"pricing.dynamic.premium.included7": "Mbinu bora za usalama",
+"pricing.dynamic.premium.included8": "Mwezi 1 wa matengenezo na msaada bila malipo",
+"pricing.dynamic.premium.included9": "Marekebisho yasiyo na kikomo ndani ya scope",
+"pricing.dynamic.premium.included10": "Domain ya bure kwa mwaka 1",
+
+"pricing.dynamic.premium.example1": "Mfumo Kamili wa POS na Usimamizi wa Biashara",
+"pricing.dynamic.premium.example2": "Mfumo wa Enterprise wa Usimamizi wa Shule",
+"pricing.dynamic.premium.example3": "SaaS Multi-User Platform",
+"pricing.dynamic.premium.example4": "Mfumo wa Advanced E-Commerce",
+"pricing.dynamic.premium.example5": "Dashboard ya Real-Time Business Analytics",
+
+"pricing.domain.title": "Jina la Kikoa",
+
+"pricing.domain.description":
+    "Jina la kikoa ni anwani ya kipekee inayotumika kufikia tovuti kupitia intaneti, kwa mfano google.com au mluetechnology.me.",
+
+"pricing.hosting.title": "Web Hosting na Deployment",
+
+"pricing.hosting.description":
+    "Hosting ni kukodisha nafasi kwenye server ili kuweka tovuti yako mtandaoni. Deployment ni mchakato wa kuhamisha mafaili kutoka mazingira ya development kwenda kwenye server inayotumika.",    
+
+"pricing.maintenance.title": "Matengenezo na Msaada",
+
+"pricing.maintenance.description":
+    "Matengenezo yanajumuisha kurekebisha bugs, masasisho, ufuatiliaji wa usalama, backups, kuongeza features, na msaada wa kuhakikisha tovuti inapatikana.",
+    
+    
 
     // About
 "about.eyebrow": "SISI NI NANI?",
