@@ -163,33 +163,6 @@
 			margin-top: 14px;
 		}
 
-		.header__hamburger {
-			display: none;
-			flex-direction: column;
-			gap: 5px;
-			padding: 4px;
-		}
-
-		.header__hamburger span {
-			display: block;
-			width: 22px;
-			height: 2px;
-			background: var(--gray-700);
-			border-radius: 2px;
-			transition: var(--transition);
-		}
-
-		.header__hamburger.open span:nth-child(1) {
-			transform: translateY(7px) rotate(45deg);
-		}
-
-		.header__hamburger.open span:nth-child(2) {
-			opacity: 0;
-		}
-
-		.header__hamburger.open span:nth-child(3) {
-			transform: translateY(-7px) rotate(-45deg);
-		}
 
 		.contact {
 			margin-top: 48px;
@@ -214,44 +187,6 @@
 			.pricing-contact {
 				padding-left: 20px;
 				padding-right: 20px;
-			}
-
-			.header__hamburger {
-				display: flex;
-			}
-
-			.header__nav {
-				display: none !important;
-				flex-direction: column;
-				position: absolute;
-				top: 68px;
-				left: 0;
-				right: 0;
-				background: var(--white);
-				border-top: 1px solid var(--gray-200);
-				width: 100%;
-				gap: 0;
-				padding: 12px 0;
-				z-index: 999;
-			}
-
-			.header__nav.open {
-				display: flex !important;
-			}
-
-			.header__nav a {
-				display: block;
-				padding: 10px 16px;
-				border-bottom: 1px solid var(--gray-100);
-				font-size: 0.9rem;
-			}
-
-			.header__nav a:last-child {
-				border-bottom: none;
-			}
-
-			.header__actions {
-				display: flex;
 			}
 
 			.card-toggle {
@@ -283,12 +218,28 @@
       </a>
 
       <nav class="header__nav" id="nav">
-        <a href="/" class="nav-link active" data-i18n="nav.home">Home</a>
-        <a href="/#about" class="nav-link" data-i18n="nav.about">About Us</a>
-        <a href="/#services" class="nav-link" data-i18n="nav.services">Services</a>
-        <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-        <a href="/projects/" class="nav-link" data-i18n="nav.projects">Projects</a>
-      </nav>
+    <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+
+    <a href="/#about" class="nav-link" data-i18n="nav.about">
+        About Us
+    </a>
+
+    <a href="/#services" class="nav-link" data-i18n="nav.services">
+        Services
+    </a>
+
+    <a href="/pricing/" class="nav-link active" data-i18n="nav.pricing">
+        Pricing
+    </a>
+
+    <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+        Contact
+    </a>
+
+    <a href="/projects/" class="nav-link" data-i18n="nav.projects">
+        Projects
+    </a>
+</nav>
 
       <div class="header__actions">
 
@@ -325,28 +276,55 @@
       </div>
 
       <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <span class="header__hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+    <span class="header__hamburger-label">Menu</span>
+</button>
     </div>
   </header>
 
 	<section class="pricing-hero">
-		<div class="container">
-			<h1>MLUE <span class="logo-accent">TECHNOLOGY</span> Pricing</h1>
-			<p>Professional web development pricing and package options tailored for growing businesses.</p>
-		</div>
-	</section>
+    <div class="container">
+
+        <h1 data-i18n="pricing.title">
+            MLUE TECHNOLOGY Pricing
+        </h1>
+
+        <p data-i18n="pricing.subtitle">
+            Professional web development pricing and package options tailored for growing businesses.
+        </p>
+
+    </div>
+    </section>
 
 	<main class="pricing-main">
 		<div class="container">
 			<section class="pricing-section" aria-labelledby="landing-pages-title">
-				<h2 class="section-title" id="landing-pages-title">Landing Pages</h2>
-				<p class="service-desc">A landing page is a standalone single web page created specifically for a marketing or advertising campaign, designed with one focus (a call to action) to convert visitors into leads or customers.</p>
+				<h2
+                 class="section-title"
+                 id="landing-pages-title"
+                data-i18n="pricing.landingPages.title"
+                >
+               Landing Pages
+               </h2>
+
+              <p
+                 class="service-desc"
+                data-i18n="pricing.landingPages.description"
+         >
+          A landing page is a standalone single web page created specifically for a marketing or advertising campaign, designed with one focus (a call to action) to convert visitors into leads or customers.
+             </p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Basic Landing Page</h3>
 						<p class="price">PRICE: Tshs. 100,000 - Tshs. 250,000</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">
+                          Included
+                         </h4>
 						<ul>
 							<li>Simple layout (template-based)</li>
 							<li>Few sections (Hero + Features + Contact)</li>
@@ -355,14 +333,14 @@
 							<li>1 client revision</li>
 							<li>Simple form (email)</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
 							<li>Custom UI design</li>
 							<li>Animations</li>
 							<li>SEO optimization</li>
 							<li>Copywriting</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>Simple Business Intro Page</li>
 							<li>Personal Portfolio Landing</li>
@@ -375,7 +353,9 @@
 					<article class="pricing-card">
 						<h3>Standard Landing Page</h3>
 						<p class="price">PRICE: Tshs. 250,000 - Tshs. 500,000</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">
+                           Included
+                       </h4>
 						<ul>
 							<li>Custom UI design</li>
 							<li>Standard sections (Hero, Features, Testimonials, CTA)</li>
@@ -385,13 +365,13 @@
 							<li>Basic animations (scroll effects)</li>
 							<li>1-month free maintenance and support</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
 							<li>Advanced animations</li>
 							<li>Full SEO strategy</li>
 							<li>Copywriting</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>Modern Business Conversion Page</li>
 							<li>Real Estate Lead Capture Landing Page</li>
@@ -402,7 +382,9 @@
 					<article class="pricing-card">
 						<h3>Premium Landing Page</h3>
 						<p class="price">PRICE: Tshs. 500,000 - Tshs. 1,500,000+</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">
+                           Included
+                        </h4>
 						<ul>
 							<li>Full custom UI/UX</li>
 							<li>High-converting layout (conversion-focused)</li>
@@ -415,7 +397,7 @@
 							<li>Unlimited revisions (within scope)</li>
 							<li>1-month free maintenance and support</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>High-Converting SaaS Sales Page</li>
 							<li>Luxury Brand Marketing Landing Page</li>
@@ -428,13 +410,29 @@
 			</section>
 
 			<section class="pricing-section" aria-labelledby="static-websites-title">
-				<h2 class="section-title" id="static-websites-title">Static Websites</h2>
-				<p class="service-desc">A static website is a collection of multiple web pages delivered exactly as stored on the server, without server-side processing, databases, or dynamic content changes.</p>
+				
+				<h2
+    class="section-title"
+    id="static-websites-title"
+    data-i18n="pricing.staticWebsites.title"
+>
+    Static Websites
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.staticWebsites.description"
+>
+    A static website is a collection of multiple web pages delivered exactly as stored on the server, without server-side processing, databases, or dynamic content changes.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Basic Static Website</h3>
 						<p class="price">PRICE: Tshs. 300,000 - Tshs. 650,000</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">
+                           Included
+                        </h4>
 						<ul>
 							<li>Pages 3-5 (Home, About, Contact, etc.)</li>
 							<li>Simple design (template-based)</li>
@@ -444,13 +442,13 @@
 							<li>1-2 client revisions</li>
 							<li>Extra page: Tshs. 50,000</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
 							<li>Custom UI</li>
 							<li>Animations</li>
 							<li>SEO</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>Small Business Info Website</li>
 							<li>Personal Portfolio Website</li>
@@ -463,7 +461,7 @@
 					<article class="pricing-card">
 						<h3>Standard Static Website</h3>
 						<p class="price">PRICE: Tshs. 650,000 - Tshs. 1,800,000</p>
-						<h4 class="logo-accent">Included</h4>
+						<h4 class="logo-accent" data-i18n="pricing.included">Included</h4>
 						<ul>
 							<li>Pages 5-10</li>
 							<li>Custom UI design (branding included)</li>
@@ -476,12 +474,12 @@
 							<li>Extra page: Tshs. 100,000</li>
 							<li>1-month free maintenance and support</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
 							<li>Advanced animations</li>
 							<li>Complex integrations</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>Corporate Business Website</li>
 							<li>School / Institution Information Website</li>
@@ -494,7 +492,7 @@
 					<article class="pricing-card">
 						<h3>Premium Static Website</h3>
 						<p class="price">PRICE: Tshs. 1,800,000 - Tshs. 3,000,000+</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
 							<li>Pages 10+ (or custom structure)</li>
 							<li>Fully custom UI/UX (no templates)</li>
@@ -508,7 +506,7 @@
 							<li>Extra page: Tshs. 150,000+ depending on complexity</li>
 							<li>1-month free maintenance and support</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>Premium Corporate Brand Website</li>
 							<li>Creative Agency Portfolio Website</li>
@@ -520,13 +518,27 @@
 			</section>
 
 			<section class="pricing-section" aria-labelledby="dynamic-systems-title">
-				<h2 class="section-title" id="dynamic-systems-title">Dynamic Websites</h2>
-				<p class="service-desc">A dynamic website displays different content based on user actions, preferences, or real-time updates. These include databases and server-side processing.</p>
+				
+				<h2
+    class="section-title"
+    id="dynamic-systems-title"
+    data-i18n="pricing.dynamicWebsites.title"
+>
+    Dynamic Websites
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.dynamicWebsites.description"
+>
+    A dynamic website displays different content based on user actions, preferences, or real-time updates. These include databases and server-side processing.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Basic System</h3>
 						<p class="price">PRICE: Tshs. 1,000,000 - Tshs. 3,000,000</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
 							<li>Login system</li>
 							<li>Basic dashboard (one role)</li>
@@ -537,13 +549,13 @@
 							<li>2-3 client revisions</li>
 							<li>Free domain name (1 year)</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
 							<li>Multiple roles</li>
 							<li>Advanced UI</li>
 							<li>Complex integrations</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>Simple User Login System</li>
 							<li>Basic Inventory Management System</li>
@@ -556,7 +568,7 @@
 					<article class="pricing-card">
 						<h3>Standard System</h3>
 						<p class="price">PRICE: Tshs. 3,000,000 - Tshs. 8,000,000</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
 							<li>Roles (Admin/User)</li>
 							<li>Full dashboard + database</li>
@@ -568,12 +580,12 @@
 							<li>Free domain name (1 year)</li>
 							<li>1-month free maintenance and support</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
 							<li>Complex systems (full POS, full SaaS)</li>
 							<li>Heavy automation</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>School Management System</li>
 							<li>Small Business POS System</li>
@@ -586,7 +598,7 @@
 					<article class="pricing-card">
 						<h3>Premium System</h3>
 						<p class="price">PRICE: Tshs. 8,000,000 - Tshs. 25,000,000+</p>
-						<h4>Included</h4>
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
 							<li>Advanced authentication</li>
 							<li>Full system architecture</li>
@@ -599,7 +611,7 @@
 							<li>Unlimited revisions (within scope)</li>
 							<li>Free domain name (1 year)</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
 							<li>Full POS and Business Management System</li>
 							<li>Enterprise School Management System</li>
@@ -612,8 +624,22 @@
 			</section>
 
 			<section class="pricing-section" aria-labelledby="domain-name-title">
-				<h2 class="section-title" id="domain-name-title">Domain Name</h2>
-				<p class="service-desc">A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).</p>
+				
+				<h2
+    class="section-title"
+    id="domain-name-title"
+    data-i18n="pricing.domain.title"
+>
+    Domain Name
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.domain.description"
+>
+    A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Domain Registration</h3>
@@ -627,8 +653,22 @@
 			</section>
 
 			<section class="pricing-section" aria-labelledby="hosting-title">
-				<h2 class="section-title" id="hosting-title">Web Hosting and Deployment</h2>
-				<p class="service-desc">Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.</p>
+				
+				<h2
+    class="section-title"
+    id="hosting-title"
+    data-i18n="pricing.hosting.title"
+>
+    Web Hosting and Deployment
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.hosting.description"
+>
+    Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Hosting and Deployment</h3>
@@ -646,8 +686,22 @@
 			</section>
 
 			<section class="pricing-section mb-5" aria-labelledby="maintenance-title">
-				<h2 class="section-title" id="maintenance-title">Maintenance and Support</h2>
-				<p class="service-desc">Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.</p>
+				
+				<h2
+    class="section-title"
+    id="maintenance-title"
+    data-i18n="pricing.maintenance.title"
+>
+    Maintenance and Support
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.maintenance.description"
+>
+    Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Basic Maintenance</h3>
@@ -1354,26 +1408,6 @@
 	<script>
 		document.getElementById("footerYear").textContent = new Date().getFullYear();
 
-		// Hamburger menu toggle
-		const hamburger = document.getElementById("hamburger");
-		const nav = document.getElementById("nav");
-
-		if (hamburger) {
-			hamburger.addEventListener("click", () => {
-				hamburger.classList.toggle("open");
-				nav.classList.toggle("open");
-			});
-		}
-
-		// Close mobile nav on link click
-		if (nav) {
-			nav.querySelectorAll(".nav-link").forEach(link => {
-				link.addEventListener("click", () => {
-					hamburger.classList.remove("open");
-					nav.classList.remove("open");
-				});
-			});
-		}
 
 		const toast = document.getElementById("toast");
 		const toastIcon = document.getElementById("toastIcon");
@@ -1485,6 +1519,8 @@
 			});
 		});
 	</script>
+	<script src="../i18n.js" defer></script>
 	<script src="../chatbot.js" defer></script>
+	<script src="../main.js" defer></script>
 </body>
 </html>

@@ -49,6 +49,64 @@ const translations = {
 "appointment.cancel": "Cancel",
 "appointment.submit": "Request Appointment",
 
+// Pricing
+
+"pricing.title": "MLUE TECHNOLOGY Pricing",
+
+"pricing.subtitle":
+    "Professional web development pricing and package options tailored for growing businesses.",
+
+"pricing.landingPages.title":
+    "Landing Pages",
+
+"pricing.landingPages.description":
+    "A landing page is a standalone single web page created specifically for a marketing or advertising campaign, designed with one focus (a call to action) to convert visitors into leads or customers.",
+
+"pricing.staticWebsites.title":
+    "Static Websites",
+
+"pricing.staticWebsites.description":
+    "A static website is a collection of multiple web pages delivered exactly as stored on the server, without server-side processing, databases, or dynamic content changes.",
+
+"pricing.dynamicWebsites.title":
+    "Dynamic Websites",
+
+"pricing.dynamicWebsites.description":
+    "A dynamic website displays different content based on user actions, preferences, or real-time updates. These include databases and server-side processing.",
+
+"pricing.domain.title":
+    "Domain Name",
+
+"pricing.domain.description":
+    "A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).",
+
+"pricing.hosting.title":
+    "Web Hosting and Deployment",
+
+"pricing.hosting.description":
+    "Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.",
+
+"pricing.maintenance.title":
+    "Maintenance and Support",
+
+"pricing.maintenance.description":
+    "Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.",
+
+"pricing.included":
+    "Included",
+
+"pricing.notIncluded":
+    "Not Included",
+
+"pricing.examples":
+    "Examples",
+
+"pricing.viewMore":
+    "View more",
+
+"pricing.viewLess":
+    "View less",
+
     // About
 "about.eyebrow": "WHO WE ARE?",
 
@@ -366,6 +424,67 @@ const translations = {
     "hero.visionText": "Kuwa mshirika wa teknolojia anayeaminika zaidi kwa biashara kote Afrika Mashariki na zaidi, kutoa suluhisho za kidijitali za kiwango cha dunia.",
     "hero.ctaPrimary": "Tazama Huduma",
     "hero.ctaSecondary": "Wasiliana Nasi",
+
+
+// Pricing
+
+"pricing.title":
+    "Bei za MLUE TECHNOLOGY",
+
+"pricing.subtitle":
+    "Bei za huduma za kitaalamu za uundaji wa tovuti na vifurushi vilivyoundwa kwa biashara zinazokua.",
+
+"pricing.landingPages.title":
+    "Landing Pages",
+
+"pricing.landingPages.description":
+    "Landing page ni ukurasa mmoja wa tovuti unaotengenezwa mahsusi kwa ajili ya kampeni ya masoko au matangazo, ukiwa na lengo maalum kama kuwageuza wageni kuwa leads au wateja.",
+
+"pricing.staticWebsites.title":
+    "Tovuti Tuli",
+
+"pricing.staticWebsites.description":
+    "Tovuti tuli ni mkusanyiko wa kurasa za tovuti zinazowasilishwa kama zilivyohifadhiwa kwenye seva, bila uchakataji wa upande wa seva, database, au mabadiliko ya maudhui kwa wakati halisi.",
+
+"pricing.dynamicWebsites.title":
+    "Tovuti Zinazobadilika",
+
+"pricing.dynamicWebsites.description":
+    "Tovuti inayobadilika huonyesha maudhui tofauti kulingana na vitendo vya mtumiaji, mapendeleo, au masasisho ya wakati halisi. Hizi zinajumuisha database na uchakataji wa upande wa seva.",
+
+"pricing.domain.title":
+    "Jina la Kikoa",
+
+"pricing.domain.description":
+    "Jina la kikoa ni anwani ya kipekee inayotumika kufikia tovuti kupitia intaneti, kwa mfano google.com au mluetechnology.me.",
+
+"pricing.hosting.title":
+    "Web Hosting na Deployment",
+
+"pricing.hosting.description":
+    "Hosting ni kukodisha nafasi kwenye seva ili kuweka tovuti yako mtandaoni. Deployment ni mchakato wa kuhamisha mafaili kutoka mazingira ya development kwenda kwenye seva inayotumika.",
+
+"pricing.maintenance.title":
+    "Matengenezo na Msaada",
+
+"pricing.maintenance.description":
+    "Matengenezo yanajumuisha kurekebisha hitilafu, masasisho, ufuatiliaji wa usalama, backups, kuongeza features, na msaada wa kuhakikisha mfumo unapatikana.",
+
+"pricing.included":
+    "Vilivyomo",
+
+"pricing.notIncluded":
+    "Visivyomo",
+
+"pricing.examples":
+    "Mifano",
+
+"pricing.viewMore":
+    "Angalia zaidi",
+
+"pricing.viewLess":
+    "Funga maelezo",
+        
 
     // About
 "about.eyebrow": "SISI NI NANI?",

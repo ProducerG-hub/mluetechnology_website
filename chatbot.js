@@ -73,11 +73,344 @@
         return swahiliScore > englishScore ? "swahili" : "english";
     }
 
-    // Creating a simple chatbot using keyword matching (no external AI API).
     function detectLanguage(text) {
-        const inferred = inferPreferredLanguage(text);
-        return inferred || "english";
+    const inferred = inferPreferredLanguage(text);
+    return inferred || "english";
+}
+
+
+// =====================================================
+// MLUE TECHNOLOGY — BUSINESS KNOWLEDGE
+// =====================================================
+
+const businessKnowledge = {
+
+    // -------------------------------------------------
+    // COMPANY
+    // -------------------------------------------------
+
+    company: {
+
+        name: "MLUE Technology",
+
+        location: {
+            city: "Dar es Salaam",
+            country: "Tanzania",
+            display: {
+                english: "Dar es Salaam, Tanzania",
+                swahili: "Dar es Salaam, Tanzania"
+            }
+        }
+
+    },
+
+
+    // -------------------------------------------------
+    // SOLUTIONS
+    // -------------------------------------------------
+
+    solutions: {
+
+        businessSoftware: {
+
+            title: {
+                english: "Business Software Solutions",
+                swahili: "Suluhisho za Programu za Biashara"
+            },
+
+            description: {
+                english:
+                    "We engineer software systems that help businesses manage operations, automate workflows, improve productivity, and make better decisions.",
+
+                swahili:
+                    "Tunatengeneza mifumo ya programu inayosaidia biashara kusimamia shughuli, kufanya kazi kiotomatiki, kuongeza tija, na kufanya maamuzi bora."
+            },
+
+            capabilities: [
+                "Custom Software",
+                "Business Systems",
+                "APIs & Backend",
+                "E-Commerce"
+            ]
+
+        },
+
+
+        locationIntelligence: {
+
+            title: {
+                english: "Location Intelligence",
+                swahili: "Location Intelligence"
+            },
+
+            description: {
+                english:
+                    "We use GIS, spatial data, and mapping technologies to transform location information into actionable decisions.",
+
+                swahili:
+                    "Tunatumia GIS, spatial data, na teknolojia za ramani kubadilisha taarifa za maeneo kuwa taarifa zinazosaidia kufanya maamuzi."
+            },
+
+            capabilities: [
+                "GIS Analysis",
+                "Spatial Data",
+                "Site Selection",
+                "Mapping"
+            ]
+
+        }
+
+    },
+
+
+    // -------------------------------------------------
+    // ENGINEERING CAPABILITIES
+    // -------------------------------------------------
+
+    capabilities: {
+
+        uiUx: {
+            title: "UI / UX",
+
+            description: {
+                english:
+                    "Interfaces designed around clarity, usability, and real user workflows.",
+
+                swahili:
+                    "Tunatengeneza interfaces zinazozingatia uwazi, urahisi wa matumizi, na mahitaji halisi ya watumiaji."
+            }
+        },
+
+
+        cloudDeployment: {
+            title: "Cloud & Deployment",
+
+            description: {
+                english:
+                    "Reliable deployment infrastructure designed for performance and growth.",
+
+                swahili:
+                    "Miundombinu ya deployment inayotengenezwa kwa kuzingatia utendaji bora na ukuaji."
+            }
+        },
+
+
+        maintenanceSupport: {
+            title: "Maintenance & Support",
+
+            description: {
+                english:
+                    "Continuous improvement, maintenance, and technical support after deployment.",
+
+                swahili:
+                    "Uboreshaji endelevu, matengenezo, na msaada wa kiufundi baada ya mfumo kuanza kutumika."
+            }
+        }
+
+    },
+
+
+    // -------------------------------------------------
+    // PRICING
+    // -------------------------------------------------
+
+    pricing: {
+
+        transparent: true,
+
+        url:
+            "https://mluetechnology.me/pricing/"
+
+    },
+
+
+    // -------------------------------------------------
+    // PROJECTS
+    // -------------------------------------------------
+
+    projects: {
+
+        url:
+            "https://mluetechnology.me/projects/"
+
+    },
+
+
+    // -------------------------------------------------
+    // APPOINTMENT
+    // -------------------------------------------------
+
+    appointment: {
+
+        url:
+            "https://mluetechnology.me/#home"
+
+    },
+
+
+    // -------------------------------------------------
+    // CONTACT
+    // -------------------------------------------------
+
+    contact: {
+
+        email:
+            "mluetechnologytz@gmail.com",
+
+        phone:
+            "+255 752 804 154",
+
+        contactPage:
+            "https://mluetechnology.me/#contact"
+
+    },
+
+
+    // -------------------------------------------------
+    // ESCALATION
+    // -------------------------------------------------
+
+    escalation: {
+
+        whatsapp:
+            "https://wa.me/255620196710",
+
+        phone:
+            "+255 620 196 710",
+
+        purpose:
+            "Additional information or assistance outside the chatbot knowledge base."
+
     }
+
+};
+
+// ===================================================
+// MLUE Chatbot — Business Rules
+// Determines WHAT the chatbot should do
+// ===================================================
+
+const businessRules = {
+
+    pricing: {
+        action: "redirect",
+        url: "https://mluetechnology.me/pricing/",
+        keywords: [
+            "price",
+            "pricing",
+            "cost",
+            "charge",
+            "how much",
+            "fee",
+            "budget",
+            "bei",
+            "gharama",
+            "malipo"
+        ]
+    },
+
+    projects: {
+        action: "redirect",
+        url: "https://mluetechnology.me/projects/",
+        keywords: [
+            "project",
+            "projects",
+            "portfolio",
+            "work",
+            "previous work",
+            "examples",
+            "miradi",
+            "kazi",
+            "mifano"
+        ]
+    },
+
+    consultation: {
+        action: "appointment",
+        url: "https://mluetechnology.me/#home",
+        keywords: [
+            "consultation",
+            "consult",
+            "meeting",
+            "appointment",
+            "book",
+            "schedule",
+            "talk to you",
+            "talk with you",
+            "ushauri",
+            "mkutano",
+            "miadi",
+            "zungumza"
+        ]
+    },
+
+    contact: {
+        action: "contact",
+        url: "https://mluetechnology.me/#contact",
+        email: "mluetechnologytz@gmail.com",
+        phone: "+255 752 804 154",
+        keywords: [
+            "contact",
+            "email",
+            "phone",
+            "telephone",
+            "number",
+            "reach you",
+            "contact you",
+            "mawasiliano",
+            "barua pepe",
+            "simu"
+        ]
+    },
+
+    escalation: {
+        action: "whatsapp",
+        url: "https://wa.me/255620196710",
+        trigger: [
+    "exact location",
+    "exact address",
+    "office address",
+    "physical address",
+    "office location",
+    "where exactly",
+    "where is your office",
+    "anwani ya ofisi",
+    "anwani kamili",
+    "mahali hasa",
+    "ofisi yenu iko wapi"
+]
+    },
+
+    location: {
+        action: "answer",
+        display: {
+            english: "Dar es Salaam, Tanzania",
+            swahili: "Dar es Salaam, Tanzania"
+        }
+    },
+
+    services: {
+        action: "knowledgeBase",
+        knowledgeKey: "services"
+    },
+
+    about: {
+        action: "knowledgeBase",
+        knowledgeKey: "about"
+    },
+
+    support: {
+        action: "knowledgeBase",
+        knowledgeKey: "support"
+    },
+
+    solution: {
+    action: "solutionResponse"
+   }
+
+};
+
+globalThis.mlueBusinessRules = businessRules;
 
     const INTENTS = [
         {
@@ -269,7 +602,11 @@
                 { value: "nashukuru mlue", weight: 5 }
             ]
         }
+
+    
     ];
+
+
 
     const INTENT_RESPONSE_PRIORITY = [
         "switchingLanguage",
@@ -352,6 +689,700 @@
         return bestIntent;
     }
 
+    // ===================================================
+// MLUE Chatbot — Solution Context Detection
+// Identifies the client's business domain and
+// software requirement without inventing details.
+// ===================================================
+
+
+
+    // ===================================================
+// MLUE Chatbot — Business Rule Resolver
+// Determines which business rule should execute
+// ===================================================
+
+function resolveBusinessRule(message, detectedIntent, solutionContext) {
+
+    const text = String(message || "").toLowerCase().trim();
+
+    // -------------------------------------------------
+// 00 — SOLUTION CONTEXT PRIORITY
+// -------------------------------------------------
+
+if (
+    solutionContext &&
+    solutionContext.solution === "businessSoftware" &&
+    solutionContext.domain
+) {
+    return {
+        key: "solution",
+        rule: businessRules.solution,
+        solutionContext
+    };
+}
+
+    // -------------------------------------------------
+    // 01 — EXACT / SPECIFIC LOCATION REQUEST
+    // -------------------------------------------------
+    // General location questions should NOT escalate.
+    // Specific office/address questions should.
+    // -------------------------------------------------
+
+    const specificLocationPatterns = [
+        "exact location",
+        "exact address",
+        "office address",
+        "physical address",
+        "office location",
+        "where exactly",
+        "where is your office",
+        "where is the office",
+        "anwani ya ofisi",
+        "anwani kamili",
+        "mahali hasa",
+        "ofisi yenu iko wapi",
+        "ofisi iko wapi"
+    ];
+
+    if (
+        specificLocationPatterns.some(pattern =>
+            text.includes(pattern)
+        )
+    ) {
+        return {
+            key: "escalation",
+            rule: businessRules.escalation
+        };
+    }
+
+
+    // -------------------------------------------------
+    // 02 — GENERAL LOCATION
+    // -------------------------------------------------
+
+    const generalLocationPatterns = [
+        "where are you located",
+        "where are you based",
+        "where are you located",
+        "location",
+        "where are you",
+        "mlipo wapi",
+        "mko wapi",
+        "upo wapi",
+        "mahali mlipo",
+        "eneo mlilopo"
+    ];
+
+    if (
+        generalLocationPatterns.some(pattern =>
+            text.includes(pattern)
+        )
+    ) {
+        return {
+            key: "location",
+            rule: businessRules.location
+        };
+    }
+
+
+    // -------------------------------------------------
+    // 03 — PRICING
+    // -------------------------------------------------
+
+    if (
+        detectedIntent === "price" ||
+        businessRules.pricing.keywords.some(keyword =>
+            text.includes(keyword)
+        )
+    ) {
+        return {
+            key: "pricing",
+            rule: businessRules.pricing
+        };
+    }
+
+
+    // -------------------------------------------------
+    // 04 — PROJECTS / PORTFOLIO
+    // -------------------------------------------------
+
+    if (
+        businessRules.projects.keywords.some(keyword =>
+            text.includes(keyword)
+        )
+    ) {
+        return {
+            key: "projects",
+            rule: businessRules.projects
+        };
+    }
+
+
+    // -------------------------------------------------
+    // 05 — CONSULTATION / APPOINTMENT
+    // -------------------------------------------------
+
+    if (
+        businessRules.consultation.keywords.some(keyword =>
+            text.includes(keyword)
+        )
+    ) {
+        return {
+            key: "consultation",
+            rule: businessRules.consultation
+        };
+    }
+
+
+    // -------------------------------------------------
+    // 06 — CONTACT
+    // -------------------------------------------------
+
+    if (detectedIntent === "contact") {
+        return {
+            key: "contact",
+            rule: businessRules.contact
+        };
+    }
+
+
+    // -------------------------------------------------
+    // 07 — KNOWLEDGE BASE RULES
+    // -------------------------------------------------
+
+    if (detectedIntent === "services") {
+        return {
+            key: "services",
+            rule: businessRules.services
+        };
+    }
+
+    if (detectedIntent === "about") {
+        return {
+            key: "about",
+            rule: businessRules.about
+        };
+    }
+
+    if (detectedIntent === "support") {
+        return {
+            key: "support",
+            rule: businessRules.support
+        };
+    }
+
+
+    // -------------------------------------------------
+    // 09 — NO BUSINESS RULE MATCH
+    // -------------------------------------------------
+
+
+
+
+    return null;
+}
+
+// ===================================================
+// MLUE CHATBOT — SOLUTION CONTEXT ENGINE
+// Determines WHAT KIND OF SOLUTION the client needs
+// ===================================================
+
+function detectSolutionContext(message) {
+
+    const text = String(message || "")
+        .toLowerCase()
+        .trim();
+
+    if (!text) {
+        return {
+            solution: null,
+            domain: null,
+            requirements: []
+        };
+    }
+
+
+    // ---------------------------------------------------
+    // REQUIREMENT DETECTION
+    // ---------------------------------------------------
+
+    const requirementPatterns = [
+        {
+            key: "sales",
+            patterns: [
+                "sales",
+                "selling",
+                "sell",
+                "mauzo",
+                "kuuza",
+                "biashara ya mauzo"
+            ]
+        },
+
+        {
+            key: "inventory",
+            patterns: [
+                "inventory",
+                "stock",
+                "stocks",
+                "stock management",
+                "bidhaa",
+                "stoo",
+                "usimamizi wa bidhaa"
+            ]
+        },
+
+        {
+            key: "customers",
+            patterns: [
+                "customers",
+                "customer management",
+                "clients",
+                "client management",
+                "wateja",
+                "usimamizi wa wateja"
+            ]
+        },
+
+        {
+            key: "patients",
+            patterns: [
+                "patients",
+                "patient management",
+                "patient records",
+                "wagonjwa",
+                "usimamizi wa wagonjwa",
+                "rekodi za wagonjwa"
+            ]
+        },
+
+        {
+            key: "reporting",
+            patterns: [
+                "reporting",
+                "reports",
+                "report",
+                "analytics",
+                "ripoti",
+                "taarifa"
+            ]
+        },
+
+        {
+            key: "students",
+            patterns: [
+                "students",
+                "student management",
+                "student records",
+                "wanafunzi",
+                "usimamizi wa wanafunzi"
+            ]
+        },
+
+        {
+    key: "teacherManagement",
+    patterns: [
+        "teachers",
+        "teacher management",
+        "teacher records",
+        "staff management",
+        "teachers management",
+        "walimu",
+        "usimamizi wa walimu",
+        "rekodi za walimu"
+    ]
+    },
+
+        {
+            key: "academicRecords",
+            patterns: [
+                "academic records",
+                "academic management",
+                "grades",
+                "marks",
+                "results",
+                "mitihani",
+                "matokeo",
+                "alama"
+            ]
+        }
+    ];
+
+
+    const requirements = [];
+
+
+    requirementPatterns.forEach(requirement => {
+
+        const matched = requirement.patterns.some(pattern =>
+            text.includes(pattern)
+        );
+
+        if (matched) {
+            requirements.push(requirement.key);
+        }
+
+    });
+
+
+    // ---------------------------------------------------
+    // HEALTHCARE
+    // ---------------------------------------------------
+
+    const healthcarePatterns = [
+        "hospital",
+        "clinic",
+        "healthcare",
+        "medical",
+        "patient",
+        "patients",
+        "patient management",
+        "patient records",
+        "hospital management",
+        "hospital system",
+        "clinic system",
+        "hospitali",
+        "mgonjwa",
+        "wagonjwa",
+        "huduma za afya"
+    ];
+
+    if (
+        healthcarePatterns.some(pattern =>
+            text.includes(pattern)
+        )
+    ) {
+
+        return {
+            solution: "businessSoftware",
+            domain: "healthcare",
+            requirements
+        };
+
+    }
+
+
+    // ---------------------------------------------------
+    // EDUCATION
+    // ---------------------------------------------------
+
+    const educationPatterns = [
+        "school",
+        "schools",
+        "education",
+        "student",
+        "students",
+        "student management",
+        "school management",
+        "school system",
+        "academic",
+        "college",
+        "university",
+        "chuo",
+        "shule",
+        "mwanafunzi",
+        "wanafunzi",
+        "mfumo wa shule",
+        "mfumo wa wanafunzi"
+    ];
+
+    if (
+        educationPatterns.some(pattern =>
+            text.includes(pattern)
+        )
+    ) {
+
+        return {
+            solution: "businessSoftware",
+            domain: "education",
+            requirements
+        };
+
+    }
+
+
+    // ---------------------------------------------------
+    // RETAIL
+    // ---------------------------------------------------
+
+    const retailPatterns = [
+        "retail",
+        "shop",
+        "store",
+        "supermarket",
+        "sales",
+        "inventory",
+        "stock",
+        "customers",
+        "products",
+        "point of sale",
+        "pos",
+        "duka",
+        "stoo",
+        "mauzo",
+        "bidhaa",
+        "wateja"
+    ];
+
+    if (
+        retailPatterns.some(pattern =>
+            text.includes(pattern)
+        )
+    ) {
+
+        return {
+            solution: "businessSoftware",
+            domain: "retail",
+            requirements
+        };
+
+    }
+
+
+    // ---------------------------------------------------
+    // GENERAL BUSINESS / ORGANIZATION
+    // ---------------------------------------------------
+
+    const businessPatterns = [
+        "business",
+        "business system",
+        "business management",
+        "management system",
+        "organization",
+        "organisation",
+        "organization system",
+        "company system",
+        "enterprise system",
+        "operations",
+        "workflow",
+        "automation",
+        "biashara",
+        "mfumo wa biashara",
+        "mfumo wa usimamizi",
+        "shirika"
+    ];
+
+    if (
+        businessPatterns.some(pattern =>
+            text.includes(pattern)
+        )
+    ) {
+
+        return {
+            solution: "businessSoftware",
+            domain: "generalBusiness",
+            requirements
+        };
+
+    }
+
+
+    // ---------------------------------------------------
+    // NO SOLUTION CONTEXT
+    // ---------------------------------------------------
+
+    return {
+        solution: null,
+        domain: null,
+        requirements
+    };
+}
+
+function mergeSolutionContext(previousContext, currentContext, message) {
+
+    const text = String(message || "")
+        .toLowerCase()
+        .trim();
+
+    const continuationPatterns = [
+        "also",
+        "and",
+        "additionally",
+        "another",
+        "i also need",
+        "i also want",
+        "we also need",
+        "we also want",
+        "pia",
+        "na pia",
+        "ongeza",
+        "nahitaji pia",
+        "nataka pia"
+    ];
+
+    const isContinuation =
+        continuationPatterns.some(pattern =>
+            text.includes(pattern)
+        );
+
+    // If this is not a continuation, use the current context normally
+    if (!isContinuation || !previousContext) {
+        return currentContext;
+    }
+
+    // If the current message does not identify a domain,
+    // inherit the previous domain.
+    const mergedDomain =
+        currentContext.domain || previousContext.domain;
+
+    const mergedSolution =
+        currentContext.solution || previousContext.solution;
+
+    // Combine old + new requirements without duplicates
+    const mergedRequirements = [
+        ...(previousContext.requirements || []),
+        ...(currentContext.requirements || [])
+    ];
+
+    const uniqueRequirements = [
+        ...new Set(mergedRequirements)
+    ];
+
+    return {
+        solution: mergedSolution,
+        domain: mergedDomain,
+        requirements: uniqueRequirements
+    };
+}
+
+// ===================================================
+// MLUE CHATBOT — SOLUTION CONTEXT MEMORY
+// Remembers the client's current software requirement
+// during the current chatbot session.
+// ===================================================
+
+let currentSolutionContext = {
+    solution: null,
+    domain: null,
+    requirements: []
+};
+
+// ===================================================
+// MLUE CHATBOT — CONSULTATION QUESTION ENGINE
+// Determines the next useful question to ask the client.
+// ===================================================
+
+function getNextConsultationQuestion(context, language) {
+
+    const requirements = context?.requirements || [];
+
+    if (context?.domain === "healthcare") {
+
+        if (!requirements.includes("patients")) {
+            return language === "swahili"
+                ? "Ni sehemu gani za usimamizi wa hospitali ungependa mfumo uzingatie zaidi?"
+                : "Which areas of hospital management would you like the system to focus on most?";
+        }
+
+        if (!requirements.includes("reporting")) {
+            return language === "swahili"
+                ? "Je, pia unahitaji mfumo uwe na reporting na ripoti za shughuli za hospitali?"
+                : "Would you also need reporting and operational reports for the hospital?";
+        }
+
+        return language === "swahili"
+            ? "Je, kuna mahitaji mengine muhimu ambayo ungependa kuyaongeza kwenye mfumo?"
+            : "Are there any other important requirements you would like to add to the system?";
+    }
+
+
+    if (context?.domain === "education") {
+
+    const missingRequirements = [];
+
+
+    if (!requirements.includes("students")) {
+        missingRequirements.push(
+            language === "swahili"
+                ? "student management"
+                : "student management"
+        );
+    }
+
+    if (!requirements.includes("teacherManagement")) {
+        missingRequirements.push(
+            language === "swahili"
+                ? "teacher management"
+                : "teacher management"
+        );
+    }
+
+    if (!requirements.includes("academicRecords")) {
+        missingRequirements.push(
+            language === "swahili"
+                ? "academic records"
+                : "academic records"
+        );
+    }
+
+    if (!requirements.includes("reporting")) {
+        missingRequirements.push(
+            language === "swahili"
+                ? "reporting"
+                : "reporting"
+        );
+    }
+
+
+    if (missingRequirements.length > 0) {
+
+        const suggestions =
+    missingRequirements
+        .slice(0, 2)
+        .join(", ");
+        
+        return language === "swahili"
+            ? `Tumeshabaini mahitaji kama ${requirements.join(", ")}. Je, ungependa kuongeza vipengele vingine kama ${suggestions}?`
+            : `We have noted requirements such as ${requirements.join(", ")}. Would you like to add any other modules such as ${suggestions}?`;
+    }
+
+
+    return language === "swahili"
+        ? "Tumeshabaini mahitaji yako ya msingi ya mfumo. Je, kuna mahitaji mengine muhimu ungependa kuyaongeza?"
+        : "We have identified your main system requirements. Are there any other important requirements you would like to add?";
+    }
+
+
+    if (context?.domain === "retail") {
+
+        if (!requirements.includes("sales")) {
+            return language === "swahili"
+                ? "Je, mfumo unahitaji kusimamia mauzo pia?"
+                : "Will the system also need to manage sales?";
+        }
+
+        if (!requirements.includes("inventory")) {
+            return language === "swahili"
+                ? "Je, unahitaji pia usimamizi wa stock na bidhaa?"
+                : "Will you also need inventory and stock management?";
+        }
+
+        if (!requirements.includes("customers")) {
+            return language === "swahili"
+                ? "Je, ungependa mfumo pia usimamie taarifa za wateja?"
+                : "Would you also like the system to manage customer information?";
+        }
+
+        return language === "swahili"
+            ? "Je, kuna mahitaji mengine muhimu ya biashara ungependa kuyaongeza?"
+            : "Are there any other important business requirements you would like to add?";
+    }
+
+
+    if (context?.domain === "generalBusiness") {
+
+        return language === "swahili"
+            ? "Ni shughuli gani kuu ungependa mfumo usimamie au kufanya kiotomatiki?"
+            : "What are the main operations you would like the system to manage or automate?";
+    }
+
+
+    return language === "swahili"
+        ? "Ni mahitaji gani muhimu ungependa mfumo wako uzingatie?"
+        : "What are the main requirements you would like your system to address?";
+}
+
     function generateResponse(message, preferredLanguage) {
         const language = preferredLanguage || detectLanguage(message);
         const text = (message || "").toLowerCase();
@@ -364,6 +1395,8 @@
         function hasPhrase(candidates) {
             return candidates.some(candidate => text.includes(candidate));
         }
+
+        
 
         const knowledgeBase = {
             greeting: {
@@ -410,15 +1443,362 @@
             }
         };
 
-        const intent = detectIntent(message);
-        if (knowledgeBase[intent]) {
-            return language === "swahili"
-                ? knowledgeBase[intent].swahili
-                : knowledgeBase[intent].english;
-        }
+    
+
+
+globalThis.mlueCurrentKnowledgeBase = knowledgeBase;
+globalThis.mlueCurrentBusinessRules = businessRules;
+
+    const intent = detectIntent(message);
+
+// Detect solution context from the current message
+const detectedSolutionContext =
+    detectSolutionContext(message);
+
+
+// ===================================================
+// SOLUTION CONTEXT MEMORY
+// ===================================================
+
+// If the current message contains a complete/new
+// solution context, update the stored context.
+if (
+    detectedSolutionContext &&
+    detectedSolutionContext.solution === "businessSoftware" &&
+    detectedSolutionContext.domain
+) {
+    currentSolutionContext = {
+        solution: detectedSolutionContext.solution,
+        domain: detectedSolutionContext.domain,
+        requirements: [
+            ...new Set(detectedSolutionContext.requirements || [])
+        ]
+    };
+}
+
+// If the current message adds requirements but does not
+// specify the domain again, merge them with the previous
+// solution context.
+else if (
+    currentSolutionContext.solution === "businessSoftware" &&
+    detectedSolutionContext &&
+    detectedSolutionContext.requirements &&
+    detectedSolutionContext.requirements.length > 0
+) {
+    currentSolutionContext = {
+        ...currentSolutionContext,
+
+        requirements: [
+            ...new Set([
+                ...(currentSolutionContext.requirements || []),
+                ...detectedSolutionContext.requirements
+            ])
+        ]
+    };
+}
+
+// ---------------------------------------------------
+// USE REMEMBERED CONTEXT FOR RESOLVER
+// ---------------------------------------------------
+
+const solutionContext =
+    currentSolutionContext.solution === "businessSoftware"
+        ? currentSolutionContext
+        : detectedSolutionContext;
+
+// ---------------------------------------------------
+// DEBUG / DEVELOPMENT ACCESS
+// ---------------------------------------------------
+
+globalThis.mlueCurrentSolutionContext =
+    currentSolutionContext;        
+
+
+const resolvedRule =
+    resolveBusinessRule(
+        message,
+        intent,
+        solutionContext
+    );
+
+
+// ===================================================
+// BUSINESS RULE EXECUTION
+// ===================================================
+
+if (resolvedRule) {
+
+    const { key, rule } = resolvedRule;
+
+    // -----------------------------------------------
+// SOLUTION CONTEXT
+// -----------------------------------------------
+
+if (key === "solution") {
+
+    const context = resolvedRule.solutionContext;
+
+    if (context.domain === "healthcare") {
+
         return language === "swahili"
-        ? "Naweza kusaidia kuhusu huduma za MLUE Technology kama POS systems, software, na branding. Ungependa kujua nini?"
-        : "I can help with MLUE Technology services like POS systems, software, and branding. What would you like to know?";
+            ? "Tunaweza kukusaidia kutengeneza mfumo wa kidijitali unaolenga mahitaji ya hospitali yako. Tunaweza kujadili mahitaji kama usimamizi wa wagonjwa, taarifa, na workflows za hospitali."
+            : "We can help you develop a digital management system tailored to your hospital's needs. We can discuss requirements such as patient management, reporting, and other hospital workflows.";
+    }
+
+    if (context.domain === "education") {
+
+    const educationRequirementLabels = {
+        students: {
+            swahili: "usimamizi wa wanafunzi",
+            english: "student management"
+        },
+
+        teacherManagement: {
+            swahili: "usimamizi wa walimu",
+            english: "teacher management"
+        },
+
+        academicRecords: {
+            swahili: "rekodi za kitaaluma",
+            english: "academic records"
+        },
+
+        reporting: {
+            swahili: "ripoti na taarifa",
+            english: "reporting"
+        }
+    };
+
+    const requirements =
+        (context.requirements || [])
+            .filter(requirement =>
+                educationRequirementLabels[requirement]
+            )
+            .map(requirement =>
+                educationRequirementLabels[requirement][language]
+            );
+
+    if (language === "swahili") {
+
+        if (requirements.length > 0) {
+
+            return `Tunaweza kukusaidia kutengeneza mfumo wa usimamizi wa shule unaolenga mahitaji ya taasisi yako. Mfumo unaweza kujumuisha ${requirements.join(", ")}. Tunaweza kujadili mahitaji yako kwa undani na kubuni mfumo unaokidhi mahitaji ya taasisi yako. ${getNextConsultationQuestion(context, language)}`;
+        }
+
+        return "Tunaweza kukusaidia kutengeneza mfumo wa usimamizi wa shule unaolenga mahitaji ya taasisi yako. Tunaweza kujadili mahitaji yako na aina ya mfumo unaohitaji.";
+    }
+
+    if (requirements.length > 0) {
+
+        return `We can help you develop a school management system tailored to your institution's needs. The system can include ${requirements.join(", ")}. We can discuss your requirements in more detail and design a solution that fits your institution's needs. ${getNextConsultationQuestion(context, language)}`;
+    }
+
+    return "We can help you develop a school management system tailored to your institution's needs. We can discuss your requirements and the type of system you need.";
+}
+
+
+    if (context.domain === "retail") {
+
+    const requirements = context.requirements || [];
+
+    const requirementText = requirements
+        .map(requirement => {
+
+            const labels = {
+    sales: language === "swahili"
+        ? "mauzo"
+        : "sales",
+
+    inventory: language === "swahili"
+        ? "usimamizi wa stock"
+        : "inventory management",
+
+    customers: language === "swahili"
+        ? "usimamizi wa wateja"
+        : "customer management",
+
+    reporting: language === "swahili"
+        ? "ripoti"
+        : "reporting"
+    };
+
+            return labels[requirement];
+        })
+        .filter(Boolean);
+
+    const features = requirementText.length > 0
+        ? requirementText.join(
+            language === "swahili"
+                ? ", "
+                : ", "
+        )
+        : language === "swahili"
+            ? "mahitaji ya biashara yako"
+            : "your business requirements";
+
+    return language === "swahili"
+        ? `Tunaweza kukusaidia kutengeneza mfumo wa retail unaolenga ${features}. Tunaweza kuchambua mahitaji yako kwa undani na kupanga mfumo unaofaa kwa shughuli za biashara yako.`
+        : `We can help you develop a retail management system focused on ${features}. We can analyze your requirements in more detail and design a solution that fits your business operations.`;
+}
+
+    if (context.domain === "generalBusiness") {
+
+        return language === "swahili"
+            ? "Tunaweza kukusaidia kutengeneza mfumo wa kidijitali unaolenga mahitaji ya biashara au shirika lako. Tungependa kuelewa zaidi kuhusu shughuli unazotaka mfumo usimamie."
+            : "We can help you develop a digital management system tailored to your business or organization's needs. We would like to understand more about the operations you want the system to manage.";
+    }
+
+    const requirements = context.requirements || [];
+
+    const requirementLabels = {
+    sales: {
+        swahili: "mauzo",
+        english: "sales"
+    },
+
+    inventory: {
+        swahili: "usimamizi wa stock",
+        english: "inventory management"
+    },
+
+    customers: {
+        swahili: "usimamizi wa wateja",
+        english: "customer management"
+    },
+
+    patients: {
+        swahili: "usimamizi wa wagonjwa",
+        english: "patient management"
+    },
+
+    reporting: {
+        swahili: "reporting na ripoti",
+        english: "reporting"
+    },
+
+    students: {
+        swahili: "usimamizi wa wanafunzi",
+        english: "student management"
+    },
+
+    teacherManagement: {
+    swahili: "usimamizi wa walimu",
+    english: "teacher management"
+   },
+
+    academicRecords: {
+        swahili: "rekodi za kitaaluma",
+        english: "academic records"
+    }
+};
+const requirementText = requirements
+    .map(requirement =>
+        requirementLabels[requirement]?.[language]
+    )
+    .filter(Boolean)
+    .join(", ");
+}
+
+
+    // -----------------------------------------------
+    // LOCATION
+    // -----------------------------------------------
+
+    if (key === "location") {
+
+        return language === "swahili"
+            ? `Tunapatikana ${rule.display.swahili}.`
+            : `We are based in ${rule.display.english}.`;
+    }
+
+
+    // -----------------------------------------------
+    // PRICING
+    // -----------------------------------------------
+
+    if (key === "pricing") {
+
+        return language === "swahili"
+            ? `Bei za huduma zetu zinategemea aina ya suluhisho unalohitaji. Unaweza kuona bei zetu kwa uwazi kwenye ukurasa wetu wa pricing: ${rule.url}`
+            : `Our pricing depends on the type of solution you need. You can view our transparent pricing on our pricing page: ${rule.url}`;
+    }
+
+
+    // -----------------------------------------------
+    // PROJECTS
+    // -----------------------------------------------
+
+    if (key === "projects") {
+
+        return language === "swahili"
+            ? `Unaweza kuona miradi na kazi tunazofanya kupitia ukurasa wetu wa projects: ${rule.url}`
+            : `You can explore our projects and previous work on our projects page: ${rule.url}`;
+    }
+
+
+    // -----------------------------------------------
+    // CONSULTATION
+    // -----------------------------------------------
+
+    if (key === "consultation") {
+
+        return language === "swahili"
+            ? `Unaweza kuweka appointment ya consultation kupitia tovuti yetu. Tembelea: ${rule.url}`
+            : `You can book a consultation through our website. Visit: ${rule.url}`;
+    }
+
+
+    // -----------------------------------------------
+    // CONTACT
+    // -----------------------------------------------
+
+    if (key === "contact") {
+
+        return language === "swahili"
+            ? `Unaweza kuwasiliana na timu ya MLUE Technology kupitia ${rule.email}, simu ${rule.phone}, au ukurasa wetu wa mawasiliano: ${rule.url}`
+            : `You can contact the MLUE Technology team via ${rule.email}, phone ${rule.phone}, or through our contact page: ${rule.url}`;
+    }
+
+
+    // -----------------------------------------------
+    // ESCALATION
+    // -----------------------------------------------
+
+    if (key === "escalation") {
+
+        return language === "swahili"
+            ? `Kwa maelezo haya maalum, ni bora kuwasiliana moja kwa moja na timu yetu kupitia WhatsApp: ${rule.url}`
+            : `For this specific information, it would be best to contact our team directly via WhatsApp: ${rule.url}`;
+    }
+
+
+    // -----------------------------------------------
+    // KNOWLEDGE BASE
+    // -----------------------------------------------
+
+    if (rule.action === "knowledgeBase") {
+
+        const knowledgeKey =
+            rule.knowledgeKey;
+
+        if (knowledgeBase[knowledgeKey]) {
+
+            return language === "swahili"
+                ? knowledgeBase[knowledgeKey].swahili
+                : knowledgeBase[knowledgeKey].english;
+        }
+    }
+}
+
+
+
+// ===================================================
+// FALLBACK
+// ===================================================
+
+return language === "swahili"
+    ? "Samahani, sina taarifa ya kutosha kuhusu hilo. Unaweza kuwasiliana moja kwa moja na timu yetu kupitia WhatsApp kwa maelezo zaidi: https://wa.me/255620196710"
+    : "I don't have enough reliable information about that. You can contact our team directly via WhatsApp for further assistance: https://wa.me/255620196710";
     }
 
     
@@ -847,6 +2227,12 @@ document.addEventListener("mlue-language-changed", () => {
         module.exports = { generateResponse, detectLanguage };
     }
 
-    global.mlueChatbot = { generateResponse, detectLanguage };
+    global.mlueChatbot = {
+    generateResponse,
+    detectLanguage,
+    detectSolutionContext,
+    businessKnowledge
+};
+
 })(typeof window !== "undefined" ? window : globalThis);
 
