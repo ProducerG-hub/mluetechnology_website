@@ -57,12 +57,32 @@
       </a>
 
       <nav class="header__nav" id="nav">
-        <a href="/" class="nav-link active" data-i18n="nav.home">Home</a>
-        <a href="/#about" class="nav-link" data-i18n="nav.about">About Us</a>
-        <a href="/#services" class="nav-link" data-i18n="nav.services">Services</a>
-        <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">Pricing</a>
-        <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-      </nav>
+
+    <a href="/" class="nav-link" data-i18n="nav.home">
+        Home
+    </a>
+
+    <a href="/#about" class="nav-link" data-i18n="nav.about">
+        About Us
+    </a>
+
+    <a href="/#services" class="nav-link" data-i18n="nav.services">
+        Services
+    </a>
+
+    <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">
+        Pricing
+    </a>
+
+    <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+        Contact
+    </a>
+
+    <a href="/projects/" class="nav-link active" data-i18n="nav.projects">
+        Projects
+    </a>
+
+</nav>
 
       <div class="header__actions">
 
@@ -104,7 +124,12 @@
         <span></span>
         <span></span>
     </span>
-    <span class="header__hamburger-label">Menu</span>
+    <span
+    class="header__hamburger-label"
+    data-i18n="nav.menu"
+    >
+    Menu
+   </span>
 </button>
 
     </div>
@@ -117,11 +142,27 @@
         
         <!-- Hero Section -->
         <div class="portfolio-hub__header">
-          <p class="section-label">Our Expertise</p>
-          <h1 class="portfolio-hub__title" id="portfolio-hub-title">Technology Solutions That Drive Business Growth</h1>
-          <p class="portfolio-hub__subtitle">
-            We develop custom software and geospatial solutions to help organizations improve efficiency, automate operations, and make smarter, data-driven decisions.
-          </p>
+          <p
+    class="section-label"
+    data-i18n="projects.eyebrow"
+>
+    Our Expertise
+</p>
+
+<h1
+    class="portfolio-hub__title"
+    id="portfolio-hub-title"
+    data-i18n="projects.title"
+>
+    Technology Solutions That Drive Business Growth
+</h1>
+
+<p
+    class="portfolio-hub__subtitle"
+    data-i18n="projects.description"
+>
+    We develop custom software and geospatial solutions to help organizations improve efficiency, automate operations, and make smarter, data-driven decisions.
+</p>
         </div>
 
         <!-- Categories Grid -->
@@ -134,19 +175,20 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
             </div>
-            <h2 class="category-card__title">Business Software Solutions</h2>
-            <p class="category-card__desc">
+            <h2 class="category-card__title" data-i18n="projects.software.title"
+                >Business Software Solutions</h2>
+            <p class="category-card__desc" data-i18n="projects.software.description">
               Custom software systems designed to automate business operations, improve organizational productivity, and support better decision-making at every level.
             </p>
             
             <div class="category-card__features-section">
-              <h3 class="category-card__features-title">Featured Solutions</h3>
+              <h3 class="category-card__features-title" data-i18n="projects.featuredSolutions">Featured Solutions</h3>
               <ul class="category-card__features">
-                <li class="category-card__feature-pill">Inventory Management System</li>
+                <li class="category-card__feature-pill"  data-i18n="projects.software.feature1">Inventory Management System</li>
               </ul>
             </div>
 
-            <div class="category-card__cta">
+            <div class="category-card__cta" data-i18n="projects.exploreSolutions">
               Explore Solutions 
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -161,19 +203,19 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <h2 class="category-card__title">Location Intelligence</h2>
-            <p class="category-card__desc">
+            <h2 class="category-card__title" data-i18n="projects.location.title">Location Intelligence</h2>
+            <p class="category-card__desc" data-i18n="projects.location.description">
               Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize field operations, and make strategic location-based decisions.
             </p>
             
             <div class="category-card__features-section">
-              <h3 class="category-card__features-title">Featured Solutions</h3>
+              <h3 class="category-card__features-title" data-i18n="projects.featuredSolutions">Featured Solutions</h3>
               <ul class="category-card__features">
-                <li class="category-card__feature-pill">Telecom Base Station Site Selection</li>
+                <li class="category-card__feature-pill" data-i18n="projects.location.feature1">Telecom Base Station Site Selection</li>
               </ul>
             </div>
 
-            <div class="category-card__cta">
+            <div class="category-card__cta" data-i18n="projects.exploreSolutions">
               Explore Solutions 
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -392,33 +434,33 @@
             <!-- ===================== SERVICES ===================== -->
             <div class="footer__column">
 
-                <h3 class="footer__heading">
+                <h3 class="footer__heading" data-i18n="footer.services">
                     Services
                 </h3>
 
                 <nav class="footer__links">
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.businessSoftware">
                         Business Software
                     </a>
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.customSoftware">
                         Custom Software
                     </a>
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.apiBackend">
                         APIs &amp; Backend
                     </a>
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.ecommerce">
                         E-Commerce
                     </a>
 
-                    <a href="/projects/location-intelligence/">
+                    <a href="/projects/location-intelligence/" data-i18n="footer.locationIntelligence">
                         Location Intelligence
                     </a>
 
-                    <a href="/#services">
+                    <a href="/#services" data-i18n="footer.aiSystems">
                         AI / Intelligent Systems
                     </a>
 
@@ -430,14 +472,14 @@
             <!-- ===================== LET'S TALK ===================== -->
             <div class="footer__column footer__contact">
 
-                <h3 class="footer__heading">
+                <h3 class="footer__heading" data-i18n="footer.letsTalk">
                     Let's Talk
                 </h3>
 
 
                 <div class="footer__location">
 
-                    <span class="footer__contact-label">
+                    <span class="footer__contact-label" data-i18n="footer.basedIn">
                         Based in
                     </span>
 
@@ -449,23 +491,27 @@
 
 
                 <a
-                    href="https://wa.me/255752804154"
-                    class="footer__contact-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="https://wa.me/255752804154"
+    class="footer__contact-link"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span data-i18n="footer.whatsapp">
+        WhatsApp
+    </span>
+    <span aria-hidden="true">→</span>
+</a>
 
 
                 <a
-                    href="mailto:mluetechnologytz@gmail.com"
-                    class="footer__contact-link"
-                >
-                    Email
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="mailto:mluetechnologytz@gmail.com"
+    class="footer__contact-link"
+>
+    <span data-i18n="footer.email">
+        Email
+    </span>
+    <span aria-hidden="true">→</span>
+</a>
 
             </div>
 

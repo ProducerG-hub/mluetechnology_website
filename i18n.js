@@ -321,6 +321,45 @@ const translations = {
     "Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.",    
 
 
+// ===================================================
+// PROJECTS
+// ===================================================
+
+"nav.menu": "Menu",
+
+"projects.eyebrow": "Our Expertise",
+
+"projects.title":
+    "Technology Solutions That Drive Business Growth",
+
+"projects.description":
+    "We develop custom software and geospatial solutions to help organizations improve efficiency, automate operations, and make smarter, data-driven decisions.",
+
+"projects.software.title":
+    "Business Software Solutions",
+
+"projects.software.description":
+    "Custom software systems designed to automate business operations, improve organizational productivity, and support better decision-making at every level.",
+
+"projects.location.title":
+    "Location Intelligence",
+
+"projects.location.description":
+    "Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize field operations, and make strategic location-based decisions.",
+
+"projects.featuredSolutions":
+    "Featured Solutions",
+
+"projects.software.feature1":
+    "Inventory Management System",
+
+"projects.location.feature1":
+    "Telecom Base Station Site Selection",
+
+"projects.exploreSolutions":
+    "Explore Solutions",    
+
+
     // About
 "about.eyebrow": "WHO WE ARE?",
 
@@ -912,7 +951,45 @@ const translations = {
 "pricing.maintenance.description":
     "Matengenezo yanajumuisha kurekebisha bugs, masasisho, ufuatiliaji wa usalama, backups, kuongeza features, na msaada wa kuhakikisha tovuti inapatikana.",
     
-    
+
+// ===================================================
+// PROJECTS
+// ===================================================
+
+"nav.menu": "Menyu",
+
+"projects.eyebrow": "Utaalamu Wetu",
+
+"projects.title":
+    "Suluhisho za Teknolojia Zinazochochea Ukuaji wa Biashara",
+
+"projects.description":
+    "Tunatengeneza software maalum na suluhisho za kijiografia zinazosaidia taasisi kuongeza ufanisi, ku-automate shughuli, na kufanya maamuzi bora yanayotokana na data.",
+
+"projects.software.title":
+    "Suluhisho za Software za Biashara",
+
+"projects.software.description":
+    "Mifumo maalum ya software iliyoundwa ku-automate shughuli za biashara, kuboresha tija ya shirika, na kusaidia kufanya maamuzi bora katika kila ngazi.",
+
+"projects.location.title":
+    "Location Intelligence",
+
+"projects.location.description":
+    "Uchambuzi wa data za kijiografia na GIS unaosaidia taasisi kugundua fursa zilizofichika, kuboresha shughuli za field, na kufanya maamuzi ya kimkakati yanayohusiana na location.",
+
+"projects.featuredSolutions":
+    "Suluhisho Kuu",
+
+"projects.software.feature1":
+    "Mfumo wa Usimamizi wa Inventory",
+
+"projects.location.feature1":
+    "Uchaguzi wa Maeneo ya Vituo vya Mawasiliano",
+
+"projects.exploreSolutions":
+    "Angalia Suluhisho",
+        
 
     // About
 "about.eyebrow": "SISI NI NANI?",
