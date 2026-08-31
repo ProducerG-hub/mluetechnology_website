@@ -24,12 +24,33 @@
       </a>
 
       <nav class="header__nav" id="nav">
-        <a href="/" class="nav-link active" data-i18n="nav.home">Home</a>
-        <a href="/#about" class="nav-link" data-i18n="nav.about">About Us</a>
-        <a href="/#services" class="nav-link" data-i18n="nav.services">Services</a>
-        <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">Pricing</a>
-        <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-      </nav>
+
+    <a href="/" class="nav-link" data-i18n="nav.home">
+        Home
+    </a>
+
+    <a href="/#about" class="nav-link" data-i18n="nav.about">
+        About Us
+    </a>
+
+    <a href="/#services" class="nav-link" data-i18n="nav.services">
+        Services
+    </a>
+
+    <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">
+        Pricing
+    </a>
+
+    <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+        Contact
+    </a>
+
+    <a href="/projects/" class="nav-link active" data-i18n="nav.projects">
+        Projects
+    </a>
+
+    </nav>
+
 
       <div class="header__actions">
 
@@ -71,7 +92,7 @@
         <span></span>
         <span></span>
         </span>
-    <span class="header__hamburger-label">Menu</span>
+    <span class="header__hamburger-label" data-i18n="nav.menu">Menu</span>
      </button>
 
     </div>
@@ -80,14 +101,48 @@
   <main>
     <!-- Category Hero -->
     <section class="category-hero">
-      <div class="container">
+    <div class="container">
         <div class="category-hero__breadcrumbs">
-          <a href="/">Home</a> / <a href="/projects/">Projects</a> / <span style="color: var(--gray-900); font-weight: 500;">Location Intelligence</span>
-        </div>
-        <h1 class="category-hero__title">Location Intelligence</h1>
-        <p class="category-hero__desc">
-          Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize operations, and make strategic, location-based decisions.
-        </p>
+
+    <a
+        href="/"
+        data-i18n="nav.home"
+    >
+        Home
+    </a>
+
+    /
+
+    <a
+        href="/projects/"
+        data-i18n="nav.projects"
+    >
+        Projects
+    </a>
+
+    /
+
+    <span
+        data-i18n="locationPage.title"
+        style="color: var(--gray-900); font-weight: 500;"
+    >
+        Location Intelligence
+    </span>
+
+    </div>
+        <h1
+    class="category-hero__title"
+    data-i18n="locationPage.title"
+    >
+    Location Intelligence
+    </h1>
+
+    <p
+    class="category-hero__desc"
+    data-i18n="locationPage.description"
+    >
+    Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize operations, and make strategic, location-based decisions.
+    </p>
       </div>
     </section>
 
@@ -328,37 +383,58 @@
             <!-- ===================== SERVICES ===================== -->
             <div class="footer__column">
 
-                <h3 class="footer__heading">
-                    Services
+                <h3
+                class="footer__heading"
+                data-i18n="footer.services"
+                >
+                Services
                 </h3>
 
-                <nav class="footer__links">
+    <nav class="footer__links">
 
-                    <a href="/projects/software-solutions/">
-                        Business Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.businessSoftware"
+    >
+        Business Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        Custom Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.customSoftware"
+    >
+        Custom Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        APIs &amp; Backend
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.apiBackend"
+    >
+        APIs &amp; Backend
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        E-Commerce
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.ecommerce"
+    >
+        E-Commerce
+    </a>
 
-                    <a href="/projects/location-intelligence/">
-                        Location Intelligence
-                    </a>
+    <a
+        href="/projects/location-intelligence/"
+        data-i18n="footer.locationIntelligence"
+    >
+        Location Intelligence
+    </a>
 
-                    <a href="/#services">
-                        AI / Intelligent Systems
-                    </a>
+    <a
+        href="/#services"
+        data-i18n="footer.aiSystems"
+    >
+        AI / Intelligent Systems
+    </a>
 
-                </nav>
+    </nav>
 
             </div>
 
@@ -366,16 +442,22 @@
             <!-- ===================== LET'S TALK ===================== -->
             <div class="footer__column footer__contact">
 
-                <h3 class="footer__heading">
-                    Let's Talk
-                </h3>
+            <h3
+           class="footer__heading"
+            data-i18n="footer.letsTalk"
+           >
+              Let's Talk
+           </h3>
 
 
                 <div class="footer__location">
 
-                    <span class="footer__contact-label">
-                        Based in
-                    </span>
+            <span
+                class="footer__contact-label"
+                data-i18n="footer.basedIn"
+               >
+                  Based in
+            </span>
 
                     <strong>
                         Dar es Salaam, Tanzania
@@ -384,24 +466,30 @@
                 </div>
 
 
-                <a
-                    href="https://wa.me/255752804154"
-                    class="footer__contact-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp
-                    <span aria-hidden="true">→</span>
-                </a>
+    <a
+    href="https://wa.me/255752804154"
+    class="footer__contact-link"
+    target="_blank"
+    rel="noopener noreferrer"
+     >
+    <span data-i18n="footer.whatsapp">
+        WhatsApp
+    </span>
+
+    <span aria-hidden="true">→</span>
+    </a>
 
 
-                <a
-                    href="mailto:mluetechnologytz@gmail.com"
-                    class="footer__contact-link"
-                >
-                    Email
-                    <span aria-hidden="true">→</span>
-                </a>
+    <a
+    href="mailto:mluetechnologytz@gmail.com"
+    class="footer__contact-link"
+      >
+    <span data-i18n="footer.email">
+        Email
+    </span>
+
+    <span aria-hidden="true">→</span>
+    </a>
 
             </div>
 
@@ -451,5 +539,8 @@
   <script>
     document.getElementById('footerYear').textContent = new Date().getFullYear();
   </script>
+  <script src="../../i18n.js" defer></script>
+<script src="../../main.js" defer></script>
+<script src="../../chatbot.js" defer></script>
 </body>
 </html>

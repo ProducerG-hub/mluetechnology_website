@@ -22,13 +22,33 @@
         <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
       </a>
 
-      <nav class="header__nav" id="nav">
-        <a href="/" class="nav-link active" data-i18n="nav.home">Home</a>
-        <a href="/#about" class="nav-link" data-i18n="nav.about">About Us</a>
-        <a href="/#services" class="nav-link" data-i18n="nav.services">Services</a>
-        <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">Pricing</a>
-        <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-      </nav>
+    <nav class="header__nav" id="nav">
+
+    <a href="/" class="nav-link" data-i18n="nav.home">
+        Home
+    </a>
+
+    <a href="/#about" class="nav-link" data-i18n="nav.about">
+        About Us
+    </a>
+
+    <a href="/#services" class="nav-link" data-i18n="nav.services">
+        Services
+    </a>
+
+    <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">
+        Pricing
+    </a>
+
+    <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+        Contact
+    </a>
+
+    <a href="/projects/" class="nav-link active" data-i18n="nav.projects">
+        Projects
+    </a>
+
+    </nav>
 
       <div class="header__actions">
 
@@ -70,7 +90,7 @@
         <span></span>
         <span></span>
     </span>
-    <span class="header__hamburger-label">Menu</span>
+    <span class="header__hamburger-label" data-i18n="nav.menu">Menu</span>
 </button>
 
     </div>
@@ -80,21 +100,72 @@
     <!-- Breadcrumbs -->
     <section class="cs-breadcrumbs">
       <div class="container">
-        <a href="/">Home</a> / <a href="/projects/">Projects</a> / <a href="/projects/location-intelligence/">Location Intelligence</a> / <span style="color: var(--gray-900); font-weight: 500;">Telecom Infrastructure</span>
-      </div>
+
+    <a href="/" data-i18n="nav.home">
+        Home
+    </a>
+
+    /
+
+    <a href="/projects/" data-i18n="nav.projects">
+        Projects
+    </a>
+
+    /
+
+    <a
+        href="/projects/location-intelligence/"
+        data-i18n="locationCaseStudy.category"
+    >
+        Location Intelligence
+    </a>
+
+    /
+
+    <span
+        data-i18n="locationCaseStudy.breadcrumb"
+        style="color: var(--gray-900); font-weight: 500;"
+    >
+        Telecom Infrastructure
+    </span>
+
+   </div>
     </section>
 
     <!-- 1. Hero Section -->
     <section class="cs-hero">
       <div class="container">
         <div class="cs-hero__meta">
-          <span class="badge badge--industry">Telecommunications</span>
-          <span class="badge badge--status">Completed (Research Project)</span>
-        </div>
-        <h1 class="cs-hero__title">Telecom Infrastructure Site Selection</h1>
-        <p class="cs-hero__summary">
-          A geospatial analysis project developed to identify the most suitable locations for telecommunication base stations using Geographic Information Systems (GIS), spatial analysis, and location intelligence to support infrastructure planning and network expansion.
-        </p>
+
+    <span
+        class="badge badge--industry"
+        data-i18n="locationCaseStudy.telecommunications"
+    >
+        Telecommunications
+    </span>
+
+    <span
+        class="badge badge--status"
+        data-i18n="locationCaseStudy.completedResearch"
+    >
+        Completed (Research Project)
+    </span>
+
+</div>
+
+   <h1
+    class="cs-hero__title"
+    data-i18n="locationCaseStudy.heroTitle"
+    >
+    Telecom Infrastructure Site Selection
+  </h1>
+
+  <p
+    class="cs-hero__summary"
+    data-i18n="locationCaseStudy.heroSummary"
+   >
+    A geospatial analysis project developed to identify the most suitable locations for telecommunication base stations using Geographic Information Systems (GIS), spatial analysis, and location intelligence to support infrastructure planning and network expansion.
+ </p>
         
         <div class="cs-hero__image-wrapper">
           <img src="../../../assets/projects/Map_01_Assigned_District.webp" alt="Telecom Infrastructure Site Selection Map" loading="lazy" width="1100" height="650" />
@@ -111,8 +182,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_01_Assigned_District.webp" alt="Study Area" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Study Area</div>
-              <div class="cs-gallery__caption-text">Overview of the project study area and administrative boundaries used during the analysis.</div>
+   <div
+          class="cs-gallery__caption-title"
+          data-i18n="locationCaseStudy.gallery1.title"
+     >
+    Study Area
+    </div>
+
+   <div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery1.description"
+     >
+    Overview of the project study area and administrative boundaries used during the analysis.
+    </div>
             </figcaption>
           </figure>
 
@@ -120,8 +202,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_03_Population_Distribution.webp" alt="Population Distribution" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Population Distribution</div>
-              <div class="cs-gallery__caption-text">Population density map used to identify areas with high demand for telecommunication services.</div>
+              <div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery2.title"
+>
+    Population Distribution
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery2.description"
+>
+    Population density map used to identify areas with high demand for telecommunication services.
+</div>
             </figcaption>
           </figure>
 
@@ -129,8 +222,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_02_Existing_Base_Station_Distribution.webp" alt="Existing Base Station Distribution" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Existing Base Stations</div>
-              <div class="cs-gallery__caption-text">Distribution of existing base stations across the study area.</div>
+              <<div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery3.title"
+>
+    Existing Base Stations
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery3.description"
+>
+    Distribution of existing base stations across the study area.
+</div>
             </figcaption>
           </figure>
 
@@ -138,8 +242,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_04_DEM_and_Terrain_Suitability.webp" alt="Suitability Analysis" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Suitability Analysis</div>
-              <div class="cs-gallery__caption-text">Spatial suitability model identifying the most appropriate locations for new telecommunication infrastructure.</div>
+              <div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery4.title"
+>
+    Suitability Analysis
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery4.description"
+>
+    Spatial suitability model identifying the most appropriate locations for new telecommunication infrastructure.
+</div>
             </figcaption>
           </figure>
 
@@ -147,8 +262,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_06_Proposed_New_Base_stations_Locations.webp" alt="Final Recommendation Map" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Final Recommendation Map</div>
-              <div class="cs-gallery__caption-text">Final map highlighting recommended areas for future network expansion.</div>
+              <div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery5.title"
+>
+    Final Recommendation Map
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery5.description"
+>
+    Final map highlighting recommended areas for future network expansion.
+</div>
             </figcaption>
           </figure>
 
@@ -162,136 +288,391 @@
         
         <!-- Tab Navigation Buttons -->
         <div class="cs-tabs-nav" role="tablist">
-          <button class="cs-tab-btn active" onclick="switchTab(event, 'overview')" role="tab">Overview</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'solution')" role="tab">Our Solution</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'tech')" role="tab">Technologies</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'impact')" role="tab">Business Impact</button>
-        </div>
+
+    <button
+        class="cs-tab-btn active"
+        onclick="switchTab(event, 'overview')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.overview"
+    >
+        Overview
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'challenge')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.challenge"
+    >
+        The Challenge
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'solution')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.solution"
+    >
+        Our Solution
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'tech')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.technologies"
+    >
+        Technologies
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'impact')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.impact"
+    >
+        Business Impact
+    </button>
+
+    </div>  
 
         <!-- Tab Panel 1: Overview -->
         <div id="overview" class="cs-tab-panel active" role="tabpanel">
-          <h2 class="cs-section-title">Project Overview</h2>
-          <p class="cs-text">
-            Selecting the right location for telecommunication infrastructure is one of the most critical decisions in network planning. Poor site selection can lead to limited service coverage, increased deployment costs, and inefficient resource utilization.
-          </p>
-          <p class="cs-text">
-            MLUE Technology conducted a location intelligence study using Geographic Information Systems (GIS) to evaluate suitable areas for telecommunication base station deployment. By combining multiple spatial datasets and analytical techniques, the project demonstrates how geospatial technology can support informed infrastructure investment decisions.
-          </p>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.overview.title"
+    >
+        Project Overview
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.overview.p1"
+    >
+        Selecting the right location for telecommunication infrastructure is one of the most critical decisions in network planning. Poor site selection can lead to limited service coverage, increased deployment costs, and inefficient resource utilization.
+    </p>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.overview.p2"
+    >
+        MLUE Technology conducted a location intelligence study using Geographic Information Systems (GIS) to evaluate suitable areas for telecommunication base station deployment. By combining multiple spatial datasets and analytical techniques, the project demonstrates how geospatial technology can support informed infrastructure investment decisions.
+    </p>
+
+</div>
 
         <!-- Tab Panel 2: Challenge -->
         <div id="challenge" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">The Business Challenge</h2>
-          <p class="cs-text">
-            Telecommunication providers must carefully determine where to deploy new network infrastructure to maximize coverage while minimizing operational and investment costs. Without spatial analysis, organizations may face challenges such as:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Poor network coverage</li>
-            <li>High infrastructure deployment costs</li>
-            <li>Overlapping service areas</li>
-            <li>Under-served communities</li>
-            <li>Inefficient resource allocation</li>
-            <li>Limited visibility into geographic factors affecting expansion</li>
-          </ul>
-          <p class="cs-text" style="margin-top: 24px;">
-            Making these decisions without location intelligence increases both financial and operational risk.
-          </p>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.challenge.title"
+    >
+        The Business Challenge
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.challenge.intro"
+    >
+        Telecommunication providers must carefully determine where to deploy new network infrastructure to maximize coverage while minimizing operational and investment costs. Without spatial analysis, organizations may face challenges such as:
+    </p>
+
+    <ul class="cs-impact-list">
+
+        <li data-i18n="locationCaseStudy.challenge.item1">
+            Poor network coverage
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item2">
+            High infrastructure deployment costs
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item3">
+            Overlapping service areas
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item4">
+            Under-served communities
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item5">
+            Inefficient resource allocation
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item6">
+            Limited visibility into geographic factors affecting expansion
+        </li>
+
+    </ul>
+
+    <p
+        class="cs-text"
+        style="margin-top: 24px;"
+        data-i18n="locationCaseStudy.challenge.conclusion"
+    >
+        Making these decisions without location intelligence increases both financial and operational risk.
+    </p>
+
+</div>
 
         <!-- Tab Panel 3: Solution -->
         <div id="solution" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Our Solution</h2>
-          <p class="cs-text">
-            MLUE Technology applied geospatial analysis techniques to identify suitable locations for telecommunication infrastructure. The project integrated multiple spatial datasets to evaluate potential deployment areas. Through spatial modelling and suitability analysis, decision-makers can better understand where future network investments are likely to deliver the greatest value.
-          </p>
 
-          <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 32px 0 16px;">Core Components</h3>
-          <div class="cs-features-grid">
-            <div class="cs-feature-card">
-              <h3>Data Used</h3>
-              <p>Integrated datasets including Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, and Existing Infrastructure.</p>
-            </div>
-            <div class="cs-feature-card">
-              <h3>Spatial Analysis Methodology</h3>
-              <p>Utilized Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, and Geographic Visualization.</p>
-            </div>
-            <div class="cs-feature-card">
-              <h3>Key Deliverables</h3>
-              <p>Produced Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, and Geographic Reports.</p>
-            </div>
-          </div>
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.solution.title"
+    >
+        Our Solution
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.solution.description"
+    >
+        MLUE Technology applied geospatial analysis techniques to identify suitable locations for telecommunication infrastructure. The project integrated multiple spatial datasets to evaluate potential deployment areas. Through spatial modelling and suitability analysis, decision-makers can better understand where future network investments are likely to deliver the greatest value.
+    </p>
+
+    <h3
+        style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 32px 0 16px;"
+        data-i18n="locationCaseStudy.solution.coreComponents"
+    >
+        Core Components
+    </h3>
+
+    <div class="cs-features-grid">
+
+        <div class="cs-feature-card">
+
+            <h3 data-i18n="locationCaseStudy.solution.dataUsedTitle">
+                Data Used
+            </h3>
+
+            <p data-i18n="locationCaseStudy.solution.dataUsed">
+                Integrated datasets including Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, and Existing Infrastructure.
+            </p>
+
         </div>
+
+        <div class="cs-feature-card">
+
+            <h3 data-i18n="locationCaseStudy.solution.methodologyTitle">
+                Spatial Analysis Methodology
+            </h3>
+
+            <p data-i18n="locationCaseStudy.solution.methodology">
+                Utilized Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, and Geographic Visualization.
+            </p>
+
+        </div>
+
+        <div class="cs-feature-card">
+
+            <h3 data-i18n="locationCaseStudy.solution.deliverablesTitle">
+                Key Deliverables
+            </h3>
+
+            <p data-i18n="locationCaseStudy.solution.deliverables">
+                Produced Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, and Geographic Reports.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
 
         <!-- Tab Panel 4: Technologies -->
         <div id="tech" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Technologies Used</h2>
-          <p class="cs-text">Advanced geospatial tools and methodologies were utilized to process and analyze complex spatial data.</p>
-          <div class="cs-tech-badges">
-            <span class="cs-tech-badge">QGIS</span>
-            <span class="cs-tech-badge">PostgreSQL/PostGIS</span>
-            <span class="cs-tech-badge">OpenStreetMap</span>
-            <span class="cs-tech-badge">DEM Data</span>
-            <span class="cs-tech-badge">Spatial Analysis</span>
-            <span class="cs-tech-badge">GIS Mapping</span>
-          </div>
 
-          <div style="margin-top: 48px;">
-            <div class="cs-info-grid">
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Industry</div>
-                <div class="cs-info-item__value">Telecommunications</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Category</div>
-                <div class="cs-info-item__value">Location Intelligence</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Platform</div>
-                <div class="cs-info-item__value">GIS Analysis</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Project Type</div>
-                <div class="cs-info-item__value">Research & Spatial Analysis</div>
-              </div>
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.technologies.title"
+    >
+        Technologies Used
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.technologies.description"
+    >
+        Advanced geospatial tools and methodologies were utilized to process and analyze complex spatial data.
+    </p>
+
+    <div class="cs-tech-badges">
+        <span class="cs-tech-badge">QGIS</span>
+        <span class="cs-tech-badge">PostgreSQL/PostGIS</span>
+        <span class="cs-tech-badge">OpenStreetMap</span>
+        <span class="cs-tech-badge">DEM Data</span>
+        <span class="cs-tech-badge">Spatial Analysis</span>
+        <span class="cs-tech-badge">GIS Mapping</span>
+    </div>
+
+    <div style="margin-top: 48px;">
+
+        <div class="cs-info-grid">
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.industryLabel"
+                >
+                    Industry
+                </div>
+
+                <div class="cs-info-item__value">
+                    Telecommunications
+                </div>
             </div>
-          </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.categoryLabel"
+                >
+                    Category
+                </div>
+
+                <div class="cs-info-item__value">
+                    Location Intelligence
+                </div>
+            </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.platformLabel"
+                >
+                    Platform
+                </div>
+
+                <div class="cs-info-item__value">
+                    GIS Analysis
+                </div>
+            </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.projectTypeLabel"
+                >
+                    Project Type
+                </div>
+
+                <div class="cs-info-item__value">
+                    Research & Spatial Analysis
+                </div>
+            </div>
+
         </div>
+
+    </div>
+
+</div>
 
         <!-- Tab Panel 5: Impact -->
         <div id="impact" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Business Impact</h2>
-          <p class="cs-text">
-            The proposed geospatial approach helps organizations mitigate risks and make data-driven decisions:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Improve infrastructure planning</li>
-            <li>Reduce investment risk</li>
-            <li>Support strategic expansion decisions</li>
-            <li>Identify high-potential deployment areas</li>
-            <li>Improve network coverage planning</li>
-            <li>Enhance location-based decision making</li>
-            <li>Optimize resource allocation</li>
-          </ul>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.impact.title"
+    >
+        Business Impact
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.impact.intro"
+    >
+        The proposed geospatial approach helps organizations mitigate risks and make data-driven decisions:
+    </p>
+
+    <ul class="cs-impact-list">
+
+        <li data-i18n="locationCaseStudy.impact.item1">
+            Improve infrastructure planning
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item2">
+            Reduce investment risk
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item3">
+            Support strategic expansion decisions
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item4">
+            Identify high-potential deployment areas
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item5">
+            Improve network coverage planning
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item6">
+            Enhance location-based decision making
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item7">
+            Optimize resource allocation
+        </li>
+
+    </ul>
+
+</div>
 
       </div>
     </section>
 
     <!-- 4. Location Intelligence Context & Call To Action -->
     <section class="cs-cta">
-      <div class="container">
-        <h2 class="cs-section-title" style="margin-bottom: 16px;">Why Location Intelligence Matters</h2>
-        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
-          Modern organizations generate large amounts of business and geographic data, yet many decisions are still made without considering location. Location Intelligence transforms geographic data into actionable insights that support <strong>Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, and Strategic Decision-Making</strong>.
+
+    <div class="container">
+
+        <h2
+            class="cs-section-title"
+            style="margin-bottom: 16px;"
+            data-i18n="locationCaseStudy.cta.whyTitle"
+        >
+            Why Location Intelligence Matters
+        </h2>
+
+        <p
+            class="cs-text"
+            style="max-width: 680px; margin: 0 auto 32px;"
+            data-i18n="locationCaseStudy.cta.whyText"
+        >
+            Modern organizations generate large amounts of business and geographic data, yet many decisions are still made without considering location. Location Intelligence transforms geographic data into actionable insights that support Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, and Strategic Decision-Making.
         </p>
-        <h3 style="font-size: 1.5rem; color: var(--gray-900); font-weight: 700; margin-bottom: 16px;">Transform Geographic Data into Business Intelligence</h3>
-        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
-          Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.
+
+        <h3
+            style="font-size: 1.5rem; color: var(--gray-900); font-weight: 700; margin-bottom: 16px;"
+            data-i18n="locationCaseStudy.cta.transformTitle"
+        >
+            Transform Geographic Data into Business Intelligence
+        </h3>
+
+        <p
+            class="cs-text"
+            style="max-width: 680px; margin: 0 auto 32px;"
+            data-i18n="locationCaseStudy.cta.transformText"
+        >
+            Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.
         </p>
-        <a href="/#contact" class="btn btn--primary" style="font-size: 1.1rem; padding: 14px 32px;">Contact MLUE Technology</a>
-      </div>
-    </section>
+
+        <a
+            href="/#contact"
+            class="btn btn--primary"
+            style="font-size: 1.1rem; padding: 14px 32px;"
+            data-i18n="locationCaseStudy.cta.contact"
+        >
+            Contact MLUE Technology
+        </a>
+
+    </div>
+
+</section>
   </main>
 
   <footer class="footer">
@@ -500,37 +881,58 @@
             <!-- ===================== SERVICES ===================== -->
             <div class="footer__column">
 
-                <h3 class="footer__heading">
-                    Services
-                </h3>
+                <h3
+                class="footer__heading"
+                data-i18n="footer.services"
+                    >
+                Services
+                   </h3>
 
                 <nav class="footer__links">
 
-                    <a href="/projects/software-solutions/">
-                        Business Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.businessSoftware"
+    >
+        Business Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        Custom Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.customSoftware"
+    >
+        Custom Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        APIs &amp; Backend
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.apiBackend"
+    >
+        APIs &amp; Backend
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        E-Commerce
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.ecommerce"
+    >
+        E-Commerce
+    </a>
 
-                    <a href="/projects/location-intelligence/">
-                        Location Intelligence
-                    </a>
+    <a
+        href="/projects/location-intelligence/"
+        data-i18n="footer.locationIntelligence"
+    >
+        Location Intelligence
+    </a>
 
-                    <a href="/#services">
-                        AI / Intelligent Systems
-                    </a>
+    <a
+        href="/#services"
+        data-i18n="footer.aiSystems"
+    >
+        AI / Intelligent Systems
+    </a>
 
-                </nav>
+</nav>
 
             </div>
 
@@ -538,16 +940,22 @@
             <!-- ===================== LET'S TALK ===================== -->
             <div class="footer__column footer__contact">
 
-                <h3 class="footer__heading">
-                    Let's Talk
-                </h3>
+             <h3
+             class="footer__heading"
+             data-i18n="footer.letsTalk"
+            >
+             Let's Talk
+          </h3>
 
 
                 <div class="footer__location">
 
-                    <span class="footer__contact-label">
-                        Based in
-                    </span>
+                    <span
+           class="footer__contact-label"
+           data-i18n="footer.basedIn"
+            >
+           Based in
+       </span>
 
                     <strong>
                         Dar es Salaam, Tanzania
@@ -557,23 +965,27 @@
 
 
                 <a
-                    href="https://wa.me/255752804154"
-                    class="footer__contact-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="https://wa.me/255752804154"
+    class="footer__contact-link"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span data-i18n="footer.whatsapp">
+        WhatsApp
+    </span>
+    <span aria-hidden="true">→</span>
+</a>
 
 
                 <a
-                    href="mailto:mluetechnologytz@gmail.com"
-                    class="footer__contact-link"
-                >
-                    Email
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="mailto:mluetechnologytz@gmail.com"
+    class="footer__contact-link"
+>
+    <span data-i18n="footer.email">
+        Email
+    </span>
+    <span aria-hidden="true">→</span>
+</a>
 
             </div>
 
@@ -634,5 +1046,9 @@
 
     document.getElementById('footerYear').textContent = new Date().getFullYear();
   </script>
+
+<script src="../../../i18n.js" defer></script>
+<script src="../../../main.js" defer></script>
+<script src="../../../chatbot.js" defer></script>
 </body>
 </html>

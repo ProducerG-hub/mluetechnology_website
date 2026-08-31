@@ -449,6 +449,218 @@ const translations = {
 "services.maintenance.title": "Maintenance & Support",
 "services.maintenance.description": "Continuous improvement, maintenance, and technical support after deployment.",
 
+// ===================================================
+// TELECOM LOCATION INTELLIGENCE CASE STUDY
+// ===================================================
+
+"locationCaseStudy.category":
+    "Location Intelligence",
+
+"locationCaseStudy.breadcrumb":
+    "Telecom Infrastructure",
+
+"locationCaseStudy.telecommunications":
+    "Telecommunications",
+
+"locationCaseStudy.completedResearch":
+    "Completed (Research Project)",
+
+"locationCaseStudy.heroTitle":
+    "Telecom Infrastructure Site Selection",
+
+"locationCaseStudy.heroSummary":
+    "A geospatial analysis project developed to identify the most suitable locations for telecommunication base stations using Geographic Information Systems (GIS), spatial analysis, and location intelligence to support infrastructure planning and network expansion.",
+
+"locationCaseStudy.gallery1.title":
+    "Study Area",
+
+"locationCaseStudy.gallery1.description":
+    "Overview of the project study area and administrative boundaries used during the analysis.",
+
+"locationCaseStudy.gallery2.title":
+    "Population Distribution",
+
+"locationCaseStudy.gallery2.description":
+    "Population density map used to identify areas with high demand for telecommunication services.",
+
+"locationCaseStudy.gallery3.title":
+    "Existing Base Stations",
+
+"locationCaseStudy.gallery3.description":
+    "Distribution of existing base stations across the study area.",
+
+"locationCaseStudy.gallery4.title":
+    "Suitability Analysis",
+
+"locationCaseStudy.gallery4.description":
+    "Spatial suitability model identifying the most appropriate locations for new telecommunication infrastructure.",
+
+"locationCaseStudy.gallery5.title":
+    "Final Recommendation Map",
+
+"locationCaseStudy.gallery5.description":
+    "Final map highlighting recommended areas for future network expansion.",
+
+"locationCaseStudy.tabs.overview":
+    "Overview",
+
+"locationCaseStudy.tabs.challenge":
+    "The Challenge",
+
+"locationCaseStudy.tabs.solution":
+    "Our Solution",
+
+"locationCaseStudy.tabs.technologies":
+    "Technologies",
+
+"locationCaseStudy.tabs.impact":
+    "Business Impact",
+
+"locationCaseStudy.overview.title":
+    "Project Overview",
+
+"locationCaseStudy.overview.p1":
+    "Selecting the right location for telecommunication infrastructure is one of the most critical decisions in network planning. Poor site selection can lead to limited service coverage, increased deployment costs, and inefficient resource utilization.",
+
+"locationCaseStudy.overview.p2":
+    "MLUE Technology conducted a location intelligence study using Geographic Information Systems (GIS) to evaluate suitable areas for telecommunication base station deployment. By combining multiple spatial datasets and analytical techniques, the project demonstrates how geospatial technology can support informed infrastructure investment decisions.",
+
+"locationCaseStudy.challenge.title":
+    "The Business Challenge",
+
+"locationCaseStudy.challenge.intro":
+    "Telecommunication providers must carefully determine where to deploy new network infrastructure to maximize coverage while minimizing operational and investment costs. Without spatial analysis, organizations may face challenges such as:",
+
+"locationCaseStudy.challenge.item1":
+    "Poor network coverage",
+
+"locationCaseStudy.challenge.item2":
+    "High infrastructure deployment costs",
+
+"locationCaseStudy.challenge.item3":
+    "Overlapping service areas",
+
+"locationCaseStudy.challenge.item4":
+    "Under-served communities",
+
+"locationCaseStudy.challenge.item5":
+    "Inefficient resource allocation",
+
+"locationCaseStudy.challenge.item6":
+    "Limited visibility into geographic factors affecting expansion",
+
+"locationCaseStudy.challenge.conclusion":
+    "Making these decisions without location intelligence increases both financial and operational risk.",
+
+"locationCaseStudy.solution.title":
+    "Our Solution",
+
+"locationCaseStudy.solution.description":
+    "MLUE Technology applied geospatial analysis techniques to identify suitable locations for telecommunication infrastructure. The project integrated multiple spatial datasets to evaluate potential deployment areas. Through spatial modelling and suitability analysis, decision-makers can better understand where future network investments are likely to deliver the greatest value.",
+
+"locationCaseStudy.solution.coreComponents":
+    "Core Components",
+
+"locationCaseStudy.solution.dataUsedTitle":
+    "Data Used",
+
+"locationCaseStudy.solution.dataUsed":
+    "Integrated datasets including Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, and Existing Infrastructure.",
+
+"locationCaseStudy.solution.methodologyTitle":
+    "Spatial Analysis Methodology",
+
+"locationCaseStudy.solution.methodology":
+    "Utilized Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, and Geographic Visualization.",
+
+"locationCaseStudy.solution.deliverablesTitle":
+    "Key Deliverables",
+
+"locationCaseStudy.solution.deliverables":
+    "Produced Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, and Geographic Reports.",
+
+"locationCaseStudy.technologies.title":
+    "Technologies Used",
+
+"locationCaseStudy.technologies.description":
+    "Advanced geospatial tools and methodologies were utilized to process and analyze complex spatial data.",
+
+"locationCaseStudy.info.industryLabel":
+    "Industry",
+
+"locationCaseStudy.info.categoryLabel":
+    "Category",
+
+"locationCaseStudy.info.platformLabel":
+    "Platform",
+
+"locationCaseStudy.info.projectTypeLabel":
+    "Project Type",
+
+"locationCaseStudy.impact.title":
+    "Business Impact",
+
+"locationCaseStudy.impact.intro":
+    "The proposed geospatial approach helps organizations mitigate risks and make data-driven decisions:",
+
+"locationCaseStudy.impact.item1":
+    "Improve infrastructure planning",
+
+"locationCaseStudy.impact.item2":
+    "Reduce investment risk",
+
+"locationCaseStudy.impact.item3":
+    "Support strategic expansion decisions",
+
+"locationCaseStudy.impact.item4":
+    "Identify high-potential deployment areas",
+
+"locationCaseStudy.impact.item5":
+    "Improve network coverage planning",
+
+"locationCaseStudy.impact.item6":
+    "Enhance location-based decision making",
+
+"locationCaseStudy.impact.item7":
+    "Optimize resource allocation",
+
+"locationCaseStudy.cta.whyTitle":
+    "Why Location Intelligence Matters",
+
+"locationCaseStudy.cta.whyText":
+    "Modern organizations generate large amounts of business and geographic data, yet many decisions are still made without considering location. Location Intelligence transforms geographic data into actionable insights that support Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, and Strategic Decision-Making.",
+
+"locationCaseStudy.cta.transformTitle":
+    "Transform Geographic Data into Business Intelligence",
+
+"locationCaseStudy.cta.transformText":
+    "Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.",
+
+"locationCaseStudy.cta.contact":
+    "Contact MLUE Technology",
+
+"nav.menu": "Menu",
+
+"locationPage.title":
+    "Location Intelligence",
+
+"locationPage.description":
+    "Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize operations, and make strategic, location-based decisions.",
+
+"locationPage.telecommunications":
+    "Telecommunications",
+
+"locationPage.completed":
+    "Completed",
+
+"locationPage.projectTitle":
+    "Telecom Base Station Site Selection",
+
+"locationPage.projectSummary":
+    "A comprehensive spatial analysis solution designed to identify optimal locations for new cell towers. By analyzing population density, terrain, and existing network gaps, we helped reduce planning time and maximize network coverage.",
+
+"locationPage.viewCaseStudy":
+    "View Case Study",
 
 // What You Get
 "value.eyebrow": "WHAT YOU GET",
@@ -1042,6 +1254,137 @@ const translations = {
 "about.principle3Text": "Usalama na uaminifu umejengwa katika kila tabaka la mifumo yetu.",
 
 
+// ===================================================
+// TELECOM LOCATION INTELLIGENCE CASE STUDY — SWAHILI
+// ===================================================
+
+"locationCaseStudy.overview.title":
+    "Muhtasari wa Mradi",
+
+"locationCaseStudy.overview.p1":
+    "Kuchagua eneo sahihi kwa ajili ya miundombinu ya mawasiliano ni mojawapo ya maamuzi muhimu zaidi katika upangaji wa mtandao. Uchaguzi usio sahihi wa eneo unaweza kusababisha upungufu wa coverage ya huduma, kuongezeka kwa gharama za deployment, na matumizi yasiyo bora ya rasilimali.",
+
+"locationCaseStudy.overview.p2":
+    "MLUE Technology ilifanya utafiti wa Location Intelligence kwa kutumia Geographic Information Systems (GIS) kutathmini maeneo yanayofaa kwa uwekaji wa vituo vya mawasiliano. Kwa kuunganisha datasets mbalimbali za kijiografia na mbinu za uchambuzi, mradi huu unaonyesha jinsi teknolojia ya kijiografia inaweza kusaidia kufanya maamuzi sahihi kuhusu uwekezaji wa miundombinu.",
+
+
+"locationCaseStudy.challenge.title":
+    "Changamoto ya Biashara",
+
+"locationCaseStudy.challenge.intro":
+    "Watoa huduma za mawasiliano wanapaswa kuamua kwa umakini maeneo ya kuweka miundombinu mipya ya mtandao ili kuongeza coverage huku wakipunguza gharama za uendeshaji na uwekezaji. Bila spatial analysis, taasisi zinaweza kukutana na changamoto kama:",
+
+"locationCaseStudy.challenge.item1":
+    "Coverage duni ya mtandao",
+
+"locationCaseStudy.challenge.item2":
+    "Gharama kubwa za deployment ya miundombinu",
+
+"locationCaseStudy.challenge.item3":
+    "Maeneo ya huduma yanayopishana",
+
+"locationCaseStudy.challenge.item4":
+    "Jamii ambazo hazijahudumiwa vya kutosha",
+
+"locationCaseStudy.challenge.item5":
+    "Mgawanyo usio na ufanisi wa rasilimali",
+
+"locationCaseStudy.challenge.item6":
+    "Uelewa mdogo wa mambo ya kijiografia yanayoathiri upanuzi wa mtandao",
+
+"locationCaseStudy.challenge.conclusion":
+    "Kufanya maamuzi haya bila kutumia Location Intelligence huongeza hatari za kifedha na kiutendaji.",
+
+
+"locationCaseStudy.solution.title":
+    "Suluhisho Letu",
+
+"locationCaseStudy.solution.description":
+    "MLUE Technology ilitumia mbinu za geospatial analysis kubaini maeneo yanayofaa kwa miundombinu ya mawasiliano. Mradi uliunganisha datasets mbalimbali za kijiografia ili kutathmini maeneo yanayoweza kutumika kwa deployment. Kupitia spatial modelling na suitability analysis, watoa maamuzi wanaweza kuelewa vizuri maeneo ambayo uwekezaji wa baadaye wa mtandao unaweza kutoa thamani kubwa zaidi.",
+
+"locationCaseStudy.solution.coreComponents":
+    "Vipengele Vikuu",
+
+"locationCaseStudy.solution.dataUsedTitle":
+    "Data Iliyotumika",
+
+"locationCaseStudy.solution.dataUsed":
+    "Datasets zilizounganishwa zilijumuisha Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, na Existing Infrastructure.",
+
+"locationCaseStudy.solution.methodologyTitle":
+    "Mbinu za Spatial Analysis",
+
+"locationCaseStudy.solution.methodology":
+    "Ilitumika Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, na Geographic Visualization.",
+
+"locationCaseStudy.solution.deliverablesTitle":
+    "Matokeo Makuu ya Mradi",
+
+"locationCaseStudy.solution.deliverables":
+    "Tulizalisha Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, na Geographic Reports.",
+
+
+"locationCaseStudy.technologies.title":
+    "Teknolojia Zilizotumika",
+
+"locationCaseStudy.technologies.description":
+    "Zana za kisasa za geospatial na mbinu mbalimbali zilitumika kuchakata na kuchambua data changamano za kijiografia.",
+
+"locationCaseStudy.info.industryLabel":
+    "Sekta",
+
+"locationCaseStudy.info.categoryLabel":
+    "Aina",
+
+"locationCaseStudy.info.platformLabel":
+    "Platform",
+
+"locationCaseStudy.info.projectTypeLabel":
+    "Aina ya Mradi",
+
+
+"locationCaseStudy.impact.title":
+    "Athari kwa Biashara",
+
+"locationCaseStudy.impact.intro":
+    "Mbinu hii ya geospatial inapendekezwa kusaidia taasisi kupunguza hatari na kufanya maamuzi yanayotokana na data:",
+
+"locationCaseStudy.impact.item1":
+    "Kuboresha upangaji wa miundombinu",
+
+"locationCaseStudy.impact.item2":
+    "Kupunguza hatari za uwekezaji",
+
+"locationCaseStudy.impact.item3":
+    "Kusaidia maamuzi ya kimkakati ya upanuzi",
+
+"locationCaseStudy.impact.item4":
+    "Kubaini maeneo yenye uwezo mkubwa wa deployment",
+
+"locationCaseStudy.impact.item5":
+    "Kuboresha upangaji wa coverage ya mtandao",
+
+"locationCaseStudy.impact.item6":
+    "Kuboresha ufanyaji wa maamuzi yanayotegemea eneo",
+
+"locationCaseStudy.impact.item7":
+    "Kuboresha matumizi na mgawanyo wa rasilimali",
+
+
+"locationCaseStudy.cta.whyTitle":
+    "Kwa Nini Location Intelligence ni Muhimu",
+
+"locationCaseStudy.cta.whyText":
+    "Taasisi za kisasa huzalisha kiasi kikubwa cha data za biashara na kijiografia, lakini maamuzi mengi bado hufanywa bila kuzingatia location. Location Intelligence hubadilisha data za kijiografia kuwa taarifa zinazoweza kutumika kusaidia Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, na Strategic Decision-Making.",
+
+"locationCaseStudy.cta.transformTitle":
+    "Badilisha Data za Kijiografia Kuwa Business Intelligence",
+
+"locationCaseStudy.cta.transformText":
+    "Iwe unapanga miundombinu, unatathmini maeneo mapya ya uwekezaji, unachambua masoko, au unaunga mkono upanuzi wa kimkakati, MLUE Technology hutoa suluhisho za geospatial zinazobadilisha location data kuwa insights zenye maana kwa biashara. Tujenge maamuzi bora zaidi kupitia Location Intelligence.",
+
+"locationCaseStudy.cta.contact":
+    "Wasiliana na MLUE Technology",    
 
 // Services
 "services.eyebrow": "TUNACHOFANYA",
@@ -1078,6 +1421,29 @@ const translations = {
 
 "services.maintenance.title": "Matengenezo na Msaada",
 "services.maintenance.description": "Uboreshaji endelevu, matengenezo, na msaada wa kiufundi baada ya mfumo kuzinduliwa.",
+
+"nav.menu": "Menyu",
+
+"locationPage.title":
+    "Location Intelligence",
+
+"locationPage.description":
+    "Uchambuzi wa taarifa za kijiografia na GIS unaosaidia taasisi kugundua fursa zilizofichika, kuboresha shughuli, na kufanya maamuzi ya kimkakati yanayohusiana na maeneo.",
+
+"locationPage.telecommunications":
+    "Mawasiliano",
+
+"locationPage.completed":
+    "Imekamilika",
+
+"locationPage.projectTitle":
+    "Uchaguzi wa Maeneo ya Vituo vya Mawasiliano",
+
+"locationPage.projectSummary":
+    "Suluhisho la kina la spatial analysis lililoundwa kubaini maeneo bora kwa ajili ya kujenga vituo vipya vya mawasiliano. Kwa kuchambua msongamano wa watu, hali ya ardhi, na mapengo ya mtandao yaliyopo, tulisaidia kupunguza muda wa kupanga na kuongeza ukubwa wa coverage ya mtandao.",
+
+"locationPage.viewCaseStudy":
+    "Angalia Case Study",
 
 
 // What You Get
