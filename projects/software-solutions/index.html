@@ -12,6 +12,378 @@
   
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="icon" type="image/webp" href="../../assets/favicon/favicon.webp" />
+
+  <style>
+    /* =========================================================
+       MLUE TECHNOLOGY — BUSINESS SOFTWARE SOLUTIONS
+       Premium portfolio presentation layer.
+       Keeps the shared header/footer and existing functionality intact.
+       ========================================================= */
+
+    .category-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(72px, 9vw, 120px) 0 clamp(58px, 7vw, 90px);
+      background:
+        radial-gradient(circle at 12% 25%, rgba(0, 214, 255, 0.12), transparent 28%),
+        radial-gradient(circle at 88% 25%, rgba(54, 120, 255, 0.10), transparent 30%),
+        linear-gradient(180deg, #fbfdff 0%, #f1f7fc 100%);
+      border-bottom: 1px solid rgba(20, 34, 52, 0.08);
+    }
+
+    .category-hero::before,
+    .category-hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(2px);
+    }
+
+    .category-hero::before {
+      width: 280px;
+      height: 280px;
+      left: -150px;
+      top: 10%;
+      background: rgba(0, 214, 255, 0.08);
+    }
+
+    .category-hero::after {
+      width: 340px;
+      height: 340px;
+      right: -180px;
+      bottom: -180px;
+      background: rgba(54, 120, 255, 0.08);
+    }
+
+    .category-hero > .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+    }
+
+    .bs-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      padding: 8px 13px;
+      border: 1px solid rgba(22, 113, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #1671ff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 35px rgba(22, 113, 255, 0.08);
+    }
+
+    .bs-hero__eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00d6ff;
+      box-shadow: 0 0 12px rgba(0, 214, 255, 0.65);
+    }
+
+    .category-hero__title {
+      max-width: 900px;
+      margin: 0 auto 18px !important;
+      font-size: clamp(2.55rem, 5.8vw, 5.2rem) !important;
+      line-height: 0.98 !important;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .bs-title-accent {
+      background: linear-gradient(90deg, #1671ff 0%, #00cbe8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .category-hero__desc {
+      max-width: 760px !important;
+      margin: 0 auto !important;
+      color: #526175;
+      font-size: clamp(1.02rem, 1.55vw, 1.18rem) !important;
+      line-height: 1.85 !important;
+      text-wrap: balance;
+    }
+
+    .project-list-section {
+      padding: clamp(58px, 8vw, 100px) 0 clamp(72px, 9vw, 120px);
+      background:
+        linear-gradient(180deg, #f7fafc 0%, #ffffff 38%, #f8fbfd 100%);
+    }
+
+    .project-list-section .container {
+      max-width: 1320px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(24px, 3vw, 38px);
+      align-items: stretch;
+    }
+
+    .project-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-width: 0;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(21, 40, 68, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 18px 55px rgba(19, 39, 67, 0.09);
+      transform: translateY(0);
+      transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+      isolation: isolate;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) !important;
+      border-color: rgba(0, 205, 240, 0.3);
+      box-shadow: 0 28px 72px rgba(19, 39, 67, 0.15) !important;
+    }
+
+    .project-card__image-link {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #eaf0f5;
+    }
+
+    .project-card__image-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 14, 28, 0.02) 45%, rgba(5, 14, 28, 0.18) 100%);
+      pointer-events: none;
+    }
+
+    .project-card__image-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 500ms cubic-bezier(.22,1,.36,1), filter 500ms ease;
+    }
+
+    .project-card:hover .project-card__image-link img {
+      transform: scale(1.045) !important;
+      filter: saturate(1.04) contrast(1.01);
+    }
+
+    .bs-project-index {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 999px;
+      background: rgba(8, 17, 32, 0.7);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      backdrop-filter: blur(10px);
+    }
+
+    .bs-project-index span:first-child {
+      color: #56e9ff;
+    }
+
+    .project-card__content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: clamp(22px, 3vw, 32px);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(0, 214, 255, 0.055), transparent 26%),
+        #fff;
+    }
+
+    .project-card__meta {
+      margin-bottom: 14px;
+    }
+
+    .badge--industry {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(22, 113, 255, 0.09);
+      color: #1467dc;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-card__title {
+      margin: 0 0 12px;
+      font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+      line-height: 1.14;
+      letter-spacing: -0.035em;
+    }
+
+    .project-card__title a {
+      color: #0c1730;
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+
+    .project-card__title a:hover {
+      color: #1671ff;
+    }
+
+    .project-card__desc {
+      margin: 0;
+      color: #59687b;
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 62ch;
+    }
+
+    .project-card__tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 26px;
+    }
+
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 7px 12px 7px 9px;
+      border: 1px solid rgba(20, 35, 55, 0.08);
+      border-radius: 12px;
+      background: #f7f9fb;
+      color: #34445a;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .tech-badge img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .tech-badge:hover {
+      transform: translateY(-2px);
+      background: #fff;
+      border-color: rgba(22, 113, 255, 0.18);
+    }
+
+    .bs-case-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: fit-content;
+      min-width: 210px;
+      margin-top: auto;
+      padding: 14px 17px 14px 18px;
+      border: 1px solid rgba(14, 35, 58, 0.14);
+      border-radius: 14px;
+      background: #fff;
+      color: #0b1730;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .bs-case-link span:last-child {
+      font-size: 1.15rem;
+      transition: transform 180ms ease;
+    }
+
+    .bs-case-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(22, 113, 255, 0.28);
+      background: linear-gradient(135deg, #fff 0%, #f5fbff 100%);
+      box-shadow: 0 10px 24px rgba(12, 49, 93, 0.08);
+    }
+
+    .bs-case-link:hover span:last-child {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .category-hero {
+        padding-top: 58px;
+        padding-bottom: 54px;
+      }
+
+      .category-hero__title {
+        font-size: clamp(2.1rem, 11vw, 3.4rem) !important;
+      }
+
+      .category-hero__desc {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+      }
+
+      .project-list-section {
+        padding-top: 40px;
+      }
+
+      .project-card {
+        border-radius: 22px;
+      }
+
+      .project-card__content {
+        padding: 20px;
+      }
+
+      .project-card__title {
+        font-size: 1.45rem;
+      }
+
+      .tech-badge {
+        min-height: 40px;
+        padding-right: 10px;
+        font-size: 0.78rem;
+      }
+
+      .bs-case-link {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-card,
+      .project-card__image-link img,
+      .tech-badge,
+      .bs-case-link,
+      .bs-case-link span:last-child {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,11 +395,12 @@
       </a>
 
       <nav class="header__nav" id="nav">
-        <a href="/" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
         <a href="/#about" class="nav-link" data-i18n="nav.about">About Us</a>
         <a href="/#services" class="nav-link" data-i18n="nav.services">Services</a>
         <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">Pricing</a>
         <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="/projects/" class="nav-link active" data-i18n="nav.projects">Projects</a>
       </nav>
 
       <div class="header__actions">
@@ -81,8 +454,12 @@
     <!-- Category Header -->
     <section class="category-hero">
       <div class="container">
-        <h1 class="category-hero__title" style="margin-bottom: 16px;">Business Software Solutions</h1>
-        <p class="category-hero__desc" style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+        <p class="bs-hero__eyebrow" data-i18n="softwareSolutions.eyebrow">Business Software</p>
+        <h1 class="category-hero__title">
+          <span data-i18n="softwareSolutions.title">Business Software</span>
+          <span class="bs-title-accent" data-i18n="softwareSolutions.titleAccent">Solutions</span>
+        </h1>
+        <p class="category-hero__desc" data-i18n="softwareSolutions.description">
           Empowering organizations with robust, scalable, and secure software applications designed to streamline operations, enhance customer experiences, and drive business growth.
         </p>
       </div>
@@ -92,51 +469,99 @@
     <section class="project-list-section">
       <div class="container">
         <div class="projects-grid">
+
+          <!-- ===================== PROJECT 01 ===================== -->
           <article class="project-card">
-            <a href="carryhub-shopping/" class="project-card__image-link">
+            <a href="carryhub-shopping/" class="project-card__image-link" aria-label="CarryHub Digital Platform">
               <img src="../../assets/projects/carryhub-hero.webp" alt="CarryHub E-commerce Platform" loading="lazy" width="1200" height="675" />
+              <span class="bs-project-index"><span>01</span><span data-i18n="softwareSolutions.projectLabel">PROJECT</span></span>
             </a>
+
             <div class="project-card__content">
               <div class="project-card__meta">
-                <span class="badge badge--industry">E-Commerce</span>
+                <span class="badge badge--industry" data-i18n="softwareSolutions.carryhub.industry">
+                  E-Commerce
+                </span>
               </div>
+
               <h3 class="project-card__title">
-                <a href="carryhub-shopping/">CarryHub Digital Platform</a>
+                <a href="carryhub-shopping/" data-i18n="softwareSolutions.carryhub.title">
+                  CarryHub Digital Platform
+                </a>
               </h3>
-              <p class="project-card__desc">
+
+              <p class="project-card__desc" data-i18n="softwareSolutions.carryhub.description">
                 A modern e-commerce platform developed to help retailers establish a professional online presence, showcase products, and simulate secure digital payments.
               </p>
-              <div class="project-card__tech">
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
-                <span>EJS</span>
+
+              <div class="project-card__tech" aria-label="Technology stack">
+                <span class="tech-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" loading="lazy">
+                  <span>Node.js</span>
+                </span>
+                <span class="tech-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" loading="lazy">
+                  <span>PostgreSQL</span>
+                </span>
+                <span class="tech-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ejs/ejs-original.svg" alt="EJS" loading="lazy">
+                  <span>EJS</span>
+                </span>
               </div>
-              <a href="carryhub-shopping/" class="btn-premium">View Case Study</a>
+
+              <a href="carryhub-shopping/" class="bs-case-link">
+                <span data-i18n="softwareSolutions.carryhub.cta">View Case Study</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </article>
 
+          <!-- ===================== PROJECT 02 ===================== -->
           <article class="project-card">
-            <a href="smart-inventory/" class="project-card__image-link">
+            <a href="smart-inventory/" class="project-card__image-link" aria-label="Smart Inventory System">
               <img src="../../assets/projects/dash.webp" alt="Smart Inventory System Dashboard" loading="lazy" width="1200" height="675" />
+              <span class="bs-project-index"><span>02</span><span data-i18n="softwareSolutions.projectLabel">PROJECT</span></span>
             </a>
+
             <div class="project-card__content">
               <div class="project-card__meta">
-                <span class="badge badge--industry">Retail &amp; Wholesale</span>
+                <span class="badge badge--industry" data-i18n="softwareSolutions.inventory.industry">
+                  Retail &amp; Wholesale
+                </span>
               </div>
+
               <h3 class="project-card__title">
-                <a href="smart-inventory/">Smart Inventory System</a>
+                <a href="smart-inventory/" data-i18n="softwareSolutions.inventory.title">
+                  Smart Inventory System
+                </a>
               </h3>
-              <p class="project-card__desc">
+
+              <p class="project-card__desc" data-i18n="softwareSolutions.inventory.description">
                 A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, and gain real-time insights.
               </p>
-              <div class="project-card__tech">
-                <span>Spring Boot</span>
-                <span>React</span>
-                <span>PostgreSQL</span>
+
+              <div class="project-card__tech" aria-label="Technology stack">
+                <span class="tech-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot" loading="lazy">
+                  <span>Spring Boot</span>
+                </span>
+                <span class="tech-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" loading="lazy">
+                  <span>React</span>
+                </span>
+                <span class="tech-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" loading="lazy">
+                  <span>PostgreSQL</span>
+                </span>
               </div>
-              <a href="smart-inventory/" class="btn-premium">View Case Study</a>
+
+              <a href="smart-inventory/" class="bs-case-link">
+                <span data-i18n="softwareSolutions.inventory.cta">View Case Study</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -348,33 +773,33 @@
             <!-- ===================== SERVICES ===================== -->
             <div class="footer__column">
 
-                <h3 class="footer__heading">
+                <h3 class="footer__heading" data-i18n="footer.services">
                     Services
                 </h3>
 
                 <nav class="footer__links">
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.businessSoftware">
                         Business Software
                     </a>
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.customSoftware">
                         Custom Software
                     </a>
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.apiBackend">
                         APIs &amp; Backend
                     </a>
 
-                    <a href="/projects/software-solutions/">
+                    <a href="/projects/software-solutions/" data-i18n="footer.ecommerce">
                         E-Commerce
                     </a>
 
-                    <a href="/projects/location-intelligence/">
+                    <a href="/projects/location-intelligence/" data-i18n="footer.locationIntelligence">
                         Location Intelligence
                     </a>
 
-                    <a href="/#services">
+                    <a href="/#services" data-i18n="footer.aiSystems">
                         AI / Intelligent Systems
                     </a>
 
@@ -386,14 +811,14 @@
             <!-- ===================== LET'S TALK ===================== -->
             <div class="footer__column footer__contact">
 
-                <h3 class="footer__heading">
+                <h3 class="footer__heading" data-i18n="footer.letsTalk">
                     Let's Talk
                 </h3>
 
 
                 <div class="footer__location">
 
-                    <span class="footer__contact-label">
+                    <span class="footer__contact-label" data-i18n="footer.basedIn">
                         Based in
                     </span>
 
@@ -410,7 +835,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    WhatsApp
+                    <span data-i18n="footer.whatsapp">WhatsApp</span>
                     <span aria-hidden="true">→</span>
                 </a>
 
@@ -419,7 +844,7 @@
                     href="mailto:mluetechnologytz@gmail.com"
                     class="footer__contact-link"
                 >
-                    Email
+                    <span data-i18n="footer.email">Email</span>
                     <span aria-hidden="true">→</span>
                 </a>
 
@@ -468,19 +893,22 @@
 </footer>
 
 
+  <script src="../../i18n.js" defer></script>
+  <script src="../../main.js" defer></script>
+
   <script>
     document.getElementById('footerYear').textContent = new Date().getFullYear();
     
     document.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-5px)';
-        card.style.boxShadow = '0 12px 24px rgba(0,0,0,0.1)';
+        
         const img = card.querySelector('img');
         if(img) img.style.transform = 'scale(1.05)';
       });
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
-        card.style.boxShadow = 'none';
+        
         const img = card.querySelector('img');
         if(img) img.style.transform = 'scale(1)';
       });

@@ -636,8 +636,7 @@ const translations = {
 "locationCaseStudy.cta.transformText":
     "Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.",
 
-"locationCaseStudy.cta.contact":
-    "Contact MLUE Technology",
+"contact.cta": "Contact Us",
 
 "nav.menu": "Menu",
 
@@ -661,6 +660,20 @@ const translations = {
 
 "locationPage.viewCaseStudy":
     "View Case Study",
+
+
+"softwareSolutions.carryhub.industry": "E-Commerce",
+"softwareSolutions.carryhub.title": "CarryHub Digital Platform",
+"softwareSolutions.carryhub.description": "A modern e-commerce platform developed to help retailers establish a professional online presence, showcase products, and simulate secure digital payments.",
+"softwareSolutions.carryhub.cta": "View Case Study",
+
+"softwareSolutions.inventory.industry": "Retail & Wholesale",
+"softwareSolutions.inventory.title": "Smart Inventory System",
+"softwareSolutions.inventory.description": "A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, and gain real-time insights.",
+"softwareSolutions.inventory.cta": "View Case Study",
+"softwareSolutions.title": "Business Software Solutions",
+"softwareSolutions.description": "Empowering organizations with robust, scalable, and secure software applications designed to streamline operations, enhance customer experiences, and drive business growth.",
+
 
 // What You Get
 "value.eyebrow": "WHAT YOU GET",
@@ -1383,8 +1396,7 @@ const translations = {
 "locationCaseStudy.cta.transformText":
     "Iwe unapanga miundombinu, unatathmini maeneo mapya ya uwekezaji, unachambua masoko, au unaunga mkono upanuzi wa kimkakati, MLUE Technology hutoa suluhisho za geospatial zinazobadilisha location data kuwa insights zenye maana kwa biashara. Tujenge maamuzi bora zaidi kupitia Location Intelligence.",
 
-"locationCaseStudy.cta.contact":
-    "Wasiliana na MLUE Technology",    
+"contact.cta": "Wasiliana Nasi",    
 
 // Services
 "services.eyebrow": "TUNACHOFANYA",
@@ -1444,6 +1456,19 @@ const translations = {
 
 "locationPage.viewCaseStudy":
     "Angalia Case Study",
+
+
+"softwareSolutions.carryhub.industry": "Biashara Mtandaoni",
+"softwareSolutions.carryhub.title": "Jukwaa la Kidijitali la CarryHub",
+"softwareSolutions.carryhub.description": "Jukwaa la kisasa la biashara mtandaoni lililoundwa kusaidia wafanyabiashara kujenga uwepo wa kitaalamu mtandaoni, kuonyesha bidhaa zao, na kuiga malipo salama ya kidijitali.",
+"softwareSolutions.carryhub.cta": "Tazama Uchambuzi wa Mradi",
+
+"softwareSolutions.inventory.industry": "Rejareja na Jumla",
+"softwareSolutions.inventory.title": "Mfumo Mahiri wa Usimamizi wa Hesabu",
+"softwareSolutions.inventory.description": "Suluhisho la kisasa la usimamizi wa hesabu lililoundwa kusaidia biashara kurahisisha udhibiti wa bidhaa, kufuatilia mzunguko wa hesabu, na kupata taarifa za wakati halisi.",
+"softwareSolutions.inventory.cta": "Tazama Uchambuzi wa Mradi",
+"softwareSolutions.title": "Suluhisho za Programu za Biashara",
+"softwareSolutions.description": "Kuwezesha mashirika kwa programu imara, zinazoweza kukua kulingana na mahitaji, na salama, zilizoundwa kurahisisha shughuli, kuboresha uzoefu wa wateja, na kuchochea ukuaji wa biashara.",
 
 
 // What You Get

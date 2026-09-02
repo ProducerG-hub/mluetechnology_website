@@ -12,8 +12,663 @@
   
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="icon" type="image/webp" href="../../../assets/favicon/favicon.webp" />
+  <style>
+.case-study-cta__button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    padding: 15px 28px !important;
+
+    border: 1px solid #22d3ee !important;
+    border-radius: 14px !important;
+
+    background: #22d3ee !important;
+    color: #082f49 !important;
+
+    text-decoration: none !important;
+
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+
+    box-shadow:
+        0 12px 30px rgba(34, 211, 238, 0.22) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        gap 0.3s ease !important;
+}
+
+.case-study-cta__button:hover {
+    transform: translateY(-3px);
+
+    gap: 23px;
+
+    box-shadow:
+        0 18px 42px rgba(34, 211, 238, 0.32) !important;
+}
+
+.case-study-cta__arrow {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1;
+}
+</style>
+
+
+<style>
+/* =========================================================
+   TELECOM CASE STUDY — PREMIUM PAGE-SCOPED UI
+   Only affects .telecom-case-study
+   ========================================================= */
+.telecom-case-study {
+  --case-cyan: #22d3ee;
+  --case-blue: #2563eb;
+  --case-ink: #0f172a;
+  --case-muted: #52627a;
+  --case-surface: #ffffff;
+  --case-border: rgba(15, 23, 42, 0.08);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(34,211,238,0.07), transparent 24%),
+    radial-gradient(circle at 92% 34%, rgba(37,99,235,0.06), transparent 28%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 42%, #f8fafc 100%);
+}
+
+.telecom-case-study main {
+  overflow: hidden;
+}
+
+/* Breadcrumbs */
+.telecom-case-study .cs-breadcrumbs {
+  padding-top: 118px;
+  padding-bottom: 18px;
+  background: transparent;
+}
+
+.telecom-case-study .cs-breadcrumbs .container {
+  font-size: 0.84rem;
+  color: #64748b;
+}
+
+.telecom-case-study .cs-breadcrumbs a {
+  color: #475569;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+.telecom-case-study .cs-breadcrumbs a:hover {
+  color: var(--case-blue);
+}
+
+/* Hero */
+.telecom-case-study .cs-hero {
+  position: relative;
+  padding: 34px 0 88px;
+  background: transparent;
+}
+
+.telecom-case-study .cs-hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(34,211,238,0.10);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.telecom-case-study .cs-hero .container {
+  position: relative;
+}
+
+.telecom-case-study .cs-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.telecom-case-study .cs-hero__meta .badge {
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.telecom-case-study .cs-hero__title {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  font-weight: 850;
+  color: var(--case-ink);
+}
+
+.telecom-case-study .cs-hero__title::after {
+  content: "";
+  display: block;
+  width: 86px;
+  height: 4px;
+  margin-top: 25px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--case-cyan), var(--case-blue));
+}
+
+.telecom-case-study .cs-hero__summary {
+  max-width: 850px;
+  margin: 28px 0 38px;
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  line-height: 1.8;
+  color: var(--case-muted);
+}
+
+.telecom-case-study .cs-hero__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 44px;
+  padding: 7px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(34,211,238,.60), rgba(37,99,235,.24), rgba(255,255,255,.95));
+  box-shadow:
+    0 35px 90px rgba(15,23,42,.14),
+    0 0 0 1px rgba(255,255,255,.8) inset;
+}
+
+.telecom-case-study .cs-hero__image-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  top: -90px;
+  border-radius: 50%;
+  background: rgba(34,211,238,.16);
+  filter: blur(20px);
+}
+
+.telecom-case-study .cs-hero__image-wrapper img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: cover;
+  border-radius: 24px;
+  transition: transform .8s cubic-bezier(.16,1,.3,1);
+}
+
+.telecom-case-study .cs-hero__image-wrapper:hover img {
+  transform: scale(1.025);
+}
+
+/* Shared section rhythm */
+.telecom-case-study .cs-section {
+  position: relative;
+  padding: 92px 0;
+}
+
+.telecom-case-study .cs-section--light {
+  background:
+    linear-gradient(180deg, rgba(248,250,252,.92), rgba(255,255,255,.98));
+  border-top: 1px solid rgba(15,23,42,.045);
+  border-bottom: 1px solid rgba(15,23,42,.045);
+}
+
+/* Gallery */
+.telecom-case-study .cs-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  gap: 22px;
+}
+
+.telecom-case-study .cs-gallery__item {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  margin: 0;
+  border-radius: 24px;
+  border: 1px solid rgba(15,23,42,.075);
+  background: #0f172a;
+  box-shadow: 0 16px 42px rgba(15,23,42,.09);
+}
+
+.telecom-case-study .cs-gallery__item:nth-child(1),
+.telecom-case-study .cs-gallery__item:nth-child(4) {
+  grid-column: span 7;
+}
+
+.telecom-case-study .cs-gallery__item:nth-child(2),
+.telecom-case-study .cs-gallery__item:nth-child(3),
+.telecom-case-study .cs-gallery__item:nth-child(5) {
+  grid-column: span 5;
+}
+
+.telecom-case-study .cs-gallery__item:nth-child(5) {
+  grid-column: span 12;
+}
+
+.telecom-case-study .cs-gallery__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.16,1,.3,1), filter .45s ease;
+}
+
+.telecom-case-study .cs-gallery__item:hover .cs-gallery__img {
+  transform: scale(1.055);
+  filter: saturate(1.05);
+}
+
+.telecom-case-study .cs-gallery__item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 55px 24px 22px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(2,6,23,.92) 82%);
+}
+
+.telecom-case-study .cs-gallery__caption-title {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.telecom-case-study .cs-gallery__caption-text {
+  margin-top: 6px;
+  max-width: 640px;
+  font-size: .84rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.76);
+}
+
+/* Tabs */
+.telecom-case-study .cs-tabs-container {
+  max-width: 1080px;
+}
+
+.telecom-case-study .cs-tabs-nav {
+  position: sticky;
+  top: 96px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  margin-bottom: 36px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 35px rgba(15,23,42,.08);
+}
+
+.telecom-case-study .cs-tab-btn {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 17px;
+  background: transparent;
+  color: #64748b;
+  font: inherit;
+  font-size: .86rem;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.telecom-case-study .cs-tab-btn:hover {
+  color: var(--case-ink);
+  background: #f1f5f9;
+}
+
+.telecom-case-study .cs-tab-btn.active {
+  color: #082f49;
+  background: linear-gradient(135deg, #22d3ee, #67e8f9);
+  box-shadow: 0 8px 20px rgba(34,211,238,.22);
+}
+
+.telecom-case-study .cs-tab-panel {
+  animation: telecomPanelIn .35s ease both;
+}
+
+@keyframes telecomPanelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.telecom-case-study .cs-section-title {
+  font-size: clamp(1.9rem, 3.3vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  color: var(--case-ink);
+}
+
+.telecom-case-study .cs-text {
+  color: #52627a;
+  line-height: 1.85;
+}
+
+/* Feature cards */
+.telecom-case-study .cs-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.telecom-case-study .cs-feature-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid var(--case-border);
+  border-radius: 20px;
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 12px 32px rgba(15,23,42,.055);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.telecom-case-study .cs-feature-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--case-cyan), var(--case-blue));
+}
+
+.telecom-case-study .cs-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34,211,238,.20);
+  box-shadow: 0 22px 46px rgba(15,23,42,.10);
+}
+
+.telecom-case-study .cs-feature-card h3 {
+  color: var(--case-ink);
+  letter-spacing: -.025em;
+}
+
+.telecom-case-study .cs-feature-card p {
+  color: #52627a;
+  line-height: 1.75;
+}
+
+/* Lists */
+.telecom-case-study .cs-impact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 13px 18px;
+  padding: 0;
+  margin: 30px 0 0;
+  list-style: none;
+}
+
+.telecom-case-study .cs-impact-list li {
+  position: relative;
+  padding: 16px 18px 16px 46px;
+  border: 1px solid rgba(15,23,42,.07);
+  border-radius: 15px;
+  background: rgba(255,255,255,.82);
+  color: #334155;
+  line-height: 1.55;
+  box-shadow: 0 8px 22px rgba(15,23,42,.04);
+}
+
+.telecom-case-study .cs-impact-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(34,211,238,.14);
+  color: #0891b2;
+  font-size: .75rem;
+  font-weight: 900;
+}
+
+/* Technology badges */
+.telecom-case-study .cs-tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 28px;
+}
+
+.telecom-case-study .cs-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border-radius: 13px;
+  border: 1px solid rgba(37,99,235,.12);
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  color: #334155;
+  font-size: .82rem;
+  font-weight: 750;
+  box-shadow: 0 8px 20px rgba(15,23,42,.045);
+}
+
+.telecom-case-study .cs-tech-badge::before {
+  content: "✦";
+  color: #0ea5e9;
+  font-size: .78rem;
+}
+
+/* Info grid */
+.telecom-case-study .cs-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
+}
+
+.telecom-case-study .cs-info-item {
+  padding: 21px;
+  border: 1px solid rgba(15,23,42,.07);
+  border-radius: 18px;
+  background: rgba(255,255,255,.80);
+  box-shadow: 0 8px 22px rgba(15,23,42,.045);
+}
+
+.telecom-case-study .cs-info-item__label {
+  margin-bottom: 7px;
+  color: #64748b;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.telecom-case-study .cs-info-item__value {
+  color: var(--case-ink);
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+/* CTA */
+.telecom-case-study .cs-cta {
+  position: relative;
+  padding: 100px 0 120px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc, #eef6ff);
+}
+
+.telecom-case-study .cs-cta::before {
+  content: "";
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  left: 50%;
+  bottom: -360px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(34,211,238,.12);
+  filter: blur(80px);
+}
+
+.telecom-case-study .cs-cta .container {
+  position: relative;
+}
+
+.telecom-case-study .cs-cta .cs-section-title {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.telecom-case-study .cs-cta .cs-text {
+  text-align: center;
+}
+
+.telecom-case-study .case-study-cta__button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  padding: 15px 28px !important;
+  margin-top: 4px !important;
+  border: 1px solid #22d3ee !important;
+  border-radius: 14px !important;
+  background: #22d3ee !important;
+  color: #082f49 !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  box-shadow: 0 12px 30px rgba(34,211,238,.22) !important;
+  transition: transform .3s ease, box-shadow .3s ease, gap .3s ease !important;
+}
+
+.telecom-case-study .case-study-cta__button:hover {
+  transform: translateY(-3px);
+  gap: 23px !important;
+  box-shadow: 0 18px 42px rgba(34,211,238,.32) !important;
+}
+
+@media (max-width: 900px) {
+  .telecom-case-study .cs-gallery__item,
+  .telecom-case-study .cs-gallery__item:nth-child(1),
+  .telecom-case-study .cs-gallery__item:nth-child(2),
+  .telecom-case-study .cs-gallery__item:nth-child(3),
+  .telecom-case-study .cs-gallery__item:nth-child(4),
+  .telecom-case-study .cs-gallery__item:nth-child(5) {
+    grid-column: span 6;
+  }
+
+  .telecom-case-study .cs-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .cs-info-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .telecom-case-study .cs-breadcrumbs {
+    padding-top: 98px;
+  }
+
+  .telecom-case-study .cs-hero {
+    padding-bottom: 65px;
+  }
+
+  .telecom-case-study .cs-hero__title {
+    font-size: clamp(2.4rem, 13vw, 4rem);
+  }
+
+  .telecom-case-study .cs-hero__summary {
+    font-size: .98rem;
+    line-height: 1.72;
+  }
+
+  .telecom-case-study .cs-hero__image-wrapper {
+    border-radius: 23px;
+    padding: 5px;
+  }
+
+  .telecom-case-study .cs-hero__image-wrapper img {
+    border-radius: 18px;
+  }
+
+  .telecom-case-study .cs-section {
+    padding: 68px 0;
+  }
+
+  .telecom-case-study .cs-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .cs-gallery__item,
+  .telecom-case-study .cs-gallery__item:nth-child(1),
+  .telecom-case-study .cs-gallery__item:nth-child(2),
+  .telecom-case-study .cs-gallery__item:nth-child(3),
+  .telecom-case-study .cs-gallery__item:nth-child(4),
+  .telecom-case-study .cs-gallery__item:nth-child(5) {
+    grid-column: span 1;
+    min-height: 260px;
+  }
+
+  .telecom-case-study .cs-gallery__img {
+    min-height: 260px;
+  }
+
+  .telecom-case-study .cs-tabs-nav {
+    top: 83px;
+    margin-bottom: 28px;
+    border-radius: 15px;
+  }
+
+  .telecom-case-study .cs-impact-list,
+  .telecom-case-study .cs-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .cs-cta {
+    padding: 72px 0 88px;
+  }
+
+  .telecom-case-study .case-study-cta__button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .telecom-case-study .cs-hero__image-wrapper img,
+  .telecom-case-study .cs-gallery__img,
+  .telecom-case-study .cs-feature-card,
+  .telecom-case-study .case-study-cta__button,
+  .telecom-case-study .cs-tab-panel {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style>
+
 </head>
-<body>
+<body class="telecom-case-study">
 
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="header">
@@ -222,7 +877,7 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_02_Existing_Base_Station_Distribution.webp" alt="Existing Base Station Distribution" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <<div
+              <div
     class="cs-gallery__caption-title"
     data-i18n="locationCaseStudy.gallery3.title"
 >
@@ -661,14 +1316,19 @@
             Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.
         </p>
 
-        <a
-            href="/#contact"
-            class="btn btn--primary"
-            style="font-size: 1.1rem; padding: 14px 32px;"
-            data-i18n="locationCaseStudy.cta.contact"
-        >
-            Contact MLUE Technology
-        </a>
+    <a
+    href="/#contact"
+    class="case-study-cta__button"
+    >
+    <span data-i18n="contact.cta">Contact Us</span>
+
+    <span
+        class="case-study-cta__arrow"
+        aria-hidden="true"
+    >
+        →
+    </span>
+     </a>
 
     </div>
 
