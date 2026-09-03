@@ -357,10 +357,135 @@ const translations = {
     "Telecom Base Station Site Selection",
 
 "projects.exploreSolutions":
-    "Explore Solutions",    
+    "Explore Solutions",  
+    
+"carryhub.breadcrumb": "CarryHub Platform",
+// CarryHub Case Study — Hero
+"carryhub.hero.industry": "Fashion Retail & E-Commerce",
+"carryhub.hero.status": "Completed",
+"carryhub.hero.title": "CarryHub Digital Commerce Platform",
+"carryhub.hero.summary": "A modern e-commerce platform developed to help retailers establish a professional online presence, showcase products, streamline online shopping, and simulate secure digital payments using the PayPal Sandbox environment.",
+
+// CarryHub Case Study — Gallery
+"carryhub.gallery.registration.title": "Registration",
+"carryhub.gallery.registration.description": "Simple and secure user registration process.",
+
+"carryhub.gallery.login.title": "Login",
+"carryhub.gallery.login.description": "Secure user login experience.",
+
+"carryhub.gallery.profile.title": "User Profile",
+"carryhub.gallery.profile.description": "Detailed user profile information and order history.",
+
+"carryhub.gallery.products.title": "Products",
+"carryhub.gallery.products.description": "A wide range of products available for purchase in the store.",
+
+"carryhub.gallery.cart.title": "User Cart",
+"carryhub.gallery.cart.description": "Interactive shopping cart for managing selected products before checkout.",
+
+"carryhub.gallery.checkout.title": "Checkout",
+"carryhub.gallery.checkout.description": "Complete purchase workflow from cart review to payment.",
+
+"carryhub.gallery.payment.title": "Payment Processing",
+"carryhub.gallery.payment.description": "Secure and seamless payment processing integration.",
+
+"carryhub.gallery.orders.title": "Orders",
+"carryhub.gallery.orders.description": "Track and manage customer orders from placement to delivery.",
+
+"carryhub.tabs.overview": "Overview",
+"carryhub.tabs.challenge": "The Challenge",
+"carryhub.tabs.solution": "Our Solution",
+"carryhub.tabs.technologies": "Technologies",
+"carryhub.tabs.impact": "Business Impact",
+
+"carryhub.overview.title": "Project Overview",
+"carryhub.overview.p1": "The retail industry is rapidly shifting toward digital commerce, where customers expect to browse products, compare options, and complete purchases from anywhere at any time.",
+"carryhub.overview.p2": "CarryHub was developed by MLUE Technology as a modern digital commerce platform that enables retailers to showcase products professionally while providing customers with an intuitive and engaging online shopping experience. The platform demonstrates how businesses can transition from traditional retail operations to digital commerce through responsive web technologies, secure payment workflows, and scalable system architecture.",
+
+"carryhub.challenge.title": "The Business Challenge",
+"carryhub.challenge.intro": "Many small and medium-sized retailers face challenges when trying to establish an effective online sales channel. Common challenges include:",
+
+"carryhub.challenge.item1": "Limited online visibility for products.",
+"carryhub.challenge.item2": "Dependence on physical stores for sales.",
+"carryhub.challenge.item3": "Manual order processing.",
+"carryhub.challenge.item4": "Difficulty managing digital customer interactions.",
+"carryhub.challenge.item5": "Lack of secure online payment workflows.",
+"carryhub.challenge.item6": "Inconsistent shopping experiences across devices.",
+
+"carryhub.challenge.conclusion": "Without a reliable e-commerce platform, businesses may struggle to expand their market reach and compete in today's digital economy.",
+
+"carryhub.solution.title": "Our Solution",
+
+"carryhub.solution.p1": "MLUE Technology designed and developed the CarryHub Digital Commerce Platform to provide retailers with a complete online shopping solution. The platform allows customers to browse products, search and filter items, view detailed product information, manage shopping carts, and complete a simulated checkout process using the PayPal Sandbox environment.",
+
+"carryhub.solution.p2": "The solution was built using a scalable server-side architecture that can be extended to support production payment gateways, inventory integration, order management, customer accounts, and business analytics.",
+
+"carryhub.solution.featuresTitle": "Key Features",
+
+"carryhub.solution.feature1": "Modern Product Catalog",
+"carryhub.solution.feature2": "Product Categories",
+"carryhub.solution.feature3": "Product Search",
+"carryhub.solution.feature4": "Detailed Product Pages",
+"carryhub.solution.feature5": "Shopping Cart Management",
+"carryhub.solution.feature6": "Customer Registration & Authentication",
+"carryhub.solution.feature7": "Secure Login System",
+"carryhub.solution.feature8": "Order Checkout Workflow",
+"carryhub.solution.feature9": "PayPal Sandbox Payment Integration",
+"carryhub.solution.feature10": "Responsive Mobile Experience",
+"carryhub.solution.feature11": "Dynamic Product Rendering",
+"carryhub.solution.feature12": "PostgreSQL Database Integration",
+
+"carryhub.technologies.title": "Technologies Used",
+"carryhub.technologies.description": "Advanced web technologies and development tools were used to build the platform and support its core functionality.",
+"carryhub.technologies.highlightsTitle": "Development Highlights",
+
+"carryhub.technologies.highlight1.label": "Server-Side Rendering:",
+"carryhub.technologies.highlight1.text": "Dynamic pages generated using EJS templates for improved performance and efficient content rendering.",
+
+"carryhub.technologies.highlight2.label": "Secure Authentication:",
+"carryhub.technologies.highlight2.text": "User authentication and session management designed to protect customer accounts and shopping activities.",
+
+"carryhub.technologies.highlight3.label": "Digital Payment Workflow:",
+"carryhub.technologies.highlight3.text": "Integrated PayPal Sandbox to simulate secure online payment processing during development and testing.",
+
+"carryhub.technologies.highlight4.label": "Responsive Design:",
+"carryhub.technologies.highlight4.text": "Mobile-first interface delivering a seamless shopping experience across multiple screen sizes.",
+
+"carryhub.technologies.highlight5.label": "Scalable Architecture:",
+"carryhub.technologies.highlight5.text": "Application structure designed to support future enhancements including production payment gateways, inventory synchronization, and order tracking.",
+
+"carryhub.info.industryLabel": "Industry",
+"carryhub.info.industryValue": "Fashion Retail & E-Commerce",
+
+"carryhub.info.categoryLabel": "Category",
+"carryhub.info.categoryValue": "Business Software Solutions",
+
+"carryhub.info.architectureLabel": "Architecture",
+"carryhub.info.architectureValue": "Server-Side Rendered Web App",
+
+"carryhub.info.paymentLabel": "Payment Integration",
+"carryhub.info.paymentValue": "PayPal Sandbox",
+
+"carryhub.impact.title": "Business Impact",
+"carryhub.impact.intro": "CarryHub enables retailers to transform their digital operations and achieve key business goals:",
+
+"carryhub.impact.item1": "Establish a professional online storefront.",
+"carryhub.impact.item2": "Increase product visibility.",
+"carryhub.impact.item3": "Expand beyond physical store limitations.",
+"carryhub.impact.item4": "Improve customer shopping experience.",
+"carryhub.impact.item5": "Demonstrate secure digital payment workflows.",
+"carryhub.impact.item6": "Prepare for scalable e-commerce growth.",
+"carryhub.impact.item7": "Strengthen digital brand presence.",
+
+"carryhub.cta.whyTitle": "Why Digital Commerce Matters",
+
+"carryhub.cta.whyText": "Modern businesses need more than just a website—they need a digital sales platform that delivers convenience, trust, and accessibility. E-commerce enables organizations to reach wider audiences, strengthen customer engagement, and create sustainable revenue opportunities beyond traditional physical stores.",
+
+"carryhub.cta.buildTitle": "Build Your Digital Storefront",
+
+"carryhub.cta.buildText": "Whether you're launching a new online business or expanding an existing retail operation, MLUE Technology can design and develop scalable e-commerce solutions tailored to your business goals. Let's build your next digital commerce solution.",
 
 
-    // About
+// About
 "about.eyebrow": "WHO WE ARE?",
 
 "about.headline": "Engineering digital systems",
@@ -660,6 +785,8 @@ const translations = {
 
 "locationPage.viewCaseStudy":
     "View Case Study",
+
+    
 
 
 "softwareSolutions.carryhub.industry": "E-Commerce",
@@ -1214,6 +1341,135 @@ const translations = {
 
 "projects.exploreSolutions":
     "Angalia Suluhisho",
+
+"carryhub.breadcrumb": "Jukwaa la CarryHub",
+// CarryHub Case Study — Hero
+"carryhub.hero.industry": "Rejareja ya Mitindo na Biashara Mtandaoni",
+"carryhub.hero.status": "Umekamilika",
+"carryhub.hero.title": "Jukwaa la Biashara Mtandaoni la CarryHub",
+"carryhub.hero.summary": "Jukwaa la kisasa la biashara mtandaoni lililoundwa kusaidia wafanyabiashara kujenga uwepo wa kitaalamu mtandaoni, kuonyesha bidhaa, kurahisisha ununuzi wa mtandaoni, na kuiga malipo salama ya kidijitali kwa kutumia mazingira ya PayPal Sandbox.",
+
+// CarryHub Case Study — Gallery
+"carryhub.gallery.registration.title": "Usajili",
+"carryhub.gallery.registration.description": "Mchakato rahisi na salama wa usajili wa mtumiaji.",
+
+"carryhub.gallery.login.title": "Kuingia",
+"carryhub.gallery.login.description": "Uzoefu salama wa kuingia kwa mtumiaji.",
+
+"carryhub.gallery.profile.title": "Wasifu wa Mtumiaji",
+"carryhub.gallery.profile.description": "Maelezo ya kina ya wasifu wa mtumiaji na historia ya oda.",
+
+"carryhub.gallery.products.title": "Bidhaa",
+"carryhub.gallery.products.description": "Aina mbalimbali za bidhaa zinazopatikana kwa ununuzi kwenye duka.",
+
+"carryhub.gallery.cart.title": "Kikapu cha Mtumiaji",
+"carryhub.gallery.cart.description": "Kikapu shirikishi cha ununuzi kwa kusimamia bidhaa zilizochaguliwa kabla ya malipo.",
+
+"carryhub.gallery.checkout.title": "Malipo",
+"carryhub.gallery.checkout.description": "Mchakato kamili wa ununuzi kutoka kukagua kikapu hadi kufanya malipo.",
+
+"carryhub.gallery.payment.title": "Uchakataji wa Malipo",
+"carryhub.gallery.payment.description": "Muunganisho salama na rahisi wa mfumo wa kuchakata malipo.",
+
+"carryhub.gallery.orders.title": "Oda",
+"carryhub.gallery.orders.description": "Fuatilia na simamia oda za wateja kuanzia kuwekwa hadi kufikishwa.",
+
+"carryhub.tabs.overview": "Muhtasari",
+"carryhub.tabs.challenge": "Changamoto",
+"carryhub.tabs.solution": "Suluhisho Letu",
+"carryhub.tabs.technologies": "Teknolojia",
+"carryhub.tabs.impact": "Athari kwa Biashara",
+
+"carryhub.overview.title": "Muhtasari wa Mradi",
+"carryhub.overview.p1": "Sekta ya rejareja inahamia kwa kasi kuelekea biashara mtandaoni, ambapo wateja wanatarajia kuvinjari bidhaa, kulinganisha chaguo, na kukamilisha manunuzi kutoka mahali popote na wakati wowote.",
+"carryhub.overview.p2": "CarryHub ilitengenezwa na MLUE Technology kama jukwaa la kisasa la biashara mtandaoni linalowawezesha wafanyabiashara kuonyesha bidhaa zao kwa njia ya kitaalamu huku likiwapa wateja uzoefu rahisi na unaovutia wa ununuzi mtandaoni. Jukwaa hili linaonyesha jinsi biashara zinavyoweza kuhama kutoka shughuli za kawaida za rejareja kwenda biashara mtandaoni kupitia teknolojia zinazojibu vizuri kwenye vifaa mbalimbali, michakato salama ya malipo, na usanifu wa mfumo unaoweza kukua.",
+
+"carryhub.challenge.title": "Changamoto ya Biashara",
+"carryhub.challenge.intro": "Wafanyabiashara wengi wadogo na wa kati hukutana na changamoto wanapojaribu kuanzisha njia bora ya mauzo mtandaoni. Changamoto za kawaida ni pamoja na:",
+
+"carryhub.challenge.item1": "Uonekano mdogo wa bidhaa mtandaoni.",
+"carryhub.challenge.item2": "Kutegemea maduka ya kimwili kwa mauzo.",
+"carryhub.challenge.item3": "Uchakataji wa oda kwa njia ya mikono.",
+"carryhub.challenge.item4": "Ugumu wa kusimamia mawasiliano ya kidijitali na wateja.",
+"carryhub.challenge.item5": "Ukosefu wa michakato salama ya malipo mtandaoni.",
+"carryhub.challenge.item6": "Uzoefu wa ununuzi usio sawa kwenye vifaa mbalimbali.",
+
+"carryhub.challenge.conclusion": "Bila jukwaa la kuaminika la biashara mtandaoni, biashara zinaweza kupata ugumu wa kupanua wigo wa soko lao na kushindana katika uchumi wa kisasa wa kidijitali.",
+
+"carryhub.solution.title": "Suluhisho Letu",
+
+"carryhub.solution.p1": "MLUE Technology ilibuni na kuandaa Jukwaa la Biashara Mtandaoni la CarryHub ili kuwapa wafanyabiashara suluhisho kamili la ununuzi mtandaoni. Jukwaa hili linawawezesha wateja kuvinjari bidhaa, kutafuta na kuchuja bidhaa, kuona maelezo ya kina ya bidhaa, kusimamia vikapu vya ununuzi, na kukamilisha mchakato wa kujaribu kufanya malipo kwa kutumia mazingira ya PayPal Sandbox.",
+
+"carryhub.solution.p2": "Suluhisho hili lilijengwa kwa usanifu wa upande wa seva unaoweza kukua na kupanuliwa ili kusaidia mifumo halisi ya malipo, muunganisho wa hesabu za bidhaa, usimamizi wa oda, akaunti za wateja, na uchambuzi wa biashara.",
+
+"carryhub.solution.featuresTitle": "Vipengele Muhimu",
+
+"carryhub.solution.feature1": "Katalogi ya Kisasa ya Bidhaa",
+"carryhub.solution.feature2": "Makundi ya Bidhaa",
+"carryhub.solution.feature3": "Utafutaji wa Bidhaa",
+"carryhub.solution.feature4": "Kurasa za Kina za Bidhaa",
+"carryhub.solution.feature5": "Usimamizi wa Kikapu cha Ununuzi",
+"carryhub.solution.feature6": "Usajili na Uthibitishaji wa Wateja",
+"carryhub.solution.feature7": "Mfumo Salama wa Kuingia",
+"carryhub.solution.feature8": "Mchakato wa Kukamilisha Oda",
+"carryhub.solution.feature9": "Muunganisho wa Malipo wa PayPal Sandbox",
+"carryhub.solution.feature10": "Uzoefu Unaobadilika kwenye Vifaa vya Mkononi",
+"carryhub.solution.feature11": "Uwasilishaji wa Bidhaa kwa Njia Inayobadilika",
+"carryhub.solution.feature12": "Muunganisho wa Hifadhidata ya PostgreSQL",
+
+"carryhub.technologies.title": "Teknolojia Zilizotumika",
+"carryhub.technologies.description": "Teknolojia za kisasa za wavuti na zana za maendeleo zilitumika kujenga jukwaa hili na kusaidia utendaji wake mkuu.",
+"carryhub.technologies.highlightsTitle": "Mambo Muhimu ya Uendelezaji",
+
+"carryhub.technologies.highlight1.label": "Utoaji wa Kurasa Upande wa Seva:",
+"carryhub.technologies.highlight1.text": "Kurasa zinazozalishwa kwa kutumia EJS ili kuboresha utendaji na ufanisi wa uwasilishaji wa maudhui.",
+
+"carryhub.technologies.highlight2.label": "Uthibitishaji Salama:",
+"carryhub.technologies.highlight2.text": "Mfumo wa uthibitishaji wa watumiaji na usimamizi wa session ulioundwa kulinda akaunti za wateja na shughuli zao za ununuzi.",
+
+"carryhub.technologies.highlight3.label": "Mchakato wa Malipo ya Kidijitali:",
+"carryhub.technologies.highlight3.text": "PayPal Sandbox iliunganishwa kuiga uchakataji salama wa malipo ya mtandaoni wakati wa maendeleo na majaribio.",
+
+"carryhub.technologies.highlight4.label": "Muundo Unaobadilika:",
+"carryhub.technologies.highlight4.text": "Muonekano ulioundwa kwa kuanzia vifaa vya mkononi unaotoa uzoefu mzuri wa ununuzi kwenye ukubwa mbalimbali wa skrini.",
+
+"carryhub.technologies.highlight5.label": "Usanifu Unaoweza Kukua:",
+"carryhub.technologies.highlight5.text": "Muundo wa programu uliandaliwa kusaidia maboresho yajayo, ikiwemo mifumo halisi ya malipo, ulandanishi wa hesabu, na ufuatiliaji wa oda.",
+
+"carryhub.info.industryLabel": "Sekta",
+"carryhub.info.industryValue": "Rejareja ya Mitindo na Biashara Mtandaoni",
+
+"carryhub.info.categoryLabel": "Aina",
+"carryhub.info.categoryValue": "Suluhisho za Programu za Biashara",
+
+"carryhub.info.architectureLabel": "Usanifu",
+"carryhub.info.architectureValue": "Programu ya Wavuti Inayozalisha Kurasa Upande wa Seva",
+
+"carryhub.info.paymentLabel": "Muunganisho wa Malipo",
+"carryhub.info.paymentValue": "PayPal Sandbox",
+
+"carryhub.impact.title": "Athari kwa Biashara",
+"carryhub.impact.intro": "CarryHub inawawezesha wafanyabiashara kubadilisha shughuli zao za kidijitali na kufikia malengo muhimu ya biashara:",
+
+"carryhub.impact.item1": "Kuanzisha duka la kitaalamu mtandaoni.",
+"carryhub.impact.item2": "Kuongeza uonekano wa bidhaa.",
+"carryhub.impact.item3": "Kupanua biashara zaidi ya mipaka ya maduka ya kimwili.",
+"carryhub.impact.item4": "Kuboresha uzoefu wa ununuzi wa wateja.",
+"carryhub.impact.item5": "Kuonyesha michakato salama ya malipo ya kidijitali.",
+"carryhub.impact.item6": "Kujiandaa kwa ukuaji wa biashara mtandaoni unaoweza kukua.",
+"carryhub.impact.item7": "Kuimarisha uwepo wa chapa kidijitali.",
+
+"carryhub.cta.whyTitle": "Kwa Nini Biashara Mtandaoni ni Muhimu",
+
+"carryhub.cta.whyText": "Biashara za kisasa zinahitaji zaidi ya tovuti tu—zinahitaji jukwaa la mauzo ya kidijitali linalotoa urahisi, uaminifu, na upatikanaji. Biashara mtandaoni zinawezesha mashirika kuwafikia wateja wengi zaidi, kuimarisha ushirikiano na wateja, na kutengeneza fursa endelevu za mapato zaidi ya mipaka ya maduka ya kawaida.",
+
+"carryhub.cta.buildTitle": "Jenga Duka Lako la Kidijitali",
+
+"carryhub.cta.buildText": "Iwe unaanzisha biashara mpya mtandaoni au unapanua biashara yako ya rejareja iliyopo, MLUE Technology inaweza kubuni na kutengeneza suluhisho la biashara mtandaoni linaloweza kukua kulingana na malengo ya biashara yako. Hebu tujenge pamoja suluhisho lako lijalo la biashara mtandaoni.",
+
+    
+
+
         
 
     // About

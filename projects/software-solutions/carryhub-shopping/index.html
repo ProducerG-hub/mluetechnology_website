@@ -12,8 +12,714 @@
   
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="icon" type="image/webp" href="../../../assets/favicon/favicon.webp" />
+  <style>
+/* =====================================================
+   CARRYHUB — BREADCRUMB / HEADER SPACING
+   ===================================================== */
+
+.carryhub-case-study .cs-breadcrumbs {
+    position: relative;
+    z-index: 1;
+
+    /* Push breadcrumb below the fixed header */
+    padding-top: 125px;
+}
+
+/* Keep hero spacing balanced */
+.carryhub-case-study .cs-hero {
+    padding-top: 45px;
+}
+
+@media (max-width: 767px) {
+    .carryhub-case-study .cs-breadcrumbs {
+        padding-top: 105px;
+    }
+
+    .carryhub-case-study .cs-hero {
+        padding-top: 30px;
+    }
+}
+
+.carryhub-case-study .carryhub-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    padding: 11px 16px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.05);
+
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.carryhub-case-study .carryhub-breadcrumb a {
+    color: var(--gray-600);
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease;
+}
+
+.carryhub-case-study .carryhub-breadcrumb a:hover {
+    color: var(--blue-600);
+}
+
+.carryhub-case-study .carryhub-breadcrumb > span {
+    color: var(--gray-400);
+}
+
+.carryhub-case-study
+.carryhub-breadcrumb__current {
+    color: var(--gray-900) !important;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .carryhub-case-study .carryhub-breadcrumb {
+        width: 100%;
+
+        border-radius: 16px;
+
+        padding: 10px 13px;
+
+        font-size: 0.75rem;
+    }
+}
+
+.carryhub-feature-list {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.carryhub-development-list {
+    margin-bottom: 40px;
+}
+
+.carryhub-project-info {
+    margin-top: 48px;
+}
+
+.cs-subsection-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 32px 0 16px;
+}
+
+@media (max-width: 767px) {
+    .carryhub-feature-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   CARRYHUB CASE STUDY — PREMIUM UI
+   Scoped to this page only
+   ========================================================= */
+
+.carryhub-case-study {
+  --ch-ink: #0b1220;
+  --ch-muted: #64748b;
+  --ch-border: rgba(15, 23, 42, 0.08);
+  --ch-surface: rgba(255, 255, 255, 0.92);
+  --ch-cyan: #00e5ff;
+  --ch-cyan-soft: rgba(0, 229, 255, 0.10);
+  --ch-blue: #1976d2;
+  --ch-dark: #0a0a12;
+}
+
+/* ---------- Premium page surface ---------- */
+
+.carryhub-case-study main {
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(0, 229, 255, 0.08),
+      transparent 28rem
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7fbff 55%,
+      #ffffff 100%
+    );
+}
+
+/* ---------- Hero ---------- */
+
+.carryhub-case-study .cs-hero {
+  position: relative;
+  padding-top: 72px;
+  padding-bottom: 88px;
+}
+
+.carryhub-case-study .cs-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(25, 118, 210, 0.07),
+      transparent 24rem
+    );
+}
+
+.carryhub-case-study .cs-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.carryhub-case-study .cs-hero__title {
+  max-width: 900px;
+  font-size: clamp(2.4rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  color: var(--ch-ink);
+  margin-bottom: 24px;
+}
+
+.carryhub-case-study .cs-hero__summary {
+  max-width: 820px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: var(--ch-muted);
+  margin-bottom: 42px;
+}
+
+.carryhub-case-study .cs-hero__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #0a0a12;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.16),
+    0 0 0 1px rgba(0, 229, 255, 0.04);
+}
+
+.carryhub-case-study .cs-hero__image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 229, 255, 0.08),
+      transparent 35%,
+      rgba(25, 118, 210, 0.08)
+    );
+}
+
+.carryhub-case-study .cs-hero__image-wrapper img {
+  width: 100%;
+  transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+
+.carryhub-case-study .cs-hero__image-wrapper:hover img {
+  transform: scale(1.015);
+}
+
+/* ---------- Gallery ---------- */
+
+.carryhub-case-study .cs-gallery__item {
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.carryhub-case-study .cs-gallery__item:hover {
+  transform: translateY(-6px);
+}
+
+.carryhub-case-study .cs-gallery__img {
+  border-radius: 22px;
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.09);
+}
+
+/* ---------- Tabs ---------- */
+
+.carryhub-case-study .cs-tabs-container {
+  max-width: 980px;
+}
+
+.carryhub-case-study .cs-tabs-nav {
+  position: sticky;
+  top: 90px;
+  z-index: 20;
+
+  padding: 7px;
+  gap: 6px;
+
+  background: rgba(10, 10, 18, 0.94);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.14);
+
+  backdrop-filter: blur(18px);
+}
+
+.carryhub-case-study .cs-tab-btn {
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 12px;
+
+  color: rgba(255,255,255,0.70);
+  font-weight: 600;
+  font-size: 0.88rem;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.carryhub-case-study .cs-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.07);
+}
+
+.carryhub-case-study .cs-tab-btn.active {
+  color: #071018;
+  background: var(--ch-cyan);
+  box-shadow:
+    0 8px 20px rgba(0, 229, 255, 0.20);
+}
+
+.carryhub-case-study .cs-tab-panel {
+  animation: carryhub-panel-in 0.35s ease;
+}
+
+@keyframes carryhub-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   KEY FEATURES
+   ========================================================= */
+
+.carryhub-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.carryhub-feature-card {
+  position: relative;
+  min-height: 130px;
+  padding: 22px;
+
+  border: 1px solid var(--ch-border);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.82);
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.045);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.carryhub-feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--ch-cyan),
+      var(--ch-blue)
+    );
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.carryhub-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 229, 255, 0.28);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.10);
+}
+
+.carryhub-feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.carryhub-feature-card__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  margin-bottom: 16px;
+
+  border-radius: 10px;
+  background: var(--ch-cyan-soft);
+  color: var(--ch-blue);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.carryhub-feature-card__title {
+  color: var(--ch-ink);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DEVELOPMENT HIGHLIGHTS
+   No more boring ✓ list.
+   ========================================================= */
+
+.carryhub-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+
+  margin-top: 28px;
+  margin-bottom: 44px;
+}
+
+.carryhub-highlight-card {
+  position: relative;
+  display: flex;
+  gap: 16px;
+
+  padding: 22px;
+
+  border-radius: 22px;
+  border: 1px solid var(--ch-border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.96),
+      rgba(247,251,255,0.92)
+    );
+
+  box-shadow:
+    0 12px 32px rgba(15,23,42,0.05);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.carryhub-highlight-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,229,255,0.25);
+  box-shadow:
+    0 20px 45px rgba(15,23,42,0.10);
+}
+
+.carryhub-highlight-card__icon {
+  flex: 0 0 46px;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,229,255,0.16),
+      rgba(25,118,210,0.10)
+    );
+
+  color: var(--ch-blue);
+}
+
+.carryhub-highlight-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.carryhub-highlight-card__content strong {
+  display: block;
+  margin-bottom: 5px;
+
+  color: var(--ch-ink);
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.carryhub-highlight-card__content p {
+  color: var(--ch-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   TECHNOLOGY STACK
+   Real brand icons
+   ========================================================= */
+
+.carryhub-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-top: 26px;
+}
+
+.carryhub-tech-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 88px;
+  padding: 16px 18px;
+
+  background: rgba(255,255,255,0.90);
+  border: 1px solid var(--ch-border);
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 26px rgba(15,23,42,0.045);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.carryhub-tech-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,229,255,0.30);
+  box-shadow:
+    0 18px 36px rgba(15,23,42,0.09);
+}
+
+.carryhub-tech-card__icon {
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+  border: 1px solid rgba(15,23,42,0.07);
+
+  box-shadow:
+    0 5px 14px rgba(15,23,42,0.05);
+}
+
+.carryhub-tech-card__icon img {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+}
+
+.carryhub-tech-card__name {
+  color: var(--ch-ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.carryhub-tech-card__type {
+  margin-top: 2px;
+  color: var(--ch-muted);
+  font-size: 0.74rem;
+}
+
+/* ---------- Project info ---------- */
+
+.carryhub-case-study .cs-info-grid {
+  gap: 12px;
+  padding: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.90),
+      rgba(247,251,255,0.96)
+    );
+
+  border-radius: 22px;
+}
+
+.carryhub-case-study .cs-info-item {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(15,23,42,0.06);
+}
+
+/* ---------- Impact list ---------- */
+
+.carryhub-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-top: 28px;
+}
+
+.carryhub-impact-card {
+  padding: 20px 22px;
+
+  border: 1px solid var(--ch-border);
+  border-radius: 18px;
+  background: #ffffff;
+
+  color: var(--ch-ink);
+  font-weight: 600;
+
+  box-shadow:
+    0 8px 24px rgba(15,23,42,0.04);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.carryhub-impact-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0,229,255,0.25);
+}
+
+/* ---------- CTA ---------- */
+
+.carryhub-case-study .cs-cta {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0,229,255,0.12),
+      transparent 30rem
+    ),
+    linear-gradient(
+      180deg,
+      #f7fbff 0%,
+      #ffffff 100%
+    );
+}
+
+.carryhub-case-study .cs-cta .btn--primary {
+  min-width: 180px;
+  font-weight: 700;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 980px) {
+  .carryhub-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .carryhub-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .carryhub-case-study .cs-hero {
+    padding-top: 44px;
+    padding-bottom: 58px;
+  }
+
+  .carryhub-case-study .cs-hero__title {
+    font-size: clamp(2.25rem, 12vw, 3.4rem);
+  }
+
+  .carryhub-case-study .cs-hero__summary {
+    font-size: 1rem;
+  }
+
+  .carryhub-case-study .cs-tabs-nav {
+    top: 78px;
+  }
+
+  .carryhub-feature-grid,
+  .carryhub-highlight-grid,
+  .carryhub-tech-grid,
+  .carryhub-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carryhub-feature-card {
+    min-height: auto;
+  }
+
+  .carryhub-tech-card {
+    min-height: 82px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carryhub-case-study .cs-tabs-nav {
+    border-radius: 14px;
+  }
+
+  .carryhub-case-study .cs-tab-btn {
+    flex: 0 0 auto;
+    font-size: 0.79rem;
+    padding: 9px 13px;
+  }
+}
+
+</style>
 </head>
-<body>
+<body class="carryhub-case-study">
 
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="header">
@@ -23,12 +729,34 @@
       </a>
 
       <nav class="header__nav" id="nav">
-        <a href="/" class="nav-link active" data-i18n="nav.home">Home</a>
-        <a href="/#about" class="nav-link" data-i18n="nav.about">About Us</a>
-        <a href="/#services" class="nav-link" data-i18n="nav.services">Services</a>
-        <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">Pricing</a>
-        <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-      </nav>
+    <a href="/" class="nav-link" data-i18n="nav.home">
+        Home
+    </a>
+
+    <a href="/#about" class="nav-link" data-i18n="nav.about">
+        About Us
+    </a>
+
+    <a href="/#services" class="nav-link" data-i18n="nav.services">
+        Services
+    </a>
+
+    <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">
+        Pricing
+    </a>
+
+    <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+        Contact
+    </a>
+
+    <a
+        href="/projects/"
+        class="nav-link active"
+        data-i18n="nav.projects"
+    >
+        Projects
+    </a>
+</nav>
 
       <div class="header__actions">
 
@@ -70,7 +798,7 @@
         <span></span>
         <span></span>
     </span>
-    <span class="header__hamburger-label">Menu</span>
+    <span class="header__hamburger-label" data-i18n="nav.menu">Menu</span>
       </button>
     </div>
   </header>
@@ -78,28 +806,103 @@
   <main>
     <!-- Breadcrumbs -->
     <section class="cs-breadcrumbs">
-      <div class="container">
-        <a href="/">Home</a> / <a href="/projects/">Projects</a> / <a href="/projects/business-software/">Business Software Solutions</a> / <span style="color: var(--gray-900); font-weight: 500;">CarryHub Platform</span>
-      </div>
-    </section>
+    <div class="container">
+
+        <nav
+            class="carryhub-breadcrumb"
+            aria-label="Breadcrumb"
+        >
+
+            <a
+                href="/"
+                data-i18n="nav.home"
+            >
+                Home
+            </a>
+
+            <span aria-hidden="true">›</span>
+
+            <a
+                href="/projects/"
+                data-i18n="nav.projects"
+            >
+                Projects
+            </a>
+
+            <span aria-hidden="true">›</span>
+
+            <a
+                href="/projects/software-solutions/"
+                data-i18n="softwareSolutions.title"
+            >
+                Business Software Solutions
+            </a>
+
+            <span aria-hidden="true">›</span>
+
+            <span
+                class="carryhub-breadcrumb__current"
+                data-i18n="carryhub.breadcrumb"
+            >
+                CarryHub Platform
+            </span>
+
+        </nav>
+
+    </div>
+</section>
 
     <!-- 1. Hero Section -->
     <section class="cs-hero">
-      <div class="container">
+    <div class="container">
+
         <div class="cs-hero__meta">
-          <span class="badge badge--industry">Fashion Retail & E-Commerce</span>
-          <span class="badge badge--status">Completed</span>
+
+            <span
+                class="badge badge--industry"
+                data-i18n="carryhub.hero.industry"
+            >
+                Fashion Retail &amp; E-Commerce
+            </span>
+
+            <span
+                class="badge badge--status"
+                data-i18n="carryhub.hero.status"
+            >
+                Completed
+            </span>
+
         </div>
-        <h1 class="cs-hero__title">CarryHub Digital Commerce Platform</h1>
-        <p class="cs-hero__summary">
-          A modern e-commerce platform developed to help retailers establish a professional online presence, showcase products, streamline online shopping, and simulate secure digital payments using the PayPal Sandbox environment.
+
+        <h1
+            class="cs-hero__title"
+            data-i18n="carryhub.hero.title"
+        >
+            CarryHub Digital Commerce Platform
+        </h1>
+
+        <p
+            class="cs-hero__summary"
+            data-i18n="carryhub.hero.summary"
+        >
+            A modern e-commerce platform developed to help retailers
+            establish a professional online presence, showcase products,
+            streamline online shopping, and simulate secure digital
+            payments using the PayPal Sandbox environment.
         </p>
-        
+
         <div class="cs-hero__image-wrapper">
-          <img src="../../../assets/projects/carryhub-hero.webp" alt="CarryHub Digital Commerce Platform" loading="lazy" width="1100" height="650" />
+            <img
+                src="../../../assets/projects/carryhub-hero.webp"
+                alt="CarryHub Digital Commerce Platform"
+                loading="lazy"
+                width="1100"
+                height="650"
+            />
         </div>
-      </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- 2. Project Gallery Sliding Animation -->
     <section class="cs-section">
@@ -108,75 +911,227 @@
           
           <!-- Gallery Item 1 -->
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-registration.webp" alt="Registration Process" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Registration</div>
-              <div class="cs-gallery__caption-text">Simple and secure user registration process.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-registration.webp"
+        alt="Registration Process"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
+
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.registration.title"
+        >
+            Registration
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.registration.description"
+        >
+            Simple and secure user registration process.
+        </div>
+
+    </figcaption>
+</figure>
 
           <!-- Gallery Item 2 -->
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-login.webp" alt="Login Process" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Login</div>
-              <div class="cs-gallery__caption-text">Secure user login experience.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-login.webp"
+        alt="Login Process"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
 
-          <!-- Gallery Item 3 -->
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.login.title"
+        >
+            Login
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.login.description"
+        >
+            Secure user login experience.
+        </div>
+
+    </figcaption>
+</figure>
+
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-profile.webp" alt="User Profile" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">User Profile</div>
-              <div class="cs-gallery__caption-text">Detailed user profile information and order history.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-profile.webp"
+        alt="User Profile"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
+
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.profile.title"
+        >
+            User Profile
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.profile.description"
+        >
+            Detailed user profile information and order history.
+        </div>
+
+    </figcaption>
+</figure>
 
           <!-- Gallery Item 4 -->
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-products.webp" alt="Products" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Products</div>
-              <div class="cs-gallery__caption-text">A wide range of products available for purchase in the store.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-products.webp"
+        alt="Products"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
+
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.products.title"
+        >
+            Products
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.products.description"
+        >
+            A wide range of products available for purchase in the store.
+        </div>
+
+    </figcaption>
+</figure>
 
           <!-- Gallery Item 5 -->
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-cart.webp" alt="User Cart" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">User Cart</div>
-              <div class="cs-gallery__caption-text">Interactive shopping cart for managing selected products before checkout.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-cart.webp"
+        alt="User Cart"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
+
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.cart.title"
+        >
+            User Cart
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.cart.description"
+        >
+            Interactive shopping cart for managing selected products
+            before checkout.
+        </div>
+
+    </figcaption>
+</figure>
 
           <!-- Gallery Item 6 -->
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-checkout.webp" alt="Checkout" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Checkout</div>
-              <div class="cs-gallery__caption-text">Complete purchase workflow from cart review to payment.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-checkout.webp"
+        alt="Checkout"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
+
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.checkout.title"
+        >
+            Checkout
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.checkout.description"
+        >
+            Complete purchase workflow from cart review to payment.
+        </div>
+
+    </figcaption>
+</figure>
 
           <!-- Gallery Item 7 -->
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-paypal.webp" alt="PayPal Sandbox" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Payment Processing</div>
-              <div class="cs-gallery__caption-text">Secure and seamless payment processing integration.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-paypal.webp"
+        alt="PayPal Sandbox"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
+
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.payment.title"
+        >
+            Payment Processing
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.payment.description"
+        >
+            Secure and seamless payment processing integration.
+        </div>
+
+    </figcaption>
+</figure>
 
           <!-- Gallery Item 8 -->
           <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/carryhub-orders.webp" alt="Orders" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Orders</div>
-              <div class="cs-gallery__caption-text">Track and manage customer orders from placement to delivery.</div>
-            </figcaption>
-          </figure>
+    <img
+        src="../../../assets/projects/carryhub-orders.webp"
+        alt="Orders"
+        class="cs-gallery__img"
+        loading="lazy"
+    />
+
+    <figcaption>
+
+        <div
+            class="cs-gallery__caption-title"
+            data-i18n="carryhub.gallery.orders.title"
+        >
+            Orders
+        </div>
+
+        <div
+            class="cs-gallery__caption-text"
+            data-i18n="carryhub.gallery.orders.description"
+        >
+            Track and manage customer orders from placement to delivery.
+        </div>
+
+    </figcaption>
+</figure>
 
         </div>
       </div>
@@ -188,149 +1143,741 @@
         
         <!-- Tab Navigation Buttons -->
         <div class="cs-tabs-nav" role="tablist">
-          <button class="cs-tab-btn active" onclick="switchTab(event, 'overview')" role="tab">Overview</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'solution')" role="tab">Our Solution</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'tech')" role="tab">Technologies</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'impact')" role="tab">Business Impact</button>
-        </div>
+
+    <button
+        class="cs-tab-btn active"
+        onclick="switchTab(event, 'overview')"
+        role="tab"
+        data-i18n="carryhub.tabs.overview"
+    >
+        Overview
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'challenge')"
+        role="tab"
+        data-i18n="carryhub.tabs.challenge"
+    >
+        The Challenge
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'solution')"
+        role="tab"
+        data-i18n="carryhub.tabs.solution"
+    >
+        Our Solution
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'tech')"
+        role="tab"
+        data-i18n="carryhub.tabs.technologies"
+    >
+        Technologies
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'impact')"
+        role="tab"
+        data-i18n="carryhub.tabs.impact"
+    >
+        Business Impact
+    </button>
+
+</div>
 
         <!-- Tab Panel 1: Overview -->
         <div id="overview" class="cs-tab-panel active" role="tabpanel">
-          <h2 class="cs-section-title">Project Overview</h2>
-          <p class="cs-text">
-            The retail industry is rapidly shifting toward digital commerce, where customers expect to browse products, compare options, and complete purchases from anywhere at any time.
-          </p>
-          <p class="cs-text">
-            CarryHub was developed by MLUE Technology as a modern digital commerce platform that enables retailers to showcase products professionally while providing customers with an intuitive and engaging online shopping experience. The platform demonstrates how businesses can transition from traditional retail operations to digital commerce through responsive web technologies, secure payment workflows, and scalable system architecture.
-          </p>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="carryhub.overview.title"
+    >
+        Project Overview
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="carryhub.overview.p1"
+    >
+        The retail industry is rapidly shifting toward digital commerce,
+        where customers expect to browse products, compare options,
+        and complete purchases from anywhere at any time.
+    </p>
+
+    <p
+        class="cs-text"
+        data-i18n="carryhub.overview.p2"
+    >
+        CarryHub was developed by MLUE Technology as a modern digital
+        commerce platform that enables retailers to showcase products
+        professionally while providing customers with an intuitive and
+        engaging online shopping experience. The platform demonstrates
+        how businesses can transition from traditional retail operations
+        to digital commerce through responsive web technologies, secure
+        payment workflows, and scalable system architecture.
+    </p>
+
+</div>
 
         <!-- Tab Panel 2: Challenge -->
-        <div id="challenge" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">The Business Challenge</h2>
-          <p class="cs-text">
-            Many small and medium-sized retailers face challenges when trying to establish an effective online sales channel. Common challenges include:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Limited online visibility for products.</li>
-            <li>Dependence on physical stores for sales.</li>
-            <li>Manual order processing.</li>
-            <li>Difficulty managing digital customer interactions.</li>
-            <li>Lack of secure online payment workflows.</li>
-            <li>Inconsistent shopping experiences across devices.</li>
-          </ul>
-          <p class="cs-text" style="margin-top: 24px;">
-            Without a reliable e-commerce platform, businesses may struggle to expand their market reach and compete in today's digital economy.
-          </p>
-        </div>
+        <div
+    id="challenge"
+    class="cs-tab-panel"
+    role="tabpanel"
+>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="carryhub.challenge.title"
+    >
+        The Business Challenge
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="carryhub.challenge.intro"
+    >
+        Many small and medium-sized retailers face challenges when
+        trying to establish an effective online sales channel.
+        Common challenges include:
+    </p>
+
+    <ul class="cs-impact-list">
+
+        <li data-i18n="carryhub.challenge.item1">
+            Limited online visibility for products.
+        </li>
+
+        <li data-i18n="carryhub.challenge.item2">
+            Dependence on physical stores for sales.
+        </li>
+
+        <li data-i18n="carryhub.challenge.item3">
+            Manual order processing.
+        </li>
+
+        <li data-i18n="carryhub.challenge.item4">
+            Difficulty managing digital customer interactions.
+        </li>
+
+        <li data-i18n="carryhub.challenge.item5">
+            Lack of secure online payment workflows.
+        </li>
+
+        <li data-i18n="carryhub.challenge.item6">
+            Inconsistent shopping experiences across devices.
+        </li>
+
+    </ul>
+
+    <p
+        class="cs-text"
+        style="margin-top: 24px;"
+        data-i18n="carryhub.challenge.conclusion"
+    >
+        Without a reliable e-commerce platform, businesses may struggle
+        to expand their market reach and compete in today's digital economy.
+    </p>
+
+</div>
 
         <!-- Tab Panel 3: Solution -->
         <div id="solution" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Our Solution</h2>
-          <p class="cs-text">
-            MLUE Technology designed and developed the CarryHub Digital Commerce Platform to provide retailers with a complete online shopping solution. The platform allows customers to browse products, search and filter items, view detailed product information, manage shopping carts, and complete a simulated checkout process using the PayPal Sandbox environment.
-          </p>
-          <p class="cs-text">
-            The solution was built using a scalable server-side architecture that can be extended to support production payment gateways, inventory integration, order management, customer accounts, and business analytics.
-          </p>
 
-          <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 32px 0 16px;">Key Features</h3>
-          <ul class="cs-impact-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-            <li>Modern Product Catalog</li>
-            <li>Product Categories</li>
-            <li>Product Search</li>
-            <li>Detailed Product Pages</li>
-            <li>Shopping Cart Management</li>
-            <li>Customer Registration & Authentication</li>
-            <li>Secure Login System</li>
-            <li>Order Checkout Workflow</li>
-            <li>PayPal Sandbox Payment Integration</li>
-            <li>Responsive Mobile Experience</li>
-            <li>Dynamic Product Rendering</li>
-            <li>PostgreSQL Database Integration</li>
-          </ul>
-        </div>
+    <h2
+        class="cs-section-title"
+        data-i18n="carryhub.solution.title"
+    >
+        Our Solution
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="carryhub.solution.p1"
+    >
+        MLUE Technology designed and developed the CarryHub Digital
+        Commerce Platform to provide retailers with a complete online
+        shopping solution. The platform allows customers to browse
+        products, search and filter items, view detailed product
+        information, manage shopping carts, and complete a simulated
+        checkout process using the PayPal Sandbox environment.
+    </p>
+
+    <p
+        class="cs-text"
+        data-i18n="carryhub.solution.p2"
+    >
+        The solution was built using a scalable server-side architecture
+        that can be extended to support production payment gateways,
+        inventory integration, order management, customer accounts,
+        and business analytics.
+    </p>
+
+    <h3
+        class="cs-subsection-title"
+        data-i18n="carryhub.solution.featuresTitle"
+    >
+        Key Features
+    </h3>
+
+    <div class="carryhub-feature-grid">
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">01</span>
+    <h3 class="carryhub-feature-card__title">
+      Modern Product Catalog
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">02</span>
+    <h3 class="carryhub-feature-card__title">
+      Product Categories
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">03</span>
+    <h3 class="carryhub-feature-card__title">
+      Product Search
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">04</span>
+    <h3 class="carryhub-feature-card__title">
+      Detailed Product Pages
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">05</span>
+    <h3 class="carryhub-feature-card__title">
+      Shopping Cart Management
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">06</span>
+    <h3 class="carryhub-feature-card__title">
+      Customer Registration &amp; Authentication
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">07</span>
+    <h3 class="carryhub-feature-card__title">
+      Secure Login System
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">08</span>
+    <h3 class="carryhub-feature-card__title">
+      Order Checkout Workflow
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">09</span>
+    <h3 class="carryhub-feature-card__title">
+      PayPal Sandbox Payment Integration
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">10</span>
+    <h3 class="carryhub-feature-card__title">
+      Responsive Mobile Experience
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">11</span>
+    <h3 class="carryhub-feature-card__title">
+      Dynamic Product Rendering
+    </h3>
+  </article>
+
+  <article class="carryhub-feature-card">
+    <span class="carryhub-feature-card__number">12</span>
+    <h3 class="carryhub-feature-card__title">
+      PostgreSQL Database Integration
+    </h3>
+  </article>
+
+</div>
+
+</div>
 
         <!-- Tab Panel 4: Technologies -->
         <div id="tech" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Technologies Used</h2>
-          <div class="cs-tech-badges">
-            <span class="cs-tech-badge">Node.js</span>
-            <span class="cs-tech-badge">Express.js</span>
-            <span class="cs-tech-badge">EJS</span>
-            <span class="cs-tech-badge">PostgreSQL</span>
-            <span class="cs-tech-badge">PayPal Sandbox</span>
-            <span class="cs-tech-badge">HTML5</span>
-            <span class="cs-tech-badge">CSS3</span>
-            <span class="cs-tech-badge">JavaScript</span>
-          </div>
 
-          <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 40px 0 16px;">Development Highlights</h3>
-          <ul class="cs-impact-list" style="margin-bottom: 40px;">
-            <li><strong>Server-Side Rendering:</strong> Dynamic pages generated using EJS templates for improved performance and efficient content rendering.</li>
-            <li><strong>Secure Authentication:</strong> User authentication and session management designed to protect customer accounts and shopping activities.</li>
-            <li><strong>Digital Payment Workflow:</strong> Integrated PayPal Sandbox to simulate secure online payment processing during development and testing.</li>
-            <li><strong>Responsive Design:</strong> Mobile-first interface delivering a seamless shopping experience across multiple screen sizes.</li>
-            <li><strong>Scalable Architecture:</strong> Application structure designed to support future enhancements including production payment gateways, inventory synchronization, and order tracking.</li>
-          </ul>
+    <h2
+        class="cs-section-title"
+        data-i18n="carryhub.technologies.title"
+    >
+        Technologies Used
+    </h2>
 
-          <div>
-            <div class="cs-info-grid">
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Industry</div>
-                <div class="cs-info-item__value">Fashion Retail & E-Commerce</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Category</div>
-                <div class="cs-info-item__value">Business Software Solutions</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Architecture</div>
-                <div class="cs-info-item__value">Server-Side Rendered Web App</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Payment Integration</div>
-                <div class="cs-info-item__value">PayPal Sandbox</div>
-              </div>
+    <p
+        class="cs-text"
+        data-i18n="carryhub.technologies.description"
+    >
+        Advanced web technologies and development tools were used
+        to build the platform and support its core functionality.
+    </p>
+
+    <div class="carryhub-tech-grid">
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+        alt="Node.js"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">Node.js</div>
+      <div class="carryhub-tech-card__type">Runtime</div>
+    </div>
+  </article>
+
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.simpleicons.org/express"
+        alt="Express.js"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">Express.js</div>
+      <div class="carryhub-tech-card__type">Backend Framework</div>
+    </div>
+  </article>
+
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.simpleicons.org/ejs/B4CA65"
+        alt="EJS"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">EJS</div>
+      <div class="carryhub-tech-card__type">Templating</div>
+    </div>
+  </article>
+
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+        alt="PostgreSQL"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">PostgreSQL</div>
+      <div class="carryhub-tech-card__type">Database</div>
+    </div>
+  </article>
+
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.simpleicons.org/paypal/003087"
+        alt="PayPal"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">PayPal Sandbox</div>
+      <div class="carryhub-tech-card__type">Payments</div>
+    </div>
+  </article>
+
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+        alt="HTML5"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">HTML5</div>
+      <div class="carryhub-tech-card__type">Frontend</div>
+    </div>
+  </article>
+
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+        alt="CSS3"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">CSS3</div>
+      <div class="carryhub-tech-card__type">Styling</div>
+    </div>
+  </article>
+
+
+  <article class="carryhub-tech-card">
+    <div class="carryhub-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+        alt="JavaScript"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="carryhub-tech-card__name">JavaScript</div>
+      <div class="carryhub-tech-card__type">Frontend Logic</div>
+    </div>
+  </article>
+
+</div>
+
+    <h3
+        class="cs-subsection-title"
+        data-i18n="carryhub.technologies.highlightsTitle"
+    >
+        Development Highlights
+    </h3>
+
+    <div class="carryhub-highlight-grid">
+
+  <article class="carryhub-highlight-card">
+
+    <div class="carryhub-highlight-card__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <path d="M4 5h16v14H4z"/>
+        <path d="M8 9l3 3-3 3"/>
+        <path d="M13 15h3"/>
+      </svg>
+    </div>
+
+    <div class="carryhub-highlight-card__content">
+      <strong>Server-Side Rendering</strong>
+      <p>
+        Dynamic pages generated using EJS templates for improved
+        performance and efficient content rendering.
+      </p>
+    </div>
+
+  </article>
+
+
+  <article class="carryhub-highlight-card">
+
+    <div class="carryhub-highlight-card__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <path d="M12 3l7 3v5c0 4.6-2.9 7.9-7 10-4.1-2.1-7-5.4-7-10V6l7-3z"/>
+        <path d="M9 12l2 2 4-4"/>
+      </svg>
+    </div>
+
+    <div class="carryhub-highlight-card__content">
+      <strong>Secure Authentication</strong>
+      <p>
+        User authentication and session management designed to
+        protect customer accounts and shopping activities.
+      </p>
+    </div>
+
+  </article>
+
+
+  <article class="carryhub-highlight-card">
+
+    <div class="carryhub-highlight-card__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="M3 10h18"/>
+        <path d="M7 15h3"/>
+      </svg>
+    </div>
+
+    <div class="carryhub-highlight-card__content">
+      <strong>Digital Payment Workflow</strong>
+      <p>
+        Integrated PayPal Sandbox to simulate secure online
+        payment processing during development and testing.
+      </p>
+    </div>
+
+  </article>
+
+
+  <article class="carryhub-highlight-card">
+
+    <div class="carryhub-highlight-card__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <rect x="6" y="3" width="12" height="18" rx="2"/>
+        <path d="M10 7h4"/>
+        <path d="M10 17h4"/>
+      </svg>
+    </div>
+
+    <div class="carryhub-highlight-card__content">
+      <strong>Responsive Design</strong>
+      <p>
+        Mobile-first interface delivering a seamless shopping
+        experience across multiple screen sizes.
+      </p>
+    </div>
+
+  </article>
+
+
+  <article class="carryhub-highlight-card">
+
+    <div class="carryhub-highlight-card__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <path d="M4 18V8"/>
+        <path d="M10 18V5"/>
+        <path d="M16 18v-7"/>
+        <path d="M22 18V3"/>
+        <path d="M2 21h20"/>
+      </svg>
+    </div>
+
+    <div class="carryhub-highlight-card__content">
+      <strong>Scalable Architecture</strong>
+      <p>
+        Application structure designed to support future enhancements
+        including production payment gateways, inventory synchronization,
+        and order tracking.
+      </p>
+    </div>
+
+  </article>
+
+</div>
+
+    <div class="carryhub-project-info">
+
+        <div class="cs-info-grid">
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="carryhub.info.industryLabel"
+                >
+                    Industry
+                </div>
+
+                <div
+                    class="cs-info-item__value"
+                    data-i18n="carryhub.info.industryValue"
+                >
+                    Fashion Retail &amp; E-Commerce
+                </div>
             </div>
-          </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="carryhub.info.categoryLabel"
+                >
+                    Category
+                </div>
+
+                <div
+                    class="cs-info-item__value"
+                    data-i18n="carryhub.info.categoryValue"
+                >
+                    Business Software Solutions
+                </div>
+            </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="carryhub.info.architectureLabel"
+                >
+                    Architecture
+                </div>
+
+                <div
+                    class="cs-info-item__value"
+                    data-i18n="carryhub.info.architectureValue"
+                >
+                    Server-Side Rendered Web App
+                </div>
+            </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="carryhub.info.paymentLabel"
+                >
+                    Payment Integration
+                </div>
+
+                <div
+                    class="cs-info-item__value"
+                    data-i18n="carryhub.info.paymentValue"
+                >
+                    PayPal Sandbox
+                </div>
+            </div>
+
         </div>
+
+    </div>
+
+</div>
 
         <!-- Tab Panel 5: Impact -->
         <div id="impact" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Business Impact</h2>
-          <p class="cs-text">
-            CarryHub enables retailers to transform their digital operations and achieve key business goals:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Establish a professional online storefront.</li>
-            <li>Increase product visibility.</li>
-            <li>Expand beyond physical store limitations.</li>
-            <li>Improve customer shopping experience.</li>
-            <li>Demonstrate secure digital payment workflows.</li>
-            <li>Prepare for scalable e-commerce growth.</li>
-            <li>Strengthen digital brand presence.</li>
-          </ul>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="carryhub.impact.title"
+    >
+        Business Impact
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="carryhub.impact.intro"
+    >
+        CarryHub enables retailers to transform their digital operations
+        and achieve key business goals:
+    </p>
+
+    <div class="carryhub-impact-grid">
+
+  <div class="carryhub-impact-card">
+    Establish a professional online storefront.
+  </div>
+
+  <div class="carryhub-impact-card">
+    Increase product visibility.
+  </div>
+
+  <div class="carryhub-impact-card">
+    Expand beyond physical store limitations.
+  </div>
+
+  <div class="carryhub-impact-card">
+    Improve customer shopping experience.
+  </div>
+
+  <div class="carryhub-impact-card">
+    Demonstrate secure digital payment workflows.
+  </div>
+
+  <div class="carryhub-impact-card">
+    Prepare for scalable e-commerce growth.
+  </div>
+
+  <div class="carryhub-impact-card">
+    Strengthen digital brand presence.
+  </div>
+
+</div>
+
+</div>
 
       </div>
     </section>
 
     
     <section class="cs-cta">
-      <div class="container">
-        <h2 class="cs-section-title" style="margin-bottom: 16px;">Why Digital Commerce Matters</h2>
-        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
-          Modern businesses need more than just a website—they need a digital sales platform that delivers convenience, trust, and accessibility. E-commerce enables organizations to reach wider audiences, strengthen customer engagement, and create sustainable revenue opportunities beyond traditional physical stores.
+    <div class="container">
+
+        <h2
+            class="cs-section-title"
+            style="margin-bottom: 16px;"
+            data-i18n="carryhub.cta.whyTitle"
+        >
+            Why Digital Commerce Matters
+        </h2>
+
+        <p
+            class="cs-text"
+            style="max-width: 680px; margin: 0 auto 32px;"
+            data-i18n="carryhub.cta.whyText"
+        >
+            Modern businesses need more than just a website—they need
+            a digital sales platform that delivers convenience, trust,
+            and accessibility. E-commerce enables organizations to reach
+            wider audiences, strengthen customer engagement, and create
+            sustainable revenue opportunities beyond traditional
+            physical stores.
         </p>
-        <h3 style="font-size: 1.5rem; color: var(--gray-900); font-weight: 700; margin-bottom: 16px;">Build Your Digital Storefront</h3>
-        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
-          Whether you're launching a new online business or expanding an existing retail operation, MLUE Technology can design and develop scalable e-commerce solutions tailored to your business goals. Let's build your next digital commerce solution.
+
+        <h3
+            class="cs-subsection-title"
+            data-i18n="carryhub.cta.buildTitle"
+        >
+            Build Your Digital Storefront
+        </h3>
+
+        <p
+            class="cs-text"
+            style="max-width: 680px; margin: 0 auto 32px;"
+            data-i18n="carryhub.cta.buildText"
+        >
+            Whether you're launching a new online business or expanding
+            an existing retail operation, MLUE Technology can design
+            and develop scalable e-commerce solutions tailored to your
+            business goals. Let's build your next digital commerce
+            solution.
         </p>
-        <a href="/#contact" class="btn btn--primary" style="font-size: 1.1rem; padding: 14px 32px;">Contact MLUE Technology</a>
-      </div>
-    </section>
+
+        <a
+            href="/#contact"
+            class="btn btn--primary"
+        >
+            <span data-i18n="contact.cta">
+                Contact Us
+            </span>
+
+            <span aria-hidden="true">→</span>
+        </a>
+
+    </div>
+</section>
   </main>
 
   <footer class="footer">
@@ -539,37 +2086,55 @@
             <!-- ===================== SERVICES ===================== -->
             <div class="footer__column">
 
-                <h3 class="footer__heading">
+                <h3 class="footer__heading" data-i18n="footer.services">
                     Services
                 </h3>
 
                 <nav class="footer__links">
 
-                    <a href="/projects/software-solutions/">
-                        Business Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.businessSoftware"
+    >
+        Business Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        Custom Software
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.customSoftware"
+    >
+        Custom Software
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        APIs &amp; Backend
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.apiBackend"
+    >
+        APIs &amp; Backend
+    </a>
 
-                    <a href="/projects/software-solutions/">
-                        E-Commerce
-                    </a>
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.ecommerce"
+    >
+        E-Commerce
+    </a>
 
-                    <a href="/projects/location-intelligence/">
-                        Location Intelligence
-                    </a>
+    <a
+        href="/projects/location-intelligence/"
+        data-i18n="footer.locationIntelligence"
+    >
+        Location Intelligence
+    </a>
 
-                    <a href="/#services">
-                        AI / Intelligent Systems
-                    </a>
+    <a
+        href="/#services"
+        data-i18n="footer.aiSystems"
+    >
+        AI / Intelligent Systems
+    </a>
 
-                </nav>
+</nav>
 
             </div>
 
@@ -577,14 +2142,14 @@
             <!-- ===================== LET'S TALK ===================== -->
             <div class="footer__column footer__contact">
 
-                <h3 class="footer__heading">
+                <h3 class="footer__heading" data-i18n="footer.letsTalk">
                     Let's Talk
                 </h3>
 
 
                 <div class="footer__location">
 
-                    <span class="footer__contact-label">
+                    <span class="footer__contact-label" data-i18n="footer.basedIn">
                         Based in
                     </span>
 
@@ -596,23 +2161,29 @@
 
 
                 <a
-                    href="https://wa.me/255752804154"
-                    class="footer__contact-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="https://wa.me/255752804154"
+    class="footer__contact-link"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span data-i18n="footer.whatsapp">
+        WhatsApp
+    </span>
+
+    <span aria-hidden="true">→</span>
+</a>
 
 
                 <a
-                    href="mailto:mluetechnologytz@gmail.com"
-                    class="footer__contact-link"
-                >
-                    Email
-                    <span aria-hidden="true">→</span>
-                </a>
+    href="mailto:mluetechnologytz@gmail.com"
+    class="footer__contact-link"
+>
+    <span data-i18n="footer.email">
+        Email
+    </span>
+
+    <span aria-hidden="true">→</span>
+</a>
 
             </div>
 
@@ -673,5 +2244,8 @@
 
     document.getElementById('footerYear').textContent = new Date().getFullYear();
   </script>
+  <script src="../../../i18n.js" defer></script>
+<script src="../../../main.js" defer></script>
+<script src="../../../chatbot.js" defer></script> 
 </body>
 </html>
