@@ -6118,3 +6118,75 @@ input[type="datetime-local"] {
     color: black;
 }
 
+/* ===================================================
+   HOME PAGE — SOFT CYAN / ICE BLUE BACKGROUND
+   Scoped exclusively to the Home page
+   =================================================== */
+
+.home-page main {
+    background:
+        radial-gradient(
+            circle at 18% 8%,
+            rgba(0, 229, 255, 0.14),
+            transparent 34rem
+        ),
+        radial-gradient(
+            circle at 82% 10%,
+            rgba(59, 130, 246, 0.09),
+            transparent 32rem
+        ),
+        linear-gradient(
+            180deg,
+            #eefcff 0%,
+            #f7fbff 42%,
+            #ffffff 100%
+        );
+}
+
+
+/* Keep the Home page's light sections transparent
+   so the gradient behind them remains visible. */
+
+.home-page .about,
+.home-page .value-section,
+.home-page .contact {
+    background: transparent;
+}
+
+
+/* Add a little extra atmosphere to the About section */
+
+.home-page .about {
+    background:
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(0, 229, 255, 0.06),
+            transparent 26rem
+        );
+}
+
+
+/* Add a subtle cooler glow to the Value section */
+
+.home-page .value-section {
+    background:
+        radial-gradient(
+            circle at 88% 30%,
+            rgba(59, 130, 246, 0.055),
+            transparent 28rem
+        );
+}
+
+
+/* Keep the contact background visually connected
+   without making the form difficult to read. */
+
+.home-page .contact {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(0, 229, 255, 0.07),
+            transparent 26rem
+        );
+}
+

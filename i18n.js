@@ -484,6 +484,101 @@ const translations = {
 
 "carryhub.cta.buildText": "Whether you're launching a new online business or expanding an existing retail operation, MLUE Technology can design and develop scalable e-commerce solutions tailored to your business goals. Let's build your next digital commerce solution.",
 
+    // Smart Inventory Management System
+    "inventory.breadcrumb": "Smart Inventory Management System",
+
+    // Hero
+    "inventory.hero.industry": "Retail & Wholesale",
+    "inventory.hero.status": "In Progress",
+    "inventory.hero.title": "Smart Inventory Management System",
+    "inventory.hero.summary": "A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, manage suppliers, and gain real-time insights for smarter business decisions.",
+    "inventory.hero.imageAlt": "Smart Inventory System Dashboard",
+
+    // Gallery
+    "inventory.gallery.authentication.title": "Authentication",
+    "inventory.gallery.authentication.description": "Secure login and user management for the inventory system.",
+    "inventory.gallery.authentication.imageAlt": "Smart Inventory System Authentication",
+
+    "inventory.gallery.dashboard.title": "Dashboard Overview",
+    "inventory.gallery.dashboard.description": "Real-time overview of inventory levels, sales trends, and overall business performance.",
+    "inventory.gallery.dashboard.imageAlt": "Smart Inventory System Dashboard Overview",
+
+    "inventory.gallery.sales.title": "Sales Module",
+    "inventory.gallery.sales.description": "Records sales transactions while automatically updating inventory across all connected branches.",
+    "inventory.gallery.sales.imageAlt": "Smart Inventory System Sales Module",
+
+    "inventory.gallery.products.title": "Products Module",
+    "inventory.gallery.products.description": "Manage product details, categorize items, and set dynamic pricing structures.",
+    "inventory.gallery.products.imageAlt": "Smart Inventory System Products Module",
+
+    // Tabs
+    "inventory.tabs.overview": "Overview",
+    "inventory.tabs.challenge": "The Challenge",
+    "inventory.tabs.solution": "Our Solution",
+    "inventory.tabs.technologies": "Technologies",
+    "inventory.tabs.impact": "Business Impact",
+
+    // Overview
+    "inventory.overview.title": "Project Overview",
+    "inventory.overview.paragraph1": "Many growing businesses struggle to keep accurate inventory records while maintaining efficient daily operations. Manual stock tracking often results in errors, lost products, delayed reporting, and poor decision-making.",
+    "inventory.overview.paragraph2": "The Smart Inventory Management System was developed by MLUE Technology to provide businesses with a centralized platform for managing inventory, suppliers, products, sales, and reporting in real time. The system enables business owners to improve operational efficiency while making informed decisions through accurate and accessible business data.",
+
+    // Challenge
+    "inventory.challenge.title": "The Business Challenge",
+    "inventory.challenge.introduction": "Many small and medium-sized businesses still rely on notebooks, spreadsheets, or disconnected systems to manage inventory. As businesses grow, these methods become increasingly difficult to maintain and often lead to:",
+    "inventory.challenge.item1": "Inaccurate stock records",
+    "inventory.challenge.item2": "Inventory losses and stock discrepancies",
+    "inventory.challenge.item3": "Time-consuming manual reporting",
+    "inventory.challenge.item4": "Limited visibility into business performance",
+    "inventory.challenge.item5": "Poor inventory planning and purchasing decisions",
+    "inventory.challenge.conclusion": "Without reliable inventory data, business owners struggle to make confident operational and financial decisions.",
+
+    // Solution
+    "inventory.solution.title": "Our Solution & Key Features",
+    "inventory.solution.paragraph1": "MLUE Technology designed and developed a centralized inventory management platform that automates inventory operations from product registration to stock movement tracking and reporting.",
+    "inventory.solution.paragraph2": "The system provides real-time visibility into inventory levels, supplier information, sales activities, and business performance through an intuitive web-based interface. By automating routine processes, businesses can reduce manual work, improve accuracy, and make faster, data-driven decisions.",
+    "inventory.solution.featuresTitle": "Key System Features",
+
+    "inventory.solution.feature1.title": "Product & Category",
+    "inventory.solution.feature1.description": "Comprehensive management of items, specifications, and hierarchical categorizations.",
+
+    "inventory.solution.feature2.title": "Supplier & Customer",
+    "inventory.solution.feature2.description": "Maintain detailed profiles and interactions for smooth procurement and sales workflows.",
+
+    "inventory.solution.feature3.title": "Tracking & Movement",
+    "inventory.solution.feature3.description": "Real-time stock monitoring and detailed logs of all inventory movements across operations.",
+
+    "inventory.solution.feature4.title": "Security & Roles",
+    "inventory.solution.feature4.description": "Secure authentication with role-based access control and responsive administration dashboards.",
+
+    // Technologies
+    "inventory.technologies.title": "Technologies Used",
+    "inventory.technologies.description": "Built using an enterprise-grade, modern technology stack ensuring scalability, security, and performance.",
+    "inventory.technologies.industryLabel": "Industry",
+    "inventory.technologies.industryValue": "Retail & Wholesale",
+    "inventory.technologies.categoryLabel": "Category",
+    "inventory.technologies.categoryValue": "Business Software",
+    "inventory.technologies.platformLabel": "Platform",
+    "inventory.technologies.platformValue": "Web Application",
+    "inventory.technologies.statusLabel": "Status",
+    "inventory.technologies.statusValue": "In Progress",
+
+    // Impact
+    "inventory.impact.title": "Business Impact",
+    "inventory.impact.introduction": "The solution helps businesses achieve operational excellence and sustainable growth:",
+    "inventory.impact.item1": "Improve inventory accuracy across all operations",
+    "inventory.impact.item2": "Reduce manual record keeping and human error",
+    "inventory.impact.item3": "Monitor stock levels in real time",
+    "inventory.impact.item4": "Generate business reports instantly",
+    "inventory.impact.item5": "Improve purchasing decisions based on hard data",
+    "inventory.impact.item6": "Increase overall operational efficiency",
+    "inventory.impact.item7": "Centralize business information into a single source of truth",
+    "inventory.impact.item8": "Support future business growth and branch expansions",
+
+    // CTA
+    "inventory.cta.title": "Build Smarter Business Software",
+    "inventory.cta.description": "Whether you're managing retail stores, warehouses, pharmacies, supermarkets, or wholesale businesses, MLUE Technology can design custom software solutions that improve efficiency, automate operations, and support sustainable business growth. Let's build technology that works for your business.",
+    "inventory.cta.button": "Contact MLUE Technology",
 
 // About
 "about.eyebrow": "WHO WE ARE?",
@@ -976,6 +1071,106 @@ const translations = {
 "results.principle3": "Built to last",
 
 "results.cta": "Request a Solution",
+
+// ==================== ENGLISH ====================
+
+// Navigation
+"nav.home": "Home",
+"nav.about": "About Us",
+"nav.services": "Services",
+"nav.pricing": "Pricing",
+"nav.contact": "Contact",
+"nav.projects": "Projects",
+"nav.menu": "Menu",
+"nav.cta": "Get Started",
+
+// Footer
+"footer.tagline": "Engineering modern solutions for modern businesses.",
+"footer.quickLinks": "Quick Links",
+"footer.legal": "Legal",
+"footer.privacy": "Privacy Policy",
+"footer.terms": "Terms of Service",
+"footer.rights": "All rights reserved.",
+"footer.services": "Services",
+"footer.businessSoftware": "Business Software",
+"footer.customSoftware": "Custom Software",
+"footer.apiBackend": "APIs & Backend",
+"footer.ecommerce": "E-Commerce",
+"footer.locationIntelligence": "Location Intelligence",
+"footer.aiSystems": "AI / Intelligent Systems",
+"footer.letsTalk": "Let's Talk",
+"footer.basedIn": "Based in",
+"footer.location": "Dar es Salaam, Tanzania",
+"footer.whatsapp": "WhatsApp",
+"footer.email": "Email",
+
+// Terms of Service
+"terms.eyebrow": "TERMS & CONDITIONS",
+"terms.title": "Terms of Service",
+"terms.intro": "The terms governing your use of the MLUE TECHNOLOGY website, digital services, and direct service engagements.",
+"terms.lastUpdated": "Last Updated",
+
+"terms.intro.p1": "Welcome to MLUE TECHNOLOGY. These Terms of Service (\"Terms\") govern your access to and use of our website, chatbot, contact forms, content, and any services we provide through direct engagement (collectively, the \"Services\").",
+
+"terms.intro.p2": "By accessing or using our website or engaging our Services, you agree to be bound by these Terms. If you do not agree, please discontinue use of the Services.",
+
+"terms.s1.title": "1. About MLUE TECHNOLOGY",
+"terms.s1.p1": "MLUE TECHNOLOGY is a technology company providing business systems, custom software development, backend engineering, APIs, branding, and related digital services.",
+
+"terms.s2.title": "2. Use of Website",
+"terms.s2.p1": "You agree to use this website only for lawful purposes and in a manner that does not disrupt the site or its users. You must not:",
+"terms.s2.li1": "Attempt unauthorized access to the website, servers, or connected systems",
+"terms.s2.li2": "Interfere with website security, availability, or performance",
+"terms.s2.li3": "Submit false, harmful, or misleading information",
+"terms.s2.li4": "Misuse the chatbot, contact forms, or other communication tools",
+"terms.s2.li5": "Attempt to scrape, copy, or republish content without permission",
+
+"terms.s3.title": "3. Contact Forms and Messaging",
+"terms.s3.p1": "When you submit a form on our website or pricing page, your message may be processed by our form provider and delivered to our email inbox. You are responsible for the accuracy of the information you submit.",
+"terms.s3.p2": "Do not submit confidential information unless you are comfortable with it being transmitted through standard internet and third-party service channels.",
+
+"terms.s4.title": "4. Chatbot Use",
+"terms.s4.p1": "Our chatbot is provided as a convenience feature to help answer common questions about our business and services. The chatbot may use local keyword-based logic in the browser and may be updated in the future to use third-party AI services.",
+"terms.s4.p2": "You agree not to use the chatbot to send abusive, illegal, or malicious content, or to rely on it as a substitute for professional advice.",
+
+"terms.s5.title": "5. Language Preference and Browser Storage",
+"terms.s5.p1": "We store your selected language preference in your browser using local storage so the site can remember whether you prefer English or Swahili. This setting is stored locally on your device.",
+
+"terms.s6.title": "6. Service Engagement & Agreements",
+"terms.s6.p1": "Any custom software development, system deployment, API integration, POS system, website build, branding project, or similar engagement requires a separate written agreement covering scope, deliverables, timelines, and payment terms.",
+"terms.s6.p2": "Information shown on the website, including pricing, package descriptions, or service summaries, is for general guidance only and does not create a binding contract or guarantee specific outcomes.",
+
+"terms.s7.title": "7. Payments and Scope Changes",
+"terms.s7.p1": "Where applicable, work may require upfront, milestone-based, or phased payments. If you request work outside the agreed scope, we may treat it as additional work and quote it separately.",
+
+"terms.s8.title": "8. Intellectual Property",
+"terms.s8.p1": "Unless we agree otherwise in writing, all website content, branding elements, documentation, code snippets, software frameworks, and design materials remain the intellectual property of MLUE TECHNOLOGY.",
+"terms.s8.p2": "You may not copy, reproduce, modify, or distribute our content or deliverables except as permitted by written agreement or applicable law.",
+
+"terms.s9.title": "9. Service Disclaimer",
+"terms.s9.p1": "We use reasonable care and industry practices when building and maintaining our Services, but we do not guarantee uninterrupted operation, error-free performance, or complete protection against fraud, misuse, or technical failures.",
+"terms.s9.p2": "You are responsible for how you use the Services and for your own internal business, legal, and compliance decisions.",
+
+"terms.s10.title": "10. Third-Party Services",
+"terms.s10.p1": "Our website may rely on third-party hosting providers, form processing services, browser APIs, or other external services. We are not responsible for outages, delays, or issues caused by those third parties.",
+
+"terms.s11.title": "11. Limitation of Liability",
+"terms.s11.p1": "To the fullest extent permitted by law, MLUE TECHNOLOGY is not liable for indirect, incidental, special, or consequential damages, including loss of profits, data, or business interruption, arising from your use of or inability to use the Services.",
+
+"terms.s12.title": "12. Suspension and Termination",
+"terms.s12.p1": "We may suspend or terminate access to the Services if we reasonably believe these Terms have been violated or the site is being misused.",
+
+"terms.s13.title": "13. Changes to These Terms",
+"terms.s13.p1": "We may update these Terms from time to time. Continued use of the Services after updates are posted means you accept the revised Terms.",
+
+"terms.s14.title": "14. Governing Law",
+"terms.s14.p1": "These Terms are governed by and interpreted in accordance with the laws of the United Republic of Tanzania.",
+
+"terms.s15.title": "15. Contact Information",
+"terms.s15.p1.prefix": "If you have questions about these Terms, please contact us at ",
+"terms.s15.p1.suffix": ".",
+
+"terms.footerNote": "These Terms should be read together with our Privacy Policy, which explains how information is handled when you use the website and related services."
     
   },
 
@@ -1469,6 +1664,103 @@ const translations = {
 
     
 
+    // Smart Inventory Management System
+    "inventory.breadcrumb": "Mfumo wa Usimamizi Mahiri wa Hesabu",
+
+    // Hero
+    "inventory.hero.industry": "Rejareja na Jumla",
+    "inventory.hero.status": "Inaendelea",
+    "inventory.hero.title": "Mfumo wa Usimamizi Mahiri wa Hesabu",
+    "inventory.hero.summary": "Suluhisho la kisasa la usimamizi wa hesabu lililoundwa kusaidia biashara kurahisisha udhibiti wa bidhaa, kufuatilia mienendo ya hesabu, kusimamia wasambazaji, na kupata taarifa za wakati halisi kwa ajili ya kufanya maamuzi bora ya biashara.",
+    "inventory.hero.imageAlt": "Dashibodi ya Mfumo wa Usimamizi Mahiri wa Hesabu",
+
+    // Gallery
+    "inventory.gallery.authentication.title": "Uthibitishaji",
+    "inventory.gallery.authentication.description": "Kuingia kwa usalama na usimamizi wa watumiaji wa mfumo wa hesabu.",
+    "inventory.gallery.authentication.imageAlt": "Ukurasa wa Uthibitishaji wa Mfumo wa Usimamizi wa Hesabu",
+
+    "inventory.gallery.dashboard.title": "Muhtasari wa Dashibodi",
+    "inventory.gallery.dashboard.description": "Muhtasari wa wakati halisi wa viwango vya hesabu, mwenendo wa mauzo, na utendaji wa jumla wa biashara.",
+    "inventory.gallery.dashboard.imageAlt": "Muhtasari wa Dashibodi ya Mfumo wa Hesabu",
+
+    "inventory.gallery.sales.title": "Moduli ya Mauzo",
+    "inventory.gallery.sales.description": "Hurekodi miamala ya mauzo huku ikisasisha hesabu kiotomatiki katika matawi yote yaliyounganishwa.",
+    "inventory.gallery.sales.imageAlt": "Moduli ya Mauzo ya Mfumo wa Hesabu",
+
+    "inventory.gallery.products.title": "Moduli ya Bidhaa",
+    "inventory.gallery.products.description": "Simamia taarifa za bidhaa, panga bidhaa katika makundi, na weka miundo ya bei inayobadilika.",
+    "inventory.gallery.products.imageAlt": "Moduli ya Bidhaa ya Mfumo wa Hesabu",
+
+    // Tabs
+    "inventory.tabs.overview": "Muhtasari",
+    "inventory.tabs.challenge": "Changamoto",
+    "inventory.tabs.solution": "Suluhisho Letu",
+    "inventory.tabs.technologies": "Teknolojia",
+    "inventory.tabs.impact": "Athari kwa Biashara",
+
+    // Overview
+    "inventory.overview.title": "Muhtasari wa Mradi",
+    "inventory.overview.paragraph1": "Biashara nyingi zinazokua hukabiliwa na changamoto ya kuweka kumbukumbu sahihi za hesabu huku zikiendelea na shughuli zao za kila siku kwa ufanisi. Ufuatiliaji wa hesabu kwa njia ya kumbukumbu za mikono mara nyingi husababisha makosa, kupotea kwa bidhaa, kuchelewa kwa taarifa, na kufanya maamuzi yasiyo sahihi.",
+    "inventory.overview.paragraph2": "Mfumo wa Usimamizi Mahiri wa Hesabu ulitengenezwa na MLUE Technology ili kuzipa biashara jukwaa kuu la kusimamia hesabu, wasambazaji, bidhaa, mauzo, na taarifa kwa wakati halisi. Mfumo huu huwawezesha wamiliki wa biashara kuboresha ufanisi wa shughuli huku wakifanya maamuzi yenye taarifa sahihi na yanayopatikana kwa urahisi.",
+
+    // Challenge
+    "inventory.challenge.title": "Changamoto ya Biashara",
+    "inventory.challenge.introduction": "Biashara nyingi ndogo na za kati bado hutumia madaftari, lahajedwali, au mifumo isiyounganishwa kusimamia hesabu. Biashara zinapokua, njia hizi huwa ngumu zaidi kuzisimamia na mara nyingi husababisha:",
+    "inventory.challenge.item1": "Kumbukumbu zisizo sahihi za hesabu",
+    "inventory.challenge.item2": "Upotevu wa bidhaa na tofauti za hesabu",
+    "inventory.challenge.item3": "Uandaaji wa taarifa kwa mikono unaotumia muda mwingi",
+    "inventory.challenge.item4": "Uwezo mdogo wa kuona utendaji wa biashara",
+    "inventory.challenge.item5": "Mipango duni ya hesabu na maamuzi yasiyo sahihi ya ununuzi",
+    "inventory.challenge.conclusion": "Bila taarifa za kuaminika za hesabu, wamiliki wa biashara hupata ugumu wa kufanya maamuzi yenye uhakika kuhusu shughuli na fedha za biashara.",
+
+    // Solution
+    "inventory.solution.title": "Suluhisho Letu na Vipengele Muhimu",
+    "inventory.solution.paragraph1": "MLUE Technology iliunda na kutengeneza jukwaa kuu la usimamizi wa hesabu linaloendesha kiotomatiki shughuli za hesabu kuanzia usajili wa bidhaa hadi ufuatiliaji wa mienendo ya bidhaa na uandaaji wa taarifa.",
+    "inventory.solution.paragraph2": "Mfumo hutoa mwonekano wa wakati halisi wa viwango vya hesabu, taarifa za wasambazaji, shughuli za mauzo, na utendaji wa biashara kupitia kiolesura angavu kinachotegemea wavuti. Kwa kuendesha shughuli za kawaida kiotomatiki, biashara zinaweza kupunguza kazi za mikono, kuboresha usahihi, na kufanya maamuzi ya haraka yanayotegemea data.",
+    "inventory.solution.featuresTitle": "Vipengele Muhimu vya Mfumo",
+
+    "inventory.solution.feature1.title": "Bidhaa na Makundi",
+    "inventory.solution.feature1.description": "Usimamizi kamili wa bidhaa, sifa zake, na upangaji wake katika makundi yenye viwango mbalimbali.",
+
+    "inventory.solution.feature2.title": "Wasambazaji na Wateja",
+    "inventory.solution.feature2.description": "Tunza taarifa za kina za wasambazaji na wateja pamoja na mwingiliano wao kwa ajili ya kurahisisha ununuzi na mauzo.",
+
+    "inventory.solution.feature3.title": "Ufuatiliaji na Mienendo",
+    "inventory.solution.feature3.description": "Ufuatiliaji wa hesabu kwa wakati halisi na kumbukumbu za kina za mienendo yote ya bidhaa katika shughuli za biashara.",
+
+    "inventory.solution.feature4.title": "Usalama na Majukumu",
+    "inventory.solution.feature4.description": "Uthibitishaji salama wa watumiaji wenye udhibiti wa ufikiaji kulingana na majukumu pamoja na dashibodi rafiki za usimamizi.",
+
+    // Technologies
+    "inventory.technologies.title": "Teknolojia Zilizotumika",
+    "inventory.technologies.description": "Umetengenezwa kwa kutumia mchanganyiko wa kisasa wa teknolojia za kiwango cha biashara unaohakikisha uwezo wa kupanuka, usalama, na utendaji mzuri.",
+    "inventory.technologies.snapshotTitle": "Muhtasari wa Mradi",
+    "inventory.technologies.industryLabel": "Sekta",
+    "inventory.technologies.industryValue": "Rejareja na Jumla",
+    "inventory.technologies.categoryLabel": "Aina",
+    "inventory.technologies.categoryValue": "Programu ya Biashara",
+    "inventory.technologies.platformLabel": "Jukwaa",
+    "inventory.technologies.platformValue": "Programu ya Wavuti",
+    "inventory.technologies.statusLabel": "Hali",
+    "inventory.technologies.statusValue": "Inaendelea",
+
+    // Impact
+    "inventory.impact.title": "Athari kwa Biashara",
+    "inventory.impact.introduction": "Suluhisho hili husaidia biashara kufikia ufanisi wa juu wa shughuli na ukuaji endelevu:",
+    "inventory.impact.item1": "Kuboresha usahihi wa hesabu katika shughuli zote",
+    "inventory.impact.item2": "Kupunguza utunzaji wa kumbukumbu kwa mikono na makosa ya kibinadamu",
+    "inventory.impact.item3": "Kufuatilia viwango vya hesabu kwa wakati halisi",
+    "inventory.impact.item4": "Kutengeneza taarifa za biashara papo hapo",
+    "inventory.impact.item5": "Kuboresha maamuzi ya ununuzi kwa kutumia data sahihi",
+    "inventory.impact.item6": "Kuongeza ufanisi wa jumla wa shughuli za biashara",
+    "inventory.impact.item7": "Kuweka taarifa za biashara katika mfumo mmoja wa kuaminika",
+    "inventory.impact.item8": "Kusaidia ukuaji wa biashara na upanuzi wa matawi siku zijazo",
+
+    // CTA
+    "inventory.cta.title": "Jenga Programu Bora Zaidi za Biashara",
+    "inventory.cta.description": "Iwe unasimamia maduka ya rejareja, maghala, famasi, maduka makubwa, au biashara za jumla, MLUE Technology inaweza kubuni suluhisho maalum za programu zinazoboresha ufanisi, kurahisisha shughuli kwa njia ya kiotomatiki, na kusaidia ukuaji endelevu wa biashara. Tujenge teknolojia inayofanya kazi kwa ajili ya biashara yako.",
+    "inventory.cta.button": "Wasiliana na MLUE Technology",
+
 
         
 
@@ -1905,6 +2197,106 @@ const translations = {
 "results.principle3": "Imejengwa kudumu",
 
 "results.cta": "Omba Suluhisho",
+
+// ==================== SWAHILI ====================
+
+// Navigation
+"nav.home": "Nyumbani",
+"nav.about": "Kuhusu Sisi",
+"nav.services": "Huduma",
+"nav.pricing": "Bei",
+"nav.contact": "Wasiliana",
+"nav.projects": "Miradi",
+"nav.menu": "Menyu",
+"nav.cta": "Anza Sasa",
+
+// Footer
+"footer.tagline": "Kujenga suluhisho za kisasa kwa biashara za kisasa.",
+"footer.quickLinks": "Viungo vya Haraka",
+"footer.legal": "Kisheria",
+"footer.privacy": "Sera ya Faragha",
+"footer.terms": "Masharti ya Huduma",
+"footer.rights": "Haki zote zimehifadhiwa.",
+"footer.services": "Huduma",
+"footer.businessSoftware": "Programu za Biashara",
+"footer.customSoftware": "Programu Maalum",
+"footer.apiBackend": "APIs & Backend",
+"footer.ecommerce": "Biashara Mtandaoni",
+"footer.locationIntelligence": "Ujuzi wa Maeneo",
+"footer.aiSystems": "AI / Mifumo Mahiri",
+"footer.letsTalk": "Tuzungumze",
+"footer.basedIn": "Tupo",
+"footer.location": "Dar es Salaam, Tanzania",
+"footer.whatsapp": "WhatsApp",
+"footer.email": "Barua Pepe",
+
+// Masharti ya Huduma
+"terms.eyebrow": "MASHARTI NA VIGEZO",
+"terms.title": "Masharti ya Huduma",
+"terms.intro": "Masharti yanayosimamia matumizi yako ya tovuti ya MLUE TECHNOLOGY, huduma za kidijitali, na huduma tunazotoa kupitia makubaliano ya moja kwa moja.",
+"terms.lastUpdated": "Imesasishwa Mwisho",
+
+"terms.intro.p1": "Karibu MLUE TECHNOLOGY. Masharti haya ya Huduma (\"Masharti\") yanasimamia upatikanaji na matumizi yako ya tovuti yetu, chatbot, fomu za mawasiliano, maudhui, na huduma zozote tunazotoa kupitia makubaliano ya moja kwa moja (kwa pamoja, \"Huduma\").",
+
+"terms.intro.p2": "Kwa kufikia au kutumia tovuti yetu au kushirikisha Huduma zetu, unakubali kufungwa na Masharti haya. Ikiwa hukubaliani nayo, tafadhali acha kutumia Huduma.",
+
+"terms.s1.title": "1. Kuhusu MLUE TECHNOLOGY",
+"terms.s1.p1": "MLUE TECHNOLOGY ni kampuni ya teknolojia inayotoa mifumo ya biashara, uundaji wa programu maalum, uhandisi wa backend, APIs, huduma za chapa, na huduma nyingine za kidijitali zinazohusiana.",
+
+"terms.s2.title": "2. Matumizi ya Tovuti",
+"terms.s2.p1": "Unakubali kutumia tovuti hii kwa madhumuni halali pekee na kwa namna ambayo haiathiri tovuti au watumiaji wake. Hupaswi:",
+"terms.s2.li1": "Kujaribu kupata ufikiaji usioidhinishwa wa tovuti, seva, au mifumo iliyounganishwa",
+"terms.s2.li2": "Kuingilia usalama, upatikanaji, au utendaji wa tovuti",
+"terms.s2.li3": "Kuwasilisha taarifa za uongo, zenye madhara, au za kupotosha",
+"terms.s2.li4": "Kutumia vibaya chatbot, fomu za mawasiliano, au zana nyingine za mawasiliano",
+"terms.s2.li5": "Kujaribu kukusanya, kunakili, au kuchapisha upya maudhui bila ruhusa",
+
+"terms.s3.title": "3. Fomu za Mawasiliano na Ujumbe",
+"terms.s3.p1": "Unapowasilisha fomu kwenye tovuti yetu au ukurasa wa bei, ujumbe wako unaweza kuchakatwa na mtoa huduma wetu wa fomu na kuwasilishwa kwenye kisanduku chetu cha barua pepe. Unawajibika kwa usahihi wa taarifa unazowasilisha.",
+"terms.s3.p2": "Usiwasilishe taarifa za siri isipokuwa uko tayari zitumwe kupitia njia za kawaida za intaneti na huduma za wahusika wengine.",
+
+"terms.s4.title": "4. Matumizi ya Chatbot",
+"terms.s4.p1": "Chatbot yetu imetolewa kama kipengele cha kusaidia kujibu maswali ya kawaida kuhusu biashara na huduma zetu. Chatbot inaweza kutumia mantiki ya maneno muhimu ndani ya kivinjari na inaweza kusasishwa baadaye ili kutumia huduma za AI za wahusika wengine.",
+"terms.s4.p2": "Unakubali kutotumia chatbot kutuma maudhui ya matusi, kinyume cha sheria, au yenye madhara, wala kuitumia kama mbadala wa ushauri wa kitaalamu.",
+
+"terms.s5.title": "5. Upendeleo wa Lugha na Hifadhi ya Kivinjari",
+"terms.s5.p1": "Tunahifadhi chaguo lako la lugha katika kivinjari chako kwa kutumia local storage ili tovuti ikumbuke kama unapendelea Kiingereza au Kiswahili. Mpangilio huu huhifadhiwa ndani ya kifaa chako.",
+
+"terms.s6.title": "6. Ushirikishwaji wa Huduma na Makubaliano",
+"terms.s6.p1": "Uundaji wa programu maalum, uwekaji wa mfumo, ujumuishaji wa API, mfumo wa POS, uundaji wa tovuti, mradi wa chapa, au ushirikishwaji mwingine unaofanana unahitaji makubaliano tofauti ya maandishi yanayobainisha wigo, bidhaa za mwisho, muda, na masharti ya malipo.",
+"terms.s6.p2": "Taarifa zinazoonyeshwa kwenye tovuti, ikiwemo bei, maelezo ya vifurushi, au muhtasari wa huduma, ni kwa mwongozo wa jumla pekee na haziundi mkataba wa kisheria wala hazihakikishi matokeo mahususi.",
+
+"terms.s7.title": "7. Malipo na Mabadiliko ya Wigo",
+"terms.s7.p1": "Pale inapohusika, kazi inaweza kuhitaji malipo ya awali, ya hatua kwa hatua, au kwa awamu. Ukiomba kazi iliyo nje ya wigo uliokubaliwa, tunaweza kuichukulia kama kazi ya ziada na kutoa bei tofauti.",
+
+"terms.s8.title": "8. Haki Miliki",
+"terms.s8.p1": "Isipokuwa tukubaliane vinginevyo kwa maandishi, maudhui yote ya tovuti, vipengele vya chapa, nyaraka, vipande vya msimbo, mifumo ya programu, na nyenzo za usanifu hubaki kuwa mali ya kiakili ya MLUE TECHNOLOGY.",
+"terms.s8.p2": "Hurusiwi kunakili, kuzalisha tena, kurekebisha, au kusambaza maudhui au kazi zetu isipokuwa pale inaporuhusiwa na makubaliano ya maandishi au sheria husika.",
+
+"terms.s9.title": "9. Kanusho la Huduma",
+"terms.s9.p1": "Tunatumia uangalifu unaofaa na mbinu za kitaalamu za sekta katika kujenga na kudumisha Huduma zetu, lakini hatuhakikishi utendakazi usiokatizwa, utendaji usio na hitilafu, au ulinzi kamili dhidi ya udanganyifu, matumizi mabaya, au hitilafu za kiufundi.",
+"terms.s9.p2": "Unawajibika kwa namna unavyotumia Huduma na kwa maamuzi yako mwenyewe ya ndani ya biashara, kisheria, na uzingatiaji wa taratibu.",
+
+"terms.s10.title": "10. Huduma za Wahusika Wengine",
+"terms.s10.p1": "Tovuti yetu inaweza kutegemea watoa huduma wengine wa hosting, huduma za uchakataji wa fomu, APIs za kivinjari, au huduma nyingine za nje. Hatuwajibiki kwa kukatika kwa huduma, ucheleweshaji, au matatizo yanayosababishwa na wahusika hao.",
+
+"terms.s11.title": "11. Kikomo cha Dhima",
+"terms.s11.p1": "Kwa kiwango kamili kinachoruhusiwa na sheria, MLUE TECHNOLOGY haiwajibiki kwa hasara zisizo za moja kwa moja, za bahati mbaya, maalum, au zinazofuata, ikiwemo kupotea kwa faida, data, au kukatizwa kwa biashara, zinazotokana na matumizi yako au kutoweza kutumia Huduma.",
+
+"terms.s12.title": "12. Kusimamisha na Kusitisha Huduma",
+"terms.s12.p1": "Tunaweza kusimamisha au kusitisha ufikiaji wa Huduma ikiwa tunaamini kwa msingi wa busara kuwa Masharti haya yamekiukwa au tovuti inatumiwa vibaya.",
+
+"terms.s13.title": "13. Mabadiliko ya Masharti Haya",
+"terms.s13.p1": "Tunaweza kusasisha Masharti haya mara kwa mara. Kuendelea kutumia Huduma baada ya masasisho kuchapishwa kunamaanisha unakubali Masharti yaliyorekebishwa.",
+
+"terms.s14.title": "14. Sheria Inayotumika",
+"terms.s14.p1": "Masharti haya yanasimamiwa na kutafsiriwa kwa mujibu wa sheria za Jamhuri ya Muungano wa Tanzania.",
+
+"terms.s15.title": "15. Taarifa za Mawasiliano",
+"terms.s15.p1.prefix": "Ikiwa una maswali kuhusu Masharti haya, tafadhali wasiliana nasi kupitia ",
+"terms.s15.p1.suffix": ".",
+
+"terms.footerNote": "Masharti haya yanapaswa kusomwa pamoja na Sera yetu ya Faragha, inayoeleza jinsi taarifa zinavyoshughulikiwa unapokuwa unatumia tovuti na huduma zinazohusiana."
 
   }
 };
