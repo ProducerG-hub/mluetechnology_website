@@ -12,75 +12,1180 @@
   
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="icon" type="image/webp" href="../../../assets/favicon/favicon.webp" />
-</head>
-<body>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+  <style>
+/* =========================================================
+   SMART INVENTORY CASE STUDY
+   Page-specific styling only
+   ========================================================= */
 
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="/" class="logo-link" aria-label="MLUE Technology Home">
-        <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+.inventory-case-study {
+  --inv-ink: #0b1220;
+  --inv-muted: #64748b;
+  --inv-border: rgba(15, 23, 42, 0.08);
+  --inv-cyan: #00e5ff;
+  --inv-cyan-soft: rgba(0, 229, 255, 0.10);
+  --inv-blue: #1976d2;
+  --inv-dark: #0a0a12;
+}
+
+
+/* =========================================================
+   PAGE SURFACE
+   ========================================================= */
+
+.inventory-case-study main {
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(0, 229, 255, 0.08),
+      transparent 28rem
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7fbff 55%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   BREADCRUMB / HEADER SPACING
+   ========================================================= */
+
+.inventory-case-study .cs-breadcrumbs {
+  position: relative;
+  z-index: 1;
+  padding-top: 125px;
+}
+
+.inventory-case-study .cs-hero {
+  position: relative;
+  padding-top: 45px;
+}
+
+
+/* Breadcrumb itself */
+
+.inventory-case-study .inventory-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  padding: 11px 16px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.05);
+
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.inventory-case-study .inventory-breadcrumb a {
+  color: var(--gray-600);
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.inventory-case-study .inventory-breadcrumb a:hover {
+  color: var(--blue-600);
+}
+
+.inventory-case-study .inventory-breadcrumb > span {
+  color: var(--gray-400);
+}
+
+.inventory-case-study .inventory-breadcrumb__current {
+  color: var(--gray-900) !important;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.inventory-case-study .cs-hero {
+  padding-bottom: 88px;
+}
+
+.inventory-case-study .cs-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(25, 118, 210, 0.07),
+      transparent 24rem
+    );
+}
+
+.inventory-case-study .cs-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.inventory-case-study .cs-hero__title {
+  max-width: 900px;
+
+  font-size: clamp(2.4rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+
+  color: var(--inv-ink);
+
+  margin-bottom: 24px;
+}
+
+.inventory-case-study .cs-hero__summary {
+  max-width: 820px;
+
+  font-size: 1.08rem;
+  line-height: 1.85;
+
+  color: var(--inv-muted);
+
+  margin-bottom: 42px;
+}
+
+.inventory-case-study .cs-hero__image-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: var(--inv-dark);
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.16),
+    0 0 0 1px rgba(0, 229, 255, 0.04);
+}
+
+.inventory-case-study .cs-hero__image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 229, 255, 0.08),
+      transparent 35%,
+      rgba(25, 118, 210, 0.08)
+    );
+}
+
+.inventory-case-study .cs-hero__image-wrapper img {
+  display: block;
+  width: 100%;
+
+  transition:
+    transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+
+.inventory-case-study .cs-hero__image-wrapper:hover img {
+  transform: scale(1.015);
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.inventory-case-study .cs-gallery__item {
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.inventory-case-study .cs-gallery__item:hover {
+  transform: translateY(-6px);
+}
+
+.inventory-case-study .cs-gallery__img {
+  border-radius: 22px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.09);
+}
+
+
+/* =========================================================
+   TABS
+   ========================================================= */
+
+.inventory-case-study .cs-tabs-container {
+  max-width: 980px;
+}
+
+.inventory-case-study .cs-tabs-nav {
+  position: sticky;
+  top: 90px;
+  z-index: 20;
+
+  padding: 7px;
+  gap: 6px;
+
+  background: rgba(10, 10, 18, 0.94);
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.14);
+
+  backdrop-filter: blur(18px);
+}
+
+.inventory-case-study .cs-tab-btn {
+  min-height: 44px;
+  padding: 10px 16px;
+
+  border-radius: 12px;
+
+  color: rgba(255,255,255,0.70);
+
+  font-weight: 600;
+  font-size: 0.88rem;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.inventory-case-study .cs-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.07);
+}
+
+.inventory-case-study .cs-tab-btn.active {
+  color: #071018;
+  background: var(--inv-cyan);
+
+  box-shadow:
+    0 8px 20px rgba(0, 229, 255, 0.20);
+}
+
+.inventory-case-study .cs-tab-panel {
+  animation: inventory-panel-in 0.35s ease;
+}
+
+@keyframes inventory-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+   ========================================================= */
+
+.inventory-case-study .cs-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 28px;
+}
+
+.inventory-case-study .cs-feature-card {
+  position: relative;
+
+  min-height: 130px;
+  padding: 22px;
+
+  border: 1px solid var(--inv-border);
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.82);
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.045);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.inventory-case-study .cs-feature-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--inv-cyan),
+      var(--inv-blue)
+    );
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.3s ease;
+}
+
+.inventory-case-study .cs-feature-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(0, 229, 255, 0.28);
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.10);
+}
+
+.inventory-case-study .cs-feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.inventory-case-study .cs-feature-card h3 {
+  color: var(--inv-ink);
+
+  font-size: 0.98rem;
+  line-height: 1.45;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.inventory-case-study .cs-feature-card p {
+  color: var(--inv-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   SUBSECTION TITLE
+   ========================================================= */
+
+.inventory-case-study .cs-subsection-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+
+  color: var(--gray-900);
+
+  margin: 32px 0 16px;
+}
+
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.inventory-case-study .cs-cta {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0,229,255,0.12),
+      transparent 30rem
+    ),
+    linear-gradient(
+      180deg,
+      #f7fbff 0%,
+      #ffffff 100%
+    );
+}
+
+.inventory-case-study .cs-cta .btn--primary {
+  min-width: 180px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .inventory-case-study .cs-breadcrumbs {
+    padding-top: 105px;
+  }
+
+  .inventory-case-study .cs-hero {
+    padding-top: 30px;
+    padding-bottom: 58px;
+  }
+
+  .inventory-case-study .inventory-breadcrumb {
+    width: 100%;
+
+    border-radius: 16px;
+
+    padding: 10px 13px;
+
+    font-size: 0.75rem;
+
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .inventory-case-study .inventory-breadcrumb::-webkit-scrollbar {
+    display: none;
+  }
+
+  .inventory-case-study .cs-hero__title {
+    font-size: clamp(2.25rem, 12vw, 3.4rem);
+  }
+
+  .inventory-case-study .cs-hero__summary {
+    font-size: 1rem;
+  }
+
+  .inventory-case-study .cs-tabs-nav {
+    top: 78px;
+
+    overflow-x: auto;
+    justify-content: flex-start;
+
+    scrollbar-width: none;
+  }
+
+  .inventory-case-study .cs-tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .inventory-case-study .cs-tab-btn {
+    flex: 0 0 auto;
+    font-size: 0.79rem;
+    padding: 9px 13px;
+  }
+
+  .inventory-case-study .cs-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .inventory-case-study .cs-tabs-nav {
+    border-radius: 14px;
+  }
+
+}
+.inventory-case-study .cs-cta .btn--primary {
+  min-width: 180px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TECHNOLOGIES UI
+   ========================================================= */
+
+.inventory-case-study .cs-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 9px 14px;
+
+  color: var(--inv-ink);
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 13px;
+
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.inventory-case-study .cs-tech-badge i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  flex: 0 0 28px;
+
+  font-size: 1.55rem;
+}
+
+.inventory-case-study .cs-tech-badge__custom-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  flex: 0 0 28px;
+
+  border-radius: 8px;
+
+  background: rgba(0, 229, 255, 0.10);
+  color: var(--inv-blue);
+
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.inventory-case-study .cs-tech-badge:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(0, 229, 255, 0.28);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(0, 229, 255, 0.06);
+}
+
+
+/* =========================================================
+   TECHNOLOGY PROJECT SNAPSHOT
+   ========================================================= */
+
+.inventory-case-study .cs-tech-info {
+  margin-top: 32px;
+}
+
+.inventory-case-study .cs-tech-info__heading {
+  margin-bottom: 14px;
+
+  color: var(--inv-muted);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.inventory-case-study .cs-tech-info .cs-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+  padding: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(247, 251, 255, 0.98)
+    );
+
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.055);
+}
+
+.inventory-case-study .cs-tech-info .cs-info-item {
+  position: relative;
+
+  min-height: 108px;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 16px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.inventory-case-study .cs-tech-info .cs-info-item:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(0, 229, 255, 0.24);
+
+  box-shadow:
+    0 10px 26px rgba(15, 23, 42, 0.07);
+}
+
+.inventory-case-study .cs-tech-info .cs-info-item__label {
+  margin-bottom: 8px;
+
+  color: var(--inv-muted);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.inventory-case-study .cs-tech-info .cs-info-item__value {
+  color: var(--inv-ink);
+
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.inventory-case-study .cs-challenge-conclusion {
+  margin-top: 24px;
+}
+
+/* =========================================================
+   TECHNOLOGY STACK
+   Same card system as CarryHub
+   ========================================================= */
+
+.inventory-case-study .inventory-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-top: 26px;
+}
+
+.inventory-case-study .inventory-tech-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 88px;
+  padding: 16px 18px;
+
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 26px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.inventory-case-study .inventory-tech-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(0, 229, 255, 0.30);
+
+  box-shadow:
+    0 18px 36px rgba(15, 23, 42, 0.09);
+}
+
+.inventory-case-study .inventory-tech-card__icon {
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+
+  box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.05);
+}
+
+.inventory-case-study .inventory-tech-card__icon img {
+  width: 29px;
+  height: 29px;
+
+  object-fit: contain;
+}
+
+.inventory-case-study .inventory-tech-card__icon--text span {
+  color: var(--inv-blue);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.inventory-case-study .inventory-tech-card__name {
+  color: var(--inv-ink);
+
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.inventory-case-study .inventory-tech-card__type {
+  margin-top: 2px;
+
+  color: var(--inv-muted);
+
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+
+/* Technology responsive */
+
+@media (max-width: 980px) {
+  .inventory-case-study .inventory-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .inventory-case-study .inventory-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-case-study .inventory-tech-card {
+    min-height: 82px;
+  }
+}
+
+
+/* =========================================================
+   TECHNOLOGY RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .inventory-case-study .cs-tech-info .cs-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .inventory-case-study .cs-tech-badges {
+    gap: 8px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .inventory-case-study .cs-tech-badge {
+    min-height: 40px;
+    padding: 8px 12px;
+
+    font-size: 0.82rem;
+  }
+
+  .inventory-case-study .cs-tech-info {
+    margin-top: 26px;
+  }
+
+  .inventory-case-study .cs-tech-info .cs-info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+    padding: 8px;
+
+    border-radius: 18px;
+  }
+
+  .inventory-case-study .cs-tech-info .cs-info-item {
+    min-height: 88px;
+    padding: 16px;
+  }
+}
+
+</style>
+</head>
+<body class="inventory-case-study">
+
+  <!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+
+    <!-- Logo -->
+    <a
+      href="/"
+      class="logo-link"
+      aria-label="MLUE Technology Home"
+    >
+      <span class="logo-text">
+        MLUE <span class="logo-accent">TECHNOLOGY</span>
+      </span>
+    </a>
+
+
+    <!-- Navigation -->
+    <nav class="header__nav" id="nav">
+
+  <a href="/" class="nav-link" data-i18n="nav.home">
+    Home
+  </a>
+
+  <a href="/#about" class="nav-link" data-i18n="nav.about">
+    About Us
+  </a>
+
+  <a href="/#services" class="nav-link" data-i18n="nav.services">
+    Services
+  </a>
+
+  <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">
+    Pricing
+  </a>
+
+  <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+    Contact
+  </a>
+
+  <a
+    href="/projects/"
+    class="nav-link active"
+    data-i18n="nav.projects"
+  >
+    Projects
+  </a>
+
+</nav>
+
+
+    <!-- Header Actions -->
+    <div class="header__actions">
+
+      <!-- Standard CTA -->
+      <a
+        href="/#contact"
+        class="btn btn--primary btn--sm"
+        data-i18n="nav.cta"
+      >
+        Get Started
       </a>
-      <div class="header__actions">
-        <a href="../" class="btn btn--primary btn--sm header__home-btn">Back to Category</a>
+
+
+      <!-- Language Switcher -->
+      <div
+        class="lang-switcher"
+        id="langSwitcher"
+        aria-label="Language selector"
+      >
+
+        <!-- English -->
+        <button
+          type="button"
+          class="lang-btn active"
+          data-lang="en"
+          aria-label="English"
+        >
+          <img
+            src="https://flagcdn.com/gb.svg"
+            alt="UK Flag"
+            class="flag-icon"
+          >
+        </button>
+
+        <span
+          class="lang-divider"
+          aria-hidden="true"
+        >
+          |
+        </span>
+
+        <!-- Swahili -->
+        <button
+          type="button"
+          class="lang-btn"
+          data-lang="sw"
+          aria-label="Swahili"
+        >
+          <img
+            src="https://flagcdn.com/tz.svg"
+            alt="Tanzania Flag"
+            class="flag-icon"
+          >
+        </button>
+
       </div>
+
     </div>
-  </header>
+
+
+    <!-- Mobile Navigation -->
+    <button
+      type="button"
+      class="header__hamburger"
+      id="hamburger"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="nav"
+    >
+      <span class="header__hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <span class="header__hamburger-label" data-i18n="nav.menu">
+        Menu
+      </span>
+    </button>
+
+  </div>
+</header>
+
 
   <main>
-    <!-- 1. Hero Section -->
-    <section class="cs-hero">
-      <div class="container">
-        <div class="cs-hero__meta">
-          <span class="badge badge--industry">Retail & Wholesale</span>
-          <span class="badge badge--status">In Progress</span>
-        </div>
-        <h1 class="cs-hero__title">Smart Inventory Management System</h1>
-        <p class="cs-hero__summary">
-          A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, manage suppliers, and gain real-time insights for smarter business decisions.
-        </p>
-        
-        <div class="cs-hero__image-wrapper">
-          <img src="../../../assets/projects/dash.webp" alt="Smart Inventory System Dashboard" loading="lazy" width="1100" height="650" />
-        </div>
-      </div>
-    </section>
 
-    <!-- 2. Project Gallery Slider -->
-    <section class="cs-section">
-      <div class="container">
-        <div class="cs-gallery">
-          <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/auth.webp" alt="Dashboard Overview" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Authentication</div>
-              <div class="cs-gallery__caption-text">Secure login and user management for the inventory system.</div>
-            </figcaption>
-          </figure>
-          <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/dash.webp" alt="Dashboard Overview" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Dashboard Overview</div>
-              <div class="cs-gallery__caption-text">Real-time overview of inventory levels, sales trends, and overall business performance.</div>
-            </figcaption>
-          </figure>
-          <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/sales.webp" alt="Sales Module" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Sales Module</div>
-              <div class="cs-gallery__caption-text">Records sales transactions while automatically updating inventory across all connected branches.</div>
-            </figcaption>
-          </figure>
-          <figure class="cs-gallery__item">
-            <img src="../../../assets/projects/products.webp" alt="Products Module" class="cs-gallery__img" loading="lazy" />
-            <figcaption>
-              <div class="cs-gallery__caption-title">Products Module</div>
-              <div class="cs-gallery__caption-text">Manage product details, categorize items, and set dynamic pricing structures.</div>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
+    <!-- ===================== BREADCRUMBS ===================== -->
+<section class="cs-breadcrumbs">
+  <div class="container">
+
+    <nav
+      class="inventory-breadcrumb"
+      aria-label="Breadcrumb"
+    >
+
+      <a
+        href="/"
+        data-i18n="nav.home"
+      >
+        Home
+      </a>
+
+      <span aria-hidden="true">›</span>
+
+      <a
+        href="/projects/"
+        data-i18n="nav.projects"
+      >
+        Projects
+      </a>
+
+      <span aria-hidden="true">›</span>
+
+      <a
+        href="/projects/software-solutions/"
+        data-i18n="softwareSolutions.title"
+      >
+        Business Software Solutions
+      </a>
+
+      <span aria-hidden="true">›</span>
+
+      <span
+        class="inventory-breadcrumb__current"
+        data-i18n="inventory.breadcrumb"
+      >
+        Smart Inventory Management System
+      </span>
+
+    </nav>
+
+  </div>
+</section>
+
+    <!-- 1. Hero Section -->
+<section class="cs-hero">
+  <div class="container">
+
+    <div class="cs-hero__meta">
+      <span class="badge badge--industry" data-i18n="inventory.hero.industry">
+        Retail & Wholesale
+      </span>
+
+      <span class="badge badge--status" data-i18n="inventory.hero.status">
+        In Progress
+      </span>
+    </div>
+
+    <h1 class="cs-hero__title" data-i18n="inventory.hero.title">
+      Smart Inventory Management System
+    </h1>
+
+    <p class="cs-hero__summary" data-i18n="inventory.hero.summary">
+      A modern inventory management solution designed to help businesses
+      streamline stock control, monitor inventory movements, manage suppliers,
+      and gain real-time insights for smarter business decisions.
+    </p>
+
+    <div class="cs-hero__image-wrapper">
+      <img
+        src="../../../assets/projects/dash.webp"
+        alt="Smart Inventory System Dashboard"
+        data-i18n-alt="inventory.hero.imageAlt"
+        loading="lazy"
+        width="1100"
+        height="650"
+      />
+    </div>
+
+  </div>
+</section>
+
+    <!-- 2. Project Gallery -->
+<section class="cs-section">
+  <div class="container">
+    <div class="cs-gallery">
+
+      <figure class="cs-gallery__item">
+        <img
+          src="../../../assets/projects/auth.webp"
+          alt="Authentication"
+          data-i18n-alt="inventory.gallery.authentication.imageAlt"
+          class="cs-gallery__img"
+          loading="lazy"
+        />
+        <figcaption>
+          <div
+            class="cs-gallery__caption-title"
+            data-i18n="inventory.gallery.authentication.title"
+          >
+            Authentication
+          </div>
+
+          <div
+            class="cs-gallery__caption-text"
+            data-i18n="inventory.gallery.authentication.description"
+          >
+            Secure login and user management for the inventory system.
+          </div>
+        </figcaption>
+      </figure>
+
+
+      <figure class="cs-gallery__item">
+        <img
+          src="../../../assets/projects/dash.webp"
+          alt="Dashboard Overview"
+          data-i18n-alt="inventory.gallery.dashboard.imageAlt"
+          class="cs-gallery__img"
+          loading="lazy"
+        />
+        <figcaption>
+          <div
+            class="cs-gallery__caption-title"
+            data-i18n="inventory.gallery.dashboard.title"
+          >
+            Dashboard Overview
+          </div>
+
+          <div
+            class="cs-gallery__caption-text"
+            data-i18n="inventory.gallery.dashboard.description"
+          >
+            Real-time overview of inventory levels, sales trends, and overall
+            business performance.
+          </div>
+        </figcaption>
+      </figure>
+
+
+      <figure class="cs-gallery__item">
+        <img
+          src="../../../assets/projects/sales.webp"
+          alt="Sales Module"
+          data-i18n-alt="inventory.gallery.sales.imageAlt"
+          class="cs-gallery__img"
+          loading="lazy"
+        />
+        <figcaption>
+          <div
+            class="cs-gallery__caption-title"
+            data-i18n="inventory.gallery.sales.title"
+          >
+            Sales Module
+          </div>
+
+          <div
+            class="cs-gallery__caption-text"
+            data-i18n="inventory.gallery.sales.description"
+          >
+            Records sales transactions while automatically updating inventory
+            across all connected branches.
+          </div>
+        </figcaption>
+      </figure>
+
+
+      <figure class="cs-gallery__item">
+        <img
+          src="../../../assets/projects/products.webp"
+          alt="Products Module"
+          data-i18n-alt="inventory.gallery.products.imageAlt"
+          class="cs-gallery__img"
+          loading="lazy"
+        />
+        <figcaption>
+          <div
+            class="cs-gallery__caption-title"
+            data-i18n="inventory.gallery.products.title"
+          >
+            Products Module
+          </div>
+
+          <div
+            class="cs-gallery__caption-text"
+            data-i18n="inventory.gallery.products.description"
+          >
+            Manage product details, categorize items, and set dynamic pricing
+            structures.
+          </div>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
 
     <!-- 3. Interactive Tabs Section -->
     <section class="cs-section cs-section--light">
@@ -88,162 +1193,895 @@
         
         <!-- Tab Navigation Buttons -->
         <div class="cs-tabs-nav" role="tablist">
-          <button class="cs-tab-btn active" onclick="switchTab(event, 'overview')" role="tab">Overview</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'solution')" role="tab">Our Solution</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'tech')" role="tab">Technologies</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'impact')" role="tab">Business Impact</button>
-        </div>
+
+  <button
+    class="cs-tab-btn active"
+    onclick="switchTab(event, 'overview')"
+    role="tab"
+    data-i18n="inventory.tabs.overview"
+  >
+    Overview
+  </button>
+
+  <button
+    class="cs-tab-btn"
+    onclick="switchTab(event, 'challenge')"
+    role="tab"
+    data-i18n="inventory.tabs.challenge"
+  >
+    The Challenge
+  </button>
+
+  <button
+    class="cs-tab-btn"
+    onclick="switchTab(event, 'solution')"
+    role="tab"
+    data-i18n="inventory.tabs.solution"
+  >
+    Our Solution
+  </button>
+
+  <button
+    class="cs-tab-btn"
+    onclick="switchTab(event, 'tech')"
+    role="tab"
+    data-i18n="inventory.tabs.technologies"
+  >
+    Technologies
+  </button>
+
+  <button
+    class="cs-tab-btn"
+    onclick="switchTab(event, 'impact')"
+    role="tab"
+    data-i18n="inventory.tabs.impact"
+  >
+    Business Impact
+  </button>
+
+</div>
 
         <!-- Tab Panel 1: Overview -->
-        <div id="overview" class="cs-tab-panel active" role="tabpanel">
-          <h2 class="cs-section-title">Project Overview</h2>
-          <p class="cs-text">
-            Many growing businesses struggle to keep accurate inventory records while maintaining efficient daily operations. Manual stock tracking often results in errors, lost products, delayed reporting, and poor decision-making.
-          </p>
-          <p class="cs-text">
-            The Smart Inventory Management System was developed by MLUE Technology to provide businesses with a centralized platform for managing inventory, suppliers, products, sales, and reporting in real time. The system enables business owners to improve operational efficiency while making informed decisions through accurate and accessible business data.
-          </p>
-        </div>
+        <!-- Tab Panel 1: Overview -->
+<div
+  id="overview"
+  class="cs-tab-panel active"
+  role="tabpanel"
+>
+  <h2 class="cs-section-title" data-i18n="inventory.overview.title">
+    Project Overview
+  </h2>
+
+  <p class="cs-text" data-i18n="inventory.overview.paragraph1">
+    Many growing businesses struggle to keep accurate inventory records
+    while maintaining efficient daily operations. Manual stock tracking
+    often results in errors, lost products, delayed reporting, and poor
+    decision-making.
+  </p>
+
+  <p class="cs-text" data-i18n="inventory.overview.paragraph2">
+    The Smart Inventory Management System was developed by MLUE Technology
+    to provide businesses with a centralized platform for managing
+    inventory, suppliers, products, sales, and reporting in real time.
+    The system enables business owners to improve operational efficiency
+    while making informed decisions through accurate and accessible
+    business data.
+  </p>
+</div>
 
         <!-- Tab Panel 2: Challenge -->
-        <div id="challenge" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">The Business Challenge</h2>
-          <p class="cs-text">
-            Many small and medium-sized businesses still rely on notebooks, spreadsheets, or disconnected systems to manage inventory. As businesses grow, these methods become increasingly difficult to maintain and often lead to:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Inaccurate stock records</li>
-            <li>Inventory losses and stock discrepancies</li>
-            <li>Time-consuming manual reporting</li>
-            <li>Limited visibility into business performance</li>
-            <li>Poor inventory planning and purchasing decisions</li>
-          </ul>
-          <p class="cs-text" style="margin-top: 24px;">
-            Without reliable inventory data, business owners struggle to make confident operational and financial decisions.
-          </p>
-        </div>
+        <!-- Tab Panel 2: Challenge -->
+<div
+  id="challenge"
+  class="cs-tab-panel"
+  role="tabpanel"
+>
+  <h2 class="cs-section-title" data-i18n="inventory.challenge.title">
+    The Business Challenge
+  </h2>
+
+  <p class="cs-text" data-i18n="inventory.challenge.introduction">
+    Many small and medium-sized businesses still rely on notebooks,
+    spreadsheets, or disconnected systems to manage inventory. As
+    businesses grow, these methods become increasingly difficult to
+    maintain and often lead to:
+  </p>
+
+  <ul class="cs-impact-list">
+    <li data-i18n="inventory.challenge.item1">
+      Inaccurate stock records
+    </li>
+
+    <li data-i18n="inventory.challenge.item2">
+      Inventory losses and stock discrepancies
+    </li>
+
+    <li data-i18n="inventory.challenge.item3">
+      Time-consuming manual reporting
+    </li>
+
+    <li data-i18n="inventory.challenge.item4">
+      Limited visibility into business performance
+    </li>
+
+    <li data-i18n="inventory.challenge.item5">
+      Poor inventory planning and purchasing decisions
+    </li>
+  </ul>
+
+  <p
+  class="cs-text cs-challenge-conclusion"
+  data-i18n="inventory.challenge.conclusion"
+  >
+    Without reliable inventory data, business owners struggle to make
+    confident operational and financial decisions.
+  </p>
+</div>
 
         <!-- Tab Panel 3: Solution -->
-        <div id="solution" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Our Solution & Key Features</h2>
-          <p class="cs-text">
-            MLUE Technology designed and developed a centralized inventory management platform that automates inventory operations from product registration to stock movement tracking and reporting.
-          </p>
-          <p class="cs-text">
-            The system provides real-time visibility into inventory levels, supplier information, sales activities, and business performance through an intuitive web-based interface. By automating routine processes, businesses can reduce manual work, improve accuracy, and make faster, data-driven decisions.
-          </p>
+        <!-- Tab Panel 3: Solution -->
+<div
+  id="solution"
+  class="cs-tab-panel"
+  role="tabpanel"
+>
+  <h2 class="cs-section-title" data-i18n="inventory.solution.title">
+    Our Solution & Key Features
+  </h2>
 
-          <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 32px 0 16px;">Key System Features</h3>
-          <div class="cs-features-grid">
-            <div class="cs-feature-card">
-              <h3>Product & Category</h3>
-              <p>Comprehensive management of items, specifications, and hierarchical categorizations.</p>
-            </div>
-            <div class="cs-feature-card">
-              <h3>Supplier & Customer</h3>
-              <p>Maintain detailed profiles and interactions for smooth procurement and sales workflows.</p>
-            </div>
-            <div class="cs-feature-card">
-              <h3>Tracking & Movement</h3>
-              <p>Real-time stock monitoring and detailed logs of all inventory movements across operations.</p>
-            </div>
-            <div class="cs-feature-card">
-              <h3>Security & Roles</h3>
-              <p>Secure authentication with role-based access control and responsive administration dashboards.</p>
-            </div>
-          </div>
-        </div>
+  <p class="cs-text" data-i18n="inventory.solution.paragraph1">
+    MLUE Technology designed and developed a centralized inventory
+    management platform that automates inventory operations from product
+    registration to stock movement tracking and reporting.
+  </p>
+
+  <p class="cs-text" data-i18n="inventory.solution.paragraph2">
+    The system provides real-time visibility into inventory levels,
+    supplier information, sales activities, and business performance
+    through an intuitive web-based interface. By automating routine
+    processes, businesses can reduce manual work, improve accuracy,
+    and make faster, data-driven decisions.
+  </p>
+
+  <h3
+  class="cs-subsection-title"
+  data-i18n="inventory.solution.featuresTitle"
+>
+  Key System Features
+</h3>
+
+  <div class="cs-features-grid">
+
+    <div class="cs-feature-card">
+      <h3 data-i18n="inventory.solution.feature1.title">
+        Product & Category
+      </h3>
+
+      <p data-i18n="inventory.solution.feature1.description">
+        Comprehensive management of items, specifications, and hierarchical
+        categorizations.
+      </p>
+    </div>
+
+
+    <div class="cs-feature-card">
+      <h3 data-i18n="inventory.solution.feature2.title">
+        Supplier & Customer
+      </h3>
+
+      <p data-i18n="inventory.solution.feature2.description">
+        Maintain detailed profiles and interactions for smooth procurement
+        and sales workflows.
+      </p>
+    </div>
+
+
+    <div class="cs-feature-card">
+      <h3 data-i18n="inventory.solution.feature3.title">
+        Tracking & Movement
+      </h3>
+
+      <p data-i18n="inventory.solution.feature3.description">
+        Real-time stock monitoring and detailed logs of all inventory
+        movements across operations.
+      </p>
+    </div>
+
+
+    <div class="cs-feature-card">
+      <h3 data-i18n="inventory.solution.feature4.title">
+        Security & Roles
+      </h3>
+
+      <p data-i18n="inventory.solution.feature4.description">
+        Secure authentication with role-based access control and responsive
+        administration dashboards.
+      </p>
+    </div>
+
+  </div>
+</div>
 
         <!-- Tab Panel 4: Technologies -->
-        <div id="tech" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Technologies Used</h2>
-          <p class="cs-text">Built using an enterprise-grade, modern technology stack ensuring scalability, security, and performance.</p>
-          <div class="cs-tech-badges">
-            <span class="cs-tech-badge">Spring Boot</span>
-            <span class="cs-tech-badge">React</span>
-            <span class="cs-tech-badge">PostgreSQL</span>
-            <span class="cs-tech-badge">JWT Authentication</span>
-            <span class="cs-tech-badge">MapStruct</span>
-            <span class="cs-tech-badge">REST API</span>
-            <span class="cs-tech-badge">Maven</span>
-            <span class="cs-tech-badge">CSS3</span>
-            <span class="cs-tech-badge">JavaScript</span>
-          </div>
+        <!-- Tab Panel 4: Technologies -->
+<div
+  id="tech"
+  class="cs-tab-panel"
+  role="tabpanel"
+>
+  <h2 class="cs-section-title" data-i18n="inventory.technologies.title">
+    Technologies Used
+  </h2>
 
-          <div style="margin-top: 48px;">
-            <div class="cs-info-grid">
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Industry</div>
-                <div class="cs-info-item__value">Retail & Wholesale</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Category</div>
-                <div class="cs-info-item__value">Business Software</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Platform</div>
-                <div class="cs-info-item__value">Web Application</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Status</div>
-                <div class="cs-info-item__value">In Progress</div>
-              </div>
-            </div>
-          </div>
+  <p class="cs-text" data-i18n="inventory.technologies.description">
+    Built using an enterprise-grade, modern technology stack ensuring
+    scalability, security, and performance.
+  </p>
+
+  <div class="inventory-tech-grid">
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+        alt="Spring Boot"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">Spring Boot</div>
+      <div class="inventory-tech-card__type">Backend Framework</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+        alt="React"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">React</div>
+      <div class="inventory-tech-card__type">Frontend Library</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+        alt="PostgreSQL"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">PostgreSQL</div>
+      <div class="inventory-tech-card__type">Database</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon">
+      <img
+        src="https://cdn.simpleicons.org/jsonwebtokens"
+        alt="JSON Web Tokens"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">JWT Authentication</div>
+      <div class="inventory-tech-card__type">Authentication</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon inventory-tech-card__icon--text">
+      <span>MS</span>
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">MapStruct</div>
+      <div class="inventory-tech-card__type">Object Mapping</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon inventory-tech-card__icon--text">
+      <span>API</span>
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">REST API</div>
+      <div class="inventory-tech-card__type">API Architecture</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg"
+        alt="Apache Maven"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">Maven</div>
+      <div class="inventory-tech-card__type">Build Tool</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+        alt="CSS3"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">CSS3</div>
+      <div class="inventory-tech-card__type">Styling</div>
+    </div>
+  </article>
+
+
+  <article class="inventory-tech-card">
+    <div class="inventory-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+        alt="JavaScript"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="inventory-tech-card__name">JavaScript</div>
+      <div class="inventory-tech-card__type">Frontend Logic</div>
+    </div>
+  </article>
+
+</div>
+
+  <div class="cs-tech-info">
+
+  <div
+    class="cs-tech-info__heading"
+    data-i18n="inventory.technologies.snapshotTitle"
+  >
+    Project Snapshot
+  </div>
+
+  <div class="cs-info-grid">
+
+      <div class="cs-info-item">
+        <div
+          class="cs-info-item__label"
+          data-i18n="inventory.technologies.industryLabel"
+        >
+          Industry
         </div>
+
+        <div
+          class="cs-info-item__value"
+          data-i18n="inventory.technologies.industryValue"
+        >
+          Retail & Wholesale
+        </div>
+      </div>
+
+
+      <div class="cs-info-item">
+        <div
+          class="cs-info-item__label"
+          data-i18n="inventory.technologies.categoryLabel"
+        >
+          Category
+        </div>
+
+        <div
+          class="cs-info-item__value"
+          data-i18n="inventory.technologies.categoryValue"
+        >
+          Business Software
+        </div>
+      </div>
+
+
+      <div class="cs-info-item">
+        <div
+          class="cs-info-item__label"
+          data-i18n="inventory.technologies.platformLabel"
+        >
+          Platform
+        </div>
+
+        <div
+          class="cs-info-item__value"
+          data-i18n="inventory.technologies.platformValue"
+        >
+          Web Application
+        </div>
+      </div>
+
+
+      <div class="cs-info-item">
+        <div
+          class="cs-info-item__label"
+          data-i18n="inventory.technologies.statusLabel"
+        >
+          Status
+        </div>
+
+        <div
+          class="cs-info-item__value"
+          data-i18n="inventory.technologies.statusValue"
+        >
+          In Progress
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
         <!-- Tab Panel 5: Impact -->
-        <div id="impact" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Business Impact</h2>
-          <p class="cs-text">
-            The solution helps businesses achieve operational excellence and sustainable growth:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Improve inventory accuracy across all operations</li>
-            <li>Reduce manual record keeping and human error</li>
-            <li>Monitor stock levels in real time</li>
-            <li>Generate business reports instantly</li>
-            <li>Improve purchasing decisions based on hard data</li>
-            <li>Increase overall operational efficiency</li>
-            <li>Centralize business information into a single source of truth</li>
-            <li>Support future business growth and branch expansions</li>
-          </ul>
-        </div>
+        <!-- Tab Panel 5: Impact -->
+<div
+  id="impact"
+  class="cs-tab-panel"
+  role="tabpanel"
+>
+  <h2 class="cs-section-title" data-i18n="inventory.impact.title">
+    Business Impact
+  </h2>
+
+  <p class="cs-text" data-i18n="inventory.impact.introduction">
+    The solution helps businesses achieve operational excellence and
+    sustainable growth:
+  </p>
+
+  <ul class="cs-impact-list">
+
+    <li data-i18n="inventory.impact.item1">
+      Improve inventory accuracy across all operations
+    </li>
+
+    <li data-i18n="inventory.impact.item2">
+      Reduce manual record keeping and human error
+    </li>
+
+    <li data-i18n="inventory.impact.item3">
+      Monitor stock levels in real time
+    </li>
+
+    <li data-i18n="inventory.impact.item4">
+      Generate business reports instantly
+    </li>
+
+    <li data-i18n="inventory.impact.item5">
+      Improve purchasing decisions based on hard data
+    </li>
+
+    <li data-i18n="inventory.impact.item6">
+      Increase overall operational efficiency
+    </li>
+
+    <li data-i18n="inventory.impact.item7">
+      Centralize business information into a single source of truth
+    </li>
+
+    <li data-i18n="inventory.impact.item8">
+      Support future business growth and branch expansions
+    </li>
+
+  </ul>
+</div>
 
       </div>
     </section>
 
     <!-- 4. Call To Action -->
-    <section class="cs-cta">
-      <div class="container">
-        <h2 class="cs-section-title" style="margin-bottom: 16px;">Build Smarter Business Software</h2>
-        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
-          Whether you're managing retail stores, warehouses, pharmacies, supermarkets, or wholesale businesses, MLUE Technology can design custom software solutions that improve efficiency, automate operations, and support sustainable business growth. Let's build technology that works for your business.
-        </p>
-        <a href="/#contact" class="btn btn--primary" style="font-size: 1.1rem; padding: 14px 32px;">Contact MLUE Technology</a>
-      </div>
-    </section>
+    <!-- 4. Call To Action -->
+<section class="cs-cta">
+  <div class="container">
+
+    <h2
+      class="cs-section-title"
+      data-i18n="inventory.cta.title"
+    >
+      Build Smarter Business Software
+    </h2>
+
+    <p
+      class="cs-text"
+      data-i18n="inventory.cta.description"
+    >
+      Whether you're managing retail stores, warehouses, pharmacies,
+      supermarkets, or wholesale businesses, MLUE Technology can design
+      custom software solutions that improve efficiency, automate
+      operations, and support sustainable business growth. Let's build
+      technology that works for your business.
+    </p>
+
+    <a
+    href="/#contact"
+    class="btn btn--primary"
+>
+    <span data-i18n="contact.cta">
+        Contact Us
+    </span>
+
+    <span aria-hidden="true">→</span>
+</a>
+
+  </div>
+</section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
+
     <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+
+        <!-- ===================== FOOTER MAIN ===================== -->
+        <div class="footer__main">
+
+
+            <!-- ===================== BRAND ===================== -->
+            <div class="footer__brand">
+
+                <a
+                    href="/"
+                    class="footer__brand-link"
+                    aria-label="MLUE Technology Home"
+                >
+                    <span class="logo-text logo-text--light">
+                        MLUE
+                        <span class="logo-accent">TECHNOLOGY</span>
+                    </span>
+                </a>
+
+                <p
+                    class="footer__tagline"
+                    data-i18n="footer.tagline"
+                >
+                    Engineering modern solutions for modern businesses.
+                </p>
+
+
+                <!-- Social Accounts -->
+                <div
+                    class="footer__social"
+                    aria-label="MLUE Technology social links"
+                >
+
+                    <!-- Facebook -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.facebook.com/share/17RCWJhZbv/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Facebook"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="12"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                f
+                            </text>
+                        </svg>
+                    </a>
+
+
+                    <!-- Instagram -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Instagram"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3.25"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="16.5"
+                                cy="7.5"
+                                r="1"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </a>
+
+
+                    <!-- LinkedIn -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.linkedin.com/in/mlue-technology-063751429?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on LinkedIn"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="10"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                in
+                            </text>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================== EXPLORE ===================== -->
+            <div class="footer__column">
+
+                <h3
+                    class="footer__heading"
+                    data-i18n="footer.quickLinks"
+                >
+                    Explore
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="/" data-i18n="nav.home">
+                        Home
+                    </a>
+
+                    <a href="/#about" data-i18n="nav.about">
+                        About Us
+                    </a>
+
+                    <a href="/#services" data-i18n="nav.services">
+                        Services
+                    </a>
+
+                    <a href="/projects/" data-i18n="nav.projects">
+                        Projects
+                    </a>
+
+                    <a href="/pricing/" data-i18n="nav.pricing">
+                        Pricing
+                    </a>
+
+                    <a href="/#contact" data-i18n="nav.contact">
+                        Contact
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== SERVICES ===================== -->
+            <div class="footer__column">
+
+                <h3 class="footer__heading" data-i18n="footer.services">
+                    Services
+                </h3>
+
+                <nav class="footer__links">
+
+  <a
+    href="/projects/software-solutions/"
+    data-i18n="footer.businessSoftware"
+  >
+    Business Software
+  </a>
+
+  <a
+    href="/projects/software-solutions/"
+    data-i18n="footer.customSoftware"
+  >
+    Custom Software
+  </a>
+
+  <a
+    href="/projects/software-solutions/"
+    data-i18n="footer.apiBackend"
+  >
+    APIs &amp; Backend
+  </a>
+
+  <a
+    href="/projects/software-solutions/"
+    data-i18n="footer.ecommerce"
+  >
+    E-Commerce
+  </a>
+
+  <a
+    href="/projects/location-intelligence/"
+    data-i18n="footer.locationIntelligence"
+  >
+    Location Intelligence
+  </a>
+
+  <a
+    href="/#services"
+    data-i18n="footer.aiSystems"
+  >
+    AI / Intelligent Systems
+  </a>
+
+</nav>
+
+            </div>
+
+
+            <!-- ===================== LET'S TALK ===================== -->
+            <div class="footer__column footer__contact">
+
+                <h3 class="footer__heading" data-i18n="footer.letsTalk">
+                    Let's Talk
+                </h3>
+
+
+                <div class="footer__location">
+
+                    <span class="footer__contact-label" data-i18n="footer.basedIn">
+                        Based in
+                    </span>
+
+                    <strong>
+                        Dar es Salaam, Tanzania
+                    </strong>
+
+                </div>
+
+
+                <a
+  href="https://wa.me/255752804154"
+  class="footer__contact-link"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span data-i18n="footer.whatsapp">
+    WhatsApp
+  </span>
+  <span aria-hidden="true">→</span>
+</a>
+
+
+                <a
+  href="mailto:mluetechnologytz@gmail.com"
+  class="footer__contact-link"
+>
+  <span data-i18n="footer.email">
+    Email
+  </span>
+  <span aria-hidden="true">→</span>
+</a>
+
+            </div>
+
         </div>
-        <div class="footer__links">
-          <h3 class="footer__heading">Quick Links</h3>
-          <a href="/">Home</a>
-          <a href="/projects/">Projects</a>
+
+
+        <!-- ===================== FOOTER BOTTOM ===================== -->
+        <div class="footer__bottom">
+
+            <p>
+                &copy;
+                <span id="footerYear"></span>
+                MLUE Technology.
+                <span data-i18n="footer.rights">
+                    All rights reserved.
+                </span>
+            </p>
+
+
+            <nav class="footer__legal">
+
+                <a
+                    href="/privacy/"
+                    data-i18n="footer.privacy"
+                >
+                    Privacy Policy
+                </a>
+
+                <span aria-hidden="true">·</span>
+
+                <a
+                    href="/terms/"
+                    data-i18n="footer.terms"
+                >
+                    Terms of Service
+                </a>
+
+            </nav>
+
         </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; <span id="footerYear"></span> MLUE Technology. All rights reserved.</p>
-      </div>
+
     </div>
-  </footer>
+
+</footer>
+
+
 
   
   <script>
@@ -259,6 +2097,31 @@
     }
 
     document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    // Mobile navigation
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("nav");
+
+if (hamburger && nav) {
+  hamburger.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+
+    hamburger.classList.toggle("active", isOpen);
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Close menu when a navigation link is clicked
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+}
   </script>
+  <script src="../../../i18n.js"></script>
+  <script src="../../main.js" defer></script>
+  <script src="../chatbot.js" defer></script>
 </body>
 </html>

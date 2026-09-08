@@ -63,24 +63,62 @@
   }
   window.addEventListener("scroll", highlightNav, { passive: true });
 
-  // ---- Scroll reveal ----
-  const revealTargets = document.querySelectorAll(
-    ".about-card, .service-card, .why-card, .mv-card, .contact__info, .contact__form"
-  );
-  revealTargets.forEach(el => el.classList.add("reveal"));
+  
+// ---- Scroll reveal ----
+const revealTargets = document.querySelectorAll(
+  `
+  .about-card,
+  .why-card,
+  .mv-card,
+  .contact__info,
+  .contact__form,
+  .solution,
+  .capability
+  `
+);
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (prefersReducedMotion) {
+
+  // Accessibility: show everything immediately
+  revealTargets.forEach(el => {
+    el.classList.add("visible");
+  });
+
+} else {
+
+  // Add reveal class and create a small stagger
+  revealTargets.forEach((el, index) => {
+    el.classList.add("reveal");
+
+    const delay = Math.min(index * 70, 350);
+    el.style.transitionDelay = `${delay}ms`;
+  });
 
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("visible");
+
+        // We only need to animate an element once
+        observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.15 }
+    {
+      threshold: 0.15
+    }
   );
-  revealTargets.forEach(el => observer.observe(el));
+
+  revealTargets.forEach(el => {
+    observer.observe(el);
+  });
+}
 
   // ---- Toast notification ----
   const toast = document.getElementById("toast");
@@ -89,6 +127,10 @@
   const toastMsg = document.getElementById("toastMsg");
   const toastClose = document.getElementById("toastClose");
   let toastTimer;
+
+  if (toast && toast.parentElement !== document.body) {
+    document.body.appendChild(toast);
+  }
 
   function showToast(type, title, message) {
     if (!toast || !toastIcon || !toastTitle || !toastMsg) return;
@@ -137,6 +179,40 @@
     return selectedTime.getTime() >= Date.now();
   }
 
+  function revealAppointmentContinuation(modal, dateTimeInput) {
+    if (!modal || !isFutureDateTimeValid(dateTimeInput)) return;
+
+    const dialog = modal.querySelector(".appointment-modal__dialog");
+    const purpose = modal.querySelector("#appointmentPurpose");
+    const actions = modal.querySelector(".appointment-modal__actions");
+
+    if (!dialog || !purpose) return;
+
+    const shouldAssistScroll =
+      window.matchMedia("(max-width: 768px)").matches ||
+      dialog.scrollHeight > dialog.clientHeight + 2;
+
+    if (!shouldAssistScroll) return;
+
+    window.setTimeout(() => {
+      const target = purpose.closest(".form-group") || purpose;
+
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "center"
+      });
+
+      if (actions && window.matchMedia("(max-width: 480px)").matches) {
+        window.setTimeout(() => {
+          actions.scrollIntoView({
+            behavior: "auto",
+            block: "nearest"
+          });
+        }, prefersReducedMotion ? 0 : 220);
+      }
+    }, 120);
+  }
+
   function submitLeadForm(form, options) {
     const submitButton = form.querySelector("button[type=submit]");
     if (!submitButton) return;
@@ -164,12 +240,13 @@
         throw new Error("Server error");
       }
 
-      showToast("success", successTitle, successMessage);
       form.reset();
 
-      if (typeof options.onSuccess === "function") {
-        options.onSuccess();
-      }
+if (typeof options.onSuccess === "function") {
+    options.onSuccess();
+}
+
+showToast("success", successTitle, successMessage);
     })
     .catch(() => {
       showToast("error", errorTitle, errorMessage);
@@ -216,84 +293,186 @@
 
     if (!modal) return;
 
-    document.querySelectorAll("[data-open-appointment-modal]").forEach(trigger => {
-      trigger.addEventListener("click", () => openModal(modal, trigger));
-    });
+
+    // ---------------------------------------------------
+    // Open appointment modal
+    // ---------------------------------------------------
+
+    document
+        .querySelectorAll("[data-open-appointment-modal]")
+        .forEach(trigger => {
+
+            trigger.addEventListener("click", () => {
+                openModal(modal, trigger);
+            });
+
+        });
+
+
+    // ---------------------------------------------------
+    // Close by clicking backdrop
+    // ---------------------------------------------------
 
     modal.addEventListener("click", event => {
-      if (event.target === modal || event.target.hasAttribute("data-modal-close")) {
-        closeModal(modal);
-      }
-    });
 
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && modal.classList.contains("is-open")) {
-        closeModal(modal);
-      }
-    });
-
-    if (form) {
-      form.addEventListener("submit", event => {
-        event.preventDefault();
-
-        const dateTimeInput = form.querySelector("#appointmentDateTime");
-        if (!isFutureDateTimeValid(dateTimeInput)) {
-          showToast(
-            "error",
-            getCurrentLang() === "sw" ? "Chagua muda ujao" : "Choose a future time",
-            getCurrentLang() === "sw"
-              ? "Tafadhali weka tarehe na saa ambayo haijapita."
-              : "Please select a date and time that has not already passed."
-          );
-          if (dateTimeInput) {
-            dateTimeInput.focus({ preventScroll: true });
-          }
-          return;
+        if (event.target === modal) {
+            closeModal(modal);
         }
 
-        submitLeadForm(form, {
-          loadingText: {
-            en: "Booking...",
-            sw: "Inatuma..."
-          },
-          successTitle: {
-            en: "Appointment Requested!",
-            sw: "Ombi Limetumwa!"
-          },
-          successMessage: {
-            en: "Your appointment request has been sent to our team.",
-            sw: "Ombi lako la miadi limetumwa kwa timu yetu."
-          },
-          errorTitle: {
-            en: "Failed to Send",
-            sw: "Imeshindikana"
-          },
-          errorMessage: {
-            en: "We could not send your appointment request. Please try again.",
-            sw: "Hatukuweza kutuma ombi lako la miadi. Tafadhali jaribu tena."
-          },
-          onSuccess: () => closeModal(modal)
-        });
-      });
-    }
-  }
+    });
 
-  wireAppointmentModal();
+
+    // ---------------------------------------------------
+    // Close buttons — X and Cancel
+    // ---------------------------------------------------
+
+    modal
+        .querySelectorAll("[data-modal-close]")
+        .forEach(closeButton => {
+
+            closeButton.addEventListener("click", () => {
+                closeModal(modal);
+            });
+
+        });
+
+
+    // ---------------------------------------------------
+    // Close with Escape
+    // ---------------------------------------------------
+
+    document.addEventListener("keydown", event => {
+
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("is-open")
+        ) {
+            closeModal(modal);
+        }
+
+    });
+
+
+    // ---------------------------------------------------
+    // Appointment form submission
+    // ---------------------------------------------------
+
+    if (form) {
+
+        const dateTimeInput =
+            form.querySelector("#appointmentDateTime");
+
+        if (dateTimeInput) {
+
+            dateTimeInput.addEventListener("change", () => {
+                revealAppointmentContinuation(modal, dateTimeInput);
+            });
+
+        }
+
+        form.addEventListener("submit", event => {
+
+            event.preventDefault();
+
+
+            // 1. Check required fields
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+
+            // 2. Check appointment date/time
+            if (!isFutureDateTimeValid(dateTimeInput)) {
+
+                showToast(
+                    "error",
+
+                    getCurrentLang() === "sw"
+                        ? "Chagua muda ujao"
+                        : "Choose a future time",
+
+                    getCurrentLang() === "sw"
+                        ? "Tafadhali weka tarehe na saa ambayo haijapita."
+                        : "Please select a date and time that has not already passed."
+                );
+
+
+                if (dateTimeInput) {
+
+                    dateTimeInput.focus({
+                        preventScroll: true
+                    });
+
+                }
+
+                return;
+            }
+
+
+            // 3. Submit appointment
+            submitLeadForm(form, {
+
+                loadingText: {
+                    en: "Booking...",
+                    sw: "Inatuma..."
+                },
+
+
+                successTitle: {
+    en: "Appointment Request Sent",
+    sw: "Ombi la Miadi Limetumwa"
+},
+
+successMessage: {
+    en: "Thank you. Your appointment request has been sent successfully. Our team will review it and get back to you shortly.",
+    sw: "Asante. Ombi lako la miadi limetumwa kikamilifu. Timu yetu italipitia na tutawasiliana nawe hivi karibuni."
+},
+
+
+                errorTitle: {
+                    en: "Failed to Send",
+                    sw: "Imeshindikana"
+                },
+
+
+                errorMessage: {
+                    en: "We could not send your appointment request. Please try again.",
+                    sw: "Hatukuweza kutuma ombi lako la miadi. Tafadhali jaribu tena."
+                },
+
+
+                onSuccess: () => {
+                    closeModal(modal);
+                }
+
+            });
+
+        });
+
+    }
+
+} // <-- IMPORTANT: closes wireAppointmentModal()
+
+
+wireAppointmentModal();
 
   // ---- Contact form — Email (Formsubmit.co) + WhatsApp ----
   const WHATSAPP_NUMBER = "255752804154";
 
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const name = form.querySelector("#name").value.trim();
-      const email = form.querySelector("#email").value.trim();
-      const message = form.querySelector("#message").value.trim();
+  const contactForm = document.getElementById("contactForm");
 
-      if (!name || !email || !message) return;
+if (contactForm) {
+    contactForm.addEventListener("submit", e => {
+        e.preventDefault();
 
-      submitLeadForm(form, {
+        const name = contactForm.querySelector("#name").value.trim();
+        const email = contactForm.querySelector("#email").value.trim();
+        const message = contactForm.querySelector("#message").value.trim();
+
+        if (!name || !email || !message) return;
+
+        submitLeadForm(contactForm, {
         loadingText: {
           en: "Sending...",
           sw: "Inatuma..."
@@ -318,96 +497,452 @@
     });
   }
 
-  // ---- Hero Canvas — Network / node animation ----
-  const canvas = document.getElementById("heroCanvas");
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
-    let w, h, nodes;
-    let heroConfig = getHeroCanvasConfig();
+    // ===================================================
+  // Engineering Team — Bento Profile
+  // ===================================================
 
-    function getHeroCanvasConfig() {
-      return mobileQuery.matches
-        ? { nodeCount: 22, maxDist: 96, velocity: 0.35, radiusMin: 0.9, radiusMax: 1.7 }
-        : { nodeCount: 60, maxDist: 140, velocity: 0.5, radiusMin: 1, radiusMax: 3 };
+  const teamMembers = {
+  david: {
+    name: "David F Mwakajonga",
+
+    en: {
+      role: "Frontend Engineering & UI/UX",
+      description:
+        "Focused on crafting polished digital experiences and engineering intelligent systems that turn complex business problems into usable solutions.",
+      skills: [
+        "UI / UX",
+        "Frontend Engineering",
+        "Decision Support",
+        "Expert Systems"
+      ]
+    },
+
+    sw: {
+      role: "Uhandisi wa Frontend na UI/UX",
+      description:
+        "Analenga kutengeneza uzoefu bora wa kidijitali na mifumo yenye akili inayobadilisha changamoto ngumu za biashara kuwa suluhisho zinazoweza kutumika.",
+      skills: [
+        "UI / UX",
+        "Uhandisi wa Frontend",
+        "Msaada wa Kufanya Maamuzi",
+        "Mifumo ya Kitaalam"
+      ]
     }
+  },
 
-    function resize() {
-      w = canvas.width = canvas.offsetWidth;
-      h = canvas.height = canvas.offsetHeight;
+  gwamaka: {
+    name: "Gwamaka A Mwakabuta",
+
+    en: {
+      role: "Backend Engineering & System Logic",
+      description:
+        "Focused on backend architecture, business logic, and reliable system foundations that connect applications, services, and real-world business processes.",
+      skills: [
+        "Backend Architecture",
+        "Business Logic",
+        "APIs",
+        "GIS"
+      ]
+    },
+
+    sw: {
+      role: "Uhandisi wa Backend na Mantiki ya Mfumo",
+      description:
+        "Analenga usanifu wa backend, mantiki ya biashara, na misingi imara ya mifumo inayounganisha programu, huduma, na michakato halisi ya biashara.",
+      skills: [
+        "Usanifu wa Backend",
+        "Mantiki ya Biashara",
+        "API",
+        "GIS"
+      ]
     }
+  },
 
-    function createNodes() {
-      heroConfig = getHeroCanvasConfig();
-      nodes = [];
-      for (let i = 0; i < heroConfig.nodeCount; i++) {
-        nodes.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          vx: (Math.random() - 0.5) * heroConfig.velocity,
-          vy: (Math.random() - 0.5) * heroConfig.velocity,
-          r: Math.random() * (heroConfig.radiusMax - heroConfig.radiusMin) + heroConfig.radiusMin
-        });
-      }
-    }
+  stephane: {
+    name: "Stephane H Chibwaye",
 
-    function draw() {
-      const { maxDist } = heroConfig;
-      ctx.clearRect(0, 0, w, h);
+    en: {
+      role: "Data & Database Engineering",
+      description:
+        "Focused on database architecture, data management, and API-driven systems that make information reliable, accessible, and useful across applications.",
+      skills: [
+        "Database Systems",
+        "Data Management",
+        "APIs",
+        "Data Integration"
+      ]
+    },
 
-      // Draw connections
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < maxDist) {
-            const alpha = 1 - dist / maxDist;
-            ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `rgba(21,101,192,${alpha * 0.25})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw nodes
-      nodes.forEach(n => {
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(21,101,192,0.35)";
-        ctx.fill();
-      });
-
-      // Move nodes
-      nodes.forEach(n => {
-        n.x += n.vx;
-        n.y += n.vy;
-        if (n.x < 0 || n.x > w) n.vx *= -1;
-        if (n.y < 0 || n.y > h) n.vy *= -1;
-      });
-
-      requestAnimationFrame(draw);
-    }
-
-    resize();
-    createNodes();
-    draw();
-    window.addEventListener("resize", () => {
-      resize();
-      createNodes();
-    }, { passive: true });
-
-    const refreshForBreakpoint = () => {
-      createNodes();
-    };
-
-    if (typeof mobileQuery.addEventListener === "function") {
-      mobileQuery.addEventListener("change", refreshForBreakpoint);
-    } else if (typeof mobileQuery.addListener === "function") {
-      mobileQuery.addListener(refreshForBreakpoint);
+    sw: {
+      role: "Uhandisi wa Data na Hifadhidata",
+      description:
+        "Analenga usanifu wa hifadhidata, usimamizi wa data, na mifumo inayoendeshwa na API inayofanya taarifa ziwe za kuaminika, zinazopatikana, na zenye manufaa katika programu mbalimbali.",
+      skills: [
+        "Mifumo ya Hifadhidata",
+        "Usimamizi wa Data",
+        "API",
+        "Ujumuishaji wa Data"
+      ]
     }
   }
+};
+
+document.addEventListener(
+  "mlue-language-changed",
+  () => {
+
+    const activeMember =
+      document.querySelector(".team-member--active");
+
+    if (!activeMember) return;
+
+    updateTeamProfile(
+      activeMember.dataset.member
+    );
+
+  }
+);
+
+
+  const teamButtons = document.querySelectorAll(".team-member");
+
+  const teamProfile = document.getElementById("team-profile");
+
+  const teamProfileName =
+    document.getElementById("team-profile-name");
+
+  const teamProfileRole =
+    document.getElementById("team-profile-role");
+
+  const teamProfileDescription =
+    document.getElementById("team-profile-description");
+
+  const teamProfileSkills =
+    document.getElementById("team-profile-skills");
+
+
+  // Stop here if the Team Bento section is not on the page
+  if (
+    teamButtons.length > 0 &&
+    teamProfile &&
+    teamProfileName &&
+    teamProfileRole &&
+    teamProfileDescription &&
+    teamProfileSkills
+  ) {
+
+    function updateTeamProfile(memberId) {
+
+  const member = teamMembers[memberId];
+
+  if (!member) return;
+
+  // Current language comes from the <html lang="..."> attribute
+  const lang = document.documentElement.lang === "sw" ? "sw" : "en";
+
+  const profile = member[lang];
+
+  if (!profile) return;
+
+
+  // -----------------------------------------------
+  // Update active Bento member
+  // -----------------------------------------------
+
+  teamButtons.forEach(button => {
+
+    const isActive =
+      button.dataset.member === memberId;
+
+    button.classList.toggle(
+      "team-member--active",
+      isActive
+    );
+
+    button.setAttribute(
+      "aria-pressed",
+      String(isActive)
+    );
+
+  });
+
+
+  // -----------------------------------------------
+  // Update profile information
+  // -----------------------------------------------
+
+  teamProfileName.textContent = member.name;
+
+  teamProfileRole.textContent = profile.role;
+
+  teamProfileDescription.textContent =
+    profile.description;
+
+
+  // -----------------------------------------------
+  // Update specialization tags
+  // -----------------------------------------------
+
+  teamProfileSkills.innerHTML = "";
+
+  profile.skills.forEach(skill => {
+
+    const skillElement =
+      document.createElement("span");
+
+    skillElement.textContent = skill;
+
+    teamProfileSkills.appendChild(skillElement);
+
+  });
+
+
+  // -----------------------------------------------
+  // Small profile transition
+  // -----------------------------------------------
+
+  teamProfile.classList.remove(
+    "team-profile--updated"
+  );
+
+  window.requestAnimationFrame(() => {
+
+    teamProfile.classList.add(
+      "team-profile--updated"
+    );
+
+  });
+
+}
+
+
+    // =================================================
+    // Mouse / Click Interaction
+    // =================================================
+
+    teamButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const memberId =
+          button.dataset.member;
+
+        updateTeamProfile(memberId);
+
+      });
+
+    });
+
+
+    // =================================================
+    // Keyboard Navigation
+    // =================================================
+
+    teamButtons.forEach((button, index) => {
+
+      button.addEventListener("keydown", event => {
+
+        let nextIndex = null;
+
+
+        if (event.key === "ArrowRight") {
+
+          nextIndex =
+            (index + 1) % teamButtons.length;
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+          nextIndex =
+            (index - 1 + teamButtons.length) %
+            teamButtons.length;
+
+        }
+
+
+        if (event.key === "Home") {
+
+          nextIndex = 0;
+
+        }
+
+
+        if (event.key === "End") {
+
+          nextIndex =
+            teamButtons.length - 1;
+
+        }
+
+
+        if (nextIndex !== null) {
+
+          event.preventDefault();
+
+          const nextButton =
+            teamButtons[nextIndex];
+
+          nextButton.focus();
+
+          updateTeamProfile(
+            nextButton.dataset.member
+          );
+
+        }
+
+      });
+
+    });
+
+
+    // =================================================
+    // Initialize Active Member
+    // =================================================
+
+    const initialMember =
+      document.querySelector(
+        ".team-member--active"
+      );
+
+    if (initialMember) {
+
+      updateTeamProfile(
+        initialMember.dataset.member
+      );
+
+    } else {
+
+      updateTeamProfile(
+        teamButtons[0].dataset.member
+      );
+
+    }
+
+  }
+
+  // ---- Hero Interactive Aurora Mesh ----
+  const heroSection = document.getElementById("home");
+  const orbWrappers = document.querySelectorAll(".orb-wrapper");
+
+  if (heroSection && orbWrappers.length > 0) {
+    heroSection.addEventListener("mousemove", (e) => {
+      // Calculate mouse position relative to center of the hero section
+      const rect = heroSection.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      orbWrappers.forEach((wrapper, index) => {
+        // Different depth multipliers for 3D parallax effect
+        const depth = (index + 1) * 0.04; 
+        
+        // Update CSS variables for translation
+        wrapper.style.setProperty("--mouse-x", `${x * depth}px`);
+        wrapper.style.setProperty("--mouse-y", `${y * depth}px`);
+      });
+    });
+    
+
+    // Reset smoothly when mouse leaves
+    heroSection.addEventListener("mouseleave", () => {
+      orbWrappers.forEach(wrapper => {
+        wrapper.style.setProperty("--mouse-x", "0px");
+        wrapper.style.setProperty("--mouse-y", "0px");
+      });
+    });
+  }
 })();
+
+// ---- Language Switcher Visual Toggle ----
+  const langBtns = document.querySelectorAll(".lang-btn");
+  
+  if (langBtns.length > 0) {
+    langBtns.forEach(btn => {
+      btn.addEventListener("click", function() {
+        // Remove active class from all buttons
+        langBtns.forEach(b => b.classList.remove("active"));
+        
+        // Add active class to the clicked button
+        this.classList.add("active");
+        
+        // Update the global language variable if you are using one
+        window.currentLang = this.getAttribute("data-lang");
+        
+        // (Optional) Call your translation function here
+        // translatePage(window.currentLang);
+      });
+    });
+  }
+
+ // ===================================================
+  // Typewriter Effect for Hero Title (Fixed for i18n & Colors)
+  // ===================================================
+  function initTypewriter() {
+    const titleElement = document.querySelector('.hero__title');
+    if (!titleElement) return;
+
+    // 1. Chukua maneno yote kutoka kwenye heading (baada ya i18n.js kutafsiri)
+    const fullText = titleElement.textContent.trim();
+    
+    let text1 = "";
+    let text2 = "";
+
+    // 2. Tunagawa sentensi ili maneno mawili ya mwisho yapate rangi (Cyan)
+    const words = fullText.split(" ");
+    if (words.length > 2) {
+      // Chukua maneno mawili ya mwisho (mf. "Modern Businesses" au "Biashara za Kisasa")
+      text2 = words.slice(-2).join(" "); 
+      // Chukua maneno yaliyobaki ya mwanzo
+      text1 = words.slice(0, -2).join(" ") + " "; 
+    } else {
+      text1 = fullText; // Kama sentensi ni fupi sana
+    }
+
+    // 3. Futa yaliyomo kwenye heading ili ianze tupu kwa ajili ya Typewriter
+    titleElement.innerHTML = '';
+
+    // 4. Tengeneza span kwa ajili ya maneno ya mwisho (Cyan Color)
+    const coloredSpan = document.createElement('span');
+    coloredSpan.className = 'text-blue-light'; // Hii inaweka ile rangi ya #00E5FF
+
+    // 5. Tengeneza Cursor inayometa
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    cursor.textContent = '|';
+
+    // Weka cursor ndani ya heading
+    titleElement.appendChild(cursor);
+
+    let i = 0;
+    let j = 0;
+    const speed = 65; // Kasi ya kuandika (millisecond 65 kwa herufi)
+
+    // Andika sehemu ya kwanza (Rangi Nyeupe)
+    function typeFirstPart() {
+      if (i < text1.length) {
+        cursor.insertAdjacentText('beforebegin', text1.charAt(i));
+        i++;
+        setTimeout(typeFirstPart, speed);
+      } else {
+        // Ikimiza sehemu ya kwanza, weka span ya rangi kisha anza kuandika sehemu ya pili
+        titleElement.insertBefore(coloredSpan, cursor);
+        setTimeout(typeSecondPart, speed);
+      }
+    }
+
+    // Andika sehemu ya pili (Rangi ya Cyan)
+    function typeSecondPart() {
+      if (j < text2.length) {
+        coloredSpan.textContent += text2.charAt(j);
+        j++;
+        setTimeout(typeSecondPart, speed);
+      }
+    }
+
+    // Anza kuandika
+    typeFirstPart();
+  }
+
+  // Tunasubiri sekunde 0.8 ili kuruhusu i18n.js imalize kutafsiri kwanza
+  setTimeout(initTypewriter, 800);

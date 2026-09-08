@@ -12,18 +12,848 @@
   
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="icon" type="image/webp" href="../../../assets/favicon/favicon.webp" />
-</head>
-<body>
+  <style>
+.case-study-cta__button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 
-  <!-- Header -->
+    padding: 15px 28px !important;
+
+    border: 1px solid #22d3ee !important;
+    border-radius: 14px !important;
+
+    background: #22d3ee !important;
+    color: #082f49 !important;
+
+    text-decoration: none !important;
+
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+
+    box-shadow:
+        0 12px 30px rgba(34, 211, 238, 0.22) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        gap 0.3s ease !important;
+}
+
+.case-study-cta__button:hover {
+    transform: translateY(-3px);
+
+    gap: 23px;
+
+    box-shadow:
+        0 18px 42px rgba(34, 211, 238, 0.32) !important;
+}
+
+.case-study-cta__arrow {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1;
+}
+</style>
+
+
+<style>
+/* =========================================================
+   TELECOM CASE STUDY — PREMIUM PAGE-SCOPED UI
+   Only affects .telecom-case-study
+   ========================================================= */
+.telecom-case-study {
+  --case-cyan: #22d3ee;
+  --case-blue: #2563eb;
+  --case-ink: #0f172a;
+  --case-muted: #52627a;
+  --case-surface: #ffffff;
+  --case-border: rgba(15, 23, 42, 0.08);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(34,211,238,0.07), transparent 24%),
+    radial-gradient(circle at 92% 34%, rgba(37,99,235,0.06), transparent 28%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 42%, #f8fafc 100%);
+}
+
+.telecom-case-study main {
+  overflow: hidden;
+}
+
+/* Breadcrumbs */
+.telecom-case-study .cs-breadcrumbs {
+  padding-top: 118px;
+  padding-bottom: 18px;
+  background: transparent;
+}
+
+.telecom-case-study .cs-breadcrumbs .container {
+  font-size: 0.84rem;
+  color: #64748b;
+}
+
+.telecom-case-study .cs-breadcrumbs a {
+  color: #475569;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+.telecom-case-study .cs-breadcrumbs a:hover {
+  color: var(--case-blue);
+}
+
+/* Hero */
+.telecom-case-study .cs-hero {
+  position: relative;
+  padding: 34px 0 88px;
+  background: transparent;
+}
+
+.telecom-case-study .cs-hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(34,211,238,0.10);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.telecom-case-study .cs-hero .container {
+  position: relative;
+}
+
+.telecom-case-study .cs-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.telecom-case-study .cs-hero__meta .badge {
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.telecom-case-study .cs-hero__title {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  font-weight: 850;
+  color: var(--case-ink);
+}
+
+.telecom-case-study .cs-hero__title::after {
+  content: "";
+  display: block;
+  width: 86px;
+  height: 4px;
+  margin-top: 25px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--case-cyan), var(--case-blue));
+}
+
+.telecom-case-study .cs-hero__summary {
+  max-width: 850px;
+  margin: 28px 0 38px;
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  line-height: 1.8;
+  color: var(--case-muted);
+}
+
+.telecom-case-study .cs-hero__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 44px;
+  padding: 7px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(34,211,238,.60), rgba(37,99,235,.24), rgba(255,255,255,.95));
+  box-shadow:
+    0 35px 90px rgba(15,23,42,.14),
+    0 0 0 1px rgba(255,255,255,.8) inset;
+}
+
+.telecom-case-study .cs-hero__image-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  top: -90px;
+  border-radius: 50%;
+  background: rgba(34,211,238,.16);
+  filter: blur(20px);
+}
+
+.telecom-case-study .cs-hero__image-wrapper img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: cover;
+  border-radius: 24px;
+  transition: transform .8s cubic-bezier(.16,1,.3,1);
+}
+
+.telecom-case-study .cs-hero__image-wrapper:hover img {
+  transform: scale(1.025);
+}
+
+/* Shared section rhythm */
+.telecom-case-study .cs-section {
+  position: relative;
+  padding: 92px 0;
+}
+
+.telecom-case-study .cs-section--light {
+  background:
+    linear-gradient(180deg, rgba(248,250,252,.92), rgba(255,255,255,.98));
+  border-top: 1px solid rgba(15,23,42,.045);
+  border-bottom: 1px solid rgba(15,23,42,.045);
+}
+
+/* Gallery */
+.telecom-case-study .cs-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  gap: 22px;
+}
+
+.telecom-case-study .cs-gallery__item {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  margin: 0;
+  border-radius: 24px;
+  border: 1px solid rgba(15,23,42,.075);
+  background: #0f172a;
+  box-shadow: 0 16px 42px rgba(15,23,42,.09);
+}
+
+.telecom-case-study .cs-gallery__item:nth-child(1),
+.telecom-case-study .cs-gallery__item:nth-child(4) {
+  grid-column: span 7;
+}
+
+.telecom-case-study .cs-gallery__item:nth-child(2),
+.telecom-case-study .cs-gallery__item:nth-child(3),
+.telecom-case-study .cs-gallery__item:nth-child(5) {
+  grid-column: span 5;
+}
+
+.telecom-case-study .cs-gallery__item:nth-child(5) {
+  grid-column: span 12;
+}
+
+.telecom-case-study .cs-gallery__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.16,1,.3,1), filter .45s ease;
+}
+
+.telecom-case-study .cs-gallery__item:hover .cs-gallery__img {
+  transform: scale(1.055);
+  filter: saturate(1.05);
+}
+
+.telecom-case-study .cs-gallery__item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 55px 24px 22px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(2,6,23,.92) 82%);
+}
+
+.telecom-case-study .cs-gallery__caption-title {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.telecom-case-study .cs-gallery__caption-text {
+  margin-top: 6px;
+  max-width: 640px;
+  font-size: .84rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.76);
+}
+
+/* Tabs */
+.telecom-case-study .cs-tabs-container {
+  max-width: 1080px;
+}
+
+.telecom-case-study .cs-tabs-nav {
+  position: sticky;
+  top: 96px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  margin-bottom: 36px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 35px rgba(15,23,42,.08);
+}
+
+.telecom-case-study .cs-tab-btn {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 17px;
+  background: transparent;
+  color: #64748b;
+  font: inherit;
+  font-size: .86rem;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.telecom-case-study .cs-tab-btn:hover {
+  color: var(--case-ink);
+  background: #f1f5f9;
+}
+
+.telecom-case-study .cs-tab-btn.active {
+  color: #082f49;
+  background: linear-gradient(135deg, #22d3ee, #67e8f9);
+  box-shadow: 0 8px 20px rgba(34,211,238,.22);
+}
+
+.telecom-case-study .cs-tab-panel {
+  animation: telecomPanelIn .35s ease both;
+}
+
+@keyframes telecomPanelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.telecom-case-study .cs-section-title {
+  font-size: clamp(1.9rem, 3.3vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  color: var(--case-ink);
+}
+
+.telecom-case-study .cs-text {
+  color: #52627a;
+  line-height: 1.85;
+}
+
+/* Feature cards */
+.telecom-case-study .cs-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.telecom-case-study .cs-feature-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid var(--case-border);
+  border-radius: 20px;
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 12px 32px rgba(15,23,42,.055);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.telecom-case-study .cs-feature-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--case-cyan), var(--case-blue));
+}
+
+.telecom-case-study .cs-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34,211,238,.20);
+  box-shadow: 0 22px 46px rgba(15,23,42,.10);
+}
+
+.telecom-case-study .cs-feature-card h3 {
+  color: var(--case-ink);
+  letter-spacing: -.025em;
+}
+
+.telecom-case-study .cs-feature-card p {
+  color: #52627a;
+  line-height: 1.75;
+}
+
+/* Lists */
+.telecom-case-study .cs-impact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 13px 18px;
+  padding: 0;
+  margin: 30px 0 0;
+  list-style: none;
+}
+
+.telecom-case-study .cs-impact-list li {
+  position: relative;
+  padding: 16px 18px 16px 46px;
+  border: 1px solid rgba(15,23,42,.07);
+  border-radius: 15px;
+  background: rgba(255,255,255,.82);
+  color: #334155;
+  line-height: 1.55;
+  box-shadow: 0 8px 22px rgba(15,23,42,.04);
+}
+
+.telecom-case-study .cs-impact-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(34,211,238,.14);
+  color: #0891b2;
+  font-size: .75rem;
+  font-weight: 900;
+}
+
+/* Technology badges */
+.telecom-case-study .cs-tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 28px;
+}
+
+.telecom-case-study .cs-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border-radius: 13px;
+  border: 1px solid rgba(37,99,235,.12);
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  color: #334155;
+  font-size: .82rem;
+  font-weight: 750;
+  box-shadow: 0 8px 20px rgba(15,23,42,.045);
+}
+
+.telecom-case-study .cs-tech-badge::before {
+  content: "✦";
+  color: #0ea5e9;
+  font-size: .78rem;
+}
+
+/* Info grid */
+.telecom-case-study .cs-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
+}
+
+.telecom-case-study .cs-info-item {
+  padding: 21px;
+  border: 1px solid rgba(15,23,42,.07);
+  border-radius: 18px;
+  background: rgba(255,255,255,.80);
+  box-shadow: 0 8px 22px rgba(15,23,42,.045);
+}
+
+.telecom-case-study .cs-info-item__label {
+  margin-bottom: 7px;
+  color: #64748b;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.telecom-case-study .cs-info-item__value {
+  color: var(--case-ink);
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+/* CTA */
+.telecom-case-study .cs-cta {
+  position: relative;
+  padding: 100px 0 120px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc, #eef6ff);
+}
+
+.telecom-case-study .cs-cta::before {
+  content: "";
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  left: 50%;
+  bottom: -360px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(34,211,238,.12);
+  filter: blur(80px);
+}
+
+.telecom-case-study .cs-cta .container {
+  position: relative;
+}
+
+.telecom-case-study .cs-cta .cs-section-title {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.telecom-case-study .cs-cta .cs-text {
+  text-align: center;
+}
+
+.telecom-case-study .case-study-cta__button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  padding: 15px 28px !important;
+  margin-top: 4px !important;
+  border: 1px solid #22d3ee !important;
+  border-radius: 14px !important;
+  background: #22d3ee !important;
+  color: #082f49 !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  box-shadow: 0 12px 30px rgba(34,211,238,.22) !important;
+  transition: transform .3s ease, box-shadow .3s ease, gap .3s ease !important;
+}
+
+.telecom-case-study .case-study-cta__button:hover {
+  transform: translateY(-3px);
+  gap: 23px !important;
+  box-shadow: 0 18px 42px rgba(34,211,238,.32) !important;
+}
+
+/* =========================================================
+   TECHNOLOGY STACK
+   Premium technology cards with real icons
+   ========================================================= */
+
+.telecom-case-study .telecom-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.telecom-case-study .telecom-tech-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 88px;
+  padding: 16px 18px;
+
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid var(--case-border);
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 26px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.telecom-case-study .telecom-tech-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(34, 211, 238, 0.30);
+
+  box-shadow:
+    0 18px 36px rgba(15, 23, 42, 0.09);
+}
+
+.telecom-case-study .telecom-tech-card__icon {
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+
+  box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.05);
+}
+
+.telecom-case-study .telecom-tech-card__icon img {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+}
+
+.telecom-case-study .telecom-tech-card__icon--text span {
+  color: var(--case-blue);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.telecom-case-study .telecom-tech-card__name {
+  color: var(--case-ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.telecom-case-study .telecom-tech-card__type {
+  margin-top: 2px;
+  color: var(--case-muted);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 980px) {
+  .telecom-case-study .telecom-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .telecom-case-study .telecom-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .telecom-tech-card {
+    min-height: 82px;
+  }
+}
+
+@media (max-width: 900px) {
+  .telecom-case-study .cs-gallery__item,
+  .telecom-case-study .cs-gallery__item:nth-child(1),
+  .telecom-case-study .cs-gallery__item:nth-child(2),
+  .telecom-case-study .cs-gallery__item:nth-child(3),
+  .telecom-case-study .cs-gallery__item:nth-child(4),
+  .telecom-case-study .cs-gallery__item:nth-child(5) {
+    grid-column: span 6;
+  }
+
+  .telecom-case-study .cs-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .cs-info-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .telecom-case-study .cs-breadcrumbs {
+    padding-top: 98px;
+  }
+
+  .telecom-case-study .cs-hero {
+    padding-bottom: 65px;
+  }
+
+  .telecom-case-study .cs-hero__title {
+    font-size: clamp(2.4rem, 13vw, 4rem);
+  }
+
+  .telecom-case-study .cs-hero__summary {
+    font-size: .98rem;
+    line-height: 1.72;
+  }
+
+  .telecom-case-study .cs-hero__image-wrapper {
+    border-radius: 23px;
+    padding: 5px;
+  }
+
+  .telecom-case-study .cs-hero__image-wrapper img {
+    border-radius: 18px;
+  }
+
+  .telecom-case-study .cs-section {
+    padding: 68px 0;
+  }
+
+  .telecom-case-study .cs-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .cs-gallery__item,
+  .telecom-case-study .cs-gallery__item:nth-child(1),
+  .telecom-case-study .cs-gallery__item:nth-child(2),
+  .telecom-case-study .cs-gallery__item:nth-child(3),
+  .telecom-case-study .cs-gallery__item:nth-child(4),
+  .telecom-case-study .cs-gallery__item:nth-child(5) {
+    grid-column: span 1;
+    min-height: 260px;
+  }
+
+  .telecom-case-study .cs-gallery__img {
+    min-height: 260px;
+  }
+
+  .telecom-case-study .cs-tabs-nav {
+    top: 83px;
+    margin-bottom: 28px;
+    border-radius: 15px;
+  }
+
+  .telecom-case-study .cs-impact-list,
+  .telecom-case-study .cs-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .cs-cta {
+    padding: 72px 0 88px;
+  }
+
+  .telecom-case-study .case-study-cta__button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .telecom-case-study .cs-hero__image-wrapper img,
+  .telecom-case-study .cs-gallery__img,
+  .telecom-case-study .cs-feature-card,
+  .telecom-case-study .case-study-cta__button,
+  .telecom-case-study .cs-tab-panel {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style>
+
+</head>
+<body class="telecom-case-study">
+
+  <!-- ===================== HEADER ===================== -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="/" class="logo-link" aria-label="MLUE Technology Home">
         <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
       </a>
+
+    <nav class="header__nav" id="nav">
+
+    <a href="/" class="nav-link" data-i18n="nav.home">
+        Home
+    </a>
+
+    <a href="/#about" class="nav-link" data-i18n="nav.about">
+        About Us
+    </a>
+
+    <a href="/#services" class="nav-link" data-i18n="nav.services">
+        Services
+    </a>
+
+    <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">
+        Pricing
+    </a>
+
+    <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+        Contact
+    </a>
+
+    <a href="/projects/" class="nav-link active" data-i18n="nav.projects">
+        Projects
+    </a>
+
+    </nav>
+
       <div class="header__actions">
-        <a href="../" class="btn btn--primary btn--sm header__home-btn">Back to Category</a>
+
+    <a href="/#contact"
+       class="btn btn--primary btn--sm"
+       data-i18n="nav.cta">
+        Get Started
+    </a>
+
+    <div class="lang-switcher" id="langSwitcher">
+
+        <!-- UK Flag for English -->
+        <button class="lang-btn active"
+                data-lang="en"
+                aria-label="English">
+            <img src="https://flagcdn.com/gb.svg"
+                 alt="UK Flag"
+                 class="flag-icon">
+        </button>
+
+        <span class="lang-divider">|</span>
+
+        <!-- Tanzania Flag for Swahili -->
+        <button class="lang-btn"
+                data-lang="sw"
+                aria-label="Swahili">
+            <img src="https://flagcdn.com/tz.svg"
+                 alt="Tanzania Flag"
+                 class="flag-icon">
+        </button>
+
       </div>
+
+      </div>
+
+      <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
+    <span class="header__hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+    <span class="header__hamburger-label" data-i18n="nav.menu">Menu</span>
+</button>
+
     </div>
   </header>
 
@@ -31,21 +861,72 @@
     <!-- Breadcrumbs -->
     <section class="cs-breadcrumbs">
       <div class="container">
-        <a href="/">Home</a> / <a href="/projects/">Projects</a> / <a href="/projects/location-intelligence/">Location Intelligence</a> / <span style="color: var(--gray-900); font-weight: 500;">Telecom Infrastructure</span>
-      </div>
+
+    <a href="/" data-i18n="nav.home">
+        Home
+    </a>
+
+    /
+
+    <a href="/projects/" data-i18n="nav.projects">
+        Projects
+    </a>
+
+    /
+
+    <a
+        href="/projects/location-intelligence/"
+        data-i18n="locationCaseStudy.category"
+    >
+        Location Intelligence
+    </a>
+
+    /
+
+    <span
+        data-i18n="locationCaseStudy.breadcrumb"
+        style="color: var(--gray-900); font-weight: 500;"
+    >
+        Telecom Infrastructure
+    </span>
+
+   </div>
     </section>
 
     <!-- 1. Hero Section -->
     <section class="cs-hero">
       <div class="container">
         <div class="cs-hero__meta">
-          <span class="badge badge--industry">Telecommunications</span>
-          <span class="badge badge--status">Completed (Research Project)</span>
-        </div>
-        <h1 class="cs-hero__title">Telecom Infrastructure Site Selection</h1>
-        <p class="cs-hero__summary">
-          A geospatial analysis project developed to identify the most suitable locations for telecommunication base stations using Geographic Information Systems (GIS), spatial analysis, and location intelligence to support infrastructure planning and network expansion.
-        </p>
+
+    <span
+        class="badge badge--industry"
+        data-i18n="locationCaseStudy.telecommunications"
+    >
+        Telecommunications
+    </span>
+
+    <span
+        class="badge badge--status"
+        data-i18n="locationCaseStudy.completedResearch"
+    >
+        Completed (Research Project)
+    </span>
+
+</div>
+
+   <h1
+    class="cs-hero__title"
+    data-i18n="locationCaseStudy.heroTitle"
+    >
+    Telecom Infrastructure Site Selection
+  </h1>
+
+  <p
+    class="cs-hero__summary"
+    data-i18n="locationCaseStudy.heroSummary"
+   >
+    A geospatial analysis project developed to identify the most suitable locations for telecommunication base stations using Geographic Information Systems (GIS), spatial analysis, and location intelligence to support infrastructure planning and network expansion.
+ </p>
         
         <div class="cs-hero__image-wrapper">
           <img src="../../../assets/projects/Map_01_Assigned_District.webp" alt="Telecom Infrastructure Site Selection Map" loading="lazy" width="1100" height="650" />
@@ -62,8 +943,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_01_Assigned_District.webp" alt="Study Area" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Study Area</div>
-              <div class="cs-gallery__caption-text">Overview of the project study area and administrative boundaries used during the analysis.</div>
+   <div
+          class="cs-gallery__caption-title"
+          data-i18n="locationCaseStudy.gallery1.title"
+     >
+    Study Area
+    </div>
+
+   <div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery1.description"
+     >
+    Overview of the project study area and administrative boundaries used during the analysis.
+    </div>
             </figcaption>
           </figure>
 
@@ -71,8 +963,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_03_Population_Distribution.webp" alt="Population Distribution" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Population Distribution</div>
-              <div class="cs-gallery__caption-text">Population density map used to identify areas with high demand for telecommunication services.</div>
+              <div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery2.title"
+>
+    Population Distribution
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery2.description"
+>
+    Population density map used to identify areas with high demand for telecommunication services.
+</div>
             </figcaption>
           </figure>
 
@@ -80,8 +983,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_02_Existing_Base_Station_Distribution.webp" alt="Existing Base Station Distribution" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Existing Base Stations</div>
-              <div class="cs-gallery__caption-text">Distribution of existing base stations across the study area.</div>
+              <div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery3.title"
+>
+    Existing Base Stations
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery3.description"
+>
+    Distribution of existing base stations across the study area.
+</div>
             </figcaption>
           </figure>
 
@@ -89,8 +1003,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_04_DEM_and_Terrain_Suitability.webp" alt="Suitability Analysis" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Suitability Analysis</div>
-              <div class="cs-gallery__caption-text">Spatial suitability model identifying the most appropriate locations for new telecommunication infrastructure.</div>
+              <div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery4.title"
+>
+    Suitability Analysis
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery4.description"
+>
+    Spatial suitability model identifying the most appropriate locations for new telecommunication infrastructure.
+</div>
             </figcaption>
           </figure>
 
@@ -98,8 +1023,19 @@
           <figure class="cs-gallery__item">
             <img src="../../../assets/projects/Map_06_Proposed_New_Base_stations_Locations.webp" alt="Final Recommendation Map" class="cs-gallery__img" loading="lazy" />
             <figcaption>
-              <div class="cs-gallery__caption-title">Final Recommendation Map</div>
-              <div class="cs-gallery__caption-text">Final map highlighting recommended areas for future network expansion.</div>
+              <div
+    class="cs-gallery__caption-title"
+    data-i18n="locationCaseStudy.gallery5.title"
+>
+    Final Recommendation Map
+</div>
+
+<div
+    class="cs-gallery__caption-text"
+    data-i18n="locationCaseStudy.gallery5.description"
+>
+    Final map highlighting recommended areas for future network expansion.
+</div>
             </figcaption>
           </figure>
 
@@ -113,156 +1049,861 @@
         
         <!-- Tab Navigation Buttons -->
         <div class="cs-tabs-nav" role="tablist">
-          <button class="cs-tab-btn active" onclick="switchTab(event, 'overview')" role="tab">Overview</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'challenge')" role="tab">The Challenge</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'solution')" role="tab">Our Solution</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'tech')" role="tab">Technologies</button>
-          <button class="cs-tab-btn" onclick="switchTab(event, 'impact')" role="tab">Business Impact</button>
-        </div>
+
+    <button
+        class="cs-tab-btn active"
+        onclick="switchTab(event, 'overview')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.overview"
+    >
+        Overview
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'challenge')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.challenge"
+    >
+        The Challenge
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'solution')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.solution"
+    >
+        Our Solution
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'tech')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.technologies"
+    >
+        Technologies
+    </button>
+
+    <button
+        class="cs-tab-btn"
+        onclick="switchTab(event, 'impact')"
+        role="tab"
+        data-i18n="locationCaseStudy.tabs.impact"
+    >
+        Business Impact
+    </button>
+
+    </div>  
 
         <!-- Tab Panel 1: Overview -->
         <div id="overview" class="cs-tab-panel active" role="tabpanel">
-          <h2 class="cs-section-title">Project Overview</h2>
-          <p class="cs-text">
-            Selecting the right location for telecommunication infrastructure is one of the most critical decisions in network planning. Poor site selection can lead to limited service coverage, increased deployment costs, and inefficient resource utilization.
-          </p>
-          <p class="cs-text">
-            MLUE Technology conducted a location intelligence study using Geographic Information Systems (GIS) to evaluate suitable areas for telecommunication base station deployment. By combining multiple spatial datasets and analytical techniques, the project demonstrates how geospatial technology can support informed infrastructure investment decisions.
-          </p>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.overview.title"
+    >
+        Project Overview
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.overview.p1"
+    >
+        Selecting the right location for telecommunication infrastructure is one of the most critical decisions in network planning. Poor site selection can lead to limited service coverage, increased deployment costs, and inefficient resource utilization.
+    </p>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.overview.p2"
+    >
+        MLUE Technology conducted a location intelligence study using Geographic Information Systems (GIS) to evaluate suitable areas for telecommunication base station deployment. By combining multiple spatial datasets and analytical techniques, the project demonstrates how geospatial technology can support informed infrastructure investment decisions.
+    </p>
+
+</div>
 
         <!-- Tab Panel 2: Challenge -->
         <div id="challenge" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">The Business Challenge</h2>
-          <p class="cs-text">
-            Telecommunication providers must carefully determine where to deploy new network infrastructure to maximize coverage while minimizing operational and investment costs. Without spatial analysis, organizations may face challenges such as:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Poor network coverage</li>
-            <li>High infrastructure deployment costs</li>
-            <li>Overlapping service areas</li>
-            <li>Under-served communities</li>
-            <li>Inefficient resource allocation</li>
-            <li>Limited visibility into geographic factors affecting expansion</li>
-          </ul>
-          <p class="cs-text" style="margin-top: 24px;">
-            Making these decisions without location intelligence increases both financial and operational risk.
-          </p>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.challenge.title"
+    >
+        The Business Challenge
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.challenge.intro"
+    >
+        Telecommunication providers must carefully determine where to deploy new network infrastructure to maximize coverage while minimizing operational and investment costs. Without spatial analysis, organizations may face challenges such as:
+    </p>
+
+    <ul class="cs-impact-list">
+
+        <li data-i18n="locationCaseStudy.challenge.item1">
+            Poor network coverage
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item2">
+            High infrastructure deployment costs
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item3">
+            Overlapping service areas
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item4">
+            Under-served communities
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item5">
+            Inefficient resource allocation
+        </li>
+
+        <li data-i18n="locationCaseStudy.challenge.item6">
+            Limited visibility into geographic factors affecting expansion
+        </li>
+
+    </ul>
+
+    <p
+        class="cs-text"
+        style="margin-top: 24px;"
+        data-i18n="locationCaseStudy.challenge.conclusion"
+    >
+        Making these decisions without location intelligence increases both financial and operational risk.
+    </p>
+
+</div>
 
         <!-- Tab Panel 3: Solution -->
         <div id="solution" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Our Solution</h2>
-          <p class="cs-text">
-            MLUE Technology applied geospatial analysis techniques to identify suitable locations for telecommunication infrastructure. The project integrated multiple spatial datasets to evaluate potential deployment areas. Through spatial modelling and suitability analysis, decision-makers can better understand where future network investments are likely to deliver the greatest value.
-          </p>
 
-          <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 32px 0 16px;">Core Components</h3>
-          <div class="cs-features-grid">
-            <div class="cs-feature-card">
-              <h3>Data Used</h3>
-              <p>Integrated datasets including Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, and Existing Infrastructure.</p>
-            </div>
-            <div class="cs-feature-card">
-              <h3>Spatial Analysis Methodology</h3>
-              <p>Utilized Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, and Geographic Visualization.</p>
-            </div>
-            <div class="cs-feature-card">
-              <h3>Key Deliverables</h3>
-              <p>Produced Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, and Geographic Reports.</p>
-            </div>
-          </div>
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.solution.title"
+    >
+        Our Solution
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.solution.description"
+    >
+        MLUE Technology applied geospatial analysis techniques to identify suitable locations for telecommunication infrastructure. The project integrated multiple spatial datasets to evaluate potential deployment areas. Through spatial modelling and suitability analysis, decision-makers can better understand where future network investments are likely to deliver the greatest value.
+    </p>
+
+    <h3
+        style="font-size: 1.3rem; font-weight: 700; color: var(--gray-900); margin: 32px 0 16px;"
+        data-i18n="locationCaseStudy.solution.coreComponents"
+    >
+        Core Components
+    </h3>
+
+    <div class="cs-features-grid">
+
+        <div class="cs-feature-card">
+
+            <h3 data-i18n="locationCaseStudy.solution.dataUsedTitle">
+                Data Used
+            </h3>
+
+            <p data-i18n="locationCaseStudy.solution.dataUsed">
+                Integrated datasets including Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, and Existing Infrastructure.
+            </p>
+
         </div>
+
+        <div class="cs-feature-card">
+
+            <h3 data-i18n="locationCaseStudy.solution.methodologyTitle">
+                Spatial Analysis Methodology
+            </h3>
+
+            <p data-i18n="locationCaseStudy.solution.methodology">
+                Utilized Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, and Geographic Visualization.
+            </p>
+
+        </div>
+
+        <div class="cs-feature-card">
+
+            <h3 data-i18n="locationCaseStudy.solution.deliverablesTitle">
+                Key Deliverables
+            </h3>
+
+            <p data-i18n="locationCaseStudy.solution.deliverables">
+                Produced Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, and Geographic Reports.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
 
         <!-- Tab Panel 4: Technologies -->
         <div id="tech" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Technologies Used</h2>
-          <p class="cs-text">Advanced geospatial tools and methodologies were utilized to process and analyze complex spatial data.</p>
-          <div class="cs-tech-badges">
-            <span class="cs-tech-badge">QGIS</span>
-            <span class="cs-tech-badge">PostgreSQL/PostGIS</span>
-            <span class="cs-tech-badge">OpenStreetMap</span>
-            <span class="cs-tech-badge">DEM Data</span>
-            <span class="cs-tech-badge">Spatial Analysis</span>
-            <span class="cs-tech-badge">GIS Mapping</span>
-          </div>
 
-          <div style="margin-top: 48px;">
-            <div class="cs-info-grid">
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Industry</div>
-                <div class="cs-info-item__value">Telecommunications</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Category</div>
-                <div class="cs-info-item__value">Location Intelligence</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Platform</div>
-                <div class="cs-info-item__value">GIS Analysis</div>
-              </div>
-              <div class="cs-info-item">
-                <div class="cs-info-item__label">Project Type</div>
-                <div class="cs-info-item__value">Research & Spatial Analysis</div>
-              </div>
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.technologies.title"
+    >
+        Technologies Used
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.technologies.description"
+    >
+        Advanced geospatial tools and methodologies were utilized to process and analyze complex spatial data.
+    </p>
+
+    <div class="telecom-tech-grid">
+
+  <!-- QGIS -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/qgis.svg"
+        alt="QGIS"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        QGIS
+      </div>
+      <div class="telecom-tech-card__type">
+        GIS Software
+      </div>
+    </div>
+  </article>
+
+
+  <!-- PostgreSQL / PostGIS -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+        alt="PostgreSQL"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        PostgreSQL / PostGIS
+      </div>
+      <div class="telecom-tech-card__type">
+        Spatial Database
+      </div>
+    </div>
+  </article>
+
+
+  <!-- OpenStreetMap -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon">
+      <img
+        src="https://cdn.simpleicons.org/openstreetmap"
+        alt="OpenStreetMap"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        OpenStreetMap
+      </div>
+      <div class="telecom-tech-card__type">
+        Open Mapping Data
+      </div>
+    </div>
+  </article>
+
+
+  <!-- DEM -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon telecom-tech-card__icon--text">
+      <span>DEM</span>
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        DEM Data
+      </div>
+      <div class="telecom-tech-card__type">
+        Terrain Data
+      </div>
+    </div>
+  </article>
+
+
+  <!-- Spatial Analysis -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon telecom-tech-card__icon--text">
+      <span>GIS</span>
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        Spatial Analysis
+      </div>
+      <div class="telecom-tech-card__type">
+        Geospatial Analysis
+      </div>
+    </div>
+  </article>
+
+
+  <!-- GIS Mapping -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon telecom-tech-card__icon--text">
+      <span>MAP</span>
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        GIS Mapping
+      </div>
+      <div class="telecom-tech-card__type">
+        Geographic Visualization
+      </div>
+    </div>
+  </article>
+
+</div>
+
+    <div style="margin-top: 48px;">
+
+        <div class="cs-info-grid">
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.industryLabel"
+                >
+                    Industry
+                </div>
+
+                <div class="cs-info-item__value">
+                    Telecommunications
+                </div>
             </div>
-          </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.categoryLabel"
+                >
+                    Category
+                </div>
+
+                <div class="cs-info-item__value">
+                    Location Intelligence
+                </div>
+            </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.platformLabel"
+                >
+                    Platform
+                </div>
+
+                <div class="cs-info-item__value">
+                    GIS Analysis
+                </div>
+            </div>
+
+            <div class="cs-info-item">
+                <div
+                    class="cs-info-item__label"
+                    data-i18n="locationCaseStudy.info.projectTypeLabel"
+                >
+                    Project Type
+                </div>
+
+                <div class="cs-info-item__value">
+                    Research & Spatial Analysis
+                </div>
+            </div>
+
         </div>
+
+    </div>
+
+</div>
 
         <!-- Tab Panel 5: Impact -->
         <div id="impact" class="cs-tab-panel" role="tabpanel">
-          <h2 class="cs-section-title">Business Impact</h2>
-          <p class="cs-text">
-            The proposed geospatial approach helps organizations mitigate risks and make data-driven decisions:
-          </p>
-          <ul class="cs-impact-list">
-            <li>Improve infrastructure planning</li>
-            <li>Reduce investment risk</li>
-            <li>Support strategic expansion decisions</li>
-            <li>Identify high-potential deployment areas</li>
-            <li>Improve network coverage planning</li>
-            <li>Enhance location-based decision making</li>
-            <li>Optimize resource allocation</li>
-          </ul>
-        </div>
+
+    <h2
+        class="cs-section-title"
+        data-i18n="locationCaseStudy.impact.title"
+    >
+        Business Impact
+    </h2>
+
+    <p
+        class="cs-text"
+        data-i18n="locationCaseStudy.impact.intro"
+    >
+        The proposed geospatial approach helps organizations mitigate risks and make data-driven decisions:
+    </p>
+
+    <ul class="cs-impact-list">
+
+        <li data-i18n="locationCaseStudy.impact.item1">
+            Improve infrastructure planning
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item2">
+            Reduce investment risk
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item3">
+            Support strategic expansion decisions
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item4">
+            Identify high-potential deployment areas
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item5">
+            Improve network coverage planning
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item6">
+            Enhance location-based decision making
+        </li>
+
+        <li data-i18n="locationCaseStudy.impact.item7">
+            Optimize resource allocation
+        </li>
+
+    </ul>
+
+</div>
 
       </div>
     </section>
 
     <!-- 4. Location Intelligence Context & Call To Action -->
     <section class="cs-cta">
-      <div class="container">
-        <h2 class="cs-section-title" style="margin-bottom: 16px;">Why Location Intelligence Matters</h2>
-        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
-          Modern organizations generate large amounts of business and geographic data, yet many decisions are still made without considering location. Location Intelligence transforms geographic data into actionable insights that support <strong>Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, and Strategic Decision-Making</strong>.
+
+    <div class="container">
+
+        <h2
+            class="cs-section-title"
+            style="margin-bottom: 16px;"
+            data-i18n="locationCaseStudy.cta.whyTitle"
+        >
+            Why Location Intelligence Matters
+        </h2>
+
+        <p
+            class="cs-text"
+            style="max-width: 680px; margin: 0 auto 32px;"
+            data-i18n="locationCaseStudy.cta.whyText"
+        >
+            Modern organizations generate large amounts of business and geographic data, yet many decisions are still made without considering location. Location Intelligence transforms geographic data into actionable insights that support Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, and Strategic Decision-Making.
         </p>
-        <h3 style="font-size: 1.5rem; color: var(--gray-900); font-weight: 700; margin-bottom: 16px;">Transform Geographic Data into Business Intelligence</h3>
-        <p class="cs-text" style="max-width: 680px; margin: 0 auto 32px;">
-          Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.
+
+        <h3
+            style="font-size: 1.5rem; color: var(--gray-900); font-weight: 700; margin-bottom: 16px;"
+            data-i18n="locationCaseStudy.cta.transformTitle"
+        >
+            Transform Geographic Data into Business Intelligence
+        </h3>
+
+        <p
+            class="cs-text"
+            style="max-width: 680px; margin: 0 auto 32px;"
+            data-i18n="locationCaseStudy.cta.transformText"
+        >
+            Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.
         </p>
-        <a href="/#contact" class="btn btn--primary" style="font-size: 1.1rem; padding: 14px 32px;">Contact MLUE Technology</a>
-      </div>
-    </section>
+
+    <a
+    href="/#contact"
+    class="case-study-cta__button"
+    >
+    <span data-i18n="contact.cta">Contact Us</span>
+
+    <span
+        class="case-study-cta__arrow"
+        aria-hidden="true"
+    >
+        →
+    </span>
+     </a>
+
+    </div>
+
+</section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
+
     <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+
+        <!-- ===================== FOOTER MAIN ===================== -->
+        <div class="footer__main">
+
+
+            <!-- ===================== BRAND ===================== -->
+            <div class="footer__brand">
+
+                <a
+                    href="/"
+                    class="footer__brand-link"
+                    aria-label="MLUE Technology Home"
+                >
+                    <span class="logo-text logo-text--light">
+                        MLUE
+                        <span class="logo-accent">TECHNOLOGY</span>
+                    </span>
+                </a>
+
+                <p
+                    class="footer__tagline"
+                    data-i18n="footer.tagline"
+                >
+                    Engineering modern solutions for modern businesses.
+                </p>
+
+
+                <!-- Social Accounts -->
+                <div
+                    class="footer__social"
+                    aria-label="MLUE Technology social links"
+                >
+
+                    <!-- Facebook -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.facebook.com/share/17RCWJhZbv/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Facebook"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="12"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                f
+                            </text>
+                        </svg>
+                    </a>
+
+
+                    <!-- Instagram -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Instagram"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3.25"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="16.5"
+                                cy="7.5"
+                                r="1"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </a>
+
+
+                    <!-- LinkedIn -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.linkedin.com/in/mlue-technology-063751429?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on LinkedIn"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="10"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                in
+                            </text>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================== EXPLORE ===================== -->
+            <div class="footer__column">
+
+                <h3
+                    class="footer__heading"
+                    data-i18n="footer.quickLinks"
+                >
+                    Explore
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="/" data-i18n="nav.home">
+                        Home
+                    </a>
+
+                    <a href="/#about" data-i18n="nav.about">
+                        About Us
+                    </a>
+
+                    <a href="/#services" data-i18n="nav.services">
+                        Services
+                    </a>
+
+                    <a href="/projects/" data-i18n="nav.projects">
+                        Projects
+                    </a>
+
+                    <a href="/pricing/" data-i18n="nav.pricing">
+                        Pricing
+                    </a>
+
+                    <a href="/#contact" data-i18n="nav.contact">
+                        Contact
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== SERVICES ===================== -->
+            <div class="footer__column">
+
+                <h3
+                class="footer__heading"
+                data-i18n="footer.services"
+                    >
+                Services
+                   </h3>
+
+                <nav class="footer__links">
+
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.businessSoftware"
+    >
+        Business Software
+    </a>
+
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.customSoftware"
+    >
+        Custom Software
+    </a>
+
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.apiBackend"
+    >
+        APIs &amp; Backend
+    </a>
+
+    <a
+        href="/projects/software-solutions/"
+        data-i18n="footer.ecommerce"
+    >
+        E-Commerce
+    </a>
+
+    <a
+        href="/projects/location-intelligence/"
+        data-i18n="footer.locationIntelligence"
+    >
+        Location Intelligence
+    </a>
+
+    <a
+        href="/#services"
+        data-i18n="footer.aiSystems"
+    >
+        AI / Intelligent Systems
+    </a>
+
+</nav>
+
+            </div>
+
+
+            <!-- ===================== LET'S TALK ===================== -->
+            <div class="footer__column footer__contact">
+
+             <h3
+             class="footer__heading"
+             data-i18n="footer.letsTalk"
+            >
+             Let's Talk
+          </h3>
+
+
+                <div class="footer__location">
+
+                    <span
+           class="footer__contact-label"
+           data-i18n="footer.basedIn"
+            >
+           Based in
+       </span>
+
+                    <strong>
+                        Dar es Salaam, Tanzania
+                    </strong>
+
+                </div>
+
+
+                <a
+    href="https://wa.me/255752804154"
+    class="footer__contact-link"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span data-i18n="footer.whatsapp">
+        WhatsApp
+    </span>
+    <span aria-hidden="true">→</span>
+</a>
+
+
+                <a
+    href="mailto:mluetechnologytz@gmail.com"
+    class="footer__contact-link"
+>
+    <span data-i18n="footer.email">
+        Email
+    </span>
+    <span aria-hidden="true">→</span>
+</a>
+
+            </div>
+
         </div>
-        <div class="footer__links">
-          <h3 class="footer__heading">Quick Links</h3>
-          <a href="/">Home</a>
-          <a href="/projects/">Projects</a>
+
+
+        <!-- ===================== FOOTER BOTTOM ===================== -->
+        <div class="footer__bottom">
+
+            <p>
+                &copy;
+                <span id="footerYear"></span>
+                MLUE Technology.
+                <span data-i18n="footer.rights">
+                    All rights reserved.
+                </span>
+            </p>
+
+
+            <nav class="footer__legal">
+
+                <a
+                    href="/privacy/"
+                    data-i18n="footer.privacy"
+                >
+                    Privacy Policy
+                </a>
+
+                <span aria-hidden="true">·</span>
+
+                <a
+                    href="/terms/"
+                    data-i18n="footer.terms"
+                >
+                    Terms of Service
+                </a>
+
+            </nav>
+
         </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; <span id="footerYear"></span> MLUE Technology. All rights reserved.</p>
-      </div>
+
     </div>
-  </footer>
+
+</footer>
 
   
   <script>
@@ -279,5 +1920,9 @@
 
     document.getElementById('footerYear').textContent = new Date().getFullYear();
   </script>
+
+<script src="../../../i18n.js" defer></script>
+<script src="../../../main.js" defer></script>
+<script src="../../../chatbot.js" defer></script>
 </body>
 </html>

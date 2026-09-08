@@ -1,145 +1,1279 @@
 const translations = {
+
   en: {
-    // Navigation
-    "nav.home": "Home",
-    "nav.about": "About Us",
-    "nav.services": "Services",
-    "nav.whyUs": "Why Choose Us",
-    "nav.contact": "Contact",
-    "nav.cta": "Get Started",
+"nav.home": "Home",
+"nav.about": "About Us",
+"nav.services": "Services",
+"nav.pricing": "Pricing",
+"nav.contact": "Contact",
+"nav.projects": "Projects",
+"nav.cta": "Get Started",
 
     // Hero
-    "hero.label": "Smart Business Solutions",
-    "hero.title": "Smart Systems for <span class=\"text-blue\">Modern Businesses</span>",
-    "hero.tagline": "We help businesses manage sales, inventory, and operations with secure, scalable technology solutions designed for growth.",
-    "hero.missionTitle": "Our Mission",
-    "hero.missionText": "To empower businesses with reliable, innovative, and secure technology solutions that simplify operations and accelerate growth.",
-    "hero.visionTitle": "Our Vision",
-    "hero.visionText": "To become the most trusted technology partner for businesses across East Africa and beyond, delivering world-class digital solutions.",
-    "hero.ctaPrimary": "Explore Services",
-    "hero.ctaSecondary": "Contact Us",
-    "appointment.label": "Book a Meeting",
-    "appointment.cta": "Book Appointment",
-    "appointment.title": "Book an Appointment",
-    "appointment.subtitle": "Tell us what you'd like to discuss and choose a future time that works for you.",
-    "appointment.nameLabel": "Full Name",
-    "appointment.namePlaceholder": "Enter your full name",
-    "appointment.emailLabel": "Email Address",
-    "appointment.emailPlaceholder": "Enter your email",
-    "appointment.datetimeLabel": "Preferred date & time",
-    "appointment.timeHint": "Select a future date and time.",
-    "appointment.phoneLabel": "Phone number (optional)",
-    "appointment.phonePlaceholder": "Enter your phone number",
-    "appointment.reasonLabel": "Purpose / reason for appointment",
-    "appointment.reasonPlaceholder": "What would you like to discuss?",
-    "appointment.notesLabel": "Additional notes (optional)",
-    "appointment.notesPlaceholder": "Share any extra details we should know",
-    "appointment.cancel": "Cancel",
-    "appointment.submit": "Request Appointment",
 
-    // About
-    "about.label": "Who We Are",
-    "about.title": "About MLUE Technology",
-    "about.subtitle": "A technology company focused on engineering high-quality software that solves real business problems.",
-    "about.engTitle": "Engineering Quality",
-    "about.engText": "We build software with clean architecture, tested code, and modern engineering practices that stand the test of time.",
-    "about.bizTitle": "Business-Oriented",
-    "about.bizText": "Every solution is designed around actual business needs \u2014 we don't just write code, we solve problems that matter.",
-    "about.secTitle": "Reliability & Security",
-    "about.secText": "Security is built into every layer of our systems. We design for reliability so your business runs without interruption.",
+"hero.label": "Smart Business Solutions",
 
-    // Services
-    "services.label": "What We Do",
-    "services.title": "Our Services",
-    "services.subtitle": "Comprehensive technology solutions tailored to the needs of modern businesses.",
-    // Service card descriptions (match .service-card__desc in index.html)
-    "services.businessTitle": "Business Systems",
-    "services.apiTitle": "APIs & Backend Development",
-    "services.customTitle": "Custom Software Development",
-    "services.business.desc": "Manage sales, track inventory, and monitor business performance in real-time with reliable POS and business systems.",
-    "services.api.desc": "Build scalable and secure APIs and backend systems to power your digital transformation.",
-    "services.custom.desc": "Create custom software solutions that align with your unique business requirements and objectives.",
-    "services.gisTitle": "Location Intelligence GIS",
-    "services.gis.desc": "Leverage geographic data and mapping technologies to make informed business decisions.",
-    // Why Choose Us
-    "why.label": "Why Us",
-    "why.title": "Why Choose MLUE Technology",
-    "why.subtitle": "We don't just build software \u2014 we build partnerships that drive lasting success.",
-    "why.r1Title": "Real Business Understanding",
-    "why.r1Text": "We take the time to understand your operations, challenges, and goals before writing a single line of code.",
-    "why.r2Title": "Security-Focused Development",
-    "why.r2Text": "Every application is built with security best practices \u2014 protecting your data and your clients' trust.",
-    "why.r3Title": "Scalable Systems",
-    "why.r3Text": "Our architecture grows with your business. No costly rewrites \u2014 just smooth scaling as your needs evolve.",
-    "why.r4Title": "Long-Term Solutions",
-    "why.r4Text": "We build for the future, not just for today. Our solutions are maintainable, documented, and built to last.",
+"hero.title": "Smart Systems for Modern Businesses",
+
+"hero.tagline": "We help businesses manage sales, inventory, and operations with secure, scalable technology solutions designed for growth.",
+
+"hero.ctaPrimary": "Book an Appointment",
+
+"hero.ctaSecondary": "View Services",
+
+
+    // Appointment
+"appointment.label": "BOOK A MEETING",
+"appointment.cta": "Book Appointment",
+"appointment.title": "Book an Appointment",
+"appointment.subtitle": "Tell us what you'd like to discuss and choose a future time that works for you.",
+
+"appointment.nameLabel": "Full Name",
+"appointment.namePlaceholder": "Enter your full name",
+
+"appointment.emailLabel": "Email Address",
+"appointment.emailPlaceholder": "Enter your email",
+
+"appointment.datetimeLabel": "Preferred date & time",
+"appointment.timeHint": "Select a future date and time.",
+
+"appointment.phoneLabel": "Phone number (optional)",
+"appointment.phonePlaceholder": "Enter your phone number",
+
+"appointment.reasonLabel": "What would you like to discuss?",
+"appointment.reasonPlaceholder": "Tell us briefly what you'd like to discuss or build.",
+
+"appointment.notesLabel": "Additional notes (optional)",
+"appointment.notesPlaceholder": "Share any extra details we should know",
+
+"appointment.cancel": "Cancel",
+"appointment.submit": "Request Appointment",
+
+// Pricing
+
+"pricing.title": "MLUE TECHNOLOGY Pricing",
+
+"pricing.subtitle":
+    "Professional web development pricing and package options tailored for growing businesses.",
+
+"pricing.landingPages.title":
+    "Landing Pages",
+
+"pricing.landingPages.description":
+    "A landing page is a standalone single web page created specifically for a marketing or advertising campaign, designed with one focus (a call to action) to convert visitors into leads or customers.",
+
+"pricing.staticWebsites.title":
+    "Static Websites",
+
+"pricing.staticWebsites.description":
+    "A static website is a collection of multiple web pages delivered exactly as stored on the server, without server-side processing, databases, or dynamic content changes.",
+
+"pricing.dynamicWebsites.title":
+    "Dynamic Websites",
+
+"pricing.dynamicWebsites.description":
+    "A dynamic website displays different content based on user actions, preferences, or real-time updates. These include databases and server-side processing.",
+
+"pricing.domain.title":
+    "Domain Name",
+
+"pricing.domain.description":
+    "A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).",
+
+"pricing.hosting.title":
+    "Web Hosting and Deployment",
+
+"pricing.hosting.description":
+    "Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.",
+
+"pricing.maintenance.title":
+    "Maintenance and Support",
+
+"pricing.maintenance.description":
+    "Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.",
+
+"pricing.included":
+    "Included",
+
+"pricing.notIncluded":
+    "Not Included",
+
+"pricing.examples":
+    "Examples",
+
+"pricing.viewMore":
+    "View more",
+
+"pricing.viewLess":
+    "View less",
+
+"pricing.landing.basic.title": "Basic Landing Page",
+"pricing.landing.basic.price": "PRICE: Tshs. 100,000 - Tshs. 250,000",
+
+"pricing.landing.basic.included1": "Simple layout (template-based)",
+"pricing.landing.basic.included2": "Few sections (Hero + Features + Contact)",
+"pricing.landing.basic.included3": "Basic responsiveness (mobile + desktop)",
+"pricing.landing.basic.included4": "1 Call-To-Action",
+"pricing.landing.basic.included5": "1 client revision",
+"pricing.landing.basic.included6": "Simple form (email)",
+
+"pricing.landing.basic.notIncluded1": "Custom UI design",
+"pricing.landing.basic.notIncluded2": "Animations",
+"pricing.landing.basic.notIncluded3": "SEO optimization",
+"pricing.landing.basic.notIncluded4": "Copywriting",
+
+"pricing.landing.basic.example1": "Simple Business Intro Page",
+"pricing.landing.basic.example2": "Personal Portfolio Landing",
+"pricing.landing.basic.example3": "Small Shop Promotion Page",
+"pricing.landing.basic.example4": "Basic Product Showcase Page",
+"pricing.landing.basic.example5": "Starter Service Landing Page",
+
+
+"pricing.landing.standard.title": "Standard Landing Page",
+"pricing.landing.standard.price": "PRICE: Tshs. 250,000 - Tshs. 500,000",
+
+"pricing.landing.standard.included1": "Custom UI design",
+"pricing.landing.standard.included2": "Standard sections (Hero, Features, Testimonials, CTA)",
+"pricing.landing.standard.included3": "Responsiveness (all devices)",
+"pricing.landing.standard.included4": "Form + basic integration (email / WhatsApp)",
+"pricing.landing.standard.included5": "3 client revisions",
+"pricing.landing.standard.included6": "Basic animations (scroll effects)",
+"pricing.landing.standard.included7": "1-month free maintenance and support",
+
+"pricing.landing.standard.notIncluded1": "Advanced animations",
+"pricing.landing.standard.notIncluded2": "Full SEO strategy",
+"pricing.landing.standard.notIncluded3": "Copywriting",
+
+"pricing.landing.standard.example1": "Modern Business Conversion Page",
+"pricing.landing.standard.example2": "Real Estate Lead Capture Landing Page",
+"pricing.landing.standard.example3": "Restaurant Online Order Landing Page",
+
+
+"pricing.landing.premium.title": "Premium Landing Page",
+"pricing.landing.premium.price": "PRICE: Tshs. 500,000 - Tshs. 1,500,000+",
+
+"pricing.landing.premium.included1": "Full custom UI/UX",
+"pricing.landing.premium.included2": "High-converting layout (conversion-focused)",
+"pricing.landing.premium.included3": "SEO optimized",
+"pricing.landing.premium.included4": "Advanced animations",
+"pricing.landing.premium.included5": "Optimized speed (performance)",
+"pricing.landing.premium.included6": "Form integrations",
+"pricing.landing.premium.included7": "Copywriting",
+"pricing.landing.premium.included8": "Free domain (1 year)",
+"pricing.landing.premium.included9": "Unlimited revisions (within scope)",
+"pricing.landing.premium.included10": "1-month free maintenance and support",
+
+"pricing.landing.premium.example1": "High-Converting SaaS Sales Page",
+"pricing.landing.premium.example2": "Luxury Brand Marketing Landing Page",
+"pricing.landing.premium.example3": "Advanced Fitness Coaching Funnel Page",
+"pricing.landing.premium.example4": "Tech Product Launch Conversion Page",
+"pricing.landing.premium.example5": "Corporate Campaign",
+
+// Static Websites
+
+"pricing.static.basic.title": "Basic Static Website",
+"pricing.static.basic.price": "PRICE: Tshs. 300,000 - Tshs. 650,000",
+
+"pricing.static.basic.included1": "Pages 3-5 (Home, About, Contact, etc.)",
+"pricing.static.basic.included2": "Simple design (template-based)",
+"pricing.static.basic.included3": "Basic responsiveness",
+"pricing.static.basic.included4": "Simple navigation",
+"pricing.static.basic.included5": "Contact info (no advanced form)",
+"pricing.static.basic.included6": "1-2 client revisions",
+"pricing.static.basic.included7": "Extra page: Tshs. 50,000",
+
+"pricing.static.basic.notIncluded1": "Custom UI",
+"pricing.static.basic.notIncluded2": "Animations",
+"pricing.static.basic.notIncluded3": "SEO",
+
+"pricing.static.basic.example1": "Small Business Info Website",
+"pricing.static.basic.example2": "Personal Portfolio Website",
+"pricing.static.basic.example3": "Local Shop Online Presence Site",
+"pricing.static.basic.example4": "Simple Company Profile Website",
+"pricing.static.basic.example5": "Starter Brand Showcase Website",
+
+
+"pricing.static.standard.title": "Standard Static Website",
+"pricing.static.standard.price": "PRICE: Tshs. 650,000 - Tshs. 1,800,000",
+
+"pricing.static.standard.included1": "Pages 5-10",
+"pricing.static.standard.included2": "Custom UI design (branding included)",
+"pricing.static.standard.included3": "Fully responsive (all devices)",
+"pricing.static.standard.included4": "Contact form (email/WhatsApp integration)",
+"pricing.static.standard.included5": "Basic animations (hover, scroll)",
+"pricing.static.standard.included6": "Basic SEO (titles, meta tags)",
+"pricing.static.standard.included7": "Free domain name (1 year)",
+"pricing.static.standard.included8": "2-3 revisions",
+"pricing.static.standard.included9": "Extra page: Tshs. 100,000",
+"pricing.static.standard.included10": "1-month free maintenance and support",
+
+"pricing.static.standard.notIncluded1": "Advanced animations",
+"pricing.static.standard.notIncluded2": "Complex integrations",
+
+"pricing.static.standard.example1": "Corporate Business Website",
+"pricing.static.standard.example2": "School / Institution Information Website",
+"pricing.static.standard.example3": "Real Estate Company Website",
+"pricing.static.standard.example4": "Professional Services Website",
+"pricing.static.standard.example5": "Startup Company Profile",
+
+
+"pricing.static.premium.title": "Premium Static Website",
+"pricing.static.premium.price": "PRICE: Tshs. 1,800,000 - Tshs. 3,000,000+",
+
+"pricing.static.premium.included1": "Pages 10+ (or custom structure)",
+"pricing.static.premium.included2": "Fully custom UI/UX (no templates)",
+"pricing.static.premium.included3": "High-quality animations (smooth and interactive)",
+"pricing.static.premium.included4": "Advanced responsiveness (pixel-perfect)",
+"pricing.static.premium.included5": "SEO optimized (structure + performance)",
+"pricing.static.premium.included6": "Speed optimization",
+"pricing.static.premium.included7": "Advanced contact features (forms + integrations)",
+"pricing.static.premium.included8": "4+ revisions (within scope)",
+"pricing.static.premium.included9": "Free domain name (1 year)",
+"pricing.static.premium.included10": "Extra page: Tshs. 150,000+ depending on complexity",
+"pricing.static.premium.included11": "1-month free maintenance and support",
+
+"pricing.static.premium.example1": "Premium Corporate Brand Website",
+"pricing.static.premium.example2": "Creative Agency Portfolio Website",
+"pricing.static.premium.example3": "Luxury Business Presentation Website",
+"pricing.static.premium.example4": "Tech Company Brand Identity Website",
+
+// Dynamic Websites / Systems
+
+"pricing.dynamic.basic.title": "Basic System",
+"pricing.dynamic.basic.price": "PRICE: Tshs. 1,000,000 - Tshs. 3,000,000",
+
+"pricing.dynamic.basic.included1": "Login system",
+"pricing.dynamic.basic.included2": "Basic dashboard (one role)",
+"pricing.dynamic.basic.included3": "CRUD (one main resource)",
+"pricing.dynamic.basic.included4": "Simple database structure (can be paid monthly depending on usage)",
+"pricing.dynamic.basic.included5": "Basic UI (template)",
+"pricing.dynamic.basic.included6": "2-3 pages",
+"pricing.dynamic.basic.included7": "2-3 client revisions",
+"pricing.dynamic.basic.included8": "Free domain name (1 year)",
+
+"pricing.dynamic.basic.notIncluded1": "Multiple roles",
+"pricing.dynamic.basic.notIncluded2": "Advanced UI",
+"pricing.dynamic.basic.notIncluded3": "Complex integrations",
+
+"pricing.dynamic.basic.example1": "Simple User Login System",
+"pricing.dynamic.basic.example2": "Basic Inventory Management System",
+"pricing.dynamic.basic.example3": "Small Business Admin Dashboard",
+"pricing.dynamic.basic.example4": "Simple Booking Management System",
+"pricing.dynamic.basic.example5": "Basic Student Record System",
+
+
+"pricing.dynamic.standard.title": "Standard System",
+"pricing.dynamic.standard.price": "PRICE: Tshs. 3,000,000 - Tshs. 8,000,000",
+
+"pricing.dynamic.standard.included1": "Roles (Admin/User)",
+"pricing.dynamic.standard.included2": "Full dashboard + database",
+"pricing.dynamic.standard.included3": "Multiple CRUD modules",
+"pricing.dynamic.standard.included4": "Clean UI (custom)",
+"pricing.dynamic.standard.included5": "API integrations (basic)",
+"pricing.dynamic.standard.included6": "Email notifications",
+"pricing.dynamic.standard.included7": "3-5 revisions",
+"pricing.dynamic.standard.included8": "Free domain name (1 year)",
+"pricing.dynamic.standard.included9": "1-month free maintenance and support",
+
+"pricing.dynamic.standard.notIncluded1": "Complex systems (full POS, full SaaS)",
+"pricing.dynamic.standard.notIncluded2": "Heavy automation",
+
+"pricing.dynamic.standard.example1": "School Management System",
+"pricing.dynamic.standard.example2": "Small Business POS System",
+"pricing.dynamic.standard.example3": "Customer Management System (CRM Lite)",
+"pricing.dynamic.standard.example4": "Online Booking and Appointment System",
+"pricing.dynamic.standard.example5": "Inventory and Sales Tracking System",
+
+
+"pricing.dynamic.premium.title": "Premium System",
+"pricing.dynamic.premium.price": "PRICE: Tshs. 8,000,000 - Tshs. 25,000,000+",
+
+"pricing.dynamic.premium.included1": "Advanced authentication",
+"pricing.dynamic.premium.included2": "Full system architecture",
+"pricing.dynamic.premium.included3": "Complex dashboards",
+"pricing.dynamic.premium.included4": "Multiple modules (sales, reports, users)",
+"pricing.dynamic.premium.included5": "API integrations (payments, external systems)",
+"pricing.dynamic.premium.included6": "Performance optimization",
+"pricing.dynamic.premium.included7": "Security best practices",
+"pricing.dynamic.premium.included8": "1-month free maintenance and support",
+"pricing.dynamic.premium.included9": "Unlimited revisions (within scope)",
+"pricing.dynamic.premium.included10": "Free domain name (1 year)",
+
+"pricing.dynamic.premium.example1": "Full POS and Business Management System",
+"pricing.dynamic.premium.example2": "Enterprise School Management System",
+"pricing.dynamic.premium.example3": "SaaS Multi-User Platform System",
+"pricing.dynamic.premium.example4": "Advanced E-commerce Management System",
+"pricing.dynamic.premium.example5": "Real-Time Analytics Business Dashboard",
+
+"pricing.domain.title": "Domain Name",
+
+"pricing.domain.description":
+    "A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).",
+
+"pricing.hosting.title": "Web Hosting and Deployment",
+
+"pricing.hosting.description":
+    "Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.", 
+    
+"pricing.maintenance.title": "Maintenance and Support",
+
+"pricing.maintenance.description":
+    "Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.",    
+
+
+// ===================================================
+// PROJECTS
+// ===================================================
+
+"nav.menu": "Menu",
+
+"projects.eyebrow": "Our Expertise",
+
+"projects.title":
+    "Technology Solutions That Drive Business Growth",
+
+"projects.description":
+    "We develop custom software and geospatial solutions to help organizations improve efficiency, automate operations, and make smarter, data-driven decisions.",
+
+"projects.software.title":
+    "Business Software Solutions",
+
+"projects.software.description":
+    "Custom software systems designed to automate business operations, improve organizational productivity, and support better decision-making at every level.",
+
+"projects.location.title":
+    "Location Intelligence",
+
+"projects.location.description":
+    "Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize field operations, and make strategic location-based decisions.",
+
+"projects.featuredSolutions":
+    "Featured Solutions",
+
+"projects.software.feature1":
+    "Inventory Management System",
+
+"projects.location.feature1":
+    "Telecom Base Station Site Selection",
+
+"projects.exploreSolutions":
+    "Explore Solutions",  
+    
+"carryhub.breadcrumb": "CarryHub Platform",
+// CarryHub Case Study — Hero
+"carryhub.hero.industry": "Fashion Retail & E-Commerce",
+"carryhub.hero.status": "Completed",
+"carryhub.hero.title": "CarryHub Digital Commerce Platform",
+"carryhub.hero.summary": "A modern e-commerce platform developed to help retailers establish a professional online presence, showcase products, streamline online shopping, and simulate secure digital payments using the PayPal Sandbox environment.",
+
+// CarryHub Case Study — Gallery
+"carryhub.gallery.registration.title": "Registration",
+"carryhub.gallery.registration.description": "Simple and secure user registration process.",
+
+"carryhub.gallery.login.title": "Login",
+"carryhub.gallery.login.description": "Secure user login experience.",
+
+"carryhub.gallery.profile.title": "User Profile",
+"carryhub.gallery.profile.description": "Detailed user profile information and order history.",
+
+"carryhub.gallery.products.title": "Products",
+"carryhub.gallery.products.description": "A wide range of products available for purchase in the store.",
+
+"carryhub.gallery.cart.title": "User Cart",
+"carryhub.gallery.cart.description": "Interactive shopping cart for managing selected products before checkout.",
+
+"carryhub.gallery.checkout.title": "Checkout",
+"carryhub.gallery.checkout.description": "Complete purchase workflow from cart review to payment.",
+
+"carryhub.gallery.payment.title": "Payment Processing",
+"carryhub.gallery.payment.description": "Secure and seamless payment processing integration.",
+
+"carryhub.gallery.orders.title": "Orders",
+"carryhub.gallery.orders.description": "Track and manage customer orders from placement to delivery.",
+
+"carryhub.tabs.overview": "Overview",
+"carryhub.tabs.challenge": "The Challenge",
+"carryhub.tabs.solution": "Our Solution",
+"carryhub.tabs.technologies": "Technologies",
+"carryhub.tabs.impact": "Business Impact",
+
+"carryhub.overview.title": "Project Overview",
+"carryhub.overview.p1": "The retail industry is rapidly shifting toward digital commerce, where customers expect to browse products, compare options, and complete purchases from anywhere at any time.",
+"carryhub.overview.p2": "CarryHub was developed by MLUE Technology as a modern digital commerce platform that enables retailers to showcase products professionally while providing customers with an intuitive and engaging online shopping experience. The platform demonstrates how businesses can transition from traditional retail operations to digital commerce through responsive web technologies, secure payment workflows, and scalable system architecture.",
+
+"carryhub.challenge.title": "The Business Challenge",
+"carryhub.challenge.intro": "Many small and medium-sized retailers face challenges when trying to establish an effective online sales channel. Common challenges include:",
+
+"carryhub.challenge.item1": "Limited online visibility for products.",
+"carryhub.challenge.item2": "Dependence on physical stores for sales.",
+"carryhub.challenge.item3": "Manual order processing.",
+"carryhub.challenge.item4": "Difficulty managing digital customer interactions.",
+"carryhub.challenge.item5": "Lack of secure online payment workflows.",
+"carryhub.challenge.item6": "Inconsistent shopping experiences across devices.",
+
+"carryhub.challenge.conclusion": "Without a reliable e-commerce platform, businesses may struggle to expand their market reach and compete in today's digital economy.",
+
+"carryhub.solution.title": "Our Solution",
+
+"carryhub.solution.p1": "MLUE Technology designed and developed the CarryHub Digital Commerce Platform to provide retailers with a complete online shopping solution. The platform allows customers to browse products, search and filter items, view detailed product information, manage shopping carts, and complete a simulated checkout process using the PayPal Sandbox environment.",
+
+"carryhub.solution.p2": "The solution was built using a scalable server-side architecture that can be extended to support production payment gateways, inventory integration, order management, customer accounts, and business analytics.",
+
+"carryhub.solution.featuresTitle": "Key Features",
+
+"carryhub.solution.feature1": "Modern Product Catalog",
+"carryhub.solution.feature2": "Product Categories",
+"carryhub.solution.feature3": "Product Search",
+"carryhub.solution.feature4": "Detailed Product Pages",
+"carryhub.solution.feature5": "Shopping Cart Management",
+"carryhub.solution.feature6": "Customer Registration & Authentication",
+"carryhub.solution.feature7": "Secure Login System",
+"carryhub.solution.feature8": "Order Checkout Workflow",
+"carryhub.solution.feature9": "PayPal Sandbox Payment Integration",
+"carryhub.solution.feature10": "Responsive Mobile Experience",
+"carryhub.solution.feature11": "Dynamic Product Rendering",
+"carryhub.solution.feature12": "PostgreSQL Database Integration",
+
+"carryhub.technologies.title": "Technologies Used",
+"carryhub.technologies.description": "Advanced web technologies and development tools were used to build the platform and support its core functionality.",
+"carryhub.technologies.highlightsTitle": "Development Highlights",
+
+"carryhub.technologies.highlight1.label": "Server-Side Rendering:",
+"carryhub.technologies.highlight1.text": "Dynamic pages generated using EJS templates for improved performance and efficient content rendering.",
+
+"carryhub.technologies.highlight2.label": "Secure Authentication:",
+"carryhub.technologies.highlight2.text": "User authentication and session management designed to protect customer accounts and shopping activities.",
+
+"carryhub.technologies.highlight3.label": "Digital Payment Workflow:",
+"carryhub.technologies.highlight3.text": "Integrated PayPal Sandbox to simulate secure online payment processing during development and testing.",
+
+"carryhub.technologies.highlight4.label": "Responsive Design:",
+"carryhub.technologies.highlight4.text": "Mobile-first interface delivering a seamless shopping experience across multiple screen sizes.",
+
+"carryhub.technologies.highlight5.label": "Scalable Architecture:",
+"carryhub.technologies.highlight5.text": "Application structure designed to support future enhancements including production payment gateways, inventory synchronization, and order tracking.",
+
+"carryhub.info.industryLabel": "Industry",
+"carryhub.info.industryValue": "Fashion Retail & E-Commerce",
+
+"carryhub.info.categoryLabel": "Category",
+"carryhub.info.categoryValue": "Business Software Solutions",
+
+"carryhub.info.architectureLabel": "Architecture",
+"carryhub.info.architectureValue": "Server-Side Rendered Web App",
+
+"carryhub.info.paymentLabel": "Payment Integration",
+"carryhub.info.paymentValue": "PayPal Sandbox",
+
+"carryhub.impact.title": "Business Impact",
+"carryhub.impact.intro": "CarryHub enables retailers to transform their digital operations and achieve key business goals:",
+
+"carryhub.impact.item1": "Establish a professional online storefront.",
+"carryhub.impact.item2": "Increase product visibility.",
+"carryhub.impact.item3": "Expand beyond physical store limitations.",
+"carryhub.impact.item4": "Improve customer shopping experience.",
+"carryhub.impact.item5": "Demonstrate secure digital payment workflows.",
+"carryhub.impact.item6": "Prepare for scalable e-commerce growth.",
+"carryhub.impact.item7": "Strengthen digital brand presence.",
+
+"carryhub.cta.whyTitle": "Why Digital Commerce Matters",
+
+"carryhub.cta.whyText": "Modern businesses need more than just a website—they need a digital sales platform that delivers convenience, trust, and accessibility. E-commerce enables organizations to reach wider audiences, strengthen customer engagement, and create sustainable revenue opportunities beyond traditional physical stores.",
+
+"carryhub.cta.buildTitle": "Build Your Digital Storefront",
+
+"carryhub.cta.buildText": "Whether you're launching a new online business or expanding an existing retail operation, MLUE Technology can design and develop scalable e-commerce solutions tailored to your business goals. Let's build your next digital commerce solution.",
+
+    // Smart Inventory Management System
+    "inventory.breadcrumb": "Smart Inventory Management System",
+
+    // Hero
+    "inventory.hero.industry": "Retail & Wholesale",
+    "inventory.hero.status": "In Progress",
+    "inventory.hero.title": "Smart Inventory Management System",
+    "inventory.hero.summary": "A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, manage suppliers, and gain real-time insights for smarter business decisions.",
+    "inventory.hero.imageAlt": "Smart Inventory System Dashboard",
+
+    // Gallery
+    "inventory.gallery.authentication.title": "Authentication",
+    "inventory.gallery.authentication.description": "Secure login and user management for the inventory system.",
+    "inventory.gallery.authentication.imageAlt": "Smart Inventory System Authentication",
+
+    "inventory.gallery.dashboard.title": "Dashboard Overview",
+    "inventory.gallery.dashboard.description": "Real-time overview of inventory levels, sales trends, and overall business performance.",
+    "inventory.gallery.dashboard.imageAlt": "Smart Inventory System Dashboard Overview",
+
+    "inventory.gallery.sales.title": "Sales Module",
+    "inventory.gallery.sales.description": "Records sales transactions while automatically updating inventory across all connected branches.",
+    "inventory.gallery.sales.imageAlt": "Smart Inventory System Sales Module",
+
+    "inventory.gallery.products.title": "Products Module",
+    "inventory.gallery.products.description": "Manage product details, categorize items, and set dynamic pricing structures.",
+    "inventory.gallery.products.imageAlt": "Smart Inventory System Products Module",
+
+    // Tabs
+    "inventory.tabs.overview": "Overview",
+    "inventory.tabs.challenge": "The Challenge",
+    "inventory.tabs.solution": "Our Solution",
+    "inventory.tabs.technologies": "Technologies",
+    "inventory.tabs.impact": "Business Impact",
+
+    // Overview
+    "inventory.overview.title": "Project Overview",
+    "inventory.overview.paragraph1": "Many growing businesses struggle to keep accurate inventory records while maintaining efficient daily operations. Manual stock tracking often results in errors, lost products, delayed reporting, and poor decision-making.",
+    "inventory.overview.paragraph2": "The Smart Inventory Management System was developed by MLUE Technology to provide businesses with a centralized platform for managing inventory, suppliers, products, sales, and reporting in real time. The system enables business owners to improve operational efficiency while making informed decisions through accurate and accessible business data.",
+
+    // Challenge
+    "inventory.challenge.title": "The Business Challenge",
+    "inventory.challenge.introduction": "Many small and medium-sized businesses still rely on notebooks, spreadsheets, or disconnected systems to manage inventory. As businesses grow, these methods become increasingly difficult to maintain and often lead to:",
+    "inventory.challenge.item1": "Inaccurate stock records",
+    "inventory.challenge.item2": "Inventory losses and stock discrepancies",
+    "inventory.challenge.item3": "Time-consuming manual reporting",
+    "inventory.challenge.item4": "Limited visibility into business performance",
+    "inventory.challenge.item5": "Poor inventory planning and purchasing decisions",
+    "inventory.challenge.conclusion": "Without reliable inventory data, business owners struggle to make confident operational and financial decisions.",
+
+    // Solution
+    "inventory.solution.title": "Our Solution & Key Features",
+    "inventory.solution.paragraph1": "MLUE Technology designed and developed a centralized inventory management platform that automates inventory operations from product registration to stock movement tracking and reporting.",
+    "inventory.solution.paragraph2": "The system provides real-time visibility into inventory levels, supplier information, sales activities, and business performance through an intuitive web-based interface. By automating routine processes, businesses can reduce manual work, improve accuracy, and make faster, data-driven decisions.",
+    "inventory.solution.featuresTitle": "Key System Features",
+
+    "inventory.solution.feature1.title": "Product & Category",
+    "inventory.solution.feature1.description": "Comprehensive management of items, specifications, and hierarchical categorizations.",
+
+    "inventory.solution.feature2.title": "Supplier & Customer",
+    "inventory.solution.feature2.description": "Maintain detailed profiles and interactions for smooth procurement and sales workflows.",
+
+    "inventory.solution.feature3.title": "Tracking & Movement",
+    "inventory.solution.feature3.description": "Real-time stock monitoring and detailed logs of all inventory movements across operations.",
+
+    "inventory.solution.feature4.title": "Security & Roles",
+    "inventory.solution.feature4.description": "Secure authentication with role-based access control and responsive administration dashboards.",
+
+    // Technologies
+    "inventory.technologies.title": "Technologies Used",
+    "inventory.technologies.description": "Built using an enterprise-grade, modern technology stack ensuring scalability, security, and performance.",
+    "inventory.technologies.industryLabel": "Industry",
+    "inventory.technologies.industryValue": "Retail & Wholesale",
+    "inventory.technologies.categoryLabel": "Category",
+    "inventory.technologies.categoryValue": "Business Software",
+    "inventory.technologies.platformLabel": "Platform",
+    "inventory.technologies.platformValue": "Web Application",
+    "inventory.technologies.statusLabel": "Status",
+    "inventory.technologies.statusValue": "In Progress",
+
+    // Impact
+    "inventory.impact.title": "Business Impact",
+    "inventory.impact.introduction": "The solution helps businesses achieve operational excellence and sustainable growth:",
+    "inventory.impact.item1": "Improve inventory accuracy across all operations",
+    "inventory.impact.item2": "Reduce manual record keeping and human error",
+    "inventory.impact.item3": "Monitor stock levels in real time",
+    "inventory.impact.item4": "Generate business reports instantly",
+    "inventory.impact.item5": "Improve purchasing decisions based on hard data",
+    "inventory.impact.item6": "Increase overall operational efficiency",
+    "inventory.impact.item7": "Centralize business information into a single source of truth",
+    "inventory.impact.item8": "Support future business growth and branch expansions",
+
+    // CTA
+    "inventory.cta.title": "Build Smarter Business Software",
+    "inventory.cta.description": "Whether you're managing retail stores, warehouses, pharmacies, supermarkets, or wholesale businesses, MLUE Technology can design custom software solutions that improve efficiency, automate operations, and support sustainable business growth. Let's build technology that works for your business.",
+    "inventory.cta.button": "Contact MLUE Technology",
+
+// About
+"about.eyebrow": "WHO WE ARE?",
+
+"about.headline": "Engineering digital systems",
+"about.headlineAccent": "that solve real problems.",
+
+"about.description": "A technology company focused on engineering high-quality software that solves real business problems.",
+
+"about.missionLabel": "MISSION",
+
+"about.mission": "To empower businesses with reliable, innovative, and secure technology solutions that simplify operations and accelerate growth.",
+
+"about.visionLabel": "VISION",
+
+"about.vision": "To become the most trusted technology partner for businesses across East Africa and beyond, delivering world-class digital solutions.",
+
+"about.approachLabel": "ENGINEERING APPROACH",
+
+"about.approachTitle": "Built with engineering principles.",
+
+"about.architectureTitle": "Architecture",
+
+"about.architectureText": "Structured systems designed for maintainability and growth.",
+
+"about.securityTitle": "Security",
+
+"about.securityText": "Security considered throughout the system lifecycle.",
+
+"about.scalabilityTitle": "Scalability",
+
+"about.scalabilityText": "Systems engineered to grow with changing business needs.",
+
+"about.reliabilityTitle": "Reliability",
+
+"about.reliabilityText": "Dependable systems built for consistent operation.",
+
+"about.principlesLabel": "ENGINEERING PRINCIPLES",
+
+"about.principle1Title": "Engineering Quality",
+
+"about.principle1Text": "Clean architecture, tested code, and modern engineering practices.",
+
+"about.principle2Title": "Business-Oriented",
+
+"about.principle2Text": "Technology designed around real business needs and problems.",
+
+"about.principle3Title": "Reliability & Security",
+
+"about.principle3Text": "Security and reliability built into every layer of our systems.",
+
+
+
+// Services
+
+"services.eyebrow": "WHAT WE DO",
+"services.title": "Technology solutions",
+"services.titleAccent": "engineered around real problems.",
+"services.description": "We design, build, and deploy digital solutions around actual business needs.",
+
+"services.software.type": "CORE SOLUTION",
+"services.software.title": "Business Software",
+"services.software.titleAccent": "Solutions",
+"services.software.description": "We engineer software systems that help businesses manage operations, automate workflows, improve productivity, and make better decisions.",
+"services.software.capability1": "Custom Software",
+"services.software.capability2": "Business Systems",
+"services.software.capability3": "APIs & Backend",
+"services.software.capability4": "E-Commerce",
+
+"services.location.type": "SPECIALIZED SOLUTION",
+"services.location.title": "Location",
+"services.location.titleAccent": "Intelligence",
+"services.location.description": "We use GIS, spatial data, and mapping technologies to transform location information into actionable decisions.",
+"services.location.capability1": "GIS Analysis",
+"services.location.capability2": "Spatial Data",
+"services.location.capability3": "Site Selection",
+"services.location.capability4": "Mapping",
+
+"services.capabilitiesLabel": "ENGINEERING CAPABILITIES",
+"services.deliveryLabel": "HOW WE DELIVER",
+
+"services.uiux.title": "UI / UX",
+"services.uiux.description": "Interfaces designed around clarity, usability, and real user workflows.",
+
+"services.cloud.title": "Cloud & Deployment",
+"services.cloud.description": "Reliable deployment infrastructure designed for performance and growth.",
+
+"services.maintenance.title": "Maintenance & Support",
+"services.maintenance.description": "Continuous improvement, maintenance, and technical support after deployment.",
+
+// ===================================================
+// TELECOM LOCATION INTELLIGENCE CASE STUDY
+// ===================================================
+
+"locationCaseStudy.category":
+    "Location Intelligence",
+
+"locationCaseStudy.breadcrumb":
+    "Telecom Infrastructure",
+
+"locationCaseStudy.telecommunications":
+    "Telecommunications",
+
+"locationCaseStudy.completedResearch":
+    "Completed (Research Project)",
+
+"locationCaseStudy.heroTitle":
+    "Telecom Infrastructure Site Selection",
+
+"locationCaseStudy.heroSummary":
+    "A geospatial analysis project developed to identify the most suitable locations for telecommunication base stations using Geographic Information Systems (GIS), spatial analysis, and location intelligence to support infrastructure planning and network expansion.",
+
+"locationCaseStudy.gallery1.title":
+    "Study Area",
+
+"locationCaseStudy.gallery1.description":
+    "Overview of the project study area and administrative boundaries used during the analysis.",
+
+"locationCaseStudy.gallery2.title":
+    "Population Distribution",
+
+"locationCaseStudy.gallery2.description":
+    "Population density map used to identify areas with high demand for telecommunication services.",
+
+"locationCaseStudy.gallery3.title":
+    "Existing Base Stations",
+
+"locationCaseStudy.gallery3.description":
+    "Distribution of existing base stations across the study area.",
+
+"locationCaseStudy.gallery4.title":
+    "Suitability Analysis",
+
+"locationCaseStudy.gallery4.description":
+    "Spatial suitability model identifying the most appropriate locations for new telecommunication infrastructure.",
+
+"locationCaseStudy.gallery5.title":
+    "Final Recommendation Map",
+
+"locationCaseStudy.gallery5.description":
+    "Final map highlighting recommended areas for future network expansion.",
+
+"locationCaseStudy.tabs.overview":
+    "Overview",
+
+"locationCaseStudy.tabs.challenge":
+    "The Challenge",
+
+"locationCaseStudy.tabs.solution":
+    "Our Solution",
+
+"locationCaseStudy.tabs.technologies":
+    "Technologies",
+
+"locationCaseStudy.tabs.impact":
+    "Business Impact",
+
+"locationCaseStudy.overview.title":
+    "Project Overview",
+
+"locationCaseStudy.overview.p1":
+    "Selecting the right location for telecommunication infrastructure is one of the most critical decisions in network planning. Poor site selection can lead to limited service coverage, increased deployment costs, and inefficient resource utilization.",
+
+"locationCaseStudy.overview.p2":
+    "MLUE Technology conducted a location intelligence study using Geographic Information Systems (GIS) to evaluate suitable areas for telecommunication base station deployment. By combining multiple spatial datasets and analytical techniques, the project demonstrates how geospatial technology can support informed infrastructure investment decisions.",
+
+"locationCaseStudy.challenge.title":
+    "The Business Challenge",
+
+"locationCaseStudy.challenge.intro":
+    "Telecommunication providers must carefully determine where to deploy new network infrastructure to maximize coverage while minimizing operational and investment costs. Without spatial analysis, organizations may face challenges such as:",
+
+"locationCaseStudy.challenge.item1":
+    "Poor network coverage",
+
+"locationCaseStudy.challenge.item2":
+    "High infrastructure deployment costs",
+
+"locationCaseStudy.challenge.item3":
+    "Overlapping service areas",
+
+"locationCaseStudy.challenge.item4":
+    "Under-served communities",
+
+"locationCaseStudy.challenge.item5":
+    "Inefficient resource allocation",
+
+"locationCaseStudy.challenge.item6":
+    "Limited visibility into geographic factors affecting expansion",
+
+"locationCaseStudy.challenge.conclusion":
+    "Making these decisions without location intelligence increases both financial and operational risk.",
+
+"locationCaseStudy.solution.title":
+    "Our Solution",
+
+"locationCaseStudy.solution.description":
+    "MLUE Technology applied geospatial analysis techniques to identify suitable locations for telecommunication infrastructure. The project integrated multiple spatial datasets to evaluate potential deployment areas. Through spatial modelling and suitability analysis, decision-makers can better understand where future network investments are likely to deliver the greatest value.",
+
+"locationCaseStudy.solution.coreComponents":
+    "Core Components",
+
+"locationCaseStudy.solution.dataUsedTitle":
+    "Data Used",
+
+"locationCaseStudy.solution.dataUsed":
+    "Integrated datasets including Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, and Existing Infrastructure.",
+
+"locationCaseStudy.solution.methodologyTitle":
+    "Spatial Analysis Methodology",
+
+"locationCaseStudy.solution.methodology":
+    "Utilized Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, and Geographic Visualization.",
+
+"locationCaseStudy.solution.deliverablesTitle":
+    "Key Deliverables",
+
+"locationCaseStudy.solution.deliverables":
+    "Produced Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, and Geographic Reports.",
+
+"locationCaseStudy.technologies.title":
+    "Technologies Used",
+
+"locationCaseStudy.technologies.description":
+    "Advanced geospatial tools and methodologies were utilized to process and analyze complex spatial data.",
+
+"locationCaseStudy.info.industryLabel":
+    "Industry",
+
+"locationCaseStudy.info.categoryLabel":
+    "Category",
+
+"locationCaseStudy.info.platformLabel":
+    "Platform",
+
+"locationCaseStudy.info.projectTypeLabel":
+    "Project Type",
+
+"locationCaseStudy.impact.title":
+    "Business Impact",
+
+"locationCaseStudy.impact.intro":
+    "The proposed geospatial approach helps organizations mitigate risks and make data-driven decisions:",
+
+"locationCaseStudy.impact.item1":
+    "Improve infrastructure planning",
+
+"locationCaseStudy.impact.item2":
+    "Reduce investment risk",
+
+"locationCaseStudy.impact.item3":
+    "Support strategic expansion decisions",
+
+"locationCaseStudy.impact.item4":
+    "Identify high-potential deployment areas",
+
+"locationCaseStudy.impact.item5":
+    "Improve network coverage planning",
+
+"locationCaseStudy.impact.item6":
+    "Enhance location-based decision making",
+
+"locationCaseStudy.impact.item7":
+    "Optimize resource allocation",
+
+"locationCaseStudy.cta.whyTitle":
+    "Why Location Intelligence Matters",
+
+"locationCaseStudy.cta.whyText":
+    "Modern organizations generate large amounts of business and geographic data, yet many decisions are still made without considering location. Location Intelligence transforms geographic data into actionable insights that support Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, and Strategic Decision-Making.",
+
+"locationCaseStudy.cta.transformTitle":
+    "Transform Geographic Data into Business Intelligence",
+
+"locationCaseStudy.cta.transformText":
+    "Whether you're planning infrastructure, evaluating new investment locations, analysing markets, or supporting strategic expansion, MLUE Technology delivers geospatial solutions that turn location data into meaningful business insights. Let's build smarter decisions through Location Intelligence.",
+
+"contact.cta": "Contact Us",
+
+"nav.menu": "Menu",
+
+"locationPage.title":
+    "Location Intelligence",
+
+"locationPage.description":
+    "Geospatial analysis and GIS solutions that help organizations identify hidden opportunities, optimize operations, and make strategic, location-based decisions.",
+
+"locationPage.telecommunications":
+    "Telecommunications",
+
+"locationPage.completed":
+    "Completed",
+
+"locationPage.projectTitle":
+    "Telecom Base Station Site Selection",
+
+"locationPage.projectSummary":
+    "A comprehensive spatial analysis solution designed to identify optimal locations for new cell towers. By analyzing population density, terrain, and existing network gaps, we helped reduce planning time and maximize network coverage.",
+
+"locationPage.viewCaseStudy":
+    "View Case Study",
+
+    
+
+
+"softwareSolutions.carryhub.industry": "E-Commerce",
+"softwareSolutions.carryhub.title": "CarryHub Digital Platform",
+"softwareSolutions.carryhub.description": "A modern e-commerce platform developed to help retailers establish a professional online presence, showcase products, and simulate secure digital payments.",
+"softwareSolutions.carryhub.cta": "View Case Study",
+
+"softwareSolutions.inventory.industry": "Retail & Wholesale",
+"softwareSolutions.inventory.title": "Smart Inventory System",
+"softwareSolutions.inventory.description": "A modern inventory management solution designed to help businesses streamline stock control, monitor inventory movements, and gain real-time insights.",
+"softwareSolutions.inventory.cta": "View Case Study",
+"softwareSolutions.title": "Business Software Solutions",
+"softwareSolutions.description": "Empowering organizations with robust, scalable, and secure software applications designed to streamline operations, enhance customer experiences, and drive business growth.",
+
+
+// What You Get
+"value.eyebrow": "WHAT YOU GET",
+
+"value.title": "Practical systems.",
+
+"value.titleAccent": "Clearer decisions. Long-term value.",
+
+"value.description": "We don't just deliver software. We build technology that improves how businesses operate, make decisions, and grow.",
+
+"value.business.title": "Business Control",
+
+"value.business.description": "Better control of your business operations through systems designed around real workflows.",
+
+"value.intelligence.title": "Actionable Intelligence",
+
+"value.intelligence.description": "Data, GIS, and real-time insights that support clearer and more informed decisions.",
+
+"value.growth.title": "Built for Growth",
+
+"value.growth.description": "Secure and maintainable systems designed to evolve with your business and its changing needs.",
+
+"value.principle1": "Business-first",
+
+"value.principle2": "Security-conscious",
+
+"value.principle3": "Built to last",
+
+"value.cta": "Request a Solution",
+
+
+// Engineering Team
+
+"team.eyebrow": "THE ENGINEERING TEAM",
+"team.title": "Three engineers.",
+"team.titleAccent": "Complementary strengths. One team.",
+"team.description": "We combine specialized engineering strengths to design, build, and deliver complete digital systems for real-world problems.",
+
+"team.softwareEngineer": "Software Engineer",
+
+"team.specialization": "SPECIALIZATION",
+
+"team.davidRole": "Frontend Engineering & UI/UX",
+
+"team.davidDescription": "Focused on crafting polished digital experiences and engineering intelligent systems that turn complex business problems into usable solutions.",
+
+"team.skill1": "UI / UX",
+"team.skill2": "Frontend Engineering",
+"team.skill3": "Decision Support",
+"team.skill4": "Expert Systems",
+
+"team.oneTeam": "ONE TEAM",
+"team.disciplines": "MULTIPLE ENGINEERING DISCIPLINES",
+
+"team.capability1": "Software Engineering",
+"team.capability2": "GIS",
+"team.capability3": "APIs",
+"team.capability4": "Database Systems",
+"team.capability5": "Cloud",
+"team.capability6": "Intelligent Systems",
+"team.capability7": "UI / UX",
+"team.davidCardRole": "Software Engineer",
+"team.gwamakaCardRole": "Software Engineer",
+"team.stephaneCardRole": "Software Engineer",
+
+
+// Why Choose Us
+"why.label": "WHY US",
+"why.title": "Why Choose MLUE Technology",
+"why.subtitle": "We don't just build software — we build reliable digital solutions designed around real business needs.",
+
+"why.r1Title": "Real Business Understanding",
+"why.r1Text": "We take the time to understand your business operations, challenges, and goals before designing the right technology solution.",
+
+"why.r2Title": "Security-Focused Development",
+"why.r2Text": "Security is considered throughout the development process to help protect your systems, data, and customers.",
+
+"why.r3Title": "Scalable Systems",
+"why.r3Text": "We build systems that can grow with your business and adapt to changing operational and technology needs.",
+
+"why.r4Title": "Long-Term Solutions",
+"why.r4Text": "Our solutions are designed for maintainability, reliability, and long-term value rather than short-term fixes.",
+
 
     // Contact
-    "contact.label": "Get In Touch",
-    "contact.title": "Let's Build your Digital Future",
-    "contact.subtitle": "Have a project in mind? We'd love to hear about it. Reach out with your idea and let's start building something great.",
-    "contact.emailLabel": "Email",
-    "contact.phoneLabel": "Phone / WhatsApp",
-    "contact.webLabel": "Website",
-    "contact.nameLabel": "Your Name",
-    "contact.namePlaceholder": "Enter your name",
-    "contact.emailField": "Email Address",
-    "contact.emailPlaceholder": "Enter your email",
-    "contact.msgLabel": "Message",
-    "contact.msgPlaceholder": "Tell us about your project...",
-    "contact.send": "Request Solution",
+
+"contact.eyebrow": "CONTACT",
+"contact.title": "Have a problem worth solving?",
+"contact.titleAccent": "Let's engineer the right solution.",
+"contact.subtitle": "Tell us what you're trying to build, solve, or improve. Let's start the conversation.",
+
+"contact.talkLabel": "PREFER TO TALK?",
+"contact.talkTitle": "Let's discuss your idea.",
+"contact.talkText": "Have a question, an idea, or a project that needs discussion? Reach out to us directly.",
+
+"contact.whatsapp": "WhatsApp",
+"contact.emailLabel": "Email",
+"contact.locationLabel": "BASED IN",
+
+"contact.projectLabel": "START A PROJECT",
+"contact.projectTitle": "Tell us what you're building.",
+
+"contact.solutionLabel": "What do you need?",
+"contact.solutionPlaceholder": "Select a solution",
+"contact.solutionCustomSoftware": "Custom Software",
+"contact.solutionBusinessSystem": "Business System",
+"contact.solutionApi": "API / Backend",
+"contact.solutionEcommerce": "E-Commerce",
+"contact.solutionGis": "GIS / Location Intelligence",
+"contact.solutionAi": "AI / Intelligent Systems",
+"contact.solutionOther": "Other",
+
+"contact.nameLabel": "Your Name",
+"contact.namePlaceholder": "Enter your name",
+
+"contact.emailField": "Email Address",
+"contact.emailPlaceholder": "Enter your email",
+
+"contact.msgLabel": "Project Brief",
+"contact.msgPlaceholder": "Tell us about the problem you're solving or the system you'd like to build...",
+
+"contact.send": "Send Project Brief",
+
 
     // Footer
-    "footer.tagline": "Engineering modern solutions for modern businesses.",
-    "footer.quickLinks": "Quick Links",
-    "footer.legal": "Legal",
-    "footer.privacy": "Privacy Policy",
-    "footer.terms": "Terms of Service",
-    "footer.rights": "All rights reserved.",
 
-    // Chatbot
-    "chat.online": "Online",
-    "chat.placeholder": "Ask about MLUE Technology...",
-    "chat.onboarding": "HOW CAN I HELP YOU TODAY",
+"footer.tagline": "Engineering modern solutions for modern businesses.",
 
-   // Meet Our Engineers Section
-    "engineers.label": "Meet Our Engineers",
-    "engineers.title": "Our Engineering Team",
-    "engineers.subtitle": "Get to know the talented professionals behind our innovative solutions."
-      ,
-      // New content from index.html
-      "cta.requestSolution": "Request a Solution",
-      "cta.viewServices": "View Services",
-      "results.title": "What You Get",
-      "results.benefit1": "✔ Better control of your business operations",
-      "results.benefit2": "✔ Geographic Business Decisions Support",
-      "results.benefit3": "✔ Real-time insights and reporting",
-      "results.benefit4": "✔ Scalable systems that grow with your business",
-      // Team roles
-      "team.backend": "Backend Engineer",
-      "team.designer": "Designer",
-      "team.software": "Software Engineer",
-      "team.dba": "Database Adminstrator(DBA)",
-      "team.frontend": "Frontend Developer",
-      "team.ai": "AI Engineer"
+"footer.quickLinks": "Explore",
+
+"footer.services": "Services",
+"footer.businessSoftware": "Business Software",
+"footer.customSoftware": "Custom Software",
+"footer.apiBackend": "APIs & Backend",
+"footer.ecommerce": "E-Commerce",
+"footer.locationIntelligence": "Location Intelligence",
+"footer.aiSystems": "AI / Intelligent Systems",
+
+"footer.letsTalk": "Let's Talk",
+"footer.basedIn": "Based in",
+"footer.whatsapp": "WhatsApp",
+"footer.email": "Email",
+
+"footer.rights": "All rights reserved.",
+"footer.privacy": "Privacy Policy",
+"footer.terms": "Terms of Service",
+
+
+"chat.ask": "Ask MLUE",
+"chat.online": "Online",
+"chat.placeholder": "Ask about MLUE Technology...",
+"chat.onboarding": "HOW CAN I HELP YOU TODAY",
+
+
+      // What You Get
+"results.eyebrow": "WHAT YOU GET",
+
+"results.title": "Practical systems. Clearer decisions. Long-term value.",
+
+"results.intro": "We don't just deliver software. We build technology that improves how businesses operate, make decisions, and grow.",
+
+"results.benefit1Title": "Business Control",
+"results.benefit1": "Better control of your business operations through systems designed around real workflows.",
+
+"results.benefit2Title": "Actionable Intelligence",
+"results.benefit2": "Data, GIS, and real-time insights that support clearer and more informed decisions.",
+
+"results.benefit3Title": "Built for Growth",
+"results.benefit3": "Secure and maintainable systems designed to evolve with your business and its changing needs.",
+
+"results.principle1": "Business-first",
+"results.principle2": "Security-conscious",
+"results.principle3": "Built to last",
+
+"results.cta": "Request a Solution",
+
+// ==================== ENGLISH ====================
+
+// Navigation
+"nav.home": "Home",
+"nav.about": "About Us",
+"nav.services": "Services",
+"nav.pricing": "Pricing",
+"nav.contact": "Contact",
+"nav.projects": "Projects",
+"nav.menu": "Menu",
+"nav.cta": "Get Started",
+
+// Footer
+"footer.tagline": "Engineering modern solutions for modern businesses.",
+"footer.quickLinks": "Quick Links",
+"footer.legal": "Legal",
+"footer.privacy": "Privacy Policy",
+"footer.terms": "Terms of Service",
+"footer.rights": "All rights reserved.",
+"footer.services": "Services",
+"footer.businessSoftware": "Business Software",
+"footer.customSoftware": "Custom Software",
+"footer.apiBackend": "APIs & Backend",
+"footer.ecommerce": "E-Commerce",
+"footer.locationIntelligence": "Location Intelligence",
+"footer.aiSystems": "AI / Intelligent Systems",
+"footer.letsTalk": "Let's Talk",
+"footer.basedIn": "Based in",
+"footer.location": "Dar es Salaam, Tanzania",
+"footer.whatsapp": "WhatsApp",
+"footer.email": "Email",
+
+// Terms of Service
+"terms.eyebrow": "TERMS & CONDITIONS",
+"terms.title": "Terms of Service",
+"terms.intro": "The terms governing your use of the MLUE TECHNOLOGY website, digital services, and direct service engagements.",
+"terms.lastUpdated": "Last Updated",
+
+"terms.intro.p1": "Welcome to MLUE TECHNOLOGY. These Terms of Service (\"Terms\") govern your access to and use of our website, chatbot, contact forms, content, and any services we provide through direct engagement (collectively, the \"Services\").",
+
+"terms.intro.p2": "By accessing or using our website or engaging our Services, you agree to be bound by these Terms. If you do not agree, please discontinue use of the Services.",
+
+"terms.s1.title": "1. About MLUE TECHNOLOGY",
+"terms.s1.p1": "MLUE TECHNOLOGY is a technology company providing business systems, custom software development, backend engineering, APIs, branding, and related digital services.",
+
+"terms.s2.title": "2. Use of Website",
+"terms.s2.p1": "You agree to use this website only for lawful purposes and in a manner that does not disrupt the site or its users. You must not:",
+"terms.s2.li1": "Attempt unauthorized access to the website, servers, or connected systems",
+"terms.s2.li2": "Interfere with website security, availability, or performance",
+"terms.s2.li3": "Submit false, harmful, or misleading information",
+"terms.s2.li4": "Misuse the chatbot, contact forms, or other communication tools",
+"terms.s2.li5": "Attempt to scrape, copy, or republish content without permission",
+
+"terms.s3.title": "3. Contact Forms and Messaging",
+"terms.s3.p1": "When you submit a form on our website or pricing page, your message may be processed by our form provider and delivered to our email inbox. You are responsible for the accuracy of the information you submit.",
+"terms.s3.p2": "Do not submit confidential information unless you are comfortable with it being transmitted through standard internet and third-party service channels.",
+
+"terms.s4.title": "4. Chatbot Use",
+"terms.s4.p1": "Our chatbot is provided as a convenience feature to help answer common questions about our business and services. The chatbot may use local keyword-based logic in the browser and may be updated in the future to use third-party AI services.",
+"terms.s4.p2": "You agree not to use the chatbot to send abusive, illegal, or malicious content, or to rely on it as a substitute for professional advice.",
+
+"terms.s5.title": "5. Language Preference and Browser Storage",
+"terms.s5.p1": "We store your selected language preference in your browser using local storage so the site can remember whether you prefer English or Swahili. This setting is stored locally on your device.",
+
+"terms.s6.title": "6. Service Engagement & Agreements",
+"terms.s6.p1": "Any custom software development, system deployment, API integration, POS system, website build, branding project, or similar engagement requires a separate written agreement covering scope, deliverables, timelines, and payment terms.",
+"terms.s6.p2": "Information shown on the website, including pricing, package descriptions, or service summaries, is for general guidance only and does not create a binding contract or guarantee specific outcomes.",
+
+"terms.s7.title": "7. Payments and Scope Changes",
+"terms.s7.p1": "Where applicable, work may require upfront, milestone-based, or phased payments. If you request work outside the agreed scope, we may treat it as additional work and quote it separately.",
+
+"terms.s8.title": "8. Intellectual Property",
+"terms.s8.p1": "Unless we agree otherwise in writing, all website content, branding elements, documentation, code snippets, software frameworks, and design materials remain the intellectual property of MLUE TECHNOLOGY.",
+"terms.s8.p2": "You may not copy, reproduce, modify, or distribute our content or deliverables except as permitted by written agreement or applicable law.",
+
+"terms.s9.title": "9. Service Disclaimer",
+"terms.s9.p1": "We use reasonable care and industry practices when building and maintaining our Services, but we do not guarantee uninterrupted operation, error-free performance, or complete protection against fraud, misuse, or technical failures.",
+"terms.s9.p2": "You are responsible for how you use the Services and for your own internal business, legal, and compliance decisions.",
+
+"terms.s10.title": "10. Third-Party Services",
+"terms.s10.p1": "Our website may rely on third-party hosting providers, form processing services, browser APIs, or other external services. We are not responsible for outages, delays, or issues caused by those third parties.",
+
+"terms.s11.title": "11. Limitation of Liability",
+"terms.s11.p1": "To the fullest extent permitted by law, MLUE TECHNOLOGY is not liable for indirect, incidental, special, or consequential damages, including loss of profits, data, or business interruption, arising from your use of or inability to use the Services.",
+
+"terms.s12.title": "12. Suspension and Termination",
+"terms.s12.p1": "We may suspend or terminate access to the Services if we reasonably believe these Terms have been violated or the site is being misused.",
+
+"terms.s13.title": "13. Changes to These Terms",
+"terms.s13.p1": "We may update these Terms from time to time. Continued use of the Services after updates are posted means you accept the revised Terms.",
+
+"terms.s14.title": "14. Governing Law",
+"terms.s14.p1": "These Terms are governed by and interpreted in accordance with the laws of the United Republic of Tanzania.",
+
+"terms.s15.title": "15. Contact Information",
+"terms.s15.p1.prefix": "If you have questions about these Terms, please contact us at ",
+"terms.s15.p1.suffix": ".",
+
+"terms.footerNote": "These Terms should be read together with our Privacy Policy, which explains how information is handled when you use the website and related services.",
+
+// ==================== ENGLISH ====================
+
+// Privacy Policy
+"privacy.eyebrow": "PRIVACY POLICY",
+"privacy.title": "Privacy Policy",
+"privacy.intro": "How MLUE TECHNOLOGY handles personal information across our website, contact forms, chatbot, and language preferences.",
+"privacy.effectiveDate": "Effective Date",
+"privacy.effectiveDateValue": "April 17, 2026",
+
+"privacy.intro.p1": "MLUE TECHNOLOGY (\"we\", \"our\", \"us\") respects your privacy and is committed to handling personal information responsibly. This policy explains what we collect when you use our website, contact forms, chatbot, and language tools, and how we use that information.",
+"privacy.intro.p2": "By using our website, you agree to the practices described in this policy.",
+
+"privacy.s1.title": "1. Overview",
+"privacy.s1.p1": "MLUE TECHNOLOGY (\"we\", \"our\", \"us\") respects your privacy and is committed to handling personal information responsibly. This policy explains what we collect when you use our website, contact forms, chatbot, and language tools, and how we use that information.",
+"privacy.s1.p2": "By using our website, you agree to the practices described in this policy.",
+
+"privacy.s2.title": "2. Information We Collect",
+"privacy.s2.p1": "We collect only the information needed to respond to inquiries and operate the website features you choose to use.",
+
+"privacy.s2.a.title": "a) Information You Provide Directly",
+"privacy.s2.a.li1": "Name",
+"privacy.s2.a.li2": "Email address",
+"privacy.s2.a.li3": "Phone number, if you include it",
+"privacy.s2.a.li4": "Message content submitted through our forms or direct contact links",
+
+"privacy.s2.b.title": "b) Chatbot Messages",
+"privacy.s2.b.p1": "If you use the chatbot, the text you type is processed to generate a response. The chatbot currently uses local keyword-based logic in the browser. If we enable a third-party AI fallback in the future, chatbot messages may be sent to that service for processing.",
+
+"privacy.s2.c.title": "c) Basic Technical Information",
+"privacy.s2.c.li1": "Browser and device information",
+"privacy.s2.c.li2": "IP address inferred by our hosting or form provider when you submit a form",
+"privacy.s2.c.li3": "Pages visited on our public site",
+"privacy.s2.c.p1": "We use this information for security, troubleshooting, and site maintenance.",
+
+"privacy.s2.d.title": "d) Language Preference",
+"privacy.s2.d.p1": "We store your selected language preference in your browser using localStorage so the site can remember whether you prefer English or Swahili.",
+
+"privacy.s3.title": "3. How We Use Information",
+"privacy.s3.li1": "Respond to contact requests",
+"privacy.s3.li2": "Provide project and service information",
+"privacy.s3.li3": "Operate the chatbot and language-switching features",
+"privacy.s3.li4": "Improve the website and its content",
+"privacy.s3.li5": "Protect the site from misuse and technical issues",
+"privacy.s3.p1": "We do not sell, rent, or trade your personal information.",
+
+"privacy.s4.title": "4. How Information Is Shared",
+"privacy.s4.p1": "We share information only when necessary to run the services you use.",
+"privacy.s4.li1": "FormSubmit processes contact form submissions and forwards them to our email inbox.",
+"privacy.s4.li2": "Hosting providers may process standard server and access logs needed to deliver the website.",
+"privacy.s4.li3": "AI services, if enabled in the future for chatbot fallback, would receive only the chatbot text needed to generate a reply.",
+
+"privacy.s5.title": "5. Cookies and Storage",
+"privacy.s5.p1": "We do not intentionally use advertising or analytics cookies on this website. We do use browser storage for the language preference feature. Your browser or hosting provider may still use essential technical cookies or logs required for normal site operation.",
+
+"privacy.s6.title": "6. Data Retention",
+"privacy.s6.p1": "We keep contact form submissions only as long as needed to answer your inquiry, complete a business discussion, or satisfy record-keeping obligations. If a third-party provider retains data for its own operational or legal reasons, their retention practices will also apply.",
+
+"privacy.s7.title": "7. Security",
+"privacy.s7.p1": "We use reasonable technical and organizational measures to help protect information from unauthorized access, loss, misuse, or disclosure. No online transmission or storage method is completely secure, so we cannot guarantee absolute security.",
+
+"privacy.s8.title": "8. Your Rights",
+"privacy.s8.p1": "Depending on your location and the nature of the data involved, you may request to access, correct, or delete personal information you have submitted to us. To make a request, contact us using the details below.",
+
+"privacy.s9.title": "9. External Links",
+"privacy.s9.p1": "Our website may link to third-party websites. We are not responsible for the privacy practices or content of those sites.",
+
+"privacy.s10.title": "10. Children’s Privacy",
+"privacy.s10.p1": "Our website is intended for business and professional use and is not directed to children under 13. We do not knowingly collect personal information from children.",
+
+"privacy.s11.title": "11. Updates to This Policy",
+"privacy.s11.p1": "We may update this policy as our website features change. When we do, we will revise the effective date on this page.",
+
+"privacy.s12.title": "12. Contact Us",
+"privacy.s12.p1": "If you have questions about this Privacy Policy or your information, please contact us at:",
+"privacy.s12.emailLabel": "Email",
+"privacy.s12.location": "MLUE TECHNOLOGY\nUnited Republic of Tanzania"
+    
   },
 
-  sw: {
-    // Navigation
-    "nav.home": "Nyumbani",
-    "nav.about": "Kuhusu Sisi",
-    "nav.services": "Huduma",
-    "nav.whyUs": "Kwa Nini Sisi",
-    "nav.contact": "Wasiliana",
-    "nav.cta": "Anza Sasa",
+  sw: { 
+
+"nav.home": "Nyumbani",
+"nav.about": "Kuhusu Sisi",
+"nav.services": "Huduma",
+"nav.pricing": "Bei",
+"nav.contact": "Mawasiliano",
+"nav.projects": "Miradi",
+"nav.cta": "Anza",
 
     // Hero
-      "hero.label": "Suluhisho Mahiri za Biashara",
-      "hero.title": "Mifumo Mahiri kwa <span class=\"text-blue\">Biashara za Kisasa</span>",
-      "hero.tagline": "Tunasaidia biashara kusimamia mauzo, hesabu, na shughuli kwa teknolojia salama na inayokua iliyoundwa kukuza biashara.",
-      // Hero CTA buttons (if needed)
-      "hero.cta.requestSolution": "Omba Suluhisho",
-      "hero.cta.viewServices": "Tazama Huduma",
+
+"hero.label": "Suluhisho Mahiri kwa Biashara",
+
+"hero.title": "Mifumo Mahiri kwa Biashara za Kisasa",
+
+"hero.tagline": "Tunasaidia biashara kusimamia mauzo, bidhaa na shughuli za biashara kwa kutumia suluhisho salama na linaloweza kukua kulingana na mahitaji ya biashara yako.",
+
+"hero.ctaPrimary": "Weka Miadi",
+
+"hero.ctaSecondary": "Angalia Huduma",
+
+
       "appointment.label": "Weka Miadi",
       "appointment.cta": "Weka Miadi",
       "appointment.title": "Weka Miadi",
@@ -158,12 +1292,9 @@ const translations = {
       "appointment.notesPlaceholder": "Shiriki maelezo mengine yoyote tunayopaswa kujua",
       "appointment.cancel": "Ghairi",
       "appointment.submit": "Omba Miadi",
-      // What You Get section
-      "results.title": "Unachopata",
-      "results.benefit1": "✔ Udhibiti bora wa shughuli za biashara yako",
-      "results.benefit2": "✔ Uamuzi wa Biashara unaotegemea Maeneo",
-      "results.benefit3": "✔ Maarifa na ripoti za wakati halisi",
-      "results.benefit4": "✔ Mifumo inayokua na biashara yako",
+
+
+
     "hero.missionTitle": "Dhamira Yetu",
     "hero.missionText": "Kuwezesha biashara kwa suluhisho za teknolojia za kuaminika, bunifu, na salama zinazosahilisha shughuli na kuharakisha ukuaji.",
     "hero.visionTitle": "Maono Yetu",
@@ -171,85 +1302,1157 @@ const translations = {
     "hero.ctaPrimary": "Tazama Huduma",
     "hero.ctaSecondary": "Wasiliana Nasi",
 
-    // About
-    "about.label": "Sisi Ni Nani",
-    "about.title": "Kuhusu MLUE Technology",
-    "about.subtitle": "Kampuni ya teknolojia inayolenga kujenga programu bora zinazosuluhisha matatizo halisi ya biashara.",
-    "about.engTitle": "Ubora wa Uhandisi",
-    "about.engText": "Tunajenga programu kwa usanifu safi, msimbo uliojaribiwa, na mazoea ya kisasa ya uhandisi yanayostahimili mtihani wa wakati.",
-    "about.bizTitle": "Mwelekeo wa Biashara",
-    "about.bizText": "Kila suluhisho limeundwa kuzunguka mahitaji halisi ya biashara \u2014 hatuandiki msimbo tu, tunasuluhisha matatizo muhimu.",
-    "about.secTitle": "Kuaminika & Usalama",
-    "about.secText": "Usalama umejengwa katika kila tabaka la mifumo yetu. Tunaunda kwa kuaminika ili biashara yako iendelee bila kukatizwa.",
 
-    // Services
-    "services.label": "Tunachofanya",
-    "services.title": "Huduma Zetu",
-    "services.subtitle": "Suluhisho kamili za teknolojia zilizoundwa kwa mahitaji ya biashara za kisasa.",
-    // Service card descriptions (match .service-card__desc in index.html)
-    "services.businessTitle": "Mifumo ya Biashara",
-    "services.apiTitle": "APIs & Uhandisi wa Backend",
-    "services.customTitle": "Uundaji wa Programu Maalum",
-    "services.business.desc": "Simamia mauzo, fuatilia hesabu, na angalia utendaji wa biashara yako papo hapo kwa mifumo ya POS na biashara inayotegemewa.",
-    "services.api.desc": "Jenga API na mifumo ya backend salama na inayokua ili kuendesha mabadiliko ya kidijitali.",
-    "services.custom.desc": "Tengeneza programu maalum zinazolingana na mahitaji na malengo ya biashara yako.",
-    // GIS Service in Swahili
-    "services.gisTitle": "Ujuzi wa Maeneo",
-    "services.gis.desc": "Tumia data ya kijiografia na teknolojia za ramani kufanya maamuzi ya biashara yenye ufahamu.",
+// Pricing
+
+"pricing.title":
+    "Bei za MLUE TECHNOLOGY",
+
+"pricing.subtitle":
+    "Bei za huduma za kitaalamu za uundaji wa tovuti na vifurushi vilivyoundwa kwa biashara zinazokua.",
+
+"pricing.landingPages.title":
+    "Landing Pages",
+
+"pricing.landingPages.description":
+    "Landing page ni ukurasa mmoja wa tovuti unaotengenezwa mahsusi kwa ajili ya kampeni ya masoko au matangazo, ukiwa na lengo maalum kama kuwageuza wageni kuwa leads au wateja.",
+
+"pricing.staticWebsites.title":
+    "Tovuti Tuli",
+
+"pricing.staticWebsites.description":
+    "Tovuti tuli ni mkusanyiko wa kurasa za tovuti zinazowasilishwa kama zilivyohifadhiwa kwenye seva, bila uchakataji wa upande wa seva, database, au mabadiliko ya maudhui kwa wakati halisi.",
+
+"pricing.dynamicWebsites.title":
+    "Tovuti Zinazobadilika",
+
+"pricing.dynamicWebsites.description":
+    "Tovuti inayobadilika huonyesha maudhui tofauti kulingana na vitendo vya mtumiaji, mapendeleo, au masasisho ya wakati halisi. Hizi zinajumuisha database na uchakataji wa upande wa seva.",
+
+"pricing.domain.title":
+    "Jina la Kikoa",
+
+"pricing.domain.description":
+    "Jina la kikoa ni anwani ya kipekee inayotumika kufikia tovuti kupitia intaneti, kwa mfano google.com au mluetechnology.me.",
+
+"pricing.hosting.title":
+    "Web Hosting na Deployment",
+
+"pricing.hosting.description":
+    "Hosting ni kukodisha nafasi kwenye seva ili kuweka tovuti yako mtandaoni. Deployment ni mchakato wa kuhamisha mafaili kutoka mazingira ya development kwenda kwenye seva inayotumika.",
+
+"pricing.maintenance.title":
+    "Matengenezo na Msaada",
+
+"pricing.maintenance.description":
+    "Matengenezo yanajumuisha kurekebisha hitilafu, masasisho, ufuatiliaji wa usalama, backups, kuongeza features, na msaada wa kuhakikisha mfumo unapatikana.",
+
+"pricing.included":
+    "Vilivyomo",
+
+"pricing.notIncluded":
+    "Visivyomo",
+
+"pricing.examples":
+    "Mifano",
+
+"pricing.viewMore":
+    "Angalia zaidi",
+
+"pricing.viewLess":
+    "Funga maelezo",
+
+"pricing.landing.basic.title": "Landing Page ya Msingi",
+"pricing.landing.basic.price": "BEI: Tshs. 100,000 - Tshs. 250,000",
+
+"pricing.landing.basic.included1": "Muundo rahisi unaotumia template",
+"pricing.landing.basic.included2": "Sehemu chache (Hero + Features + Contact)",
+"pricing.landing.basic.included3": "Uwezo wa kutumia kwenye simu na desktop",
+"pricing.landing.basic.included4": "Call-To-Action 1",
+"pricing.landing.basic.included5": "Marekebisho 1 ya mteja",
+"pricing.landing.basic.included6": "Fomu rahisi ya barua pepe",
+
+"pricing.landing.basic.notIncluded1": "UI design maalum",
+"pricing.landing.basic.notIncluded2": "Animations",
+"pricing.landing.basic.notIncluded3": "SEO optimization",
+"pricing.landing.basic.notIncluded4": "Copywriting",
+
+"pricing.landing.basic.example1": "Ukurasa Rahisi wa Utambulisho wa Biashara",
+"pricing.landing.basic.example2": "Landing Page ya Portfolio Binafsi",
+"pricing.landing.basic.example3": "Ukurasa wa Kutangaza Duka Dogo",
+"pricing.landing.basic.example4": "Ukurasa wa Kuonyesha Bidhaa",
+"pricing.landing.basic.example5": "Landing Page ya Huduma ya Mwanzo",
+
+
+"pricing.landing.standard.title": "Landing Page ya Kawaida",
+"pricing.landing.standard.price": "BEI: Tshs. 250,000 - Tshs. 500,000",
+
+"pricing.landing.standard.included1": "UI design maalum",
+"pricing.landing.standard.included2": "Sehemu za kawaida (Hero, Features, Testimonials, CTA)",
+"pricing.landing.standard.included3": "Responsive kwenye vifaa vyote",
+"pricing.landing.standard.included4": "Fomu + integration ya msingi (email / WhatsApp)",
+"pricing.landing.standard.included5": "Marekebisho 3 ya mteja",
+"pricing.landing.standard.included6": "Animations za msingi (scroll effects)",
+"pricing.landing.standard.included7": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.landing.standard.notIncluded1": "Animations za hali ya juu",
+"pricing.landing.standard.notIncluded2": "Mkakati kamili wa SEO",
+"pricing.landing.standard.notIncluded3": "Copywriting",
+
+"pricing.landing.standard.example1": "Landing Page ya Kisasa ya Kuongeza Conversion za Biashara",
+"pricing.landing.standard.example2": "Landing Page ya Kukusanya Leads za Real Estate",
+"pricing.landing.standard.example3": "Landing Page ya Kuagiza Chakula Mtandaoni",
+
+
+"pricing.landing.premium.title": "Landing Page ya Kitaalamu",
+"pricing.landing.premium.price": "BEI: Tshs. 500,000 - Tshs. 1,500,000+",
+
+"pricing.landing.premium.included1": "UI/UX maalum kamili",
+"pricing.landing.premium.included2": "Muundo unaolenga kuongeza conversion",
+"pricing.landing.premium.included3": "SEO optimized",
+"pricing.landing.premium.included4": "Animations za hali ya juu",
+"pricing.landing.premium.included5": "Speed optimization",
+"pricing.landing.premium.included6": "Form integrations",
+"pricing.landing.premium.included7": "Copywriting",
+"pricing.landing.premium.included8": "Domain ya bure kwa mwaka 1",
+"pricing.landing.premium.included9": "Marekebisho yasiyo na kikomo ndani ya scope",
+"pricing.landing.premium.included10": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.landing.premium.example1": "SaaS Sales Page yenye Conversion ya Juu",
+"pricing.landing.premium.example2": "Landing Page ya Masoko ya Brand ya Kifahari",
+"pricing.landing.premium.example3": "Fitness Coaching Funnel ya Advanced",
+"pricing.landing.premium.example4": "Tech Product Launch Conversion Page",
+"pricing.landing.premium.example5": "Corporate Campaign",
+
+// Tovuti Tuli
+
+"pricing.static.basic.title": "Tovuti Tuli ya Msingi",
+"pricing.static.basic.price": "BEI: Tshs. 300,000 - Tshs. 650,000",
+
+"pricing.static.basic.included1": "Kurasa 3-5 (Home, About, Contact, n.k.)",
+"pricing.static.basic.included2": "Muundo rahisi unaotumia template",
+"pricing.static.basic.included3": "Responsive ya msingi",
+"pricing.static.basic.included4": "Navigation rahisi",
+"pricing.static.basic.included5": "Taarifa za mawasiliano (bila advanced form)",
+"pricing.static.basic.included6": "Marekebisho 1-2 ya mteja",
+"pricing.static.basic.included7": "Ukurasa wa ziada: Tshs. 50,000",
+
+"pricing.static.basic.notIncluded1": "UI design maalum",
+"pricing.static.basic.notIncluded2": "Animations",
+"pricing.static.basic.notIncluded3": "SEO",
+
+"pricing.static.basic.example1": "Tovuti ya Taarifa ya Biashara Ndogo",
+"pricing.static.basic.example2": "Portfolio ya Binafsi",
+"pricing.static.basic.example3": "Tovuti ya Duka Dogo",
+"pricing.static.basic.example4": "Tovuti Rahisi ya Wasifu wa Kampuni",
+"pricing.static.basic.example5": "Tovuti ya Mwanzo ya Kuonyesha Brand",
+
+
+"pricing.static.standard.title": "Tovuti Tuli ya Kawaida",
+"pricing.static.standard.price": "BEI: Tshs. 650,000 - Tshs. 1,800,000",
+
+"pricing.static.standard.included1": "Kurasa 5-10",
+"pricing.static.standard.included2": "UI design maalum (branding imejumuishwa)",
+"pricing.static.standard.included3": "Responsive kamili kwenye vifaa vyote",
+"pricing.static.standard.included4": "Contact form (email/WhatsApp integration)",
+"pricing.static.standard.included5": "Animations za msingi (hover, scroll)",
+"pricing.static.standard.included6": "SEO ya msingi (titles, meta tags)",
+"pricing.static.standard.included7": "Domain ya bure kwa mwaka 1",
+"pricing.static.standard.included8": "Marekebisho 2-3",
+"pricing.static.standard.included9": "Ukurasa wa ziada: Tshs. 100,000",
+"pricing.static.standard.included10": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.static.standard.notIncluded1": "Animations za hali ya juu",
+"pricing.static.standard.notIncluded2": "Complex integrations",
+
+"pricing.static.standard.example1": "Tovuti ya Kampuni",
+"pricing.static.standard.example2": "Tovuti ya Taarifa ya Shule / Taasisi",
+"pricing.static.standard.example3": "Tovuti ya Kampuni ya Real Estate",
+"pricing.static.standard.example4": "Tovuti ya Huduma za Kitaalamu",
+"pricing.static.standard.example5": "Tovuti ya Wasifu wa Startup",
+
+
+"pricing.static.premium.title": "Tovuti Tuli ya Kitaalamu",
+"pricing.static.premium.price": "BEI: Tshs. 1,800,000 - Tshs. 3,000,000+",
+
+"pricing.static.premium.included1": "Kurasa 10+ (au muundo maalum)",
+"pricing.static.premium.included2": "UI/UX maalum kamili (bila templates)",
+"pricing.static.premium.included3": "Animations za ubora wa juu (laini na interactive)",
+"pricing.static.premium.included4": "Responsive ya hali ya juu (pixel-perfect)",
+"pricing.static.premium.included5": "SEO optimization (structure + performance)",
+"pricing.static.premium.included6": "Speed optimization",
+"pricing.static.premium.included7": "Advanced contact features (forms + integrations)",
+"pricing.static.premium.included8": "Marekebisho 4+ ndani ya scope",
+"pricing.static.premium.included9": "Domain ya bure kwa mwaka 1",
+"pricing.static.premium.included10": "Ukurasa wa ziada: Tshs. 150,000+ kulingana na complexity",
+"pricing.static.premium.included11": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.static.premium.example1": "Tovuti ya Kitaalamu ya Corporate Brand",
+"pricing.static.premium.example2": "Portfolio ya Creative Agency",
+"pricing.static.premium.example3": "Tovuti ya Kitaalamu ya Luxury Business",
+"pricing.static.premium.example4": "Tovuti ya Brand Identity ya Kampuni ya Teknolojia",
+
+// Mifumo Inayobadilika
+
+"pricing.dynamic.basic.title": "Mfumo wa Msingi",
+"pricing.dynamic.basic.price": "BEI: Tshs. 1,000,000 - Tshs. 3,000,000",
+
+"pricing.dynamic.basic.included1": "Mfumo wa kuingia kwenye akaunti",
+"pricing.dynamic.basic.included2": "Dashboard ya msingi (role moja)",
+"pricing.dynamic.basic.included3": "CRUD (resource kuu moja)",
+"pricing.dynamic.basic.included4": "Muundo rahisi wa database (unaweza kulipiwa kila mwezi kulingana na matumizi)",
+"pricing.dynamic.basic.included5": "UI ya msingi (template)",
+"pricing.dynamic.basic.included6": "Kurasa 2-3",
+"pricing.dynamic.basic.included7": "Marekebisho 2-3 ya mteja",
+"pricing.dynamic.basic.included8": "Domain ya bure kwa mwaka 1",
+
+"pricing.dynamic.basic.notIncluded1": "Roles nyingi",
+"pricing.dynamic.basic.notIncluded2": "UI ya hali ya juu",
+"pricing.dynamic.basic.notIncluded3": "Complex integrations",
+
+"pricing.dynamic.basic.example1": "Mfumo Rahisi wa Login ya Mtumiaji",
+"pricing.dynamic.basic.example2": "Mfumo wa Msingi wa Usimamizi wa Inventory",
+"pricing.dynamic.basic.example3": "Dashboard ya Msingi ya Usimamizi wa Biashara Ndogo",
+"pricing.dynamic.basic.example4": "Mfumo Rahisi wa Usimamizi wa Booking",
+"pricing.dynamic.basic.example5": "Mfumo wa Msingi wa Rekodi za Wanafunzi",
+
+
+"pricing.dynamic.standard.title": "Mfumo wa Kawaida",
+"pricing.dynamic.standard.price": "BEI: Tshs. 3,000,000 - Tshs. 8,000,000",
+
+"pricing.dynamic.standard.included1": "Roles (Admin/User)",
+"pricing.dynamic.standard.included2": "Dashboard kamili + database",
+"pricing.dynamic.standard.included3": "Modules nyingi za CRUD",
+"pricing.dynamic.standard.included4": "UI safi na maalum",
+"pricing.dynamic.standard.included5": "API integrations za msingi",
+"pricing.dynamic.standard.included6": "Taarifa za email",
+"pricing.dynamic.standard.included7": "Marekebisho 3-5",
+"pricing.dynamic.standard.included8": "Domain ya bure kwa mwaka 1",
+"pricing.dynamic.standard.included9": "Mwezi 1 wa matengenezo na msaada bila malipo",
+
+"pricing.dynamic.standard.notIncluded1": "Mifumo mikubwa (full POS, full SaaS)",
+"pricing.dynamic.standard.notIncluded2": "Automation nzito",
+
+"pricing.dynamic.standard.example1": "Mfumo wa Usimamizi wa Shule",
+"pricing.dynamic.standard.example2": "Mfumo wa POS wa Biashara Ndogo",
+"pricing.dynamic.standard.example3": "Mfumo wa Usimamizi wa Wateja (CRM Lite)",
+"pricing.dynamic.standard.example4": "Mfumo wa Booking na Appointment Mtandaoni",
+"pricing.dynamic.standard.example5": "Mfumo wa Kufuatilia Inventory na Mauzo",
+
+
+"pricing.dynamic.premium.title": "Mfumo wa Kitaalamu",
+"pricing.dynamic.premium.price": "BEI: Tshs. 8,000,000 - Tshs. 25,000,000+",
+
+"pricing.dynamic.premium.included1": "Authentication ya hali ya juu",
+"pricing.dynamic.premium.included2": "System architecture kamili",
+"pricing.dynamic.premium.included3": "Dashboards changamano",
+"pricing.dynamic.premium.included4": "Modules nyingi (mauzo, ripoti, watumiaji)",
+"pricing.dynamic.premium.included5": "API integrations (malipo, mifumo ya nje)",
+"pricing.dynamic.premium.included6": "Performance optimization",
+"pricing.dynamic.premium.included7": "Mbinu bora za usalama",
+"pricing.dynamic.premium.included8": "Mwezi 1 wa matengenezo na msaada bila malipo",
+"pricing.dynamic.premium.included9": "Marekebisho yasiyo na kikomo ndani ya scope",
+"pricing.dynamic.premium.included10": "Domain ya bure kwa mwaka 1",
+
+"pricing.dynamic.premium.example1": "Mfumo Kamili wa POS na Usimamizi wa Biashara",
+"pricing.dynamic.premium.example2": "Mfumo wa Enterprise wa Usimamizi wa Shule",
+"pricing.dynamic.premium.example3": "SaaS Multi-User Platform",
+"pricing.dynamic.premium.example4": "Mfumo wa Advanced E-Commerce",
+"pricing.dynamic.premium.example5": "Dashboard ya Real-Time Business Analytics",
+
+"pricing.domain.title": "Jina la Kikoa",
+
+"pricing.domain.description":
+    "Jina la kikoa ni anwani ya kipekee inayotumika kufikia tovuti kupitia intaneti, kwa mfano google.com au mluetechnology.me.",
+
+"pricing.hosting.title": "Web Hosting na Deployment",
+
+"pricing.hosting.description":
+    "Hosting ni kukodisha nafasi kwenye server ili kuweka tovuti yako mtandaoni. Deployment ni mchakato wa kuhamisha mafaili kutoka mazingira ya development kwenda kwenye server inayotumika.",    
+
+"pricing.maintenance.title": "Matengenezo na Msaada",
+
+"pricing.maintenance.description":
+    "Matengenezo yanajumuisha kurekebisha bugs, masasisho, ufuatiliaji wa usalama, backups, kuongeza features, na msaada wa kuhakikisha tovuti inapatikana.",
+    
+
+// ===================================================
+// PROJECTS
+// ===================================================
+
+"nav.menu": "Menyu",
+
+"projects.eyebrow": "Utaalamu Wetu",
+
+"projects.title":
+    "Suluhisho za Teknolojia Zinazochochea Ukuaji wa Biashara",
+
+"projects.description":
+    "Tunatengeneza software maalum na suluhisho za kijiografia zinazosaidia taasisi kuongeza ufanisi, ku-automate shughuli, na kufanya maamuzi bora yanayotokana na data.",
+
+"projects.software.title":
+    "Suluhisho za Software za Biashara",
+
+"projects.software.description":
+    "Mifumo maalum ya software iliyoundwa ku-automate shughuli za biashara, kuboresha tija ya shirika, na kusaidia kufanya maamuzi bora katika kila ngazi.",
+
+"projects.location.title":
+    "Location Intelligence",
+
+"projects.location.description":
+    "Uchambuzi wa data za kijiografia na GIS unaosaidia taasisi kugundua fursa zilizofichika, kuboresha shughuli za field, na kufanya maamuzi ya kimkakati yanayohusiana na location.",
+
+"projects.featuredSolutions":
+    "Suluhisho Kuu",
+
+"projects.software.feature1":
+    "Mfumo wa Usimamizi wa Inventory",
+
+"projects.location.feature1":
+    "Uchaguzi wa Maeneo ya Vituo vya Mawasiliano",
+
+"projects.exploreSolutions":
+    "Angalia Suluhisho",
+
+"carryhub.breadcrumb": "Jukwaa la CarryHub",
+// CarryHub Case Study — Hero
+"carryhub.hero.industry": "Rejareja ya Mitindo na Biashara Mtandaoni",
+"carryhub.hero.status": "Umekamilika",
+"carryhub.hero.title": "Jukwaa la Biashara Mtandaoni la CarryHub",
+"carryhub.hero.summary": "Jukwaa la kisasa la biashara mtandaoni lililoundwa kusaidia wafanyabiashara kujenga uwepo wa kitaalamu mtandaoni, kuonyesha bidhaa, kurahisisha ununuzi wa mtandaoni, na kuiga malipo salama ya kidijitali kwa kutumia mazingira ya PayPal Sandbox.",
+
+// CarryHub Case Study — Gallery
+"carryhub.gallery.registration.title": "Usajili",
+"carryhub.gallery.registration.description": "Mchakato rahisi na salama wa usajili wa mtumiaji.",
+
+"carryhub.gallery.login.title": "Kuingia",
+"carryhub.gallery.login.description": "Uzoefu salama wa kuingia kwa mtumiaji.",
+
+"carryhub.gallery.profile.title": "Wasifu wa Mtumiaji",
+"carryhub.gallery.profile.description": "Maelezo ya kina ya wasifu wa mtumiaji na historia ya oda.",
+
+"carryhub.gallery.products.title": "Bidhaa",
+"carryhub.gallery.products.description": "Aina mbalimbali za bidhaa zinazopatikana kwa ununuzi kwenye duka.",
+
+"carryhub.gallery.cart.title": "Kikapu cha Mtumiaji",
+"carryhub.gallery.cart.description": "Kikapu shirikishi cha ununuzi kwa kusimamia bidhaa zilizochaguliwa kabla ya malipo.",
+
+"carryhub.gallery.checkout.title": "Malipo",
+"carryhub.gallery.checkout.description": "Mchakato kamili wa ununuzi kutoka kukagua kikapu hadi kufanya malipo.",
+
+"carryhub.gallery.payment.title": "Uchakataji wa Malipo",
+"carryhub.gallery.payment.description": "Muunganisho salama na rahisi wa mfumo wa kuchakata malipo.",
+
+"carryhub.gallery.orders.title": "Oda",
+"carryhub.gallery.orders.description": "Fuatilia na simamia oda za wateja kuanzia kuwekwa hadi kufikishwa.",
+
+"carryhub.tabs.overview": "Muhtasari",
+"carryhub.tabs.challenge": "Changamoto",
+"carryhub.tabs.solution": "Suluhisho Letu",
+"carryhub.tabs.technologies": "Teknolojia",
+"carryhub.tabs.impact": "Athari kwa Biashara",
+
+"carryhub.overview.title": "Muhtasari wa Mradi",
+"carryhub.overview.p1": "Sekta ya rejareja inahamia kwa kasi kuelekea biashara mtandaoni, ambapo wateja wanatarajia kuvinjari bidhaa, kulinganisha chaguo, na kukamilisha manunuzi kutoka mahali popote na wakati wowote.",
+"carryhub.overview.p2": "CarryHub ilitengenezwa na MLUE Technology kama jukwaa la kisasa la biashara mtandaoni linalowawezesha wafanyabiashara kuonyesha bidhaa zao kwa njia ya kitaalamu huku likiwapa wateja uzoefu rahisi na unaovutia wa ununuzi mtandaoni. Jukwaa hili linaonyesha jinsi biashara zinavyoweza kuhama kutoka shughuli za kawaida za rejareja kwenda biashara mtandaoni kupitia teknolojia zinazojibu vizuri kwenye vifaa mbalimbali, michakato salama ya malipo, na usanifu wa mfumo unaoweza kukua.",
+
+"carryhub.challenge.title": "Changamoto ya Biashara",
+"carryhub.challenge.intro": "Wafanyabiashara wengi wadogo na wa kati hukutana na changamoto wanapojaribu kuanzisha njia bora ya mauzo mtandaoni. Changamoto za kawaida ni pamoja na:",
+
+"carryhub.challenge.item1": "Uonekano mdogo wa bidhaa mtandaoni.",
+"carryhub.challenge.item2": "Kutegemea maduka ya kimwili kwa mauzo.",
+"carryhub.challenge.item3": "Uchakataji wa oda kwa njia ya mikono.",
+"carryhub.challenge.item4": "Ugumu wa kusimamia mawasiliano ya kidijitali na wateja.",
+"carryhub.challenge.item5": "Ukosefu wa michakato salama ya malipo mtandaoni.",
+"carryhub.challenge.item6": "Uzoefu wa ununuzi usio sawa kwenye vifaa mbalimbali.",
+
+"carryhub.challenge.conclusion": "Bila jukwaa la kuaminika la biashara mtandaoni, biashara zinaweza kupata ugumu wa kupanua wigo wa soko lao na kushindana katika uchumi wa kisasa wa kidijitali.",
+
+"carryhub.solution.title": "Suluhisho Letu",
+
+"carryhub.solution.p1": "MLUE Technology ilibuni na kuandaa Jukwaa la Biashara Mtandaoni la CarryHub ili kuwapa wafanyabiashara suluhisho kamili la ununuzi mtandaoni. Jukwaa hili linawawezesha wateja kuvinjari bidhaa, kutafuta na kuchuja bidhaa, kuona maelezo ya kina ya bidhaa, kusimamia vikapu vya ununuzi, na kukamilisha mchakato wa kujaribu kufanya malipo kwa kutumia mazingira ya PayPal Sandbox.",
+
+"carryhub.solution.p2": "Suluhisho hili lilijengwa kwa usanifu wa upande wa seva unaoweza kukua na kupanuliwa ili kusaidia mifumo halisi ya malipo, muunganisho wa hesabu za bidhaa, usimamizi wa oda, akaunti za wateja, na uchambuzi wa biashara.",
+
+"carryhub.solution.featuresTitle": "Vipengele Muhimu",
+
+"carryhub.solution.feature1": "Katalogi ya Kisasa ya Bidhaa",
+"carryhub.solution.feature2": "Makundi ya Bidhaa",
+"carryhub.solution.feature3": "Utafutaji wa Bidhaa",
+"carryhub.solution.feature4": "Kurasa za Kina za Bidhaa",
+"carryhub.solution.feature5": "Usimamizi wa Kikapu cha Ununuzi",
+"carryhub.solution.feature6": "Usajili na Uthibitishaji wa Wateja",
+"carryhub.solution.feature7": "Mfumo Salama wa Kuingia",
+"carryhub.solution.feature8": "Mchakato wa Kukamilisha Oda",
+"carryhub.solution.feature9": "Muunganisho wa Malipo wa PayPal Sandbox",
+"carryhub.solution.feature10": "Uzoefu Unaobadilika kwenye Vifaa vya Mkononi",
+"carryhub.solution.feature11": "Uwasilishaji wa Bidhaa kwa Njia Inayobadilika",
+"carryhub.solution.feature12": "Muunganisho wa Hifadhidata ya PostgreSQL",
+
+"carryhub.technologies.title": "Teknolojia Zilizotumika",
+"carryhub.technologies.description": "Teknolojia za kisasa za wavuti na zana za maendeleo zilitumika kujenga jukwaa hili na kusaidia utendaji wake mkuu.",
+"carryhub.technologies.highlightsTitle": "Mambo Muhimu ya Uendelezaji",
+
+"carryhub.technologies.highlight1.label": "Utoaji wa Kurasa Upande wa Seva:",
+"carryhub.technologies.highlight1.text": "Kurasa zinazozalishwa kwa kutumia EJS ili kuboresha utendaji na ufanisi wa uwasilishaji wa maudhui.",
+
+"carryhub.technologies.highlight2.label": "Uthibitishaji Salama:",
+"carryhub.technologies.highlight2.text": "Mfumo wa uthibitishaji wa watumiaji na usimamizi wa session ulioundwa kulinda akaunti za wateja na shughuli zao za ununuzi.",
+
+"carryhub.technologies.highlight3.label": "Mchakato wa Malipo ya Kidijitali:",
+"carryhub.technologies.highlight3.text": "PayPal Sandbox iliunganishwa kuiga uchakataji salama wa malipo ya mtandaoni wakati wa maendeleo na majaribio.",
+
+"carryhub.technologies.highlight4.label": "Muundo Unaobadilika:",
+"carryhub.technologies.highlight4.text": "Muonekano ulioundwa kwa kuanzia vifaa vya mkononi unaotoa uzoefu mzuri wa ununuzi kwenye ukubwa mbalimbali wa skrini.",
+
+"carryhub.technologies.highlight5.label": "Usanifu Unaoweza Kukua:",
+"carryhub.technologies.highlight5.text": "Muundo wa programu uliandaliwa kusaidia maboresho yajayo, ikiwemo mifumo halisi ya malipo, ulandanishi wa hesabu, na ufuatiliaji wa oda.",
+
+"carryhub.info.industryLabel": "Sekta",
+"carryhub.info.industryValue": "Rejareja ya Mitindo na Biashara Mtandaoni",
+
+"carryhub.info.categoryLabel": "Aina",
+"carryhub.info.categoryValue": "Suluhisho za Programu za Biashara",
+
+"carryhub.info.architectureLabel": "Usanifu",
+"carryhub.info.architectureValue": "Programu ya Wavuti Inayozalisha Kurasa Upande wa Seva",
+
+"carryhub.info.paymentLabel": "Muunganisho wa Malipo",
+"carryhub.info.paymentValue": "PayPal Sandbox",
+
+"carryhub.impact.title": "Athari kwa Biashara",
+"carryhub.impact.intro": "CarryHub inawawezesha wafanyabiashara kubadilisha shughuli zao za kidijitali na kufikia malengo muhimu ya biashara:",
+
+"carryhub.impact.item1": "Kuanzisha duka la kitaalamu mtandaoni.",
+"carryhub.impact.item2": "Kuongeza uonekano wa bidhaa.",
+"carryhub.impact.item3": "Kupanua biashara zaidi ya mipaka ya maduka ya kimwili.",
+"carryhub.impact.item4": "Kuboresha uzoefu wa ununuzi wa wateja.",
+"carryhub.impact.item5": "Kuonyesha michakato salama ya malipo ya kidijitali.",
+"carryhub.impact.item6": "Kujiandaa kwa ukuaji wa biashara mtandaoni unaoweza kukua.",
+"carryhub.impact.item7": "Kuimarisha uwepo wa chapa kidijitali.",
+
+"carryhub.cta.whyTitle": "Kwa Nini Biashara Mtandaoni ni Muhimu",
+
+"carryhub.cta.whyText": "Biashara za kisasa zinahitaji zaidi ya tovuti tu—zinahitaji jukwaa la mauzo ya kidijitali linalotoa urahisi, uaminifu, na upatikanaji. Biashara mtandaoni zinawezesha mashirika kuwafikia wateja wengi zaidi, kuimarisha ushirikiano na wateja, na kutengeneza fursa endelevu za mapato zaidi ya mipaka ya maduka ya kawaida.",
+
+"carryhub.cta.buildTitle": "Jenga Duka Lako la Kidijitali",
+
+"carryhub.cta.buildText": "Iwe unaanzisha biashara mpya mtandaoni au unapanua biashara yako ya rejareja iliyopo, MLUE Technology inaweza kubuni na kutengeneza suluhisho la biashara mtandaoni linaloweza kukua kulingana na malengo ya biashara yako. Hebu tujenge pamoja suluhisho lako lijalo la biashara mtandaoni.",
+
+    
+
+    // Smart Inventory Management System
+    "inventory.breadcrumb": "Mfumo wa Usimamizi Mahiri wa Hesabu",
+
+    // Hero
+    "inventory.hero.industry": "Rejareja na Jumla",
+    "inventory.hero.status": "Inaendelea",
+    "inventory.hero.title": "Mfumo wa Usimamizi Mahiri wa Hesabu",
+    "inventory.hero.summary": "Suluhisho la kisasa la usimamizi wa hesabu lililoundwa kusaidia biashara kurahisisha udhibiti wa bidhaa, kufuatilia mienendo ya hesabu, kusimamia wasambazaji, na kupata taarifa za wakati halisi kwa ajili ya kufanya maamuzi bora ya biashara.",
+    "inventory.hero.imageAlt": "Dashibodi ya Mfumo wa Usimamizi Mahiri wa Hesabu",
+
+    // Gallery
+    "inventory.gallery.authentication.title": "Uthibitishaji",
+    "inventory.gallery.authentication.description": "Kuingia kwa usalama na usimamizi wa watumiaji wa mfumo wa hesabu.",
+    "inventory.gallery.authentication.imageAlt": "Ukurasa wa Uthibitishaji wa Mfumo wa Usimamizi wa Hesabu",
+
+    "inventory.gallery.dashboard.title": "Muhtasari wa Dashibodi",
+    "inventory.gallery.dashboard.description": "Muhtasari wa wakati halisi wa viwango vya hesabu, mwenendo wa mauzo, na utendaji wa jumla wa biashara.",
+    "inventory.gallery.dashboard.imageAlt": "Muhtasari wa Dashibodi ya Mfumo wa Hesabu",
+
+    "inventory.gallery.sales.title": "Moduli ya Mauzo",
+    "inventory.gallery.sales.description": "Hurekodi miamala ya mauzo huku ikisasisha hesabu kiotomatiki katika matawi yote yaliyounganishwa.",
+    "inventory.gallery.sales.imageAlt": "Moduli ya Mauzo ya Mfumo wa Hesabu",
+
+    "inventory.gallery.products.title": "Moduli ya Bidhaa",
+    "inventory.gallery.products.description": "Simamia taarifa za bidhaa, panga bidhaa katika makundi, na weka miundo ya bei inayobadilika.",
+    "inventory.gallery.products.imageAlt": "Moduli ya Bidhaa ya Mfumo wa Hesabu",
+
+    // Tabs
+    "inventory.tabs.overview": "Muhtasari",
+    "inventory.tabs.challenge": "Changamoto",
+    "inventory.tabs.solution": "Suluhisho Letu",
+    "inventory.tabs.technologies": "Teknolojia",
+    "inventory.tabs.impact": "Athari kwa Biashara",
+
+    // Overview
+    "inventory.overview.title": "Muhtasari wa Mradi",
+    "inventory.overview.paragraph1": "Biashara nyingi zinazokua hukabiliwa na changamoto ya kuweka kumbukumbu sahihi za hesabu huku zikiendelea na shughuli zao za kila siku kwa ufanisi. Ufuatiliaji wa hesabu kwa njia ya kumbukumbu za mikono mara nyingi husababisha makosa, kupotea kwa bidhaa, kuchelewa kwa taarifa, na kufanya maamuzi yasiyo sahihi.",
+    "inventory.overview.paragraph2": "Mfumo wa Usimamizi Mahiri wa Hesabu ulitengenezwa na MLUE Technology ili kuzipa biashara jukwaa kuu la kusimamia hesabu, wasambazaji, bidhaa, mauzo, na taarifa kwa wakati halisi. Mfumo huu huwawezesha wamiliki wa biashara kuboresha ufanisi wa shughuli huku wakifanya maamuzi yenye taarifa sahihi na yanayopatikana kwa urahisi.",
+
+    // Challenge
+    "inventory.challenge.title": "Changamoto ya Biashara",
+    "inventory.challenge.introduction": "Biashara nyingi ndogo na za kati bado hutumia madaftari, lahajedwali, au mifumo isiyounganishwa kusimamia hesabu. Biashara zinapokua, njia hizi huwa ngumu zaidi kuzisimamia na mara nyingi husababisha:",
+    "inventory.challenge.item1": "Kumbukumbu zisizo sahihi za hesabu",
+    "inventory.challenge.item2": "Upotevu wa bidhaa na tofauti za hesabu",
+    "inventory.challenge.item3": "Uandaaji wa taarifa kwa mikono unaotumia muda mwingi",
+    "inventory.challenge.item4": "Uwezo mdogo wa kuona utendaji wa biashara",
+    "inventory.challenge.item5": "Mipango duni ya hesabu na maamuzi yasiyo sahihi ya ununuzi",
+    "inventory.challenge.conclusion": "Bila taarifa za kuaminika za hesabu, wamiliki wa biashara hupata ugumu wa kufanya maamuzi yenye uhakika kuhusu shughuli na fedha za biashara.",
+
+    // Solution
+    "inventory.solution.title": "Suluhisho Letu na Vipengele Muhimu",
+    "inventory.solution.paragraph1": "MLUE Technology iliunda na kutengeneza jukwaa kuu la usimamizi wa hesabu linaloendesha kiotomatiki shughuli za hesabu kuanzia usajili wa bidhaa hadi ufuatiliaji wa mienendo ya bidhaa na uandaaji wa taarifa.",
+    "inventory.solution.paragraph2": "Mfumo hutoa mwonekano wa wakati halisi wa viwango vya hesabu, taarifa za wasambazaji, shughuli za mauzo, na utendaji wa biashara kupitia kiolesura angavu kinachotegemea wavuti. Kwa kuendesha shughuli za kawaida kiotomatiki, biashara zinaweza kupunguza kazi za mikono, kuboresha usahihi, na kufanya maamuzi ya haraka yanayotegemea data.",
+    "inventory.solution.featuresTitle": "Vipengele Muhimu vya Mfumo",
+
+    "inventory.solution.feature1.title": "Bidhaa na Makundi",
+    "inventory.solution.feature1.description": "Usimamizi kamili wa bidhaa, sifa zake, na upangaji wake katika makundi yenye viwango mbalimbali.",
+
+    "inventory.solution.feature2.title": "Wasambazaji na Wateja",
+    "inventory.solution.feature2.description": "Tunza taarifa za kina za wasambazaji na wateja pamoja na mwingiliano wao kwa ajili ya kurahisisha ununuzi na mauzo.",
+
+    "inventory.solution.feature3.title": "Ufuatiliaji na Mienendo",
+    "inventory.solution.feature3.description": "Ufuatiliaji wa hesabu kwa wakati halisi na kumbukumbu za kina za mienendo yote ya bidhaa katika shughuli za biashara.",
+
+    "inventory.solution.feature4.title": "Usalama na Majukumu",
+    "inventory.solution.feature4.description": "Uthibitishaji salama wa watumiaji wenye udhibiti wa ufikiaji kulingana na majukumu pamoja na dashibodi rafiki za usimamizi.",
+
+    // Technologies
+    "inventory.technologies.title": "Teknolojia Zilizotumika",
+    "inventory.technologies.description": "Umetengenezwa kwa kutumia mchanganyiko wa kisasa wa teknolojia za kiwango cha biashara unaohakikisha uwezo wa kupanuka, usalama, na utendaji mzuri.",
+    "inventory.technologies.snapshotTitle": "Muhtasari wa Mradi",
+    "inventory.technologies.industryLabel": "Sekta",
+    "inventory.technologies.industryValue": "Rejareja na Jumla",
+    "inventory.technologies.categoryLabel": "Aina",
+    "inventory.technologies.categoryValue": "Programu ya Biashara",
+    "inventory.technologies.platformLabel": "Jukwaa",
+    "inventory.technologies.platformValue": "Programu ya Wavuti",
+    "inventory.technologies.statusLabel": "Hali",
+    "inventory.technologies.statusValue": "Inaendelea",
+
+    // Impact
+    "inventory.impact.title": "Athari kwa Biashara",
+    "inventory.impact.introduction": "Suluhisho hili husaidia biashara kufikia ufanisi wa juu wa shughuli na ukuaji endelevu:",
+    "inventory.impact.item1": "Kuboresha usahihi wa hesabu katika shughuli zote",
+    "inventory.impact.item2": "Kupunguza utunzaji wa kumbukumbu kwa mikono na makosa ya kibinadamu",
+    "inventory.impact.item3": "Kufuatilia viwango vya hesabu kwa wakati halisi",
+    "inventory.impact.item4": "Kutengeneza taarifa za biashara papo hapo",
+    "inventory.impact.item5": "Kuboresha maamuzi ya ununuzi kwa kutumia data sahihi",
+    "inventory.impact.item6": "Kuongeza ufanisi wa jumla wa shughuli za biashara",
+    "inventory.impact.item7": "Kuweka taarifa za biashara katika mfumo mmoja wa kuaminika",
+    "inventory.impact.item8": "Kusaidia ukuaji wa biashara na upanuzi wa matawi siku zijazo",
+
+    // CTA
+    "inventory.cta.title": "Jenga Programu Bora Zaidi za Biashara",
+    "inventory.cta.description": "Iwe unasimamia maduka ya rejareja, maghala, famasi, maduka makubwa, au biashara za jumla, MLUE Technology inaweza kubuni suluhisho maalum za programu zinazoboresha ufanisi, kurahisisha shughuli kwa njia ya kiotomatiki, na kusaidia ukuaji endelevu wa biashara. Tujenge teknolojia inayofanya kazi kwa ajili ya biashara yako.",
+    "inventory.cta.button": "Wasiliana na MLUE Technology",
+
+
+        
+
+    // About
+"about.eyebrow": "SISI NI NANI?",
+
+"about.headline": "Tunabuni mifumo ya kidijitali",
+"about.headlineAccent": "inayotatua matatizo halisi.",
+
+"about.description": "Kampuni ya teknolojia inayolenga kujenga programu bora zinazotatua matatizo halisi ya biashara.",
+
+"about.missionLabel": "DHAMIRA",
+
+"about.mission": "Kuwezesha biashara kwa suluhisho za teknolojia za kuaminika, bunifu, na salama zinazorahisisha shughuli na kuharakisha ukuaji.",
+
+"about.visionLabel": "MAONO",
+
+"about.vision": "Kuwa mshirika wa teknolojia anayeaminika zaidi kwa biashara kote Afrika Mashariki na zaidi, tukitoa suluhisho za kidijitali za kiwango cha dunia.",
+
+"about.approachLabel": "MFUMO WA UHANDISI",
+
+"about.approachTitle": "Imejengwa kwa misingi ya uhandisi.",
+
+"about.architectureTitle": "Usanifu",
+
+"about.architectureText": "Mifumo iliyopangwa kwa ajili ya matengenezo rahisi na ukuaji.",
+
+"about.securityTitle": "Usalama",
+
+"about.securityText": "Usalama huzingatiwa katika mzunguko mzima wa maisha ya mfumo.",
+
+"about.scalabilityTitle": "Uwezo wa Kukua",
+
+"about.scalabilityText": "Mifumo iliyoundwa kukua pamoja na mabadiliko ya mahitaji ya biashara.",
+
+"about.reliabilityTitle": "Uaminifu",
+
+"about.reliabilityText": "Mifumo inayotegemewa iliyojengwa kwa ajili ya uendeshaji thabiti.",
+
+"about.principlesLabel": "MISINGI YA UHANDISI",
+
+"about.principle1Title": "Ubora wa Uhandisi",
+
+"about.principle1Text": "Usanifu safi, msimbo uliojaribiwa, na mbinu za kisasa za uhandisi.",
+
+"about.principle2Title": "Inayolenga Biashara",
+
+"about.principle2Text": "Teknolojia iliyoundwa kulingana na mahitaji na changamoto halisi za biashara.",
+
+"about.principle3Title": "Uaminifu na Usalama",
+
+"about.principle3Text": "Usalama na uaminifu umejengwa katika kila tabaka la mifumo yetu.",
+
+
+// ===================================================
+// TELECOM LOCATION INTELLIGENCE CASE STUDY — SWAHILI
+// ===================================================
+
+"locationCaseStudy.overview.title":
+    "Muhtasari wa Mradi",
+
+"locationCaseStudy.overview.p1":
+    "Kuchagua eneo sahihi kwa ajili ya miundombinu ya mawasiliano ni mojawapo ya maamuzi muhimu zaidi katika upangaji wa mtandao. Uchaguzi usio sahihi wa eneo unaweza kusababisha upungufu wa coverage ya huduma, kuongezeka kwa gharama za deployment, na matumizi yasiyo bora ya rasilimali.",
+
+"locationCaseStudy.overview.p2":
+    "MLUE Technology ilifanya utafiti wa Location Intelligence kwa kutumia Geographic Information Systems (GIS) kutathmini maeneo yanayofaa kwa uwekaji wa vituo vya mawasiliano. Kwa kuunganisha datasets mbalimbali za kijiografia na mbinu za uchambuzi, mradi huu unaonyesha jinsi teknolojia ya kijiografia inaweza kusaidia kufanya maamuzi sahihi kuhusu uwekezaji wa miundombinu.",
+
+
+"locationCaseStudy.challenge.title":
+    "Changamoto ya Biashara",
+
+"locationCaseStudy.challenge.intro":
+    "Watoa huduma za mawasiliano wanapaswa kuamua kwa umakini maeneo ya kuweka miundombinu mipya ya mtandao ili kuongeza coverage huku wakipunguza gharama za uendeshaji na uwekezaji. Bila spatial analysis, taasisi zinaweza kukutana na changamoto kama:",
+
+"locationCaseStudy.challenge.item1":
+    "Coverage duni ya mtandao",
+
+"locationCaseStudy.challenge.item2":
+    "Gharama kubwa za deployment ya miundombinu",
+
+"locationCaseStudy.challenge.item3":
+    "Maeneo ya huduma yanayopishana",
+
+"locationCaseStudy.challenge.item4":
+    "Jamii ambazo hazijahudumiwa vya kutosha",
+
+"locationCaseStudy.challenge.item5":
+    "Mgawanyo usio na ufanisi wa rasilimali",
+
+"locationCaseStudy.challenge.item6":
+    "Uelewa mdogo wa mambo ya kijiografia yanayoathiri upanuzi wa mtandao",
+
+"locationCaseStudy.challenge.conclusion":
+    "Kufanya maamuzi haya bila kutumia Location Intelligence huongeza hatari za kifedha na kiutendaji.",
+
+
+"locationCaseStudy.solution.title":
+    "Suluhisho Letu",
+
+"locationCaseStudy.solution.description":
+    "MLUE Technology ilitumia mbinu za geospatial analysis kubaini maeneo yanayofaa kwa miundombinu ya mawasiliano. Mradi uliunganisha datasets mbalimbali za kijiografia ili kutathmini maeneo yanayoweza kutumika kwa deployment. Kupitia spatial modelling na suitability analysis, watoa maamuzi wanaweza kuelewa vizuri maeneo ambayo uwekezaji wa baadaye wa mtandao unaweza kutoa thamani kubwa zaidi.",
+
+"locationCaseStudy.solution.coreComponents":
+    "Vipengele Vikuu",
+
+"locationCaseStudy.solution.dataUsedTitle":
+    "Data Iliyotumika",
+
+"locationCaseStudy.solution.dataUsed":
+    "Datasets zilizounganishwa zilijumuisha Administrative Boundaries, Population Distribution, Road Networks, Land Use & Land Cover, DEM, na Existing Infrastructure.",
+
+"locationCaseStudy.solution.methodologyTitle":
+    "Mbinu za Spatial Analysis",
+
+"locationCaseStudy.solution.methodology":
+    "Ilitumika Spatial Data Processing, Buffer & Overlay Analysis, Suitability Modeling, Spatial Querying, na Geographic Visualization.",
+
+"locationCaseStudy.solution.deliverablesTitle":
+    "Matokeo Makuu ya Mradi",
+
+"locationCaseStudy.solution.deliverables":
+    "Tulizalisha Suitability Maps, Infrastructure Planning Maps, Coverage Analysis, Decision Support Maps, na Geographic Reports.",
+
+
+"locationCaseStudy.technologies.title":
+    "Teknolojia Zilizotumika",
+
+"locationCaseStudy.technologies.description":
+    "Zana za kisasa za geospatial na mbinu mbalimbali zilitumika kuchakata na kuchambua data changamano za kijiografia.",
+
+"locationCaseStudy.info.industryLabel":
+    "Sekta",
+
+"locationCaseStudy.info.categoryLabel":
+    "Aina",
+
+"locationCaseStudy.info.platformLabel":
+    "Platform",
+
+"locationCaseStudy.info.projectTypeLabel":
+    "Aina ya Mradi",
+
+
+"locationCaseStudy.impact.title":
+    "Athari kwa Biashara",
+
+"locationCaseStudy.impact.intro":
+    "Mbinu hii ya geospatial inapendekezwa kusaidia taasisi kupunguza hatari na kufanya maamuzi yanayotokana na data:",
+
+"locationCaseStudy.impact.item1":
+    "Kuboresha upangaji wa miundombinu",
+
+"locationCaseStudy.impact.item2":
+    "Kupunguza hatari za uwekezaji",
+
+"locationCaseStudy.impact.item3":
+    "Kusaidia maamuzi ya kimkakati ya upanuzi",
+
+"locationCaseStudy.impact.item4":
+    "Kubaini maeneo yenye uwezo mkubwa wa deployment",
+
+"locationCaseStudy.impact.item5":
+    "Kuboresha upangaji wa coverage ya mtandao",
+
+"locationCaseStudy.impact.item6":
+    "Kuboresha ufanyaji wa maamuzi yanayotegemea eneo",
+
+"locationCaseStudy.impact.item7":
+    "Kuboresha matumizi na mgawanyo wa rasilimali",
+
+
+"locationCaseStudy.cta.whyTitle":
+    "Kwa Nini Location Intelligence ni Muhimu",
+
+"locationCaseStudy.cta.whyText":
+    "Taasisi za kisasa huzalisha kiasi kikubwa cha data za biashara na kijiografia, lakini maamuzi mengi bado hufanywa bila kuzingatia location. Location Intelligence hubadilisha data za kijiografia kuwa taarifa zinazoweza kutumika kusaidia Business Expansion Planning, Infrastructure Development, Market Analysis, Resource Allocation, Risk Assessment, na Strategic Decision-Making.",
+
+"locationCaseStudy.cta.transformTitle":
+    "Badilisha Data za Kijiografia Kuwa Business Intelligence",
+
+"locationCaseStudy.cta.transformText":
+    "Iwe unapanga miundombinu, unatathmini maeneo mapya ya uwekezaji, unachambua masoko, au unaunga mkono upanuzi wa kimkakati, MLUE Technology hutoa suluhisho za geospatial zinazobadilisha location data kuwa insights zenye maana kwa biashara. Tujenge maamuzi bora zaidi kupitia Location Intelligence.",
+
+"contact.cta": "Wasiliana Nasi",    
+
+// Services
+"services.eyebrow": "TUNACHOFANYA",
+"services.title": "Suluhisho za teknolojia",
+"services.titleAccent": "zilizobuniwa kutatua matatizo halisi.",
+"services.description": "Tunabuni, tunajenga, na tunatekeleza suluhisho za kidijitali kulingana na mahitaji halisi ya biashara.",
+
+"services.software.type": "SULUHISHO KUU",
+"services.software.title": "Programu za Biashara",
+"services.software.titleAccent": "na Mifumo",
+"services.software.description": "Tunatengeneza mifumo ya programu inayosaidia biashara kusimamia shughuli, kuboresha michakato, kuongeza ufanisi, na kufanya maamuzi bora.",
+"services.software.capability1": "Programu Maalum",
+"services.software.capability2": "Mifumo ya Biashara",
+"services.software.capability3": "API na Backend",
+"services.software.capability4": "Biashara Mtandaoni",
+
+"services.location.type": "SULUHISHO MAALUM",
+"services.location.title": "Uelewa wa",
+"services.location.titleAccent": "Maeneo",
+"services.location.description": "Tunatumia GIS, data za kijiografia, na teknolojia za ramani kubadilisha taarifa za maeneo kuwa maamuzi yanayoweza kutekelezwa.",
+"services.location.capability1": "Uchambuzi wa GIS",
+"services.location.capability2": "Data za Kijiografia",
+"services.location.capability3": "Uchaguzi wa Eneo",
+"services.location.capability4": "Ramani",
+
+"services.capabilitiesLabel": "UWEZO WA KIUHANDISI",
+"services.deliveryLabel": "JINSI TUNAVYOTEKELEZA",
+
+"services.uiux.title": "UI / UX",
+"services.uiux.description": "Miingiliano iliyobuniwa kwa kuzingatia uwazi, urahisi wa matumizi, na mahitaji halisi ya watumiaji.",
+
+"services.cloud.title": "Cloud na Deployment",
+"services.cloud.description": "Miundombinu ya kuendesha mifumo iliyobuniwa kwa utendaji bora na ukuaji.",
+
+"services.maintenance.title": "Matengenezo na Msaada",
+"services.maintenance.description": "Uboreshaji endelevu, matengenezo, na msaada wa kiufundi baada ya mfumo kuzinduliwa.",
+
+"nav.menu": "Menyu",
+
+"locationPage.title":
+    "Location Intelligence",
+
+"locationPage.description":
+    "Uchambuzi wa taarifa za kijiografia na GIS unaosaidia taasisi kugundua fursa zilizofichika, kuboresha shughuli, na kufanya maamuzi ya kimkakati yanayohusiana na maeneo.",
+
+"locationPage.telecommunications":
+    "Mawasiliano",
+
+"locationPage.completed":
+    "Imekamilika",
+
+"locationPage.projectTitle":
+    "Uchaguzi wa Maeneo ya Vituo vya Mawasiliano",
+
+"locationPage.projectSummary":
+    "Suluhisho la kina la spatial analysis lililoundwa kubaini maeneo bora kwa ajili ya kujenga vituo vipya vya mawasiliano. Kwa kuchambua msongamano wa watu, hali ya ardhi, na mapengo ya mtandao yaliyopo, tulisaidia kupunguza muda wa kupanga na kuongeza ukubwa wa coverage ya mtandao.",
+
+"locationPage.viewCaseStudy":
+    "Angalia Case Study",
+
+
+"softwareSolutions.carryhub.industry": "Biashara Mtandaoni",
+"softwareSolutions.carryhub.title": "Jukwaa la Kidijitali la CarryHub",
+"softwareSolutions.carryhub.description": "Jukwaa la kisasa la biashara mtandaoni lililoundwa kusaidia wafanyabiashara kujenga uwepo wa kitaalamu mtandaoni, kuonyesha bidhaa zao, na kuiga malipo salama ya kidijitali.",
+"softwareSolutions.carryhub.cta": "Tazama Uchambuzi wa Mradi",
+
+"softwareSolutions.inventory.industry": "Rejareja na Jumla",
+"softwareSolutions.inventory.title": "Mfumo Mahiri wa Usimamizi wa Hesabu",
+"softwareSolutions.inventory.description": "Suluhisho la kisasa la usimamizi wa hesabu lililoundwa kusaidia biashara kurahisisha udhibiti wa bidhaa, kufuatilia mzunguko wa hesabu, na kupata taarifa za wakati halisi.",
+"softwareSolutions.inventory.cta": "Tazama Uchambuzi wa Mradi",
+"softwareSolutions.title": "Suluhisho za Programu za Biashara",
+"softwareSolutions.description": "Kuwezesha mashirika kwa programu imara, zinazoweza kukua kulingana na mahitaji, na salama, zilizoundwa kurahisisha shughuli, kuboresha uzoefu wa wateja, na kuchochea ukuaji wa biashara.",
+
+
+// What You Get
+"value.eyebrow": "UNACHOPATA",
+
+"value.title": "Mifumo ya vitendo.",
+
+"value.titleAccent": "Maamuzi yaliyo wazi. Thamani ya muda mrefu.",
+
+"value.description": "Hatutoi programu pekee. Tunajenga teknolojia inayoboresha namna biashara zinavyoendesha shughuli, kufanya maamuzi, na kukua.",
+
+"value.business.title": "Udhibiti wa Biashara",
+
+"value.business.description": "Udhibiti bora wa shughuli za biashara kupitia mifumo iliyoundwa kulingana na mtiririko halisi wa kazi.",
+
+"value.intelligence.title": "Taarifa Zinazoweza Kutumika",
+
+"value.intelligence.description": "Data, GIS, na taarifa za wakati halisi zinazosaidia kufanya maamuzi yaliyo wazi na yenye uelewa zaidi.",
+
+"value.growth.title": "Imejengwa kwa Ukuaji",
+
+"value.growth.description": "Mifumo salama na rahisi kutunza iliyoundwa kubadilika pamoja na biashara yako na mahitaji yake yanayobadilika.",
+
+"value.principle1": "Biashara kwanza",
+
+"value.principle2": "Kipaumbele kwa Usalama",
+
+"value.principle3": "Imejengwa Kudumu",
+
+"value.cta": "Omba Suluhisho",
+
+// Engineering Team
+
+"team.eyebrow": "TIMU YA UHANDISI",
+
+"team.title": "Wahandisi watatu.",
+
+"team.titleAccent": "Ujuzi unaokamilishana. Timu moja.",
+
+"team.description": "Tunaunganisha utaalamu mbalimbali wa uhandisi ili kubuni, kujenga, na kutoa mifumo kamili ya kidijitali kwa matatizo halisi.",
+
+"team.softwareEngineer": "Mhandisi wa Programu",
+
+"team.specialization": "UTAALAMU",
+
+"team.davidRole": "Uhandisi wa Frontend na UI/UX",
+
+"team.davidDescription": "Analenga kutengeneza uzoefu bora wa kidijitali na mifumo yenye akili inayobadilisha changamoto ngumu za biashara kuwa suluhisho zinazoweza kutumika.",
+
+"team.skill1": "UI / UX",
+"team.skill2": "Uhandisi wa Frontend",
+"team.skill3": "Msaada wa Kufanya Maamuzi",
+"team.skill4": "Mifumo ya Kitaalam",
+
+"team.oneTeam": "TIMU MOJA",
+
+"team.disciplines": "TAALUMA MBALIMBALI ZA UHANDISI",
+
+"team.capability1": "Uhandisi wa Programu",
+"team.capability2": "GIS",
+"team.capability3": "API",
+"team.capability4": "Mifumo ya Hifadhidata",
+"team.capability5": "Cloud",
+"team.capability6": "Mifumo yenye Akili",
+"team.capability7": "UI / UX",
+"team.davidCardRole": "Mhandisi wa Programu",
+"team.gwamakaCardRole": "Mhandisi wa Programu",
+"team.stephaneCardRole": "Mhandisi wa Programu",
+
     // Why Choose Us
-    "why.label": "Kwa Nini Sisi",
-    "why.title": "Kwa Nini Uchague MLUE Technology",
-    "why.subtitle": "Hatujengi programu tu \u2014 tunajenga ushirikiano unaosukuma mafanikio ya kudumu.",
-    "why.r1Title": "Uelewa Halisi wa Biashara",
-    "why.r1Text": "Tunachukua muda kuelewa shughuli zako, changamoto, na malengo kabla ya kuandika mstari mmoja wa msimbo.",
-    "why.r2Title": "Maendeleo Yanayozingatia Usalama",
-    "why.r2Text": "Kila programu imejengwa kwa mazoea bora ya usalama \u2014 kulinda data yako na imani ya wateja wako.",
-    "why.r3Title": "Mifumo Inayoweza Kukua",
-    "why.r3Text": "Usanifu wetu unakua na biashara yako. Hakuna uandishi upya wa gharama kubwa \u2014 ukuaji laini tu.",
-    "why.r4Title": "Suluhisho za Muda Mrefu",
-    "why.r4Text": "Tunajenga kwa siku zijazo, si leo tu. Suluhisho zetu zinaweza kudumishwa, zimeandikwa kumbukumbu, na zimejengwa kudumu.",
+"why.label": "KWA NINI SISI",
+"why.title": "Kwa Nini Uchague MLUE Technology",
+"why.subtitle": "Hatutengenezi programu tu — tunajenga suluhisho za kidijitali zinazoaminika na zinazolenga mahitaji halisi ya biashara.",
+
+"why.r1Title": "Uelewa Halisi wa Biashara",
+"why.r1Text": "Tunachukua muda kuelewa shughuli, changamoto, na malengo ya biashara yako kabla ya kubuni suluhisho sahihi la kiteknolojia.",
+
+"why.r2Title": "Maendeleo Yanayozingatia Usalama",
+"why.r2Text": "Usalama huzingatiwa katika mchakato mzima wa maendeleo ili kusaidia kulinda mifumo, data, na wateja wako.",
+
+"why.r3Title": "Mifumo Inayoweza Kukua",
+"why.r3Text": "Tunajenga mifumo inayoweza kukua pamoja na biashara yako na kuendana na mahitaji mapya ya kiutendaji na kiteknolojia.",
+
+"why.r4Title": "Suluhisho za Muda Mrefu",
+"why.r4Text": "Suluhisho zetu zimeundwa kwa kuzingatia urahisi wa matengenezo, uaminifu, na thamani ya muda mrefu badala ya kutatua matatizo ya muda mfupi.",
+
+
 
     // Contact
-    "contact.label": "Wasiliana Nasi",
-    "contact.title": "Tufanye Kazi Pamoja",
-    "contact.subtitle": "Una mradi akilini? Tungependa kusikia kuuhusu. Wasiliana nasi na tuanze kujenga kitu kizuri.",
-    "contact.emailLabel": "Barua Pepe",
-    "contact.phoneLabel": "Simu / WhatsApp",
-    "contact.webLabel": "Tovuti",
-    "contact.nameLabel": "Jina Lako",
-    "contact.namePlaceholder": "Weka jina lako",
-    "contact.emailField": "Anwani ya Barua Pepe",
-    "contact.emailPlaceholder": "Weka barua pepe yako",
-    "contact.msgLabel": "Ujumbe",
-    "contact.msgPlaceholder": "Tuambie kuhusu mradi wako...",
-    "contact.send": "Omba Suluhisho",
+
+"contact.eyebrow": "WASILIANA NASI",
+"contact.title": "Una tatizo linalostahili kutatuliwa?",
+"contact.titleAccent": "Tujenge pamoja suluhisho sahihi.",
+"contact.subtitle": "Tuambie unachojaribu kujenga, kutatua, au kuboresha. Tuanze mazungumzo.",
+
+"contact.talkLabel": "UNAPENDA KUONGEA?",
+"contact.talkTitle": "Tujadili wazo lako.",
+"contact.talkText": "Una swali, wazo, au mradi unaohitaji majadiliano? Wasiliana nasi moja kwa moja.",
+
+"contact.whatsapp": "WhatsApp",
+"contact.emailLabel": "Barua Pepe",
+"contact.locationLabel": "TUNAPATIKANA",
+
+"contact.projectLabel": "ANZISHA MRADI",
+"contact.projectTitle": "Tuambie unachojenga.",
+
+"contact.solutionLabel": "Unahitaji nini?",
+"contact.solutionPlaceholder": "Chagua suluhisho",
+"contact.solutionCustomSoftware": "Programu Maalum",
+"contact.solutionBusinessSystem": "Mfumo wa Biashara",
+"contact.solutionApi": "API / Backend",
+"contact.solutionEcommerce": "Biashara Mtandaoni",
+"contact.solutionGis": "GIS / Uelewa wa Maeneo",
+"contact.solutionAi": "AI / Mifumo yenye Akili",
+"contact.solutionOther": "Nyingine",
+
+"contact.nameLabel": "Jina Lako",
+"contact.namePlaceholder": "Weka jina lako",
+
+"contact.emailField": "Anwani ya Barua Pepe",
+"contact.emailPlaceholder": "Weka barua pepe yako",
+
+"contact.msgLabel": "Maelezo ya Mradi",
+"contact.msgPlaceholder": "Tuambie kuhusu tatizo unalotatua au mfumo unaotaka kujenga...",
+
+"contact.send": "Tuma Maelezo ya Mradi",
+
 
     // Footer
-    "footer.tagline": "Kujenga suluhisho za kisasa kwa biashara za kisasa.",
-    "footer.quickLinks": "Viungo vya Haraka",
-    "footer.legal": "Kisheria",
-    "footer.privacy": "Sera ya Faragha",
-    "footer.terms": "Masharti ya Huduma",
-    "footer.rights": "Haki zote zimehifadhiwa.",
 
-    // Chatbot
-    "chat.online": "Mtandaoni",
-    "chat.placeholder": "Uliza kuhusu MLUE Technology...",
-    "chat.onboarding": "NIKUSAIDIEJE LEO?",
+"footer.tagline": "Tunatengeneza suluhisho za kisasa kwa biashara za kisasa.",
 
-   // Meet Our Engineers Section
-    "engineers.label": "Kutana na Wahandisi Wetu",
-    "engineers.title": "Timu Yetu ya Uhandisi",
-    "engineers.subtitle": "Wafahamu wataalamu wabunifu walio nyuma ya suluhisho zetu za kiteknolojia."
-      ,
-      // New content from index.html
-      "cta.requestSolution": "Omba Suluhisho",
-      "cta.viewServices": "Tazama Huduma",
-      "results.title": "Unachopata",
-      "results.benefit1": "✔ Udhibiti bora wa shughuli za biashara yako",
-      "results.benefit2": "✔ Uamuzi wa Biashara unaotegemea Maeneo",
-      "results.benefit3": "✔ Maarifa na ripoti za wakati halisi",
-      "results.benefit4": "✔ Mifumo inayokua na biashara yako",
+"footer.quickLinks": "Gundua",
+
+"footer.services": "Huduma",
+"footer.businessSoftware": "Programu za Biashara",
+"footer.customSoftware": "Programu Maalum",
+"footer.apiBackend": "API na Backend",
+"footer.ecommerce": "Biashara Mtandaoni",
+"footer.locationIntelligence": "Uelewa wa Maeneo",
+"footer.aiSystems": "AI / Mifumo yenye Akili",
+
+"footer.letsTalk": "Tuongee",
+"footer.basedIn": "Tunapatikana",
+"footer.whatsapp": "WhatsApp",
+"footer.email": "Barua Pepe",
+
+"footer.rights": "Haki zote zimehifadhiwa.",
+"footer.privacy": "Sera ya Faragha",
+"footer.terms": "Masharti ya Huduma",
+
+
+"chat.ask": "Uliza MLUE",
+"chat.online": "Mtandaoni",
+"chat.placeholder": "Uliza kuhusu MLUE Technology...",
+"chat.onboarding": "NIKUSAIDIEJE LEO?",
+
+      
+
+      // What You Get
+"results.eyebrow": "UNACHOPATA",
+
+"results.title": "Mifumo ya vitendo. Maamuzi yaliyo wazi. Thamani ya muda mrefu.",
+
+"results.intro": "Hatutoi programu tu. Tunajenga teknolojia inayoboresha namna biashara zinavyofanya kazi, kufanya maamuzi, na kukua.",
+
+"results.benefit1Title": "Udhibiti wa Biashara",
+"results.benefit1": "Udhibiti bora wa shughuli za biashara yako kupitia mifumo iliyoundwa kulingana na shughuli halisi za biashara.",
+
+"results.benefit2Title": "Taarifa Zinazosaidia Kufanya Maamuzi",
+"results.benefit2": "Data, GIS, na taarifa za wakati halisi zinazosaidia kufanya maamuzi yaliyo wazi na yenye uelewa zaidi.",
+
+"results.benefit3Title": "Imejengwa kwa Ajili ya Ukuaji",
+"results.benefit3": "Mifumo salama na rahisi kutunza iliyoundwa kukua pamoja na biashara yako na kuendana na mahitaji yake yanayobadilika.",
+
+"results.principle1": "Biashara kwanza",
+"results.principle2": "Usalama unazingatiwa",
+"results.principle3": "Imejengwa kudumu",
+
+"results.cta": "Omba Suluhisho",
+
+// ==================== SWAHILI ====================
+
+// Navigation
+"nav.home": "Nyumbani",
+"nav.about": "Kuhusu Sisi",
+"nav.services": "Huduma",
+"nav.pricing": "Bei",
+"nav.contact": "Wasiliana",
+"nav.projects": "Miradi",
+"nav.menu": "Menyu",
+"nav.cta": "Anza Sasa",
+
+// Footer
+"footer.tagline": "Kujenga suluhisho za kisasa kwa biashara za kisasa.",
+"footer.quickLinks": "Viungo vya Haraka",
+"footer.legal": "Kisheria",
+"footer.privacy": "Sera ya Faragha",
+"footer.terms": "Masharti ya Huduma",
+"footer.rights": "Haki zote zimehifadhiwa.",
+"footer.services": "Huduma",
+"footer.businessSoftware": "Programu za Biashara",
+"footer.customSoftware": "Programu Maalum",
+"footer.apiBackend": "APIs & Backend",
+"footer.ecommerce": "Biashara Mtandaoni",
+"footer.locationIntelligence": "Ujuzi wa Maeneo",
+"footer.aiSystems": "AI / Mifumo Mahiri",
+"footer.letsTalk": "Tuzungumze",
+"footer.basedIn": "Tupo",
+"footer.location": "Dar es Salaam, Tanzania",
+"footer.whatsapp": "WhatsApp",
+"footer.email": "Barua Pepe",
+
+// Masharti ya Huduma
+"terms.eyebrow": "MASHARTI NA VIGEZO",
+"terms.title": "Masharti ya Huduma",
+"terms.intro": "Masharti yanayosimamia matumizi yako ya tovuti ya MLUE TECHNOLOGY, huduma za kidijitali, na huduma tunazotoa kupitia makubaliano ya moja kwa moja.",
+"terms.lastUpdated": "Imesasishwa Mwisho",
+
+"terms.intro.p1": "Karibu MLUE TECHNOLOGY. Masharti haya ya Huduma (\"Masharti\") yanasimamia upatikanaji na matumizi yako ya tovuti yetu, chatbot, fomu za mawasiliano, maudhui, na huduma zozote tunazotoa kupitia makubaliano ya moja kwa moja (kwa pamoja, \"Huduma\").",
+
+"terms.intro.p2": "Kwa kufikia au kutumia tovuti yetu au kushirikisha Huduma zetu, unakubali kufungwa na Masharti haya. Ikiwa hukubaliani nayo, tafadhali acha kutumia Huduma.",
+
+"terms.s1.title": "1. Kuhusu MLUE TECHNOLOGY",
+"terms.s1.p1": "MLUE TECHNOLOGY ni kampuni ya teknolojia inayotoa mifumo ya biashara, uundaji wa programu maalum, uhandisi wa backend, APIs, huduma za chapa, na huduma nyingine za kidijitali zinazohusiana.",
+
+"terms.s2.title": "2. Matumizi ya Tovuti",
+"terms.s2.p1": "Unakubali kutumia tovuti hii kwa madhumuni halali pekee na kwa namna ambayo haiathiri tovuti au watumiaji wake. Hupaswi:",
+"terms.s2.li1": "Kujaribu kupata ufikiaji usioidhinishwa wa tovuti, seva, au mifumo iliyounganishwa",
+"terms.s2.li2": "Kuingilia usalama, upatikanaji, au utendaji wa tovuti",
+"terms.s2.li3": "Kuwasilisha taarifa za uongo, zenye madhara, au za kupotosha",
+"terms.s2.li4": "Kutumia vibaya chatbot, fomu za mawasiliano, au zana nyingine za mawasiliano",
+"terms.s2.li5": "Kujaribu kukusanya, kunakili, au kuchapisha upya maudhui bila ruhusa",
+
+"terms.s3.title": "3. Fomu za Mawasiliano na Ujumbe",
+"terms.s3.p1": "Unapowasilisha fomu kwenye tovuti yetu au ukurasa wa bei, ujumbe wako unaweza kuchakatwa na mtoa huduma wetu wa fomu na kuwasilishwa kwenye kisanduku chetu cha barua pepe. Unawajibika kwa usahihi wa taarifa unazowasilisha.",
+"terms.s3.p2": "Usiwasilishe taarifa za siri isipokuwa uko tayari zitumwe kupitia njia za kawaida za intaneti na huduma za wahusika wengine.",
+
+"terms.s4.title": "4. Matumizi ya Chatbot",
+"terms.s4.p1": "Chatbot yetu imetolewa kama kipengele cha kusaidia kujibu maswali ya kawaida kuhusu biashara na huduma zetu. Chatbot inaweza kutumia mantiki ya maneno muhimu ndani ya kivinjari na inaweza kusasishwa baadaye ili kutumia huduma za AI za wahusika wengine.",
+"terms.s4.p2": "Unakubali kutotumia chatbot kutuma maudhui ya matusi, kinyume cha sheria, au yenye madhara, wala kuitumia kama mbadala wa ushauri wa kitaalamu.",
+
+"terms.s5.title": "5. Upendeleo wa Lugha na Hifadhi ya Kivinjari",
+"terms.s5.p1": "Tunahifadhi chaguo lako la lugha katika kivinjari chako kwa kutumia local storage ili tovuti ikumbuke kama unapendelea Kiingereza au Kiswahili. Mpangilio huu huhifadhiwa ndani ya kifaa chako.",
+
+"terms.s6.title": "6. Ushirikishwaji wa Huduma na Makubaliano",
+"terms.s6.p1": "Uundaji wa programu maalum, uwekaji wa mfumo, ujumuishaji wa API, mfumo wa POS, uundaji wa tovuti, mradi wa chapa, au ushirikishwaji mwingine unaofanana unahitaji makubaliano tofauti ya maandishi yanayobainisha wigo, bidhaa za mwisho, muda, na masharti ya malipo.",
+"terms.s6.p2": "Taarifa zinazoonyeshwa kwenye tovuti, ikiwemo bei, maelezo ya vifurushi, au muhtasari wa huduma, ni kwa mwongozo wa jumla pekee na haziundi mkataba wa kisheria wala hazihakikishi matokeo mahususi.",
+
+"terms.s7.title": "7. Malipo na Mabadiliko ya Wigo",
+"terms.s7.p1": "Pale inapohusika, kazi inaweza kuhitaji malipo ya awali, ya hatua kwa hatua, au kwa awamu. Ukiomba kazi iliyo nje ya wigo uliokubaliwa, tunaweza kuichukulia kama kazi ya ziada na kutoa bei tofauti.",
+
+"terms.s8.title": "8. Haki Miliki",
+"terms.s8.p1": "Isipokuwa tukubaliane vinginevyo kwa maandishi, maudhui yote ya tovuti, vipengele vya chapa, nyaraka, vipande vya msimbo, mifumo ya programu, na nyenzo za usanifu hubaki kuwa mali ya kiakili ya MLUE TECHNOLOGY.",
+"terms.s8.p2": "Hurusiwi kunakili, kuzalisha tena, kurekebisha, au kusambaza maudhui au kazi zetu isipokuwa pale inaporuhusiwa na makubaliano ya maandishi au sheria husika.",
+
+"terms.s9.title": "9. Kanusho la Huduma",
+"terms.s9.p1": "Tunatumia uangalifu unaofaa na mbinu za kitaalamu za sekta katika kujenga na kudumisha Huduma zetu, lakini hatuhakikishi utendakazi usiokatizwa, utendaji usio na hitilafu, au ulinzi kamili dhidi ya udanganyifu, matumizi mabaya, au hitilafu za kiufundi.",
+"terms.s9.p2": "Unawajibika kwa namna unavyotumia Huduma na kwa maamuzi yako mwenyewe ya ndani ya biashara, kisheria, na uzingatiaji wa taratibu.",
+
+"terms.s10.title": "10. Huduma za Wahusika Wengine",
+"terms.s10.p1": "Tovuti yetu inaweza kutegemea watoa huduma wengine wa hosting, huduma za uchakataji wa fomu, APIs za kivinjari, au huduma nyingine za nje. Hatuwajibiki kwa kukatika kwa huduma, ucheleweshaji, au matatizo yanayosababishwa na wahusika hao.",
+
+"terms.s11.title": "11. Kikomo cha Dhima",
+"terms.s11.p1": "Kwa kiwango kamili kinachoruhusiwa na sheria, MLUE TECHNOLOGY haiwajibiki kwa hasara zisizo za moja kwa moja, za bahati mbaya, maalum, au zinazofuata, ikiwemo kupotea kwa faida, data, au kukatizwa kwa biashara, zinazotokana na matumizi yako au kutoweza kutumia Huduma.",
+
+"terms.s12.title": "12. Kusimamisha na Kusitisha Huduma",
+"terms.s12.p1": "Tunaweza kusimamisha au kusitisha ufikiaji wa Huduma ikiwa tunaamini kwa msingi wa busara kuwa Masharti haya yamekiukwa au tovuti inatumiwa vibaya.",
+
+"terms.s13.title": "13. Mabadiliko ya Masharti Haya",
+"terms.s13.p1": "Tunaweza kusasisha Masharti haya mara kwa mara. Kuendelea kutumia Huduma baada ya masasisho kuchapishwa kunamaanisha unakubali Masharti yaliyorekebishwa.",
+
+"terms.s14.title": "14. Sheria Inayotumika",
+"terms.s14.p1": "Masharti haya yanasimamiwa na kutafsiriwa kwa mujibu wa sheria za Jamhuri ya Muungano wa Tanzania.",
+
+"terms.s15.title": "15. Taarifa za Mawasiliano",
+"terms.s15.p1.prefix": "Ikiwa una maswali kuhusu Masharti haya, tafadhali wasiliana nasi kupitia ",
+"terms.s15.p1.suffix": ".",
+
+"terms.footerNote": "Masharti haya yanapaswa kusomwa pamoja na Sera yetu ya Faragha, inayoeleza jinsi taarifa zinavyoshughulikiwa unapokuwa unatumia tovuti na huduma zinazohusiana.",
+
+
+// ==================== SWAHILI ====================
+
+// Sera ya Faragha
+"privacy.eyebrow": "SERA YA FARAGHA",
+"privacy.title": "Sera ya Faragha",
+"privacy.intro": "Jinsi MLUE TECHNOLOGY inavyoshughulikia taarifa binafsi kwenye tovuti yetu, fomu za mawasiliano, chatbot, na mapendeleo ya lugha.",
+"privacy.effectiveDate": "Tarehe ya Kuanza Kutumika",
+"privacy.effectiveDateValue": "17 Aprili 2026",
+
+"privacy.intro.p1": "MLUE TECHNOLOGY (\"sisi\", \"yetu\", \"kwetu\") inaheshimu faragha yako na imejitolea kushughulikia taarifa binafsi kwa uwajibikaji. Sera hii inaeleza taarifa tunazokusanya unapokuwa unatumia tovuti yetu, fomu za mawasiliano, chatbot, na zana za lugha, pamoja na jinsi tunavyotumia taarifa hizo.",
+"privacy.intro.p2": "Kwa kutumia tovuti yetu, unakubali taratibu zilizoelezwa katika sera hii.",
+
+"privacy.s1.title": "1. Muhtasari",
+"privacy.s1.p1": "MLUE TECHNOLOGY (\"sisi\", \"yetu\", \"kwetu\") inaheshimu faragha yako na imejitolea kushughulikia taarifa binafsi kwa uwajibikaji. Sera hii inaeleza taarifa tunazokusanya unapokuwa unatumia tovuti yetu, fomu za mawasiliano, chatbot, na zana za lugha, pamoja na jinsi tunavyotumia taarifa hizo.",
+"privacy.s1.p2": "Kwa kutumia tovuti yetu, unakubali taratibu zilizoelezwa katika sera hii.",
+
+"privacy.s2.title": "2. Taarifa Tunazokusanya",
+"privacy.s2.p1": "Tunakusanya taarifa zinazohitajika tu ili kujibu maombi na kuendesha vipengele vya tovuti unavyochagua kutumia.",
+
+"privacy.s2.a.title": "a) Taarifa Unazotoa Moja kwa Moja",
+"privacy.s2.a.li1": "Jina",
+"privacy.s2.a.li2": "Anwani ya barua pepe",
+"privacy.s2.a.li3": "Namba ya simu, ikiwa umeiweka",
+"privacy.s2.a.li4": "Maudhui ya ujumbe unaowasilisha kupitia fomu zetu au viungo vya mawasiliano ya moja kwa moja",
+
+"privacy.s2.b.title": "b) Ujumbe wa Chatbot",
+"privacy.s2.b.p1": "Ukitumia chatbot, maandishi unayoandika huchakatwa ili kuzalisha jibu. Kwa sasa chatbot hutumia mantiki ya maneno muhimu ndani ya kivinjari. Tukiwasha huduma ya AI ya wahusika wengine kama njia mbadala baadaye, ujumbe wa chatbot unaweza kutumwa kwenye huduma hiyo kwa ajili ya kuchakatwa.",
+
+"privacy.s2.c.title": "c) Taarifa za Msingi za Kiufundi",
+"privacy.s2.c.li1": "Taarifa kuhusu kivinjari na kifaa",
+"privacy.s2.c.li2": "Anwani ya IP inayoweza kutambuliwa na mtoa huduma wetu wa hosting au fomu unapowasilisha fomu",
+"privacy.s2.c.li3": "Kurasa zilizotembelewa kwenye tovuti yetu ya umma",
+"privacy.s2.c.p1": "Tunatumia taarifa hizi kwa usalama, utatuzi wa matatizo, na matengenezo ya tovuti.",
+
+"privacy.s2.d.title": "d) Upendeleo wa Lugha",
+"privacy.s2.d.p1": "Tunahifadhi chaguo lako la lugha kwenye kivinjari chako kwa kutumia localStorage ili tovuti ikumbuke kama unapendelea Kiingereza au Kiswahili.",
+
+"privacy.s3.title": "3. Jinsi Tunavyotumia Taarifa",
+"privacy.s3.li1": "Kujibu maombi ya mawasiliano",
+"privacy.s3.li2": "Kutoa taarifa kuhusu miradi na huduma",
+"privacy.s3.li3": "Kuendesha chatbot na vipengele vya kubadilisha lugha",
+"privacy.s3.li4": "Kuboresha tovuti na maudhui yake",
+"privacy.s3.li5": "Kulinda tovuti dhidi ya matumizi mabaya na matatizo ya kiufundi",
+"privacy.s3.p1": "Hatuuzi, hatupangishi, wala hatushirikishi taarifa zako binafsi kwa biashara ya aina hiyo.",
+
+"privacy.s4.title": "4. Jinsi Taarifa Zinavyoshirikiwa",
+"privacy.s4.p1": "Tunashirikisha taarifa pale tu inapohitajika kuendesha huduma unazotumia.",
+"privacy.s4.li1": "FormSubmit huchakata mawasilisho ya fomu za mawasiliano na kuyatuma kwenye kisanduku chetu cha barua pepe.",
+"privacy.s4.li2": "Watoa huduma wa hosting wanaweza kuchakata kumbukumbu za kawaida za seva na ufikiaji zinazohitajika kuwasilisha tovuti.",
+"privacy.s4.li3": "Huduma za AI, ikiwa zitawezeshwa baadaye kwa ajili ya chatbot, zingepokea tu maandishi ya chatbot yanayohitajika ili kuzalisha jibu.",
+
+"privacy.s5.title": "5. Cookies na Hifadhi ya Taarifa",
+"privacy.s5.p1": "Hatutumii kwa makusudi cookies za matangazo au uchanganuzi kwenye tovuti hii. Tunatumia hifadhi ya kivinjari kwa kipengele cha mapendeleo ya lugha. Kivinjari chako au mtoa huduma wa hosting bado anaweza kutumia cookies muhimu za kiufundi au kumbukumbu zinazohitajika kwa uendeshaji wa kawaida wa tovuti.",
+
+"privacy.s6.title": "6. Uhifadhi wa Taarifa",
+"privacy.s6.p1": "Tunahifadhi mawasilisho ya fomu za mawasiliano kwa muda unaohitajika kujibu ombi lako, kukamilisha mazungumzo ya kibiashara, au kutimiza mahitaji ya utunzaji wa kumbukumbu. Ikiwa mtoa huduma mwingine atahifadhi taarifa kwa sababu zake za kiutendaji au kisheria, taratibu zake za uhifadhi pia zitatumika.",
+
+"privacy.s7.title": "7. Usalama",
+"privacy.s7.p1": "Tunatumia hatua zinazofaa za kiufundi na kiutawala kusaidia kulinda taarifa dhidi ya ufikiaji usioidhinishwa, upotevu, matumizi mabaya, au kufichuliwa. Hakuna njia ya kutuma au kuhifadhi taarifa mtandaoni iliyo salama kabisa, hivyo hatuwezi kuhakikisha usalama wa kiwango cha asilimia mia moja.",
+
+"privacy.s8.title": "8. Haki Zako",
+"privacy.s8.p1": "Kulingana na eneo lako na aina ya taarifa husika, unaweza kuomba kupata, kurekebisha, au kufuta taarifa binafsi ulizowasilisha kwetu. Ili kuwasilisha ombi, wasiliana nasi kupitia taarifa zilizo hapa chini.",
+
+"privacy.s9.title": "9. Viungo vya Tovuti za Nje",
+"privacy.s9.p1": "Tovuti yetu inaweza kuwa na viungo vinavyoelekeza kwenye tovuti za wahusika wengine. Hatuwajibiki kwa sera zao za faragha au maudhui ya tovuti hizo.",
+
+"privacy.s10.title": "10. Faragha ya Watoto",
+"privacy.s10.p1": "Tovuti yetu imekusudiwa kwa matumizi ya kibiashara na kitaalamu na haijaelekezwa kwa watoto walio chini ya miaka 13. Hatukusanyi kwa kujua taarifa binafsi kutoka kwa watoto.",
+
+"privacy.s11.title": "11. Masasisho ya Sera Hii",
+"privacy.s11.p1": "Tunaweza kusasisha sera hii kadri vipengele vya tovuti yetu vinavyobadilika. Tunapofanya hivyo, tutasasisha tarehe ya kuanza kutumika iliyo kwenye ukurasa huu.",
+
+"privacy.s12.title": "12. Wasiliana Nasi",
+"privacy.s12.p1": "Ikiwa una maswali kuhusu Sera hii ya Faragha au taarifa zako, tafadhali wasiliana nasi kupitia:",
+"privacy.s12.emailLabel": "Barua Pepe",
+"privacy.s12.location": "MLUE TECHNOLOGY\nJamhuri ya Muungano wa Tanzania"
+
   }
 };
 

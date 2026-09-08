@@ -42,545 +42,1124 @@
 			]
 		}
 	</script>
+    <style>
+        /* =========================================================
+           MLUE TECHNOLOGY — PRICING PAGE
+           Premium UI layer, scoped to .pricing-page
+           ========================================================= */
 
-	<style>
-		.pricing-hero {
-			padding: 120px 0 24px;
-			text-align: center;
-			background: linear-gradient(160deg, var(--white) 0%, var(--blue-50) 100%);
-		}
+        .pricing-page {
+            --pricing-ink: #0b1220;
+            --pricing-muted: #64748b;
+            --pricing-border: rgba(15, 23, 42, 0.08);
+            --pricing-cyan: #00e5ff;
+            --pricing-cyan-soft: rgba(0, 229, 255, 0.10);
+            --pricing-blue: #1976d2;
+            --pricing-navy: #0a0a12;
+            --pricing-surface: rgba(255, 255, 255, 0.90);
+        }
 
-		.pricing-hero h1 {
-			font-size: clamp(2rem, 5vw, 2.8rem);
-			color: var(--gray-900);
-			margin-bottom: 10px;
-		}
+        .pricing-page main {
+            background:
+                radial-gradient(
+                    circle at 85% 10%,
+                    rgba(0, 229, 255, 0.07),
+                    transparent 26rem
+                ),
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #f6fbff 48%,
+                    #ffffff 100%
+                );
+        }
 
-		.pricing-hero p {
-			color: var(--gray-600);
-			max-width: 760px;
-			margin: 0 auto;
-		}
+        /* ---------- Hero ---------- */
 
-		.pricing-main {
-			padding: 16px 0 72px;
-			background: linear-gradient(160deg, var(--white) 0%, var(--blue-50) 100%);
-		}
+        .pricing-page .pricing-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 150px 0 72px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at 50% -20%,
+                    rgba(0, 229, 255, 0.14),
+                    transparent 34rem
+                ),
+                linear-gradient(
+                    180deg,
+                    #0a0a12 0%,
+                    #0d1521 100%
+                );
+            color: #fff;
+        }
 
-		.pricing-main .container {
-			padding-left: 24px;
-			padding-right: 24px;
-		}
+        .pricing-page .pricing-hero::before,
+        .pricing-page .pricing-hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(2px);
+        }
 
-		.pricing-section {
-			margin-top: 34px;
-		}
+        .pricing-page .pricing-hero::before {
+            width: 220px;
+            height: 220px;
+            top: 15%;
+            left: -90px;
+            background: rgba(0, 229, 255, 0.09);
+        }
 
-		.pricing-section .section-title {
-			text-align: left;
-			margin-bottom: 14px;
-			font-size: clamp(1.4rem, 3vw, 2rem);
-		}
+        .pricing-page .pricing-hero::after {
+            width: 280px;
+            height: 280px;
+            right: -120px;
+            bottom: -150px;
+            background: rgba(25, 118, 210, 0.14);
+        }
 
-		.pricing-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-			gap: 18px;
-		}
+        .pricing-page .pricing-hero h1 {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto 18px;
+            color: #ffffff;
+            font-size: clamp(2.5rem, 7vw, 4.8rem);
+            line-height: 1.02;
+            letter-spacing: -0.055em;
+            font-weight: 800;
+        }
 
-		.pricing-card {
-			background: var(--white);
-			border: 1px solid var(--gray-200);
-			border-radius: var(--radius-lg);
-			padding: 22px;
-			box-shadow: var(--shadow-md);
-			transition: var(--transition);
-		}
+        .pricing-page .pricing-hero p {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.68);
+            font-size: 1.06rem;
+            line-height: 1.8;
+        }
 
-		.pricing-card:hover {
-			transform: translateY(-4px);
-			box-shadow: var(--shadow-lg);
-			border-color: var(--blue-100);
-		}
+        /* ---------- Pricing body ---------- */
 
-		.pricing-card h3 {
-			color: var(--blue-800);
-			margin-bottom: 8px;
-			font-size: 1.15rem;
-		}
+        .pricing-page .pricing-main {
+            padding: 56px 0 96px;
+            background: transparent;
+        }
 
-		.price {
-			color: var(--gray-900);
-			font-weight: 700;
-			margin-bottom: 10px;
-			font-size: 1rem;
-		}
+        .pricing-page .pricing-main .container {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
 
-		.pricing-card ul {
-			list-style: disc;
-			margin-left: 20px;
-			color: var(--gray-600);
-		}
+        /* ---------- Category sections ---------- */
 
-		.pricing-card li {
-			margin-bottom: 6px;
-		}
+        .pricing-page .pricing-section {
+            position: relative;
+            margin-top: 76px;
+            scroll-margin-top: 100px;
+        }
 
-		.card-details {
-			overflow: hidden;
-			transition: max-height var(--transition);
-		}
+        .pricing-page .pricing-section:first-child {
+            margin-top: 8px;
+        }
 
-		.card-toggle {
-			display: none;
-			margin-top: 14px;
-			padding: 8px 14px;
-			border: 1px solid var(--blue-200, var(--blue-100));
-			border-radius: var(--radius-sm);
-			background: var(--blue-50);
-			color: var(--blue-800);
-			font-size: 0.85rem;
-			font-weight: 600;
-		}
+        .pricing-page .pricing-section::before {
+            content: "";
+            display: block;
+            width: 42px;
+            height: 3px;
+            margin-bottom: 16px;
+            border-radius: 999px;
+            background: linear-gradient(
+                90deg,
+                var(--pricing-cyan),
+                var(--pricing-blue)
+            );
+        }
 
-		.service-desc {
-			color: var(--gray-600);
-			margin: 0 0 16px;
-			max-width: 980px;
-		}
+        .pricing-page .pricing-section .section-title {
+            position: relative;
+            text-align: left;
+            margin-bottom: 12px;
+            color: var(--pricing-ink);
+            font-size: clamp(1.65rem, 3vw, 2.25rem);
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+        }
 
-		.pricing-card h4 {
-			margin-top: 12px;
-			margin-bottom: 8px;
-			font-size: 0.82rem;
-			font-weight: 700;
-			letter-spacing: 0.08em;
-			text-transform: uppercase;
-			color: var(--blue-800);
-		}
+        .pricing-page .service-desc {
+            max-width: 820px;
+            margin: 0 0 28px;
+            color: var(--pricing-muted);
+            line-height: 1.8;
+        }
 
-		.pricing-card ul + h4 {
-			margin-top: 14px;
-		}
+        /* ---------- Pricing grid ---------- */
 
-		.header__hamburger {
-			display: none;
-			flex-direction: column;
-			gap: 5px;
-			padding: 4px;
-		}
+        .pricing-page .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
 
-		.header__hamburger span {
-			display: block;
-			width: 22px;
-			height: 2px;
-			background: var(--gray-700);
-			border-radius: 2px;
-			transition: var(--transition);
-		}
+        .pricing-page .pricing-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
 
-		.header__hamburger.open span:nth-child(1) {
-			transform: translateY(7px) rotate(45deg);
-		}
+            padding: 30px 28px 26px;
+            border: 1px solid var(--pricing-border);
+            border-radius: 24px;
 
-		.header__hamburger.open span:nth-child(2) {
-			opacity: 0;
-		}
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255,255,255,0.98),
+                    rgba(249,252,255,0.94)
+                );
 
-		.header__hamburger.open span:nth-child(3) {
-			transform: translateY(-7px) rotate(-45deg);
-		}
+            box-shadow:
+                0 12px 36px rgba(15,23,42,0.055);
 
-		.pricing-contact {
-			margin-top: 48px;
-			padding-left: 20px;
-			padding-right: 20px;
-		}
+            transition:
+                transform 0.35s cubic-bezier(.2,.7,.2,1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
 
-		@media (max-width: 768px) {
-			.pricing-hero {
-				padding-top: 100px;
-			}
+        .pricing-page .pricing-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(
+                    circle at 100% 0%,
+                    rgba(0,229,255,0.07),
+                    transparent 12rem
+                );
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
 
-			.pricing-section .section-title {
-				text-align: center;
-			}
+        .pricing-page .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,229,255,0.24);
+            box-shadow:
+                0 24px 55px rgba(15,23,42,0.11);
+        }
 
-			.pricing-main .container {
-				padding-left: 16px;
-				padding-right: 16px;
-			}
+        .pricing-page .pricing-card:hover::after {
+            opacity: 1;
+        }
 
-			.pricing-contact {
-				padding-left: 20px;
-				padding-right: 20px;
-			}
+        .pricing-page .pricing-card h3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            color: var(--pricing-ink);
+            font-size: 1.18rem;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+        }
 
-			.header__hamburger {
-				display: flex;
-			}
+        /* Recommended / Premium hierarchy for 3-card groups */
+        .pricing-page .pricing-grid > .pricing-card:nth-child(2) {
+            border-color: rgba(0,229,255,0.35);
+            box-shadow:
+                0 18px 48px rgba(0, 185, 210, 0.11);
+        }
 
-			.header__nav {
-				display: none !important;
-				flex-direction: column;
-				position: absolute;
-				top: 68px;
-				left: 0;
-				right: 0;
-				background: var(--white);
-				border-top: 1px solid var(--gray-200);
-				width: 100%;
-				gap: 0;
-				padding: 12px 0;
-				z-index: 999;
-			}
+        .pricing-page .pricing-grid > .pricing-card:nth-child(2)::before {
+            content: "RECOMMENDED";
+            position: absolute;
+            top: 0;
+            right: 22px;
+            z-index: 3;
 
-			.header__nav.open {
-				display: flex !important;
-			}
+            padding: 7px 12px;
+            border-radius: 0 0 10px 10px;
 
-			.header__nav a {
-				display: block;
-				padding: 10px 16px;
-				border-bottom: 1px solid var(--gray-100);
-				font-size: 0.9rem;
-			}
+            background: var(--pricing-cyan);
+            color: #071018;
 
-			.header__nav a:last-child {
-				border-bottom: none;
-			}
+            font-size: 0.63rem;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+        }
 
-			.header__actions {
-				display: flex;
-			}
+        html:lang(sw) .pricing-page .pricing-grid > .pricing-card:nth-child(2)::before {
+            content: "INAYOPENDEKEZWA";
+        }
 
-			.card-toggle {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-			}
+        .pricing-page .pricing-grid > .pricing-card:nth-child(2) .price {
+            color: #0b7180;
+        }
 
-			.pricing-card:not(.is-expanded) .card-details {
-				max-height: 0;
-			}
+        .pricing-page .pricing-grid > .pricing-card:nth-child(3) {
+            border-color: rgba(25,118,210,0.18);
+        }
 
-			.pricing-card.is-expanded .card-details {
-				max-height: 1600px;
-			}
-		}
-	</style>
+        .pricing-page .pricing-grid > .pricing-card:nth-child(3) .price {
+            color: var(--pricing-blue);
+        }
+
+        /* Price block */
+
+        .pricing-page .price {
+            position: relative;
+            z-index: 1;
+
+            display: flex;
+            align-items: flex-start;
+            min-height: 58px;
+
+            margin: 0 0 24px;
+            padding: 16px 16px;
+
+            border: 1px solid rgba(15,23,42,0.06);
+            border-radius: 16px;
+
+            background: rgba(248,250,252,0.85);
+
+            color: var(--pricing-ink);
+            font-size: 1rem;
+            line-height: 1.45;
+            font-weight: 800;
+        }
+
+        .pricing-page .pricing-card:nth-child(2) .price {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,255,0.08),
+                    rgba(255,255,255,0.96)
+                );
+        }
+
+        /* Included / Not Included / Examples */
+
+        .pricing-page .pricing-card h4 {
+            position: relative;
+            z-index: 1;
+
+            margin-top: 22px;
+            margin-bottom: 11px;
+
+            color: var(--pricing-muted);
+            font-size: 0.7rem;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .pricing-page .pricing-card h4:first-of-type {
+            margin-top: 0;
+            color: var(--pricing-blue);
+        }
+
+        .pricing-page .pricing-card ul {
+            position: relative;
+            z-index: 1;
+
+            display: grid;
+            gap: 8px;
+
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pricing-page .pricing-card li {
+            position: relative;
+            padding-left: 27px;
+
+            color: #475569;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .pricing-page .pricing-card li::before {
+            content: "";
+            position: absolute;
+            top: 0.48em;
+            left: 0;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle,
+                    var(--pricing-cyan) 0 35%,
+                    rgba(0,229,255,0.18) 38% 100%
+                );
+            box-shadow:
+                0 0 0 4px rgba(0,229,255,0.06);
+        }
+
+        /* Make excluded items visually quieter */
+        .pricing-page .pricing-card h4:not(:first-of-type) + ul li {
+            color: #64748b;
+        }
+
+        /* ---------- Mobile card details ---------- */
+
+        .pricing-page .card-details {
+            overflow: hidden;
+            max-height: none;
+            transition:
+                max-height 0.42s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .pricing-page .card-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            margin-top: 18px;
+            padding: 10px 15px;
+
+            border: 1px solid rgba(0,229,255,0.22);
+            border-radius: 12px;
+
+            background: rgba(0,229,255,0.06);
+            color: #0b7180;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .pricing-page .card-toggle:hover {
+            background: rgba(0,229,255,0.12);
+            border-color: rgba(0,229,255,0.38);
+        }
+
+        /* ---------- Single service cards ---------- */
+
+        .pricing-page #domain-name-title,
+        .pricing-page #hosting-title,
+        .pricing-page #maintenance-title {
+            margin-bottom: 10px;
+        }
+
+        .pricing-page [aria-labelledby="domain-name-title"] .pricing-grid,
+        .pricing-page [aria-labelledby="hosting-title"] .pricing-grid {
+            grid-template-columns: minmax(0, 760px);
+        }
+
+        .pricing-page [aria-labelledby="domain-name-title"] .pricing-card,
+        .pricing-page [aria-labelledby="hosting-title"] .pricing-card {
+            min-height: 180px;
+        }
+
+        .pricing-page [aria-labelledby="maintenance-title"] .pricing-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .pricing-page [aria-labelledby="maintenance-title"] .pricing-card h3 {
+            margin-bottom: 18px;
+        }
+
+        /* ---------- Contact transition ---------- */
+
+        .pricing-page .contact {
+            margin-top: 88px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        /* ---------- Tablet ---------- */
+
+        @media (max-width: 1024px) {
+            .pricing-page .pricing-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .pricing-page [aria-labelledby="maintenance-title"] .pricing-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .pricing-page .pricing-card {
+                padding: 26px 23px 23px;
+            }
+        }
+
+        /* ---------- Mobile ---------- */
+
+        @media (max-width: 768px) {
+            .pricing-page .pricing-hero {
+                padding: 124px 0 56px;
+            }
+
+            .pricing-page .pricing-hero h1 {
+                font-size: clamp(2.35rem, 13vw, 3.5rem);
+            }
+
+            .pricing-page .pricing-hero p {
+                font-size: 0.96rem;
+            }
+
+            .pricing-page .pricing-main {
+                padding-top: 38px;
+            }
+
+            .pricing-page .pricing-main .container {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .pricing-page .pricing-section {
+                margin-top: 58px;
+            }
+
+            .pricing-page .pricing-section .section-title {
+                text-align: left;
+            }
+
+            .pricing-page .service-desc {
+                font-size: 0.93rem;
+            }
+
+            .pricing-page .pricing-grid,
+            .pricing-page [aria-labelledby="maintenance-title"] .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-page .pricing-card {
+                padding: 24px 20px 20px;
+                border-radius: 21px;
+            }
+
+            .pricing-page .pricing-grid > .pricing-card:nth-child(2)::before {
+                right: 18px;
+                padding: 6px 10px;
+                font-size: 0.58rem;
+            }
+
+            .pricing-page .pricing-card:not(.is-expanded) .card-details {
+                max-height: 0;
+            }
+
+            .pricing-page .pricing-card.is-expanded .card-details {
+                max-height: 1800px;
+            }
+
+            .pricing-page .card-toggle {
+                display: inline-flex;
+            }
+
+            .pricing-page .contact {
+                margin-top: 64px;
+            }
+
+            .pricing-page [aria-labelledby="domain-name-title"] .pricing-grid,
+            .pricing-page [aria-labelledby="hosting-title"] .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-page .pricing-hero {
+                padding-top: 112px;
+            }
+
+            .pricing-page .pricing-section::before {
+                margin-bottom: 13px;
+            }
+
+            .pricing-page .pricing-card li {
+                font-size: 0.86rem;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="pricing-page">
 	<section class="seo-txt" style="display: none;">
 		<h2>MLUE TECHNOLOGY Pricing</h2>
 		<p>Explore our transparent pricing options for custom software development, landing pages, and digital solutions in Tanzania and beyond.</p>
 	</section>
-	<header class="header" id="header" style="position: relative; background: #fff; border-bottom: 1px solid var(--gray-100);">
-		<div class="container header__inner">
-			<a href="/" class="logo-link" aria-label="MLUE Technology Home">
-				<span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
-			</a>
+	<!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo-link" aria-label="MLUE Technology Home">
+        <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
+      </a>
 
-			<nav class="header__nav" id="nav">
-				<a href="/" class="nav-link">Home</a>
-				<a href="/projects/" class="nav-link">Projects</a>
-				<a href="/#contact" class="nav-link">Contact</a>
-			</nav>
+      <nav class="header__nav" id="nav">
+    <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
 
-			<div class="header__actions">
-				<a href="/#contact" class="btn btn--primary btn--sm">Get Started</a>
-			</div>
+    <a href="/#about" class="nav-link" data-i18n="nav.about">
+        About Us
+    </a>
 
-			<button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
-				<span></span><span></span><span></span>
-			</button>
-		</div>
-	</header>
+    <a href="/#services" class="nav-link" data-i18n="nav.services">
+        Services
+    </a>
+
+    <a href="/pricing/" class="nav-link active" data-i18n="nav.pricing">
+        Pricing
+    </a>
+
+    <a href="/#contact" class="nav-link" data-i18n="nav.contact">
+        Contact
+    </a>
+
+    <a href="/projects/" class="nav-link" data-i18n="nav.projects">
+        Projects
+    </a>
+</nav>
+
+      <div class="header__actions">
+
+    <a href="#contact"
+       class="btn btn--primary btn--sm"
+       data-i18n="nav.cta">
+        Get Started
+    </a>
+
+    <div class="lang-switcher" id="langSwitcher">
+
+        <!-- UK Flag for English -->
+        <button class="lang-btn active"
+                data-lang="en"
+                aria-label="English">
+            <img src="https://flagcdn.com/gb.svg"
+                 alt="UK Flag"
+                 class="flag-icon">
+        </button>
+
+        <span class="lang-divider">|</span>
+
+        <!-- Tanzania Flag for Swahili -->
+        <button class="lang-btn"
+                data-lang="sw"
+                aria-label="Swahili">
+            <img src="https://flagcdn.com/tz.svg"
+                 alt="Tanzania Flag"
+                 class="flag-icon">
+        </button>
+
+      </div>
+
+      </div>
+
+      <button class="header__hamburger" id="hamburger" aria-label="Toggle navigation">
+    <span class="header__hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+    <span class="header__hamburger-label">Menu</span>
+</button>
+    </div>
+  </header>
 
 	<section class="pricing-hero">
-		<div class="container">
-			<h1>MLUE <span class="logo-accent">TECHNOLOGY</span> Pricing</h1>
-			<p>Professional web development pricing and package options tailored for growing businesses.</p>
-		</div>
-	</section>
+    <div class="container">
+
+        <h1 data-i18n="pricing.title">
+            MLUE TECHNOLOGY Pricing
+        </h1>
+
+        <p data-i18n="pricing.subtitle">
+            Professional web development pricing and package options tailored for growing businesses.
+        </p>
+
+    </div>
+    </section>
 
 	<main class="pricing-main">
 		<div class="container">
 			<section class="pricing-section" aria-labelledby="landing-pages-title">
-				<h2 class="section-title" id="landing-pages-title">Landing Pages</h2>
-				<p class="service-desc">A landing page is a standalone single web page created specifically for a marketing or advertising campaign, designed with one focus (a call to action) to convert visitors into leads or customers.</p>
+				<h2
+                 class="section-title"
+                 id="landing-pages-title"
+                data-i18n="pricing.landingPages.title"
+                >
+               Landing Pages
+               </h2>
+
+              <p
+                 class="service-desc"
+                data-i18n="pricing.landingPages.description"
+         >
+          A landing page is a standalone single web page created specifically for a marketing or advertising campaign, designed with one focus (a call to action) to convert visitors into leads or customers.
+             </p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
-						<h3>Basic Landing Page</h3>
-						<p class="price">PRICE: Tshs. 100,000 - Tshs. 250,000</p>
-						<h4>Included</h4>
+
+						<h3 data-i18n="pricing.landing.basic.title">
+    Basic Landing Page
+</h3>
+
+<p class="price" data-i18n="pricing.landing.basic.price">
+    PRICE: Tshs. 100,000 - Tshs. 250,000
+</p>
+
+						<h4 data-i18n="pricing.included">
+                          Included
+                         </h4>
 						<ul>
-							<li>Simple layout (template-based)</li>
-							<li>Few sections (Hero + Features + Contact)</li>
-							<li>Basic responsiveness (mobile + desktop)</li>
-							<li>1 Call-To-Action</li>
-							<li>1 client revision</li>
-							<li>Simple form (email)</li>
+							<li data-i18n="pricing.landing.basic.included1">Simple layout (template-based)</li>
+							<li data-i18n="pricing.landing.basic.included2">Few sections (Hero + Features + Contact)</li>
+							<li data-i18n="pricing.landing.basic.included3">Basic responsiveness (mobile + desktop)</li>
+							<li data-i18n="pricing.landing.basic.included4">1 Call-To-Action</li>
+							<li data-i18n="pricing.landing.basic.included5">1 client revision</li>
+							<li data-i18n="pricing.landing.basic.included6">Simple form (email)</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
-							<li>Custom UI design</li>
-							<li>Animations</li>
-							<li>SEO optimization</li>
-							<li>Copywriting</li>
+							<li data-i18n="pricing.landing.basic.notIncluded1">Custom UI design</li>
+							<li data-i18n="pricing.landing.basic.notIncluded2">Animations</li>
+							<li data-i18n="pricing.landing.basic.notIncluded3">SEO optimization</li>
+							<li data-i18n="pricing.landing.basic.notIncluded4">Copywriting</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
-							<li>Simple Business Intro Page</li>
-							<li>Personal Portfolio Landing</li>
-							<li>Small Shop Promotion Page</li>
-							<li>Basic Product Showcase Page</li>
-							<li>Starter Service Landing Page</li>
+							<li data-i18n="pricing.landing.basic.example1">Simple Business Intro Page</li>
+							<li data-i18n="pricing.landing.basic.example2">Personal Portfolio Landing</li>
+							<li data-i18n="pricing.landing.basic.example3">Small Shop Promotion Page</li>
+							<li data-i18n="pricing.landing.basic.example4">Basic Product Showcase Page</li>
+							<li data-i18n="pricing.landing.basic.example5">Starter Service Landing Page</li>
 						</ul>
 					</article>
 
 					<article class="pricing-card">
-						<h3>Standard Landing Page</h3>
-						<p class="price">PRICE: Tshs. 250,000 - Tshs. 500,000</p>
-						<h4>Included</h4>
+						<h3 data-i18n="pricing.landing.standard.title">
+                            Standard Landing Page
+						</h3>
+						<p class="price" data-i18n="pricing.landing.standard.price">PRICE: Tshs. 250,000 - Tshs. 500,000</p>
+						<h4 data-i18n="pricing.included">
+                           Included
+                       </h4>
+
 						<ul>
-							<li>Custom UI design</li>
-							<li>Standard sections (Hero, Features, Testimonials, CTA)</li>
-							<li>Responsiveness (all devices)</li>
-							<li>Form + basic integration (email / WhatsApp)</li>
-							<li>3 client revisions</li>
-							<li>Basic animations (scroll effects)</li>
-							<li>1-month free maintenance and support</li>
-						</ul>
-						<h4>Not Included</h4>
-						<ul>
-							<li>Advanced animations</li>
-							<li>Full SEO strategy</li>
-							<li>Copywriting</li>
-						</ul>
-						<h4>Examples</h4>
-						<ul>
-							<li>Modern Business Conversion Page</li>
-							<li>Real Estate Lead Capture Landing Page</li>
-							<li>Restaurant Online Order Landing Page</li>
-						</ul>
+    <li data-i18n="pricing.landing.standard.included1">
+        Custom UI design
+    </li>
+
+    <li data-i18n="pricing.landing.standard.included2">
+        Standard sections (Hero, Features, Testimonials, CTA)
+    </li>
+
+    <li data-i18n="pricing.landing.standard.included3">
+        Responsiveness (all devices)
+    </li>
+
+    <li data-i18n="pricing.landing.standard.included4">
+        Form + basic integration (email / WhatsApp)
+    </li>
+
+    <li data-i18n="pricing.landing.standard.included5">
+        3 client revisions
+    </li>
+
+    <li data-i18n="pricing.landing.standard.included6">
+        Basic animations (scroll effects)
+    </li>
+
+    <li data-i18n="pricing.landing.standard.included7">
+        1-month free maintenance and support
+    </li>
+</ul>
+
+						<h4 data-i18n="pricing.notIncluded">
+    Not Included
+</h4>
+
+<ul>
+    <li data-i18n="pricing.landing.standard.notIncluded1">
+        Advanced animations
+    </li>
+
+    <li data-i18n="pricing.landing.standard.notIncluded2">
+        Full SEO strategy
+    </li>
+
+    <li data-i18n="pricing.landing.standard.notIncluded3">
+        Copywriting
+    </li>
+</ul>
+
+						<h4 data-i18n="pricing.examples">
+    Examples
+</h4>
+
+<ul>
+    <li data-i18n="pricing.landing.standard.example1">
+        Modern Business Conversion Page
+    </li>
+
+    <li data-i18n="pricing.landing.standard.example2">
+        Real Estate Lead Capture Landing Page
+    </li>
+
+    <li data-i18n="pricing.landing.standard.example3">
+        Restaurant Online Order Landing Page
+    </li>
+</ul>
+
 					</article>
 
 					<article class="pricing-card">
-						<h3>Premium Landing Page</h3>
-						<p class="price">PRICE: Tshs. 500,000 - Tshs. 1,500,000+</p>
-						<h4>Included</h4>
-						<ul>
-							<li>Full custom UI/UX</li>
-							<li>High-converting layout (conversion-focused)</li>
-							<li>SEO optimized</li>
-							<li>Advanced animations</li>
-							<li>Optimized speed (performance)</li>
-							<li>Form integrations</li>
-							<li>Copywriting</li>
-							<li>Free domain (1 year)</li>
-							<li>Unlimited revisions (within scope)</li>
-							<li>1-month free maintenance and support</li>
-						</ul>
-						<h4>Examples</h4>
-						<ul>
-							<li>High-Converting SaaS Sales Page</li>
-							<li>Luxury Brand Marketing Landing Page</li>
-							<li>Advanced Fitness Coaching Funnel Page</li>
-							<li>Tech Product Launch Conversion Page</li>
-							<li>Corporate Campaign</li>
-						</ul>
+						<h3 data-i18n="pricing.landing.premium.title">
+                             Premium Landing Page
+                        </h3>
+						<p class="price" data-i18n="pricing.landing.premium.price">PRICE: Tshs. 500,000 - Tshs. 1,500,000+</p>
+						<h4 data-i18n="pricing.included">
+    Included
+</h4>
+
+<ul>
+    <li data-i18n="pricing.landing.premium.included1">
+        Full custom UI/UX
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included2">
+        High-converting layout (conversion-focused)
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included3">
+        SEO optimized
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included4">
+        Advanced animations
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included5">
+        Optimized speed (performance)
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included6">
+        Form integrations
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included7">
+        Copywriting
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included8">
+        Free domain (1 year)
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included9">
+        Unlimited revisions (within scope)
+    </li>
+
+    <li data-i18n="pricing.landing.premium.included10">
+        1-month free maintenance and support
+    </li>
+</ul>
+
+						<h4 data-i18n="pricing.examples">
+    Examples
+</h4>
+
+<ul>
+    <li data-i18n="pricing.landing.premium.example1">
+        High-Converting SaaS Sales Page
+    </li>
+
+    <li data-i18n="pricing.landing.premium.example2">
+        Luxury Brand Marketing Landing Page
+    </li>
+
+    <li data-i18n="pricing.landing.premium.example3">
+        Advanced Fitness Coaching Funnel Page
+    </li>
+
+    <li data-i18n="pricing.landing.premium.example4">
+        Tech Product Launch Conversion Page
+    </li>
+
+    <li data-i18n="pricing.landing.premium.example5">
+        Corporate Campaign
+    </li>
+</ul>
+
 					</article>
 				</div>
 			</section>
 
 			<section class="pricing-section" aria-labelledby="static-websites-title">
-				<h2 class="section-title" id="static-websites-title">Static Websites</h2>
-				<p class="service-desc">A static website is a collection of multiple web pages delivered exactly as stored on the server, without server-side processing, databases, or dynamic content changes.</p>
+				
+				<h2
+    class="section-title"
+    id="static-websites-title"
+    data-i18n="pricing.staticWebsites.title"
+>
+    Static Websites
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.staticWebsites.description"
+>
+    A static website is a collection of multiple web pages delivered exactly as stored on the server, without server-side processing, databases, or dynamic content changes.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
-						<h3>Basic Static Website</h3>
-						<p class="price">PRICE: Tshs. 300,000 - Tshs. 650,000</p>
-						<h4>Included</h4>
+
+						<h3 data-i18n="pricing.static.basic.title">
+    Basic Static Website
+</h3>
+
+<p class="price" data-i18n="pricing.static.basic.price">
+    PRICE: Tshs. 300,000 - Tshs. 650,000
+</p>
+
+<h4 data-i18n="pricing.included">
+    Included
+</h4>
+
+<ul>
+    <li data-i18n="pricing.static.basic.included1">Pages 3-5 (Home, About, Contact, etc.)</li>
+    <li data-i18n="pricing.static.basic.included2">Simple design (template-based)</li>
+    <li data-i18n="pricing.static.basic.included3">Basic responsiveness</li>
+    <li data-i18n="pricing.static.basic.included4">Simple navigation</li>
+    <li data-i18n="pricing.static.basic.included5">Contact info (no advanced form)</li>
+    <li data-i18n="pricing.static.basic.included6">1-2 client revisions</li>
+    <li data-i18n="pricing.static.basic.included7">Extra page: Tshs. 50,000</li>
+</ul>
+
+<h4 data-i18n="pricing.notIncluded">
+    Not Included
+</h4>
+
+<ul>
+    <li data-i18n="pricing.static.basic.notIncluded1">Custom UI</li>
+    <li data-i18n="pricing.static.basic.notIncluded2">Animations</li>
+    <li data-i18n="pricing.static.basic.notIncluded3">SEO</li>
+</ul>
+
+<h4 data-i18n="pricing.examples">
+    Examples
+</h4>
+
+<ul>
+    <li data-i18n="pricing.static.basic.example1">Small Business Info Website</li>
+    <li data-i18n="pricing.static.basic.example2">Personal Portfolio Website</li>
+    <li data-i18n="pricing.static.basic.example3">Local Shop Online Presence Site</li>
+    <li data-i18n="pricing.static.basic.example4">Simple Company Profile Website</li>
+    <li data-i18n="pricing.static.basic.example5">Starter Brand Showcase Website</li>
+</ul>
+
+					</article>
+
+					<article class="pricing-card">
+						<h3 data-i18n="pricing.static.standard.title">
+                            Standard Static Website
+                        </h3>
+
+                        <p class="price" data-i18n="pricing.static.standard.price">
+                           PRICE: Tshs. 650,000 - Tshs. 1,800,000
+                        </p>
+
+						<h4 class="logo-accent" data-i18n="pricing.included">Included</h4>
 						<ul>
-							<li>Pages 3-5 (Home, About, Contact, etc.)</li>
-							<li>Simple design (template-based)</li>
-							<li>Basic responsiveness</li>
-							<li>Simple navigation</li>
-							<li>Contact info (no advanced form)</li>
-							<li>1-2 client revisions</li>
-							<li>Extra page: Tshs. 50,000</li>
+							<li data-i18n="pricing.static.standard.included1">Pages 5-10</li>
+							<li data-i18n="pricing.static.standard.included2">Custom UI design (branding included)</li>
+							<li data-i18n="pricing.static.standard.included3">Fully responsive (all devices)</li>
+							<li data-i18n="pricing.static.standard.included4">Contact form (email/WhatsApp integration)</li>
+							<li data-i18n="pricing.static.standard.included5">Basic animations (hover, scroll)</li>
+							<li data-i18n="pricing.static.standard.included6">Basic SEO (titles, meta tags)</li>
+							<li data-i18n="pricing.static.standard.included7">Free domain name (1 year)</li>
+							<li data-i18n="pricing.static.standard.included8">2-3 revisions</li>
+							<li data-i18n="pricing.static.standard.included9">Extra page: Tshs. 100,000</li>
+							<li data-i18n="pricing.static.standard.included10">1-month free maintenance and support</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
-							<li>Custom UI</li>
-							<li>Animations</li>
-							<li>SEO</li>
+							<li data-i18n="pricing.static.standard.notIncluded1">Advanced animations</li>
+							<li data-i18n="pricing.static.standard.notIncluded2">Complex integrations</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
-							<li>Small Business Info Website</li>
-							<li>Personal Portfolio Website</li>
-							<li>Local Shop Online Presence Site</li>
-							<li>Simple Company Profile Website</li>
-							<li>Starter Brand Showcase Website</li>
+							<li data-i18n="pricing.static.standard.example1">Corporate Business Website</li>
+							<li data-i18n="pricing.static.standard.example2">School / Institution Information Website</li>
+							<li data-i18n="pricing.static.standard.example3">Real Estate Company Website</li>
+							<li data-i18n="pricing.static.standard.example4">Professional Services Website</li>
+							<li data-i18n="pricing.static.standard.example5">Startup Company Profile</li>
 						</ul>
 					</article>
 
 					<article class="pricing-card">
-						<h3>Standard Static Website</h3>
-						<p class="price">PRICE: Tshs. 650,000 - Tshs. 1,800,000</p>
-						<h4 class="logo-accent">Included</h4>
+						<h3 data-i18n="pricing.static.premium.title">Premium Static Website</h3>
+						<p class="price" data-i18n="pricing.static.premium.price">PRICE: Tshs. 1,800,000 - Tshs. 3,000,000+</p>
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
-							<li>Pages 5-10</li>
-							<li>Custom UI design (branding included)</li>
-							<li>Fully responsive (all devices)</li>
-							<li>Contact form (email/WhatsApp integration)</li>
-							<li>Basic animations (hover, scroll)</li>
-							<li>Basic SEO (titles, meta tags)</li>
-							<li>Free domain name (1 year)</li>
-							<li>2-3 revisions</li>
-							<li>Extra page: Tshs. 100,000</li>
-							<li>1-month free maintenance and support</li>
+							<li data-i18n="pricing.static.premium.included1">Pages 10+ (or custom structure)</li>
+							<li data-i18n="pricing.static.premium.included2">Fully custom UI/UX (no templates)</li>
+							<li data-i18n="pricing.static.premium.included3">High-quality animations (smooth and interactive)</li>
+							<li data-i18n="pricing.static.premium.included4">Advanced responsiveness (pixel-perfect)</li>
+							<li data-i18n="pricing.static.premium.included5">SEO optimized (structure + performance)</li>
+							<li data-i18n="pricing.static.premium.included6">Speed optimization</li>
+							<li data-i18n="pricing.static.premium.included7">Advanced contact features (forms + integrations)</li>
+							<li data-i18n="pricing.static.premium.included8">4+ revisions (within scope)</li>
+							<li data-i18n="pricing.static.premium.included9">Free domain name (1 year)</li>
+							<li data-i18n="pricing.static.premium.included10">Extra page: Tshs. 150,000+ depending on complexity</li>
+							<li data-i18n="pricing.static.premium.included11">1-month free maintenance and support</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
-							<li>Advanced animations</li>
-							<li>Complex integrations</li>
-						</ul>
-						<h4>Examples</h4>
-						<ul>
-							<li>Corporate Business Website</li>
-							<li>School / Institution Information Website</li>
-							<li>Real Estate Company Website</li>
-							<li>Professional Services Website</li>
-							<li>Startup Company Profile</li>
-						</ul>
-					</article>
-
-					<article class="pricing-card">
-						<h3>Premium Static Website</h3>
-						<p class="price">PRICE: Tshs. 1,800,000 - Tshs. 3,000,000+</p>
-						<h4>Included</h4>
-						<ul>
-							<li>Pages 10+ (or custom structure)</li>
-							<li>Fully custom UI/UX (no templates)</li>
-							<li>High-quality animations (smooth and interactive)</li>
-							<li>Advanced responsiveness (pixel-perfect)</li>
-							<li>SEO optimized (structure + performance)</li>
-							<li>Speed optimization</li>
-							<li>Advanced contact features (forms + integrations)</li>
-							<li>4+ revisions (within scope)</li>
-							<li>Free domain name (1 year)</li>
-							<li>Extra page: Tshs. 150,000+ depending on complexity</li>
-							<li>1-month free maintenance and support</li>
-						</ul>
-						<h4>Examples</h4>
-						<ul>
-							<li>Premium Corporate Brand Website</li>
-							<li>Creative Agency Portfolio Website</li>
-							<li>Luxury Business Presentation Website</li>
-							<li>Tech Company Brand Identity Website</li>
+							<li data-i18n="pricing.static.premium.example1">Premium Corporate Brand Website</li>
+							<li data-i18n="pricing.static.premium.example2">Creative Agency Portfolio Website</li>
+							<li data-i18n="pricing.static.premium.example3">Luxury Business Presentation Website</li>
+							<li data-i18n="pricing.static.premium.example4">Tech Company Brand Identity Website</li>
 						</ul>
 					</article>
 				</div>
 			</section>
 
 			<section class="pricing-section" aria-labelledby="dynamic-systems-title">
-				<h2 class="section-title" id="dynamic-systems-title">Dynamic Websites</h2>
-				<p class="service-desc">A dynamic website displays different content based on user actions, preferences, or real-time updates. These include databases and server-side processing.</p>
+				
+				<h2
+    class="section-title"
+    id="dynamic-systems-title"
+    data-i18n="pricing.dynamicWebsites.title"
+>
+    Dynamic Websites
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.dynamicWebsites.description"
+>
+    A dynamic website displays different content based on user actions, preferences, or real-time updates. These include databases and server-side processing.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
-						<h3>Basic System</h3>
-						<p class="price">PRICE: Tshs. 1,000,000 - Tshs. 3,000,000</p>
-						<h4>Included</h4>
+						
+						<h3 data-i18n="pricing.dynamic.basic.title">
+    Basic System
+</h3>
+
+<p class="price" data-i18n="pricing.dynamic.basic.price">
+    PRICE: Tshs. 1,000,000 - Tshs. 3,000,000
+</p>
+
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
-							<li>Login system</li>
-							<li>Basic dashboard (one role)</li>
-							<li>CRUD (one main resource)</li>
-							<li>Simple database structure (can be paid monthly depending on usage)</li>
-							<li>Basic UI (template)</li>
-							<li>2-3 pages</li>
-							<li>2-3 client revisions</li>
-							<li>Free domain name (1 year)</li>
+							<li data-i18n="pricing.dynamic.basic.included1">Login system</li>
+							<li data-i18n="pricing.dynamic.basic.included2">Basic dashboard (one role)</li>
+							<li data-i18n="pricing.dynamic.basic.included3">CRUD (one main resource)</li>
+							<li data-i18n="pricing.dynamic.basic.included4">Simple database structure (can be paid monthly depending on usage)</li>
+							<li data-i18n="pricing.dynamic.basic.included5">Basic UI (template)</li>
+							<li data-i18n="pricing.dynamic.basic.included6">2-3 pages</li>
+							<li data-i18n="pricing.dynamic.basic.included7">2-3 client revisions</li>
+							<li data-i18n="pricing.dynamic.basic.included8">Free domain name (1 year)</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
-							<li>Multiple roles</li>
-							<li>Advanced UI</li>
-							<li>Complex integrations</li>
+							<li data-i18n="pricing.dynamic.basic.notIncluded1">Multiple roles</li>
+							<li data-i18n="pricing.dynamic.basic.notIncluded2">Advanced UI</li>
+							<li data-i18n="pricing.dynamic.basic.notIncluded3">Complex integrations</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
-							<li>Simple User Login System</li>
-							<li>Basic Inventory Management System</li>
-							<li>Small Business Admin Dashboard</li>
-							<li>Simple Booking Management System</li>
-							<li>Basic Student Record System</li>
+							<li data-i18n="pricing.dynamic.basic.example1">Simple User Login System</li>
+							<li data-i18n="pricing.dynamic.basic.example2">Basic Inventory Management System</li>
+							<li data-i18n="pricing.dynamic.basic.example3">Small Business Admin Dashboard</li>
+							<li data-i18n="pricing.dynamic.basic.example4">Simple Booking Management System</li>
+							<li data-i18n="pricing.dynamic.basic.example5">Basic Student Record System</li>
 						</ul>
 					</article>
 
 					<article class="pricing-card">
-						<h3>Standard System</h3>
-						<p class="price">PRICE: Tshs. 3,000,000 - Tshs. 8,000,000</p>
-						<h4>Included</h4>
+						<h3 data-i18n="pricing.dynamic.standard.title">Standard System</h3>
+						<p class="price" data-i18n="pricing.dynamic.standard.price">
+							PRICE: Tshs. 3,000,000 - Tshs. 8,000,000
+						</p>
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
-							<li>Roles (Admin/User)</li>
-							<li>Full dashboard + database</li>
-							<li>Multiple CRUD modules</li>
-							<li>Clean UI (custom)</li>
-							<li>API integrations (basic)</li>
-							<li>Email notifications</li>
-							<li>3-5 revisions</li>
-							<li>Free domain name (1 year)</li>
-							<li>1-month free maintenance and support</li>
+							<li data-i18n="pricing.dynamic.standard.included1">Roles (Admin/User)</li>
+							<li data-i18n="pricing.dynamic.standard.included2">Full dashboard + database</li>
+							<li data-i18n="pricing.dynamic.standard.included3">Multiple CRUD modules</li>
+							<li data-i18n="pricing.dynamic.standard.included4">Clean UI (custom)</li>
+							<li data-i18n="pricing.dynamic.standard.included5">API integrations (basic)</li>
+							<li data-i18n="pricing.dynamic.standard.included6">Email notifications</li>
+							<li data-i18n="pricing.dynamic.standard.included7">3-5 revisions</li>
+							<li data-i18n="pricing.dynamic.standard.included8">Free domain name (1 year)</li>
+							<li data-i18n="pricing.dynamic.standard.included9">1-month free maintenance and support</li>
 						</ul>
-						<h4>Not Included</h4>
+						<h4 data-i18n="pricing.notIncluded">Not Included</h4>
 						<ul>
-							<li>Complex systems (full POS, full SaaS)</li>
-							<li>Heavy automation</li>
+							<li data-i18n="pricing.dynamic.standard.notIncluded1">Complex systems (full POS, full SaaS)</li>
+							<li data-i18n="pricing.dynamic.standard.notIncluded2">Heavy automation</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
-							<li>School Management System</li>
-							<li>Small Business POS System</li>
-							<li>Customer Management System (CRM Lite)</li>
-							<li>Online Booking and Appointment System</li>
-							<li>Inventory and Sales Tracking System</li>
+							<li data-i18n="pricing.dynamic.standard.example1">School Management System</li>
+							<li data-i18n="pricing.dynamic.standard.example2">Small Business POS System</li>
+							<li data-i18n="pricing.dynamic.standard.example3">Customer Management System (CRM Lite)</li>
+							<li data-i18n="pricing.dynamic.standard.example4">Online Booking and Appointment System</li>
+							<li data-i18n="pricing.dynamic.standard.example5">Inventory and Sales Tracking System</li>
 						</ul>
 					</article>
 
 					<article class="pricing-card">
-						<h3>Premium System</h3>
-						<p class="price">PRICE: Tshs. 8,000,000 - Tshs. 25,000,000+</p>
-						<h4>Included</h4>
+						<h3 data-i18n="pricing.dynamic.premium.title">Premium System</h3>
+						<p data-i18n="pricing.dynamic.premium.price" class="price">PRICE: Tshs. 8,000,000 - Tshs. 25,000,000+</p>
+						<h4 data-i18n="pricing.included">Included</h4>
 						<ul>
-							<li>Advanced authentication</li>
-							<li>Full system architecture</li>
-							<li>Complex dashboards</li>
-							<li>Multiple modules (sales, reports, users)</li>
-							<li>API integrations (payments, external systems)</li>
-							<li>Performance optimization</li>
-							<li>Security best practices</li>
-							<li>1-month free maintenance and support</li>
-							<li>Unlimited revisions (within scope)</li>
-							<li>Free domain name (1 year)</li>
+							<li data-i18n="pricing.dynamic.premium.included1">Advanced authentication</li>
+							<li data-i18n="pricing.dynamic.premium.included2">Full system architecture</li>
+							<li data-i18n="pricing.dynamic.premium.included3">Complex dashboards</li>
+							<li data-i18n="pricing.dynamic.premium.included4">Multiple modules (sales, reports, users)</li>
+							<li data-i18n="pricing.dynamic.premium.included5">API integrations (payments, external systems)</li>
+							<li data-i18n="pricing.dynamic.premium.included6">Performance optimization</li>
+							<li data-i18n="pricing.dynamic.premium.included7">Security best practices</li>
+							<li data-i18n="pricing.dynamic.premium.included8">1-month free maintenance and support</li>
+							<li data-i18n="pricing.dynamic.premium.included9">Unlimited revisions (within scope)</li>
+							<li data-i18n="pricing.dynamic.premium.included10">Free domain name (1 year)</li>
 						</ul>
-						<h4>Examples</h4>
+						<h4 data-i18n="pricing.examples">Examples</h4>
 						<ul>
-							<li>Full POS and Business Management System</li>
-							<li>Enterprise School Management System</li>
-							<li>SaaS Multi-User Platform System</li>
-							<li>Advanced E-commerce Management System</li>
-							<li>Real-Time Analytics Business Dashboard</li>
+							<li data-i18n="pricing.dynamic.premium.example1">Full POS and Business Management System</li>
+							<li data-i18n="pricing.dynamic.premium.example2">Enterprise School Management System</li>
+							<li data-i18n="pricing.dynamic.premium.example3">SaaS Multi-User Platform System</li>
+							<li data-i18n="pricing.dynamic.premium.example4">Advanced E-commerce Management System</li>
+							<li data-i18n="pricing.dynamic.premium.example5">Real-Time Analytics Business Dashboard</li>
 						</ul>
 					</article>
 				</div>
 			</section>
 
 			<section class="pricing-section" aria-labelledby="domain-name-title">
-				<h2 class="section-title" id="domain-name-title">Domain Name</h2>
-				<p class="service-desc">A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).</p>
+				
+				<h2
+    class="section-title"
+    id="domain-name-title"
+    data-i18n="pricing.domain.title"
+>
+    Domain Name
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.domain.description"
+>
+    A domain name is the unique address used to access websites over the internet (for example: google.com, mluetechnology.me).
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Domain Registration</h3>
@@ -594,8 +1173,22 @@
 			</section>
 
 			<section class="pricing-section" aria-labelledby="hosting-title">
-				<h2 class="section-title" id="hosting-title">Web Hosting and Deployment</h2>
-				<p class="service-desc">Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.</p>
+				
+				<h2
+    class="section-title"
+    id="hosting-title"
+    data-i18n="pricing.hosting.title"
+>
+    Web Hosting and Deployment
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.hosting.description"
+>
+    Hosting is renting server space to keep your website online. Deployment is the process of transferring files from local development to the live server.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Hosting and Deployment</h3>
@@ -612,9 +1205,23 @@
 				</div>
 			</section>
 
-			<section class="pricing-section" aria-labelledby="maintenance-title">
-				<h2 class="section-title" id="maintenance-title">Maintenance and Support</h2>
-				<p class="service-desc">Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.</p>
+			<section class="pricing-section mb-5" aria-labelledby="maintenance-title">
+				
+				<h2
+    class="section-title"
+    id="maintenance-title"
+    data-i18n="pricing.maintenance.title"
+>
+    Maintenance and Support
+</h2>
+
+<p
+    class="service-desc"
+    data-i18n="pricing.maintenance.description"
+>
+    Maintenance includes bug fixing, updates, security monitoring, backups, feature additions, and uptime support.
+</p>
+
 				<div class="pricing-grid">
 					<article class="pricing-card">
 						<h3>Basic Maintenance</h3>
@@ -633,159 +1240,694 @@
 				</div>
 			</section>
 
-			<section class="contact pricing-contact" id="contact" aria-label="Pricing contact information">
-				<p class="section-label">Get In Touch</p>
-				<h2 class="section-title">Let's Build your Digital Future</h2>
-				<p class="section-subtitle">
-					Need a custom quotation for your project? Reach out and we will prepare the right package for your business.
-				</p>
+			<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
 
-				<div class="contact__grid">
-					<div class="contact__info">
-						<div class="contact-item">
-							<div class="contact-item__icon">
-								<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-							</div>
-							<div>
-								<p class="contact-item__label">Email</p>
-								<a href="mailto:mluetechnologytz@gmail.com" class="contact-item__value">mluetechnologytz@gmail.com</a>
-							</div>
-						</div>
+    <div class="container">
 
-						<div class="contact-item">
-							<div class="contact-item__icon">
-								<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-							</div>
-							<div>
-								<p class="contact-item__label">Phone / WhatsApp</p>
-								<a href="https://wa.me/255752804154" target="_blank" rel="noopener noreferrer" class="contact-item__value">+255 752 804 154</a>
-							</div>
-						</div>
+        <!-- Contact Header -->
+        <div class="contact__header">
 
-						<div class="contact-item">
-							<div class="contact-item__icon">
-								<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-							</div>
-							<div>
-								<p class="contact-item__label">Website</p>
-								<a href="https://www.mluetechnology.me" target="_blank" rel="noopener noreferrer" class="contact-item__value">www.mluetechnology.me</a>
-							</div>
-						</div>
-					</div>
+            <p class="contact__eyebrow" data-i18n="contact.label">
+                CONTACT
+            </p>
 
-					<form class="contact__form" id="contactForm" action="https://formsubmit.co/mluetechnologytz@gmail.com" method="POST">
-						<input type="hidden" name="_captcha" value="false" />
-						<input type="hidden" name="_template" value="table" />
-						<input type="hidden" name="_subject" value="New message from MLUE Technology pricing page" />
 
-						<div class="form-group">
-							<label for="name">Your Name</label>
-							<input type="text" id="name" name="name" required placeholder="Enter your name" />
-						</div>
+            <p class="contact__intro" data-i18n="contact.subtitle">
+                Tell us what you're trying to build, solve, or improve.
+                Let's start the conversation.
+            </p>
 
-						<div class="form-group">
-							<label for="email">Email Address</label>
-							<input type="email" id="email" name="email" required placeholder="Enter your email" />
-						</div>
+        </div>
 
-						<div class="form-group">
-							<label for="message">Message</label>
-							<textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
-						</div>
 
-						<button type="submit" class="btn btn--primary btn--full">Request Solution</button>
-					</form>
-				</div>
+        <!-- Contact Content -->
+        <div class="contact__grid">
 
-				<div class="toast" id="toast">
-					<div class="toast__icon" id="toastIcon"></div>
-					<div class="toast__body">
-						<p class="toast__title" id="toastTitle"></p>
-						<p class="toast__msg" id="toastMsg"></p>
-					</div>
-					<button class="toast__close" id="toastClose" aria-label="Close">&times;</button>
-				</div>
-			</section>
+
+            <!-- ===================== TALK DIRECTLY ===================== -->
+            <div class="contact__talk">
+
+                <p class="contact-panel__eyebrow">
+                    PREFER TO TALK?
+                </p>
+
+                <h3 class="contact-panel__title">
+                    Let's discuss your idea.
+                </h3>
+
+                <p class="contact-panel__text">
+                    Have a question, an idea, or a project that needs
+                    discussion? Reach out to us directly.
+                </p>
+
+
+                <!-- WhatsApp -->
+                <a
+                    href="https://wa.me/255752804154"
+                    class="contact-direct"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span class="contact-direct__icon" aria-hidden="true">
+
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-3.7-.85L3 20l1.35-4.95A8.5 8.5 0 1 1 21 11.5z"/>
+                            <path d="M8.5 9.5c.2-.45.4-.47.7-.47h.55c.18 0 .38.07.47.32l.7 1.7c.08.2.05.38-.08.55l-.45.55c-.12.15-.15.3-.05.47.3.5.8 1.05 1.4 1.45.47.32 1.1.7 1.55.85.18.06.32.02.44-.12l.6-.72c.13-.16.3-.2.5-.12l1.6.75c.2.1.3.2.3.38 0 .5-.2 1-.55 1.25-.35.25-1.1.4-1.85.18-.8-.23-2.35-1.05-3.7-2.2-1.1-.95-1.9-2.05-2.2-2.7-.3-.65-.35-1.25-.05-1.85z"/>
+                        </svg>
+
+                    </span>
+
+                    <span class="contact-direct__content">
+
+                        <small>WhatsApp</small>
+
+                        <strong>
+                            +255 752 804 154
+                        </strong>
+
+                    </span>
+
+                    <span class="contact-direct__arrow" aria-hidden="true">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Email -->
+                <a
+                    href="mailto:mluetechnologytz@gmail.com"
+                    class="contact-direct"
+                >
+
+                    <span class="contact-direct__icon" aria-hidden="true">
+
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <polyline points="3,7 12,13 21,7"/>
+                        </svg>
+
+                    </span>
+
+                    <span class="contact-direct__content">
+
+                        <small>Email</small>
+
+                        <strong>
+                            mluetechnologytz@gmail.com
+                        </strong>
+
+                    </span>
+
+                    <span class="contact-direct__arrow" aria-hidden="true">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Location -->
+                <div class="contact-location">
+
+                    <span class="contact-location__label">
+                        BASED IN
+                    </span>
+
+                    <strong>
+                        Dar es Salaam, Tanzania
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================== START A PROJECT ===================== -->
+            <div class="contact__project">
+
+                <div class="contact-project__header">
+
+                    <p class="contact-panel__eyebrow">
+                        START A PROJECT
+                    </p>
+
+                    <h3 class="contact-panel__title">
+                        Tell us what you're building.
+                    </h3>
+
+                </div>
+
+
+                <form
+                    class="contact__form"
+                    id="contactForm"
+                    action="https://formsubmit.co/mluetechnologytz@gmail.com"
+                    method="POST"
+                >
+
+                    <!-- FormSubmit configuration -->
+                    <input
+                        type="hidden"
+                        name="_captcha"
+                        value="false"
+                    />
+
+                    <input
+                        type="hidden"
+                        name="_template"
+                        value="table"
+                    />
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New project inquiry from MLUE Technology website"
+                    />
+
+
+                    <!-- Name -->
+                    <div class="form-group">
+
+                        <label
+                            for="name"
+                            data-i18n="contact.nameLabel"
+                        >
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            data-i18n-placeholder="contact.namePlaceholder"
+                            placeholder="Enter your name"
+                        />
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label
+                            for="email"
+                            data-i18n="contact.emailField"
+                        >
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            data-i18n-placeholder="contact.emailPlaceholder"
+                            placeholder="Enter your email"
+                        />
+
+                    </div>
+
+                    <!-- What do you need? -->
+<div class="form-group">
+
+    <label for="solution">
+        What do you need?
+    </label>
+
+    <select
+        id="solution"
+        name="solution"
+        required
+    >
+
+        <option value="" disabled selected>
+            Select a solution
+        </option>
+
+        <option value="Custom Software">
+            Custom Software
+        </option>
+
+        <option value="Business System">
+            Business System
+        </option>
+
+        <option value="API / Backend">
+            API / Backend
+        </option>
+
+        <option value="E-Commerce">
+            E-Commerce
+        </option>
+
+        <option value="GIS / Location Intelligence">
+            GIS / Location Intelligence
+        </option>
+
+        <option value="AI / Intelligent Systems">
+            AI / Intelligent Systems
+        </option>
+
+        <option value="Other">
+            Other
+        </option>
+
+    </select>
+
+</div>
+
+
+                    <!-- Project Brief -->
+                    <div class="form-group">
+
+                        <label
+                            for="message"
+                            data-i18n="contact.msgLabel"
+                        >
+                            Project Brief
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                            data-i18n-placeholder="contact.msgPlaceholder"
+                            placeholder="Tell us about the problem you're solving or the system you'd like to build..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="contact__submit"
+                        data-i18n="contact.send"
+                    >
+                        Send Project Brief
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- Toast notification -->
+        <div class="toast" id="toast">
+
+            <div
+                class="toast__icon"
+                id="toastIcon"
+            ></div>
+
+            <div class="toast__body">
+
+                <p
+                    class="toast__title"
+                    id="toastTitle"
+                ></p>
+
+                <p
+                    class="toast__msg"
+                    id="toastMsg"
+                ></p>
+
+            </div>
+
+            <button
+                class="toast__close"
+                id="toastClose"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
 		</div>
 	</main>
 
 	<footer class="footer">
-		<div class="container">
-			<div class="footer__top">
-				<div class="footer__brand">
-					<span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
-					<p class="footer__tagline">Engineering modern solutions for modern businesses.</p>
-				</div>
-				<div class="footer__links">
-					<h3 class="footer__heading">Quick Links</h3>
-					<a href="/">Home</a>
-					<a href="/#about">About Us</a>
-					<a href="/#services">Services</a>
-					<a href="/#contact">Contact</a>
-					<a href="/projects/">Projects</a>
-				</div>
-				<div class="footer__links">
-					<h3 class="footer__heading">Legal</h3>
-					<a href="/privacy/">Privacy Policy</a>
-					<a href="/terms/">Terms of Service</a>
-				</div>
-			</div>
-			<div class="footer__bottom">
-				<p>&copy; <span id="footerYear"></span> MLUE Technology. All rights reserved.</p>
-				<div class="footer__social" aria-label="MLUE Technology social links">
-				  <a class="footer__social-link" href="https://www.facebook.com/share/17RCWJhZbv/" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Facebook">
-		            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-		              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
-		              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="currentColor">f</text>
-		            </svg>
-				  </a>
-				  <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Twitter">
-		            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-		              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
-		              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="currentColor">X</text>
-		            </svg>
-				  </a>
-				  <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on LinkedIn">
-		            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-		              <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" />
-		              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="800" fill="currentColor">in</text>
-		            </svg>
-				  </a>
-				  <a class="footer__social-link" href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Instagram">
-		            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-		              <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" />
-		              <circle cx="12" cy="12" r="3.25" fill="none" stroke="currentColor" stroke-width="1.5" />
-		              <circle cx="16.5" cy="7.5" r="1" fill="currentColor" />
-		            </svg>
-				  </a>
-				</div>
-			</div>
-		</div>
-	</footer>
+
+    <div class="container">
+
+        <!-- ===================== FOOTER MAIN ===================== -->
+        <div class="footer__main">
+
+
+            <!-- ===================== BRAND ===================== -->
+            <div class="footer__brand">
+
+                <a
+                    href="/"
+                    class="footer__brand-link"
+                    aria-label="MLUE Technology Home"
+                >
+                    <span class="logo-text logo-text--light">
+                        MLUE
+                        <span class="logo-accent">TECHNOLOGY</span>
+                    </span>
+                </a>
+
+                <p
+                    class="footer__tagline"
+                    data-i18n="footer.tagline"
+                >
+                    Engineering modern solutions for modern businesses.
+                </p>
+
+
+                <!-- Social Accounts -->
+                <div
+                    class="footer__social"
+                    aria-label="MLUE Technology social links"
+                >
+
+                    <!-- Facebook -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.facebook.com/share/17RCWJhZbv/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Facebook"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="12"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                f
+                            </text>
+                        </svg>
+                    </a>
+
+
+                    <!-- Instagram -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Instagram"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3.25"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="16.5"
+                                cy="7.5"
+                                r="1"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </a>
+
+
+                    <!-- LinkedIn -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.linkedin.com/in/mlue-technology-063751429?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on LinkedIn"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="10"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                in
+                            </text>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================== EXPLORE ===================== -->
+            <div class="footer__column">
+
+                <h3
+                    class="footer__heading"
+                    data-i18n="footer.quickLinks"
+                >
+                    Explore
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="/" data-i18n="nav.home">
+                        Home
+                    </a>
+
+                    <a href="/#about" data-i18n="nav.about">
+                        About Us
+                    </a>
+
+                    <a href="/#services" data-i18n="nav.services">
+                        Services
+                    </a>
+
+                    <a href="/projects/" data-i18n="nav.projects">
+                        Projects
+                    </a>
+
+                    <a href="/pricing/" data-i18n="nav.pricing">
+                        Pricing
+                    </a>
+
+                    <a href="/#contact" data-i18n="nav.contact">
+                        Contact
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== SERVICES ===================== -->
+            <div class="footer__column">
+
+                <h3 class="footer__heading">
+                    Services
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="/projects/software-solutions/">
+                        Business Software
+                    </a>
+
+                    <a href="/projects/software-solutions/">
+                        Custom Software
+                    </a>
+
+                    <a href="/projects/software-solutions/">
+                        APIs &amp; Backend
+                    </a>
+
+                    <a href="/projects/software-solutions/">
+                        E-Commerce
+                    </a>
+
+                    <a href="/projects/location-intelligence/">
+                        Location Intelligence
+                    </a>
+
+                    <a href="/#services">
+                        AI / Intelligent Systems
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== LET'S TALK ===================== -->
+            <div class="footer__column footer__contact">
+
+                <h3 class="footer__heading">
+                    Let's Talk
+                </h3>
+
+
+                <div class="footer__location">
+
+                    <span class="footer__contact-label">
+                        Based in
+                    </span>
+
+                    <strong>
+                        Dar es Salaam, Tanzania
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="https://wa.me/255752804154"
+                    class="footer__contact-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                    <span aria-hidden="true">→</span>
+                </a>
+
+
+                <a
+                    href="mailto:mluetechnologytz@gmail.com"
+                    class="footer__contact-link"
+                >
+                    Email
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================== FOOTER BOTTOM ===================== -->
+        <div class="footer__bottom">
+
+            <p>
+                &copy;
+                <span id="footerYear"></span>
+                MLUE Technology.
+                <span data-i18n="footer.rights">
+                    All rights reserved.
+                </span>
+            </p>
+
+
+            <nav class="footer__legal">
+
+                <a
+                    href="/privacy/"
+                    data-i18n="footer.privacy"
+                >
+                    Privacy Policy
+                </a>
+
+                <span aria-hidden="true">·</span>
+
+                <a
+                    href="/terms/"
+                    data-i18n="footer.terms"
+                >
+                    Terms of Service
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</footer>
 
 	<script>
 		document.getElementById("footerYear").textContent = new Date().getFullYear();
 
-		// Hamburger menu toggle
-		const hamburger = document.getElementById("hamburger");
-		const nav = document.getElementById("nav");
-
-		if (hamburger) {
-			hamburger.addEventListener("click", () => {
-				hamburger.classList.toggle("open");
-				nav.classList.toggle("open");
-			});
-		}
-
-		// Close mobile nav on link click
-		if (nav) {
-			nav.querySelectorAll(".nav-link").forEach(link => {
-				link.addEventListener("click", () => {
-					hamburger.classList.remove("open");
-					nav.classList.remove("open");
-				});
-			});
-		}
 
 		const toast = document.getElementById("toast");
 		const toastIcon = document.getElementById("toastIcon");
@@ -882,21 +2024,83 @@
 			card.appendChild(detailsWrap);
 
 			const toggleBtn = document.createElement("button");
-			toggleBtn.type = "button";
-			toggleBtn.className = "card-toggle";
-			toggleBtn.textContent = "View more";
-			toggleBtn.setAttribute("aria-expanded", "false");
-			toggleBtn.setAttribute("aria-controls", "card-details-" + index);
-			detailsWrap.id = "card-details-" + index;
-			card.appendChild(toggleBtn);
+toggleBtn.type = "button";
+toggleBtn.className = "card-toggle";
 
-			toggleBtn.addEventListener("click", () => {
-				const expanded = card.classList.toggle("is-expanded");
-				toggleBtn.textContent = expanded ? "View less" : "View more";
-				toggleBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
-			});
+
+const getToggleText = (expanded) => {
+    const isSwahili =
+        document.documentElement.lang === "sw";
+
+    if (isSwahili) {
+        return expanded
+            ? "Funga maelezo"
+            : "Angalia zaidi";
+    }
+
+    return expanded
+        ? "View less"
+        : "View more";
+};
+
+toggleBtn.textContent = getToggleText(false);
+
+toggleBtn.setAttribute("aria-expanded", "false");
+toggleBtn.setAttribute(
+    "aria-controls",
+    "card-details-" + index
+);
+
+detailsWrap.id = "card-details-" + index;
+
+card.appendChild(toggleBtn);
+
+toggleBtn.addEventListener("click", () => {
+
+    const expanded =
+        card.classList.toggle("is-expanded");
+
+    toggleBtn.textContent =
+        getToggleText(expanded);
+
+    toggleBtn.setAttribute(
+        "aria-expanded",
+        expanded ? "true" : "false"
+    );
+});
+
+document.addEventListener(
+    "mlue-language-changed",
+    () => {
+
+        document
+            .querySelectorAll(".card-toggle")
+            .forEach(button => {
+
+                const expanded =
+                    button.getAttribute("aria-expanded")
+                    === "true";
+
+                button.textContent =
+                    document.documentElement.lang === "sw"
+                        ? (
+                            expanded
+                                ? "Funga maelezo"
+                                : "Angalia zaidi"
+                        )
+                        : (
+                            expanded
+                                ? "View less"
+                                : "View more"
+                        );
+            });
+    }
+);
+
 		});
 	</script>
+	<script src="../i18n.js" defer></script>
 	<script src="../chatbot.js" defer></script>
+	<script src="../main.js" defer></script>
 </body>
 </html>

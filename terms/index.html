@@ -43,212 +43,994 @@
     }
   </script>
   <style>
-    /* Specific styles for terms page */
-    .tos-content {
-      padding: 80px 0;
-      max-width: 800px;
+    /* =========================================================
+       TERMS OF SERVICE — SOFTWARE COMPANY LEGAL UI
+       Page-scoped: does not affect other pages.
+       ========================================================= */
+
+    .terms-page {
+      background: #f6fbff;
+    }
+
+    .terms-page main {
+      background:
+        radial-gradient(
+          circle at 14% 8%,
+          rgba(0, 229, 255, 0.12),
+          transparent 30rem
+        ),
+        radial-gradient(
+          circle at 86% 12%,
+          rgba(59, 130, 246, 0.08),
+          transparent 28rem
+        ),
+        linear-gradient(
+          180deg,
+          #eefcff 0%,
+          #f7fbff 38%,
+          #ffffff 100%
+        );
+      padding-top: 110px;
+      padding-bottom: 0;
+    }
+
+    .terms-page .legal-hero {
+      padding: 34px 0 58px;
+    }
+
+    .terms-page .legal-hero__inner {
+      max-width: 1040px;
       margin: 0 auto;
     }
-    .tos-content h1 {
-      font-size: 2.5rem;
+
+    .terms-page .legal-hero__eyebrow {
+      margin: 0 0 14px;
+      color: var(--blue-700);
+      font-size: 0.72rem;
       font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .terms-page .legal-hero__title {
+      max-width: 820px;
+      margin: 0;
       color: var(--gray-900);
-      margin-bottom: 1rem;
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 800;
     }
-    .tos-content h2 {
-      font-size: 1.75rem;
+
+    .terms-page .legal-hero__title::after {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 4px;
+      margin-top: 22px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #00e5ff, #1976d2);
+    }
+
+    .terms-page .legal-hero__intro {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: #52627a;
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .terms-page .legal-hero__meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 9px 13px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #64748b;
+      font-size: 0.78rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .terms-page .legal-hero__meta strong {
+      color: var(--gray-900);
       font-weight: 700;
-      color: var(--blue-800);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
     }
-    .tos-content h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--gray-800);
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
+
+    .terms-page .legal-content {
+      padding: 0 0 110px;
     }
-    .tos-content p {
-      margin-bottom: 1rem;
-      color: var(--gray-600);
+
+    .terms-page .legal-document {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 46px 52px 54px;
+      background: rgba(255, 255, 255, 0.90);
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      border-radius: 28px;
+      box-shadow:
+        0 24px 70px rgba(15, 23, 42, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.55) inset;
+      backdrop-filter: blur(14px);
+    }
+
+    .terms-page .legal-document > p:first-child {
+      margin-top: 0;
+    }
+
+    .terms-page .legal-document h2 {
+      position: relative;
+      margin: 58px 0 18px;
+      padding-top: 18px;
+      color: var(--gray-900);
+      font-size: 1.45rem;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      font-weight: 750;
+    }
+
+    .terms-page .legal-document h2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #00e5ff, #1976d2);
+    }
+
+    .terms-page .legal-document p {
+      margin: 0 0 18px;
+      color: #52627a;
+      font-size: 0.98rem;
+      line-height: 1.85;
+    }
+
+    .terms-page .legal-document ul {
+      list-style: none;
+      margin: 20px 0 24px;
+      padding: 0;
+    }
+
+    .terms-page .legal-document li {
+      position: relative;
+      margin: 0 0 12px;
+      padding-left: 24px;
+      color: #52627a;
+      font-size: 0.97rem;
+      line-height: 1.8;
+    }
+
+    .terms-page .legal-document li::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 0.75em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00e5ff;
+      box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.08);
+    }
+
+    .terms-page .legal-document a {
+      color: var(--blue-700);
+      font-weight: 650;
+      text-decoration: underline;
+      text-decoration-color: rgba(21, 101, 192, 0.25);
+      text-underline-offset: 3px;
+    }
+
+    .terms-page .legal-document a:hover {
+      color: var(--blue-900);
+      text-decoration-color: currentColor;
+    }
+
+    .terms-page .legal-document h2:first-of-type {
+      margin-top: 46px;
+    }
+
+    .terms-page .legal-footer-note {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      color: #64748b;
+      font-size: 0.84rem;
       line-height: 1.7;
     }
-    .tos-content ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--gray-600);
+
+    .terms-page .legal-document h1,
+    .terms-page .legal-document .last-updated {
+      display: none;
     }
-    .tos-content li {
-      margin-bottom: 0.5rem;
+
+    /* ===================== LEGAL BREADCRUMBS ===================== */
+    .terms-page .terms-breadcrumb {
+      padding: 112px 0 20px;
     }
-    .last-updated {
-      font-size: 0.875rem;
-      color: var(--gray-500);
-      margin-bottom: 3rem;
-      display: block;
+
+    .terms-page .terms-breadcrumb__inner {
+      width: min(100%, 920px);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      overflow-x: auto;
+      scrollbar-width: none;
     }
-    .plan-card {
-      background: var(--gray-50);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin: 1.5rem 0;
+
+    .terms-page .terms-breadcrumb__inner::-webkit-scrollbar {
+      display: none;
     }
-    .plan-card.pro {
-      border-color: var(--blue-200);
-      background: var(--blue-50);
+
+    .terms-page .terms-breadcrumb a,
+    .terms-page .terms-breadcrumb span {
+      flex: 0 0 auto;
     }
-    .plan-title {
+
+    .terms-page .terms-breadcrumb a {
+      color: #566074;
+      text-decoration: none;
+      font-size: 0.96rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .terms-page .terms-breadcrumb a:hover {
+      color: var(--inv-blue, #1976d2);
+    }
+
+    .terms-page .terms-breadcrumb__separator {
+      color: #a8b0bf;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .terms-page .terms-breadcrumb__current {
+      color: #161c2b;
+      font-size: 0.96rem;
       font-weight: 700;
-      color: var(--gray-900);
-      display: block;
-      margin-bottom: 0.5rem;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 767px) {
+      .terms-page .terms-breadcrumb {
+        padding: 98px 16px 16px;
+      }
+
+      .terms-page .terms-breadcrumb__inner {
+        padding: 13px 18px;
+        gap: 10px;
+      }
+
+      .terms-page .terms-breadcrumb a,
+      .terms-page .terms-breadcrumb__current {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .terms-page main {
+        padding-top: 95px;
+      }
+
+      .terms-page .legal-hero {
+        padding: 26px 0 38px;
+      }
+
+      .terms-page .legal-hero__title {
+        font-size: clamp(2.25rem, 12vw, 3.4rem);
+      }
+
+      .terms-page .legal-hero__intro {
+        font-size: 0.96rem;
+      }
+
+      .terms-page .legal-content {
+        padding-bottom: 72px;
+      }
+
+      .terms-page .legal-document {
+        padding: 30px 22px 36px;
+        border-radius: 22px;
+      }
+
+      .terms-page .legal-document h2 {
+        margin-top: 46px;
+        font-size: 1.28rem;
+      }
+
+      .terms-page .legal-document p,
+      .terms-page .legal-document li {
+        font-size: 0.94rem;
+      }
     }
   </style>
 </head>
-<body>
+<body class="legal-page terms-page">
 
   <!-- ===================== HEADER ===================== -->
-  <header class="header" id="header" style="position: relative; background: #fff; border-bottom: 1px solid var(--gray-100);">
+  <header class="header" id="header">
     <div class="container header__inner">
-      <a href="/" class="logo-link">
+      <a href="/" class="logo-link" aria-label="MLUE Technology Home">
         <span class="logo-text">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
       </a>
 
-      <nav class="header__nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/#contact" class="nav-link">Contact</a>
+      <nav class="header__nav" id="nav">
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/#about" class="nav-link" data-i18n="nav.about">About Us</a>
+        <a href="/#services" class="nav-link" data-i18n="nav.services">Services</a>
+        <a href="/pricing/" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="/projects/" class="nav-link" data-i18n="nav.projects">Projects</a>
       </nav>
-      
+
       <div class="header__actions">
-        <a href="/#contact" class="btn btn--primary btn--sm">Get Started</a>
+
+    <a href="/#contact"
+       class="btn btn--primary btn--sm"
+       data-i18n="nav.cta">
+        Get Started
+    </a>
+
+    <div class="lang-switcher" id="langSwitcher">
+
+        <!-- UK Flag for English -->
+        <button class="lang-btn active"
+                data-lang="en"
+                aria-label="English">
+            <img src="https://flagcdn.com/gb.svg"
+                 alt="UK Flag"
+                 class="flag-icon">
+        </button>
+
+        <span class="lang-divider">|</span>
+
+        <!-- Tanzania Flag for Swahili -->
+        <button class="lang-btn"
+                data-lang="sw"
+                aria-label="Swahili">
+            <img src="https://flagcdn.com/tz.svg"
+                 alt="Tanzania Flag"
+                 class="flag-icon">
+        </button>
+
       </div>
+
+      </div>
+
+      <button type="button" class="header__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav">
+    <span class="header__hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+    <span class="header__hamburger-label" data-i18n="nav.menu">Menu</span>
+</button>
+
     </div>
   </header>
 
+
+  <!-- ===================== BREADCRUMBS ===================== -->
+  <nav class="terms-breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <div class="terms-breadcrumb__inner">
+
+      <a href="/" data-i18n="nav.home">
+        Home
+      </a>
+
+      <span
+        class="terms-breadcrumb__separator"
+        aria-hidden="true"
+      >
+        ›
+      </span>
+
+      <span
+        class="terms-breadcrumb__current"
+        aria-current="page"
+        data-i18n="terms.title"
+      >
+        Terms of Service
+      </span>
+
+    </div>
+  </div>
+</nav>
+
   <!-- ===================== CONTENT ===================== -->
-  <main class="container tos-content">
-    <h1>Terms of Service</h1>
-    <span class="last-updated">Last Updated: April 17, 2026</span>
+  <main>
+    <section class="legal-hero">
+  <div class="container legal-hero__inner">
 
-    <p>Welcome to MLUE TECHNOLOGY. These Terms of Service ("Terms") govern your access to and use of our website, chatbot, contact forms, content, and any services we provide through direct engagement (collectively, the "Services").</p>
+    <p
+      class="legal-hero__eyebrow"
+      data-i18n="terms.eyebrow"
+    >
+      TERMS &amp; CONDITIONS
+    </p>
 
-    <p>By accessing or using our website or engaging our Services, you agree to be bound by these Terms. If you do not agree, please discontinue use of the Services.</p>
+    <h1
+      class="legal-hero__title"
+      data-i18n="terms.title"
+    >
+      Terms of Service
+    </h1>
 
-    <h2>1. About MLUE TECHNOLOGY</h2>
-    <p>MLUE TECHNOLOGY is a technology company providing business systems, custom software development, backend engineering, APIs, branding, and related digital services.</p>
+    <p
+      class="legal-hero__intro"
+      data-i18n="terms.intro"
+    >
+      The terms governing your use of the MLUE TECHNOLOGY website, digital services, and direct service engagements.
+    </p>
 
-    <h2>2. Use of Website</h2>
-    <p>You agree to use this website only for lawful purposes and in a manner that does not disrupt the site or its users. You must not:</p>
-    <ul>
-      <li>Attempt unauthorized access to the website, servers, or connected systems</li>
-      <li>Interfere with website security, availability, or performance</li>
-      <li>Submit false, harmful, or misleading information</li>
-      <li>Misuse the chatbot, contact forms, or other communication tools</li>
-      <li>Attempt to scrape, copy, or republish content without permission</li>
-    </ul>
+    <div class="legal-hero__meta">
+      <span data-i18n="terms.lastUpdated">
+        Last Updated
+      </span>
 
-    <h2>3. Contact Forms and Messaging</h2>
-    <p>When you submit a form on our website or pricing page, your message may be processed by our form provider and delivered to our email inbox. You are responsible for the accuracy of the information you submit.</p>
-    <p>Do not submit confidential information unless you are comfortable with it being transmitted through standard internet and third-party service channels.</p>
+      <strong data-i18n="terms.lastUpdatedDate">
+        April 17, 2026
+      </strong>
+    </div>
 
-    <h2>4. Chatbot Use</h2>
-    <p>Our chatbot is provided as a convenience feature to help answer common questions about our business and services. The chatbot may use local keyword-based logic in the browser and may be updated in the future to use third-party AI services.</p>
-    <p>You agree not to use the chatbot to send abusive, illegal, or malicious content, or to rely on it as a substitute for professional advice.</p>
+  </div>
+</section>
 
-    <h2>5. Language Preference and Browser Storage</h2>
-    <p>We store your selected language preference in your browser using local storage so the site can remember whether you prefer English or Swahili. This setting is stored locally on your device.</p>
+    <section class="legal-content">
+      <div class="container">
+        <article class="legal-document">
 
-    <h2>6. Service Engagement & Agreements</h2>
-    <p>Any custom software development, system deployment, API integration, POS system, website build, branding project, or similar engagement requires a separate written agreement covering scope, deliverables, timelines, and payment terms.</p>
-    <p>Information shown on the website, including pricing, package descriptions, or service summaries, is for general guidance only and does not create a binding contract or guarantee specific outcomes.</p>
+  <p data-i18n="terms.intro.p1">
+    Welcome to MLUE TECHNOLOGY. These Terms of Service ("Terms") govern your access to and use of our website, chatbot, contact forms, content, and any services we provide through direct engagement (collectively, the "Services").
+  </p>
 
-    <h2>7. Payments and Scope Changes</h2>
-    <p>Where applicable, work may require upfront, milestone-based, or phased payments. If you request work outside the agreed scope, we may treat it as additional work and quote it separately.</p>
+  <p data-i18n="terms.intro.p2">
+    By accessing or using our website or engaging our Services, you agree to be bound by these Terms. If you do not agree, please discontinue use of the Services.
+  </p>
 
-    <h2>8. Intellectual Property</h2>
-    <p>Unless we agree otherwise in writing, all website content, branding elements, documentation, code snippets, software frameworks, and design materials remain the intellectual property of MLUE TECHNOLOGY.</p>
-    <p>You may not copy, reproduce, modify, or distribute our content or deliverables except as permitted by written agreement or applicable law.</p>
 
-    <h2>9. Service Disclaimer</h2>
-    <p>We use reasonable care and industry practices when building and maintaining our Services, but we do not guarantee uninterrupted operation, error-free performance, or complete protection against fraud, misuse, or technical failures.</p>
-    <p>You are responsible for how you use the Services and for your own internal business, legal, and compliance decisions.</p>
+  <h2 data-i18n="terms.s1.title">
+    1. About MLUE TECHNOLOGY
+  </h2>
 
-    <h2>10. Third-Party Services</h2>
-    <p>Our website may rely on third-party hosting providers, form processing services, browser APIs, or other external services. We are not responsible for outages, delays, or issues caused by those third parties.</p>
+  <p data-i18n="terms.s1.p1">
+    MLUE TECHNOLOGY is a technology company providing business systems, custom software development, backend engineering, APIs, branding, and related digital services.
+  </p>
 
-    <h2>11. Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, MLUE TECHNOLOGY is not liable for indirect, incidental, special, or consequential damages, including loss of profits, data, or business interruption, arising from your use of or inability to use the Services.</p>
 
-    <h2>12. Suspension and Termination</h2>
-    <p>We may suspend or terminate access to the Services if we reasonably believe these Terms have been violated or the site is being misused.</p>
+  <h2 data-i18n="terms.s2.title">
+    2. Use of Website
+  </h2>
 
-    <h2>13. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. Continued use of the Services after updates are posted means you accept the revised Terms.</p>
+  <p data-i18n="terms.s2.p1">
+    You agree to use this website only for lawful purposes and in a manner that does not disrupt the site or its users. You must not:
+  </p>
 
-    <h2>14. Governing Law</h2>
-    <p>These Terms are governed by and interpreted in accordance with the laws of the United Republic of Tanzania.</p>
+  <ul>
+    <li data-i18n="terms.s2.li1">
+      Attempt unauthorized access to the website, servers, or connected systems
+    </li>
 
-    <h2>15. Contact Information</h2>
-    <p>If you have questions about these Terms, please contact us at <a href="mailto:mluetechnologytz@gmail.com">mluetechnologytz@gmail.com</a>.</p>
+    <li data-i18n="terms.s2.li2">
+      Interfere with website security, availability, or performance
+    </li>
+
+    <li data-i18n="terms.s2.li3">
+      Submit false, harmful, or misleading information
+    </li>
+
+    <li data-i18n="terms.s2.li4">
+      Misuse the chatbot, contact forms, or other communication tools
+    </li>
+
+    <li data-i18n="terms.s2.li5">
+      Attempt to scrape, copy, or republish content without permission
+    </li>
+  </ul>
+
+
+  <h2 data-i18n="terms.s3.title">
+    3. Contact Forms and Messaging
+  </h2>
+
+  <p data-i18n="terms.s3.p1">
+    When you submit a form on our website or pricing page, your message may be processed by our form provider and delivered to our email inbox. You are responsible for the accuracy of the information you submit.
+  </p>
+
+  <p data-i18n="terms.s3.p2">
+    Do not submit confidential information unless you are comfortable with it being transmitted through standard internet and third-party service channels.
+  </p>
+
+
+  <h2 data-i18n="terms.s4.title">
+    4. Chatbot Use
+  </h2>
+
+  <p data-i18n="terms.s4.p1">
+    Our chatbot is provided as a convenience feature to help answer common questions about our business and services. The chatbot may use local keyword-based logic in the browser and may be updated in the future to use third-party AI services.
+  </p>
+
+  <p data-i18n="terms.s4.p2">
+    You agree not to use the chatbot to send abusive, illegal, or malicious content, or to rely on it as a substitute for professional advice.
+  </p>
+
+
+  <h2 data-i18n="terms.s5.title">
+    5. Language Preference and Browser Storage
+  </h2>
+
+  <p data-i18n="terms.s5.p1">
+    We store your selected language preference in your browser using local storage so the site can remember whether you prefer English or Swahili. This setting is stored locally on your device.
+  </p>
+
+
+  <h2 data-i18n="terms.s6.title">
+    6. Service Engagement &amp; Agreements
+  </h2>
+
+  <p data-i18n="terms.s6.p1">
+    Any custom software development, system deployment, API integration, POS system, website build, branding project, or similar engagement requires a separate written agreement covering scope, deliverables, timelines, and payment terms.
+  </p>
+
+  <p data-i18n="terms.s6.p2">
+    Information shown on the website, including pricing, package descriptions, or service summaries, is for general guidance only and does not create a binding contract or guarantee specific outcomes.
+  </p>
+
+
+  <h2 data-i18n="terms.s7.title">
+    7. Payments and Scope Changes
+  </h2>
+
+  <p data-i18n="terms.s7.p1">
+    Where applicable, work may require upfront, milestone-based, or phased payments. If you request work outside the agreed scope, we may treat it as additional work and quote it separately.
+  </p>
+
+
+  <h2 data-i18n="terms.s8.title">
+    8. Intellectual Property
+  </h2>
+
+  <p data-i18n="terms.s8.p1">
+    Unless we agree otherwise in writing, all website content, branding elements, documentation, code snippets, software frameworks, and design materials remain the intellectual property of MLUE TECHNOLOGY.
+  </p>
+
+  <p data-i18n="terms.s8.p2">
+    You may not copy, reproduce, modify, or distribute our content or deliverables except as permitted by written agreement or applicable law.
+  </p>
+
+
+  <h2 data-i18n="terms.s9.title">
+    9. Service Disclaimer
+  </h2>
+
+  <p data-i18n="terms.s9.p1">
+    We use reasonable care and industry practices when building and maintaining our Services, but we do not guarantee uninterrupted operation, error-free performance, or complete protection against fraud, misuse, or technical failures.
+  </p>
+
+  <p data-i18n="terms.s9.p2">
+    You are responsible for how you use the Services and for your own internal business, legal, and compliance decisions.
+  </p>
+
+
+  <h2 data-i18n="terms.s10.title">
+    10. Third-Party Services
+  </h2>
+
+  <p data-i18n="terms.s10.p1">
+    Our website may rely on third-party hosting providers, form processing services, browser APIs, or other external services. We are not responsible for outages, delays, or issues caused by those third parties.
+  </p>
+
+
+  <h2 data-i18n="terms.s11.title">
+    11. Limitation of Liability
+  </h2>
+
+  <p data-i18n="terms.s11.p1">
+    To the fullest extent permitted by law, MLUE TECHNOLOGY is not liable for indirect, incidental, special, or consequential damages, including loss of profits, data, or business interruption, arising from your use of or inability to use the Services.
+  </p>
+
+
+  <h2 data-i18n="terms.s12.title">
+    12. Suspension and Termination
+  </h2>
+
+  <p data-i18n="terms.s12.p1">
+    We may suspend or terminate access to the Services if we reasonably believe these Terms have been violated or the site is being misused.
+  </p>
+
+
+  <h2 data-i18n="terms.s13.title">
+    13. Changes to These Terms
+  </h2>
+
+  <p data-i18n="terms.s13.p1">
+    We may update these Terms from time to time. Continued use of the Services after updates are posted means you accept the revised Terms.
+  </p>
+
+
+  <h2 data-i18n="terms.s14.title">
+    14. Governing Law
+  </h2>
+
+  <p data-i18n="terms.s14.p1">
+    These Terms are governed by and interpreted in accordance with the laws of the United Republic of Tanzania.
+  </p>
+
+
+  <h2 data-i18n="terms.s15.title">
+    15. Contact Information
+  </h2>
+
+  <p>
+    <span data-i18n="terms.s15.p1.prefix">
+      If you have questions about these Terms, please contact us at
+    </span>
+
+    <a href="mailto:mluetechnologytz@gmail.com">
+      mluetechnologytz@gmail.com
+    </a>
+
+    <span data-i18n="terms.s15.p1.suffix">
+      .
+    </span>
+  </p>
+
+
+  <div
+    class="legal-footer-note"
+    data-i18n="terms.footerNote"
+  >
+    These Terms should be read together with our Privacy Policy, which explains how information is handled when you use the website and related services.
+  </div>
+
+</article>
+      </div>
+    </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="logo-text logo-text--light">MLUE <span class="logo-accent">TECHNOLOGY</span></span>
-          <p class="footer__tagline">Engineering modern solutions for modern businesses.</p>
-        </div>
-        <div class="footer__links">
-          <h3 class="footer__heading">Quick Links</h3>
-          <a href="/">Home</a>
-          <a href="/#about">About Us</a>
-          <a href="/#services">Services</a>
-          <a href="/#contact">Contact</a>
-        </div>
-        <div class="footer__links">
-          <h3 class="footer__heading">Legal</h3>
-          <a href="/privacy/">Privacy Policy</a>
-          <a href="/terms/">Terms of Service</a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> MLUE Technology. All rights reserved.</p>
-        <div class="footer__social" aria-label="MLUE Technology social links">
-          <a class="footer__social-link" href="https://www.facebook.com/share/17RCWJhZbv/" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Facebook">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="currentColor">f</text>
-            </svg>
-          </a>
-          <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Twitter">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="currentColor">X</text>
-            </svg>
-          </a>
-          <a class="footer__social-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on LinkedIn">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <text x="12" y="16" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="800" fill="currentColor">in</text>
-            </svg>
-          </a>
-          <a class="footer__social-link" href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" aria-label="MLUE Technology on Instagram">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <circle cx="12" cy="12" r="3.25" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <circle cx="16.5" cy="7.5" r="1" fill="currentColor" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
+    <div class="container">
+
+        <!-- ===================== FOOTER MAIN ===================== -->
+        <div class="footer__main">
+
+
+            <!-- ===================== BRAND ===================== -->
+            <div class="footer__brand">
+
+                <a
+                    href="/"
+                    class="footer__brand-link"
+                    aria-label="MLUE Technology Home"
+                >
+                    <span class="logo-text logo-text--light">
+                        MLUE
+                        <span class="logo-accent">TECHNOLOGY</span>
+                    </span>
+                </a>
+
+                <p
+                    class="footer__tagline"
+                    data-i18n="footer.tagline"
+                >
+                    Engineering modern solutions for modern businesses.
+                </p>
+
+
+                <!-- Social Accounts -->
+                <div
+                    class="footer__social"
+                    aria-label="MLUE Technology social links"
+                >
+
+                    <!-- Facebook -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.facebook.com/share/17RCWJhZbv/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Facebook"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="12"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                f
+                            </text>
+                        </svg>
+                    </a>
+
+
+                    <!-- Instagram -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.instagram.com/mluetechnologytz?igsh=MWtrcWwyeG03bzlnOA==&utm_source=ig_contact_invite"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on Instagram"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3.25"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <circle
+                                cx="16.5"
+                                cy="7.5"
+                                r="1"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </a>
+
+
+                    <!-- LinkedIn -->
+                    <a
+                        class="footer__social-link"
+                        href="https://www.linkedin.com/in/mlue-technology-063751429?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="MLUE Technology on LinkedIn"
+                    >
+                        <svg
+                            class="footer__social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <rect
+                                x="5"
+                                y="5"
+                                width="14"
+                                height="14"
+                                rx="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                            <text
+                                x="12"
+                                y="16"
+                                text-anchor="middle"
+                                font-family="Inter, Arial, sans-serif"
+                                font-size="10"
+                                font-weight="800"
+                                fill="currentColor"
+                            >
+                                in
+                            </text>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================== EXPLORE ===================== -->
+            <div class="footer__column">
+
+                <h3
+                    class="footer__heading"
+                    data-i18n="footer.quickLinks"
+                >
+                    Explore
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="/" data-i18n="nav.home">
+                        Home
+                    </a>
+
+                    <a href="/#about" data-i18n="nav.about">
+                        About Us
+                    </a>
+
+                    <a href="/#services" data-i18n="nav.services">
+                        Services
+                    </a>
+
+                    <a href="/projects/" data-i18n="nav.projects">
+                        Projects
+                    </a>
+
+                    <a href="/pricing/" data-i18n="nav.pricing">
+                        Pricing
+                    </a>
+
+                    <a href="/#contact" data-i18n="nav.contact">
+                        Contact
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== SERVICES ===================== -->
+            <div class="footer__column">
+
+                <h3 class="footer__heading" data-i18n="footer.services">
+                    Services
+                </h3>
+
+                <nav class="footer__links">
+
+                    <a href="/projects/software-solutions/" data-i18n="footer.businessSoftware">
+                        Business Software
+                    </a>
+
+                    <a href="/projects/software-solutions/" data-i18n="footer.customSoftware">
+                        Custom Software
+                    </a>
+
+                    <a href="/projects/software-solutions/" data-i18n="footer.apiBackend">
+                        APIs &amp; Backend
+                    </a>
+
+                    <a href="/projects/software-solutions/" data-i18n="footer.ecommerce">
+                        E-Commerce
+                    </a>
+
+                    <a href="/projects/location-intelligence/" data-i18n="footer.locationIntelligence">
+                        Location Intelligence
+                    </a>
+
+                    <a href="/#services" data-i18n="footer.aiSystems">
+                        AI / Intelligent Systems
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- ===================== LET'S TALK ===================== -->
+            <div class="footer__column footer__contact">
+
+                <h3 class="footer__heading" data-i18n="footer.letsTalk">
+                    Let's Talk
+                </h3>
+
+
+                <div class="footer__location">
+
+                    <span class="footer__contact-label" data-i18n="footer.basedIn">
+                        Based in
+                    </span>
+
+                    <strong data-i18n="footer.location">
+                        Dar es Salaam, Tanzania
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="https://wa.me/255752804154"
+                    class="footer__contact-link"
+                    data-i18n="footer.whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    WhatsApp
+                    <span aria-hidden="true">→</span>
+                </a>
+
+
+                <a
+                    href="mailto:mluetechnologytz@gmail.com"
+                    class="footer__contact-link"
+                    data-i18n="footer.email">
+                    Email
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================== FOOTER BOTTOM ===================== -->
+        <div class="footer__bottom">
+
+            <p>
+                &copy;
+                <span id="footerYear"></span>
+                MLUE Technology.
+                <span data-i18n="footer.rights">
+                    All rights reserved.
+                </span>
+            </p>
+
+
+            <nav class="footer__legal">
+
+                <a
+                    href="/privacy/"
+                    data-i18n="footer.privacy"
+                >
+                    Privacy Policy
+                </a>
+
+                <span aria-hidden="true">·</span>
+
+                <a
+                    href="/terms/"
+                    data-i18n="footer.terms"
+                >
+                    Terms of Service
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+  <script src="../i18n.js" defer></script>
+  <script src="../main.js" defer></script>
   <script src="../chatbot.js" defer></script>
 
 </body>
