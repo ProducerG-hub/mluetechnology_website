@@ -1170,7 +1170,84 @@ const translations = {
 "terms.s15.p1.prefix": "If you have questions about these Terms, please contact us at ",
 "terms.s15.p1.suffix": ".",
 
-"terms.footerNote": "These Terms should be read together with our Privacy Policy, which explains how information is handled when you use the website and related services."
+"terms.footerNote": "These Terms should be read together with our Privacy Policy, which explains how information is handled when you use the website and related services.",
+
+// ==================== ENGLISH ====================
+
+// Privacy Policy
+"privacy.eyebrow": "PRIVACY POLICY",
+"privacy.title": "Privacy Policy",
+"privacy.intro": "How MLUE TECHNOLOGY handles personal information across our website, contact forms, chatbot, and language preferences.",
+"privacy.effectiveDate": "Effective Date",
+"privacy.effectiveDateValue": "April 17, 2026",
+
+"privacy.intro.p1": "MLUE TECHNOLOGY (\"we\", \"our\", \"us\") respects your privacy and is committed to handling personal information responsibly. This policy explains what we collect when you use our website, contact forms, chatbot, and language tools, and how we use that information.",
+"privacy.intro.p2": "By using our website, you agree to the practices described in this policy.",
+
+"privacy.s1.title": "1. Overview",
+"privacy.s1.p1": "MLUE TECHNOLOGY (\"we\", \"our\", \"us\") respects your privacy and is committed to handling personal information responsibly. This policy explains what we collect when you use our website, contact forms, chatbot, and language tools, and how we use that information.",
+"privacy.s1.p2": "By using our website, you agree to the practices described in this policy.",
+
+"privacy.s2.title": "2. Information We Collect",
+"privacy.s2.p1": "We collect only the information needed to respond to inquiries and operate the website features you choose to use.",
+
+"privacy.s2.a.title": "a) Information You Provide Directly",
+"privacy.s2.a.li1": "Name",
+"privacy.s2.a.li2": "Email address",
+"privacy.s2.a.li3": "Phone number, if you include it",
+"privacy.s2.a.li4": "Message content submitted through our forms or direct contact links",
+
+"privacy.s2.b.title": "b) Chatbot Messages",
+"privacy.s2.b.p1": "If you use the chatbot, the text you type is processed to generate a response. The chatbot currently uses local keyword-based logic in the browser. If we enable a third-party AI fallback in the future, chatbot messages may be sent to that service for processing.",
+
+"privacy.s2.c.title": "c) Basic Technical Information",
+"privacy.s2.c.li1": "Browser and device information",
+"privacy.s2.c.li2": "IP address inferred by our hosting or form provider when you submit a form",
+"privacy.s2.c.li3": "Pages visited on our public site",
+"privacy.s2.c.p1": "We use this information for security, troubleshooting, and site maintenance.",
+
+"privacy.s2.d.title": "d) Language Preference",
+"privacy.s2.d.p1": "We store your selected language preference in your browser using localStorage so the site can remember whether you prefer English or Swahili.",
+
+"privacy.s3.title": "3. How We Use Information",
+"privacy.s3.li1": "Respond to contact requests",
+"privacy.s3.li2": "Provide project and service information",
+"privacy.s3.li3": "Operate the chatbot and language-switching features",
+"privacy.s3.li4": "Improve the website and its content",
+"privacy.s3.li5": "Protect the site from misuse and technical issues",
+"privacy.s3.p1": "We do not sell, rent, or trade your personal information.",
+
+"privacy.s4.title": "4. How Information Is Shared",
+"privacy.s4.p1": "We share information only when necessary to run the services you use.",
+"privacy.s4.li1": "FormSubmit processes contact form submissions and forwards them to our email inbox.",
+"privacy.s4.li2": "Hosting providers may process standard server and access logs needed to deliver the website.",
+"privacy.s4.li3": "AI services, if enabled in the future for chatbot fallback, would receive only the chatbot text needed to generate a reply.",
+
+"privacy.s5.title": "5. Cookies and Storage",
+"privacy.s5.p1": "We do not intentionally use advertising or analytics cookies on this website. We do use browser storage for the language preference feature. Your browser or hosting provider may still use essential technical cookies or logs required for normal site operation.",
+
+"privacy.s6.title": "6. Data Retention",
+"privacy.s6.p1": "We keep contact form submissions only as long as needed to answer your inquiry, complete a business discussion, or satisfy record-keeping obligations. If a third-party provider retains data for its own operational or legal reasons, their retention practices will also apply.",
+
+"privacy.s7.title": "7. Security",
+"privacy.s7.p1": "We use reasonable technical and organizational measures to help protect information from unauthorized access, loss, misuse, or disclosure. No online transmission or storage method is completely secure, so we cannot guarantee absolute security.",
+
+"privacy.s8.title": "8. Your Rights",
+"privacy.s8.p1": "Depending on your location and the nature of the data involved, you may request to access, correct, or delete personal information you have submitted to us. To make a request, contact us using the details below.",
+
+"privacy.s9.title": "9. External Links",
+"privacy.s9.p1": "Our website may link to third-party websites. We are not responsible for the privacy practices or content of those sites.",
+
+"privacy.s10.title": "10. Children’s Privacy",
+"privacy.s10.p1": "Our website is intended for business and professional use and is not directed to children under 13. We do not knowingly collect personal information from children.",
+
+"privacy.s11.title": "11. Updates to This Policy",
+"privacy.s11.p1": "We may update this policy as our website features change. When we do, we will revise the effective date on this page.",
+
+"privacy.s12.title": "12. Contact Us",
+"privacy.s12.p1": "If you have questions about this Privacy Policy or your information, please contact us at:",
+"privacy.s12.emailLabel": "Email",
+"privacy.s12.location": "MLUE TECHNOLOGY\nUnited Republic of Tanzania"
     
   },
 
@@ -2296,7 +2373,85 @@ const translations = {
 "terms.s15.p1.prefix": "Ikiwa una maswali kuhusu Masharti haya, tafadhali wasiliana nasi kupitia ",
 "terms.s15.p1.suffix": ".",
 
-"terms.footerNote": "Masharti haya yanapaswa kusomwa pamoja na Sera yetu ya Faragha, inayoeleza jinsi taarifa zinavyoshughulikiwa unapokuwa unatumia tovuti na huduma zinazohusiana."
+"terms.footerNote": "Masharti haya yanapaswa kusomwa pamoja na Sera yetu ya Faragha, inayoeleza jinsi taarifa zinavyoshughulikiwa unapokuwa unatumia tovuti na huduma zinazohusiana.",
+
+
+// ==================== SWAHILI ====================
+
+// Sera ya Faragha
+"privacy.eyebrow": "SERA YA FARAGHA",
+"privacy.title": "Sera ya Faragha",
+"privacy.intro": "Jinsi MLUE TECHNOLOGY inavyoshughulikia taarifa binafsi kwenye tovuti yetu, fomu za mawasiliano, chatbot, na mapendeleo ya lugha.",
+"privacy.effectiveDate": "Tarehe ya Kuanza Kutumika",
+"privacy.effectiveDateValue": "17 Aprili 2026",
+
+"privacy.intro.p1": "MLUE TECHNOLOGY (\"sisi\", \"yetu\", \"kwetu\") inaheshimu faragha yako na imejitolea kushughulikia taarifa binafsi kwa uwajibikaji. Sera hii inaeleza taarifa tunazokusanya unapokuwa unatumia tovuti yetu, fomu za mawasiliano, chatbot, na zana za lugha, pamoja na jinsi tunavyotumia taarifa hizo.",
+"privacy.intro.p2": "Kwa kutumia tovuti yetu, unakubali taratibu zilizoelezwa katika sera hii.",
+
+"privacy.s1.title": "1. Muhtasari",
+"privacy.s1.p1": "MLUE TECHNOLOGY (\"sisi\", \"yetu\", \"kwetu\") inaheshimu faragha yako na imejitolea kushughulikia taarifa binafsi kwa uwajibikaji. Sera hii inaeleza taarifa tunazokusanya unapokuwa unatumia tovuti yetu, fomu za mawasiliano, chatbot, na zana za lugha, pamoja na jinsi tunavyotumia taarifa hizo.",
+"privacy.s1.p2": "Kwa kutumia tovuti yetu, unakubali taratibu zilizoelezwa katika sera hii.",
+
+"privacy.s2.title": "2. Taarifa Tunazokusanya",
+"privacy.s2.p1": "Tunakusanya taarifa zinazohitajika tu ili kujibu maombi na kuendesha vipengele vya tovuti unavyochagua kutumia.",
+
+"privacy.s2.a.title": "a) Taarifa Unazotoa Moja kwa Moja",
+"privacy.s2.a.li1": "Jina",
+"privacy.s2.a.li2": "Anwani ya barua pepe",
+"privacy.s2.a.li3": "Namba ya simu, ikiwa umeiweka",
+"privacy.s2.a.li4": "Maudhui ya ujumbe unaowasilisha kupitia fomu zetu au viungo vya mawasiliano ya moja kwa moja",
+
+"privacy.s2.b.title": "b) Ujumbe wa Chatbot",
+"privacy.s2.b.p1": "Ukitumia chatbot, maandishi unayoandika huchakatwa ili kuzalisha jibu. Kwa sasa chatbot hutumia mantiki ya maneno muhimu ndani ya kivinjari. Tukiwasha huduma ya AI ya wahusika wengine kama njia mbadala baadaye, ujumbe wa chatbot unaweza kutumwa kwenye huduma hiyo kwa ajili ya kuchakatwa.",
+
+"privacy.s2.c.title": "c) Taarifa za Msingi za Kiufundi",
+"privacy.s2.c.li1": "Taarifa kuhusu kivinjari na kifaa",
+"privacy.s2.c.li2": "Anwani ya IP inayoweza kutambuliwa na mtoa huduma wetu wa hosting au fomu unapowasilisha fomu",
+"privacy.s2.c.li3": "Kurasa zilizotembelewa kwenye tovuti yetu ya umma",
+"privacy.s2.c.p1": "Tunatumia taarifa hizi kwa usalama, utatuzi wa matatizo, na matengenezo ya tovuti.",
+
+"privacy.s2.d.title": "d) Upendeleo wa Lugha",
+"privacy.s2.d.p1": "Tunahifadhi chaguo lako la lugha kwenye kivinjari chako kwa kutumia localStorage ili tovuti ikumbuke kama unapendelea Kiingereza au Kiswahili.",
+
+"privacy.s3.title": "3. Jinsi Tunavyotumia Taarifa",
+"privacy.s3.li1": "Kujibu maombi ya mawasiliano",
+"privacy.s3.li2": "Kutoa taarifa kuhusu miradi na huduma",
+"privacy.s3.li3": "Kuendesha chatbot na vipengele vya kubadilisha lugha",
+"privacy.s3.li4": "Kuboresha tovuti na maudhui yake",
+"privacy.s3.li5": "Kulinda tovuti dhidi ya matumizi mabaya na matatizo ya kiufundi",
+"privacy.s3.p1": "Hatuuzi, hatupangishi, wala hatushirikishi taarifa zako binafsi kwa biashara ya aina hiyo.",
+
+"privacy.s4.title": "4. Jinsi Taarifa Zinavyoshirikiwa",
+"privacy.s4.p1": "Tunashirikisha taarifa pale tu inapohitajika kuendesha huduma unazotumia.",
+"privacy.s4.li1": "FormSubmit huchakata mawasilisho ya fomu za mawasiliano na kuyatuma kwenye kisanduku chetu cha barua pepe.",
+"privacy.s4.li2": "Watoa huduma wa hosting wanaweza kuchakata kumbukumbu za kawaida za seva na ufikiaji zinazohitajika kuwasilisha tovuti.",
+"privacy.s4.li3": "Huduma za AI, ikiwa zitawezeshwa baadaye kwa ajili ya chatbot, zingepokea tu maandishi ya chatbot yanayohitajika ili kuzalisha jibu.",
+
+"privacy.s5.title": "5. Cookies na Hifadhi ya Taarifa",
+"privacy.s5.p1": "Hatutumii kwa makusudi cookies za matangazo au uchanganuzi kwenye tovuti hii. Tunatumia hifadhi ya kivinjari kwa kipengele cha mapendeleo ya lugha. Kivinjari chako au mtoa huduma wa hosting bado anaweza kutumia cookies muhimu za kiufundi au kumbukumbu zinazohitajika kwa uendeshaji wa kawaida wa tovuti.",
+
+"privacy.s6.title": "6. Uhifadhi wa Taarifa",
+"privacy.s6.p1": "Tunahifadhi mawasilisho ya fomu za mawasiliano kwa muda unaohitajika kujibu ombi lako, kukamilisha mazungumzo ya kibiashara, au kutimiza mahitaji ya utunzaji wa kumbukumbu. Ikiwa mtoa huduma mwingine atahifadhi taarifa kwa sababu zake za kiutendaji au kisheria, taratibu zake za uhifadhi pia zitatumika.",
+
+"privacy.s7.title": "7. Usalama",
+"privacy.s7.p1": "Tunatumia hatua zinazofaa za kiufundi na kiutawala kusaidia kulinda taarifa dhidi ya ufikiaji usioidhinishwa, upotevu, matumizi mabaya, au kufichuliwa. Hakuna njia ya kutuma au kuhifadhi taarifa mtandaoni iliyo salama kabisa, hivyo hatuwezi kuhakikisha usalama wa kiwango cha asilimia mia moja.",
+
+"privacy.s8.title": "8. Haki Zako",
+"privacy.s8.p1": "Kulingana na eneo lako na aina ya taarifa husika, unaweza kuomba kupata, kurekebisha, au kufuta taarifa binafsi ulizowasilisha kwetu. Ili kuwasilisha ombi, wasiliana nasi kupitia taarifa zilizo hapa chini.",
+
+"privacy.s9.title": "9. Viungo vya Tovuti za Nje",
+"privacy.s9.p1": "Tovuti yetu inaweza kuwa na viungo vinavyoelekeza kwenye tovuti za wahusika wengine. Hatuwajibiki kwa sera zao za faragha au maudhui ya tovuti hizo.",
+
+"privacy.s10.title": "10. Faragha ya Watoto",
+"privacy.s10.p1": "Tovuti yetu imekusudiwa kwa matumizi ya kibiashara na kitaalamu na haijaelekezwa kwa watoto walio chini ya miaka 13. Hatukusanyi kwa kujua taarifa binafsi kutoka kwa watoto.",
+
+"privacy.s11.title": "11. Masasisho ya Sera Hii",
+"privacy.s11.p1": "Tunaweza kusasisha sera hii kadri vipengele vya tovuti yetu vinavyobadilika. Tunapofanya hivyo, tutasasisha tarehe ya kuanza kutumika iliyo kwenye ukurasa huu.",
+
+"privacy.s12.title": "12. Wasiliana Nasi",
+"privacy.s12.p1": "Ikiwa una maswali kuhusu Sera hii ya Faragha au taarifa zako, tafadhali wasiliana nasi kupitia:",
+"privacy.s12.emailLabel": "Barua Pepe",
+"privacy.s12.location": "MLUE TECHNOLOGY\nJamhuri ya Muungano wa Tanzania"
 
   }
 };
