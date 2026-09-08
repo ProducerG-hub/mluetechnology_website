@@ -567,6 +567,112 @@
   box-shadow: 0 18px 42px rgba(34,211,238,.32) !important;
 }
 
+/* =========================================================
+   TECHNOLOGY STACK
+   Premium technology cards with real icons
+   ========================================================= */
+
+.telecom-case-study .telecom-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.telecom-case-study .telecom-tech-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 88px;
+  padding: 16px 18px;
+
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid var(--case-border);
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 26px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.telecom-case-study .telecom-tech-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(34, 211, 238, 0.30);
+
+  box-shadow:
+    0 18px 36px rgba(15, 23, 42, 0.09);
+}
+
+.telecom-case-study .telecom-tech-card__icon {
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+
+  box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.05);
+}
+
+.telecom-case-study .telecom-tech-card__icon img {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+}
+
+.telecom-case-study .telecom-tech-card__icon--text span {
+  color: var(--case-blue);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.telecom-case-study .telecom-tech-card__name {
+  color: var(--case-ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.telecom-case-study .telecom-tech-card__type {
+  margin-top: 2px;
+  color: var(--case-muted);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 980px) {
+  .telecom-case-study .telecom-tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .telecom-case-study .telecom-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telecom-case-study .telecom-tech-card {
+    min-height: 82px;
+  }
+}
+
 @media (max-width: 900px) {
   .telecom-case-study .cs-gallery__item,
   .telecom-case-study .cs-gallery__item:nth-child(1),
@@ -1155,14 +1261,122 @@
         Advanced geospatial tools and methodologies were utilized to process and analyze complex spatial data.
     </p>
 
-    <div class="cs-tech-badges">
-        <span class="cs-tech-badge">QGIS</span>
-        <span class="cs-tech-badge">PostgreSQL/PostGIS</span>
-        <span class="cs-tech-badge">OpenStreetMap</span>
-        <span class="cs-tech-badge">DEM Data</span>
-        <span class="cs-tech-badge">Spatial Analysis</span>
-        <span class="cs-tech-badge">GIS Mapping</span>
+    <div class="telecom-tech-grid">
+
+  <!-- QGIS -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/qgis.svg"
+        alt="QGIS"
+        loading="lazy"
+      />
     </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        QGIS
+      </div>
+      <div class="telecom-tech-card__type">
+        GIS Software
+      </div>
+    </div>
+  </article>
+
+
+  <!-- PostgreSQL / PostGIS -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon">
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+        alt="PostgreSQL"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        PostgreSQL / PostGIS
+      </div>
+      <div class="telecom-tech-card__type">
+        Spatial Database
+      </div>
+    </div>
+  </article>
+
+
+  <!-- OpenStreetMap -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon">
+      <img
+        src="https://cdn.simpleicons.org/openstreetmap"
+        alt="OpenStreetMap"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        OpenStreetMap
+      </div>
+      <div class="telecom-tech-card__type">
+        Open Mapping Data
+      </div>
+    </div>
+  </article>
+
+
+  <!-- DEM -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon telecom-tech-card__icon--text">
+      <span>DEM</span>
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        DEM Data
+      </div>
+      <div class="telecom-tech-card__type">
+        Terrain Data
+      </div>
+    </div>
+  </article>
+
+
+  <!-- Spatial Analysis -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon telecom-tech-card__icon--text">
+      <span>GIS</span>
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        Spatial Analysis
+      </div>
+      <div class="telecom-tech-card__type">
+        Geospatial Analysis
+      </div>
+    </div>
+  </article>
+
+
+  <!-- GIS Mapping -->
+  <article class="telecom-tech-card">
+    <div class="telecom-tech-card__icon telecom-tech-card__icon--text">
+      <span>MAP</span>
+    </div>
+
+    <div>
+      <div class="telecom-tech-card__name">
+        GIS Mapping
+      </div>
+      <div class="telecom-tech-card__type">
+        Geographic Visualization
+      </div>
+    </div>
+  </article>
+
+</div>
 
     <div style="margin-top: 48px;">
 
