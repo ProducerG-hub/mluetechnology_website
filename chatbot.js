@@ -212,7 +212,7 @@ mount.innerHTML = [
         function getOnboardingText() {
             return document.documentElement.lang === "sw"
                 ? "NIKUSAIDIEJE LEO?"
-                : "HOW CAN I HELP YOU TODAY";
+                : "HOW CAN I HELP YOU?";
         }
 
         function getWelcomeMessage() {
@@ -294,10 +294,138 @@ document.addEventListener("mlue-language-changed", () => {
         }
 
         function linkifyBotMessage(text) {
-            const escaped = escapeHtml(text);
-            const linkedUrls = escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
-            return linkedUrls.replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1">$1</a>');
+    const escaped = escapeHtml(text);
+    const markdownLinks = [];
+
+    function cleanMarkdownArtifacts(value) {
+        return String(value)
+            .replace(/\*\*/g, "")
+            .replace(/__/g, "")
+            .trim();
+    }
+
+    function formatInline(value) {
+        let formatted = value;
+
+        // Inline code
+        formatted = formatted.replace(
+            /`([^`\n]+)`/g,
+            "<code>$1</code>"
+        );
+
+        // Bold
+        formatted = formatted.replace(
+            /\*\*([^*\n]+)\*\*/g,
+            "<strong>$1</strong>"
+        );
+
+        formatted = formatted.replace(
+            /__([^_\n]+)__/g,
+            "<strong>$1</strong>"
+        );
+
+        // Italic
+        formatted = formatted.replace(
+            /(?<!\*)\*([^*\n]+)\*(?!\*)/g,
+            "<em>$1</em>"
+        );
+
+        formatted = formatted.replace(
+            /(?<!_)_([^_\n]+)_(?!_)/g,
+            "<em>$1</em>"
+        );
+
+        return formatted;
+    }
+
+    // Protect Markdown links first.
+    let formatted = escaped.replace(
+        /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+        (_, label, url) => {
+            const cleanUrl = url
+                .replace(/[*_]+$/g, "")
+                .replace(/[.,!?;:]+$/g, "");
+
+            const cleanLabel = formatInline(
+                cleanMarkdownArtifacts(label)
+            );
+
+            const token = `@@MLUE_LINK_${markdownLinks.length}@@`;
+
+            markdownLinks.push(
+                `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer">${cleanLabel}</a>`
+            );
+
+            return token;
         }
+    );
+
+    // Linkify ordinary URLs.
+    formatted = formatted.replace(
+        /(https?:\/\/[^\s<]+)/g,
+        (match) => {
+            const cleanUrl = match
+                .replace(/[*_]+$/g, "")
+                .replace(/[.,!?;:]+$/g, "");
+
+            return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer">${cleanUrl}</a>`;
+        }
+    );
+
+    // Linkify email addresses.
+    formatted = formatted.replace(
+        /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
+        '<a href="mailto:$1">$1</a>'
+    );
+
+    // Apply inline Markdown.
+    formatted = formatInline(formatted);
+
+    // Convert lines into readable blocks/lists.
+    const lines = formatted.split(/\r?\n/);
+    const output = [];
+    let inList = false;
+
+    lines.forEach(line => {
+        const listMatch = line.match(/^\s*[-*]\s+(.+)$/);
+
+        if (listMatch) {
+            if (!inList) {
+                output.push("<ul>");
+                inList = true;
+            }
+
+            output.push("<li>" + listMatch[1] + "</li>");
+            return;
+        }
+
+        if (inList) {
+            output.push("</ul>");
+            inList = false;
+        }
+
+        if (line.trim() === "") {
+            output.push("<div class='chatbot__message-spacer'></div>");
+        } else {
+            output.push("<div>" + line + "</div>");
+        }
+    });
+
+    if (inList) {
+        output.push("</ul>");
+    }
+
+    let result = output.join("");
+
+    markdownLinks.forEach((link, index) => {
+        result = result.replace(
+            `@@MLUE_LINK_${index}@@`,
+            link
+        );
+    });
+
+    return result;
+}
 
         function appendMessage(text, role, persist) {
             const shouldPersist = persist !== false;
@@ -346,12 +474,7 @@ document.addEventListener("mlue-language-changed", () => {
     chatWindow.setAttribute("aria-hidden", "false");
 
     if (state.messages.length === 0) {
-        if (onboardingNode && onboardingNode.isConnected) {
-            onboardingNode.remove();
-        }
-
-        appendMessage(getWelcomeMessage(), "bot");
-
+        updateOnboarding();
         state.showHeader = false;
         saveChatState();
     } else {
