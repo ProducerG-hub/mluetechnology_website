@@ -109,24 +109,31 @@ export default async (req) => {
         const data = await response.json();
 
         if (!response.ok) {
-            console.error("DeepSeek API error:", data);
+    console.error("DeepSeek API error:", data);
 
-            return new Response(
-                JSON.stringify({
-                    error: "AI service request failed"
-                }),
-                {
-                    status: 502,
-                    headers: {
-                        "Content-Type": "application/json; charset=utf-8"
-                    }
-                }
-            );
+    return new Response(
+        JSON.stringify({
+            error: "AI service request failed"
+        }),
+        {
+            status: 502,
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
         }
+    );
+}
 
         const reply = data?.choices?.[0]?.message?.content;
 
         if (!reply) {
+
+                    const consultationReady =
+            reply.includes("[MLUE_CONSULTATION_READY]");
+
+        const cleanReply = reply
+            .replace("[MLUE_CONSULTATION_READY]", "")
+            .trim();
             console.error("DeepSeek returned no message:", data);
 
             return new Response(
@@ -142,10 +149,18 @@ export default async (req) => {
             );
         }
 
+        const consultationReady =
+    reply.includes("[MLUE_CONSULTATION_READY]");
+
+const cleanReply = reply
+    .replace("[MLUE_CONSULTATION_READY]", "")
+    .trim();
+
         return new Response(
-            JSON.stringify({
-                reply
-            }),
+    JSON.stringify({
+        reply: cleanReply,
+        consultationReady
+    }),
             {
                 status: 200,
                 headers: {

@@ -293,6 +293,14 @@ showToast("success", successTitle, successMessage);
 
     if (!modal) return;
 
+    window.openMLUEAppointmentModal = () => {
+    openModal(modal, document.activeElement);
+};
+
+    window.openMLUEAppointmentModal = () => {
+    openModal(modal, document.activeElement);
+};
+
 
     // ---------------------------------------------------
     // Open appointment modal

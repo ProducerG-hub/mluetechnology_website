@@ -453,6 +453,190 @@ document.addEventListener("mlue-language-changed", () => {
             }
         }
 
+        function appendConsultationAction() {
+    const wrap = document.createElement("div");
+    wrap.className = "chat-msg chat-msg--bot";
+
+    const action = document.createElement("div");
+    action.className = "chatbot__consultation-action";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn--primary";
+    button.textContent =
+        chatLanguage === "swahili"
+            ? "Anza Ushauri"
+            : "Start Consultation";
+
+    button.addEventListener("click", async () => {
+        button.disabled = true;
+        button.textContent =
+            chatLanguage === "swahili"
+                ? "Inaandaa maelezo..."
+                : "Preparing consultation...";
+
+        try {
+            const history = state.messages
+                .filter(
+                    message =>
+                        message.role === "user" ||
+                        message.role === "bot"
+                )
+                .map(message => ({
+                    role:
+                        message.role === "user"
+                            ? "user"
+                            : "assistant",
+                    content: message.text
+                }))
+                .slice(-40);
+
+            const response = await fetch(
+                "/.netlify/functions/consultation",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        history
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok || !data?.emailSent) {
+                throw new Error(
+                    data?.error ||
+                    "Unable to submit consultation"
+                );
+            }
+
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Ushauri umetumwa ✓"
+                    : "Consultation Sent ✓";
+
+            if (typeof window.openMLUEAppointmentModal === "function") {
+    setTimeout(() => {
+        window.openMLUEAppointmentModal();
+    }, 400);
+}
+        } catch (error) {
+            console.error(
+                "MLUE consultation submission error:",
+                error
+            );
+
+            button.disabled = false;
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Jaribu Tena"
+                    : "Try Again";
+        }
+    });
+
+    action.appendChild(button);
+    wrap.appendChild(action);
+    chatMessages.appendChild(wrap);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    return wrap;
+}
+
+function appendConsultationAction() {
+    const wrap = document.createElement("div");
+    wrap.className = "chat-msg chat-msg--bot";
+
+    const action = document.createElement("div");
+    action.className = "chatbot__consultation-action";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn--primary";
+    button.textContent =
+        chatLanguage === "swahili"
+            ? "Anza Ushauri"
+            : "Start Consultation";
+
+    button.addEventListener("click", async () => {
+        button.disabled = true;
+        button.textContent =
+            chatLanguage === "swahili"
+                ? "Inaandaa maelezo..."
+                : "Preparing consultation...";
+
+        try {
+            const history = state.messages
+                .filter(
+                    message =>
+                        message.role === "user" ||
+                        message.role === "bot"
+                )
+                .map(message => ({
+                    role:
+                        message.role === "user"
+                            ? "user"
+                            : "assistant",
+                    content: message.text
+                }))
+                .slice(-40);
+
+            const response = await fetch(
+                "/.netlify/functions/consultation",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        history
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok || !data?.emailSent) {
+                throw new Error(
+                    data?.error ||
+                    "Unable to submit consultation"
+                );
+            }
+
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Ushauri umetumwa ✓"
+                    : "Consultation Sent ✓";
+
+            if (typeof window.openMLUEAppointmentModal === "function") {
+    setTimeout(() => {
+        window.openMLUEAppointmentModal();
+    }, 400);
+}
+        } catch (error) {
+            console.error(
+                "MLUE consultation submission error:",
+                error
+            );
+
+            button.disabled = false;
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Jaribu Tena"
+                    : "Try Again";
+        }
+    });
+
+    action.appendChild(button);
+    wrap.appendChild(action);
+    chatMessages.appendChild(wrap);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    return wrap;
+}
+
         function appendTyping() {
             const wrap = document.createElement("div");
             wrap.className = "chat-msg chat-msg--bot";
@@ -547,7 +731,10 @@ async function getAIResponse(userText) {
         throw new Error("AI returned an empty response");
     }
 
-    return data.reply;
+    return {
+    reply: data.reply,
+    consultationReady: Boolean(data.consultationReady)
+};
 }
 
         async function sendMessage() {
@@ -589,10 +776,15 @@ async function getAIResponse(userText) {
 
         applyImplicitLanguagePreference(userText);
 
-        const reply = await getAIResponse(userText);
+        const result = await getAIResponse(userText);
 
-        appendMessage(reply, "bot");
-        saveChatState();
+appendMessage(result.reply, "bot");
+
+if (result.consultationReady) {
+    appendConsultationAction();
+}
+
+saveChatState();
 
     } catch (error) {
         console.error("MLUE chatbot error:", error);
