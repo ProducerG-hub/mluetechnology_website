@@ -8,7 +8,7 @@ MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site desig
 
 ## Changelog
 
-- 2026-05-16: Reviewed repository files and updated documentation to reflect current structure (corrected `ToS/` → `terms/`) and added summary notes.
+- 2026-09-19: Reviewed repository files and updated documentation to reflect current structure (changed a chatBot from a simple static response to an AI-powered chatbot) and added summary notes.
 
 ## What This Project Includes
 
@@ -22,10 +22,10 @@ MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site desig
 - Contact form handling through FormSubmit
 - WhatsApp-friendly contact access
 - An integrated chatbot with:
-  - Intent detection
-  - Topic matching
-  - Prebuilt knowledge responses in English and Swahili
-  - Optional Hugging Face fallback
+  - AI response and reasoning by DeepSeek via a Netlify serverless function
+  - Lead capture and submission to a Netlify serverless function
+  - Language preference detection and persistence
+  - Specific knowledge about MLUE TECHNOLOGY services and offerings
 - Supporting pages for:
   - Projects
   - Privacy Policy
@@ -37,7 +37,9 @@ MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site desig
 - CSS3
 - Vanilla JavaScript
 - FormSubmit for contact handling
-- Optional Hugging Face Inference API for chatbot fallback
+- Netlify Functions for serverless backend logic
+- DeepSeek AI for chatbot reasoning and lead management
+- Resend for email notifications
 
 ## Project Structure
 
@@ -47,6 +49,8 @@ MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site desig
 |-- pricing/
 |   `-- index.html
 |-- styles.css
+|-- netlify.toml
+|-- README.md
 |-- main.js
 |-- i18n.js
 |-- chatbot.js
@@ -55,6 +59,11 @@ MLUE TECHNOLOGY’s public website is a static, SEO-friendly business site desig
 |-- assets/
 |   |-- favicon/
 |   `-- projects/
+|-- netlify/
+|   |-- functions/
+|   `-- chat.js
+|   `-- lead.js
+|   `--mlue-knoledge.js
 |-- privacy/
 |   `-- index.html
 |-- projects/

@@ -1,6 +1,8 @@
 (function (global) {
     "use strict";
 
+    const CHATBOT_STORAGE_KEY = "mlue_chatbot_state";
+
     const SWAHILI_HINT_WORDS = [
         "habari", "jambo", "mambo", "asante", "karibu", "sawa", "huduma",
         "wasiliana", "mawasiliano", "bei", "msaada", "kwaheri", "kiswahili",
@@ -83,7 +85,15 @@
             messages: [],
             showHeader: true,
             isOpen: false,
-            language: document.documentElement.lang === "sw" ? "swahili" : "english"
+            language: document.documentElement.lang === "sw" ? "swahili" : "english",
+            leadStage: "NORMAL_CHAT",
+            lead: {
+            name: null,
+            contact: null,
+            requirement: null
+            },
+            leadSubmitted: false,
+            submittedLead: null
         };
     }
 
@@ -106,7 +116,30 @@
                 isOpen: typeof parsed.isOpen === "boolean" ? parsed.isOpen : defaults.isOpen,
                 language: parsed.language === "swahili" || parsed.language === "english"
                     ? parsed.language
-                    : defaults.language
+                    : defaults.language,
+                leadStage: typeof parsed.leadStage === "string"
+                    ? parsed.leadStage
+                    : defaults.leadStage,
+                lead: {
+                name: typeof parsed.lead?.name === "string"
+                    ? parsed.lead.name
+                    : defaults.lead.name,
+
+                contact: typeof parsed.lead?.contact === "string"
+                    ? parsed.lead.contact
+                    : defaults.lead.contact,
+
+                requirement: typeof parsed.lead?.requirement === "string"
+                    ? parsed.lead.requirement
+                    : defaults.lead.requirement,
+
+                leadSubmitted: typeof parsed.leadSubmitted === "boolean"
+                    ? parsed.leadSubmitted
+                    : defaults.leadSubmitted,
+                submittedLead: parsed.submittedLead && typeof parsed.submittedLead === "object"
+                    ? parsed.submittedLead
+                    : defaults.submittedLead
+            }
             };
         } catch (_error) {
             return getDefaultChatbotState();
@@ -204,9 +237,18 @@ mount.innerHTML = [
         let typingNode = null;
         let onboardingNode = null;
 
-        function saveChatState() {
+    function saveChatState() {
     state.language = chatLanguage;
     state.isOpen = chatWindow.classList.contains("chatbot--open");
+
+    try {
+        localStorage.setItem(
+            CHATBOT_STORAGE_KEY,
+            JSON.stringify(state)
+        );
+    } catch (error) {
+        console.error("Unable to save chatbot state:", error);
+    }
 }
 
         function getOnboardingText() {
@@ -214,12 +256,6 @@ mount.innerHTML = [
                 ? "NIKUSAIDIEJE LEO?"
                 : "HOW CAN I HELP YOU?";
         }
-
-        function getWelcomeMessage() {
-    return document.documentElement.lang === "sw"
-        ? "Habari! Mimi ni MLUE AI. Naweza kukusaidia kuelewa suluhisho zetu za kiteknolojia, huduma tunazotoa, au kukuelekeza mahali pazuri pa kuanzia kwa mradi wako.\n\nUngependa kujua nini kuhusu MLUE Technology?"
-        : "Hello! I'm MLUE AI. I can help you explore our technology solutions, understand our services, or guide you toward the right starting point for your project.\n\nWhat would you like to know about MLUE Technology?";
-}
 
 function ensureOnboardingNode() {
     if (onboardingNode && onboardingNode.isConnected) {
@@ -543,14 +579,60 @@ async function getAIResponse(userText) {
         throw new Error(data?.error || "Unable to get AI response");
     }
 
-    if (!data?.reply) {
+    if (
+        !data ||
+        typeof data.reply !== "string" ||
+        !data.reply.trim()
+    ) {
         throw new Error("AI returned an empty response");
     }
 
-    return data.reply;
+    if (typeof data.leadStage !== "string") {
+        throw new Error("AI returned an invalid lead stage");
+    }
+    if(!data.lead || typeof data.lead !== "object") {
+        throw new Error("AI returned an invalid lead object");
+    }
+
+    return {
+        reply: data.reply,
+        leadStage: data.leadStage,
+        lead:data.lead
+
+    };
 }
 
-        async function sendMessage() {
+async function submitLead(lead) {
+
+    const response = await fetch("/.netlify/functions/lead", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: lead.name,
+            contact: lead.contact,
+            requirement: lead.requirement
+        })
+    });
+
+    const data = await response.json();
+
+
+    if (!response.ok) {
+        throw new Error(
+            data?.error || "Unable to submit lead"
+        );
+    }
+
+    if (!data || data.success !== true) {
+        throw new Error("Lead submission failed");
+    }
+
+    return data;
+}
+
+async function sendMessage() {
     const userText = chatInput.value.trim();
 
     if (!userText || chatInput.disabled) {
@@ -589,13 +671,38 @@ async function getAIResponse(userText) {
 
         applyImplicitLanguagePreference(userText);
 
-        const reply = await getAIResponse(userText);
+        const aiResponse = await getAIResponse(userText);
+        state.leadStage = aiResponse.leadStage;
+        state.lead = aiResponse.lead;
+        const isSameLead =
+        state.submittedLead &&
+        state.submittedLead.name === aiResponse.lead.name &&
+        state.submittedLead.contact === aiResponse.lead.contact &&
+        state.submittedLead.requirement === aiResponse.lead.requirement;
 
-        appendMessage(reply, "bot");
+            if (
+                aiResponse.leadStage === "COMPLETED" &&
+                !isSameLead
+            ) {
+                await submitLead(aiResponse.lead);
+
+                state.leadSubmitted = true;
+                state.submittedLead = {
+                    name: aiResponse.lead.name,
+                    contact: aiResponse.lead.contact,
+                    requirement: aiResponse.lead.requirement
+                };
+            }
+
+        if (aiResponse.leadStage === "COMPLETED" && !isSameLead) {
+            await submitLead(aiResponse.lead);
+
+            state.leadSubmitted = true;
+        }
+        appendMessage(aiResponse.reply, "bot");
         saveChatState();
 
     } catch (error) {
-        console.error("MLUE chatbot error:", error);
 
         appendMessage(
             chatLanguage === "swahili"
