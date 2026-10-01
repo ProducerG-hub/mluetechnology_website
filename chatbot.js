@@ -1,6 +1,8 @@
 (function (global) {
     "use strict";
 
+    const CHATBOT_STORAGE_KEY = "mlue_chatbot_state";
+
     const SWAHILI_HINT_WORDS = [
         "habari", "jambo", "mambo", "asante", "karibu", "sawa", "huduma",
         "wasiliana", "mawasiliano", "bei", "msaada", "kwaheri", "kiswahili",
@@ -77,13 +79,21 @@
     const inferred = inferPreferredLanguage(text);
     return inferred || "english";
 }
-    
+
     function getDefaultChatbotState() {
         return {
             messages: [],
             showHeader: true,
             isOpen: false,
-            language: document.documentElement.lang === "sw" ? "swahili" : "english"
+            language: document.documentElement.lang === "sw" ? "swahili" : "english",
+            leadStage: "NORMAL_CHAT",
+            lead: {
+            name: null,
+            contact: null,
+            requirement: null
+            },
+            leadSubmitted: false,
+            submittedLead: null
         };
     }
 
@@ -106,7 +116,30 @@
                 isOpen: typeof parsed.isOpen === "boolean" ? parsed.isOpen : defaults.isOpen,
                 language: parsed.language === "swahili" || parsed.language === "english"
                     ? parsed.language
-                    : defaults.language
+                    : defaults.language,
+                leadStage: typeof parsed.leadStage === "string"
+                    ? parsed.leadStage
+                    : defaults.leadStage,
+                lead: {
+                name: typeof parsed.lead?.name === "string"
+                    ? parsed.lead.name
+                    : defaults.lead.name,
+
+                contact: typeof parsed.lead?.contact === "string"
+                    ? parsed.lead.contact
+                    : defaults.lead.contact,
+
+                requirement: typeof parsed.lead?.requirement === "string"
+                    ? parsed.lead.requirement
+                    : defaults.lead.requirement,
+
+                leadSubmitted: typeof parsed.leadSubmitted === "boolean"
+                    ? parsed.leadSubmitted
+                    : defaults.leadSubmitted,
+                submittedLead: parsed.submittedLead && typeof parsed.submittedLead === "object"
+                    ? parsed.submittedLead
+                    : defaults.submittedLead
+            }
             };
         } catch (_error) {
             return getDefaultChatbotState();
@@ -204,15 +237,24 @@ mount.innerHTML = [
         let typingNode = null;
         let onboardingNode = null;
 
-        function saveChatState() {
+    function saveChatState() {
     state.language = chatLanguage;
     state.isOpen = chatWindow.classList.contains("chatbot--open");
+
+    try {
+        localStorage.setItem(
+            CHATBOT_STORAGE_KEY,
+            JSON.stringify(state)
+        );
+    } catch (error) {
+        console.error("Unable to save chatbot state:", error);
+    }
 }
 
         function getOnboardingText() {
             return document.documentElement.lang === "sw"
                 ? "NIKUSAIDIEJE LEO?"
-                : "HOW CAN I HELP YOU?";
+                : "HOW CAN I HELP YOU TODAY";
         }
 
         function getWelcomeMessage() {
@@ -727,17 +769,18 @@ async function getAIResponse(userText) {
         throw new Error(data?.error || "Unable to get AI response");
     }
 
-    if (!data?.reply) {
+    if (
+        !data ||
+        typeof data.reply !== "string" ||
+        !data.reply.trim()
+    ) {
         throw new Error("AI returned an empty response");
     }
 
-    return {
-    reply: data.reply,
-    consultationReady: Boolean(data.consultationReady)
-};
+    return data.reply;
 }
 
-        async function sendMessage() {
+async function sendMessage() {
     const userText = chatInput.value.trim();
 
     if (!userText || chatInput.disabled) {
@@ -776,18 +819,12 @@ async function getAIResponse(userText) {
 
         applyImplicitLanguagePreference(userText);
 
-        const result = await getAIResponse(userText);
+        const reply = await getAIResponse(userText);
 
-appendMessage(result.reply, "bot");
-
-if (result.consultationReady) {
-    appendConsultationAction();
-}
-
-saveChatState();
+        appendMessage(reply, "bot");
+        saveChatState();
 
     } catch (error) {
-        console.error("MLUE chatbot error:", error);
 
         appendMessage(
             chatLanguage === "swahili"
@@ -870,4 +907,3 @@ saveChatState();
 };
 
 })(typeof window !== "undefined" ? window : globalThis);
-
