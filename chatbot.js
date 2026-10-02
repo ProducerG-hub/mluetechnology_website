@@ -766,7 +766,9 @@ async function getAIResponse(userText) {
     const data = await response.json();
 
     if (!response.ok) {
-        throw new Error(data?.error || "Unable to get AI response");
+        throw new Error(
+            data?.error || "Unable to get AI response"
+        );
     }
 
     if (
@@ -777,7 +779,16 @@ async function getAIResponse(userText) {
         throw new Error("AI returned an empty response");
     }
 
-    return data.reply;
+    return {
+        reply: data.reply,
+        consultationReady: Boolean(data.consultationReady),
+        leadStage: data.leadStage || "NORMAL_CHAT",
+        lead: data.lead || {
+            name: null,
+            contact: null,
+            requirement: null
+        }
+    };
 }
 
 async function sendMessage() {
@@ -819,12 +830,21 @@ async function sendMessage() {
 
         applyImplicitLanguagePreference(userText);
 
-        const reply = await getAIResponse(userText);
+        const result = await getAIResponse(userText);
 
-        appendMessage(reply, "bot");
+        appendMessage(result.reply, "bot");
+
         saveChatState();
 
+        if (
+            result.consultationReady &&
+            typeof appendConsultationAction === "function"
+        ) {
+            appendConsultationAction();
+        }
+
     } catch (error) {
+        console.error("Chatbot error:", error);
 
         appendMessage(
             chatLanguage === "swahili"
