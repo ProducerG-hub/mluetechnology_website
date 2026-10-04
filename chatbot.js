@@ -799,9 +799,14 @@ async function sendMessage() {
     }
 
     if (state.showHeader) {
-        state.showHeader = false;
-        updateOnboarding();
+    state.showHeader = false;
+
+    if (onboardingNode && onboardingNode.isConnected) {
+        onboardingNode.remove();
     }
+
+    updateOnboarding();
+}
 
     appendMessage(userText, "user");
 
@@ -877,12 +882,17 @@ async function sendMessage() {
         chatClose.addEventListener("click", closeChat);
         chatSend.addEventListener("click", sendMessage);
         chatInput.addEventListener("input", () => {
-            if (state.showHeader && chatInput.value.length > 0) {
-                state.showHeader = false;
-                updateOnboarding();
-                saveChatState();
-            }
-        });
+    if (chatInput.value.length > 0) {
+        state.showHeader = false;
+
+        if (onboardingNode && onboardingNode.isConnected) {
+            onboardingNode.remove();
+        }
+
+        updateOnboarding();
+        saveChatState();
+    }
+});
         chatInput.addEventListener("keydown", event => {
             if (event.key === "Enter") {
                 event.preventDefault();

@@ -226,7 +226,7 @@ export default async (req) => {
         }
 
 
-    
+
 
         const rawSummary = data?.choices?.[0]?.message?.content;
 
@@ -266,9 +266,12 @@ export default async (req) => {
             );
         }
 
-                const resendApiKey = process.env.RESEND_API_KEY;
+        const resendApiKey = process.env.RESEND_API_KEY;
+
+        
         const consultationEmail =
             process.env.MLUE_CONSULTATION_EMAIL;
+
 
         if (!resendApiKey) {
             console.error("RESEND_API_KEY is not configured.");
