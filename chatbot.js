@@ -79,7 +79,7 @@
     const inferred = inferPreferredLanguage(text);
     return inferred || "english";
 }
-    
+
     function getDefaultChatbotState() {
         return {
             messages: [],
@@ -254,8 +254,14 @@ mount.innerHTML = [
         function getOnboardingText() {
             return document.documentElement.lang === "sw"
                 ? "NIKUSAIDIEJE LEO?"
-                : "HOW CAN I HELP YOU?";
+                : "HOW CAN I HELP YOU TODAY";
         }
+
+        function getWelcomeMessage() {
+    return document.documentElement.lang === "sw"
+        ? "Habari! Mimi ni MLUE AI. Naweza kukusaidia kuelewa suluhisho zetu za kiteknolojia, huduma tunazotoa, au kukuelekeza mahali pazuri pa kuanzia kwa mradi wako.\n\nUngependa kujua nini kuhusu MLUE Technology?"
+        : "Hello! I'm MLUE AI. I can help you explore our technology solutions, understand our services, or guide you toward the right starting point for your project.\n\nWhat would you like to know about MLUE Technology?";
+}
 
 function ensureOnboardingNode() {
     if (onboardingNode && onboardingNode.isConnected) {
@@ -489,6 +495,190 @@ document.addEventListener("mlue-language-changed", () => {
             }
         }
 
+        function appendConsultationAction() {
+    const wrap = document.createElement("div");
+    wrap.className = "chat-msg chat-msg--bot";
+
+    const action = document.createElement("div");
+    action.className = "chatbot__consultation-action";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn--primary";
+    button.textContent =
+        chatLanguage === "swahili"
+            ? "Anza Ushauri"
+            : "Start Consultation";
+
+    button.addEventListener("click", async () => {
+        button.disabled = true;
+        button.textContent =
+            chatLanguage === "swahili"
+                ? "Inaandaa maelezo..."
+                : "Preparing consultation...";
+
+        try {
+            const history = state.messages
+                .filter(
+                    message =>
+                        message.role === "user" ||
+                        message.role === "bot"
+                )
+                .map(message => ({
+                    role:
+                        message.role === "user"
+                            ? "user"
+                            : "assistant",
+                    content: message.text
+                }))
+                .slice(-40);
+
+            const response = await fetch(
+                "/.netlify/functions/consultation",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        history
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok || !data?.emailSent) {
+                throw new Error(
+                    data?.error ||
+                    "Unable to submit consultation"
+                );
+            }
+
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Ushauri umetumwa ✓"
+                    : "Consultation Sent ✓";
+
+            if (typeof window.openMLUEAppointmentModal === "function") {
+    setTimeout(() => {
+        window.openMLUEAppointmentModal();
+    }, 400);
+}
+        } catch (error) {
+            console.error(
+                "MLUE consultation submission error:",
+                error
+            );
+
+            button.disabled = false;
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Jaribu Tena"
+                    : "Try Again";
+        }
+    });
+
+    action.appendChild(button);
+    wrap.appendChild(action);
+    chatMessages.appendChild(wrap);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    return wrap;
+}
+
+function appendConsultationAction() {
+    const wrap = document.createElement("div");
+    wrap.className = "chat-msg chat-msg--bot";
+
+    const action = document.createElement("div");
+    action.className = "chatbot__consultation-action";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn--primary";
+    button.textContent =
+        chatLanguage === "swahili"
+            ? "Anza Ushauri"
+            : "Start Consultation";
+
+    button.addEventListener("click", async () => {
+        button.disabled = true;
+        button.textContent =
+            chatLanguage === "swahili"
+                ? "Inaandaa maelezo..."
+                : "Preparing consultation...";
+
+        try {
+            const history = state.messages
+                .filter(
+                    message =>
+                        message.role === "user" ||
+                        message.role === "bot"
+                )
+                .map(message => ({
+                    role:
+                        message.role === "user"
+                            ? "user"
+                            : "assistant",
+                    content: message.text
+                }))
+                .slice(-40);
+
+            const response = await fetch(
+                "/.netlify/functions/consultation",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        history
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok || !data?.emailSent) {
+                throw new Error(
+                    data?.error ||
+                    "Unable to submit consultation"
+                );
+            }
+
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Ushauri umetumwa ✓"
+                    : "Consultation Sent ✓";
+
+            if (typeof window.openMLUEAppointmentModal === "function") {
+    setTimeout(() => {
+        window.openMLUEAppointmentModal();
+    }, 400);
+}
+        } catch (error) {
+            console.error(
+                "MLUE consultation submission error:",
+                error
+            );
+
+            button.disabled = false;
+            button.textContent =
+                chatLanguage === "swahili"
+                    ? "Jaribu Tena"
+                    : "Try Again";
+        }
+    });
+
+    action.appendChild(button);
+    wrap.appendChild(action);
+    chatMessages.appendChild(wrap);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    return wrap;
+}
+
         function appendTyping() {
             const wrap = document.createElement("div");
             wrap.className = "chat-msg chat-msg--bot";
@@ -576,7 +766,9 @@ async function getAIResponse(userText) {
     const data = await response.json();
 
     if (!response.ok) {
-        throw new Error(data?.error || "Unable to get AI response");
+        throw new Error(
+            data?.error || "Unable to get AI response"
+        );
     }
 
     if (
@@ -587,49 +779,16 @@ async function getAIResponse(userText) {
         throw new Error("AI returned an empty response");
     }
 
-    if (typeof data.leadStage !== "string") {
-        throw new Error("AI returned an invalid lead stage");
-    }
-    if(!data.lead || typeof data.lead !== "object") {
-        throw new Error("AI returned an invalid lead object");
-    }
-
     return {
         reply: data.reply,
-        leadStage: data.leadStage,
-        lead:data.lead
-
+        consultationReady: Boolean(data.consultationReady),
+        leadStage: data.leadStage || "NORMAL_CHAT",
+        lead: data.lead || {
+            name: null,
+            contact: null,
+            requirement: null
+        }
     };
-}
-
-async function submitLead(lead) {
-
-    const response = await fetch("/.netlify/functions/lead", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: lead.name,
-            contact: lead.contact,
-            requirement: lead.requirement
-        })
-    });
-
-    const data = await response.json();
-
-
-    if (!response.ok) {
-        throw new Error(
-            data?.error || "Unable to submit lead"
-        );
-    }
-
-    if (!data || data.success !== true) {
-        throw new Error("Lead submission failed");
-    }
-
-    return data;
 }
 
 async function sendMessage() {
@@ -640,9 +799,14 @@ async function sendMessage() {
     }
 
     if (state.showHeader) {
-        state.showHeader = false;
-        updateOnboarding();
+    state.showHeader = false;
+
+    if (onboardingNode && onboardingNode.isConnected) {
+        onboardingNode.remove();
     }
+
+    updateOnboarding();
+}
 
     appendMessage(userText, "user");
 
@@ -671,38 +835,21 @@ async function sendMessage() {
 
         applyImplicitLanguagePreference(userText);
 
-        const aiResponse = await getAIResponse(userText);
-        state.leadStage = aiResponse.leadStage;
-        state.lead = aiResponse.lead;
-        const isSameLead =
-        state.submittedLead &&
-        state.submittedLead.name === aiResponse.lead.name &&
-        state.submittedLead.contact === aiResponse.lead.contact &&
-        state.submittedLead.requirement === aiResponse.lead.requirement;
+        const result = await getAIResponse(userText);
 
-            if (
-                aiResponse.leadStage === "COMPLETED" &&
-                !isSameLead
-            ) {
-                await submitLead(aiResponse.lead);
+        appendMessage(result.reply, "bot");
 
-                state.leadSubmitted = true;
-                state.submittedLead = {
-                    name: aiResponse.lead.name,
-                    contact: aiResponse.lead.contact,
-                    requirement: aiResponse.lead.requirement
-                };
-            }
-
-        if (aiResponse.leadStage === "COMPLETED" && !isSameLead) {
-            await submitLead(aiResponse.lead);
-
-            state.leadSubmitted = true;
-        }
-        appendMessage(aiResponse.reply, "bot");
         saveChatState();
 
+        if (
+            result.consultationReady &&
+            typeof appendConsultationAction === "function"
+        ) {
+            appendConsultationAction();
+        }
+
     } catch (error) {
+        console.error("Chatbot error:", error);
 
         appendMessage(
             chatLanguage === "swahili"
@@ -735,12 +882,17 @@ async function sendMessage() {
         chatClose.addEventListener("click", closeChat);
         chatSend.addEventListener("click", sendMessage);
         chatInput.addEventListener("input", () => {
-            if (state.showHeader && chatInput.value.length > 0) {
-                state.showHeader = false;
-                updateOnboarding();
-                saveChatState();
-            }
-        });
+    if (chatInput.value.length > 0) {
+        state.showHeader = false;
+
+        if (onboardingNode && onboardingNode.isConnected) {
+            onboardingNode.remove();
+        }
+
+        updateOnboarding();
+        saveChatState();
+    }
+});
         chatInput.addEventListener("keydown", event => {
             if (event.key === "Enter") {
                 event.preventDefault();
@@ -785,4 +937,3 @@ async function sendMessage() {
 };
 
 })(typeof window !== "undefined" ? window : globalThis);
-
